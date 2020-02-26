@@ -1,22 +1,24 @@
-Welcome to the DOSBox-X Wiki!
+**Welcome to the DOSBox-X Wiki!**
+
+### Introduction
 
 DOSBox-X is a cross-platform DOS emulator based on [[DOSBox|http://www.dosbox.com]]. Like DOSBox, it emulates a PC necessary for running many MS-DOS games and applications that simply cannot be run on modern PCs and operating systems. However, while the main focus of DOSBox is for running DOS games, DOSBox-X goes much further than this. As a fork of DOSBox, it retains compatibility with the wide base of DOS games and DOS gaming DOSBox was designed for. But it is also a platform for emulating DOS applications, including emulating the environments to run Windows 3.x, 95, 98 and ME and software written for those versions of Windows. DOSBox-X supports multiple operating systems such as Windows, Linux and macOS (MacOS X). Windows binaries (both 32-bit and 64-bit) are released periodically for testing. You can download them from the [[Releases|https://github.com/joncampbell123/dosbox-x/releases]] page.
 
-== DOSBox-X's main focus ==
+### DOSBox-X's main focus
 
 Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 90's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
 
-== DOSBox-X's feature highlights ==
+### DOSBox-X's feature highlights
 
-== What DOSBox-X can do ==
+### What DOSBox-X can do
 
-== Running and configuring DOSBox-X ==
+### Running and configuring DOSBox-X
 
-== Functions of DOSBox-X's GUI menus ==
+### Functions of DOSBox-X's GUI menus
 
 DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, there are 7 menus shown in the menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
 
-* The "Main" menu:
+**1. The "Main" menu**
 
 Mapper editor
 
@@ -42,7 +44,7 @@ Reset guest system
 
 Quit
 
-* The "CPU" menu:
+**2. The "CPU" menu**
 
 Turbo (Fast Forward)
 
@@ -62,7 +64,7 @@ CPU core
 
 CPU type
 
-* The "Video" menu:
+**3. The "Video" menu**
 
 Fit to aspect ratio
 
@@ -88,7 +90,7 @@ PC-98
 
 Debug
 
-* The "Sound" menu:
+**4. The "Sound" menu**
 
 Increase volume
 
@@ -98,7 +100,7 @@ Mute
 
 Swap stereo
 
-* The "DOS" menu:
+**5. The "DOS" menu**
 
 Mouse
 
@@ -110,7 +112,7 @@ Swap CD
 
 Rescan all drives
 
-* The "Capture" menu:
+**6. The "Capture" menu**
 
 Take screenshot
 
@@ -126,199 +128,200 @@ Record FM (OPL) output
 
 Record MIDI output
 
-* The "Drive" menu:
+**7. The "Drive" menu**
 
 A-Z: For each drive, re-scans (refreshes the cache) or un-mounts this drive.
 
-== DOSBox-X's supported commands ==
+### DOSBox-X's supported commands
 
 Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles. 
 
-* 25/28/50                              
+* **25/28/50**                              
 Changes the DOSBox-X screen to 25/28/50 line mode.
-* A20GATE                              
+* **A20GATE**                               
 Turns on/off or changes the A20 gate mode.
-* APPEND                              
+* **APPEND**                              
 Enables programs to open data files in specified directories as if the files were in the current directory.
-* BOOT                              
+* **BOOT**                              
 Starts floppy hard disk images independent of the operating system emulation offered by DOSBox-X.
-* BUFFERS                              
+* **BUFFERS**                              
 Displays or changes the CONFIG.SYS's BUFFERS setting.
-* CAPMOUSE                              
+* **CAPMOUSE**                              
 Captures or releases the mouse inside DOSBox-X.
-* CD/CHDIR                              
+* **CD/CHDIR**                              
 Displays or changes the current directory.
-* CHOICE                              
+* **CHOICE**                              
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
-* CLS                              
+* **CLS**                              
 Clears the screen of all input and returns just the current prompt in the upper left hand corner.
-* COMMAND                              
+* **COMMAND**                              
 Restarts DOSBox-X's command shell.
-* CONFIG                              
+* **CONFIG**                              
 Starts DOSBox-X's config tool to change it settings.
-* COPY                              
+* **COPY**                              
 Copies one or more files.
-* CWSDPMI                              
+* **CWSDPMI**                              
 Starts CWSDPMI - a 32-bit DPMI server used by various DOS games/applications.
-* DEBUG                              
+* **DEBUG**                              
 The DOS DEBUG tool.
-* DEL/ERASE                              
+* **DEL/ERASE**                              
 Removes one or more files.
-* DEVICE                              
+* **DEVICE**                              
 Load device drivers as CONFIG.SYS's DEVICE command.
-* DIR                              
+* **DIR**                              
 Lists available files and sub-directories inside the current directory.
-* DOS32A                              
+* **DOS32A**                              
 Starts DOS32A - a 32-bit DOS extender used by various DOS games/applications.
-* DOS4GW                              
+* **DOS4GW**                              
 Starts DOS4GW - a 32-bit DOS extender used by various DOS games/applications.
-* DOSIDLE                              
+* **DOSIDLE**                              
 Puts the DOS emulator into idle mode for lower CPU usages.
-* DSXMENU                              
+* **DSXMENU**                              
 Runs DOSLIB's DSXMENU tool.
-* EDIT                              
+* **EDIT**                              
 Starts the full-screen file editor.
-* EXIT                              
+* **EXIT**                              
 Exits from the batch file or DOSBox-X.
-* FCBS                              
+* **FCBS**                              
 Displays or changes the CONFIG.SYS's FCBS setting.
-* FIND                              
+* **FIND**                              
 Prints lines of a file that contains the specified string.
-* HEXMEM16/HEXMEM32                              
+* **HEXMEM16/HEXMEM32**                              
 Starts DOSLIB's HEXMEM tool - a memory viewer/dumper.
-* IMGMAKE                              
+* **IMGMAKE**                              
 Makes floppy drive or hard-disk images.
-* IMGMOUNT                              
+* **IMGMOUNT**                              
 Mount drives from floppy drive, hard-disk, or CD images.
-* INTRO                              
+* **INTRO**                              
 A full-screen DOSBox introduction.
-* KEYB                              
+* **KEYB**                              
 Changes the layout of the keyboard used for different countries.
-* LABEL                              
+* **LABEL**                              
 Changes the label of a drive.
-* LASTDRIV                              
+* **LASTDRIV**                              
 Displays or changes the CONFIG.SYS's LASTDRIVE setting.
-* LOADFIX                              
+* **LOADFIX**                              
 Loads a program above the first 64K of memory.
-* LOADROM                              
+* **LOADROM**                              
 Loads the specified ROM file.
-* LH/LOADHIGH                              
+* **LH/LOADHIGH**                              
 Loads a program into upper memory (if UMB is available).
-* MD/MKDIR                              
+* **MD/MKDIR**                              
 Makes a directory.
-* MEM                              
+* **MEM**                              
 Displays the status of the DOS memory, such as the amount of free memory.
-* MIXER                              
+* **MIXER**                              
 Displays current sound levels.
-* MODE                              
+* **MODE**                              
 Configures DOS system devices.
-* MOUNT                              
+* **MOUNT**                              
 Mounts folders or CD drives.
-* MOUSE                              
+* **MOUSE**                              
 Turns on/off mouse support.
-* MOVE                              
+* **MOVE**                              
 Moves a file or directory to another location.
-* NMITEST                              
-* RD/RMDIR                              
+* **NMITEST**                              
+Tests system NMI.
+* **RD/RMDIR**                              
 Removes a directory.
-* RE-DOS                              
+* **RE-DOS**                              
 Re-enters to DOSBox-X.
-* REN                              
+* **REN**                              
 Renames one or more files.
-* RESCAN                              
+* **RESCAN**                              
 Refreshes mounted drives by clearing their caches. 
-* TREE                              
-Graphically displays the directory structure of a drive or path.
-* TYPE                              
-Displays the contents of a text-file.
-* SET                              
+* **SET**                              
 Displays and sets environment variables.
-* SHOWGUI                              
+* **SHOWGUI**                              
 Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.
-* VER                              
+* **TREE**                              
+Graphically displays the directory structure of a drive or path.
+* **TYPE**                              
+Displays the contents of a text-file.
+* **VER**                              
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.
-* VESAMOED                              
+* **VESAMOED**                              
 Starts the VESA BIOS mode editor utility.
-* VFRCRATE                              
+* **VFRCRATE**                              
 Video refresh rate tool.
-* XCOPY                              
+* **XCOPY**                              
 Copies files and directory trees.
 
-== DOSBox-X's command-line options ==
+### DOSBox-X's command-line options
 
 DOSBox-X supports command-line options. You can start DOSBox-X without any option, or with any of the following options.
 
-* -h or -help                              
+* **-h** or **-help**                              
 Shows DOSBox-X's help message.
-* -editconf <program>                             
+* **-editconf <program>**                             
 Calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start.
-* -opencaptures <program>                              
+* **-opencaptures <program>**                              
 Calls program with as first parameter the location of the captures folder.                        
-* -opensaves <program>                              
+* **-opensaves <program>**                              
 Calls program with as first parameter the location of the saves folder.
-* -eraseconf                              
+* **-eraseconf**                              
 Erases DOSBox-X's default config file.
-* -resetconf                              
+* **-resetconf**                              
 Erases DOSBox-X's default config file.
-* -printconf                              
+* **-printconf**                              
 Generates DOSBox-X's config file in the user directory and prints its location.
-* -erasemapper                            
+* **-erasemapper**                            
 Erases the mapper file used by the default clean configuration file.
-* -resetmapper                            
+* **-resetmapper**                            
 Erases the mapper file used by the default clean configuration file.
-* -console                                
+* **-console**                                
 Starts DOSBox-X with the console window (win32 only).
-* -noconsole                              
+* **-noconsole**                              
 Starts DOSBox-X without showing the console window (debug+win32 only).
-* -nogui                                  
+* **-nogui**                                  
 Starts DOSBox-X without showing its GUI menu (win32 only).
-* -nomenu                                 
+* **-nomenu**                                 
 Starts DOSBox-X without showing its GUI menu (win32 only).
-* -userconf                               
+* **-userconf**                               
 Loads the configuration from the user's profile or home directory.
-* -conf <file>                           
+* **-conf <file>**                           
 Uses the specified file as DOSBox-X's config file.
-* -startui -startgui                      
+* **-startui** or **-startgui**                      
 Starts DOSBox-X with its configuration GUI dialog, where you can review or change its settings.
-* -startmapper                            
+* **-startmapper**                            
 Starts DOSBox-X and enters to the mapper directly.
-* -showcycles                             
+* **-showcycles**                             
 Show cycles count (FPS) on the DOSBox-X title bar.
-* -showrt                                 
+* **-showrt**                                 
 Show emulation speed relative to realtime on the DOSBox-X title bar.
-* -fullscreen                             
+* **-fullscreen**                             
 Start DOSBox-X in full-screen mode.
-* -savedir <path>                         
+* **-savedir <path>**                         
 Uses the specified path as DOSBox-X's save path.
-* -disable-numlock-check                  
+* **-disable-numlock-check**                  
 Disables numlock check (win32 only).
-* -date-host-forced                       
+* **-date-host-forced**                       
 Forces synchronization of date with the host system.
-* -debug                                  
+* **-debug**                                  
 Sets all logging levels to debug.
-* -early-debug                            
-Logs early initialization messages in DOSBox (implies -console).
-* -keydbg                                 
+* **-early-debug**                            
+Logs early initialization messages in DOSBox (this option implies -console).
+* **-keydbg**                                 
 Logs all SDL key events (debugging).
-* -lang <message file>                    
-Use specific message file instead of language= setting.
-* -nodpiaware                             
+* **-lang <message file>**                    
+Uses specific message file instead of language= setting.
+* **-nodpiaware**                             
 Ignores (don't signal) Windows DPI awareness.
-* -securemode                             
+* **-securemode**                             
 Enables DOSBox-X's secure mode. The [autoexec] section of the loaded configuration file will be skipped, and commands such as MOUNT and IMGMOUNT are disabled.
-* -noautoexec                             
+* **-noautoexec**                             
 Skips the [autoexec] section of the loaded configuration file.
-* -exit                                   
+* **-exit**                                   
 Exit after executing the [autoexec] section of the loaded configuration file.
-* -c <command string>                              
+* **-c <command string>**                              
 Execute this command in addition to AUTOEXEC.BAT. Make sure to surround the command in quotes to cover spaces.
-* -break-start                              
+* **-break-start**                              
 Starts DOSBox-X and breaks into its debugger directly.
-* -time-limit <n>                              
+* **-time-limit <n>**                              
 Starts and terminates DOSBox-X after 'n' seconds.
-* -fastbioslogo                              
+* **-fastbioslogo**                              
 Skips the 1-second BIOS pause with Fast BIOS logo.
-* -log-con                              
+* **-log-con**                              
 Logs CON output to a log file.
 
-== Frequently asked questions (FAQ) ==
+### Frequently asked questions (FAQ)
