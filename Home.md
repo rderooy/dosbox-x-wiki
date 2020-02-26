@@ -20,117 +20,117 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **1. The "Main" menu**
 
-Mapper editor
+* Mapper editor
 
-Configuration GUI
+* Configuration GUI
 
-Send Key
+* Send Key
 
-Wait on error
+* Wait on error
 
-Show details
+* Show details
 
-Show console
+* Show console
 
-Capture mouse
+* Capture mouse
 
-Autolock mouse
+* Autolock mouse
 
-Pause
+* Pause
 
-Pause with interrupts enabled
+* Pause with interrupts enabled
 
-Reset guest system
+* Reset guest system
 
-Quit
+* Quit
 
 **2. The "CPU" menu**
 
-Turbo (Fast Forward)
+* Turbo (Fast Forward)
 
-Normal speed
+* Normal speed
 
-Speed up
+* Speed up
 
-Speed down
+* Speed down
 
-Increment cycles
+* Increment cycles
 
-Decrement cycles
+* Decrement cycles
 
-Edit cycles
+* Edit cycles
 
-CPU core
+* CPU core
 
-CPU type
+* CPU type
 
 **3. The "Video" menu**
 
-Fit to aspect ratio
+* Fit to aspect ratio
 
-Toggle fullscreen
+* Toggle fullscreen
 
-Hide/show menu bar
+* Hide/show menu bar
 
-Reset window size
+* Reset window size
 
-Frameskip
+* Frameskip
 
-Force scaler
+* Force scaler
 
-Scaler
+* Scaler
 
-Output
+* Output
 
-Overscan
+* Overscan
 
-Compability
+* Compability
 
-PC-98
+* PC-98
 
-Debug
+* Debug
 
 **4. The "Sound" menu**
 
-Increase volume
+* Increase volume
 
-Decrease volume
+* Decrease volume
 
-Mute
+* Mute
 
-Swap stereo
+* Swap stereo
 
 **5. The "DOS" menu**
 
-Mouse
+* Mouse
 
-PC-98 PIT master clock
+* PC-98 PIT master clock
 
-Swap floppy
+* Swap floppy
 
-Swap CD
+* Swap CD
 
-Rescan all drives
+* Rescan all drives
 
 **6. The "Capture" menu**
 
-Take screenshot
+* Take screenshot
 
-Capture format
+* Capture format
 
-Record video to AVI
+* Record video to AVI
 
-Record audio to WAV
+* Record audio to WAV
 
-Record audio to multi-track AVI
+* Record audio to multi-track AVI
 
-Record FM (OPL) output
+* Record FM (OPL) output
 
-Record MIDI output
+* Record MIDI output
 
 **7. The "Drive" menu**
 
-A-Z: For each drive, re-scans (refreshes the cache) or un-mounts this drive.
+* A-Z: For each drive, re-scans (refreshes the cache) or un-mounts this drive.
 
 ### DOSBox-X's supported commands
 
@@ -221,7 +221,7 @@ Turns on/off mouse support.
 * **MOVE**                              
 Moves a file or directory to another location.
 * **NMITEST**                              
-Tests system NMI.
+Runs the NMI testing tool.
 * **RD/RMDIR**                              
 Removes a directory.
 * **RE-DOS**                              
@@ -241,9 +241,9 @@ Displays the contents of a text-file.
 * **VER**                              
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.
 * **VESAMOED**                              
-Starts the VESA BIOS mode editor utility.
+Runs the VESA BIOS mode editor utility.
 * **VFRCRATE**                              
-Video refresh rate tool.
+Runs the Video refresh rate tool.
 * **XCOPY**                              
 Copies files and directory trees.
 
@@ -253,11 +253,11 @@ DOSBox-X supports command-line options. You can start DOSBox-X without any optio
 
 * **-h** or **-help**                              
 Shows DOSBox-X's help message.
-* **-editconf <program>**                             
+* **-editconf [program]**                             
 Calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start.
-* **-opencaptures <program>**                              
+* **-opencaptures [program]**                              
 Calls program with as first parameter the location of the captures folder.                        
-* **-opensaves <program>**                              
+* **-opensaves [program]**                              
 Calls program with as first parameter the location of the saves folder.
 * **-eraseconf**                              
 Erases DOSBox-X's default config file.
@@ -279,7 +279,7 @@ Starts DOSBox-X without showing its GUI menu (win32 only).
 Starts DOSBox-X without showing its GUI menu (win32 only).
 * **-userconf**                               
 Loads the configuration from the user's profile or home directory.
-* **-conf <file>**                           
+* **-conf [file]**                           
 Uses the specified file as DOSBox-X's config file.
 * **-startui** or **-startgui**                      
 Starts DOSBox-X with its configuration GUI dialog, where you can review or change its settings.
@@ -291,7 +291,7 @@ Show cycles count (FPS) on the DOSBox-X title bar.
 Show emulation speed relative to realtime on the DOSBox-X title bar.
 * **-fullscreen**                             
 Start DOSBox-X in full-screen mode.
-* **-savedir <path>**                         
+* **-savedir [path]**                         
 Uses the specified path as DOSBox-X's save path.
 * **-disable-numlock-check**                  
 Disables numlock check (win32 only).
@@ -303,7 +303,7 @@ Sets all logging levels to debug.
 Logs early initialization messages in DOSBox (this option implies -console).
 * **-keydbg**                                 
 Logs all SDL key events (debugging).
-* **-lang <message file>**                    
+* **-lang [message file]**                    
 Uses specific message file instead of language= setting.
 * **-nodpiaware**                             
 Ignores (don't signal) Windows DPI awareness.
@@ -313,11 +313,11 @@ Enables DOSBox-X's secure mode. The [autoexec] section of the loaded configurati
 Skips the [autoexec] section of the loaded configuration file.
 * **-exit**                                   
 Exit after executing the [autoexec] section of the loaded configuration file.
-* **-c <command string>**                              
-Execute this command in addition to AUTOEXEC.BAT. Make sure to surround the command in quotes to cover spaces.
+* **-c [command string]**                              
+Execute this command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
 * **-break-start**                              
 Starts DOSBox-X and breaks into its debugger directly.
-* **-time-limit <n>**                              
+* **-time-limit [n]**                              
 Starts and terminates DOSBox-X after 'n' seconds.
 * **-fastbioslogo**                              
 Skips the 1-second BIOS pause with Fast BIOS logo.
