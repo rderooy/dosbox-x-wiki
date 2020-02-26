@@ -14,6 +14,122 @@ Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on ac
 
 == Functions of DOSBox-X's GUI menu ==
 
+DOSBox-X features a GUI menu bar that does not exist in DOSBox. There are 7 menus shown in the menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
+
+* The "Main" menu:
+
+Mapper editor
+
+Configuration GUI
+
+Send Key
+
+Wait on error
+
+Show details
+
+Show console
+
+Capture mouse
+
+Autolock mouse
+
+Pause
+
+Pause with interrupts enabled
+
+Reset guest system
+
+Quit
+
+* The "CPU" menu:
+
+Turbo (Fast Forward)
+
+Normal speed
+
+Speed up
+
+Speed down
+
+Increment cycles
+
+Decrement cycles
+
+Edit cycles
+
+CPU core
+
+CPU type
+
+* The "Video" menu:
+
+Fit to aspect ratio
+
+Toggle fullscreen
+
+Hide/show menu bar
+
+Reset window size
+
+Frameskip
+
+Force scaler
+
+Scaler
+
+Output
+
+Overscan
+
+Compability
+
+PC-98
+
+Debug
+
+* The "Sound" menu:
+
+Increase volume
+
+Decrease volume
+
+Mute
+
+Swap stereo
+
+* The "DOS" menu:
+
+Mouse
+
+PC-98 PIT master clock
+
+Swap floppy
+
+Swap CD
+
+Rescan all drives
+
+* The "Capture" menu:
+
+Take screenshot
+
+Capture format
+
+Record video to AVI
+
+Record audio to WAV
+
+Record audio to multi-track AVI
+
+Record FM (OPL) output
+
+Record MIDI output
+
+* The "Drive" menu:
+
+A-Z: For each drive, re-scans (refreshes the cache) or un-mounts this drive.
+
 == DOSBox-X's supported commands ==
 
 * 25/28/50                              
@@ -129,13 +245,13 @@ Copies files and directory trees.
 == DOSBox-X's command line options ==
 
 * -h or -help                              
-Show DOSBox-X's help message
+Shows DOSBox-X's help message.
 * -editconf <program>                             
-calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start.
+Calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start.
 * -opencaptures <program>                              
-calls program with as first parameter the location of the captures folder.                        
+Calls program with as first parameter the location of the captures folder.                        
 * -opensaves <program>                              
-calls program with as first parameter the location of the saves folder.
+Calls program with as first parameter the location of the saves folder.
 * -eraseconf                              
 Erases DOSBox-X's default config file.
 * -resetconf                              
