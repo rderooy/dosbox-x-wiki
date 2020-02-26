@@ -12,9 +12,9 @@ Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on ac
 
 == Running and configuring DOSBox-X ==
 
-== Functions of DOSBox-X's GUI menu ==
+== Functions of DOSBox-X's GUI menus ==
 
-DOSBox-X features a GUI menu bar that does not exist in DOSBox. There are 7 menus shown in the menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
+DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, there are 7 menus shown in the menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
 
 * The "Main" menu:
 
@@ -132,6 +132,8 @@ A-Z: For each drive, re-scans (refreshes the cache) or un-mounts this drive.
 
 == DOSBox-X's supported commands ==
 
+Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles. 
+
 * 25/28/50                              
 Changes the DOSBox-X screen to 25/28/50 line mode.
 * A20GATE                              
@@ -242,7 +244,9 @@ Video refresh rate tool.
 * XCOPY                              
 Copies files and directory trees.
 
-== DOSBox-X's command line options ==
+== DOSBox-X's command-line options ==
+
+DOSBox-X supports command-line options. You can start DOSBox-X without any option, or with any of the following options.
 
 * -h or -help                              
 Shows DOSBox-X's help message.
@@ -316,7 +320,5 @@ Starts and terminates DOSBox-X after 'n' seconds.
 Skips the 1-second BIOS pause with Fast BIOS logo.
 * -log-con                              
 Logs CON output to a log file.
-
-== Usage tips and remarks ==
 
 == Frequently asked questions (FAQ) ==
