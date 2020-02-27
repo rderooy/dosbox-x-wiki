@@ -20,117 +20,127 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **1. The "Main" menu**
 
-* Mapper editor
+* **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press ESC three times to exit the editor.
 
-* Configuration GUI
+* **Configuration GUI**: Enters the configuration GUI dialog for reviewing or changing DOSBox-X settings.
 
-* Send Key
+* **Send Key**: Sends special keys such as Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
 
-* Wait on error
+* **Wait on error**: Select this if you want DOSBox-X to wait when an error occurs.
 
-* Show details
+* **Show details**: Select this if you want to show information such as cycles count (FPS) and emulation speed on the DOSBox-X title bar.
 
-* Show console
+* **Debugger**: Starts the DOSBox-X Debugger.
 
-* Capture mouse
+* **Show console**: Shows the DOSBox-X console window.
 
-* Autolock mouse
+* **Capture mouse**: DOSBox-X will capture the mouse immediately for use with the emulated DOS.
 
-* Pause
+* **Autolock mouse**: DOSBox-X will lock the mouse automatically for use with the emulated DOS.
 
-* Pause with interrupts enabled
+* **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
 
-* Reset guest system
+* **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. The emulated DOS is not fully paused in this case.
 
-* Quit
+* **Reset guest system**: Restarts the emulated DOS inside DOSBox-X.
+
+* **Quit**: Exit from DOSBox-X.
 
 **2. The "CPU" menu**
 
-* Turbo (Fast Forward)
+* **Turbo (Fast Forward)**: Increases the emulated DOS's current CPU speed to 200%-300% of the normal speed.
 
-* Normal speed
+* **Normal speed**: Resets the emulated DOS's current CPU speed to the normal speed.
 
-* Speed up
+* **Speed up**: Slightly increases the emulated DOS's current CPU speed.
 
-* Speed down
+* **Speed down**: Slightly decreases the emulated DOS's current CPU speed.
 
-* Increment cycles
+* **Increment cycles**: Increases the amount of instructions DOSBox-X tries to emulate each millisecond.
 
-* Decrement cycles
+* **Decrement cycles**: Decreases the amount of instructions DOSBox-X tries to emulate each millisecond.
 
-* Edit cycles
+* **Edit cycles**: Sets the amount of instructions DOSBox-X tries to emulate each millisecond to a specific value.
 
-* CPU core
+* **CPU core**: Selects the emulated DOS's CPU core - normal, full, simple, dynamic, or auto.
 
-* CPU type
+* **CPU type**: Selects the emulated DOS's CPU type, such as 8086, 80286, 80386, 80486, Pentium, or Pentium Pro.
 
 **3. The "Video" menu**
 
-* Fit to aspect ratio
+* **Fit to aspect ratio**
 
-* Toggle fullscreen
+* **Toggle fullscreen**
 
-* Hide/show menu bar
+* **Always on top**
 
-* Reset window size
+* **Double Buffering (Fullscreen)**
 
-* Frameskip
+* **Hide/show menu bar**
 
-* Force scaler
+* **Reset window size**
 
-* Scaler
+* **Frameskip**
 
-* Output
+* **Force scaler**
 
-* Overscan
+* **Scaler**
 
-* Compability
+* **Output**
 
-* PC-98
+* **V-Sync**
 
-* Debug
+* **Overscan**
+
+* **Compatibility
+
+* **PC-98**
+
+* **Debug**
+
+* **Select pixel shader...**
 
 **4. The "Sound" menu**
 
-* Increase volume
+* **Increase volume**
 
-* Decrease volume
+* **Decrease volume**
 
-* Mute
+* **Mute**
 
-* Swap stereo
+* **Swap stereo**
 
 **5. The "DOS" menu**
 
-* Mouse
+* **Mouse**
 
-* PC-98 PIT master clock
+* **PC-98 PIT master clock**
 
-* Swap floppy
+* **Swap floppy**
 
-* Swap CD
+* **Swap CD**
 
-* Rescan all drives
+* **Rescan all drives**
 
 **6. The "Capture" menu**
 
-* Take screenshot
+* **Take screenshot**
 
-* Capture format
+* **Capture format**
 
-* Record video to AVI
+* **Record video to AVI**
 
-* Record audio to WAV
+* **Record audio to WAV**
 
-* Record audio to multi-track AVI
+* **Record audio to multi-track AVI**
 
-* Record FM (OPL) output
+* **Record FM (OPL) output**
 
-* Record MIDI output
+* **Record MIDI output**
 
 **7. The "Drive" menu**
 
-* A-Z: For each drive, re-scans (refreshes the cache) or un-mounts this drive.
+* **A**-**Z**: For each DOS drive, re-scans (refreshes the cache) or un-mounts this drive.
 
 ### DOSBox-X's supported commands
 
@@ -284,7 +294,7 @@ Uses the specified file as DOSBox-X's config file.
 * **-startui** or **-startgui**                      
 Starts DOSBox-X with its configuration GUI dialog, where you can review or change its settings.
 * **-startmapper**                            
-Starts DOSBox-X and enters to the mapper directly.
+Starts DOSBox-X and enters to the keyboard mapper editor directly.
 * **-showcycles**                             
 Show cycles count (FPS) on the DOSBox-X title bar.
 * **-showrt**                                 
@@ -323,5 +333,14 @@ Starts and terminates DOSBox-X after 'n' seconds.
 Skips the 1-second BIOS pause with Fast BIOS logo.
 * **-log-con**                              
 Logs CON output to a log file.
+
+### Compatibility
+We are making efforts to ensure that most DOS games and applications will run in DOSBox-X. Below are some test results.
+
+DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html
+
+* [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
+* [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
+* [[Guide: Windows in DOSBox|Guide:Windows]]  
 
 ### Frequently asked questions (FAQ)
