@@ -2,8 +2,8 @@ This guide explains how to use DOSBox-X with MS-DOS software from the [demoscene
 
 # Demo settings and notes list
 
-[[1991|Guide_MS-DOS_demoscene_1991]] * [[1992|Guide_MS-DOS_demoscene_1992]] * [[1993|Guide_MS-DOS_demoscene_1993]] * [[1994|Guide_MS-DOS_demoscene_1994]] * [[1995|Guide_MS-DOS_demoscene_1995]] * [[1996|Guide_MS-DOS_demoscene_1996]] * [[1997|Guide_MS-DOS_demoscene_1997]] * [[1998|Guide_MS-DOS_demoscene_1998]] * [[1999|Guide_MS-DOS_demoscene_1999]]  
-[[2000|Guide_MS-DOS_demoscene_2000]]  
+[[1991|Guide:MS DOS:demoscene:1991]] * [[1992|Guide:MS DOS:demoscene:1992]] * [[1993|Guide:MS DOS:demoscene:1993]] * [[1994|Guide:MS DOS:demoscene:1994]] * [[1995|Guide:MS DOS:demoscene:1995]] * [[1996|Guide:MS DOS:demoscene:1996]] * [[1997|Guide:MS DOS:demoscene:1997]] * [[1998|Guide:MS DOS:demoscene:1998]] * [[1999|Guide:MS DOS:demoscene:1999]]  
+[[2000|Guide:MS DOS:demoscene:2000]]  
 
 # General guidelines
 
@@ -33,6 +33,6 @@ For demos 1993 and earlier: Gravis Ultrasound is generally not supported, except
 
 If you want to hear LPT DAC output instead, set disney=true to enable Disney/Covox/LPT DAC emulation.
 
-Quite a few demos of this period used a sound library called "[[Goldplay|Libraries_Goldplay]]" that supported both Sound Blaster and LPT DAC. Setting goldplay=true is recommended, the goldplay library uses a strange hackish method to re-use it's playback method for DMA-based Sound Blaster output that requires special attention from DOSBox to emulate properly.
+Quite a few demos of this period used a sound library called "[[Goldplay|Libraries:Goldplay]]" that supported both Sound Blaster and LPT DAC. Setting goldplay=true is recommended, the goldplay library uses a strange hackish method to re-use it's playback method for DMA-based Sound Blaster output that requires special attention from DOSBox to emulate properly.
 
 There also exist a few demos that do not use Sound Blaster support but instead play MIDI music through the MPU-401 chip.
