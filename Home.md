@@ -68,75 +68,75 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **3. The "Video" menu**
 
-* **Fit to aspect ratio**
+* **Fit to aspect ratio**: Select whether to fit DOSBox-X's emulated DOS screen to the aspect ratio (width-to-height ratio) correction mode.
 
-* **Toggle fullscreen**
+* **Toggle fullscreen**: Toggles the fullscreen mode of DOSBox-X's emulated DOS screen.
 
-* **Always on top**
+* **Always on top**: Select whether the DOSBox-X window will always be the topmost one.
 
-* **Double Buffering (Fullscreen)**
+* **Double Buffering (Fullscreen)**: Toggles the double-buffering feature in the fullscreen mode. It can reduce screen flickering, but it can also result in a slower speed.
 
-* **Hide/show menu bar**
+* **Hide/show menu bar**: Select whether to show DOSBox-X's GUI menu bar where supported.
 
-* **Reset window size**
+* **Reset window size**: Resets the DOSBox-X window to the default size.
 
-* **Frameskip**
+* **Frameskip**: Changes the frameskip setting, i.e. how many frames DOSBox-X skips before drawing one.
 
-* **Force scaler**
+* **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
 
-* **Scaler**
+* **Scaler**: Selects a scaler used to enlarge/enhance low resolution modes.
 
-* **Output**
+* **Output**: Selects the video system to use for output, such as Surface, Direct3D or OpenGL.
 
-* **V-Sync**
+* **V-Sync**: Synchronizes vsync timing to the host display. This requires calibration within DOSBox-X.
 
-* **Overscan**
+* **Overscan**: Selects the width of the overscan border, from 0 to 10. This works only if the video output is set to surface.
 
-* **Compatibility
+* **Compatibility**: Selects whether to allow 9-pixel wide text mode fonts and to enable double-scan mode (double-scanned output emits two scanlines for each source line).
 
-* **PC-98**
+* **PC-98**: Changes the PC-98 related settings, such as whether to allow EGC and GRCG graphics functions.
 
-* **Debug**
+* **Debug**: Enables video debugging functions, such as blank screen refresh tests.
 
-* **Select pixel shader...**
+* **Select pixel shader...**: Selects a video pixel shader file for use with DOSBox-X.
 
 **4. The "Sound" menu**
 
-* **Increase volume**
+* **Increase volume**: Increases the sound volume of DOSBox-X's emulated DOS.
 
-* **Decrease volume**
+* **Decrease volume**: Decreases the sound volume of DOSBox-X's emulated DOS.
 
-* **Mute**
+* **Mute**: Mutes or unmutes the sound volume of DOSBox-X's emulated DOS.
 
-* **Swap stereo**
+* **Swap stereo**: Selects whether to swap the left and right stereo channels.
 
 **5. The "DOS" menu**
 
-* **Mouse**
+* **Mouse**: Changes the mouse settings for the emulated DOS inside DOSBox-X, such as the mouse sensitivity.
 
-* **PC-98 PIT master clock**
+* **PC-98 PIT master clock**: Selects the PIT master clock for the PC-98 system (4MHz/8MHz or 5MHz/10MHz).
 
-* **Swap floppy**
+* **Swap floppy**: Swaps the floppy image if you are using multiple floppy disk images.
 
-* **Swap CD**
+* **Swap CD**: Swaps the CD image if you are using multiple CD images.
 
-* **Rescan all drives**
+* **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
 
 **6. The "Capture" menu**
 
-* **Take screenshot**
+* **Take screenshot**: Takes a screenshot of the current DOS screen.
 
-* **Capture format**
+* **Capture format**: Selects the video format for DOSBox-X's captures.
 
-* **Record video to AVI**
+* **Record video to AVI**: Starts/stops the recording of the current DOS session to an AVI video.
 
-* **Record audio to WAV**
+* **Record audio to WAV**: Starts/stops the recording of the current DOS session to a WAV audio.
 
-* **Record audio to multi-track AVI**
+* **Record audio to multi-track AVI**: Starts/stops the recording of the current DOS session to a multi-track audio-only AVI file.
 
-* **Record FM (OPL) output**
+* **Record FM (OPL) output**: Starts/stops the recording of Yamaha FM (OPL) commands.
 
-* **Record MIDI output**
+* **Record MIDI output**: Starts/stops the recording of raw MIDI commands.
 
 **7. The "Drive" menu**
 
