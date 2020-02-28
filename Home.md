@@ -36,7 +36,7 @@ Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on ac
 
 ### Running and configuring DOSBox-X
 
-Once you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\> or A:\> as the DOS prompt when it finished booting, at the beginning you will get a Z:\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS Compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the **DOSBox-X's supported commands** sections below for more information about them.
+After you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\> or A:\> as the DOS prompt when it finished booting, at the beginning you will get a Z:\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS Compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the **DOSBox-X's supported commands** sections below for more information about them.
 
 If you want to access other drives such as the C: drive, you have to make your directories available as drives in DOSBox-X.  There are two ways to do this:
 
@@ -48,7 +48,9 @@ DOSBox-X features a configuration GUI which allows you to change its settings vi
 
 For example, if you are using the MOUNT command method to mount your host drives/directories as DOSBox-X's drives, you do not have to always type these commands. Instead, you can put these commands in the "autoexec" section of the DOSBox-X configuration interface, and then save them. These correspond to the [autoexec] section of DOSBox-X's configuration file. The commands present there are run each time when DOSBox-X starts, so you can use this section for the mounting.
 
-Even though DOSBox-X runs in a Windows by default, you can also change it to full-screen mode. Simply press the shortcut F11+F, and DOSBox-X will become full-screen. Alternatively, you may modify this setting in the Sdl section of the DOSBox-X configuration interface (or change the option fullscreen=false to fullscreen=true under the [sdl] section of DOSBox-X's configuration file). To get back from fullscreen mode, simply press the shortcut F11+F again.
+Even though DOSBox-X runs in a window by default, you can also change it to full-screen mode. Simply press the shortcut F11+F, and DOSBox-X will become full-screen. Alternatively, you may modify this setting in the Sdl section of the DOSBox-X configuration interface (or change the option fullscreen=false to fullscreen=true under the [sdl] section of DOSBox-X's configuration file). To get back from fullscreen mode, simply press the shortcut F11+F again.
+
+You can try the various commands and options in order to be more familiar with the DOSBox-X interface. Once you get used to it, you should be able to do various things such as running DOS applications inside DOSBox-X. If you have questions, you can also ask the community for support. 
 
 ### Functions of DOSBox-X's GUI menus
 
