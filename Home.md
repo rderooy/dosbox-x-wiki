@@ -14,6 +14,18 @@ Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on ac
 
 ### Running and configuring DOSBox-X
 
+Once you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\> or A:\> as the DOS prompt when it finished booting, at the beginning you will get a Z:\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS Compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the ##DOSBox-X's supported commands## sections below for more information about them.
+
+If you want to access other drives such as the C: drive, you have to make your directories available as drives in DOSBox-X.  There are two ways to do this:
+
+1. Using the MOUNT command: This command allows you to mount your host drives/directories as DOSBox-X's drives. For example, in Windows "mount C D:\GAMES" (without quotes) will give you a C drive in DOSBox-X which points to your Windows D:\GAMES directory (that was created before). In Linux, "mount c /home/username" will give you a C drive in DOSBox-X which points to /home/username in Linux. To change to the drive mounted like above, type "C:". If everything went fine, DOSBox-X will display the prompt "C:\>". To mount your CD drives in DOSBox-X you have to specify additional options. For example, you can use the command "mount D E:\ -t cdrom" to enable CD support (including MSCDEX) in Windows.
+
+2. Auto-mount drives: If you are using Windows, DOSBox-X will ask if you want to give it access to your Windows drive when you try to go to a drive (e.g. C:), but that drive has not yet been mounted inside DOSBox-X. This basically makes DOSBox-X access to the same drives as in your Windows system. If you answer Y for Yes, then the whole Windows drive will be mounted and accessible within DOSBox-X. It is not recommended to mount your Windows Drive C: inside DOSBox-X because DOSBox-X will then be able to access all files and directories in your Windows Drive C:, and there is already a chance that something unexpected may happen in this case.
+
+Note that if you are using the MOUNT command method, you do not have to always type these commands. DOSBox-X has a configuration file (dosbox.conf in the current directory or in your user directory), and in this file there is an [autoexec] section. The commands present there are run each time when DOSBox-X starts, so you can use this section for the mounting.
+
+Even though DOSBox-X runs in a Windows by default, you can also change it to full-screen mode. Simply press the shortcut F11+F, and DOSBox-X will become full-screen. Alternatively, you may edit the DOSBox-X configuration file and change the option fullscreen=false to fullscreen=true under the [sdl] section. To get back from fullscreen mode, simply press the shortcut F11+F again.
+
 ### Functions of DOSBox-X's GUI menus
 
 DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, there are 7 menus shown in the menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
@@ -124,7 +136,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **6. The "Capture" menu**
 
-* **Take screenshot**: Takes a screenshot of the current DOS screen.
+* **Take screenshot**: Takes a screenshot of the current DOS screen in PNG format.
 
 * **Capture format**: Selects the video format for DOSBox-X's captures.
 
@@ -134,13 +146,58 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Record audio to multi-track AVI**: Starts/stops the recording of the current DOS session to a multi-track audio-only AVI file.
 
-* **Record FM (OPL) output**: Starts/stops the recording of Yamaha FM (OPL) commands.
+* **Record FM (OPL) output**: Starts/stops the recording of Yamaha FM (OPL) commands in DRO format.
 
 * **Record MIDI output**: Starts/stops the recording of raw MIDI commands.
 
 **7. The "Drive" menu**
 
 * **A**-**Z**: For each DOS drive, re-scans (refreshes the cache) or un-mounts this drive.
+
+### DOSBox-X's special keys
+
+You can use these special keys to achieve certain functions in DOSBox-X, such as switching between the window and full-screen modes. These shortcuts are different from the ones in DOSBox.
+
+* **F11+F**  
+Switch to full-screen mode and back.
+* **F11+R**  
+Restart the emulated DOS inside DOSBox-X.
+* **F11+M**  
+Start DOSBox-X's keyboard mapper.
+* **F11+Esc**  
+Show/hide the GUI menu bar.
+* **F11+[+]**  
+Increase the sound volume of DOSBox-X's emulated DOS.
+* **F11+[-]**  
+Decrease the sound volume of DOSBox-X's emulated DOS.
+* **F11+]**  
+Slightly increases the emulated DOS's current CPU speed.
+* **F11+[**  
+Slightly decreases the emulated DOS's current CPU speed.
+* **F11+=**  
+Increase DOSBox-X's emulation CPU cycles.
+* **F11+-**  
+Decrease DOSBox-X's emulation CPU cycles.
+* **F11+Left**  
+Reset the emulated DOS's current CPU speed to the normal speed.
+* **F11+LCtrl+C**  
+Swap between mounted CD images.
+* **F11+LCtrl+D**  
+Swap between mounted floppy images.
+* **F11+LShift+S**  
+Take a screenshot of the current screen in PNG format.
+* **F11+LShift+V**  
+Start/Stop capturing an AVI video of the current session.
+* **F11+LShift+W**  
+Start/Stop recording a WAV audio of the current session.
+* **LAlt+Pause**  
+Start DOSBox-X's Debugger.
+* **LCtrl+F9**  
+Exit DOSBox-X.
+* **LCtrl+F10**  
+Capture the mouse for use with the emulated DOS.
+* **LCtrl+Pause**  
+Pause emulation (hit Left Ctrl+Pause again to continue).
 
 ### DOSBox-X's supported commands
 
