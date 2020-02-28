@@ -22,9 +22,11 @@ If you want to access other drives such as the C: drive, you have to make your d
 
 2. Auto-mount drives: If you are using Windows, DOSBox-X will ask if you want to give it access to your Windows drive when you try to go to a drive (e.g. C:), but that drive has not yet been mounted inside DOSBox-X. This basically makes DOSBox-X access to the same drives as in your Windows system. If you answer Y for Yes, then the whole Windows drive will be mounted and accessible within DOSBox-X. It is not recommended to mount your Windows Drive C: inside DOSBox-X because DOSBox-X will then be able to access all files and directories in your Windows Drive C:, and there is already a chance that something unexpected may happen in this case.
 
-Note that if you are using the MOUNT command method, you do not have to always type these commands. DOSBox-X has a configuration file (dosbox.conf in the current directory or in your user directory), and in this file there is an [autoexec] section. The commands present there are run each time when DOSBox-X starts, so you can use this section for the mounting.
+DOSBox-X features a configuration GUI which allows you to change its settings via its graphical interface. Similar to DOSBox, there is a configuration file (dosbox.conf in the current directory or in your user directory) where you can modify the DOSBox-X settings. But instead of editing this configuration file, you can change DOSBox-X settings directly within the DOSBox-X program. If DOSBox-X is not yet running, you can start this configuration GUI by using the command-line option -startui (or -startgui) of dosbox-x.exe program. On the other hand, if DOSBox-X is already running, you can do so by clicking on the "Configuration GUI" option from the "Main" menu in the DOSBox-X menu bar, or using the STARTGUI command from the DOS command line inside DOSBox-X.
 
-Even though DOSBox-X runs in a Windows by default, you can also change it to full-screen mode. Simply press the shortcut F11+F, and DOSBox-X will become full-screen. Alternatively, you may edit the DOSBox-X configuration file and change the option fullscreen=false to fullscreen=true under the [sdl] section. To get back from fullscreen mode, simply press the shortcut F11+F again.
+For example, if you are using the MOUNT command method to mount your host drives/directories as DOSBox-X's drives, you do not have to always type these commands. Instead, you can put these commands in the "autoexec" section of the DOSBox-X configuration interface, and then save them. These correspond to the [autoexec] section of DOSBox-X's configuration file. The commands present there are run each time when DOSBox-X starts, so you can use this section for the mounting.
+
+Even though DOSBox-X runs in a Windows by default, you can also change it to full-screen mode. Simply press the shortcut F11+F, and DOSBox-X will become full-screen. Alternatively, you may modify this setting in the Sdl section of the DOSBox-X configuration interface (or change the option fullscreen=false to fullscreen=true under the [sdl] section of DOSBox-X's configuration file). To get back from fullscreen mode, simply press the shortcut F11+F again.
 
 ### Functions of DOSBox-X's GUI menus
 
@@ -197,122 +199,179 @@ Exit DOSBox-X.
 * **LCtrl+F10**  
 Capture the mouse for use with the emulated DOS.
 * **LCtrl+Pause**  
-Pause emulation (hit Left Ctrl+Pause again to continue).
+Pause emulation (press again to continue).
+
+Note: LCtrl means the Left Ctrl key, LShift means the Left Shift key, and LAlt means the Left Alt key.
 
 ### DOSBox-X's supported commands
 
 Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles. 
 
 * **25/28/50**                              
-Changes the DOSBox-X screen to 25/28/50 line mode.
+Changes the DOSBox-X screen to 25/28/50 line mode.  
+Usage: Simply enter 25, 28, or 50 without any parameters.
 * **A20GATE**                               
-Turns on/off or changes the A20 gate mode.
+Turns on/off or changes the A20 gate mode.  
+Usage: A20GATE SET [off | off_fake | on | on_fake | mask | fast] or A20GATE [ON | OFF]
 * **APPEND**                              
-Enables programs to open data files in specified directories as if the files were in the current directory.
+Enables programs to open data files in specified directories as if the files were in the current directory.  
+Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]
 * **BOOT**                              
-Starts floppy hard disk images independent of the operating system emulation offered by DOSBox-X.
+Starts floppy hard disk images independent of the operating system emulation offered by DOSBox-X.  
+Usage: BOOT [diskimg1.img diskimg2.img [-l driveletter]
 * **BUFFERS**                              
-Displays or changes the CONFIG.SYS's BUFFERS setting.
+Displays or changes the CONFIG.SYS's BUFFERS setting.  
+Usage: BUFFERS [buffernum]
 * **CAPMOUSE**                              
-Captures or releases the mouse inside DOSBox-X.
+Captures or releases the mouse inside DOSBox-X.  
+Usage: CAPMOUSE [/C|/R]
 * **CD/CHDIR**                              
-Displays or changes the current directory.
+Displays or changes the current directory.  
+Usage: CD [drive:][path] or CHDIR [drive:][path]
 * **CHOICE**                              
-Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
+Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.  
+Usage: CHOICE [/C:choices] [/N] [/S] text
 * **CLS**                              
-Clears the screen of all input and returns just the current prompt in the upper left hand corner.
+Clears the screen of all input and returns just the current prompt in the upper left hand corner.  
+Usage: Simply enter CLS without any parameters.
 * **COMMAND**                              
-Restarts DOSBox-X's command shell.
+Restarts DOSBox-X's command shell.  
+Usage: COMMAND [options]
 * **CONFIG**                              
-Starts DOSBox-X's config tool to change it settings.
+Starts DOSBox-X's config tool to change it settings.  
+Usage: CONFIG [options]
 * **COPY**                              
-Copies one or more files.
+Copies one or more files.  
+Usage: COPY source [destination]
 * **CWSDPMI**                              
-Starts CWSDPMI - a 32-bit DPMI server used by various DOS games/applications.
+Starts CWSDPMI - a 32-bit DPMI server used by various DOS games/applications.  
+Usage: CWSDPMI [options]
 * **DEBUG**                              
-The DOS DEBUG tool.
+The DOS DEBUG tool.  
+Usage: DEBUG [[drive:][path]progname [arglist]]
 * **DEL/ERASE**                              
-Removes one or more files.
+Removes one or more files.  
+Usage: DEL [/P] [/Q] names or ERASE [/P] [/Q] names
 * **DEVICE**                              
-Load device drivers as CONFIG.SYS's DEVICE command.
+Load device drivers as CONFIG.SYS's DEVICE command.  
+Usage: DEVICE [program] [options]
 * **DIR**                              
-Lists available files and sub-directories inside the current directory.
+Lists available files and sub-directories inside the current directory.  
+Usage: DIR [drive:][path][filename] [options]
 * **DOS32A**                              
-Starts DOS32A - a 32-bit DOS extender used by various DOS games/applications.
+Starts DOS32A - a 32-bit DOS extender used by various DOS games/applications.  
+Usage: DOS32A executable.xxx
 * **DOS4GW**                              
-Starts DOS4GW - a 32-bit DOS extender used by various DOS games/applications.
+Starts DOS4GW - a 32-bit DOS extender used by various DOS games/applications.  
+Usage: DOS4GW executable.xxx
 * **DOSIDLE**                              
-Puts the DOS emulator into idle mode for lower CPU usages.
+Puts the DOS emulator into idle mode for lower CPU usages.    
+Usage: Simply enter DOSIDLE without any parameters.
 * **DSXMENU**                              
-Runs DOSLIB's DSXMENU tool.
+Runs DOSLIB's DSXMENU tool.  
+Usage: DSXMENU INI_file
 * **EDIT**                              
-Starts the full-screen file editor.
+Starts the full-screen file editor.  
+Usage: EDIT [/B] [/I] [/H] [/R] [file(s)]
 * **EXIT**                              
-Exits from the batch file or DOSBox-X.
+Exits from the batch file or DOSBox-X.  
+Usage: Simply enter EXIT without any parameters.
 * **FCBS**                              
-Displays or changes the CONFIG.SYS's FCBS setting.
+Displays or changes the CONFIG.SYS's FCBS setting.  
+Usage: FCBS [fcbnum]
 * **FIND**                              
-Prints lines of a file that contains the specified string.
+Prints lines of a file that contains the specified string.  
+Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]
 * **HEXMEM16/HEXMEM32**                              
-Starts DOSLIB's HEXMEM tool - a memory viewer/dumper.
+Starts DOSLIB's HEXMEM tool - a memory viewer/dumper.  
+Usage: HEXMEM16 [options] or HEXMEM32 [options]
 * **IMGMAKE**                              
-Makes floppy drive or hard-disk images.
+Makes floppy drive or hard-disk images.  
+Usage: IMGMAKE file [-t type] [-size size|-chs geometry] [-nofs] [-source source] [-r retries] [-bat]
 * **IMGMOUNT**                              
-Mount drives from floppy drive, hard-disk, or CD images.
+Mount drives from floppy drive, hard-disk, or CD images.  
+Usage: IMGMOUNT drive filename [options] or IMGMOUNT -u drive|driveLocation
 * **INTRO**                              
-A full-screen DOSBox introduction.
+A full-screen introduction.  
+Usage: Simply enter INTRO without any parameters.
 * **KEYB**                              
-Changes the layout of the keyboard used for different countries.
+Changes the layout of the keyboard used for different countries.  
+Usage: KEYB [keyboard layout ID [codepage number [codepage file]]]
 * **LABEL**                              
-Changes the label of a drive.
+Changes the label of a drive.   
+Usage: LABEL [drive:][label]
 * **LASTDRIV**                              
 Displays or changes the CONFIG.SYS's LASTDRIVE setting.
+Usage: LASTDRIV [driveletter]
 * **LOADFIX**                              
-Loads a program above the first 64K of memory.
+Loads a program above the first 64K of memory.  
+Usage: LOADFIX [program] [options]
 * **LOADROM**                              
-Loads the specified ROM file.
+Loads the specified ROM file.  
+Usage: LOADROM ROM_file
 * **LH/LOADHIGH**                              
-Loads a program into upper memory (if UMB is available).
+Loads a program into upper memory (if UMB is available).  
+Usage: LH [program] [options] or Usage: LOADHIGH [program] [options]
 * **MD/MKDIR**                              
-Makes a directory.
+Makes a directory.  
+Usage: MD [drive:][path] or MKDIR [drive:][path]
 * **MEM**                              
-Displays the status of the DOS memory, such as the amount of free memory.
+Displays the status of the DOS memory, such as the amount of free memory.  
+Usage: MEM [options]
 * **MIXER**                              
-Displays current sound levels.
+Displays current sound levels.  
+Usage: Simply enter MIXER without any parameters.
 * **MODE**                              
-Configures DOS system devices.
+Configures DOS system devices.  
+Usage: MODE display-type or MODE CON RATE=r DELAY=d
 * **MOUNT**                              
-Mounts folders or CD drives.
+Mounts folders or CD drives.  
+Usage: MOUNT driveletter host_directory
 * **MOUSE**                              
-Turns on/off mouse support.
+Turns on/off mouse support.  
+Usage: MOUSE [/U] [/V]
 * **MOVE**                              
-Moves a file or directory to another location.
+Moves a file or directory to another location.  
+Usage: MOVE [/Y | /-Y] source1[, source2[,...]] destination
 * **NMITEST**                              
-Runs the NMI testing tool.
+Runs the NMI testing tool.  
+Usage: NMITEST [options]
 * **RD/RMDIR**                              
-Removes a directory.
+Removes a directory.  
+Usage: RD [drive:][path] or RMDIR [drive:][path]
 * **RE-DOS**                              
-Re-enters to DOSBox-X.
-* **REN**                              
-Renames one or more files.
+Re-enters to DOSBox-X.  
+Usage: Simply enter RE-DOS without any parameters.
+* **REN/RENAME**                              
+Renames one or more files.  
+Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 filename2
 * **RESCAN**                              
-Refreshes mounted drives by clearing their caches. 
+Refreshes mounted drives by clearing their caches.  
+Usage: Simply enter RESCAN without any parameters.
 * **SET**                              
-Displays and sets environment variables.
+Displays and sets environment variables.  
+Usage: SET [variable=[string]]
 * **SHOWGUI**                              
-Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.
+Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.  
+Usage: Simply enter SHOWGUI without any parameters.
 * **TREE**                              
-Graphically displays the directory structure of a drive or path.
+Graphically displays the directory structure of a drive or path.  
+Usage: TREE [drive:][path] [/F] [/A]
 * **TYPE**                              
-Displays the contents of a text-file.
+Displays the contents of a text-file.  
+Usage: TYPE [drive:][path][filename]
 * **VER**                              
-Views and sets the reported DOS version. Also displays the running DOSBox-X version.
+Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
+Usage: VER [SET major minor]
 * **VESAMOED**                              
-Runs the VESA BIOS mode editor utility.
+Runs the VESA BIOS mode editor utility.  
+Usage: VESAMOED [options]
 * **VFRCRATE**                              
-Runs the Video refresh rate tool.
+Runs the Video refresh rate tool.  
+Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]
 * **XCOPY**                              
-Copies files and directory trees.
+Copies files and directory trees.  
+Usage: XCOPY source [destination] [options]
 
 ### DOSBox-X's command-line options
 
