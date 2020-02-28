@@ -12,7 +12,7 @@ Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on ac
 Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC-DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X. 
 
 ### DOSBox-X's Feature Highlights
-Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. For example:
+Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 * GUI menu bar and configuration tool  
 * Built-in debugger and logging options 
 * NEC PC-98 support  
@@ -509,7 +509,7 @@ Forces synchronization of date with the host system.
 * **-debug**                                  
 Sets all logging levels to debug.
 * **-early-debug**                            
-Logs early initialization messages in DOSBox (this option implies -console).
+Logs early initialization messages in DOSBox-X (this option implies -console).
 * **-keydbg**                                 
 Logs all SDL key events (debugging).
 * **-lang [message file]**                    
@@ -545,3 +545,6 @@ DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**  
 DOS is short for "**D**isk **O**perating **S**ystem". It refers to the series of operating systems that dominated the IBM PC compatible market in the 1980s and the 1990s. Early versions of Microsoft Windows (1.0-3.x, as well as 9X/ME) are also largely DOS-based. The relevant systems were usually called "X DOS", "X-DOS" or "XDOS" with the X being the brand name (e.g. PC DOS, DR-DOS, and FreeDOS respectively). Despite common usage, none of them were actually called just DOS. Microsoft's system, MS-DOS, was the most-widely used among these operating systems.
+
+* **What is DOSBox-X's release pattern?**  
+Currently, new DOSBox-X versions are made public at the start of each month, including the source code and binary releases. Then the DOSBox-X developments will be re-opened for new features, pull requests, etc. There will be no new features added 6 days before the end of the month, but only bug fixes. The last day of the month is DOSBox-X's build day to compile for binary releases the first of the next month, so there will be no source code changes on this day including pull requests or bug fixes. This is DOSBox-X's official release pattern, although it may change later.
