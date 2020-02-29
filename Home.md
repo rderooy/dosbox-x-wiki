@@ -27,8 +27,8 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for ROM BIOS images
 * Support for printer output  
-* Support for vertical sync (VSync)  
-* Support for Direct3D with pixelshaders (Windows only)  
+* Support for vertical sync (V-Sync)  
+* Support for Direct3D with pixel shaders (Windows only)  
 * Support for OpenglHQ  
 * Support for Innovation SSI-2001 emulation  
 * Support for 3dfx Glide and Voodoo chip emulation 
@@ -37,11 +37,11 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for features such as overscan border and stereo swapping  
 * Various patches such as font, DBCS and Ctrl-Break patch
 
-Note: Some features such as support for saving/loading states and running ROM BIOS images are currently experimental. For example, at this time the ROM BIOS image loading feature will only work for custom code and assembly experiments.
+Note: Some features such as support for saving/loading states and running ROM BIOS images are currently experimental.
 
 ### Running and Configuring DOSBox-X
 
-After you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\\> or A:\\> as the DOS prompt when it finishes booting, at the beginning you will get a Z:\\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS Compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the **DOSBox-X's Supported Commands** section below for more information about them.
+After you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\\> or A:\\> as the DOS prompt when it finishes booting, at the beginning you will get a Z:\\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the **DOSBox-X's Supported Commands** section below for more information about them.
 
 If you want to access other drives such as the C: drive, you have to make your directories available as drives in DOSBox-X.  There are two ways to do this:
 
@@ -63,7 +63,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **1. The "Main" menu**
 
-* **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press ESC three times to exit the editor.
+* **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press the Esc key three times to exit the editor.
 
 * **Configuration GUI**: Enters the configuration GUI dialog for reviewing or changing DOSBox-X settings.
 
@@ -75,7 +75,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Debugger**: Starts the DOSBox-X Debugger.
 
-* **Show console**: Shows the DOSBox-X console window.
+* **Show console**: Shows the DOSBox-X console window. You will see debugging information in the console.
 
 * **Capture mouse**: DOSBox-X will capture the mouse immediately for use with the emulated DOS.
 
@@ -83,7 +83,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
 
-* **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. The emulated DOS is not fully paused in this case.
+* **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. This allows certain DOS functions to continue to work. For example, if you are running Demoscene games and use this function, then the game itself will be paused but the game music may continue to play. It is also a good way to hear the entire music in a Demoscene production when the demo exits long before the music has time to loop.
 
 * **Reset guest system**: Restarts the emulated DOS inside DOSBox-X.
 
@@ -93,17 +93,17 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Turbo (Fast Forward)**: Increases the emulated DOS's current CPU speed to 200%-300% of the normal speed.
 
-* **Normal speed**: Resets the emulated DOS's current CPU speed to the normal speed.
+* **Normal speed**: Restores the emulated DOS's current speed relative to real-time to the normal speed.
 
-* **Speed up**: Slightly increases the emulated DOS's current CPU speed.
+* **Speed up**: Increases the emulated DOS's current speed relative to real-time. You can speed up the emulation with this if you want to play a game at greater than 100% normal speed.
 
-* **Speed down**: Slightly decreases the emulated DOS's current CPU speed.
+* **Speed down**: Decreases the emulated DOS's current speed relative to real-time. You can slow down the emulation with this if you want to play a game at less than 100% normal speed.
 
-* **Increment cycles**: Increases the amount of instructions DOSBox-X tries to emulate each millisecond.
+* **Increment cycles**: Increases the amount of CPU instructions DOSBox-X tries to emulate each millisecond.
 
-* **Decrement cycles**: Decreases the amount of instructions DOSBox-X tries to emulate each millisecond.
+* **Decrement cycles**: Decreases the amount of CPU instructions DOSBox-X tries to emulate each millisecond.
 
-* **Edit cycles**: Sets the amount of instructions DOSBox-X tries to emulate each millisecond to a specific value.
+* **Edit cycles**: Sets the amount of CPU instructions DOSBox-X tries to emulate each millisecond to a specific value.
 
 * **CPU core**: Selects the emulated DOS's CPU core - normal, full, simple, dynamic, or auto.
 
@@ -113,7 +113,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Fit to aspect ratio**: Select whether to fit DOSBox-X's emulated DOS screen to the aspect ratio (width-to-height ratio) correction mode.
 
-* **Toggle fullscreen**: Toggles the fullscreen mode of DOSBox-X's emulated DOS screen.
+* **Toggle fullscreen**: Toggles the full-screen mode of DOSBox-X's emulated DOS screen.
 
 * **Always on top**: Select whether the DOSBox-X window will always be the topmost one.
 
@@ -123,9 +123,9 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Reset window size**: Resets the DOSBox-X window to the default size.
 
-* **Frameskip**: Changes the frameskip setting, i.e. how many frames DOSBox-X skips before drawing one.
+* **Frameskip**: Changes the frameskip setting, i.e. how many frames DOSBox-X skips before drawing one, from 0 to 10.
 
-* **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
+* **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fit a scaler in the resolution used at full screen may require a border or side bars. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
 
 * **Scaler**: Selects a scaler used to enlarge/enhance low resolution modes.
 
@@ -141,7 +141,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Debug**: Enables video debugging functions, such as blank screen refresh tests.
 
-* **Select pixel shader...**: Selects a video pixel shader file for use with DOSBox-X.
+* **Select pixel shader...**: Selects a Direct3D pixel shader file for use with DOSBox-X in Windows. In case the shader fails to load, there is no visual indication but it will be written to the log file. If you want more immediate feedback on success or failure, use the menu to show the DOSBox-X console which will also show the reason for the shader failure. 
 
 **4. The "Sound" menu**
 
@@ -189,37 +189,37 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 You can use these special keys to achieve certain functions in DOSBox-X, such as switching between the window and full-screen modes. These shortcuts are different from the ones in DOSBox.
 
-* **F11+F**  
+* **[F11/F12]+F**  
 Switch to full-screen mode and back.
-* **F11+R**  
+* **[F11/F12]+R**  
 Restart the emulated DOS inside DOSBox-X.
-* **F11+M**  
+* **[F11/F12]+M**  
 Start DOSBox-X's keyboard mapper.
-* **F11+Esc**  
+* **[F11/F12]+Esc**  
 Show/hide the GUI menu bar.
-* **F11+[+]**  
+* **[F11/F12]+{+}**  
 Increase the sound volume of DOSBox-X's emulated DOS.
-* **F11+[-]**  
+* **[F11/F12]+{-}**  
 Decrease the sound volume of DOSBox-X's emulated DOS.
-* **F11+]**  
-Slightly increases the emulated DOS's current CPU speed.
-* **F11+[**  
-Slightly decreases the emulated DOS's current CPU speed.
-* **F11+=**  
+* **[F11/F12]+]**  
+Increases the emulated DOS's current speed relative to real-time.
+* **[F11/F12]+[**  
+Decreases the emulated DOS's current speed relative to real-time.
+* **[F11/F12]+{=}**  
 Increase DOSBox-X's emulation CPU cycles.
-* **F11+-**  
+* **[F11/F12]+{-}**  
 Decrease DOSBox-X's emulation CPU cycles.
-* **F11+Left**  
+* **[F11/F12]+Left**  
 Reset the emulated DOS's current CPU speed to the normal speed.
-* **F11+LCtrl+C**  
+* **[F11/F12]+LCtrl+C**  
 Swap between mounted CD images.
-* **F11+LCtrl+D**  
+* **[F11/F12]+LCtrl+D**  
 Swap between mounted floppy images.
-* **F11+LShift+S**  
+* **[F11/F12]+LShift+S**  
 Take a screenshot of the current screen in PNG format.
-* **F11+LShift+V**  
+* **[F11/F12]+LShift+V**  
 Start/Stop capturing an AVI video of the current session.
-* **F11+LShift+W**  
+* **[F11/F12]+LShift+W**  
 Start/Stop recording a WAV audio of the current session.
 * **LAlt+Pause**  
 Start DOSBox-X's Debugger.
@@ -230,11 +230,15 @@ Capture the mouse for use with the emulated DOS.
 * **LCtrl+Pause**  
 Pause emulation (press again to continue).
 
-Note: LCtrl means the Left Ctrl key, LShift means the Left Shift key, and LAlt means the Left Alt key.
+Note:
+
+* **1.** **[F11/F12]** is the host key, meaning either F11 or F12 (depending on the operating system). F11 is the host key in Windows, and F12 is the host key in all other platforms (Linux, macOS, etc). The F12 key is avoided being the host key in Windows because it is used internally by Windows for debugging functions. The host key can be redefined in DOSBox-X's keyboard mapper as needed, if you want to use a different key than F11 or F12.
+
+* **2:** **LCtrl** means the Left Ctrl key, **LShift** means the Left Shift key, and **LAlt** means the Left Alt key.
 
 ### DOSBox-X's Supported Commands
 
-Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles. 
+Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles.
 
 * **25/28/50** (external command)                             
 Changes the DOSBox-X screen to 25/28/50 line mode.  
@@ -247,10 +251,12 @@ Generates artificial keypresses.
 Usage: ADDKEY key
 * **APPEND** (external command)                             
 Enables programs to open data files in specified directories as if the files were in the current directory.  
-Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]
+Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]  
+Note: It uses the APPEND command from FreeDOS.
 * **BOOT** (external command)                             
 Starts disk or BIOS images independent of the operating system emulation offered by DOSBox-X.  
-Usage: BOOT [diskimg1.img diskimg2.img [-l driveletter] [-bios image]
+Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] [-bios image]  
+Note: Loading a BIOS image is currently experimental - at this time it will only work for custom code and assembly experiments.
 * **BUFFERS** (external command)                              
 Displays or changes the CONFIG.SYS's BUFFERS setting.  
 Usage: BUFFERS [buffernum]
@@ -282,7 +288,7 @@ Usage: COPY source [destination]
 Changes the standard I/O device.  
 Usage: CTTY device
 * **CWSDPMI** (external command)                               
-Starts CWSDPMI - a 32-bit DPMI server used by various DOS games/applications.  
+Starts CWSDPMI, a 32-bit DPMI server used by various DOS games/applications.  
 Usage: CWSDPMI [options]
 * **DATE** (internal command)                               
 Displays or changes the internal date.  
@@ -300,26 +306,28 @@ Usage: DEVICE [program] [options]
 Lists available files and sub-directories inside the current directory.  
 Usage: DIR [drive:][path][filename] [options]
 * **DOS32A** (external command)                               
-Starts DOS32A - a 32-bit DOS extender used by various DOS games/applications.  
+Starts DOS32A, a 32-bit DOS extender used by various DOS games/applications.  
 Usage: DOS32A executable.xxx
 * **DOS4GW** (external command)                               
-Starts DOS4GW - a 32-bit DOS extender used by various DOS games/applications.  
+Starts DOS4GW, a 32-bit DOS extender used by various DOS games/applications.  
 Usage: DOS4GW executable.xxx
 * **DOSIDLE** (external command)                               
 Puts the DOS emulator into idle mode for lower CPU usages.    
 Usage: Simply enter DOSIDLE without any parameters.
 * **DSXMENU** (external command)                               
-Runs DOSLIB's DSXMENU tool.  
-Usage: DSXMENU INI_file
+Runs DOSLIB's DSXMENU tool, a simple DOS menu system.  
+Usage: DSXMENU [-d] INI_file
 * **DX-CAPTURE** (internal command)                               
-Starts capture, runs program, stops capture when program exits.  
-Usage: DX-CAPTURE [command] [options]
+Starts capture (AVI, WAV, etc. as specified), runs program, then automatically stops capture when the program exits.  
+Usage: DX-CAPTURE [command] [options]  
+Note: This built-in command name is deliberately longer than 8 characters so that there is no conflict with external .COM/.EXE executables that are limited to 8.3 filenames. It can be used for example to make Demoscene captures and to make sure the capture stops when it exits.
 * **ECHO** (internal command)                               
 Displays messages and enable/disable command echoing.  
 Usage: ECHO [message] or ECHO [ON | OFF]
 * **EDIT** (external command)                               
 Starts the full-screen file editor.  
-Usage: EDIT [/B] [/I] [/H] [/R] [file(s)]
+Usage: EDIT [/B] [/I] [/H] [/R] [file(s)]  
+Note: It uses the EDIT command from FreeDOS.
 * **EXIT** (internal command)                               
 Exits from the batch file or DOSBox-X.  
 Usage: Simply enter EXIT without any parameters.
@@ -328,7 +336,8 @@ Displays or changes the CONFIG.SYS's FCBS setting.
 Usage: FCBS [fcbnum]
 * **FIND** (external command)                               
 Prints lines of a file that contains the specified string.  
-Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]
+Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]  
+Note: Note: It uses the FIND command from FreeDOS.
 * **GOTO** (internal command)                               
 Jumps to a labeled line in a batch script.  
 Usage: GOTO label
@@ -336,7 +345,7 @@ Usage: GOTO label
 Shows command help.  
 Usage: HELP [/all]
 * **HEXMEM16/HEXMEM32** (external command)                               
-Starts DOSLIB's HEXMEM tool - a memory viewer/dumper.  
+Runs DOSLIB's HEXMEM tool, a memory viewer/dumper.  
 Usage: HEXMEM16 [options] or HEXMEM32 [options]
 * **IF** (internal command)                               
 Performs conditional processing in batch programs.  
@@ -363,7 +372,7 @@ Usage: LASTDRIV [driveletter]
 Loads a program above the first 64K of memory.  
 Usage: LOADFIX [program] [options]
 * **LOADROM** (external command)                               
-Loads the specified ROM BIOS image file.  
+Loads the specified Video BIOS ROM image file.  
 Usage: LOADROM ROM_file
 * **LH/LOADHIGH** (internal command)                               
 Loads a program into upper memory (if UMB is available).  
@@ -373,7 +382,8 @@ Makes a directory.
 Usage: MD [drive:][path] or MKDIR [drive:][path]
 * **MEM** (external command)                               
 Displays the status of the DOS memory, such as the amount of free memory.  
-Usage: MEM [options]
+Usage: MEM [options]  
+Note: It uses the MEM command from FreeDOS.
 * **MIXER** (external command)                               
 Displays current sound levels.  
 Usage: Simply enter MIXER without any parameters.
@@ -391,7 +401,8 @@ Turns on/off mouse support.
 Usage: MOUSE [/U] [/V]
 * **MOVE** (external command)                               
 Moves a file or directory to another location.  
-Usage: MOVE [/Y | /-Y] source1[, source2[,...]] destination
+Usage: MOVE [/Y | /-Y] source1[, source2[,...]] destination  
+Note: It uses the MOVE command from FreeDOS.
 * **NMITEST** (external command)                               
 Runs the NMI testing tool.  
 Usage: NMITEST [options]
@@ -402,7 +413,7 @@ Usage: PATH [drive:]path[;...][;PATH] or PATH ;
 Waits for a keystroke to continue.  
 Usage: PAUSE [message]
 * **PROMPT** (internal command)                               
-Changes the command prompt.  
+Changes the DOS command prompt.  
 Usage: PROMPT [text]
 * **RD/RMDIR** (internal command)                              
 Removes a directory.  
@@ -436,7 +447,8 @@ Displays the internal time.
 Usage: TIME [/T] [/H]
 * **TREE** (external command)                               
 Graphically displays the directory structure of a drive or path.  
-Usage: TREE [drive:][path] [/F] [/A]
+Usage: TREE [drive:][path] [/F] [/A]  
+Note: It uses the TREE command from FreeDOS.
 * **TYPE** (internal command)                               
 Displays the contents of a text-file.  
 Usage: TYPE [drive:][path][filename]
@@ -455,6 +467,7 @@ Usage: VOL [drive]
 * **XCOPY** (external command)                               
 Copies files and directory trees.  
 Usage: XCOPY source [destination] [options]
+Note: It uses the XCOPY from FreeDOS.
 
 ### DOSBox-X's Command-line Options
 
@@ -495,11 +508,11 @@ Starts DOSBox-X with its configuration GUI dialog, where you can review or chang
 * **-startmapper**                            
 Starts DOSBox-X and enters to the keyboard mapper editor directly.
 * **-showcycles**                             
-Show cycles count (FPS) on the DOSBox-X title bar.
+Shows cycles count (FPS) on the DOSBox-X title bar.
 * **-showrt**                                 
-Show emulation speed relative to realtime on the DOSBox-X title bar.
+Shows emulation speed relative to realtime on the DOSBox-X title bar.
 * **-fullscreen**                             
-Start DOSBox-X in full-screen mode.
+Starts DOSBox-X in full-screen mode.
 * **-savedir [path]**                         
 Uses the specified path as DOSBox-X's save path.
 * **-disable-numlock-check**                  
@@ -521,7 +534,7 @@ Enables DOSBox-X's secure mode. The [autoexec] section of the loaded configurati
 * **-noautoexec**                             
 Skips the [autoexec] section of the loaded configuration file.
 * **-exit**                                   
-Exit after executing the [autoexec] section of the loaded configuration file.
+Exits after executing the [autoexec] section of the loaded configuration file.
 * **-c [command string]**                              
 Execute this command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
 * **-break-start**                              
