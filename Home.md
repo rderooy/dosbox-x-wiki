@@ -2,11 +2,11 @@
 
 ### Introduction
 
-DOSBox-X is a cross-platform DOS emulator based on [[DOSBox|http://www.dosbox.com]]. Like DOSBox, it emulates a PC necessary for running many MS-DOS games and applications that simply cannot be run on modern PCs and operating systems. However, while the main focus of DOSBox is for running DOS games, DOSBox-X goes much further than this. As a fork of DOSBox, it retains compatibility with the wide base of DOS games and DOS gaming DOSBox was designed for. But it is also a platform for emulating DOS applications, including emulating the environments to run Windows 3.x, 95, 98 and ME and software written for those versions of Windows. DOSBox-X supports multiple operating systems such as Windows, Linux and macOS (MacOS X). Windows binaries (both 32-bit and 64-bit) are released periodically for testing. You can download them from the [[Releases|https://github.com/joncampbell123/dosbox-x/releases]] page.
+DOSBox-X is a cross-platform DOS emulator based on [[DOSBox|http://www.dosbox.com]]. Like DOSBox, it emulates a PC necessary for running many MS-DOS games and applications that simply cannot be run on modern PCs and operating systems. However, while the main focus of DOSBox is for running DOS games, DOSBox-X goes much further than this. As a fork of DOSBox, it retains compatibility with the wide base of DOS games and DOS gaming DOSBox was designed for. But it is also a platform for emulating DOS applications, including emulating the environments to run Windows 3.x, 9x and ME and software written for those versions of Windows. DOSBox-X supports multiple operating systems such as Windows, Linux and macOS (Mac OS X). Windows binaries (both 32-bit and 64-bit) are released periodically for testing. You can download them from the [[Releases|https://github.com/joncampbell123/dosbox-x/releases]] page.
 
 ### DOSBox-X's Main Focus
 
-Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 90's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
+Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 1990's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
 
 ### What DOSBox-X Can Do
 Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC-DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X. 
@@ -15,9 +15,9 @@ Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joyst
 Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 * GUI menu bar and configuration tool  
 * Built-in debugger and logging options 
+* Automatic drive mounting (Windows only) 
 * NEC PC-98 support  
-* Automatic drive mounting  
-* Save/Load states  
+* Save and load states  
 * CPU optimization and Turbo mode  
 * Improved customization on the title bar  
 * Better compatibility with DOS applications  
@@ -27,25 +27,25 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for ROM BIOS images
 * Support for printer output  
-* Support for Vertical sync (vsync)  
-* Support for Direct3D with pixelshaders  
+* Support for vertical sync (VSync)  
+* Support for Direct3D with pixelshaders (Windows only)  
 * Support for OpenglHQ  
 * Support for Innovation SSI-2001 emulation  
-* Support for 3Dfx Glide and Voodoo chip emulation 
+* Support for 3dfx Glide and Voodoo chip emulation 
 * Support for NE2000 Ethernet  
 * Support for beeping  
 * Support for features such as overscan border and stereo swapping  
 * Various patches such as font, DBCS and Ctrl-Break patch
 
-Note: Some features such as support for saving/loading states are currently experimental.
+Note: Some features such as support for saving/loading states and running ROM BIOS images are currently experimental. For example, at this time the ROM BIOS image loading feature will only work for custom code and assembly experiments.
 
 ### Running and Configuring DOSBox-X
 
-After you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\> or A:\> as the DOS prompt when it finished booting, at the beginning you will get a Z:\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS Compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the **DOSBox-X's Supported Commands** sections below for more information about them.
+After you download DOSBox-X and extract its files, the easiest way to run DOSBox-X is to start the DOSBox-X.exe program. You will see an emulated DOS command line inside the DOSBox-X window within a few seconds. Unlike MS-DOS, where you usually see either C:\\> or A:\\> as the DOS prompt when it finishes booting, at the beginning you will get a Z:\\> when DOSBox-X loads. This is because DOSBox-X automatically creates a Virtual Internal Drive called Z: which contains various utilities that make a reasonable approximation of a fully setup DOS Compatible environment. These are DOSBox-X's emulated DOS's external commands. You can check the **DOSBox-X's Supported Commands** section below for more information about them.
 
 If you want to access other drives such as the C: drive, you have to make your directories available as drives in DOSBox-X.  There are two ways to do this:
 
-1. Using the MOUNT command: This command allows you to mount your host drives/directories as DOSBox-X's drives. For example, in Windows "mount C D:\GAMES" (without quotes) will give you a C drive in DOSBox-X which points to your Windows D:\GAMES directory (that was created before). In Linux, "mount c /home/username" will give you a C drive in DOSBox-X which points to /home/username in Linux. To change to the drive mounted like above, type "C:". If everything went fine, DOSBox-X will display the prompt "C:\>". To mount your CD drives in DOSBox-X you have to specify additional options. For example, you can use the command "mount D E:\ -t cdrom" to enable CD support (including MSCDEX) in Windows.
+1. Using the MOUNT command: This command allows you to mount your host drives/directories as DOSBox-X's drives. For example, in Windows "mount C D:\GAMES" (without quotes) will give you a C drive in DOSBox-X which points to your Windows D:\GAMES directory (that was created before). In Linux, "mount c /home/username" will give you a C drive in DOSBox-X which points to /home/username in Linux. To change to the drive mounted like above, type "C:". If everything went fine, DOSBox-X will display the prompt "C:\\>". To mount your CD drives in DOSBox-X you have to specify additional options. For example, you can use the command "mount D E:\ -t cdrom" to enable CD support (including MSCDEX) in Windows.
 
 2. Auto-mount drives: If you are using Windows, DOSBox-X will ask if you want to give it access to your Windows drive when you try to go to a drive (e.g. C:), but that drive has not yet been mounted inside DOSBox-X. This basically makes DOSBox-X access to the same drives as in your Windows system. If you answer Y for Yes, then the whole Windows drive will be mounted and accessible within DOSBox-X. It is not recommended to mount your Windows Drive C: inside DOSBox-X because DOSBox-X will then be able to access all files and directories in your Windows Drive C:, and there is already a chance that something unexpected may happen in this case.
 
@@ -333,7 +333,7 @@ Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]
 Jumps to a labeled line in a batch script.  
 Usage: GOTO label
 * **HELP** (internal command)                               
-Shows help.  
+Shows command help.  
 Usage: HELP [/all]
 * **HEXMEM16/HEXMEM32** (external command)                               
 Starts DOSLIB's HEXMEM tool - a memory viewer/dumper.  
@@ -345,7 +345,7 @@ Usage: IF [NOT] ERRORLEVEL number command or IF [NOT] string1==string2 command o
 Makes floppy drive or hard-disk images.  
 Usage: IMGMAKE file [-t type] [-size size|-chs geometry] [-nofs] [-source source] [-r retries] [-bat]
 * **IMGMOUNT** (external command)                               
-Mount drives from floppy drive, hard-disk, or CD images.  
+Mounts drives from floppy drive, hard-disk, or CD images in the host system.  
 Usage: IMGMOUNT drive filename [options] or IMGMOUNT -u drive|driveLocation
 * **INTRO** (external command)                               
 A full-screen introduction.  
@@ -363,7 +363,7 @@ Usage: LASTDRIV [driveletter]
 Loads a program above the first 64K of memory.  
 Usage: LOADFIX [program] [options]
 * **LOADROM** (external command)                               
-Loads the specified ROM file.  
+Loads the specified ROM BIOS image file.  
 Usage: LOADROM ROM_file
 * **LH/LOADHIGH** (internal command)                               
 Loads a program into upper memory (if UMB is available).  
@@ -384,8 +384,8 @@ Usage: MODE display-type or MODE CON RATE=r DELAY=d
 Displays output one screen at a time.  
 Usage: MORE [filename]
 * **MOUNT** (external command)                               
-Mounts folders or CD drives.  
-Usage: MOUNT driveletter host_directory
+Mounts drives from directories or drives in the host system.  
+Usage: MOUNT driveletter host_directory [options]
 * **MOUSE** (external command)                               
 Turns on/off mouse support.  
 Usage: MOUSE [/U] [/V]
@@ -404,7 +404,7 @@ Usage: PAUSE [message]
 * **PROMPT** (internal command)                               
 Changes the command prompt.  
 Usage: PROMPT [text]
-* **RD/RMDIR**                              
+* **RD/RMDIR** (internal command)                              
 Removes a directory.  
 Usage: RD [drive:][path] or RMDIR [drive:][path]
 * **RE-DOS** (external command)                               
@@ -544,7 +544,7 @@ DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?
 
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**  
-DOS is short for "**D**isk **O**perating **S**ystem". It refers to the series of operating systems that dominated the IBM PC compatible market in the 1980s and the 1990s. Early versions of Microsoft Windows (1.0-3.x, as well as 9X/ME) are also largely DOS-based. The relevant systems were usually called "X DOS", "X-DOS" or "XDOS" with the X being the brand name (e.g. PC DOS, DR-DOS, and FreeDOS respectively). Despite common usage, none of them were actually called just DOS. Microsoft's system, MS-DOS, was the most-widely used among these operating systems.
+DOS is short for "**D**isk **O**perating **S**ystem". It refers to the series of operating systems that dominated the IBM PC compatible market in the 1980s and the 1990s. Early versions of Microsoft Windows (1.0-3.x, as well as 9x/ME) are also largely DOS-based. The relevant systems were usually called "X DOS", "X-DOS" or "XDOS" with the X being the brand name (e.g. PC DOS, DR-DOS, and FreeDOS respectively). Despite common usage, none of them were actually called just DOS. Microsoft's system, MS-DOS, was the most-widely used among these operating systems.
 
 * **What is DOSBox-X's release pattern?**  
 Currently, new DOSBox-X versions are made public at the start of each month, including the source code and binary releases. Then the DOSBox-X developments will be re-opened for new features, pull requests, etc. There will be no new features added 6 days before the end of the month, but only bug fixes. The last day of the month is DOSBox-X's build day to compile for binary releases the first of the next month, so there will be no source code changes on this day including pull requests or bug fixes. This is DOSBox-X's official release pattern, although it may change later.
