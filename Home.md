@@ -1,3 +1,6 @@
+**Note:** This content is now available from:  
+[[https://github.com/joncampbell123/dosbox-x/wiki]]
+
 **Welcome to the DOSBox-X Wiki!**
 
 ### Introduction
