@@ -9,7 +9,7 @@ DOSBox-X is a cross-platform DOS emulator based on [[DOSBox|http://www.dosbox.co
 Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 1990's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
 
 ### What DOSBox-X Can Do
-Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC-DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X. 
+Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X. 
 
 ### DOSBox-X's Feature Highlights
 Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
@@ -131,7 +131,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Output**: Selects the video system to use for output, such as Surface, Direct3D or OpenGL.
 
-* **V-Sync**: Synchronizes vsync timing to the host display. This requires calibration within DOSBox-X.
+* **V-Sync**: Synchronizes V-Sync timing to the host display. This requires calibration within DOSBox-X.
 
 * **Overscan**: Selects the width of the overscan border, from 0 to 10. This works only if the video output is set to surface.
 
@@ -230,7 +230,7 @@ Capture the mouse for use with the emulated DOS.
 * **LCtrl+Pause**  
 Pause emulation (press again to continue).
 
-Note:
+Notes:
 
 * **1.** **[F11/F12]** is the host key, meaning either F11 or F12 (depending on the operating system). F11 is the host key in Windows, and F12 is the host key in all other platforms (Linux, macOS, etc). The F12 key is avoided being the host key in Windows because it is used internally by Windows for debugging functions. The host key can be redefined in DOSBox-X's keyboard mapper as needed, if you want to use a different key than F11 or F12.
 
@@ -294,7 +294,7 @@ Usage: CWSDPMI [options]
 Displays or changes the internal date.  
 Usage: DATE [ [/T] [/H] [/S] | MM-DD-YYYY ]
 * **DEBUG** (external command)                               
-The DOS DEBUG tool.  
+The DOS DEBUG tool used to test and edit programs.  
 Usage: DEBUG [ [drive:][path]progname [arglist] ]
 * **DEL/ERASE** (internal command)                               
 Removes one or more files.  
@@ -316,7 +316,8 @@ Puts the DOS emulator into idle mode for lower CPU usages.
 Usage: Simply enter DOSIDLE without any parameters.
 * **DSXMENU** (external command)                               
 Runs DOSLIB's DSXMENU tool, a simple DOS menu system.  
-Usage: DSXMENU [-d] INI_file
+Usage: DSXMENU [-d] INI_file  
+Note: This is an open-source tool; its source code is in the related DOSLIB project.
 * **DX-CAPTURE** (internal command)                               
 Starts capture (AVI, WAV, etc. as specified), runs program, then automatically stops capture when the program exits.  
 Usage: DX-CAPTURE [command] [options]  
@@ -337,7 +338,7 @@ Usage: FCBS [fcbnum]
 * **FIND** (external command)                               
 Prints lines of a file that contains the specified string.  
 Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]  
-Note: Note: It uses the FIND command from FreeDOS.
+Note: It uses the FIND command from FreeDOS.
 * **GOTO** (internal command)                               
 Jumps to a labeled line in a batch script.  
 Usage: GOTO label
@@ -346,7 +347,8 @@ Shows command help.
 Usage: HELP [/all]
 * **HEXMEM16/HEXMEM32** (external command)                               
 Runs DOSLIB's HEXMEM tool, a memory viewer/dumper.  
-Usage: HEXMEM16 [options] or HEXMEM32 [options]
+Usage: HEXMEM16 [options] or HEXMEM32 [options]  
+Note: Included in the related DOSLIB project, this open-source tool was specifically written as a way to poke around the addressable memory available to the CPU and to show how a 16-bit DOS program can access extended memory, including flat real mode, and the 286 reset vector trick for 286 systems. There is also code to access memory above 4GB if the CPU supports 64-bit long mode or the PAE page table extensions, none of which is supported by DOSBox-X but useful on real hardware.
 * **IF** (internal command)                               
 Performs conditional processing in batch programs.  
 Usage: IF [NOT] ERRORLEVEL number command or IF [NOT] string1==string2 command or IF [NOT] EXIST filename command
@@ -395,7 +397,8 @@ Displays output one screen at a time.
 Usage: MORE [filename]
 * **MOUNT** (external command)                               
 Mounts drives from directories or drives in the host system.  
-Usage: MOUNT driveletter host_directory [options]
+Usage: MOUNT driveletter host_directory [options]  
+Note: It accepts a -nocachedir option to not cache the drive, so that the RESCAN command is not needed and DIR will always show the most recent contents on this drive.
 * **MOUSE** (external command)                               
 Turns on/off mouse support.  
 Usage: MOUSE [/U] [/V]
@@ -404,8 +407,9 @@ Moves a file or directory to another location.
 Usage: MOVE [/Y | /-Y] source1[, source2[,...]] destination  
 Note: It uses the MOVE command from FreeDOS.
 * **NMITEST** (external command)                               
-Runs the NMI testing tool.  
-Usage: NMITEST [options]
+Generates a non-maskable interrupt (NMI).  
+Usage: NMITEST [options]  
+Note: This is a debugging tool to test that it and the interrupt handler work properly. Currently the only use of the NMI is PCjr emulation which receives an NMI every time a key is pressed on the keyboard.
 * **PATH** (internal command)                               
 Displays/Sets a search patch for executable files.  
 Usage: PATH [drive:]path[;...][;PATH] or PATH ;
@@ -418,8 +422,8 @@ Usage: PROMPT [text]
 * **RD/RMDIR** (internal command)                              
 Removes a directory.  
 Usage: RD [drive:][path] or RMDIR [drive:][path]
-* **RE-DOS** (external command)                               
-Re-enters to DOSBox-X.  
+* **RE-DOS** (external command) 
+Sends a signal to re-boot the kernel of the emulated DOS, without rebooting DOSBox-X.  
 Usage: Simply enter RE-DOS without any parameters.
 * **REM** (internal command)                               
 Adds comments in a batch file.  
@@ -456,18 +460,20 @@ Usage: TYPE [drive:][path][filename]
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
 Usage: VER [SET major minor]
 * **VESAMOED** (external command)                               
-Runs the VESA BIOS mode editor utility.  
-Usage: VESAMOED [options]
+Runs the VESA BIOS mode editor utility, which can be used to add, modify or delete VESA BIOS modes.  
+Usage: VESAMOED [options]  
+Note: It was originally written because some old DOS games or demoscene productions, especially those shipped with a UNIVBE binary, assumed video mode numbers instead of enumerating like they should. It can also be used to rearrange VESA BIOS modes for retro developers who want to make sure their code works properly no matter what strange VESA BIOS their code runs into on real hardware. Because of limitations in DOSBox-X SVGA emulation and the render scaler architecture, the maximum resolution possible resolution is 1920x1440.
 * **VFRCRATE** (external command)                               
-Runs the Video refresh rate tool.  
-Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]
+Forces video emulation to a specific refresh rate (or turn off the forced rate).  
+Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]  
+Note: It was originally written to run demoscene games at 59.94Hz (NTSC) so that no frame blending is needed to author to DVD. It can also be used for development and testing to simulate a PC whose refresh rate is locked in hardware, such as what happens when running a DOS program on laptops. Even though standard VGA is 60Hz or 70Hz, laptops will lock the refresh rate to 60Hz when sending video to the internal display.
 * **VOL** (internal command)                               
 Displays the disk volume label and serial number, if they exist.  
 Usage: VOL [drive]
 * **XCOPY** (external command)                               
 Copies files and directory trees.  
-Usage: XCOPY source [destination] [options]
-Note: It uses the XCOPY from FreeDOS.
+Usage: XCOPY source [destination] [options]  
+Note: It uses the XCOPY command from FreeDOS.
 
 ### DOSBox-X's Command-line Options
 
