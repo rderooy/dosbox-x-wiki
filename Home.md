@@ -557,9 +557,10 @@ We are making efforts to ensure that most DOS games and applications will run in
 
 DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html
 
-* [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
-* [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
-* [[Guide: Windows in DOSBox|Guide:Windows]]  
+* [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]
+* [[Guide: MS-DOS games|Guide:MS-DOS:games]]
+* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:MS-DOS]]
+* [[Guide: Windows in DOSBox|Guide:Windows]]
 
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**  
