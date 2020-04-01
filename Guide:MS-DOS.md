@@ -46,7 +46,7 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - First version to support LBA for HDDs up to 128GB (Windows 98 and 98SE only)
 
 ### DOS editions
-MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were often 'personalized' to the manufacturer, and therefore it is possible that these older OEM specific editions don't work in DOSBox-X. An example is the Tandy licensed version of MS-DOS, which will not work unless you set ``machine=tandy``.
+MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were often 'personalised' to the manufacturer, and therefore it is possible that these older OEM specific editions don't work in DOSBox-X. An example is the Tandy licensed version of MS-DOS, which will not work unless you set ``machine=tandy``.
 
 ## Booting DOS from disks
 Booting DOS from a disk image is pretty straight forward. Start DOSBox-X and you should find yourself at the DOSBox-X ``Z:\>`` prompt. This is not real DOS, but a 'simulated' DOS that is compatible with most DOS games and applications. Now type something equivalent to
@@ -64,8 +64,8 @@ First you start DOSBox-X and create an empty HDD image file. Note that due to DO
 
 <i>Note:</i> Supposedly the maximum size is 32MB, but anything larger than 31 will fail to boot, this may be a DOSBox-X issue.
 
-<i>Note 2:</i> If you specify a size smaller then 31MB for the IMGMAKE command, pay close attention to the output of IMGMAKE as you will need to adjust the IMGMOUNT size parameter values accordingly.
-The IMGMOUNT size parameter should have the format of: ``512,<sectors>,<heads>,<cylinders>``.
+<i>Note 2:</i> If you specify a size smaller then 31MB for the ``IMGMAKE`` command, pay close attention to the output of ``IMGMAKE`` as you will need to adjust the IMGMOUNT size parameter values accordingly.
+The ``IMGMOUNT`` size parameter should have the format of: ``512,<sectors>,<heads>,<cylinders>``.
 ```
  IMGMAKE hdd.img -t hd -size 31 -nofs
  IMGMOUNT 2 hdd.img -t hdd -size 512,32,2,992 -fs none
@@ -92,7 +92,7 @@ After it is finished, press any key and DOS will reboot DOSBox-X and your again 
  IMGMOUNT 2 hdd.img -t hdd -size 512,32,2,992 -fs none
  BOOT dos.img
 ```
-You have now again booted from the disk image, and are ready to format the C: and transfer the system files.
+You have now again booted from the disk image, and are ready to ``FORMAT`` the C: and transfer the system files.
 ```
  FORMAT C: /S
 ```
@@ -112,7 +112,7 @@ Our setup is now complete and all that is left is how to boot the image normally
 IMGMOUNT C hdd.img -size 512,32,2,992
 BOOT -L C
 ```
-You probably don't want to memorize those last two commands, so do yourself a favour and create yourself a DOSBox-X .conf file and place those commands in the [autoexec] section of that config file.
+You probably don't want to memorise those last two commands, so do yourself a favour and create yourself a DOSBox-X .conf file and place those commands in the [autoexec] section of that config file.
 
 <i>Note:</i> You may notice that instead of using "2", we are now using "C". This is because the image is now partitioned and formatted and DOSBox is able to find the partition within it. The advantage of being able to address it as "C" is that you can access the files inside the HDD image from the DOSBox-X integrated DOS, making it easier to transfer files.
 
@@ -138,7 +138,7 @@ BOOT -L C
 TBD...
 
 ## Creating a MS-DOS 4.0x HDD image
-First of all, consider if you really, really want to use MS-DOS 4.x as it was considered a very buggy release. If you decide to continue, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required.
+First of all, consider if you really, really want to use MS-DOS 4.x as it was considered a very buggy release. If you decide to continue, and you have the choice, do yourself a favour and use the 3.5" version as it will minimise the amount of disk swapping required.
 
 MS-DOS 4.0x on 5.25" media consists of the following six disks
  - Install
@@ -157,7 +157,7 @@ OEM versions could have additional disks such as a Diagnostic disk.
 
 Starting with MS-DOS 4 the process to create a HDD image with DOSBox-X, should be easier. But unfortunately there is some kind of compatibility issue between DOSBox-X and the MS-DOS 4.0x installer. If you let DOSBox-X create a image that is already partitioned and formatted the MS-DOS 4.0x installer will not offer the option to install to the HDD.
 
-In these examples we still use a 32MB HDD. MS-DOS 4.0x supports HDDs up to 4,095MB split into two partitions of 2,047MB and 2,048MB respectively. Since DOSBox-X supports only HDD images with primary partitions, 2,047MB should be our effective maximum HDD size, but through testing it was found that the FORMAT command supplied with MS-DOS 4.0x cannot handle drives larger than 2,019MB. Larger values will result in format immediately exiting with a "Divide overflow" error.
+In these examples we still use a 32MB HDD. MS-DOS 4.0x supports HDDs up to 4,095MB split into two partitions of 2,047MB and 2,048MB respectively. Since DOSBox-X supports only HDD images with primary partitions, 2,047MB should be our effective maximum HDD size, but through testing it was found that the ``FORMAT`` command supplied with MS-DOS 4.0x cannot handle drives larger than 2,019MB. Larger values will result in format immediately exiting with a "Divide overflow" error.
 
 ### Bare-bones install
 If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer.
@@ -207,6 +207,10 @@ BOOT SETUP.IMG
 ```
 You can now FORMAT the C: drive with the /S switch to transfer the system files.
 
+```
+ FORMAT C: /S
+```
+
 <img src="images/MS-DOS:MS-DOS_4.01_FORMAT.png" width="640" height="400" alt="MS-DOS 4.01 FORMAT"><br>
 
 The HDD image is now bootable and you can optionally copy some of the DOS utilities from the diskette to the HDD and create your ``CONFIG.SYS`` and ``AUTOEXEC.BAT``.
@@ -224,7 +228,7 @@ You first need to create a HDD disk image without partition and filesystem and m
 If you specify a different size value then 32MB for the IMGMAKE command, pay close attention to the output of IMGMAKE as you will need to adjust the IMGMOUNT size parameter values accordingly.
 The IMGMOUNT size parameter should be ``512,<sectors>,<heads>,<cylinders>``.
 
-During install, the installer will insist on a blank disk to be labelled "SELECT COPY". Unfortunately will it seems the installer should allow to use the B: drive for this purpose this does not seem to work in practice.
+During installation, the installer will insist on a blank disk to be labelled "SELECT COPY". Unfortunately while it seems the installer should allow the use of the B: drive for this purpose this does not seem to work in practice.
 ```
  IMGMAKE SELECT_COPY.IMG -t fd_720
  BOOT SETUP.IMG SELECT_COPY.IMG
