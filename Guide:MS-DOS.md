@@ -162,11 +162,12 @@ In these examples we still use a 32MB HDD. MS-DOS 4.0x supports HDDs up to 4,095
 ### Bare-bones install
 If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer.
 
+From the DOSBox-X ``Z:\>`` prompt, you need to create HDD image and mount it.
 ```
  IMGMAKE hdd.img -t hd -size 32 -nofs
  IMGMOUNT 2 hdd.img -fs none
 ```
-Now you need to boot from the first MS-DOS 4.0x disk, which is called either Setup or Install depending on the media type.
+Then you need to boot from the first MS-DOS 4.0x disk, which is called either Setup (3.5") or Install (5.25"), depending on the media type.
 ```
  BOOT SETUP.IMG
 ```
@@ -178,7 +179,7 @@ When at the Welcome screen (3.5" media) or prompted to insert the SELECT disk (5
 
 <img src="images/MS-DOS:MS-DOS_4.01_INSTALLER_EXIT.png" width="640" height="400" alt="MS-DOS 4.01 Installer exit screen"><br>
 
-and run the following command:
+and run the following command to partition the HDD image:
 ```
  FDISK
 ```
@@ -221,7 +222,7 @@ You first need to create a HDD disk image without partition and filesystem and m
  IMGMOUNT 2 hdd.img -t hdd -size 512,63,2,520 -fs none
 ```
 If you specify a different size value then 32MB for the IMGMAKE command, pay close attention to the output of IMGMAKE as you will need to adjust the IMGMOUNT size parameter values accordingly.
-The IMGMOUNT size parameter should be 512,<sectors>,<heads>,<cylinders>.
+The IMGMOUNT size parameter should be ``512,<sectors>,<heads>,<cylinders>``.
 
 During install, the installer will insist on a blank disk to be labelled "SELECT COPY". Unfortunately will it seems the installer should allow to use the B: drive for this purpose this does not seem to work in practice.
 ```
