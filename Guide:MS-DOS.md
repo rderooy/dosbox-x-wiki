@@ -1,5 +1,7 @@
 # PC-DOS and MS-DOS Installation Guide
 
+![dosbox test](https://upload.wikimedia.org/wikipedia/commons/d/dd/DOSBox_icon.png)
+
 This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
 
 Before going through this guide, consider if you really need this as the integrated DOS functionality in DOSBox-X is more convenient for typical use-cases. Booting regular DOS is normally not necessary to run DOS applications such as games, or even Windows version up to 3.11 in DOSBox-X. And even if you have a application that requires a specific DOS version, you can change the reported version of the integrated DOS in DOSBox-X with the ``VER`` command (e.g. ``VER SET 6 22`` will cause DOSBox-X to claim to be version 6.22, instead of the default 5.00).
