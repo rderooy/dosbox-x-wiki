@@ -54,6 +54,7 @@ Booting DOS from a disk image is pretty straight forward. Start DOSBox-X and you
  BOOT dos.img
 ```
 Assuming that dos.img is an uncompressed DOS disk image in your current working directory, it should start it. This even works for IBM PC-DOS 1.00.
+
 <img src="images/MS-DOS:PC-DOS_1.0.png" width="640" height="400" alt="Booting a PC-DOS 1.00 diskette image"><br>
 ## Creating a DOS 2.0 HDD image
 TBD...
@@ -76,6 +77,7 @@ You are now ready to boot the DOS diskette image:
  BOOT dos.img
 ```
 Assuming that your uncompressed DOS 3.0-3.2 image is named dos.img and in your current working directory, it should boot DOS from the disk image.
+
 <img src="images/MS-DOS:PC-DOS_3.2_BOOT.png" width="640" height="400"><br>
 These early DOS versions did not have an installer, so the preparation and installation is a manual process. You need to start with creating partitions.
 
@@ -110,12 +112,19 @@ Our setup is now complete and all that is left is how to boot the image normally
 IMGMOUNT C hdd.img -size 512,32,2,992
 BOOT -L C
 ```
-You probably don't want to memorize those last two commands, so do yourself a favour and create yourself a DOSBox-X .conf file and place those commands in the [Autoexec] section of that config file.
+You probably don't want to memorize those last two commands, so do yourself a favour and create yourself a DOSBox-X .conf file and place those commands in the [autoexec] section of that config file.
+
+<i>Note:</i> You may notice that instead of using "2", we are now using "C". This is because the image is now partitioned and formatted and DOSBox is able to find the partition within it. The advantage of being able to address it as "C" is that you can access the files inside the HDD image from the DOSBox-X integrated DOS, making it easier to transfer files.
+
+<i>Note 2:</i> Unfortunately we do still need to specify the drive geometry as DOSBox-X cannot autodetect it for DOS versions prior to 3.3.
+
+<img src="images/MS-DOS:PC-DOS_3.2_BOOT_HDD.png" width="640" height="400" alt="Boot PC-DOS 3.2 from HDD"><br>
 
 ## Creating a DOS 3.3 HDD image
 Creating a DOS 3.3 HDD image is nearly identical to that of DOS 3.0-3.2 above with a few small notes
 - DOSBox-X does not support creating Extended partitions
-- The maximum HDD size is now 504MB but since DOSBox-X does not support Extended partitions, you are effectively still limited to 32MB.
+- The maximum HDD size is now 504MB but since DOSBox-X does not support Extended partitions, you are effectively limited to 32MB per image.
+- DOS 3.3 does not suffer from the 31MB issue, so you can actually have a 32MB image.
 - After you have created your image, due to the newer style partition layout, which DOSBox-X can autodetect, you do not have to specify the geometry to mount the image. So your can boot from the HDD image with the following commands instead.
 
 ```
@@ -123,6 +132,7 @@ IMGMOUNT C hdd.img
 BOOT -L C
 ```
 
+<img src="images/MS-DOS:MS-DOS_3.3_BOOT_HDD.png" width="640" height="400" alt="Boot MS-DOS 3.3 from HDD"><br>
 
 ## Creating a PC-DOS 4.0 HDD image
 TBD...
@@ -147,24 +157,60 @@ OEM versions could have additional disks such as a Diagnostic disk.
 
 Starting with MS-DOS 4 the process to create a HDD image with DOSBox-X, should be easier. But unfortunately there is some kind of compatibility issue between DOSBox-X and the MS-DOS 4.0x installer. If you let DOSBox-X create a image that is already partitioned and formatted the MS-DOS 4.0x installer will not offer the option to install to the HDD.
 
-In these examples we still use a 32MB HDD. MS-DOS 4.0x supports HDDs up to 4,095MB split into two partitions of 2,047MB each. Since DOSBox-X supports only HDD images with primary partitions, 2,047MB is our effective maximum HDD size.
+In these examples we still use a 32MB HDD. MS-DOS 4.0x supports HDDs up to 4,095MB split into two partitions of 2,047MB and 2,048MB respectively. Since DOSBox-X supports only HDD images with primary partitions, 2,047MB should be our effective maximum HDD size, but through testing it was found that the FORMAT command supplied with MS-DOS 4.0x cannot handle drives larger than 2,019MB. Larger values will result in format immediately exiting with a "Divide overflow" error.
 
 ### Bare-bones install
-If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer, and you can take a shortcut.
+If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer.
 
 ```
- IMGMAKE hdd.img -t hd -size 32
- IMGMOUNT C hdd.img
+ IMGMAKE hdd.img -t hd -size 32 -nofs
+ IMGMOUNT 2 hdd.img -fs none
 ```
 Now you need to boot from the first MS-DOS 4.0x disk, which is called either Setup or Install depending on the media type.
 ```
  BOOT SETUP.IMG
 ```
-When at the Welcome screen (3.5" media) or prompted to insert the SELECT disk (5.25" media), simply press ESC instead followed by F3 to drop to the MS-DOS prompt and run the following command:
+<img src="images/MS-DOS:MS-DOS_4.01_BOOT_FDD.png" width="640" height="400" alt="Boot MS-DOS 4.01 from Disk"><br>
+
+When at the Welcome screen (3.5" media) or prompted to insert the SELECT disk (5.25" media), simply press ESC instead followed by F3 to drop to the MS-DOS prompt
+
+<img src="images/MS-DOS:MS-DOS_4.01_INSTALLER.png" width="640" height="400" alt="MS-DOS 4.01 Installer welcome screen"><br>
+
+<img src="images/MS-DOS:MS-DOS_4.01_INSTALLER_EXIT.png" width="640" height="400" alt="MS-DOS 4.01 Installer exit screen"><br>
+
+and run the following command:
 ```
- SYS C:
+ FDISK
 ```
+<img src="images/MS-DOS:MS-DOS_4.01_FDISK.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
+
+Now select option 1 to create a DOS partition
+
+<img src="images/MS-DOS:MS-DOS_4.01_FDISK2.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
+
+Followed by option 1 to create a Primary DOS Partition
+
+<img src="images/MS-DOS:MS-DOS_4.01_FDISK3.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
+
+Confirm you want to use the maximum available size
+
+<img src="images/MS-DOS:MS-DOS_4.01_FDISK4.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
+
+And finally press any key to restart, to go back to the DOSBox-X ``Z:\>`` prompt.
+
+At this point your image file is partitioned, but still needs to be formatted and made bootable. We first need to execute the exact same ``IMGMOUNT`` and ``BOOT`` commands from before.
+
+```
+IMGMOUNT 2 hdd.img -fs none
+BOOT SETUP.IMG
+```
+You can now FORMAT the C: drive with the /S switch to transfer the system files.
+
+<img src="images/MS-DOS:MS-DOS_4.01_FORMAT.png" width="640" height="400" alt="MS-DOS 4.01 FORMAT"><br>
+
 The HDD image is now bootable and you can optionally copy some of the DOS utilities from the diskette to the HDD and create your ``CONFIG.SYS`` and ``AUTOEXEC.BAT``.
+
+<img src="images/MS-DOS:MS-DOS_4.01_BOOT_HDD.png" width="640" height="400" alt="MS-DOS 4.01 HDD Boot"><br>
 
 ### Full install from 3.5" media
 First of all the MS-DOS 4.0x installer can corrupt its own installation diskettes, as such you should change the permission of the disk images in the host OS such that the image files are READ-ONLY. In turn DOSBox-X will treat them as if the disks have the write-protect set.
