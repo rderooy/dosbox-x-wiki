@@ -2,7 +2,9 @@
 
 This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
 
-Before going through this guide, consider if you really need this as the integrated DOS functionality in DOSBox-X is more convenient for typical use-cases. Booting regular DOS is normally not necessary to run DOS applications such as games, or even Windows version up to 3.11 in DOSBox-X. And even if you have a application that requires a specific DOS version, you can change the reported version of the integrated DOS in DOSBox-X with the ``VER`` command (e.g. ``VER SET 6 22`` will cause DOSBox-X to claim to be version 6.22, instead of the default 5.00).
+Before going through this guide, consider if you really need this as the integrated DOS functionality in DOSBox-X is more convenient for typical use-cases. Booting regular DOS is normally not necessary to run DOS applications such as games, or even Windows version up to 3.11 in DOSBox-X. And even if you have a application that requires a specific DOS version, you can change the reported version of the integrated DOS in DOSBox-X. There are two ways to change the DOS version:
+1. There is a setting "ver" under the [dos] section in dosbox.conf. For example, setting "ver = 7.10" will cause DOSBox-X to set the initial DOS version as 7.10, instead of the default 5.00. Note that LFN (long filename) support will be enabled when the initial version is set to 7.0 or higher.
+2. You can also set reported DOS version with the ``VER`` command in the DOSBox-X command line. For example, ``VER SET 6 22`` will cause DOSBox-X to claim to be version 6.22. Note that this method will only change the reported DOS version, but will not effect LFN support.
 
 Some disadvantages of booting regular DOS in DOSBox-X includes:
 - Inability to use the ``MOUNT`` command to access directories on the host filesystem. All storage will have to be in the form of images.
@@ -38,13 +40,13 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - First version to support 3.5" 2.88MB disks (ED)
   - First version to support HDDs up to 7.84GB
 - MS-DOS version 6.0 included an updated HIMEM.SYS XMS 3.x driver with support for up to 64MB RAM
-- MS-DOS version 7.0 (as part of Windows 95 and 95A)
+- MS-DOS version 7.0 (included in Windows 95 and 95A)
   - First version to support VFAT
   - First version to allow up to 4GB RAM
-  - First version to support LBA for HDDs up to 32GB
-- MS-DOS version 7.1 (as part of Windows 95 OSR2, 98 and 98SE)
+  - First version to support HDDs up to 32GB (CHS type only)
+- MS-DOS version 7.1 (included in Windows 95 OSR2, 98 and 98SE)
   - First version to support FAT32
-  - First version to support LBA for HDDs up to 128GB (Windows 98 and 98SE only)
+  - First version to support LBA for HDDs up to 2TB (although FDISK requires patch to support HDD size greater than 64GB
 
 ### DOS editions
 MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were often 'personalized' to the manufacturer, and therefore it is possible that these older OEM specific editions don't work in DOSBox-X.
@@ -183,7 +185,7 @@ Be sure to use the -NOFS flag when creating an image with DOSBos's ``IMGMAKE``. 
 
 MS-DOS 4.0x supports HDDs up to 4,095MB. It is also supposed to support a primary partition up to 2,047MB and a logical partition of 2,048MB. But creating partitions that large will result in numerous problems, typically in ``FORMAT`` giving a "Divide overflow" error. The solution, assuming your only going to have a single primary partition, is to create a HDD image no larger then 2014MB.
 
-In these examples we still use a 32MB HDD. 
+In these examples we still use a 32MB HDD.
 
 ### Bare-bones install
 If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer.
