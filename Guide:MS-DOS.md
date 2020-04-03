@@ -8,7 +8,7 @@ Before going through this guide, consider if you really need this as the integra
 
 Some disadvantages of booting regular DOS in DOSBox-X includes:
 - Inability to use the ``MOUNT`` command to access directories on the host filesystem. All storage will have to be in the form of images, and they need to be mounted using ``IMGMOUNT`` <b>before</b> using the ``BOOT`` command to boot regular DOS.
-- If you need to access a CD or DVD drive you need to load a IDE or ASPI (or even SATA/USB) CD/DVD driver and MSCDEX
+- If you need to access a CD or DVD drive you need to load a IDE/PATA CD/DVD driver and MSCDEX
 - If you need a mouse, you need to load a mouse driver
 - Less free memory in the lower 640KB range, and having to tune available memory by selectively loading drivers high.
 - If you need XMS memory you need to load a driver (typically HIMEM.SYS)
@@ -27,14 +27,17 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
 
 - PC-DOS version 1.0, supports only 5.25" 8-sector 160KB (SSDD) diskettes
 - PC-DOS version 1.1, adds support for 5.25" 8-sector 320KB (DSDD) diskettes
-- MS-DOS version 1.25, first version available to other OEMs
+- MS-DOS version 1.25
+  - First version available to other OEMs
+  - Equivalent to PC-DOS 1.1 (but missing DISKCOPY, DISKCOMP, COMP and MODE utilities)
 - DOS version 2.0
-  - First to support HDDs up to 16MB (sometimes 32MB with vendor specific tools)
-  - First to support 5.25" 180KB (SSDD) and 360KB disks (DSDD)
+  - First to support HDDs up to 16 or 32MB (depending on OEM)
+  - First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
 - DOS version 3.0
   - First version to support FAT16 partitions up to 32MB
   - First version to support 5.25" 1.2MB disks (HD)
-- DOS version 3.2 first version to support 3.5" 720kB disks (2DD)
+  - First version to support the AT internal clock
+- DOS version 3.2, adds support for 3.5" 720kB disks (2DD)
 - DOS version 3.3
   - First version to support extended and logical partitions
   - First version to support HDDs up to 504MB
@@ -59,38 +62,36 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - Removed some features such as real-mode support, although there are patches to re-enable some of these features
 
 ### DOS editions
-MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were often 'personalized' to the manufacturer, and therefore it is possible that these older OEM specific editions don't work in DOSBox-X. Because of this, up to DOS version 3.3, it is typically easier to use the IBM PC-DOS versions in DOSBox-X.
+MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were 'personalized' to the manufacturer, and therefore many of these early OEM specific editions don't work, or only work partially in DOSBox-X. Because of this, up to DOS version 3.2, it is typically easier to use the IBM PC-DOS versions in DOSBox-X.
 
 ## Booting DOS from disks
 Booting DOS from a disk image is pretty straight forward. Start DOSBox-X and you should find yourself at the DOSBox-X ``Z:\>`` prompt. This is not real DOS, but a 'simulated' DOS that is compatible with most DOS games and applications. Now type something equivalent to
 ```
  BOOT dos.img
 ```
-Assuming that dos.img is an uncompressed DOS disk image in your current working directory, it should start it. This even works for IBM PC-DOS 1.00.
+Assuming that dos.img is an uncompressed DOS disk image in IBM-MFM format, typically with an file extension of .IMG or .IMA, in your current working directory, it should start it. This even works for IBM PC-DOS 1.00.
 
 <img src="images/MS-DOS:PC-DOS_1.0.png" width="640" height="400" alt="Booting a PC-DOS 1.00 diskette image"><br>
-## Creating a DOS 2.0 HDD image
-Maximum HDD size depends on the OEM version, and should be 16 or 32MB.
+
+## Creating a DOS 2.0-3.21 HDD image
+Notes:
+- For DOS 2.x
+  - The maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
+  - If you specify a larger partition size, and let FDISK automatically create a partition, it will overflow. For instance using PC-DOS 2.00 and a HDD image file of 40MB will result in FDISK creating a 40-32=8MB partition.
+- For DOS 3.00-3.21
+  - The maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC-DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
+  - While it is possible to specify a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and if used will create a drive that cannot be formatted.
 
 |DOS|OEM|Maximum partition size|Note|
 |---|---|----------------------|----|
-|PC-DOS 2.00|IBM|32MB||
-|PC-DOS 2.10|IBM|32MB||
-
-TBD...
-
-## Creating a DOS 3.0-3.21 HDD image
-<i>Note:</i> The maximum partition size is supposed to be 32MB, but in reality this only appears to be the case for PC-DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
-
-<i>Note:</i> While it is possible to specify a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and if used will create a drive that cannot be formatted.
-
-|DOS|OEM|Maximum partition size|Note|
-|---|---|----------------------|----|
+|MS-DOS 2.11|Zenith|-|Incompatible disk preparation software|
 |MS-DOS 3.10|Compaq|-|Incompatible FDISK|
 |MS-DOS 3.10|HP|31MB|Fails to boot from diskette, this can be circumvented by renaming CONFIG.SYS. FDISK hangs with 32MB|
 |MS-DOS 3.20|-|31MB|Will fail to boot with 32MB|
 |MS-DOS 3.20|Tandy|31MB|Format error, and will fail to boot with 32MB|
 |MS-DOS 3.21|-|31MB|Format error, and will fail to boot with 32MB|
+|PC-DOS 2.00|IBM|32MB||
+|PC-DOS 2.10|IBM|32MB||
 |PC-DOS 3.0|IBM|32MB||
 |PC-DOS 3.1|IBM|32MB||
 |PC-DOS 3.2|IBM|31MB|Will fail to boot with 32MB|
