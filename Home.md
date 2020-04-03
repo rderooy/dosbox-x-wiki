@@ -9,13 +9,13 @@ DOSBox-X is a cross-platform DOS emulator based on [[DOSBox|http://www.dosbox.co
 Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 1990's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
 
 ### What DOSBox-X Can Do
-Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X. 
+Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X.
 
 ### DOSBox-X's Feature Highlights
 Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 * GUI menu bar and configuration tool  
-* Built-in debugger and logging options 
-* Automatic drive mounting (Windows only) 
+* Built-in debugger and logging options
+* Automatic drive mounting (Windows only)
 * NEC PC-98 support  
 * Save and load states  
 * CPU optimization and Turbo mode  
@@ -28,13 +28,14 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for ROM BIOS images
 * Support for printer output  
 * Support for vertical sync (V-Sync)  
+* Support for long filenames (LFN) for DOS version 7.x
+* Support for clipboard access (Windows only)  
 * Support for Direct3D with pixel shaders (Windows only)  
 * Support for OpenglHQ  
 * Support for Innovation SSI-2001 emulation  
-* Support for 3dfx Glide and Voodoo chip emulation 
+* Support for 3dfx Glide and Voodoo chip emulation
 * Support for NE2000 Ethernet  
-* Support for beeping  
-* Support for features such as overscan border and stereo swapping  
+* Support for features such as beeping, overscan border and stereo swapping  
 * Various patches such as font, DBCS and Ctrl-Break patch
 
 Note: Some features such as support for saving/loading states and running ROM BIOS images are currently experimental.
@@ -55,7 +56,7 @@ For example, if you are using the MOUNT command method to mount your host drives
 
 Even though DOSBox-X runs in a window by default, you can also change it to full-screen mode. Simply press the shortcut F11+F, and DOSBox-X will become full-screen. Alternatively, you may modify this setting in the Sdl section of the DOSBox-X configuration interface (or change the option fullscreen=false to fullscreen=true under the [sdl] section of DOSBox-X's configuration file). To get back from fullscreen mode, simply press the shortcut F11+F again.
 
-You can try the various commands and options in order to be more familiar with the DOSBox-X interface. Once you get used to it, you should be able to do various things such as running DOS applications inside DOSBox-X. If you have questions, you can also ask the community for support. 
+You can try the various commands and options in order to be more familiar with the DOSBox-X interface. Once you get used to it, you should be able to do various things such as running DOS applications inside DOSBox-X. If you have questions, you can also ask the community for support.
 
 ### DOSBox-X's GUI Menus
 
@@ -141,7 +142,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Debug**: Enables video debugging functions, such as blank screen refresh tests.
 
-* **Select pixel shader...**: Selects a Direct3D pixel shader file for use with DOSBox-X in Windows. In case the shader fails to load, there is no visual indication but it will be written to the log file. If you want more immediate feedback on success or failure, use the menu to show the DOSBox-X console which will also show the reason for the shader failure. 
+* **Select pixel shader...**: Selects a Direct3D pixel shader file for use with DOSBox-X in Windows. In case the shader fails to load, there is no visual indication but it will be written to the log file. If you want more immediate feedback on success or failure, use the menu to show the DOSBox-X console which will also show the reason for the shader failure.
 
 **4. The "Sound" menu**
 
@@ -557,10 +558,10 @@ We are making efforts to ensure that most DOS games and applications will run in
 
 DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html
 
-* [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]
-* [[Guide: MS-DOS games|Guide:MS-DOS:games]]
-* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:MS-DOS]]
-* [[Guide: Windows in DOSBox|Guide:Windows]]
+* [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
+* [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
+* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:MS-DOS]]  
+* [[Guide: Windows in DOSBox|Guide:Windows]]  
 
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**  
