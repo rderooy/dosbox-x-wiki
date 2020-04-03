@@ -77,10 +77,9 @@ Assuming that dos.img is an uncompressed DOS disk image in IBM-MFM format, typic
 Notes:
 - For DOS 2.x
   - The maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
-  - If you specify a larger partition size, and let FDISK automatically create a partition, it will overflow. For instance using PC-DOS 2.00 and a HDD image file of 40MB will result in FDISK creating a 40-32=8MB partition.
 - For DOS 3.00-3.21
   - The maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC-DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
-  - While it is possible to specify a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and if used will create a drive that cannot be formatted.
+- While it is possible to use a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and depending on the DOS version will either overflow such that a 40MB HDD image becomes a 40-32=8MB partition, or it will create a drive that cannot be formatted.
 
 |DOS|OEM|Maximum partition size|Note|
 |---|---|----------------------|----|
