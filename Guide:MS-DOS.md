@@ -8,7 +8,7 @@ Before going through this guide, consider if you really need this as the integra
 
 Some disadvantages of booting regular DOS in DOSBox-X includes:
 - Inability to use the ``MOUNT`` command to access directories on the host filesystem. All storage will have to be in the form of images, and they need to be mounted using ``IMGMOUNT`` <b>before</b> using the ``BOOT`` command to boot regular DOS.
-- If you need to access a CD or DVD drive you need to load a IDE or SATA CD/DVD driver and MSCDEX
+- If you need to access a CD or DVD drive you need to load a IDE or ASPI (or even SATA/USB) CD/DVD driver and MSCDEX
 - If you need a mouse, you need to load a mouse driver
 - Less free memory in the lower 640KB range, and having to tune available memory by selectively loading drivers high.
 - If you need XMS memory you need to load a driver (typically HIMEM.SYS)
