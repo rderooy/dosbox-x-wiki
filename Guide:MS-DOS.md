@@ -42,8 +42,7 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - First version to support extended and logical partitions
   - First version to support HDDs up to 504MB
   - First version to support 3.5" 1.44MB disks (HD)
-- PC-DOS version 4.0 was limited to 4 partitions of 1024MB each
-- MS-DOS version 4.0
+- DOS version 4.0
   - First version to allow HDDs up to 4,095MB with up to two partitions (primary of up to 2,047MB and a logical of up to 2,039MB)
   - First version to included HIMEM.SYS XMS 2.x driver with support for up to 16MB RAM
 - MS-DOS version 5.0
@@ -167,9 +166,6 @@ BOOT -L C
 ```
 
 <img src="images/MS-DOS:MS-DOS_3.3_BOOT_HDD.png" width="640" height="400" alt="Boot MS-DOS 3.3 from HDD"><br>
-
-## Creating a PC-DOS 4.0 HDD image
-TBD...
 
 ## Creating a MS-DOS 4.0x HDD image
 First of all, consider if you really, really want to use MS-DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required.
@@ -356,7 +352,23 @@ This process is basically the same as for the 3.5" media, but you have more disk
 Now that you have created a bootable HDD image you can boot it from the DOSBox-X ``Z:\>`` prompt with the following commands:
 ```
 IMGMOUNT C hdd.img
-BOOT -l C
+BOOT -L C
 ```
+
+## Creating a PC-DOS 4.0x HDD image
+Installing PC-DOS 4.0x is easier then MS-DOS 4.0x because it does not require the creation of backup disks, and comes on only two 3.5" disks (Install and Operating).
+
+The same limits on disk and partition sizes seem to apply as MS-DOS 4.0x.
+
+First start by creating a HDD image file, mount it and boot from disk.
+
+```
+ IMGMAKE hdd.img -t hd -size 1024 -nofs
+ IMGMOUNT 2 hdd.img -size 512,63,2,520 -fs none
+ BOOT INSTALL.IMG OPERATING.IMG
+```
+
+You can now largely follow the instructions for MS-DOS 4.0x. There will be fewer questions, for instance you will not get the question if you want to install the DOS Shell. After the install is finished and you boot from the HDD image, it will go directly to the DOS Shell program.
+
 ## Creating a MS-DOS 5.0+ HDD image
 TBD...
