@@ -43,7 +43,7 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - First version to support HDDs up to 504MB
   - First version to support 3.5" 1.44MB disks (HD)
 - DOS version 4.0
-  - First version to allow HDDs up to 4,095MB with up to two partitions (primary of up to 2,047MB and a logical of up to 2,039MB)
+  - First version to allow HDDs up to 4,095MB and larger partitions
   - First version to included HIMEM.SYS XMS 2.x driver with support for up to 16MB RAM
 - MS-DOS version 5.0
   - First version to support 3.5" 2.88MB disks (ED)
