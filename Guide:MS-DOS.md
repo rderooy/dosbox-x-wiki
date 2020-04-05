@@ -1,4 +1,4 @@
-# PC-DOS and MS-DOS Installation Guide
+independently# PC-DOS and MS-DOS Installation Guide
 
 This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
 
@@ -17,13 +17,14 @@ Some disadvantages of booting regular DOS in DOSBox-X includes:
 Some external links with useful information:
 - https://en.wikipedia.org/wiki/MS-DOS
 - https://en.wikipedia.org/wiki/IBM_PC_DOS
+- https://en.wikipedia.org/wiki/Timeline_of_DOS_operating_systems
 - The MS-DOS Encyclopedia (DOS 1.0-3.3) [[https://pcjs.org/documents/books/mspl13/msdos/encyclopedia/]]
 - DOS memory management - [[https://www.vogonswiki.com/index.php/DOS_memory_management]]
 - CD-ROM driver help - [[https://www.computerhope.com/cdromd.htm]]
 - How to get a mouse to work in MS-DOS - [[https://www.computerhope.com/issues/ch000007.htm]]
 
 ## General guidelines
-This document assumes that you have PC-DOS or MS-DOS diskette images. Getting these image files is outside the scope of this document.
+These pages assume that you have PC-DOS or MS-DOS diskette images. Getting these image files is outside the scope of this document.
 
 ### DOS versions
 Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this document. There are various limitations that DOS imposes that are dependant on the version. A few milestones:
@@ -52,9 +53,10 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - First version to support 3.5" 2.88MB disks (ED)
   - First version to support HDDs up to 7.84GB with 2GB partitions
 
-From this point, the Microsoft MS-DOS and IBM PC-DOS version diverge.
+#### DOS versions - divergence
+DOS 5 is the last version for which Microsoft and IBM shared code. From this point, Microsoft MS-DOS and IBM PC-DOS are developed independantly and start to diverge.
 
-<b>Microsoft MS-DOS</b>
+##### Microsoft MS-DOS 6+
 - MS-DOS version 6.0 included an updated HIMEM.SYS XMS 3.x driver with support for up to 64MB RAM
 - MS-DOS version 7.0 (included in Windows 95 and 95A)
   - First version to support VFAT
@@ -67,7 +69,7 @@ From this point, the Microsoft MS-DOS and IBM PC-DOS version diverge.
 - MS-DOS version 8.0 (included in Windows ME)
   - Removed some features such as real-mode support, although there are patches to re-enable some of these features
 
-<b>IBM PC-DOS</b>
+##### IBM PC-DOS 6+
 - PC-DOS version 6.1
 - PC-DOS version 6.3
 - PC-DOS version 7.0 / 2000
