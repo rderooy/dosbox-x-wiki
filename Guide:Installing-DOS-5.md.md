@@ -1,4 +1,4 @@
-## Creating a DOS 5.00-6.30 HDD image
+## Creating a DOS 5.00 HDD image
 This applies to
 - MS-DOS 5.00
 - MS-DOS 5.00a
