@@ -1,17 +1,30 @@
-## Creating a DOS 5.00 HDD image
+## Overview
+Key new features of DOS 5.00:
+- First version to support 3.5" 2.88MB disks (ED)
+- First version to support HDDs up to 7.84GB with 2GB partitions
+- Re-written memory management tools with new LoadHigh and DeviceHigh
+- New Editor (EDIT)
+- QBasic replaces GW-BASIC and BASICA
+- New UNDELETE, UNFORMAT and MIRROR (from Central Point Software's PC-Tools)
+- Adds HELP command, and /? parameter for commands
+- DOS Shell adds Task Swapping ability
+
 This applies to
-- MS-DOS 5.00
-- MS-DOS 5.00a
+- Microsoft MS-DOS 5.00
+- Microsoft MS-DOS 5.00a
   - Fixes a data corruption bug (CHKDSK and UNDELETE can in some cases cause corruption, alternatively use the "PD0646" patch).
-- PC-DOS 5.00
-- PC-DOS 5.02
+- IBM PC-DOS 5.00
+- IBM PC-DOS 5.02
   - Adds ISO screen fonts
   - Adds Eject utility for lockable media
   - Adds APM Power management
   - Adds file transfer utility
 
-DOS 5 is the last version that Microsoft and IBM shared code for, and later PC-DOS and MS-DOS versions diverge from here on. Both IBM and Microsoft started selling their respective DOS versions directly to the general public. IBM marketed it "For IBM and IBM Compatibles", while Microsoft simply said "for DOS systems". There are also no other OEM versions of DOS 5 or later, as all PCs at this point where fully IBM Compatible. Microsoft and IBM also started to leapfrog each other with version numbers, so that it would appear their respective version was newer. This would continue until Windows 95 was released, and Microsoft lost interest in launching new stand-alone DOS versions.
+  DOS 5 is the last version that Microsoft and IBM shared code for, and later PC-DOS and MS-DOS versions diverge from here on. Both IBM and Microsoft started selling their respective DOS versions directly to the general public, and to other OEMs. IBM marketed it "For IBM and IBM Compatibles", while Microsoft simply said "for DOS systems". Microsoft and IBM also started to leapfrog each other with version numbers, so that it would appear their respective version was newer. This would continue until Windows 95 was released, and Microsoft lost interest in launching new stand-alone DOS versions.
 
+  Note: The MS-DOS 5 Upgrade release that was available to end-users requires that you already have DOS installed. The disks are not bootable, unlike the later MS-DOS 6.x Upgrade editions. As such you need a separate DOS boot disk to be able to install the Upgrade edition on a clean system.
+
+## Creating a DOS 5.0x HDD image
 Starting with DOS 5.00, installing DOS in DOSBox-X is much more straight forward, as you can have ``IMGMAKE`` create a HDD image that is already partitioned and formatted.
 
 Maximum HDD size has increased to 7.84GB, but the maximum partition size is basically still 2GB, which is a FAT16 limitation.
@@ -20,7 +33,7 @@ Note: these instructions assume the "Full" version and not the "Upgrade" release
 
 ```
  IMGMAKE hdd.img -t hd -size 2048
- IMGMOUNT 2 hdd.img
+ IMGMOUNT C hdd.img
  BOOT DISK1.IMG DISK2.IMG DISK3.IMG
 ```
 
