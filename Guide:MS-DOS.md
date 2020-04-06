@@ -92,3 +92,4 @@ Assuming that dos.img is an uncompressed DOS disk image in IBM-MFM format (typic
 * [[Guide: Installing DOS 2.00-3.x in DOSBox-X|Guide:Installing-DOS-2-3.md]]
 * [[Guide: Installing DOS 4.0x in DOSBox-X|Guide:Installing-DOS-4.md]]
 * [[Guide: Installing DOS 5.0x in DOSBox-X|Guide:Installing-DOS-5.md]]
+* [[Guide: Installing MS-DOS 6.x in DOSBox-X|Guide:Installing-MS-DOS-6.md]]
