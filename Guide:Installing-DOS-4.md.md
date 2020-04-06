@@ -1,26 +1,32 @@
-## Creating a MS-DOS 4.0x HDD image
-First of all, consider if you really, really want to use MS-DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required.
+## Overview
+This applies to
+- Microsoft MS-DOS 4.00
+  - GRAPHICS upgraded with EGA/VGA support
+  - New DOS Shell
+- Microsoft MS-DOS 4.01
+- IBM PC-DOS 4.00
+- IBM PC-DOS 4.01
 
-MS-DOS 4.0x on 5.25" media consists of the following six disks
- - Install
- - Select
- - Operating 1
- - Operating 2
- - Operating 3
- - Shell
+First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required.
 
-MS-DOS 4.0x on 3.5" media consists of the following three disks
- - Setup
- - Operating
- - Shell
+MS-DOS 4.0x on 5.25" 360KB media consists of the following six diskettes
+- Install, Select, Operating 1, Operating 2, Operating 3, Shell
+
+MS-DOS 4.0x on 3.5" 720KB media consists of the following three diskettes
+- Setup, Operating, Shell
+
+PC-DOS 4.0x on 3.5" 720KB media consists of the following two diskettes
+- Install, Operating
 
 OEM versions could have additional disks such as a Diagnostic disk.
 
-- Like DOS 3.3 before it, MS-DOS 4.0x supports primary, extended and logical partitions. However, DOSBox-X has only limited support for extended and logical partitions. You can create them, and when you boot your DOS image, you can access them. But when you ``IMGMOUNT`` the image in DOSBox-X, the integrated DOS will only be able to access the primary partition.
+- Like DOS 3.3 before it, DOS 4.0x supports primary, extended and logical partitions. However, DOSBox-X has only limited support for extended and logical partitions. You can create them, and when you boot your DOS image, you can access them. But when you ``IMGMOUNT`` the image in DOSBox-X, the integrated DOS will only be able to access the primary partition. As such it is recommended to only create a single DOS partition per disk image, and if you need more space to create more disk images.
 
-- Be sure to use the -NOFS flag when creating an image with DOSBos's ``IMGMAKE``. If you don't, it will create a partitioned and formatted HDD image, which is incompatible with MS-DOS 4.0x. The MS-DOS 4.0x installer will not offer the option to install to the HDD. And if you manually SYS the drive, it will not boot from it.
+- Be sure to use the -NOFS flag when creating an image with DOSBos's ``IMGMAKE``. If you don't, it will create a partitioned and formatted HDD image, which is incompatible with DOS 4.0x. The DOS 4.0x installer will not offer the option to install to the HDD. And if you manually SYS the drive, it will not boot from it.
 
-- MS-DOS 4.0x supports HDDs up to 4,095MB. It is also supposed to support a primary partition up to 2,047MB and a logical partition of 2,048MB. But creating partitions that large will result in numerous problems, typically in ``FORMAT`` giving a "Divide overflow" error. The solution, assuming your only going to have a single primary partition, is to create a HDD image no larger then 2014MB.
+- DOS 4.0x supports HDDs up to 4,095MB. It is also supposed to support a primary partition up to 2,047MB and a logical partition of 2,048MB. But creating partitions that large will result in numerous problems, typically in ``FORMAT`` giving a "Divide overflow" error. The solution, assuming your only going to have a single primary partition, is to create a HDD image no larger then 2014MB.
+
+## Creating a MS-DOS 4.0x HDD image
 
 In these examples we still use a 32MB HDD.
 
