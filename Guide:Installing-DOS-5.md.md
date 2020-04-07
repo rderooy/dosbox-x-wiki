@@ -14,6 +14,7 @@ This applies to
 - Microsoft MS-DOS 5.00a
   - Fixes a data corruption bug (CHKDSK and UNDELETE can in some cases cause corruption, alternatively use the "PD0646" patch).
 - IBM PC-DOS 5.00
+  - Adds a Mouse driver (MOUSE.COM)
 - IBM PC-DOS 5.02
   - Adds ISO screen fonts
   - Adds Eject utility for lockable media
