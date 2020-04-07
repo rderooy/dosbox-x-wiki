@@ -1,4 +1,40 @@
-## Creating a DOS 2.0-3.21 HDD image
+## Overview
+Key new features of DOS 2.00:
+- First version to support HDDs (still using FAT12)
+- First version to support directories
+- First version to support redirection (pipes)
+- First version to support TSRs
+- First version to support installable device drivers
+- First version to introduce CONFIG.SYS
+- First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
+Key new features of DOS 3.00:
+- Maximum partition size of 32MB (using the new FAT16)
+- First version to support 5.25" 1.2MB disks (HD)
+- First version to support the AT internal clock
+Key new features of DOS 3.10:
+- ???
+Key new features of DOS 3.20:
+- First version to support 3.5" 720kB disks (2DD)
+Key new features of DOS 3.30:
+- First version to support the MBR partitioning scheme with primary, extended and logical partitions
+- First version to support HDDs up to 504MB (partitions still limited to 32MB)
+- First version to support 3.5" 1.44MB disks (HD)
+
+This applies to
+- Microsoft MS-DOS 3.21
+- Microsoft MS-DOS 3.30
+- IBM PC-DOS 2.00
+- IBM PC-DOS 2.10
+- IBM PC-DOS 3.00
+- IBM PC-DOS 3.10
+- IBM PC-DOS 3.20
+- IBM PC-DOS 3.30
+
+External links
+- http://www.os2museum.com/wp/dos/dos-2-0-and-2-1/
+- http://www.os2museum.com/wp/dos/dos-3-0-3-2/
+- http://www.os2museum.com/wp/dos/dos-3-3/
+
 Notes:
 - For DOS 2.x
   - The maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
@@ -23,6 +59,7 @@ Notes:
 <i>Note 2:</i> If you specify a different size then 31MB for the ``IMGMAKE`` command, pay close attention to the output of ``IMGMAKE`` as you will need to adjust the ``IMGMOUNT`` size parameter values accordingly.
 
 The ``IMGMOUNT`` size parameter should have the format of: ``512,<sectors>,<heads>,<cylinders>``.
+## Creating a DOS 2.0-3.21 HDD image
 
 First you need to start DOSBox-X, and create an empty HDD image file.
 
