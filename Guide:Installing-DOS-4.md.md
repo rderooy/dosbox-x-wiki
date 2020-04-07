@@ -1,13 +1,31 @@
 ## Overview
+DOS version 4.00 was the first release where IBM had the development lead. It returned to Microsoft for version 5.00.
+
+Key new features of DOS 4.00:
+- First version to allow HDDs up to 4,095MB
+- First version to allow a DOS partition up to 2,047MB
+- First version to include a guided installation program
+- Added MEM and SWITCHES commands
+- Added XMA2EMS.SYS and XMAEM.SYS supporting LIM EMS 4.0
+- New DOS SHELL
+- National Language Support (NLS) enhancements
+- GRAPHICS utility upgraded with EGA/VGA support
+
 This applies to
 - Microsoft MS-DOS 4.00
-  - GRAPHICS upgraded with EGA/VGA support
-  - New DOS Shell
+  - First version to include HIMEM.SYS XMS 2.x driver with support for up to 16MB RAM
+  - Added EMM386.SYS with support for LIM EMS 4.0
+  - First version to include SMARTDRV.SYS
 - Microsoft MS-DOS 4.01
 - IBM PC-DOS 4.00
 - IBM PC-DOS 4.01
 
-First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required.
+Note: Unlike with MS-DOS, there is no obvious way to know if you have PC-DOS 4.00 or 4.01. The ``VER`` command will claim Version 4.00 for either, as will the box, manuals and installer. The ways to check are either to look at the disk labels, which will say 4.00 or 4.01, or check if some OS files like IBMBIO.COM and IBMDOS.COM are dated 08-03-1988 (MM-DD-YYYY), in which case you have the 4.01 release. IBM released a corrective service (CSD UR22624) to upgrade a 4.00 installation to 4.01, you can view the README here: http://www.retroarchive.org/garbo/pc/doc-soft/dos400.bug
+
+External links:
+- http://www.os2museum.com/wp/dos/dos-4-0/
+
+First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required. Also the IBM PC-DOS release is easier to install then the MS-DOS release as it uses fewer disks, but lacks HIMEM.SYS, EMM386.SYS and SMARTDRV.SYS.
 
 MS-DOS 4.0x on 5.25" 360KB media consists of the following six diskettes
 - Install, Select, Operating 1, Operating 2, Operating 3, Shell
@@ -15,10 +33,15 @@ MS-DOS 4.0x on 5.25" 360KB media consists of the following six diskettes
 MS-DOS 4.0x on 3.5" 720KB media consists of the following three diskettes
 - Setup, Operating, Shell
 
+PC-DOS 4.0x on 5.25" 360KB media consists of the following five diskettes
+- Install , Select, Operating 1, Operating 2, Operating 3
+
 PC-DOS 4.0x on 3.5" 720KB media consists of the following two diskettes
 - Install, Operating
 
 OEM versions could have additional disks such as a Diagnostic disk.
+
+In addition the installation process will require BLANK diskettes "Select Copy"
 
 - Like DOS 3.3 before it, DOS 4.0x supports primary, extended and logical partitions. However, DOSBox-X has only limited support for extended and logical partitions. You can create them, and when you boot your DOS image, you can access them. But when you ``IMGMOUNT`` the image in DOSBox-X, the integrated DOS will only be able to access the primary partition. As such it is recommended to only create a single DOS partition per disk image, and if you need more space to create more disk images.
 
@@ -118,7 +141,7 @@ Press again Enter to bypass the Introduction screen.
 <img src="images/MS-DOS:MS-DOS_4.01_INSTALLER2.png" width="640" height="400" alt="MS-DOS 4.01 Introduction screen"><br>
 
 <b>Specify Function and Workspace</b><br>
-You will now be asked between 3 install options. "program workspace" in this context means the amount of disk space available for <i>other</i> programs. Your effectively being asked if you want to do a Small, Medium or Full installation of MS-DOS 4.0x.
+You will now be asked between 3 install options. "program workspace" in this context means the amount of RAM available for programs. Based on your decision FASTOPEN will be enabled, and various DOS buffers will be adjusted.
 
 <img src="images/MS-DOS:MS-DOS_4.01_INSTALLER3.png" width="640" height="400" alt="MS-DOS 4.01 Specify Function and Workspace"><br>
 
@@ -193,7 +216,7 @@ BOOT -L C
 ```
 
 ## Creating a PC-DOS 4.0x HDD image
-Installing PC-DOS 4.0x is easier then MS-DOS 4.0x because it does not require the creation of backup disks, and comes on only two 3.5" disks (Install and Operating).
+Installing PC-DOS 4.0x is easier then MS-DOS 4.0x as it comes on only two 3.5" disks (Install and Operating), or five 5.25" disks.
 
 The same limits on disk and partition sizes seem to apply as MS-DOS 4.0x.
 
