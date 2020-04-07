@@ -18,6 +18,7 @@ Some external links with useful information:
 - https://en.wikipedia.org/wiki/MS-DOS
 - https://en.wikipedia.org/wiki/IBM_PC_DOS
 - https://en.wikipedia.org/wiki/Timeline_of_DOS_operating_systems
+- http://16bitos.com/
 - The MS-DOS Encyclopedia (DOS 1.0-3.3) [[https://pcjs.org/documents/books/mspl13/msdos/encyclopedia/]]
 - DOS memory management - [[https://www.vogonswiki.com/index.php/DOS_memory_management]]
 - CD-ROM driver help - [[https://www.computerhope.com/cdromd.htm]]
@@ -93,3 +94,5 @@ Assuming that dos.img is an uncompressed DOS disk image in IBM-MFM format (typic
 * [[Guide: Installing DOS 4.0x in DOSBox-X|Guide:Installing-DOS-4.md]]
 * [[Guide: Installing DOS 5.0x in DOSBox-X|Guide:Installing-DOS-5.md]]
 * [[Guide: Installing MS-DOS 6.x in DOSBox-X|Guide:Installing-MS-DOS-6.md]]
+* [[Guide: Installing PC-DOS 6.x in DOSBox-X|Guide:Installing-PC-DOS-6.md]]
+* [[Guide: Installing PC-DOS 7/2000 in DOSBox-X|Guide:Installing-PC-DOS-7.md]]
