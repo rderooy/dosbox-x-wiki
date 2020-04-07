@@ -1,24 +1,24 @@
 ## Overview
-Key new features of DOS 2.00:
-- First version to support HDDs (still using FAT12)
-- First version to support directories
-- First version to support redirection (pipes)
-- First version to support TSRs
-- First version to support installable device drivers
-- First version to introduce CONFIG.SYS
-- First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
-Key new features of DOS 3.00:
-- Maximum partition size of 32MB (using the new FAT16)
-- First version to support 5.25" 1.2MB disks (HD)
-- First version to support the AT internal clock
-Key new features of DOS 3.10:
-- ???
-Key new features of DOS 3.20:
-- First version to support 3.5" 720kB disks (2DD)
-Key new features of DOS 3.30:
-- First version to support the MBR partitioning scheme with primary, extended and logical partitions
-- First version to support HDDs up to 504MB (partitions still limited to 32MB)
-- First version to support 3.5" 1.44MB disks (HD)
+- Key new features of DOS 2.00:
+  - First version to support HDDs (still using FAT12)
+  - First version to support directories
+  - First version to support redirection (pipes)
+  - First version to support TSRs
+  - First version to support installable device drivers
+  - First version to introduce CONFIG.SYS
+  - First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
+- Key new features of DOS 3.00:
+  - Maximum partition size of 32MB (using the new FAT16)
+  - First version to support 5.25" 1.2MB disks (HD)
+  - First version to support the AT internal clock
+- Key new features of DOS 3.10:
+  - ???
+- Key new features of DOS 3.20:
+  - First version to support 3.5" 720kB disks (2DD)
+- Key new features of DOS 3.30:
+  - First version to support the MBR partitioning scheme with primary, extended and logical partitions
+  - First version to support HDDs up to 504MB (partitions still limited to 32MB)
+  - First version to support 3.5" 1.44MB disks (HD)
 
 This applies to
 - Microsoft MS-DOS 3.21
