@@ -119,9 +119,10 @@ You probably don't want to memorize those last two commands, so do yourself a fa
 
 ## Creating a DOS 3.3 HDD image
 Creating a DOS 3.3 HDD image is nearly identical to that of DOS 3.0-3.2 above with a few small notes
-- DOS 3.3 introduced the partitioning scheme with primary, extended and logical partitions. However, DOSBox-X has only limited support for extended and logical partitions. You can create them, and when you boot your DOS image, you can access them. But when you ``IMGMOUNT`` the image in DOSBox-X, the integrated DOS will only be able to access the primary partition.
+- DOS 3.3 introduced the MBR partitioning scheme with primary, extended and logical partitions, that was used for all later DOS versions. However, DOSBox-X has only limited support for extended and logical partitions. You can create them, and when you boot your DOS image, you can access them. But when you ``IMGMOUNT`` the image in DOSBox-X, the integrated DOS will only be able to access the primary partition.
 - The maximum HDD size is now 504MB, but the maximum partition size is still only 32MB. Since DOSBox-X has only limited support for extended and logical partitions, it is recommended that you only create a single primary partition up to 32MB per HDD image. If you need multiple drives, you can create multiple images.
 - After you have created your image, due to the newer style partition layout, which DOSBox-X can autodetect, you do not have to specify the geometry to mount the image. So your can boot from the HDD image with the following commands instead.
+- Partitioned and formatted images created with IMGMAKE are not recognised by DOS 3.3. Presumably this is because IMGMAKE sets the partition type to type 6 (FAT 16), while DOS 3.3 expects type 4 (FAT 16 < 32M). As such you need to use the -NOFS switch like with earlier DOS versions and manually create the partitions and format them.
 
 ```
 IMGMOUNT C hdd.img
