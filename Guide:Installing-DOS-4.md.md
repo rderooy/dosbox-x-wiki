@@ -45,9 +45,9 @@ In addition the installation process will require BLANK diskettes "Select Copy"
 
 - Like DOS 3.3 before it, DOS 4.0x supports primary, extended and logical partitions. However, DOSBox-X has only limited support for extended and logical partitions. You can create them, and when you boot your DOS image, you can access them. But when you ``IMGMOUNT`` the image in DOSBox-X, the integrated DOS will only be able to access the primary partition. As such it is recommended to only create a single DOS partition per disk image, and if you need more space to create more disk images.
 
-- Be sure to use the -NOFS flag when creating an image with DOSBos's ``IMGMAKE``. If you don't, it will create a partitioned and formatted HDD image, which is incompatible with DOS 4.0x. The DOS 4.0x installer will not offer the option to install to the HDD. And if you manually SYS the drive, it will not boot from it.
-
 - DOS 4.0x supports HDDs up to 4,095MB. It is also supposed to support a primary partition up to 2,047MB and a logical partition of 2,048MB. But creating partitions that large will result in numerous problems, typically in ``FORMAT`` giving a "Divide overflow" error. The solution, assuming your only going to have a single primary partition, is to create a HDD image no larger then 2014MB.
+
+- DOS 4.0x supports the "type 6" FAT16 partition which DOSBox-X's ``IMGMAKE`` creates, but is incompatible with the way the partition is formatted. The DOS 4.0x installer will not offer the option to install to the HDD. And if you manually SYS the drive, it will not boot from it. The solution is to exit to the command line and manually format the C: drive.
 
 ## Creating a MS-DOS 4.0x HDD image
 
@@ -57,8 +57,8 @@ In these examples we still use a 32MB HDD.
 If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer.
 
 ```
- IMGMAKE hdd.img -t hd -size 32 -nofs
- IMGMOUNT 2 hdd.img -fs none
+ IMGMAKE hdd.img -t hd -size 32
+ IMGMOUNT 2 hdd.img
 ```
 Now you need to boot from the first MS-DOS 4.0x disk, which is called either Setup or Install depending on the media type.
 ```
@@ -72,37 +72,14 @@ When at the Welcome screen (3.5" media) or prompted to insert the SELECT disk (5
 
 <img src="images/MS-DOS:MS-DOS_4.01_INSTALLER_EXIT.png" width="640" height="400" alt="MS-DOS 4.01 Installer exit screen"><br>
 
-and run the following command:
+and run the following command to format the C: drive and transfer system files:
 ```
- FDISK
+ FORMAT C: /S
 ```
-<img src="images/MS-DOS:MS-DOS_4.01_FDISK.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
-
-Now select option 1 to create a DOS partition
-
-<img src="images/MS-DOS:MS-DOS_4.01_FDISK2.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
-
-Followed by option 1 to create a Primary DOS Partition
-
-<img src="images/MS-DOS:MS-DOS_4.01_FDISK3.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
-
-Confirm you want to use the maximum available size
-
-<img src="images/MS-DOS:MS-DOS_4.01_FDISK4.png" width="640" height="400" alt="MS-DOS 4.01 FDISK"><br>
-
-And finally press any key to restart, to go back to the DOSBox-X ``Z:\>`` prompt.
-
-At this point your image file is partitioned, but still needs to be formatted and made bootable. We first need to execute the exact same ``IMGMOUNT`` and ``BOOT`` commands from before.
-
-```
-IMGMOUNT 2 hdd.img -fs none
-BOOT SETUP.IMG
-```
-You can now FORMAT the C: drive with the /S switch to transfer the system files.
 
 <img src="images/MS-DOS:MS-DOS_4.01_FORMAT.png" width="640" height="400" alt="MS-DOS 4.01 FORMAT"><br>
 
-The HDD image is now bootable and you can optionally copy some of the DOS utilities from the diskette to the HDD and create your ``CONFIG.SYS`` and ``AUTOEXEC.BAT``.
+The HDD image is now bootable and you can optionally copy some of the DOS utilities from the diskette to the HDD and create your ``CONFIG.SYS`` and ``AUTOEXEC.BAT``. Alternatively if you want to do a full install, you can type ``SELECT MENU`` to return to the installer.
 
 <img src="images/MS-DOS:MS-DOS_4.01_BOOT_HDD.png" width="640" height="400" alt="MS-DOS 4.01 HDD Boot"><br>
 
@@ -110,11 +87,9 @@ The HDD image is now bootable and you can optionally copy some of the DOS utilit
 Notes
 - The MS-DOS 4.0x installer can corrupt its own installation diskettes, as such you should change the permission of the disk images in the host OS such that the image files are READ-ONLY. In turn DOSBox-X will treat them as if the disks have the write-protect set.
 
-- It is recommended that you first follow the [#bare-bones-install](Bare-bones) install above, at least up to the point where the DOS partition has been formatted. The alternative is to let MS-DOS 4.0x installer create the partition for you, but this requires that you go through the first phase of the installation process twice, including creating the "SELECT COPY" backup diskette twice.
+- It is required that you first follow the [#bare-bones-install](Bare-bones) install above, up to the point where the DOS partition has been formatted. The alternative is to use the -NOFS flag with ``IMGMAKE`` to create a HDD image that is not partitioned and formatted, and to let MS-DOS 4.0x installer create the partition for you, but this requires that you go through the first phase of the installation process twice, including creating the "SELECT COPY" backup diskette twice.
 
-- If you skip the ``FORMAT`` step during the Bare-bones install, the MS-DOS 4.0x installer will error out after it does the format itself, and the DOSBox log will contain the message "ERROR BIOS:INT13: Function 18 called on drive 80 (dos drive 2)", and you cannot continue the install.
-
-For this process, it is assumed that you already have your image file created, partitioned and formatted with MS-DOS 4.0x.
+For this process, it is assumed that you have followed the Bare-bones install process such that your HDD image file is created, partitioned and formatted with MS-DOS 4.0x.
 
 During install, the installer will insist on a blank disk to be labelled "SELECT COPY", to make a copy of the INSTALL (Setup) disk. Unfortunately while it seems the installer should allow to use the B: drive for this purpose this does not seem to work in practice (it seems this only works if there is no disk in drive B: when the installer starts, which you cannot do with DOSBox-X).
 ```
