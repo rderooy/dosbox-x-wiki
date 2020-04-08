@@ -75,7 +75,7 @@ DOS 5 is the last version for which Microsoft and IBM shared code. From this poi
 - PC-DOS version 6.3
 - PC-DOS version 7.0 / 2000
   - Introduces XDF diskettes
-- PC-DOS version 7.1
+- PC-DOS version 7.1 (kernel files only)
   - Adds support for LBA and FAT32
 
 ### DOS editions
