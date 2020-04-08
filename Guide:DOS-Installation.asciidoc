@@ -1,3 +1,4 @@
+:toc: macro
 # PC-DOS and MS-DOS Installation Guide
 
 This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
@@ -9,12 +10,12 @@ Before going through this guide, consider if you really need this as the integra
 
 Some disadvantages of booting regular DOS in DOSBox-X includes:
 
-- Inability to use the ``MOUNT`` command to access directories on the host filesystem. All storage will have to be in the form of images, and they need to be mounted using ``IMGMOUNT`` *before* using the ``BOOT`` command to boot regular DOS.
-- If you need to access a CD or DVD drive you need to load a IDE/PATA CD/DVD driver and MSCDEX
-- If you need a mouse, you need to load a mouse driver
-- Less free memory in the lower 640KB range, and having to tune available memory by selectively loading drivers high.
-- If you need XMS memory you need to load a driver (typically HIMEM.SYS)
-- If you need EMS memory you need to load a driver (typically EMM386.EXE)
+* Inability to use the ``MOUNT`` command to access directories on the host filesystem. All storage will have to be in the form of images, and they need to be mounted using ``IMGMOUNT`` *before* using the ``BOOT`` command to boot regular DOS.
+* If you need to access a CD or DVD drive you need to load a IDE/PATA CD/DVD driver and MSCDEX
+* If you need a mouse, you need to load a mouse driver
+* Less free memory in the lower 640KB range, and having to tune available memory by selectively loading drivers high.
+* If you need XMS memory you need to load a driver (typically HIMEM.SYS)
+* If you need EMS memory you need to load a driver (typically EMM386.EXE)
 
 Some external links with useful information:
 
@@ -26,6 +27,8 @@ Some external links with useful information:
 * link:https://www.vogonswiki.com/index.php/DOS_memory_management[DOS memory management]
 * link:https://www.computerhope.com/cdromd.htm[CD-ROM driver help]
 * link:https://www.computerhope.com/issues/ch000007.htm[How to get a mouse to work in MS-DOS]
+
+toc::[]
 
 ## General guidelines
 These pages assume that you have PC-DOS or MS-DOS diskette images. Getting these image files is outside the scope of this document.
