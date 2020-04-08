@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS]]
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
 
 ## Overview
 DOS version 4.00 was the first release where IBM had the development lead. It returned to Microsoft for version 5.00.
