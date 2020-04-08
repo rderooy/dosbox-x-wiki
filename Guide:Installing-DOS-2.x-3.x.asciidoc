@@ -1,13 +1,6 @@
 :toc: macro
-ifdef::env-github[:outfilesuffix: .adoc]
-
-Back to the link:Guide%3ADOS-Installation{outfilesuffix}[]
 
 Back to the link:Guide%3ADOS-Installation[]
-
-Back to the <<Guide%3ADOS-Installation#,DOS Installation>>
-
-Back to the xref:Guide%3ADOS-Installation#[]
 
 # Installing DOS 2.x-3.x in DOSBox-X
 
