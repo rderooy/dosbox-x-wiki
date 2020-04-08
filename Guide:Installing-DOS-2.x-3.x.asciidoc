@@ -1,6 +1,10 @@
 :toc: macro
 
-Back to the xref:Guide:DOS-Installation#[]
+Back to the link:Guide%3DOS_Installation.html{outfilesuffix}[DOS Installation]
+
+Back to the <<Guide%3DOS-Installation.html#,DOS Installation>>
+
+Back to the xref:Guide%3DOS-Installation.html#[]
 
 # Installing DOS 2.x-3.x in DOSBox-X
 
