@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS.md]]
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS]]
 
 ## Overview
 - Key new features of DOS 2.00:
