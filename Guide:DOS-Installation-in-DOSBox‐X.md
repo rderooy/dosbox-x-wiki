@@ -1,4 +1,4 @@
-# PC-DOS and MS-DOS Installation Guide in DOSBox-X
+# PC-DOS and MS-DOS Installation Guide
 
 This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
 
