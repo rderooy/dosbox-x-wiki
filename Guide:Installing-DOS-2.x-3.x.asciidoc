@@ -1,4 +1,5 @@
 :toc: macro
+ifdef::env-github[:outfilesuffix: .adoc]
 
 Back to the link:Guide%3ADOS_Installation{outfilesuffix}[DOS Installation]
 
