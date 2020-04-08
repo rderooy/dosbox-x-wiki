@@ -42,7 +42,7 @@ First of all, consider if you really, really want to use DOS 4.x as it was consi
 |OS|Media|Disks
 
 |MS-DOS 4.0x|5.25" 360KB|Install, Select, Operating 1, Operating 2, Operating 3, Shell
-|MS-DOS 4.0x|3.5" 720KB|Setup, Operating, Shell
+|MS-DOS 4.0x|3.5" 720KB|Install, Operating, Shell
 |PC-DOS 4.0x|5.25" 360KB|Install, Select, Operating 1, Operating 2, Operating 3
 |PC-DOS 4.0x|3.5" 720KB|Install, Operating
 |===
