@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the xref:Guide:DOS-Installation[]
+Back to the xref:Guide:DOS-Installation#[]
 
 # Installing DOS 2.x-3.x in DOSBox-X
 
