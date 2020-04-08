@@ -1,3 +1,5 @@
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS.md]]
+
 ## Overview
 - Key new features of DOS 2.00:
   - First version to support HDDs (still using FAT12)
