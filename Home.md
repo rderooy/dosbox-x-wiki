@@ -564,7 +564,7 @@ DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?
 
 * [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
 * [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
-* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:DOS Installation Guide]]  
+* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:DOS Installation in DOSBox‐X]]  
 * [[Guide: Windows in DOSBox|Guide:Windows]]  
 
 ### Frequently Asked Questions (FAQ)
