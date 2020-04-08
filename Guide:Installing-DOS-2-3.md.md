@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation in DOSBox‐X]]
 
 ## Overview
 - Key new features of DOS 2.00:
