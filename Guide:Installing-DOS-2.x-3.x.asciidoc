@@ -4,7 +4,7 @@ Back to the link:Guide%3ADOS_Installation.html{outfilesuffix}[DOS Installation]
 
 Back to the <<Guide%3ADOS-Installation.html#,DOS Installation>>
 
-Back to the xref:Guide:DOS-Installation.html#[]
+Back to the xref:Guide%3ADOS-Installation.html#[]
 
 # Installing DOS 2.x-3.x in DOSBox-X
 
