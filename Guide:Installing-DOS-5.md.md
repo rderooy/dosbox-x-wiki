@@ -1,3 +1,5 @@
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS]]
+
 ## Overview
 Key new features of DOS 5.00:
 - First version to support 3.5" 2.88MB disks (ED)
