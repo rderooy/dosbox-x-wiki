@@ -254,6 +254,10 @@ Usage: ADDKEY key
 Enables programs to open data files in specified directories as if the files were in the current directory.  
 Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]  
 Note: It uses the APPEND command from FreeDOS.
+* **ATTRIB** (internal command)  
+Displays or changes file attributes.  
+Usage: ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [drive:][path][filename]
+Note: Only works on local and FAT drives.
 * **BOOT** (external command)  
 Starts disk or BIOS images independent of the operating system emulation offered by DOSBox-X.  
 Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] [-bios image]  
@@ -560,7 +564,7 @@ DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?
 
 * [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
 * [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
-* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:MS-DOS]]  
+* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:DOS Installation Guide]]  
 * [[Guide: Windows in DOSBox|Guide:Windows]]  
 
 ### Frequently Asked Questions (FAQ)
