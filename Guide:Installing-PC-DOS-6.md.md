@@ -1,3 +1,5 @@
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
+
 This applies to
 - PC-DOS 6.10
   - E replaces EDIT
