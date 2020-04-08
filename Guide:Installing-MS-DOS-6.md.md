@@ -1,3 +1,5 @@
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS]]
+
 ## Overview
 This applies to
 - MS-DOS 6.0
