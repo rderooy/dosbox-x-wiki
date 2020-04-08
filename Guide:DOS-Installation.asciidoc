@@ -95,9 +95,9 @@ image::images/MS-DOS:PC-DOS_1.0.png[]
 
 ## Guides to installing DOS
 
-* link:Guide%3AInstalling-DOS-2-3.adoc[Guide: Installing DOS 2.00-3.x in DOSBox-X]
-* link:Guide%3AInstalling-DOS-4.adoc[Guide: Installing DOS 4.0x in DOSBox-X]
-* link:Guide%3AInstalling-DOS-5.adoc[Guide: Installing DOS 5.0x in DOSBox-X]
-* link:Guide%3AInstalling-MS-DOS-6.adoc[Guide: Installing MS-DOS 6.x in DOSBox-X]
-* link:Guide%3AInstalling-PC-DOS-6.adoc[Guide: Installing PC-DOS 6.x in DOSBox-X]
-* link:Guide%3AInstalling-PC-DOS-7.adoc[Guide: Installing PC-DOS 7/2000 in DOSBox-X]
+* link:Guide%3AInstalling-DOS-2.x-3.x[Guide: Installing DOS 2.x-3.x in DOSBox-X]
+* link:Guide%3AInstalling-DOS-4[Guide: Installing DOS 4.0x in DOSBox-X]
+* link:Guide%3AInstalling-DOS-5[Guide: Installing DOS 5.0x in DOSBox-X]
+* link:Guide%3AInstalling-MS-DOS-6[Guide: Installing MS-DOS 6.x in DOSBox-X]
+* link:Guide%3AInstalling-PC-DOS-6[Guide: Installing PC-DOS 6.x in DOSBox-X]
+* link:Guide%3AInstalling-PC-DOS-7[Guide: Installing PC-DOS 7/2000 in DOSBox-X]
