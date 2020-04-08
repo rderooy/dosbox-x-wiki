@@ -1,3 +1,4 @@
+:toc: macro
 # PC-DOS and MS-DOS Installation Guide
 
 This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
@@ -27,7 +28,7 @@ Some external links with useful information:
 * link:https://www.computerhope.com/cdromd.htm[CD-ROM driver help]
 * link:https://www.computerhope.com/issues/ch000007.htm[How to get a mouse to work in MS-DOS]
 
-:toc:
+toc::[]
 
 ## General guidelines
 These pages assume that you have PC-DOS or MS-DOS diskette images. Getting these image files is outside the scope of this document.
