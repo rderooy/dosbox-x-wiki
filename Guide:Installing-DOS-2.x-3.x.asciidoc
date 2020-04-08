@@ -3,6 +3,8 @@ ifdef::env-github[:outfilesuffix: .adoc]
 
 Back to the link:Guide%3ADOS-Installation{outfilesuffix}[]
 
+Back to the link:Guide%3ADOS-Installation.adoc[]
+
 Back to the <<Guide%3ADOS-Installation#,DOS Installation>>
 
 Back to the xref:Guide%3ADOS-Installation#[]
