@@ -1,5 +1,5 @@
 :toc: macro
-ifdef::env-github[:outfilesuffix: .adoc]
+ifdef::env-github[:outfilesuffix: .html]
 
 Back to the link:Guide%3ADOS-Installation{outfilesuffix}[]
 
