@@ -1,6 +1,6 @@
-# PC-DOS and MS-DOS Installation Guide
+# PC DOS and MS-DOS Installation Guide
 
-This guide explains how to boot regular IBM PC-DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
+This guide explains how to boot regular IBM PC DOS or Microsoft MS-DOS in DOSBox-X, including creating hard disk images.
 
 Before going through this guide, consider if you really need this as the integrated DOS functionality in DOSBox-X is more convenient for typical use-cases. Booting regular DOS is normally not necessary to run DOS applications such as games, or even Windows version up to 3.11 in DOSBox-X. And even if you have a application that requires a specific DOS version, you can change the reported version of the integrated DOS in DOSBox-X. There are two ways to change the DOS version:
 1. There is a setting "ver" under the [dos] section in dosbox.conf (or from the DOSBox-X Configuration GUI). For example, setting "ver = 7.10" will cause DOSBox-X to set the initial DOS version as 7.10, instead of the default 5.00. Note that LFN (long filename) support will be enabled when the initial version is set to 7.0 or higher.
@@ -25,16 +25,16 @@ Some external links with useful information:
 - How to get a mouse to work in MS-DOS - [[https://www.computerhope.com/issues/ch000007.htm]]
 
 ## General guidelines
-These pages assume that you have PC-DOS or MS-DOS diskette images. Getting these image files is outside the scope of this document.
+These pages assume that you have PC DOS or MS-DOS diskette images. Getting these image files is outside the scope of this document.
 
 ### DOS versions
-Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this document. There are various limitations that DOS imposes that are dependant on the version. A few milestones:
+Unless noted otherwise, the PC DOS and MS-DOS versions are equivalent for this document. There are various limitations that DOS imposes that are dependant on the version. A few milestones:
 
-- PC-DOS version 1.0, supports only 5.25" 8-sector 160KB (SSDD) diskettes
-- PC-DOS version 1.1, adds support for 5.25" 8-sector 320KB (DSDD) diskettes
+- PC DOS version 1.0, supports only 5.25" 8-sector 160KB (SSDD) diskettes
+- PC DOS version 1.1, adds support for 5.25" 8-sector 320KB (DSDD) diskettes
 - MS-DOS version 1.25
   - First version available to other OEMs
-  - Equivalent to PC-DOS 1.1 (but missing DISKCOPY, DISKCOMP, COMP and MODE utilities)
+  - Equivalent to PC DOS 1.1 (but missing DISKCOPY, DISKCOMP, COMP and MODE utilities)
 - DOS version 2.0
   - First to support HDDs up to 16 or 32MB (depending on OEM)
   - First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
@@ -55,7 +55,7 @@ Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this d
   - First version to support HDDs up to 7.84GB with 2GB partitions
 
 #### DOS versions - divergence
-DOS 5 is the last version for which Microsoft and IBM shared code. From this point, Microsoft MS-DOS and IBM PC-DOS are developed independantly and start to diverge.
+DOS 5 is the last version for which Microsoft and IBM shared code. From this point, Microsoft MS-DOS and IBM PC DOS are developed independently and start to diverge.
 
 ##### Microsoft MS-DOS 6+
 - MS-DOS version 6.0 included an updated HIMEM.SYS XMS 3.x driver with support for up to 64MB RAM
@@ -70,29 +70,29 @@ DOS 5 is the last version for which Microsoft and IBM shared code. From this poi
 - MS-DOS version 8.0 (included in Windows ME)
   - Removed some features such as real-mode support, although there are patches to re-enable some of these features
 
-##### IBM PC-DOS 6+
-- PC-DOS version 6.1
-- PC-DOS version 6.3
-- PC-DOS version 7.0 / 2000
+##### IBM PC DOS 6+
+- PC DOS version 6.1
+- PC DOS version 6.3
+- PC DOS version 7.0 / 2000
   - Introduces XDF diskettes
-- PC-DOS version 7.1 (kernel files only)
+- PC DOS version 7.1 (kernel files only)
   - Adds support for LBA and FAT32
 
 ### DOS editions
-MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were 'personalized' to the manufacturer, and therefore many of these early OEM specific editions don't work, or only work partially in DOSBox-X. Because of this, up to DOS version 3.2, it is typically easier to use the IBM PC-DOS versions in DOSBox-X.
+MS-DOS was licensed by many clone manufacturers and in the early days these OEM editions were 'personalized' to the manufacturer, and therefore many of these early OEM specific editions don't work, or only work partially in DOSBox-X. Because of this, up to DOS version 3.2, it is typically easier to use the IBM PC DOS versions in DOSBox-X.
 
 ## Booting DOS from diskettes
 Booting DOS from a diskette image is pretty straight forward. Start DOSBox-X and you should find yourself at the DOSBox-X ``Z:\>`` prompt. This is not a real DOS, but a 'simulated' DOS that is compatible with most DOS games and applications. Now type something equivalent to
 ```
  BOOT dos.img
 ```
-Assuming that dos.img is an uncompressed DOS disk image in IBM-MFM format (typically with an file extension of .IMG or .IMA), in your current working directory, it should start it. This even works for IBM PC-DOS 1.00.
+Assuming that dos.img is an uncompressed DOS disk image in IBM-MFM format (typically with an file extension of .IMG or .IMA), in your current working directory, it should start it. This even works for IBM PC DOS 1.00.
 
-<img src="images/MS-DOS:PC-DOS_1.0.png" width="640" height="400" alt="Booting a PC-DOS 1.00 diskette image"><br>
+<img src="images/MS-DOS:PC-DOS_1.0.png" width="640" height="400" alt="Booting a PC DOS 1.00 diskette image"><br>
 
 * [[Guide: Installing DOS 2.00-3.x in DOSBox-X|Guide:Installing-DOS-2-3.md]]
 * [[Guide: Installing DOS 4.0x in DOSBox-X|Guide:Installing-DOS-4.md]]
 * [[Guide: Installing DOS 5.0x in DOSBox-X|Guide:Installing-DOS-5.md]]
 * [[Guide: Installing MS-DOS 6.x in DOSBox-X|Guide:Installing-MS-DOS-6.md]]
-* [[Guide: Installing PC-DOS 6.x in DOSBox-X|Guide:Installing-PC-DOS-6.md]]
-* [[Guide: Installing PC-DOS 7/2000 in DOSBox-X|Guide:Installing-PC-DOS-7.md]]
+* [[Guide: Installing PC DOS 6.x in DOSBox-X|Guide:Installing-PC-DOS-6.md]]
+* [[Guide: Installing PC DOS 7/2000 in DOSBox-X|Guide:Installing-PC-DOS-7.md]]
