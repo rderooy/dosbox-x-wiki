@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:MS-DOS]]
+Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
 
 ## Overview
 This applies to
