@@ -14,7 +14,7 @@ This applies to
  BOOT DISK1.IMG DISK2.IMG DISK3.IMG
 ```
 
-When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system" and you will be back at the DOSBox-Z ``Z:\>`` prompt.
+When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system" and you will be back at the DOSBox-X ``Z:\>`` prompt.
 
 You can now boot these DOS versions directly from the HDD image as follows:
 ```
