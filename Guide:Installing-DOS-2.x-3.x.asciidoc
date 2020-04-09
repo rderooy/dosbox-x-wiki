@@ -19,10 +19,14 @@ toc::[]
 ** Maximum partition size of 32MB (using the new FAT16)
 ** First version to support 5.25" 1.2MB disks (HD)
 ** First version to support the AT internal clock
+** First version to support file locking and file redirection
+** First version to include SHARE.EXE, ATTRIB.EXE, KEYBxx.COM, SELECT.COM
 * Key new features of DOS 3.10:
-** ???
+** Adds features for networking (e.g. IFS, remote file and print API)
 * Key new features of DOS 3.20:
 ** First version to support 3.5" 720kB disks (2DD)
+** First version to support a phantom B: drive
+** First version to include REPLACE.EXE, XCOPY.EXE
 * Key new features of DOS 3.30:
 ** First version to support the MBR partitioning scheme with primary, extended and logical partitions
 ** First version to support HDDs up to 504MB (partitions still limited to 32MB)
@@ -31,12 +35,15 @@ toc::[]
 This applies to:
 
 * Microsoft MS-DOS 3.21
+** First _packaged_ MS-DOS product available to OEMs
 * Microsoft MS-DOS 3.30
 * IBM Personal Computer DOS 2.00
 * IBM Personal Computer DOS 2.10
 * IBM Personal Computer DOS 3.00
+** Included VDISK.SYS (RAM disk using extended memory)
 * IBM Personal Computer DOS 3.10
 * IBM Personal Computer DOS 3.20
+** Removed LINK.EXE, EXE2BIN.EXE, BASIC sample programs
 * IBM Personal Computer DOS 3.30
 
 External links:
