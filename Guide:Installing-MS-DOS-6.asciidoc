@@ -7,7 +7,7 @@ Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Instal
 toc::[]
 
 ## Overview
-This applies to:
+### Editions this applies to
 
 * MS-DOS 6.0
 ** Adds F5 and F8 clean boot and selective boot options
@@ -32,9 +32,9 @@ This applies to:
 * MS-DOS 6.22
 ** New DRVSPACE disk compression added
 
-From this point, Microsoft MS-DOS and IBM PC-DOS have diverged.
-
-MS-DOS 6.x was available to both OEM's and end-users. However the version available to end-users was the "Upgrade" release, which requires that you already have DOS installed. It will refuse to install on a clean system. The workaround to this is fairly simple. You boot from the first disk, at the welcome screen press F3 twice and your at the command prompt. You can now, if necessary, partition and format the HDD and transfer the system files (``SYS C:``). After your done, just run SETUP.EXE or simply reboot from Disk 1 and the installer, because there are now system files on the HDD, will allow you to install MS-DOS 6.x Upgrade edition.
+### Notes
+* From this point, Microsoft MS-DOS and IBM PC-DOS have diverged.
+* MS-DOS 6.x was available to both OEM's and end-users. However the only version (officially) available to end-users was the "Upgrade" release, which requires that you already have DOS installed. It will refuse to install on a clean system. The workaround to this is fairly simple. You boot from the first disk, at the welcome screen press F3 twice and your at the command prompt. You can now, if necessary, partition and format the HDD and transfer the system files (``SYS C:``). After your done, just run SETUP.EXE or simply reboot from Disk 1 and the installer, because there are now system files on the HDD, will allow you to install MS-DOS 6.x Upgrade edition.
 
 ## Creating a MS-DOS 6.x HDD image
 Starting with DOS 5.00, installing DOS in DOSBox-X is much more straight forward, as you can have ``IMGMAKE`` create a HDD image that is already partitioned and formatted.
