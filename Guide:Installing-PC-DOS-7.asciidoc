@@ -7,7 +7,7 @@ Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Instal
 toc::[]
 
 ## Overview
-This applies to:
+### This applies to:
 
 * PC DOS 7, revision 0
 ** First version to use XDF disks
@@ -23,15 +23,14 @@ This applies to:
 ** Minor Y2K fixes
 ** Adds Euro currency symbol support
 
-Note: Some disk versions of IBM PC DOS 7 and 2000 were distributed in IBM XDF format or IBM DSKF image format. Neither of these image formats can be used in DOSBox-X.
+### Notes
 
-* XDF image files are easy to recognise as they use the .XDF extension. They are incompatible with DOSBox-X's FDD emulation, and cannot be converted to a disk image format that DOSBox can handle. Original disks in XDF format also cannot be read on a modern PC with a USB diskette drive.
-* DSKF image files are trickier to recognise as they use the same .DSK extension as is common for regular MFM disk images. DOSBox-X will happily try to boot a DSKF disk image and fail. On Linux you can run the command ``file filename.dsk``, and if it returns ``floppy image data (IBM SaveDskF)``, it is a DSKF disk image. Another way is to check the size of the .DSK file. If it is exactly 1474560, 1228800, 737280 or 368640 bytes, it is likely to be a regular MFM disk image (in respectively 1.44MB, 1.2MB, 720KB or 360KB sizes). The size of a DSKF disk image will instead vary. DSKF images can be written to diskette with LOADDSKF, but this fails in DOSBox-X.
-
-The PC DOS 2000 CD-ROM release is a bit of an odd release. One may expect that the CD-ROM is bootable, or that there is a DOS boot diskette provided with CD-ROM drivers. But neither is the case. Officially you could install it in one of two ways:
-
-* If you already have some version of DOS installed with CD-ROM support, and want to upgrade, you can directly run SETUP.EXE from the CD-ROM to install onto your system.
-* If you want to do a clean install, the CD-ROM contains six 3.5" 1.44MB disk images in IBM DSKF format together with LOADDSKF to write them to diskettes. You can then boot from the diskettes to install PC DOS 2000.
+* Some disk versions of IBM PC DOS 7 and 2000 were distributed in IBM XDF format or IBM DSKF image format. Neither of these image formats can be used in DOSBox-X.
+** XDF image files are easy to recognise as they use the .XDF extension. They are incompatible with DOSBox-X's FDD emulation, and cannot be converted to a disk image format that DOSBox can handle. Original disks in XDF format also cannot be read on a modern PC with a USB diskette drive.
+** DSKF image files are trickier to recognise as they use the same .DSK extension as is common for regular MFM disk images. DOSBox-X will happily try to boot a DSKF disk image and fail. On Linux you can run the command ``file filename.dsk``, and if it returns ``floppy image data (IBM SaveDskF)``, it is a DSKF disk image. Another way is to check the size of the .DSK file. If it is exactly 1474560, 1228800, 737280 or 368640 bytes, it is likely to be a regular MFM disk image (in respectively 1.44MB, 1.2MB, 720KB or 360KB sizes). The size of a DSKF disk image will instead vary. DSKF images can be written to diskette with LOADDSKF, but this fails in DOSBox-X.
+* The PC DOS 2000 CD-ROM release is a bit of an odd release. One may expect that the CD-ROM is bootable, or that there is a DOS boot diskette provided with CD-ROM drivers. But neither is the case. Officially you could install it in one of two ways:
+** If you already have some version of DOS installed with CD-ROM support, and want to upgrade, you can directly run SETUP.EXE from the CD-ROM to install onto your system.
+** If you want to do a clean install, the CD-ROM contains six 3.5" 1.44MB disk images in IBM DSKF format together with LOADDSKF to write them to diskettes. You can then boot from the diskettes to install PC DOS 2000.
 
 ## Creating a PC DOS 7 HDD image
 Installing PC DOS 7.0, revision 0 is problematic due to the XDF diskettes which are not supported by DOSBox-X. You would need to install it on either a legacy-PC, or a virtual machine like VMware or VirtualBox and then transfer the files manually which is outside the scope of this document.
