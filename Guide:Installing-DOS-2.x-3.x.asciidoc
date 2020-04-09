@@ -7,7 +7,7 @@ Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Instal
 toc::[]
 
 ## Overview
-* Key new features of DOS 2.00:
+### Key new features of DOS 2.00
 ** First version to support HDDs (still using FAT12)
 ** First version to support directories
 ** First version to support redirection (pipes)
@@ -15,25 +15,28 @@ toc::[]
 ** First version to support installable device drivers
 ** First version to introduce CONFIG.SYS
 ** First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
-* Key new features of DOS 3.00:
+
+### Key new features of DOS 3.00
 ** Maximum partition size of 32MB (using the new FAT16)
 ** First version to support 5.25" 1.2MB disks (HD)
 ** First version to support the AT internal clock
 ** First version to support file locking and file redirection
 ** First version to include SHARE.EXE, ATTRIB.EXE, KEYBxx.COM, SELECT.COM
-* Key new features of DOS 3.10:
+
+### Key new features of DOS 3.10
 ** Adds features for networking (e.g. IFS, remote file and print API)
-* Key new features of DOS 3.20:
+
+### Key new features of DOS 3.20
 ** First version to support 3.5" 720kB disks (2DD)
 ** First version to support a phantom B: drive
 ** First version to include REPLACE.EXE, XCOPY.EXE
-* Key new features of DOS 3.30:
+
+### Key new features of DOS 3.30
 ** First version to support the MBR partitioning scheme with primary, extended and logical partitions
 ** First version to support HDDs up to 504MB (partitions still limited to 32MB)
 ** First version to support 3.5" 1.44MB disks (HD)
 
-*This applies to:*
-
+## This applies to
 * Microsoft MS-DOS 3.21
 ** First _packaged_ MS-DOS product available to OEMs
 * Microsoft MS-DOS 3.30
@@ -46,13 +49,13 @@ toc::[]
 ** Removed LINK.EXE, EXE2BIN.EXE, BASIC sample programs
 * IBM Personal Computer DOS 3.30
 
-*External links:*
+## External links
 
 * http://www.os2museum.com/wp/dos/dos-2-0-and-2-1/
 * http://www.os2museum.com/wp/dos/dos-3-0-3-2/
 * http://www.os2museum.com/wp/dos/dos-3-3/
 
-*Notes:*
+## Notes
 
 * For DOS 2.x, the maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
 * For DOS 3.00-3.21, the maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
