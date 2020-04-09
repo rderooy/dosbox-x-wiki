@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Guide%3ADOS Installation in DOSBox‐X[PC DOS and MS-DOS Installation Guide]
+Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide]
 
 # Installing DOS 2.x-3.x in DOSBox-X
 
