@@ -32,7 +32,7 @@ toc::[]
 ** First version to support HDDs up to 504MB (partitions still limited to 32MB)
 ** First version to support 3.5" 1.44MB disks (HD)
 
-This applies to:
+*This applies to:*
 
 * Microsoft MS-DOS 3.21
 ** First _packaged_ MS-DOS product available to OEMs
@@ -46,16 +46,16 @@ This applies to:
 ** Removed LINK.EXE, EXE2BIN.EXE, BASIC sample programs
 * IBM Personal Computer DOS 3.30
 
-External links:
+*External links:*
 
 * http://www.os2museum.com/wp/dos/dos-2-0-and-2-1/
 * http://www.os2museum.com/wp/dos/dos-3-0-3-2/
 * http://www.os2museum.com/wp/dos/dos-3-3/
 
-Notes:
+*Notes:*
 
 * For DOS 2.x, the maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
-* For DOS 3.00-3.21, the maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC-DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
+* For DOS 3.00-3.21, the maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
 * While it is possible to use a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and depending on the DOS version will either overflow such that a 40MB HDD image becomes a 40-32=8MB partition, or it will create a drive that cannot be formatted.
 
 |===
