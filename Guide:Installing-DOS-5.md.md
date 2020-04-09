@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
+Back to the [[PC DOS and MS-DOS Installation Guide|Guide:DOS Installation in DOSBox‐X]]
 
 ## Overview
 Key new features of DOS 5.00:
@@ -15,15 +15,15 @@ This applies to
 - Microsoft MS-DOS 5.00
 - Microsoft MS-DOS 5.00a
   - Fixes a data corruption bug (CHKDSK and UNDELETE can in some cases cause corruption, alternatively use the "PD0646" patch).
-- IBM PC-DOS 5.00
+- IBM PC DOS 5.00
   - Adds a Mouse driver (MOUSE.COM)
-- IBM PC-DOS 5.02
+- IBM PC DOS 5.02
   - Adds ISO screen fonts
   - Adds Eject utility for lockable media
   - Adds APM Power management
   - Adds file transfer utility
 
-  DOS 5 is the last version that Microsoft and IBM shared code for, and later PC-DOS and MS-DOS versions diverge from here on. Both IBM and Microsoft started selling their respective DOS versions directly to the general public, and to other OEMs. IBM marketed it "For IBM and IBM Compatibles", while Microsoft simply said "for DOS systems". Microsoft and IBM also started to leapfrog each other with version numbers, so that it would appear their respective version was newer. This would continue until Windows 95 was released, and Microsoft lost interest in launching new stand-alone DOS versions.
+  DOS 5 is the last version that Microsoft and IBM shared code for, and later PC DOS and MS-DOS versions diverge from here on. Both IBM and Microsoft started selling their respective DOS versions directly to the general public, and to other OEMs. IBM marketed it "For IBM and IBM Compatibles", while Microsoft simply said "for DOS systems". Microsoft and IBM also started to leapfrog each other with version numbers, so that it would appear their respective version was newer. This would continue until Windows 95 was released, and Microsoft lost interest in launching new stand-alone DOS versions.
 
   Note: The MS-DOS 5 Upgrade release that was available to end-users requires that you already have DOS installed. The disks are not bootable, unlike the later MS-DOS 6.x Upgrade editions. As such you need a separate DOS boot disk to be able to install the Upgrade edition on a clean system.
 
