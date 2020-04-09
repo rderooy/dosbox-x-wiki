@@ -7,7 +7,7 @@ Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Instal
 toc::[]
 
 ## Overview
-Key new features of DOS 5.00:
+### Key new features of DOS 5.00
 
 * First version to support 3.5" 2.88MB disks (ED)
 * First version to support HDDs up to 7.84GB with 2GB partitions
@@ -18,7 +18,7 @@ Key new features of DOS 5.00:
 * Adds HELP command, and /? parameter for commands
 * DOS Shell adds Task Swapping ability
 
-This applies to:
+### Editions this applies to
 
 * Microsoft MS-DOS 5.00
 * Microsoft MS-DOS 5.00a
@@ -31,9 +31,10 @@ This applies to:
 ** Adds APM Power management
 ** Adds file transfer utility
 
-DOS 5 is the last version that Microsoft and IBM shared code for, and later PC DOS and MS-DOS versions diverge from here on. Both IBM and Microsoft started selling their respective DOS versions directly to the general public, and to other OEMs. IBM marketed it "For IBM and IBM Compatibles", while Microsoft simply said "for DOS systems". Microsoft and IBM also started to leapfrog each other with version numbers, so that it would appear their respective version was newer. This would continue until Windows 95 was released, and Microsoft lost interest in launching new stand-alone DOS versions.
+## Notes
 
-_Note_: The MS-DOS 5 Upgrade release that was available to end-users requires that you already have DOS installed. The disks are not bootable, unlike the later MS-DOS 6.x Upgrade editions. As such you need a separate DOS boot disk to be able to install the Upgrade edition on a clean system.
+* DOS 5 is the last version that Microsoft and IBM shared code for, and later PC DOS and MS-DOS versions diverge from here on. Both IBM and Microsoft started selling their respective DOS versions directly to the general public, and to other OEMs. IBM marketed it "For IBM and IBM Compatibles", while Microsoft simply said "for DOS systems". Microsoft and IBM also started to leapfrog each other with version numbers, so that it would appear their respective version was newer. This would continue until Windows 95 was released, and Microsoft lost interest in launching new stand-alone DOS versions.
+* The MS-DOS 5 Upgrade release that was available to end-users requires that you already have DOS installed. The disks are not bootable, unlike the later MS-DOS 6.x Upgrade editions. As such you need a separate DOS boot disk to be able to install the Upgrade edition on a clean system.
 
 ## Creating a DOS 5.0x HDD image
 
