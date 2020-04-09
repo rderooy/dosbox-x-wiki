@@ -6,10 +6,10 @@ Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Instal
 
 toc::[]
 
-## Overview
-### This applies to:
+# Overview
+## Editions this applies to
 
-* PC DOS 7, revision 0
+### PC DOS 7, revision 0
 ** First version to use XDF disks
 ** Adds a command-line calculator
 ** Adds ability to load device drivers from command line
@@ -18,12 +18,13 @@ toc::[]
 ** Adds PenDOS
 ** Adds Phoenix PCMCIA support
 ** Adds HELP file viewer (OS/2 INF format)
-* PC DOS 2000 (aka PC DOS 7.0, revision 1)
+
+### PC DOS 2000 (aka PC DOS 7.0, revision 1)
 ** First and only commercial DOS release to be available on CD-ROM
 ** Minor Y2K fixes
 ** Adds Euro currency symbol support
 
-### Notes
+## Notes
 
 * Some disk versions of IBM PC DOS 7 and 2000 were distributed in IBM XDF format or IBM DSKF image format. Neither of these image formats can be used in DOSBox-X.
 ** XDF image files are easy to recognise as they use the .XDF extension. They are incompatible with DOSBox-X's FDD emulation, and cannot be converted to a disk image format that DOSBox can handle. Original disks in XDF format also cannot be read on a modern PC with a USB diskette drive.
@@ -32,10 +33,10 @@ toc::[]
 ** If you already have some version of DOS installed with CD-ROM support, and want to upgrade, you can directly run SETUP.EXE from the CD-ROM to install onto your system.
 ** If you want to do a clean install, the CD-ROM contains six 3.5" 1.44MB disk images in IBM DSKF format together with LOADDSKF to write them to diskettes. You can then boot from the diskettes to install PC DOS 2000.
 
-## Creating a PC DOS 7 HDD image
+# Creating a PC DOS 7 HDD image
 Installing PC DOS 7.0, revision 0 is problematic due to the XDF diskettes which are not supported by DOSBox-X. You would need to install it on either a legacy-PC, or a virtual machine like VMware or VirtualBox and then transfer the files manually which is outside the scope of this document.
 
-## Creating a PC DOS 2000 HDD image from CD-ROM
+# Creating a PC DOS 2000 HDD image from CD-ROM
 Do to the limitations mentioned above, you have the following installation options:
 
 * Use a real legacy PC to write the DSKF image files with LOADDSKF to diskettes, and then convert the diskettes to regular MFM DSK files.
