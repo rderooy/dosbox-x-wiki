@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
+Back to the [[PC DOS and MS-DOS Installation Guide|Guide:DOS Installation in DOSBox‐X]]
 
 ## Overview
 DOS version 4.00 was the first release where IBM had the development lead. It returned to Microsoft for version 5.00.
@@ -19,15 +19,15 @@ This applies to
   - Added EMM386.SYS with support for LIM EMS 4.0
   - First version to include SMARTDRV.SYS
 - Microsoft MS-DOS 4.01
-- IBM PC-DOS 4.00
-- IBM PC-DOS 4.01
+- IBM PC DOS 4.00
+- IBM PC DOS 4.01
 
-Note: Unlike with MS-DOS, there is no obvious way to know if you have PC-DOS 4.00 or 4.01. The ``VER`` command will claim Version 4.00 for either, as will the box, manuals and installer. The ways to check are either to look at the disk labels, which will say 4.00 or 4.01, or check if some OS files like IBMBIO.COM and IBMDOS.COM are dated 08-03-1988 (MM-DD-YYYY), in which case you have the 4.01 release. IBM released a corrective service (CSD UR22624) to upgrade a 4.00 installation to 4.01, you can view the README here: http://www.retroarchive.org/garbo/pc/doc-soft/dos400.bug
+Note: Unlike with MS-DOS, there is no obvious way to know if you have PC DOS 4.00 or 4.01. The ``VER`` command will claim Version 4.00 for either, as will the box, manuals and installer. The ways to check are either to look at the disk labels, which will say 4.00 or 4.01, or check if some OS files like IBMBIO.COM and IBMDOS.COM are dated 08-03-1988 (MM-DD-YYYY), in which case you have the 4.01 release. IBM released a corrective service (CSD UR22624) to upgrade a 4.00 installation to 4.01, you can view the README here: http://www.retroarchive.org/garbo/pc/doc-soft/dos400.bug
 
 External links:
 - http://www.os2museum.com/wp/dos/dos-4-0/
 
-First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required. Also the IBM PC-DOS release is easier to install then the MS-DOS release as it uses fewer disks, but lacks HIMEM.SYS, EMM386.SYS and SMARTDRV.SYS.
+First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required. Also the IBM PC DOS release is easier to install then the MS-DOS release as it uses fewer disks, but lacks HIMEM.SYS, EMM386.SYS and SMARTDRV.SYS.
 
 MS-DOS 4.0x on 5.25" 360KB media consists of the following six diskettes
 - Install, Select, Operating 1, Operating 2, Operating 3, Shell
@@ -35,10 +35,10 @@ MS-DOS 4.0x on 5.25" 360KB media consists of the following six diskettes
 MS-DOS 4.0x on 3.5" 720KB media consists of the following three diskettes
 - Setup, Operating, Shell
 
-PC-DOS 4.0x on 5.25" 360KB media consists of the following five diskettes
+PC DOS 4.0x on 5.25" 360KB media consists of the following five diskettes
 - Install , Select, Operating 1, Operating 2, Operating 3
 
-PC-DOS 4.0x on 3.5" 720KB media consists of the following two diskettes
+PC DOS 4.0x on 3.5" 720KB media consists of the following two diskettes
 - Install, Operating
 
 OEM versions could have additional disks such as a Diagnostic disk.
@@ -192,8 +192,8 @@ IMGMOUNT C hdd.img
 BOOT -L C
 ```
 
-## Creating a PC-DOS 4.0x HDD image
-Installing PC-DOS 4.0x is easier then MS-DOS 4.0x as it comes on only two 3.5" disks (Install and Operating), or five 5.25" disks.
+## Creating a PC DOS 4.0x HDD image
+Installing PC DOS 4.0x is easier then MS-DOS 4.0x as it comes on only two 3.5" disks (Install and Operating), or five 5.25" disks.
 
 The same limits on disk and partition sizes seem to apply as MS-DOS 4.0x.
 
