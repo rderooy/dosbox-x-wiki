@@ -34,7 +34,7 @@ Some external links with useful information:
 * link:https://www.computerhope.com/issues/ch000007.htm[How to get a mouse to work in MS-DOS]
 
 ## Where to get DOS?
-These pages assume that you have PC-DOS or MS-DOS diskette images. Getting these image files is outside the scope of this guide.
+These pages assume that you have PC DOS or MS-DOS diskette images. Getting these image files is outside the scope of this guide.
 
 ## DOS version highlights
 ### DOS versions 1.0-5.0x
