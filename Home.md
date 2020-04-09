@@ -22,7 +22,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Improved customization on the title bar  
 * Better compatibility with DOS applications  
 * Built-in external tools such as CWSDPMI, DOSIDLE and IMGMAKE
-* Support for more DOS commands (e.g. VOL, LABEL, PROMPT, and MOUSE)  
+* Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)  
 * Support for CONFIG.SYS commands (e.g. DEVICE, BUFFERS, FCBS, LASTDRIV)  
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for ROM BIOS images
@@ -564,7 +564,7 @@ DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?
 
 * [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
 * [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
-* [[Guide: PC-DOS or MS-DOS in DOSBox-X|Guide:DOS Installation in DOSBox‐X]]  
+* [[Guide: PC DOS or MS-DOS in DOSBox-X|Guide:DOS Installation in DOSBox‐X]]  
 * [[Guide: Windows in DOSBox|Guide:Windows]]  
 
 ### Frequently Asked Questions (FAQ)
