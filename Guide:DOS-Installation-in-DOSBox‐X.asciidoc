@@ -38,7 +38,7 @@ These pages assume that you have PC DOS or MS-DOS diskette images. Getting these
 
 ## DOS version highlights
 ### DOS versions 1.0-5.0x
-Unless noted otherwise, the PC-DOS and MS-DOS versions are equivalent for this guide. There are various limitations that DOS imposes that are dependant on the version. A few milestones:
+Unless noted otherwise, the PC DOS and MS-DOS versions are equivalent for this guide. There are various limitations that DOS imposes that are dependant on the version. A few milestones:
 
 * *PC DOS 1.0*, supports only 5.25" 8-sector 160KB (SSDD) diskettes
 * *PC DOS 1.1*, adds support for 5.25" 8-sector 320KB (DSDD) diskettes
