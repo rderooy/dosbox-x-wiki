@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Guide%3ADOS-Installation[PC-DOS and MS-DOS Installation Guide]
+Back to the link:Guide%3ADOS-Installation[PC DOS and MS-DOS Installation Guide]
 
 # Installing DOS 2.x-3.x in DOSBox-X
 
@@ -32,12 +32,12 @@ This applies to:
 
 * Microsoft MS-DOS 3.21
 * Microsoft MS-DOS 3.30
-* IBM PC-DOS 2.00
-* IBM PC-DOS 2.10
-* IBM PC-DOS 3.00
-* IBM PC-DOS 3.10
-* IBM PC-DOS 3.20
-* IBM PC-DOS 3.30
+* IBM Personal Computer DOS 2.00
+* IBM Personal Computer DOS 2.10
+* IBM Personal Computer DOS 3.00
+* IBM Personal Computer DOS 3.10
+* IBM Personal Computer DOS 3.20
+* IBM Personal Computer DOS 3.30
 
 External links:
 
@@ -60,11 +60,11 @@ Notes:
 |MS-DOS 3.20|-|31MB|Will fail to boot with 32MB
 |MS-DOS 3.20|Tandy|31MB|Format error, and will fail to boot with 32MB
 |MS-DOS 3.21|-|31MB|Format error, and will fail to boot with 32MB
-|PC-DOS 2.00|IBM|32MB|
-|PC-DOS 2.10|IBM|32MB|
-|PC-DOS 3.0|IBM|32MB|
-|PC-DOS 3.1|IBM|32MB|
-|PC-DOS 3.2|IBM|31MB|Will fail to boot with 32MB
+|PC DOS 2.00|IBM|32MB|
+|PC DOS 2.10|IBM|32MB|
+|PC DOS 3.0|IBM|32MB|
+|PC DOS 3.1|IBM|32MB|
+|PC DOS 3.2|IBM|31MB|Will fail to boot with 32MB
 |===
 
 * If you specify a different size then 31MB for the ``IMGMAKE`` command, pay close attention to the output of ``IMGMAKE`` as you will need to adjust the ``IMGMOUNT`` size parameter values accordingly.
@@ -87,14 +87,14 @@ You are now ready to boot the DOS diskette image:
 ....
 Assuming that your uncompressed DOS 3.0-3.2 image is named dos.img and in your current working directory, it should boot DOS from the diskette image.
 
-image::images/MS-DOS:PC-DOS_3.2_BOOT.png[Booting PC-DOS 3.2 from diskette]
+image::images/MS-DOS:PC-DOS_3.2_BOOT.png[Booting PC DOS 3.2 from diskette]
 
 These early DOS versions did not have an installer, so the preparation and installation is a manual process. You need to start with creating a DOS partition.
 
 Run ``FDISK`` and select option 1 to create a new DOS partition, and confirm you want to use the entire fixed disk for DOS.
 
-image::images/MS-DOS:PC-DOS_3.2_FDISK.png[Running PC-DOS 3.2 FDISK]
-image::images/MS-DOS:PC-DOS_3.2_FDISK_Restart.png[PC-DOS 3.2 FDISK restart screen]
+image::images/MS-DOS:PC-DOS_3.2_FDISK.png[Running PC DOS 3.2 FDISK]
+image::images/MS-DOS:PC-DOS_3.2_FDISK_Restart.png[PC DOS 3.2 FDISK restart screen]
 
 After it is finished, press any key and DOS will reboot DOSBox-X and your again at the DOSBox-X ``Z:\>`` prompt. At this point the HDD image is partitioned, but not yet formatted or made bootable, so that is what you need to do next.
 ....
@@ -105,7 +105,7 @@ You have now again booted from the disk image, and are ready to format the C: an
 ....
  FORMAT C: /S
 ....
-image::images/MS-DOS:PC-DOS_3.2_FORMAT.png[Running PC-DOS 3.2 FORMAT]
+image::images/MS-DOS:PC-DOS_3.2_FORMAT.png[Running PC DOS 3.2 FORMAT]
 
 You can optionally copy over the rest of the diskette contents at this point
 ....
@@ -126,7 +126,7 @@ You probably don't want to memorize those last two commands, so do yourself a fa
 * You may notice that instead of using "2", we are now using "C". This is because the image is now partitioned and formatted and DOSBox is able to find the partition within it. The advantage of being able to address it as "C" is that you can access the files inside the HDD image from the DOSBox-X integrated DOS, making it easier to transfer files.
 * Unfortunately we do still need to specify the drive geometry as DOSBox-X cannot autodetect it for DOS versions prior to 3.3.
 
-image::images/MS-DOS:PC-DOS_3.2_BOOT_HDD.png[PC-DOS 3.2 Boot from HDD]
+image::images/MS-DOS:PC-DOS_3.2_BOOT_HDD.png[PC DOS 3.2 Boot from HDD]
 
 ## Creating a DOS 3.3 HDD image
 Creating a DOS 3.3 HDD image is nearly identical to that of DOS 3.0-3.2 above with a few small notes
