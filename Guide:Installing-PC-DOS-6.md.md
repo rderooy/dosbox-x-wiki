@@ -1,14 +1,14 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
+Back to the [[PC DOS and MS-DOS Installation Guide|Guide:DOS Installation in DOSBox‐X]]
 
 This applies to
-- PC-DOS 6.10
+- PC DOS 6.10
   - E replaces EDIT
   - Includes disk utilities from Central Point Software
   - Includes IBM Antivirus
-- PC-DOS 6.30
+- PC DOS 6.30
   - Includes Addstor SuperStor disk compression software
 
-## Creating a PC-DOS 6.x HDD image
+## Creating a PC DOS 6.x HDD image
 
 ```
  IMGMAKE hdd.img -t hd -size 2048
