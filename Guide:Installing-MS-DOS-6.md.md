@@ -1,4 +1,4 @@
-Back to the [[PC-DOS and MS-DOS Installation Guide|Guide:DOS Installation Guide]]
+Back to the [[PC DOS and MS-DOS Installation Guide|Guide:DOS Installation in DOSBox‐X]]
 
 ## Overview
 This applies to
