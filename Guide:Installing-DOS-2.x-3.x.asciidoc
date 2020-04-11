@@ -16,6 +16,9 @@ toc::[]
 ** First version to introduce CONFIG.SYS
 ** First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
 
+### Key new features of PC DOS 2.10
+** Adds support for the IBM PCjr
+
 ### Key new features of DOS 3.00
 ** Maximum partition size of 32MB (using the new FAT16)
 ** First version to support 5.25" 1.2MB disks (HD)
