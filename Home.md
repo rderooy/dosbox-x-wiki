@@ -402,8 +402,8 @@ Displays output one screen at a time.
 Usage: MORE [filename]
 * **MOUNT** (external command)  
 Mounts drives from directories or drives in the host system.  
-Usage: MOUNT driveletter host_directory [options]  
-Note: It accepts a -nocachedir option to not cache the drive, so that the RESCAN command is not needed and DIR will always show the most recent contents on this drive.
+Usage: MOUNT [option] driveletter host_directory  
+Note: Supported options include -nocachedir to not cache the drive, -ro to put drive in read-only mode, and -u to unmount the drive.
 * **MOUSE** (external command)  
 Turns on/off mouse support.  
 Usage: MOUSE [/U] [/V]
