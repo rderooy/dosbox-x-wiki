@@ -10,9 +10,18 @@ toc::[]
 ### Editions this applies to:
 
 * PC DOS 6.10
+** Adds F5 and F8 clean boot and selective boot options
+** Adds Startup Menu support
+** Enhanced DOS memory management with RAMBoost
 ** E replaces EDIT
-** Includes disk utilities from Central Point Software
-** Includes IBM Antivirus
+** Includes QCONFIG diagnostic utility
+** Includes Central Point Backup (DOS and Windows)
+** Includes Central Point Data Monitor
+** Includes Central Point Scheduler
+** Includes defrag
+** Includes IBM Antivirus (DOS and Windows)
+** Includes Phoenix PCMCIA support (DOS and Windows)
+** Includes PenDOS
 * PC DOS 6.30
 ** Includes Addstor SuperStor disk compression software
 
