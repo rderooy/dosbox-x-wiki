@@ -26,6 +26,7 @@ toc::[]
 
 ## Notes
 
+* There is also PC DOS 7.1 which has LBA and FAT32 support, but it only contains kernel files, and it does not have an installation program.
 * Some disk versions of IBM PC DOS 7 and 2000 were distributed in IBM XDF format or IBM DSKF image format. Neither of these image formats can be used in DOSBox-X.
 ** XDF image files are easy to recognise as they use the .XDF extension. They are incompatible with DOSBox-X's FDD emulation, and cannot be converted to a disk image format that DOSBox can handle. Original disks in XDF format also cannot be read on a modern PC with a USB diskette drive.
 ** DSKF image files can be trickier to recognise as they use the same .DSK extension as is sometimes used for regular MFM disk images. While DOSBox-X will fail to ``IMGMOUNT`` a DSKF image, it will happily try to boot a DSKF disk image and fail. On Linux you can run the command ``file filename.dsk``, and if it returns ``floppy image data (IBM SaveDskF)``, it is a DSKF disk image. Another way is to check the size of the .DSK file. If it is exactly 1474560, 1228800, 737280 or 368640 bytes, it is likely to be a regular MFM disk image (in respectively 1.44MB, 1.2MB, 720KB or 360KB sizes). The size of a DSKF disk image will instead vary. DSKF images can be written to diskette with LOADDSKF, but this fails in DOSBox-X's integrated DOS as it lacks some low-level functions that are needed for LOADDSKF to function. LOADDSKF will however work if you boot regular DOS environment in DOSBox-X first.
