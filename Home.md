@@ -383,7 +383,8 @@ Displays or changes the CONFIG.SYS's LASTDRIVE setting.
 Usage: LASTDRIV [driveletter]
 * **LFNFOR** (internal command)  
 Enables or disables long filenames when processing FOR wildcards.  
-Usage: LFNFOR [ON | OFF]
+Usage: LFNFOR [ON | OFF]  
+Note: This command is only useful if long filename support is currently enabled.
 * **LOADFIX** (external command)  
 Loads a program above the first 64K of memory.  
 Usage: LOADFIX [program] [options]
@@ -472,7 +473,8 @@ Displays the contents of a text-file.
 Usage: TYPE [drive:][path][filename]
 * **VER** (internal command)  
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
-Usage: VER [SET major minor]
+Usage: VER [SET major minor] or VER [SET major.minor]  
+Note: "VER SET 3 3" will set the reported DOS version as 3.03, whereas "VER SET 3.3" will set the version as 3.30.
 * **VERIFY** (internal command)  
 Controls whether to verify that your files are written correctly to a disk.  
 Usage: VERIFY [ON | OFF]
