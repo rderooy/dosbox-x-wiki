@@ -262,6 +262,9 @@ Note: Changing file attributes only works on local and FAT drives.
 Starts disk or BIOS images independent of the operating system emulation offered by DOSBox-X.  
 Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] [-bios image]  
 Note: Loading a BIOS image is currently experimental - at this time it will only work for custom code and assembly experiments.
+* **BREAK** (internal command)  
+Sets or clears extended CTRL+C checking.  
+Usage: BREAK [ON | OFF]
 * **BUFFERS** (external command)  
 Displays or changes the CONFIG.SYS's BUFFERS setting.  
 Usage: BUFFERS [buffernum]
@@ -342,8 +345,11 @@ Displays or changes the CONFIG.SYS's FCBS setting.
 Usage: FCBS [fcbnum]
 * **FIND** (external command)  
 Prints lines of a file that contains the specified string.  
-Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]  
-Note: It uses the FIND command from FreeDOS.
+Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]
+* **FOR** (internal command)  
+Runs a specified command for each file in a set of files.  
+Usage: FOR %variable IN (set) DO command [command-parameters]  
+Note: Specify %%variable instead of %variable when used in a batch file.
 * **GOTO** (internal command)  
 Jumps to a labeled line in a batch script.  
 Usage: GOTO label
@@ -370,11 +376,14 @@ Usage: Simply enter INTRO without any parameters.
 Changes the layout of the keyboard used for different countries.  
 Usage: KEYB [keyboard layout ID [codepage number [codepage file]]]
 * **LABEL** (external command)  
-Changes the label of a drive.   
+Changes the label of a drive.  
 Usage: LABEL [drive:][label]
 * **LASTDRIV** (external command)  
 Displays or changes the CONFIG.SYS's LASTDRIVE setting.  
 Usage: LASTDRIV [driveletter]
+* **LFNFOR** (internal command)  
+Enables or disables long filenames when processing FOR wildcards.  
+Usage: LFNFOR [ON | OFF]
 * **LOADFIX** (external command)  
 Loads a program above the first 64K of memory.  
 Usage: LOADFIX [program] [options]
@@ -452,8 +461,8 @@ Usage: Simply enter SHOWGUI without any parameters.
 Assigns an internal directory to a drive.  
 Usage: SUBST [drive1: [drive2:]path] or SUBST drive1: /D
 * **TIME** (internal command)  
-Displays the internal time.  
-Usage: TIME [/T] [/H]
+Displays or changes the internal time.  
+Usage: TIME [ [/T] [/H] | hh:mm:ss ]
 * **TREE** (external command)  
 Graphically displays the directory structure of a drive or path.  
 Usage: TREE [drive:][path] [/F] [/A]  
@@ -464,6 +473,9 @@ Usage: TYPE [drive:][path][filename]
 * **VER** (internal command)  
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
 Usage: VER [SET major minor]
+* **VERIFY** (internal command)  
+Controls whether to verify that your files are written correctly to a disk.  
+Usage: VERIFY [ON | OFF]
 * **VESAMOED** (external command)  
 Runs the VESA BIOS mode editor utility, which can be used to add, modify or delete VESA BIOS modes.  
 Usage: VESAMOED [options]  
