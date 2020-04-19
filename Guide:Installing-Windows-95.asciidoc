@@ -63,7 +63,7 @@ Note: The [autoexec] section will need lines added later.
 * This method is probably the easiest, but will only work with *Windows 95 OSR2 or later*. If you try to follow this method with an older Windows 95 release, you will get an _Error SU99405_ and setup will not continue.
 * This method will result in a C: drive using FAT16. If you want a FAT32 C: drive, follow Method 1.
 
-First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in our path and win95.conf is in our current directory.
+First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
 ....
 dosbox-x -conf win95.conf
 ....
@@ -98,7 +98,7 @@ MOUNT D D:\ -t cdrom
 While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (as long as you have the CD-ROM automatically mounted in your [autoexec] section of the config file), it is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
 
 ....
-XCOPY D:\WIN95\*.* C:\WIN95 /I /E
+XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
 
 ## Running SETUP.EXE
