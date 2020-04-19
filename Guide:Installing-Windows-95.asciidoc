@@ -32,6 +32,9 @@ cputype=pentium_mmx
 core=normal
 
 [ne2000]
+# If you want networking in Windows, set ne2000=true.
+# This also requires that you set realnic= to a suitable value for your PC,
+# and that your DOSBox-X binary is PCAP enabled
 ne2000=false
 realnic=list
 
@@ -55,7 +58,10 @@ aspect=false
 
 Copy the above config and save it as *win95.conf*
 
-Note: The [autoexec] section will need lines added later.
+*Notes*
+* The [autoexec] section will need lines added later.
+* If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. It also requires that your DOSBox-X binary has support for PCAP. See:
+ [[Guide: Setting up networking|Guide: Setting up networking in DOSBox-X]] for more information.
 
 # Method 1: Running setup.exe from DOSBox-X
 *Notes*
