@@ -1,0 +1,132 @@
+:toc: macro
+
+Back to the link:Guide%3AWindows Installation in DOSBox‐X[Windows Installation in DOSBox-X]
+
+# Installing Microsoft Windows 95 in DOSBox-X
+
+toc::[]
+
+# Overview
+## CD-ROM editions this applies to
+
+* Windows 95 (RTM; Original release)
+* Windows 95 OSR1 (aka 95A)
+* Windows 95 OSR2 (aka 95B)
+* Windows 95 OSR2.1 (aka 95B)
+* Windows 95 OSR2.5 (aka 95C)
+
+Note: It will not work with the Windows 95 diskette versions, as those use an unsupported format (DMF), which cannot be used with DOSBox-X.
+
+## Turbo mode
+Some parts of the installation can take a considerable amount of time. You can speed this up by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data, or make choices as it can cause spurious keypresses to be registered causing undesirable effects.
+
+# DOSBox-X config file
+We first need to create a DOSBox-X config file.
+....
+[dosbox]
+title=Windows 95
+memsize=64
+
+[cpu]
+cputype=pentium_mmx
+core=normal
+
+[ne2000]
+ne2000=false
+realnic=list
+
+[fdc, primary]
+enable=true
+int13fakev86io=true
+
+[ide, primary]
+int13fakev86io=true
+
+[ide, secondary]
+int13fakev86io=true
+cd-rom insertion delay=4000
+
+[render]
+scaler=none
+aspect=false
+
+[autoexec]
+....
+
+Copy the above config and save it as *win95.conf*
+
+Note: The [autoexec] section will need lines added later.
+
+# Method 1: Running setup.exe from DOSBox-X
+*Notes*
+
+* This method is probably the easiest, but will only work with *Windows 95 OSR2 or later*. If you try to follow this method with an older Windows 95 release, you will get an _Error SU99405_ and setup will not continue.
+* This method will result in a C: drive using FAT16. If you want a FAT32 C: drive, follow Method 1.
+
+First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in our path and win95.conf is in our current directory.
+....
+dosbox-x -conf win95.conf
+....
+Then in DOSBox-X you need to create a new harddisk image file, and mount it as the C: drive. We use a 2048MB (2GB) HDD for this purpose, as that is the maximum size for FAT16.
+....
+IMGMAKE hdd.img -t hd_2gig
+IMGMOUNT C hdd.img
+....
+
+We will also need to mount the Windows 95 CD-ROM. There are a few ways of doing so.
+
+### Mount as ISO image
+If you have a copy of the Windows 95 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
+....
+IMGMOUNT D Win95.iso
+....
+
+### Mount as directory
+If instead you have the contents of the Windows 95 CD-ROM copied to your harddisk, in a directory 'win95', you can mount it as follows:
+....
+MOUNT D win95 -t cdrom
+....
+
+### Mount from a CD-ROM drive
+If your running Windows, you can put the Windows 95 CD-ROM in your CD or DVD drive and directly access it from DOSBox-X. In this example, we assume the optical drive is D: on your windows installation, and your also mounting it as D: in DOSBox-X.
+
+....
+MOUNT D D:\ -t cdrom
+....
+
+## Copying the contents of the CD-ROM
+While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (as long as you have the CD-ROM automatically mounted in your [autoexec] section of the config file), it is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
+
+....
+XCOPY D:\WIN95\*.* C:\WIN95 /I /E
+....
+
+## Running SETUP.EXE
+We can now run SETUP.EXE, but we need to start it with the ```/IS``` parameter to disable the ScanDisk function as it will otherwise fail to successfully scan the DOSBox-X Z: drive.
+
+....
+C:
+CD \WIN95
+SETUP /IS
+....
+
+Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
+
+....
+IMGMOUNT C hdd.img
+BOOT -L C
+....
+
+Save the config file, and at the command-prompt you can type the following to continue the installation process. This is also the command you use, after the installation is finished, to start Windows 95 in DOSBox-X.
+
+....
+dosbox-x -conf win95.conf
+....
+
+# Method 2: Booting from a DOS bootdisk
+
+*Notes*
+
+* This method will work with any Windows 95 CD-ROM version, but does require that you have a DOS boot disk image.
+* The DOS boot disk needs to be version 5.0 or later.
+* If you want to have your C: drive as FAT32, the DOS boot disk needs to have MS-DOS 7.1 with the corresponding FORMAT.EXE utility. In addition you need to have at least *Windows 95 OSR2*.
