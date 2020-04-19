@@ -1,0 +1,108 @@
+:toc: macro
+
+Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+
+# Setting up networking in DOSBox-X
+
+toc::[]
+
+# Overview
+DOSBox-X has support for the NE2000 network adapter, but setting it up can be a bit convoluted. This guide hopes to simplify the process.
+
+This guide assumes your DOSBox-X build has been compiled with pcap support, which is the case for the pre-compiled Windows and Linux binaries. The OSX binaries unfortunately lack PCAP support, and as such cannot use networking in DOSBox-X.
+
+## Setup guide for Linux hosts
+### Setup permissions
+First of all, we need to ensure that the DOSBox-X binary has permission to listen to network traffic. You can do this as follows:
+
+....
+$ which dosbox-x
+/usr/bin/dosbox-x
+$ getcap /usr/bin/dosbox-x
+$
+....
+The first command returns the location of the dosbox-x binary (assuming it is in your path), the second command checks its capabilities. In this case getcap does not return anything, meaning it has no special capabilities, which we need to rectify if we want to be able to have networking in DOSBox-X. Run the following command:
+
+....
+$ sudo setcap cap_net_raw+ep /usr/bin/dosbox-x
+....
+
+This command will allow the dosbox-x binary to listen to the network interface in raw mode, meaning it can see all the traffic on the network interfaces.
+
+To validate that now the DOSBox-X binary indeed has the cap_net_raw capability, run:
+
+....
+$ getcap /usr/bin/dosbox-x
+/usr/bin/dosbox-x = cap_net_raw+ep
+....
+### Locate host network interface
+We now need to find which host network interface we want to use for bridging.
+
+For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging.
+
+Create a simple ne2000.conf config file as follows:
+
+....
+[ne2000]
+ne2000=true
+realnic=list
+....
+
+Now, from a terminal, start DOSBox-X, using the ne2000.conf config file you just created.
+
+....
+dosbox-x -conf ne2000.conf
+....
+
+In the terminal there will be a lot of LOG messages. Look for some output similar to this:
+
+....
+Network Interface List
+-----------------------------------
+LOG:  1. eno1
+    (no description)
+LOG:  2. lo
+    (no description)
+LOG:  3. any
+    (Pseudo-device that captures on all interfaces)
+LOG:  4. virbr0
+    (no description)
+LOG:  5. bluetooth-monitor
+    (Bluetooth Linux Monitor)
+LOG:  6. nflog
+    (Linux netfilter log (NFLOG) interface)
+LOG:  7. nfqueue
+    (Linux netfilter queue (NFQUEUE) interface)
+LOG:  8. wlp3s0
+    (no description)
+LOG:  9. bluetooth0
+    (Bluetooth adapter number 0)
+LOG: 10. usbmon0
+    (Raw USB traffic, all USB buses)
+LOG: 11. usbmon1
+    (Raw USB traffic, bus number 1)
+LOG: 12. usbmon2
+    (Raw USB traffic, bus number 2)
+LOG: 13. usbmon3
+    (Raw USB traffic, bus number 3)
+LOG: 14. usbmon4
+    (Raw USB traffic, bus number 4)
+LOG: 15. virbr0-nic
+    (no description)
+....
+
+That is an example of the network interfaces that were detected for my Linux PC. Now look at your own list, and locate an appropriate adapter to use.
+In the above example, 1 is the integrated Ethernet of the PC, and 8 is the integrated WIFI.
+For this example, we will use the Ethernet interface (1).
+
+Edit the ne2000.conf config file and change the realnic= to the value of your chosen network interface. e.g.:
+
+....
+[ne2000]
+ne2000=true
+realnic=1
+....
+
+You can merge your config snipit with your Windows for Workgroups 3.11, Windows 95 or 98 config file, or just run something like mTCP in DOSBox-X.
+
+## Setup guide for Windows hosts
