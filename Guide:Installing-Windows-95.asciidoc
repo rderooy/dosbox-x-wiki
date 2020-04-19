@@ -61,7 +61,7 @@ Copy the above config and save it as *win95.conf*
 *Notes*
 * The [autoexec] section will need lines added later.
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. It also requires that your DOSBox-X binary has support for PCAP. See:
- [[Guide: Setting up networking|Guide: Setting up networking in DOSBox-X]] for more information.
+ [[Guide: Setting up networking|Guide%3ASetting up networking in DOSBox-X]] for more information.
 
 # Method 1: Running setup.exe from DOSBox-X
 *Notes*
