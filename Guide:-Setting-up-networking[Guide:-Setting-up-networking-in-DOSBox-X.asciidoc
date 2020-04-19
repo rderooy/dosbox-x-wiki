@@ -35,6 +35,8 @@ To validate that now the DOSBox-X binary indeed has the cap_net_raw capability, 
 $ getcap /usr/bin/dosbox-x
 /usr/bin/dosbox-x = cap_net_raw+ep
 ....
+
+Note: Each time you upgrade DOSBox-X, you need to again give it the cap_net_raw capability!
 ### Locate host network interface
 We now need to find which host network interface we want to use for bridging.
 
