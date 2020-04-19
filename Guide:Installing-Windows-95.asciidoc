@@ -18,7 +18,7 @@ toc::[]
 Note: It will not work with the Windows 95 diskette versions, as those use an unsupported format (DMF), which cannot be used with DOSBox-X.
 
 ## Turbo mode
-Some parts of the installation can take a considerable amount of time. You can speed this up by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data, or make choices as it can cause spurious keypresses to be registered causing undesirable effects.
+Some parts of the installation can take a considerable amount of time. You can speed this up by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects.
 
 # DOSBox-X config file
 We first need to create a DOSBox-X config file.
