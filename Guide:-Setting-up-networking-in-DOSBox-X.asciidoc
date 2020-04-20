@@ -131,7 +131,7 @@ ne2000=true
 realnic=1
 ....
 
-You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or just run something like mTCP in DOSBox-X.
+You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or use it to run something like mTCP in DOSBox-X.
 
 # Setup guide for Windows hosts
 ## Install PCAP
