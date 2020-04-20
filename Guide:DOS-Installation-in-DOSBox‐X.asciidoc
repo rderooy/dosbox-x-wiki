@@ -1,4 +1,7 @@
 :toc: macro
+
+Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+
 # PC DOS and MS-DOS Installation Guide
 
 toc::[]
