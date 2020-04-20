@@ -12,6 +12,20 @@ DOSBox-X has support for the NE2000 network adapter, but setting it up can be a 
 This guide assumes your DOSBox-X build has been compiled with pcap support, which is not always the case.
 
 # Setup guide for Linux hosts
+### Install libpcap
+This depends on your Linux distribution, but you need to have libpcap installed.
+
+#### Debian based (e.g. Ubuntu)
+If your running a recent Debian or Debian based distribution such as Ubuntu, you can install libpcap from the command-line as follows:
+....
+apt-get install libpcap
+....
+#### Red Hat, SUSE or Fedora
+If your running a recent Red Hat, CentOS, SUSE or Fedora Linux distribution, you can install libpcap from the command-line as follows:
+....
+dnf install libpcap
+....
+
 ### Check if your DOSBox-X binary supports networking
 Not all DOSBox-X binaries have libpcap support enabled during compilation. To check if your binary has networking support, run the following command:
 
@@ -120,7 +134,68 @@ realnic=1
 You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or just run something like mTCP in DOSBox-X.
 
 # Setup guide for Windows hosts
-TBD...
+## Install PCAP
+First you need to install PCAP support. As WinPcap is no longer maintained, Npcap seems the best candidate these days:
+https://nmap.org/npcap/
+
+### Locate host network interface
+We now need to find which host network interface we want to use for bridging.
+
+For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
+
+Create a simple ne2000.conf config file as follows:
+
+....
+[ne2000]
+ne2000=true
+realnic=list
+....
+
+Now, from a command prompt, start DOSBox-X, using the ne2000.conf config file you just created.
+
+....
+dosbox-x -console -conf ne2000.conf
+....
+
+In addition to the dosbox-x window, you will get a console window with lots of LOG messages. In these LOG messages look for some output similar to this:
+
+....
+LOG:  1. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'NdisWan Adapter' on local host)
+LOG:  2. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Generic Mobile Broadband Adapter' on local host)
+LOG:  3. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Microsoft' on local host)
+LOG:  4. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Microsoft' on local host)
+LOG:  5. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'NdisWan Adapter' on local host)
+LOG:  6. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Microsoft' on local host)
+LOG:  7. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'NdisWan Adapter' on local host)
+LOG:  8. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Microsoft' on local host)
+LOG:  9. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Realtek USB NIC' on local host)
+LOG: 10. rpcap://\Device\NPF_Loopback
+    (Network adapter 'Adapter for loopback traffic capture' on local host)
+LOG: 11. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Intel(R) Ethernet Connection I219-V' on local host)
+....
+
+That is an example of the network interfaces that were detected for my Windows 10 PC (with the UUIDs masked). Now look at your own list, and locate an appropriate adapter to use.
+In the above example, 9 is the USB Ethernet adapter I want to use. It may take you a few tries to find the correct adapter.
+
+Edit the ne2000.conf config file and change realnic= to the value of your chosen network interface. e.g.:
+
+....
+[ne2000]
+ne2000=true
+realnic=9
+....
+
+You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or use it to run something like mTCP in DOSBox-X.
 
 # mTCP example
 This example uses mTCP to test if networking is working in DOSBox-X.
@@ -170,8 +245,8 @@ My Ethernet address is FF:FF:FF:FF:FF:FF
 This can actually have several causes.
 
 1. Your DOSBox-X binary lacks networking support
-2. Your DOSBox-X binary does not have the right permissions to access networking
-3. You do not have PCAP installed (libpcap on Linux, WinPcap on Windows)
+2. (Linux) Your DOSBox-X binary does not have the right permissions to access networking
+3. You do not have PCAP installed (libpcap on Linux, Npcap on Windows)
 4. When loading the NE2000 driver you gave the wrong IRQ or IO port.
 ** This should only effect non-standard setups where you specified a different nicirq= or nicbase= in your ne2000.conf config file.
 
