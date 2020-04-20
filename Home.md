@@ -468,6 +468,9 @@ Usage: TIME [ [/T] [/H] | hh:mm:ss ]
 Graphically displays the directory structure of a drive or path.  
 Usage: TREE [drive:][path] [/F] [/A]  
 Note: It uses the TREE command from FreeDOS.
+* **TRUENAME** (internal command)  
+Finds the fully-expanded name for a file.  
+Usage: TRUENAME file
 * **TYPE** (internal command)  
 Displays the contents of a text-file.  
 Usage: TYPE [drive:][path][filename]
@@ -579,7 +582,7 @@ DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?
 * [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
 * [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
 * [[Guide: PC DOS or MS-DOS in DOSBox-X|Guide:DOS Installation in DOSBox‐X]]  
-* [[Guide: Windows in DOSBox|Guide:Windows]]
+* [[Guide: Windows in DOSBox-X|Guide:Windows]]
 * [[Guide: Setting up networking|Guide: Setting up networking in DOSBox-X]]
 
 ### Frequently Asked Questions (FAQ)
