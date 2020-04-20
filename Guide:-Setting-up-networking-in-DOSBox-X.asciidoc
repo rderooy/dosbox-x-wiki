@@ -229,7 +229,7 @@ PING google.com
 When loading the NE2000 DOS Packet driver you get an all FF MAC address:
 
 ....
-C:\>NE2000 0x60 3dhcp 0x300
+C:\>NE2000 0x60 3 0x300
 Packet driver for NE2000, version 11.4.3
 Packet driver skeleton copyright 1988-93, Crynwr Software.
 This program is freely copyable; source must be available; NO WARRANTY.
