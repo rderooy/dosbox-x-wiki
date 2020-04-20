@@ -38,7 +38,7 @@ In the above example, the DOSBox-X binary has libpcap support, meaning it has ne
 If you binary has no networking, your options are to either look for another binary that does, or compile it yourself with libpcap support enabled.
 
 ### Setup permissions
-First of all, we need to ensure that the DOSBox-X binary has permission to listen to and generate low level network traffic. You can do this as follows:
+First of all, you need to ensure that the DOSBox-X binary has permission to listen to and generate low level network traffic. You can do this as follows:
 
 ....
 $ which dosbox-x
@@ -46,7 +46,7 @@ $ which dosbox-x
 $ getcap /usr/bin/dosbox-x
 $
 ....
-The first command returns the location of the dosbox-x binary (assuming it is in your path), the second command checks its capabilities. In this case getcap does not return anything, meaning it has no special capabilities, which we need to rectify if we want to be able to have networking in DOSBox-X. Run the following command:
+The first command returns the location of the dosbox-x binary (assuming it is in your path), the second command checks its capabilities. In this case getcap does not return anything, meaning it has no special capabilities, which you need to rectify if you want to be able to have networking in DOSBox-X. Run the following command:
 
 ....
 $ sudo setcap cap_net_raw+ep /usr/bin/dosbox-x
@@ -64,9 +64,9 @@ $ getcap /usr/bin/dosbox-x
 Warning: Each time you upgrade DOSBox-X, you will again need to give it the cap_net_raw capability.
 
 ### Locate host network interface
-We now need to find which host network interface we want to use for bridging.
+You now need to find which host network interface you want to use for bridging.
 
-For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
+For this you need to have a DOSBox-X config file with NE2000 support enabled, and you need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
 
 Create a simple ne2000.conf config file as follows:
 
@@ -139,9 +139,9 @@ First you need to install PCAP support. As WinPcap is no longer maintained, Npca
 https://nmap.org/npcap/
 
 ## Locate host network interface
-We now need to find which host network interface we want to use for bridging.
+You now need to find which host network interface you want to use for bridging.
 
-For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
+For this you need to have a DOSBox-X config file with NE2000 support enabled, and you need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
 
 Create a simple ne2000.conf config file as follows:
 
