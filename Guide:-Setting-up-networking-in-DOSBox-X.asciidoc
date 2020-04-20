@@ -24,7 +24,7 @@ In the above example, the DOSBox-X binary has libpcap support, meaning it has ne
 If you binary has no networking, your options are to either look for another binary that does, or compile it yourself with libpcap support enabled.
 
 ### Setup permissions
-First of all, we need to ensure that the DOSBox-X binary has permission to listen to network traffic. You can do this as follows:
+First of all, we need to ensure that the DOSBox-X binary has permission to listen to and generate low level network traffic. You can do this as follows:
 
 ....
 $ which dosbox-x
@@ -38,7 +38,7 @@ The first command returns the location of the dosbox-x binary (assuming it is in
 $ sudo setcap cap_net_raw+ep /usr/bin/dosbox-x
 ....
 
-This command will allow the dosbox-x binary to listen to the network interface in raw mode, meaning it can see all the traffic on all the network interfaces.
+This command will allow the dosbox-x binary to access the network interface in raw mode, meaning it can see all the traffic on all the network interfaces.
 
 To validate that now the DOSBox-X binary indeed has the cap_net_raw capability, run:
 
@@ -109,7 +109,7 @@ That is an example of the network interfaces that were detected for my Linux PC.
 In the above example, 1 is the integrated Ethernet of the PC, and 8 is the integrated WIFI.
 For this example, we will use the Ethernet interface (1).
 
-Edit the ne2000.conf config file and change the realnic= to the value of your chosen network interface. e.g.:
+Edit the ne2000.conf config file and change realnic= to the value of your chosen network interface. e.g.:
 
 ....
 [ne2000]
@@ -117,7 +117,7 @@ ne2000=true
 realnic=1
 ....
 
-You can merge your config snipit with your Windows for Workgroups 3.11, Windows 95 or 98 config file, or just run something like mTCP in DOSBox-X.
+You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or just run something like mTCP in DOSBox-X.
 
 # Setup guide for Windows hosts
 TBD...
