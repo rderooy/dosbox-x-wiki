@@ -138,7 +138,7 @@ You can merge your config snippet with your Windows for Workgroups, Windows 95 o
 First you need to install PCAP support. As WinPcap is no longer maintained, Npcap seems the best candidate these days:
 https://nmap.org/npcap/
 
-### Locate host network interface
+## Locate host network interface
 We now need to find which host network interface we want to use for bridging.
 
 For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
