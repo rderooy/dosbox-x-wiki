@@ -9,9 +9,20 @@ toc::[]
 # Overview
 DOSBox-X has support for the NE2000 network adapter, but setting it up can be a bit convoluted. This guide hopes to simplify the process.
 
-This guide assumes your DOSBox-X build has been compiled with pcap support, which is the case for the pre-compiled Windows and Linux binaries. The OSX binaries unfortunately lack PCAP support, and as such cannot use networking in DOSBox-X.
+This guide assumes your DOSBox-X build has been compiled with pcap support, which is not always the case.
 
-## Setup guide for Linux hosts
+# Setup guide for Linux hosts
+### Check if your DOSBox-X binary supports networking
+Not all DOSBox-X binaries have libpcap support enabled during compilation. To check if your binary has networking support, run the following command:
+
+....
+ldd /usr/bin/dosbox-x | grep pcap
+      libpcap.so.1 => /lib64/libpcap.so.1 (0x00007f1e15c80000)
+....
+
+In the above example, the DOSBox-X binary has libpcap support, meaning it has networking. If the command returns nothing you do not have networking.
+If you binary has no networking, your options are to either look for another binary that does, or compile it yourself with libpcap support enabled.
+
 ### Setup permissions
 First of all, we need to ensure that the DOSBox-X binary has permission to listen to network traffic. You can do this as follows:
 
@@ -27,7 +38,7 @@ The first command returns the location of the dosbox-x binary (assuming it is in
 $ sudo setcap cap_net_raw+ep /usr/bin/dosbox-x
 ....
 
-This command will allow the dosbox-x binary to listen to the network interface in raw mode, meaning it can see all the traffic on the network interfaces.
+This command will allow the dosbox-x binary to listen to the network interface in raw mode, meaning it can see all the traffic on all the network interfaces.
 
 To validate that now the DOSBox-X binary indeed has the cap_net_raw capability, run:
 
@@ -41,7 +52,7 @@ Warning: Each time you upgrade DOSBox-X, you will again need to give it the cap_
 ### Locate host network interface
 We now need to find which host network interface we want to use for bridging.
 
-For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging.
+For this you need to have a DOSBox-X config file with NE2000 support enabled, and we need to know which host network adapter will be used for bridging. It is highly recommended to only bridge to wired Ethernet adapters, as WIFI adapters are known not to work.
 
 Create a simple ne2000.conf config file as follows:
 
@@ -108,4 +119,82 @@ realnic=1
 
 You can merge your config snipit with your Windows for Workgroups 3.11, Windows 95 or 98 config file, or just run something like mTCP in DOSBox-X.
 
-## Setup guide for Windows hosts
+# Setup guide for Windows hosts
+TBD...
+
+# mTCP example
+This example uses mTCP to test if networking is working in DOSBox-X.
+
+This first of all requires that you download the latest version of mTCP, and a NE2000 DOS packet driver.
+
+*External links*
+
+* link:https://www.brutman.com/mTCP/mTCP.html[mTCP homepage]
+* link:http://www.georgpotthast.de/sioux/packet.htm[DOS Packet drivers]
+
+unzip both mTCP and the NE2000 DOS Packet driver into a directory. In the below example the directory is named "mtcp", then start DOSBox-X with the ne2000.conf config file that you created:
+
+....
+dosbox-x -conf ne2000.conf
+....
+Now in DOSBox-X run the following commands:
+....
+MOUNT C mtcp
+C:
+SET MTCPCFG=C:\SAMPLES\SAMPLE.CFG
+NE2000 0x60 3 0x300
+DHCP
+....
+If all worked fine, you should have gotten a IP address, and you can now do something like
+....
+PING google.com
+....
+
+### Common problem: Invalid MAC Address
+When loading the NE2000 DOS Packet driver you get an all FF MAC address:
+
+....
+C:\>NE2000 0x60 3dhcp 0x300
+Packet driver for NE2000, version 11.4.3
+Packet driver skeleton copyright 1988-93, Crynwr Software.
+This program is freely copyable; source must be available; NO WARRANTY.
+See the file COPYING.DOC for details; send FAX to +1-315-268-9201 for a copy.
+
+System: [345]86 processor, ISA bus, Two 8259s
+Packet driver software interrupt is 0x60 (96)
+Interrupt number 0x3 (3)
+I/O port 0x300 (768)
+My Ethernet address is FF:FF:FF:FF:FF:FF
+....
+
+This can actually have several causes.
+
+1. Your DOSBox-X binary lacks networking support
+2. Your DOSBox-X binary does not have the right permissions to access networking
+3. You do not have PCAP installed (libpcap on Linux, WinPcap on Windows)
+4. When loading the NE2000 driver you gave the wrong IRQ or IO port.
+** This should only effect non-standard setups where you specified a different nicirq= or nicbase= in your ne2000.conf config file.
+
+### Common problem: Cannot get DHCP lease
+When starting DHCP you get only timeouts.
+
+....
+C:\>DHCP
+mTCP DHCP Client by M Brutman (mbbrutman@gmail.com) (C)opyright 2008-2020
+Version: Mar  7 2020
+
+Timeout per request: 10 seconds, Retry attempts: 3
+Sending DHCP requests, Press [ESC] to abort.
+
+DHCP request sent, attempt 1: Timeout
+DHCP request sent, attempt 2: Timeout
+DHCP request sent, attempt 3: Timeout
+
+Error: Your Ethernet card reported an error for every packet we sent.
+Check your cabling and packet driver settings, including the hardware IRQ.
+....
+This can actually have several causes.
+
+1. Check if you got a valid MAC address when loading the NE2000 packet driver.
+2. Try to set REALNIC= in your ne2000.conf config file to a different network interface. In particular WIFI interfaces may be problematic, so try a wired Ethernet instead.
+3. Perhaps you don't have a DHCP server on your network, or it is configured to only listen to known MAC addresses. Try to set manual IP settings, suitable for your network, at the bottom of SAMPLES/SAMPLE.CFG and try if you can ping.
