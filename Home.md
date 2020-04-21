@@ -564,7 +564,7 @@ Skips the [autoexec] section of the loaded configuration file.
 * **-exit**                                   
 Exits after executing the [autoexec] section of the loaded configuration file.
 * **-c [command string]**                              
-Execute this command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
+Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
 * **-break-start**                              
 Starts DOSBox-X and breaks into its debugger directly.
 * **-time-limit [n]**                              
@@ -574,16 +574,23 @@ Skips the 1-second BIOS pause with Fast BIOS logo.
 * **-log-con**                              
 Logs CON output to a log file.
 
-### Compatibility
-We are making efforts to ensure that most DOS games and applications will run in DOSBox-X. Below are some test results.
+### DOSBox-X Guides and Tips
 
-DOSBox-X vs Demoscene test results (up to date): https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html
+DOSBox-X has many features and supports most DOS games and applications. Below are some guides which explain how to use certain software or features within DOSBox-X.
 
 * [[Guide: MS-DOS demoscene|Guide:MS-DOS:demoscene]]  
 * [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
 * [[Guide: PC DOS or MS-DOS in DOSBox-X|Guide:DOS Installation in DOSBox‐X]]  
 * [[Guide: Windows in DOSBox-X|Guide:Windows in DOSBox‐X]]
 * [[Guide: Setting up networking|Guide:Setting up networking in DOSBox‐X]]
+
+### Compatibility
+
+We are making efforts to ensure that the vast majority of DOS games and applications will run in DOSBox-X. DOSBox-X used to focus on the demoscene (especially anything prior to 1996) because that era of the MS-DOS scene tends to have all manner of weird hardware tricks, bugs, and speed-sensitive issues that make them the perfect kind of stuff to test emulation accuracy against, even more so than old DOS games. But we also test against other DOS games and applications, as well as PC-98 games.
+
+DOSBox-X vs Demoscene test results (up to date):
+
+https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html
 
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**  
