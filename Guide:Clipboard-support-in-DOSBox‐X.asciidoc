@@ -35,11 +35,11 @@ Will sort the clipboard content (using DOS's SORT.EXE tool).
 
 Alternatively, you can set the "dos clipboard device enable" config option to either "read" or "write" to allow only read or write access for security reasons. The DOS device name can also be changed with the "dos clipboard device name" config option if you want to use a different device name from CLIP$.
 
-This bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled.
+This bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled, and it will also not work if booting into a guest OS.
 
 ### Select, copy and paste text using the right mouse button
 
-You can also use the right mouse button to easily select, copy or paste text to or from the Windows clipboard in DOSBox-X. With this feature enabled you can right-drag on text in the DOSBox-X window and release the mouse to copy to the clipboard; right-click in the DOSBox-X window to paste from the Windows clipboard. By default this feature is disabled in DOSBox-X, but you can enable it by setting the "clip_key_modifier" config option in the [sdl] section of the DOSBox-X config file to "none" if no keyboard modifier is desired. It is possible to use a keyboard modifier for this feature by editing the same setting so that you can use Alt-Right-click, Ctrl-Right-click, Shift-Right-click, etc. to select, copy and paste text instead.
+You can also use the right mouse button to easily select, copy or paste text to or from the Windows clipboard in DOSBox-X. With this feature enabled you can right-drag on text in the DOSBox-X window and release the mouse to copy to the clipboard; right-click in the DOSBox-X window to paste from the Windows clipboard. By default this feature is disabled in DOSBox-X, but you can enable it by setting the "clip_key_modifier" config option in the [sdl] section of the DOSBox-X config file to "none" if no keyboard modifier is desired. It is possible to use a keyboard modifier for this feature by editing the same setting so that you can use Alt+Right-click, Ctrl+Right-click, Shift+Right-click, etc. to select, copy and paste text instead.
 
 If you are using the SDL1 build of DOSBox-X, there is no limit on the clipboard size when doing the pasting. Furthermore, the "clip_paste_speed" setting in the [sdl] section of DOSBox-X's config file can be used to set the speed for pasting each character from the Windows clipboard. The default setting is 20, but if this setting causes lost keystrokes, you can increase the number to slow down the pasting. On the other, you may experiment with decreasing the number for applications that accept keystrokes quickly.
 
@@ -47,7 +47,7 @@ On the other hand, if you are using the SDL2 build of DOSBox-X, in order to past
 
 ### Paste from the clipboard using a keyboard shortcut
 
-You can also use a keyboard shortcut to paste text from the Windows clipboard into DOSBox-X. In order to achieve this you need to run DOSBox-X's keyboard mapper editor to assign a key for this feature first. One way to run the mapper editor is to start DOSBox-X.exe with the -startmapper command-line option. You can also select it directly from DOSBox-X's GUI menu (under "Main"). After the mapper editor is launched, click the "Paste Clipboard" feature and assign a keyboard shortcut to it. For example, you can assign the F6 key (or Alt+F6, Shift+F6, etc) to paste text from the Windows clipboard. Once this is done you can save the mapper and exit to DOSBox-X. Then you will be able to use the saved keyboard shortcut to paste text from the Windows clipboard into DOSBox-X just like pasting it via the right mouse button click.
+You can also use a keyboard shortcut to paste text from the Windows clipboard into DOSBox-X. In order to achieve this you need to run DOSBox-X's keyboard mapper editor to assign a key for this feature first. One way to run the mapper editor is to start DOSBox-X.exe with the -startmapper command-line option. You can also select it directly from DOSBox-X's GUI menu (under "Main"). After the mapper editor is launched, click the "Paste Clipboard" feature and assign a keyboard shortcut to it. For example, you can assign the F6 key (or Alt+F6, Shift+F6, etc) to paste text from the Windows clipboard. Once this is done you can save the mapper and exit to DOSBox-X. Then you will be able to use the saved keyboard shortcut to paste text from the Windows clipboard into DOSBox-X just like pasting it using the right mouse button click.
 
 Similar to pasting text using the right mouse button, for the SDL1 build of DOSBox-X you can change the speed for pasting each character from the Windows clipboard via the "clip_paste_speed" setting in the [sdl] section of DOSBox-X's config file. On the other hand, for the SDL2 build of DOSBox-X, if you want to paste long text into DOSBox-X, then it is recommended to load a keyboard buffer expansion program (just once) before doing the pasting. Again, there is no need to do this for the SDL1 build of DOSBox-X.
 
@@ -69,4 +69,4 @@ WCLIP RECEIVE
 ....
 Will display the content of the clipboard.
 
-Like copying and pasting text using a DOS device, this bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled.
+Like copying and pasting text using a DOS device, this bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled, and it will also not work if booting into a guest OS.
