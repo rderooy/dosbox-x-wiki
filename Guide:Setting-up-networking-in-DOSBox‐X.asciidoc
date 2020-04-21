@@ -135,7 +135,7 @@ You can merge your config snippet with your Windows for Workgroups, Windows 95 o
 *Notes*
 
 * Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
-* The order of the _Network Interface List_ is unfortunately not static, plugging or unplugging devices, or launching virtual machines (KVM, VirtualBox, VMware) can cause the order to change, and cause networking to break.
+* The order of the _Network Interface List_ is unfortunately not static. Plugging or unplugging devices, or launching virtual machines (KVM, VirtualBox, VMware) can cause the order to change, and cause networking to break.
 
 # Setup guide for Windows hosts
 ## Install PCAP
@@ -200,6 +200,11 @@ realnic=9
 ....
 
 You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or use it to run something like mTCP in DOSBox-X.
+
+*Notes*
+
+* Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
+* The order of the _Network Interface List_ is unfortunately not static. Plugging or unplugging devices, or launching virtual machines (KVM, VirtualBox, VMware) can cause the order to change, and cause networking to break.
 
 # mTCP example
 This example uses mTCP to test if networking is working in DOSBox-X.
@@ -275,5 +280,5 @@ Check your cabling and packet driver settings, including the hardware IRQ.
 This can actually have several causes.
 
 1. Check if you got a valid MAC address when loading the NE2000 packet driver.
-2. Try to set REALNIC= in your ne2000.conf config file to a different network interface. In particular WIFI interfaces may be problematic, so try a wired Ethernet instead.
+2. Try to set REALNIC= in your ne2000.conf config file to a different network interface. In particular WIFI interfaces are unlikely to work, so try wired Ethernet instead. The order in which the interfaces are listed can also change due to plugging or unplugging devices, or launching certain type of programs like Virtual Machines.
 3. Perhaps you don't have a DHCP server on your network, or it is configured to only listen to known MAC addresses. Try to set manual IP settings, suitable for your network, at the bottom of SAMPLES/SAMPLE.CFG and try if you can ping.
