@@ -29,7 +29,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for printer output  
 * Support for vertical sync (V-Sync)  
 * Support for long filenames (LFN) for DOS version 7.x
-* Support for clipboard access (Windows only)  
+* Support for clipboard copy and paste (Windows only)  
 * Support for Direct3D with pixel shaders (Windows only)  
 * Support for OpenglHQ  
 * Support for Innovation SSI-2001 emulation  
@@ -50,7 +50,7 @@ If you want to access other drives such as the C: drive, you have to make your d
 
 2. Auto-mount drives: If you are using Windows, DOSBox-X will ask if you want to give it access to your Windows drive when you try to go to a drive (e.g. C:), but that drive has not yet been mounted inside DOSBox-X. This basically makes DOSBox-X access to the same drives as in your Windows system. If you answer Y for Yes, then the whole Windows drive will be mounted and accessible within DOSBox-X. It is not recommended to mount your Windows Drive C: inside DOSBox-X because DOSBox-X will then be able to access all files and directories in your Windows Drive C:, and there is already a chance that something unexpected may happen in this case.
 
-DOSBox-X features a configuration GUI which allows you to change its settings via its graphical interface. Similar to DOSBox, there is a configuration file (dosbox.conf in the current directory or in your user directory) where you can modify the DOSBox-X settings. But instead of editing this configuration file, you can change DOSBox-X settings directly within the DOSBox-X program. If DOSBox-X is not yet running, you can start this configuration GUI by using the command-line option -startui (or -startgui) of dosbox-x.exe program. On the other hand, if DOSBox-X is already running, you can do so by clicking on the "Configuration GUI" option from the "Main" menu in the DOSBox-X menu bar, or using the STARTGUI command from the DOS command line inside DOSBox-X.
+DOSBox-X features a configuration GUI which allows you to change its settings via its graphical interface. Similar to DOSBox, there is a configuration file (dosbox-x.conf in the current directory or in your user directory) where you can modify the DOSBox-X settings. But instead of editing this configuration file, you can change DOSBox-X settings directly within the DOSBox-X program. If DOSBox-X is not yet running, you can start this configuration GUI by using the command-line option -startui (or -startgui) of dosbox-x.exe program. On the other hand, if DOSBox-X is already running, you can do so by clicking on the "Configuration GUI" option from the "Main" menu in the DOSBox-X menu bar, or using the STARTGUI command from the DOS command line inside DOSBox-X.
 
 For example, if you are using the MOUNT command method to mount your host drives/directories as DOSBox-X's drives, you do not have to always type these commands. Instead, you can put these commands in the "autoexec" section of the DOSBox-X configuration interface, and then save them. These correspond to the [autoexec] section of DOSBox-X's configuration file. The commands present there are run each time when DOSBox-X starts, so you can use this section for the mounting.
 
