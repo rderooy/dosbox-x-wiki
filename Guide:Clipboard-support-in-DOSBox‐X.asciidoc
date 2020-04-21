@@ -2,12 +2,12 @@
 
 Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 
-# Clipboard support in DOSBox-X
+# Windows Clipboard support in DOSBox-X
 
 toc::[]
 
 ### Overview
-DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. Since the feature to communicate with the clipboard is currently only available in the Windows platform, this guides will assume you are using a Windows build (either SDL1 or SDL2) of DOSBox-X.
+DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. Since the feature to communicate with the clipboard is currently only available in the Windows platform, this guide will assume you are using a Windows build (either SDL1 or SDL2) of DOSBox-X.
 
 ### Copy and paste text using a DOS device
 
@@ -52,7 +52,7 @@ You can also use a keyboard shortcut to paste text from the Windows clipboard in
 Similar to pasting text using the right mouse button, for the SDL1 build of DOSBox-X you can change the speed for pasting each character from the Windows clipboard via the "clip_paste_speed" setting in the [sdl] section of DOSBox-X's config file. On the other hand, for the SDL2 build of DOSBox-X, if you want to paste long text into DOSBox-X, then it is recommended to load a keyboard buffer expansion program (just once) before doing the pasting. Again, there is no need to do this for the SDL1 build of DOSBox-X.
 
 ### Copy and paste text using a DOS program
-Copying and pasting text to or from the Windows clipboard is also supported via the DOS API in DOSBox-X, so DOS programs that can directly access the Windows 3.x/9x clipboard running in DOSBox-X can also be used to copy and paste text to or from the Windows clipboard. For example, the https://www.horstmuc.de/div.htm#wclip[WCLIP tool] by Horst Schaeffer can be  used to communicate bidirectionally with the Windows clipboard within DOSBox-X. For example:
+Copying and pasting text to or from the Windows clipboard is also supported via the DOS API in DOSBox-X, so DOS programs that can directly access the Windows 3.x/9x clipboard running in DOSBox-X can also be used to copy and paste text to or from the Windows clipboard. For example, the https://www.horstmuc.de/div.htm#wclip[WCLIP tool] by Horst Schaeffer can be  used to communicate bidirectionally with the Windows clipboard inside DOSBox-X. Below are some examples of using this program to communicate with the Windows clipboard:
 
 ....
 DIR | WCLIP
