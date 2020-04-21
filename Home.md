@@ -582,7 +582,8 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 * [[Guide: MS-DOS games|Guide:MS-DOS:games]]  
 * [[Guide: PC DOS or MS-DOS in DOSBox-X|Guide:DOS Installation in DOSBox‐X]]  
 * [[Guide: Windows in DOSBox-X|Guide:Windows in DOSBox‐X]]
-* [[Guide: Setting up networking|Guide:Setting up networking in DOSBox‐X]]
+* [[Guide: Clipboard support in DOSBox-X|Guide:Clipboard support in DOSBox‐X]]
+* [[Guide: Setting up networking in DOSBox-X|Guide:Setting up networking in DOSBox‐X]]
 
 ### Compatibility
 
