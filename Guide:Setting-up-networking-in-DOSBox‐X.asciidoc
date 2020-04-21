@@ -120,8 +120,7 @@ LOG: 15. virbr0-nic
 ....
 
 That is an example of the network interfaces that were detected for my Linux PC. Now look at your own list, and locate an appropriate adapter to use.
-In the above example, 1 is the integrated Ethernet of the PC, and 8 is the integrated WIFI.
-For this example, we will use the Ethernet interface (1).
+In the above example, 1 is the integrated Ethernet of the PC, which we will use.
 
 Edit the ne2000.conf config file and change realnic= to the value of your chosen network interface. e.g.:
 
@@ -132,6 +131,11 @@ realnic=1
 ....
 
 You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or use it to run something like mTCP in DOSBox-X.
+
+*Notes*
+
+* Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
+* The order of the _Network Interface List_ is unfortunately not static, plugging or unplugging devices, or launching virtual machines (KVM, VirtualBox, VMware) can cause the order to change, and cause networking to break.
 
 # Setup guide for Windows hosts
 ## Install PCAP
