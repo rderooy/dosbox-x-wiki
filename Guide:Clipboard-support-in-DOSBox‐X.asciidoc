@@ -1,0 +1,29 @@
+:toc: macro
+
+Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+
+# Clipboard support in DOSBox-X
+
+toc::[]
+
+### Overview
+DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. Since the feature to communicate with the clipboard is currently only available in the Windows platform, this guides will assume you are using a Windows build (either SDL1 or SDL2) of DOSBox-X.
+
+### Copy and paste text using a DOS device
+
+You can use a DOS device (e.g. CLIP$) to easily copy text to and/or paste text from the Windows clipboard in DOSBox-X. If the "dos clipboard device enable" setting in the [dos] section of the DOSBox-X config file (e.g. dosbox-x.conf) is set to "true" or "full", a DOS device (default name: CLIP$) will be added to DOSBox-X to allow bidirectional communications with the Windows clipboard. For example:
+
+"DIR >CLIP$" will redirect the directory listing to the clipboard;
+"TYPE CLIP$" will display the content of the clipboard;
+"EDIT CLIP$" will open the editor with the clipboard content;
+"SORT.EXE <CLIP$" will sort the clipboard content (using DOS's SORT.EXE tool).
+
+Alternatively, you can set the "dos clipboard device enable" config option to either "read" or "write" to allow only read or write access for security reasons. The DOS device name can also be changed with the "dos clipboard device name" config option if you want to use a different device name from CLIP$.
+
+### Select, copy and paste text using the right mouse button
+
+You can also use the right mouse button to easily select, copy or paste text to or from the Windows clipboard in DOSBox-X. With this feature enabled you can right-drag on text in the DOSBox-X window and release the mouse to copy to the clipboard; right-click in the DOSBox-X window to paste from the Windows clipboard. By default this feature is disabled in DOSBox-X, but you can enable it by setting the "clip_key_modifier" config option in the [sdl] section of the DOSBox-X config file to "none" if no keyboard modifier is desired. It is possible to use a keyboard modifier for this feature by editing the same setting so that you can use Alt-Right-click, Ctrl-Right-click, Shift-Right-click, etc. to select, copy and paste text instead.
+
+### Paste from the clipboard using a keyboard shortcut
+
+### Copy and paste text using a DOS program
