@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+Back to the link:Home[DOSBox-X Wiki Welcome page].
 
 # Windows Clipboard Support in DOSBox-X
 
@@ -8,7 +8,7 @@ toc::[]
 
 ### Overview
 
-DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. For example, you can copy to or paste from to the Windows clipboard inside DOSBox-X using a right mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the Windows clipboard. Since the feature to access to the clipboard is currently only available in the Windows platform, this guide will assume you are using a Windows build (either SDL1 or SDL2, 32 or 64-bit) of DOSBox-X.
+DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. For example, you can copy to or paste from to the Windows clipboard inside DOSBox-X using a right mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the Windows clipboard. Since the feature to access to the clipboard is currently only available in the Windows platform, this guide will assume you are using a Windows build (32 or 64-bit, either SDL1 or SDL2) of DOSBox-X.
 
 ### Copy and paste text using a DOS device
 
