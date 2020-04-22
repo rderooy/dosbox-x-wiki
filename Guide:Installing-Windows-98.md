@@ -1,0 +1,154 @@
+:toc: macro
+
+Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
+
+# Installing Microsoft Windows 98 in DOSBox-X
+
+toc::[]
+
+# Overview
+## CD-ROM editions this applies to
+
+* Windows 98 (RTM; Original release)
+* Windows 98 Second Edition (SE)
+
+# DOSBox-X config file
+You first need to create a DOSBox-X config file.
+....
+[dosbox]
+title=Windows 98
+memsize=64
+
+[cpu]
+cputype=pentium_mmx
+core=normal
+
+[pci]
+# Uncomment the line below if you don't want 3dfx Voodoo support
+#voodoo=false
+
+[ne2000]
+# If you want networking in Windows, set ne2000=true.
+# This also requires that you set realnic= to a suitable value for your PC
+ne2000=false
+realnic=list
+
+[fdc, primary]
+int13fakev86io=true
+
+[ide, primary]
+int13fakev86io=true
+
+[ide, secondary]
+int13fakev86io=true
+cd-rom insertion delay=4000
+
+[render]
+scaler=none
+aspect=false
+
+[autoexec]
+....
+
+Copy the above config and save it as *win98.conf*
+
+*Notes*
+
+* While Windows 98 should support up to 2048MB RAM, memsize=512 is the largest safe value.
+* The [autoexec] section will need lines added later.
+* If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
+ link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
+
+# Method 1: Boot from CD-ROM
+
+TBD...
+
+# Method 2: Running setup.exe from DOSBox-X
+*Notes*
+
+* This method will only allow a primary FAT16 drive of up to 2GB. If you want a larger (FAT32) primary drive, follow the first method.
+
+First you need to start DOSBox-X from the command-line, using the newly created win98.conf. This assumes that dosbox-x is in your path and win98.conf is in your current directory.
+....
+dosbox-x -conf win98.conf
+....
+Then in DOSBox-X you need to create a new harddisk image file, and mount it as the C: drive. We use a 2048MB (2GB) HDD for this purpose, as that is the maximum size for FAT16.
+....
+IMGMAKE hdd.img -t hd_2gig
+IMGMOUNT C hdd.img
+....
+
+You will also need to mount the Windows 98 CD-ROM. There are a few ways of doing so.
+
+### Mount as ISO image
+If you have a copy of the Windows 95 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
+....
+IMGMOUNT D Win98.iso
+....
+
+### Mount as directory
+If instead you have the contents of the Windows 95 CD-ROM copied to your harddisk, in a directory 'win95', you can mount it as follows:
+....
+MOUNT D win98 -t cdrom
+....
+
+### Mount from a CD-ROM drive
+If your running Windows, you can put the Windows 95 CD-ROM in your CD or DVD drive and directly access it from DOSBox-X. In this example, we assume the optical drive is D: on your windows installation, and your also mounting it as D: in DOSBox-X.
+
+....
+MOUNT D D:\ -t cdrom
+....
+
+## Copying the contents of the CD-ROM
+While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (as long as you have the CD-ROM automatically mounted in your [autoexec] section of the config file), it is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
+
+....
+XCOPY D:\WIN98 C:\WIN98 /I /E
+....
+
+## Running SETUP.EXE
+You can now run SETUP.EXE, but it need to be started with the ```/IS``` parameter to disable the ScanDisk function as it will otherwise fail to successfully scan the DOSBox-X Z: drive.
+
+....
+C:
+CD \WIN98
+SETUP /IS
+....
+
+Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
+
+....
+IMGMOUNT C hdd.img
+BOOT -L C
+....
+
+Save the config file, and at the command-prompt you can type the following to continue the installation process. This is also the command you use, after the installation is finished, to start Windows 98 in DOSBox-X.
+
+....
+dosbox-x -conf win98.conf
+....
+
+# General installation Notes
+
+* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects.
+* During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. You may want to select to scan for a soundcard, as otherwise it may not detect your soundcard (sometimes it does, sometimes it doesn't). Likewise, if you have NE2000 enabled in your DOSBox-X config file, you may also want to check the Network adapter box. Your DOSBox-X CD-ROM will be detected regardless if you check it's box or not.
+
+# Booting Windows 98 after installation
+After the installation is finished, you can start Windows 98 from the command-prompt with the following command:
+
+....
+dosbox-x -conf win98.conf
+....
+
+# Steps to take after Installation
+Once Windows 98 is installed, here is some additional software you may want to install or update:
+
+TBD...
+
+# Enabling networking
+If you enabled NE2000 support in the DOSBox-X config file, and Windows 98 did not detect the adapter, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware. It should find the NE2000 adapter and install the drivers.
+
+By default it will try to get it's network configuration over DHCP, if you need to manually specify the settings, in "Control Panel", double-click "Network". Once it opens, highlight "TCP/IP", and click the "Properties" button to modify the TCP/IP settings.
+
+# Enabling sound
+The Windows 98 installer does not always detect the presence of a sound card, as the emulated soundcard in DOSBox-X does not support PnP. If you do not have sound support, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware". Now simply follow the guide and let it install support for any devices that it detects.
