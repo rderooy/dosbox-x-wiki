@@ -81,26 +81,26 @@ IMGMOUNT C hdd.img
 You will also need to mount the Windows 98 CD-ROM. There are a few ways of doing so.
 
 ### Mount as ISO image
-If you have a copy of the Windows 95 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
+If you have a copy of the Windows 98 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
 ....
 IMGMOUNT D Win98.iso
 ....
 
 ### Mount as directory
-If instead you have the contents of the Windows 95 CD-ROM copied to your harddisk, in a directory 'win95', you can mount it as follows:
+If instead you have the contents of the Windows 98 CD-ROM copied to your harddisk, in a directory 'win98', you can mount it as follows:
 ....
 MOUNT D win98 -t cdrom
 ....
 
 ### Mount from a CD-ROM drive
-If your running Windows, you can put the Windows 95 CD-ROM in your CD or DVD drive and directly access it from DOSBox-X. In this example, we assume the optical drive is D: on your windows installation, and your also mounting it as D: in DOSBox-X.
+If your running Windows, you can put the Windows 98 CD-ROM in your CD or DVD drive and directly access it from DOSBox-X. In this example, we assume the optical drive is D: on your windows installation, and your also mounting it as D: in DOSBox-X.
 
 ....
 MOUNT D D:\ -t cdrom
 ....
 
 ## Copying the contents of the CD-ROM
-While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (as long as you have the CD-ROM automatically mounted in your [autoexec] section of the config file), it is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
+While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (as long as you have the CD-ROM automatically mounted in your [autoexec] section of the config file), it is recommended to copy the installation files (contents of the WIN98 directory on the CD-ROM) to your HDD image, as it will prevent Windows 98 from asking for the CD-ROM when it needs additional files later.
 
 ....
 XCOPY D:\WIN98 C:\WIN98 /I /E
@@ -115,7 +115,7 @@ CD \WIN98
 SETUP /IS
 ....
 
-Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
+Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win98.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
 
 ....
 IMGMOUNT C hdd.img
