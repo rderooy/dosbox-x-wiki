@@ -59,10 +59,29 @@ Copy the above config and save it as *win98.conf*
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 
-# Method 1: Boot from CD-ROM
+# Method 1: Boot from CD-ROM image
+Starting with Windows 98, it is possible to boot directly from the CD-ROM, as such no separate bootdisk is needed.
 
-TBD...
+## Preparing the Harddisk image
+First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
+....
+dosbox-x -conf win98.conf
+....
+Then in DOSBox-X you need to create a new harddisk image file, and mount it as drive 2 (IDE primary master). You cannot simply mount it a "C" as the integrated DOS in DOSBox-X has no support for partitions over 2GB, or the FAT32 filesystem.
 
+This FAT32 example uses a 4GB partition. According to Microsoft the official maximum size is 32GB, but in actuality FAT32 can support up to 2TB. However, sizes larger then 128GB are not supported by the generic IDE driver in Windows 95. Larger sizes may be possible with 3rd party drivers, but are not covered here.
+....
+IMGMAKE hdd.img -t hd_4gig
+IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
+....
+Note: If you create a different sized HDD, pay close attention to the output of IMGMAKE and write down the sectors, heads and cylinders as you will need them to access the harddisk from here on. The IMGMOUNT size parameter should be specified as: -size 512,<sectors>,<heads>,<cylinders>.
+
+Now let’s boot from the CD-ROM and start the installation.
+....
+IMGMOUNT D Win98.iso -t iso
+IMGMOUNT 0 Win98.iso -el-torito D
+BOOT -L A
+....
 # Method 2: Running setup.exe from DOSBox-X
 *Notes*
 
