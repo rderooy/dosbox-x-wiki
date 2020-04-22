@@ -2,13 +2,13 @@
 
 Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 
-# Windows Clipboard support in DOSBox-X
+# Windows Clipboard Support in DOSBox-X
 
 toc::[]
 
 ### Overview
 
-DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. For example, you can copy to or paste from to the Windows clipboard inside DOSBox-X using a right mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the Windows clipboard. Since the feature to access to the clipboard is currently only available in the Windows platform, this guide will assume you are using a Windows build (either SDL1 or SDL2) of DOSBox-X.
+DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. For example, you can copy to or paste from to the Windows clipboard inside DOSBox-X using a right mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the Windows clipboard. Since the feature to access to the clipboard is currently only available in the Windows platform, this guide will assume you are using a Windows build (either SDL1 or SDL2, 32 or 64-bit) of DOSBox-X.
 
 ### Copy and paste text using a DOS device
 
@@ -44,7 +44,7 @@ You can also use the right mouse button to easily select, copy or paste text to 
 
 If you are using the SDL1 build of DOSBox-X, there is no limit on the clipboard size when doing the pasting. Furthermore, the "clip_paste_speed" setting in the [sdl] section of DOSBox-X's config file can be used to set the speed for pasting each character from the Windows clipboard. The default setting is 20, but if this setting causes lost keystrokes, you can increase the number to slow down the pasting. Conversely, you may experiment with decreasing the number for applications that accept keystrokes quickly.
 
-On the other hand, if you are using the SDL2 build of DOSBox-X, in order to paste long text (>15 characters) into DOSBox-X properly it is recommended to load a keyboard buffer expansion program like http://individual.utoronto.ca/wengier/files/keybuf.com[keybuf.com] before doing the pasting. You only need to load it once. For example, "KEYBUF.COM 1024" will expand the keyboard pasting buffer to 1024 characters, and you can put this command in the [autoexec] section of DOSBox-X's config file so that the program will be loaded automatically when you start DOSBox-X. There is no need to do this for the SDL1 build of DOSBox-X.
+On the other hand, if you are using the SDL2 build of DOSBox-X, in order to paste long text (>15 characters) into DOSBox-X properly it is recommended to load a keyboard buffer expansion program like https://github.com/Defacto2/dosbox-toolkit/blob/master/DOSBox/keybuf.com?raw=true[keybuf.com] before doing the pasting. You only need to load it once. For example, "KEYBUF.COM 1024" will expand the keyboard pasting buffer to 1024 characters, and you can put this command in the [autoexec] section of DOSBox-X's config file so that the program will be loaded automatically when you start DOSBox-X. There is no need to do this for the SDL1 build of DOSBox-X.
 
 ### Paste from the clipboard using a keyboard shortcut
 
