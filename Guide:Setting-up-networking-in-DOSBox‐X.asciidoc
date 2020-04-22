@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+Back to the link:Home[DOSBox-X Wiki Welcome page].
 
 # Setting up networking in DOSBox-X
 
