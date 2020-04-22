@@ -10,7 +10,7 @@ toc::[]
 ## CD-ROM editions this applies to
 
 * Windows 98 (RTM; Original release)
-* Windows 98 Second Edition (SE)
+* Windows 98 Second Edition (98SE)
 
 # DOSBox-X config file
 You first need to create a DOSBox-X config file.
@@ -76,6 +76,7 @@ IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
 ....
 Note: If you create a different sized HDD, pay close attention to the output of IMGMAKE and write down the sectors, heads and cylinders as you will need them to access the harddisk from here on. The IMGMOUNT size parameter should be specified as: -size 512,<sectors>,<heads>,<cylinders>.
 
+== Starting the installation
 Now let’s boot from the CD-ROM and start the installation.
 ....
 IMGMOUNT D Win98.iso -t iso
