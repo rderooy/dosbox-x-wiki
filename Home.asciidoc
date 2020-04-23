@@ -354,7 +354,7 @@ Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]
 * **FOR** (internal command)  
 Runs a specified command for each file in a set of files.  
 Usage: FOR %variable IN (set) DO command [command-parameters]  
-Note: Specify %%variable instead of %variable when used in a batch file.
+Note: Specify %%variable instead of %variable when used in a batch file. It is also possible to use nested FOR commands.
 * **GOTO** (internal command)  
 Jumps to a labeled line in a batch script.  
 Usage: GOTO label
@@ -467,7 +467,7 @@ Usage: Simply enter SHOWGUI without any parameters.
 Assigns an internal directory to a drive.  
 Usage: SUBST [drive1: [drive2:]path] or SUBST drive1: /D
 * **TIME** (internal command)  
-Displays or changes the internal time.  
+Displays or changes the internal time.    
 Usage: TIME [ [/T] [/H] | hh:mm:ss ]
 * **TREE** (external command)  
 Graphically displays the directory structure of a drive or path.  
