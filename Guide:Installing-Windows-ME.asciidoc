@@ -1,0 +1,54 @@
+:toc: macro
+
+Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
+
+# Installing Microsoft Windows Millennium Edition in DOSBox-X
+
+toc::[]
+
+# Overview
+## CD-ROM editions this applies to
+
+* Windows Millenium Edition (Windows ME)
+
+## General guidance
+There is no specific guide at this point for installing Windows ME in DOSBox-X, as Windows ME is not currently supported. It is possible to install Windows ME in DOSBox-X, but you are likely to quickly encounter Windows Protection Errors.
+
+Since, generally Windows 98SE is considered more compatible with games of the era, that is what is recommended if you want to play Windows 9x games in DOSBox-X.
+
+If you have the technical skills, and want to assist in improving DOSBox-X, assistance with fixing bugs that happen with Windows ME is welcome.
+
+*Some notes if you want to proceed*
+
+* Follow the Windows 98 installation guide
+* Use the Windows ME Full OEM version as its CD-ROM is bootable.
+* When booting for the first time from the CD, exit to DOS with CD-ROM support, and start SETUP.EXE with /NM to bypass an error that you must have a 150MHz CPU (unless your wanting to help fix that issue...)
+* A few known issues after installation:
+** In device manager, a problem with APM support: "The VPOWER.XVD device driver(s) for this device could not load the device driver. (Code 2.)". This is probably related to these errors in the DOSBox-X log:
+*** LOG: APM BIOS negotiated to v1.2
+*** LOG: Unknown APM BIOS call AX=5311
+*** LOG: Unknown APM BIOS call AX=5312
+** Under Performance, it complains about "Compatibility-mode paging" and that both drive A and C are "using MS-DOS compatibility mode file system". This is perhaps releated to these DOSBox-X LOG messages:
+*** LOG: Unknown IDE/ATAPI command 91
+*** LOG: IDE abort dh=0xbf with error on 0x1f0
+*** LOG: Unknown IDE/ATA command E0
+*** LOG: IDE abort dh=0xa0 with error on 0x1f0
+*** LOG: Unknown IDE/ATA command E0
+*** LOG: IDE abort dh=0xa0 with error on 0x1f0
+** NE2000 adapter is not automatically detected, and even if you manually add it, it takes the wrong resources (which can be adjusted). This would need PnP support for the NE2000 adapter.
+** As mentioned, Windows Protection errors. Here is an example of some of the DOSBox-X log messages related to this.
+....
+LOG: Limit check 9ae8+2-1 = 9ae9 > 0
+LOG: Segment limit violation
+LOG: CPU_RET() interrupted real/vm86
+LOG: CPU_RET() interrupted real/vm86
+LOG: CPU_RET() interrupted real/vm86
+LOG: CPU_RET() interrupted real/vm86
+LOG: CPU_RET() interrupted real/vm86
+LOG: CPU_RET() interrupted real/vm86
+LOG: Warning: PAGING_NewPageFault() more than one level, now using level 2
+LOG: Warning: PAGING_NewPageFault() more than one level, now using level 3
+LOG: Warning: PAGING_NewPageFault() more than one level, now using level 4
+LOG: Warning: PAGING_NewPageFault() more than one level, now using level 4
+LOG: Warning: PAGING_NewPageFault() more than one level, now using level 4
+....
