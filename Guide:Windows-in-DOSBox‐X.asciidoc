@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Home[DOSBox-X Wiki Welcome page].
+Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 
 # Microsoft Windows Installation Guide
 
@@ -105,3 +105,4 @@ These versions must be installed in a virtual HDD image.
 * link:Guide%3AInstalling-Windows-3.x[Guide: Installing Windows 3.x in DOSBox-X]
 * link:Guide%3AInstalling-Windows-95[Guide: Installing Windows 95 in DOSBox-X]
 * link:Guide%3AInstalling-Windows-98[Guide: Installing Windows 98 in DOSBox-X]
+* link:Guide%3AInstalling-Windows-ME[Guide: Installing Windows ME in DOSBox-X]
