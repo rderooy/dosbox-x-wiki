@@ -66,18 +66,15 @@ DIR | WCLIP
 Will redirect the directory listing to the clipboard;
 
 ....
-VER | WCLIP /A
+WCLIP /A < TEST.TXT
 ....
-Will append the version information to the clipboard;
-
-....
-WCLIP < TEST.TXT
-....
-Will send the TEST.TXT file content to the clipboard;
+Will append the TEST.TXT file content to the clipboard;
 
 ....
 WCLIP RECEIVE
 ....
 Will display the content of the clipboard.
+
+There are also other similar DOS programs available which can be used to communicate with the Windows clipboard.
 
 Like copying and pasting text using a DOS device, this bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled, and it will also not work if booting into a guest OS.
