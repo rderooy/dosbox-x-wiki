@@ -33,6 +33,10 @@ core=normal
 ne2000=false
 realnic=list
 
+[serial]
+# To prevent an IRQ conflict in case you enable NE2000
+serial2=disabled
+
 [fdc, primary]
 int13fakev86io=true
 
@@ -54,7 +58,7 @@ Copy the above config and save it as *win98.conf*
 
 *Notes*
 
-* While Windows 98 should support up to 2048MB RAM, memsize=512 is the largest safe value.
+* While Windows 98 should support up to 2048MB RAM, memsize=512 is the largest safe value. Larger values may be possible with tweaks, but are not covered here.
 * The [autoexec] section will need lines added later.
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
@@ -72,7 +76,7 @@ Then in DOSBox-X you need to create a new harddisk image file, and mount it as d
 This FAT32 example uses a 4GB partition. According to Microsoft the official maximum size is 32GB, but in actuality FAT32 can support up to 2TB. However, sizes larger then 128GB are not supported by the generic IDE driver in Windows 98. Larger sizes may be possible with 3rd party drivers, but are not covered here.
 ....
 IMGMAKE hdd.img -t hd_4gig
-IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
+IMGMOUNT 2 hdd.img -fs none
 ....
 Note: If you create a different sized HDD, pay close attention to the output of IMGMAKE and write down the sectors, heads and cylinders as you will need them to access the harddisk from here on. The IMGMOUNT size parameter should be specified as: -size 512,<sectors>,<heads>,<cylinders>.
 
@@ -85,6 +89,29 @@ BOOT -L A
 ....
 
 If the second ```IMGMOUNT``` command gives an error "*El Torito boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
+
+After the first time the Windows installer reboots, your back at the DOSBox-X ```Z:\>``` prompt. Close DOSBox-X and edit your win98.conf config file, and add the following lines in the [autoexec] section at the end of the file:
+
+....
+IMGMOUNT 2 hdd.img -fs none
+IMGMOUNT D Win98.iso -t iso
+BOOT -L C
+....
+
+Now start DOSBox-X as follows to continue the installation process:
+
+....
+dosbox-x -conf win98.conf
+....
+
+## Transfer Windows install files to your HDD image
+This is an optional step. It is to prevent Windows from asking for the CD-ROM whenever it needs additional files.
+
+Boot Windows 98 with the CD-ROM image mounted. In Windows 98, copy the \WIN98 directory and its contents from the CD-ROM to your C: drive. You can copy it to any directory you want, but we assume here that you copied it to C:\WIN98
+
+Once the files are copied, start REGEDIT and navigate to ```HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup``` and change ```SourcePath=``` to the location where you copied the files. e.g. ```SourcePath=C:\WIN98```
+
+In the case of Windows 98SE, copying the entire directory will require roughly 174MB of diskspace. The \WIN98\OLS and \WIN98\TOUR sub-directories can however be skipped which will save roughly 54MB, bringing the total to roughly 120MB.
 
 # Method 2: Running setup.exe from DOSBox-X
 *Notes*
@@ -151,6 +178,9 @@ Save the config file, and at the command-prompt you can type the following to co
 dosbox-x -conf win98.conf
 ....
 
+# Method 3: Booting from a DOS bootdisk
+If none of the installation options are suitable, you can boot from a Windows 98 or DOS 5.0 (or later) boot disk. This process is described on the link:Guide%3A-Installing-Windows-95-in-DOSBox-X[Windows 95 installation page] and will not be duplicated here.
+
 # General installation Notes
 
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious key-presses to be registered causing undesirable effects.
@@ -173,8 +203,6 @@ dosbox-x -conf win98.conf
 # Steps to take after Installation
 Once Windows 98 is installed, here is some additional software you may want to install or update:
 
-Once Windows 98 is installed, here is some additional software you may want to install or update:
-
 * Microsoft .NET framework version 1.0, 1.1 and 2.0
 * Visual C++ 2005 runtime
 * Update to Internet Explorer 6.0 (rarely needed)
@@ -189,6 +217,8 @@ link:https://msfn.org/board/topic/105936-last-versions-of-software-for-windows-9
 If you enabled NE2000 support in the DOSBox-X config file, and Windows 98 did not detect the adapter, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware. It should find the NE2000 adapter and install the drivers.
 
 By default it will try to get it's network configuration over DHCP, if you need to manually specify the settings, in "Control Panel", double-click "Network". Once it opens, highlight "TCP/IP", and click the "Properties" button to modify the TCP/IP settings.
+
+In the Network settings, there may also be a "Dial-Up Adapter" listed, which you can safely delete.
 
 # Enabling sound
 The Windows 98 installer does not always detect the presence of a sound card, as the emulated soundcard in DOSBox-X does not support PnP. If you do not have sound support, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware". Now simply follow the guide and let it install support for any devices that it detects.
