@@ -60,7 +60,7 @@ Copy the above config and save it as *win98.conf*
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 
 # Method 1: Boot from CD-ROM image
-Starting with Windows 98, it is possible to boot directly from the CD-ROM, as such no separate bootdisk is needed.
+Starting with Windows 98, it is possible to boot directly from the CD-ROM, as long as you have the "OEM Full" edition, in which case no separate bootdisk is needed.
 
 ## Preparing the Harddisk image
 First you need to start DOSBox-X from the command-line, using the newly created win98.conf. This assumes that dosbox-x is in your path and win98.conf is in your current directory.
@@ -83,6 +83,9 @@ IMGMOUNT D Win98.iso -t iso
 IMGMOUNT 0 -el-torito D -t floppy -fs none
 BOOT -L A
 ....
+
+If the second ```IMGMOUNT``` command gives an error "*El Torito boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
+
 # Method 2: Running setup.exe from DOSBox-X
 *Notes*
 
@@ -150,7 +153,14 @@ dosbox-x -conf win98.conf
 
 # General installation Notes
 
-* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects.
+* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode by either pressing Alt-F12, or from the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious key-presses to be registered causing undesirable effects.
+* When creating your HDD image with ```IMGMAKE```, instead of specifying a custom size, you can choose a pre-defined template. The advantage of using a pre-defined template in combination with an unsupported partition layout or filesystem (e.g. FAT32) is that you don't have to specify the sector-size, sectors, heads and cylinders each time you mount the HDD. The pre-defined HDD templates can be seen by running ```IMGMAKE``` without arguments.
+** Example: If you create a custom 4GB size HDD image:
+*** ```IMGMAKE hdd.img -t hd -size 4096 -nofs```
+*** ```MOUNT 2 hdd.img -size 512,63,130,1023 -fs none```
+** Example: If using a pre-defined HDD template:
+*** ```IMGMAKE hdd.img -t hd_4gig -nofs```
+*** ```MOUNT 2 hdd.img -fs none```
 * During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. You may want to select to scan for a soundcard, as otherwise it may not detect your soundcard (sometimes it does, sometimes it doesn't). Likewise, if you have NE2000 enabled in your DOSBox-X config file, you may also want to check the Network adapter box. Your DOSBox-X CD-ROM will be detected regardless if you check it's box or not.
 
 # Booting Windows 98 after installation
@@ -163,7 +173,17 @@ dosbox-x -conf win98.conf
 # Steps to take after Installation
 Once Windows 98 is installed, here is some additional software you may want to install or update:
 
-TBD...
+Once Windows 98 is installed, here is some additional software you may want to install or update:
+
+* Microsoft .NET framework version 1.0, 1.1 and 2.0
+* Visual C++ 2005 runtime
+* Update to Internet Explorer 6.0 (rarely needed)
+* Update to DirectX 9.0c
+* Windows Installer 2.0
+* Install WinG 1.0 (needed by just a few games, and those games typically include it)
+* GDI+ redistributable
+
+link:https://msfn.org/board/topic/105936-last-versions-of-software-for-windows-98se/[Forum thread about: Last Versions of Software for Windows 98SE]
 
 # Enabling networking
 If you enabled NE2000 support in the DOSBox-X config file, and Windows 98 did not detect the adapter, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware. It should find the NE2000 adapter and install the drivers.
