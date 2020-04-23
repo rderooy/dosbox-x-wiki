@@ -9,7 +9,7 @@ toc::[]
 # Overview
 ## CD-ROM editions this applies to
 
-* Windows Millenium Edition (Windows ME)
+* Windows Millennium Edition (Windows ME)
 
 ## General guidance
 There is no specific guide at this point for installing Windows ME in DOSBox-X, as Windows ME is not currently supported. It is possible to install Windows ME in DOSBox-X, but you are likely to quickly encounter Windows Protection Errors.
