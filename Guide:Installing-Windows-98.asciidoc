@@ -179,7 +179,7 @@ dosbox-x -conf win98.conf
 ....
 
 # Method 3: Booting from a DOS bootdisk
-If none of the installation options are suitable, you can boot from a Windows 98 or DOS 5.0 (or later) boot disk. This process is described on the link:Guide%3A-Installing-Windows-95-in-DOSBox-X[Windows 95 installation page] and will not be duplicated here.
+If none of the installation options are suitable, you can boot from a Windows 98 or DOS 5.0 (or later) boot disk. This process is described on the link:Guide%3AInstalling-Windows-95[Windows 95 installation page] and will not be duplicated here.
 
 # General installation Notes
 
