@@ -38,6 +38,10 @@ core=normal
 ne2000=false
 realnic=list
 
+[serial]
+# To prevent an IRQ conflict in case you enable NE2000
+serial2=disabled
+
 [fdc, primary]
 int13fakev86io=true
 
@@ -59,7 +63,7 @@ Copy the above config and save it as *win95.conf*
 
 *Notes*
 
-* While Windows 95 should support up to 2048MB RAM, memsize=480 is the largest safe value.
+* While Windows 95 should support up to 2048MB RAM, in reality more then 480MB can cause problems, as such memsize=480 is the largest safe value.
 * The [autoexec] section will need lines added later.
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
