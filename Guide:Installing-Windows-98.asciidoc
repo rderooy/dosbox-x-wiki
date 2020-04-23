@@ -80,7 +80,7 @@ Note: If you create a different sized HDD, pay close attention to the output of 
 Now let’s boot from the CD-ROM and start the installation.
 ....
 IMGMOUNT D Win98.iso -t iso
-IMGMOUNT 0 Win98.iso -el-torito D
+IMGMOUNT 0 -el-torito D -t floppy -fs none
 BOOT -L A
 ....
 # Method 2: Running setup.exe from DOSBox-X
