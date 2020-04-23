@@ -75,6 +75,6 @@ WCLIP RECEIVE
 ....
 Will display the content of the clipboard.
 
-There are also other similar DOS programs available which can be used to communicate with the Windows clipboard.
+There are also other similar DOS programs that will work in DOSBox-X, such as http://ansis.lv/dosclip/index.en.php[DOSClip 3.2], a TSR program to select, copy or paste text to or from the Windows clipboard.
 
 Like copying and pasting text using a DOS device, this bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled, and it will also not work if booting into a guest OS.
