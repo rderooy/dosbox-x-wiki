@@ -203,7 +203,7 @@ Restart the emulated DOS inside DOSBox-X.
 Start DOSBox-X's keyboard mapper.
 * **[F11/F12]+Esc**  
 Show/hide the GUI menu bar.
-* **[F11/F12]+{+}**  
+* **[F11/F12]+{{plus}}**  
 Increase the sound volume of DOSBox-X's emulated DOS.
 * **[F11/F12]+{-}**  
 Decrease the sound volume of DOSBox-X's emulated DOS.
@@ -247,336 +247,547 @@ Notes:
 Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles.
 
 * **25/28/50** (external command)  
++
 Changes the DOSBox-X screen to 25/28/50 line mode.  
++
 Usage: Simply enter 25, 28, or 50 without any parameters.
 * **A20GATE** (external command)  
++
 Turns on/off or changes the A20 gate mode.  
++
 Usage: A20GATE SET [off | off_fake | on | on_fake | mask | fast] or A20GATE [ON | OFF]
 * **ADDKEY** (internal command)  
++
 Generates artificial keypresses.  
++
 Usage: ADDKEY key
 * **APPEND** (external command)  
++
 Enables programs to open data files in specified directories as if the files were in the current directory.  
++
 Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]  
++
 Note: It uses the APPEND command from FreeDOS.
 * **ATTRIB** (internal command)  
++
 Displays or changes file attributes.  
++
 Usage: ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [drive:][path][filename] [/S]
++
 Note: Changing file attributes only works on local and FAT drives.
 * **BOOT** (external command)  
++
 Starts disk or BIOS images independent of the operating system emulation offered by DOSBox-X.  
++
 Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] [-bios image]  
++
 Note: Loading a BIOS image is currently experimental - at this time it will only work for custom code and assembly experiments.
 * **BREAK** (internal command)  
++
 Sets or clears extended CTRL+C checking.  
++
 Usage: BREAK [ON | OFF]
 * **BUFFERS** (external command)  
++
 Displays or changes the CONFIG.SYS's BUFFERS setting.  
++
 Usage: BUFFERS [buffernum]
 * **CALL** (internal command)  
++
 Starts a batch file from within another batch file.  
++
 Usage: CALL [drive:][path]filename [batch-parameters]
 * **CAPMOUSE** (external command)  
++
 Captures or releases the mouse inside DOSBox-X.  
++
 Usage: CAPMOUSE [/C|/R]
 * **CD/CHDIR** (internal command)  
++
 Displays or changes the current directory.  
++
 Usage: CD [drive:][path] or CHDIR [drive:][path]
 * **CHOICE** (internal command)  
++
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.  
++
 Usage: CHOICE [/C:choices] [/N] [/S] text
 * **CLS** (internal command)  
++
 Clears the screen of all input and returns just the current prompt in the upper left hand corner.  
++
 Usage: Simply enter CLS without any parameters.
 * **COMMAND** (external command)  
++
 Restarts DOSBox-X's command shell.  
++
 Usage: COMMAND [options]
 * **CONFIG** (external command)  
++
 Starts DOSBox-X's config tool to change it settings.  
++
 Usage: CONFIG [options]
 * **COPY** (internal command)  
++
 Copies one or more files.  
++
 Usage: COPY source [destination]
 * **CTTY** (internal command)  
++
 Changes the standard I/O device.  
++
 Usage: CTTY device
 * **CWSDPMI** (external command)  
++
 Starts CWSDPMI, a 32-bit DPMI server used by various DOS games/applications.  
++
 Usage: CWSDPMI [options]
 * **DATE** (internal command)  
++
 Displays or changes the internal date.  
++
 Usage: DATE [ [/T] [/H] [/S] | MM-DD-YYYY ]
 * **DEBUG** (external command)  
++
 The DOS DEBUG tool used to test and edit programs.  
++
 Usage: DEBUG [ [drive:][path]progname [arglist] ]
 * **DEL/ERASE** (internal command)  
++
 Removes one or more files.  
++
 Usage: DEL [/P] [/Q] names or ERASE [/P] [/Q] names
 * **DEVICE** (external command)  
++
 Load device drivers as CONFIG.SYS's DEVICE command.  
++
 Usage: DEVICE [program] [options]
 * **DIR** (internal command)  
++
 Lists available files and sub-directories inside the current directory.  
++
 Usage: DIR [drive:][path][filename] [options]
 * **DOS32A** (external command)  
++
 Starts DOS32A, a 32-bit DOS extender used by various DOS games/applications.  
++
 Usage: DOS32A executable.xxx
 * **DOS4GW** (external command)  
++
 Starts DOS4GW, a 32-bit DOS extender used by various DOS games/applications.  
++
 Usage: DOS4GW executable.xxx
 * **DOSIDLE** (external command)  
++
 Puts the DOS emulator into idle mode for lower CPU usages.    
++
 Usage: Simply enter DOSIDLE without any parameters.
 * **DSXMENU** (external command)  
++
 Runs DOSLIB's DSXMENU tool, a simple DOS menu system.  
++
 Usage: DSXMENU [-d] INI_file  
++
 Note: This is an open-source tool; its source code is in the related DOSLIB project.
 * **DX-CAPTURE** (internal command)  
++
 Starts capture (AVI, WAV, etc. as specified), runs program, then automatically stops capture when the program exits.  
++
 Usage: DX-CAPTURE [command] [options]  
++
 Note: This built-in command name is deliberately longer than 8 characters so that there is no conflict with external .COM/.EXE executables that are limited to 8.3 filenames. It can be used for example to make Demoscene captures and to make sure the capture stops when it exits.
 * **ECHO** (internal command)  
++
 Displays messages and enable/disable command echoing.  
++
 Usage: ECHO [message] or ECHO [ON | OFF]
 * **EDIT** (external command)  
++
 Starts the full-screen file editor.  
++
 Usage: EDIT [/B] [/I] [/H] [/R] [file(s)]  
++
 Note: It uses the EDIT command from FreeDOS.
 * **EXIT** (internal command)  
++
 Exits from the batch file or DOSBox-X.  
++
 Usage: Simply enter EXIT without any parameters.
 * **FCBS** (external command)  
++
 Displays or changes the CONFIG.SYS's FCBS setting.  
++
 Usage: FCBS [fcbnum]
 * **FIND** (external command)  
++
 Prints lines of a file that contains the specified string.  
++
 Usage: FIND [/C] [/I] [/N] [/V] "string" [file(s)]
 * **FOR** (internal command)  
++
 Runs a specified command for each file in a set of files.  
++
 Usage: FOR %variable IN (set) DO command [command-parameters]  
++
 Note: Specify %%variable instead of %variable when used in a batch file. It is also possible to use nested FOR commands.
 * **GOTO** (internal command)  
++
 Jumps to a labeled line in a batch script.  
++
 Usage: GOTO label
 * **HELP** (internal command)             
++
 Shows command help.  
++
 Usage: HELP [/all]
 * **HEXMEM16/HEXMEM32** (external command)  
++
 Runs DOSLIB's HEXMEM tool, a memory viewer/dumper.  
++
 Usage: HEXMEM16 [options] or HEXMEM32 [options]  
++
 Note: Included in the related DOSLIB project, this open-source tool was specifically written as a way to poke around the addressable memory available to the CPU and to show how a 16-bit DOS program can access extended memory, including flat real mode, and the 286 reset vector trick for 80286 systems. There is also code to access memory above 4GB if the CPU supports 64-bit long mode or the PAE page table extensions, although these are not yet supported by DOSBox-X.
 * **IF** (internal command)  
++
 Performs conditional processing in batch programs.  
++
 Usage: IF [NOT] ERRORLEVEL number command or IF [NOT] string1==string2 command or IF [NOT] EXIST filename command
 * **IMGMAKE** (external command)  
++
 Makes floppy drive or hard-disk images.  
++
 Usage: IMGMAKE file [-t type] [-size size|-chs geometry] [-nofs] [-source source] [-r retries] [-bat]
 * **IMGMOUNT** (external command)  
++
 Mounts drives from floppy drive, hard-disk, or CD images in the host system.  
++
 Usage: IMGMOUNT drive filename [options] or IMGMOUNT -u drive|driveLocation
 * **INTRO** (external command)  
++
 A full-screen introduction.  
++
 Usage: Simply enter INTRO without any parameters.
 * **KEYB** (external command)  
++
 Changes the layout of the keyboard used for different countries.  
++
 Usage: KEYB [keyboard layout ID [codepage number [codepage file]]]
 * **LABEL** (external command)  
++
 Changes the label of a drive.  
++
 Usage: LABEL [drive:][label]
 * **LASTDRIV** (external command)  
++
 Displays or changes the CONFIG.SYS's LASTDRIVE setting.  
++
 Usage: LASTDRIV [driveletter]
 * **LFNFOR** (internal command)  
++
 Enables or disables long filenames when processing FOR wildcards.  
++
 Usage: LFNFOR [ON | OFF]  
++
 Note: This command is only useful if long filename support is currently enabled.
 * **LOADFIX** (external command)  
++
 Loads a program above the first 64K of memory.  
++
 Usage: LOADFIX [program] [options]
 * **LOADROM** (external command)  
++
 Loads the specified Video BIOS ROM image file.  
++
 Usage: LOADROM ROM_file
 * **LH/LOADHIGH** (internal command)  
++
 Loads a program into upper memory (if UMB is available).  
++
 Usage: LH [program] [options] or Usage: LOADHIGH [program] [options]
 * **MD/MKDIR** (internal command)  
++
 Makes a directory.  
++
 Usage: MD [drive:][path] or MKDIR [drive:][path]
 * **MEM** (external command)  
++
 Displays the status of the DOS memory, such as the amount of free memory.  
++
 Usage: MEM [options]  
++
 Note: It uses the MEM command from FreeDOS.
 * **MIXER** (external command)  
++
 Displays current sound levels.  
++
 Usage: Simply enter MIXER without any parameters.
 * **MODE** (external command)  
++
 Configures DOS system devices.  
++
 Usage: MODE display-type or MODE CON RATE=r DELAY=d
 * **MORE** (internal command)  
++
 Displays output one screen at a time.  
++
 Usage: MORE [filename]
 * **MOUNT** (external command)  
++
 Mounts drives from directories or drives in the host system.  
++
 Usage: MOUNT [option] driveletter host_directory  
++
 Note: Supported options include -nocachedir to not cache the drive, -ro to put drive in read-only mode, and -u to unmount the drive.
 * **MOUSE** (external command)  
++
 Turns on/off mouse support.  
++
 Usage: MOUSE [/U] [/V]
 * **MOVE** (external command)  
++
 Moves a file or directory to another location.  
++
 Usage: MOVE [/Y | /-Y] source1[, source2[,...]] destination  
++
 Note: It uses the MOVE command from FreeDOS.
 * **NMITEST** (external command)  
++
 Generates a non-maskable interrupt (NMI).  
++
 Usage: NMITEST [options]  
++
 Note: This is a debugging tool to test that it and the interrupt handler work properly. Currently the only use of the NMI is PCjr emulation which receives an NMI every time a key is pressed on the keyboard.
 * **PATH** (internal command)  
++
 Displays/Sets a search patch for executable files.  
++
 Usage: PATH [drive:]path[;...][;PATH] or PATH ;
 * **PAUSE** (internal command)  
++
 Waits for a keystroke to continue.  
++
 Usage: PAUSE [message]
 * **PROMPT** (internal command)  
++
 Changes the DOS command prompt.  
++
 Usage: PROMPT [text]
 * **RD/RMDIR** (internal command)  
++
 Removes a directory.  
++
 Usage: RD [drive:][path] or RMDIR [drive:][path]
 * **RE-DOS** (external command)  
++
 Sends a signal to re-boot the kernel of the emulated DOS, without rebooting DOSBox-X itself.  
++
 Usage: Simply enter RE-DOS without any parameters.
 * **REM** (internal command)  
++
 Adds comments in a batch file.  
++
 Usage: REM [comment]
 * **REN/RENAME** (internal command)  
++
 Renames one or more files.  
++
 Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 filename2
 * **RESCAN** (external command)  
++
 Refreshes mounted drives by clearing their caches.  
++
 Usage: Simply enter RESCAN without any parameters.
 * **SET** (internal command)  
++
 Displays and sets environment variables.  
++
 Usage: SET [variable=[string]]
 * **SHIFT** (internal command)  
++
 Left-shifts command-line parameters in a batch script.  
++
 Usage: Simply enter SHIFT without any parameters.
 * **SHOWGUI** (external command)  
++
 Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.  
++
 Usage: Simply enter SHOWGUI without any parameters.
 * **SUBST** (internal command)  
++
 Assigns an internal directory to a drive.  
++
 Usage: SUBST [drive1: [drive2:]path] or SUBST drive1: /D
 * **TIME** (internal command)  
++
 Displays or changes the internal time.    
++
 Usage: TIME [ [/T] [/H] | hh:mm:ss ]
 * **TREE** (external command)  
++
 Graphically displays the directory structure of a drive or path.  
++
 Usage: TREE [drive:][path] [/F] [/A]  
++
 Note: It uses the TREE command from FreeDOS.
 * **TRUENAME** (internal command)  
++
 Finds the fully-expanded name for a file.  
++
 Usage: TRUENAME file
 * **TYPE** (internal command)  
++
 Displays the contents of a text-file.  
++
 Usage: TYPE [drive:][path][filename]
 * **VER** (internal command)  
++
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
++
 Usage: VER [SET major minor] or VER [SET major.minor]  
++
 Note: "VER SET 3 3" will set the reported DOS version as 3.03, whereas "VER SET 3.3" will set the version as 3.30.
 * **VERIFY** (internal command)  
++
 Controls whether to verify that your files are written correctly to a disk.  
++
 Usage: VERIFY [ON | OFF]
 * **VESAMOED** (external command)  
++
 Runs the VESA BIOS mode editor utility, which can be used to add, modify or delete VESA BIOS modes.  
++
 Usage: VESAMOED [options]  
++
 Note: It was originally written because some old DOS games or demoscene productions, especially those shipped with a UNIVBE binary, assumed video mode numbers instead of enumerating like they should. It can also be used to rearrange VESA BIOS modes for retro developers who want to make sure their code works properly no matter what strange VESA BIOS their code runs into on real hardware. Because of limitations in DOSBox-X SVGA emulation and the render scaler architecture, the maximum resolution possible resolution is 1920x1440.
 * **VFRCRATE** (external command)  
 Forces video emulation to a specific refresh rate (or turn off the forced rate).  
++
 Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]  
++
 Note: It was originally written to run demoscene games at 59.94Hz (NTSC) so that no frame blending is needed to author to DVD. It can also be used for development and testing to simulate a PC whose refresh rate is locked in hardware, such as what happens when running a DOS program on laptops. Even though standard VGA is 60Hz or 70Hz, laptops will lock the refresh rate to 60Hz when sending video to the internal display.
 * **VOL** (internal command)  
++
 Displays the disk volume label and serial number, if they exist.  
++
 Usage: VOL [drive]
 * **XCOPY** (external command)  
++
 Copies files and directory trees.  
++
 Usage: XCOPY source [destination] [options]  
++
 Note: It uses the XCOPY command from FreeDOS.
 
 ### DOSBox-X's Command-line Options
 
 DOSBox-X supports command-line options. You can start DOSBox-X without any option, or with any of the following options.
 
-* **-h** or **-help**                              
+* **-?**, **-h** or **-help**
++
 Shows DOSBox-X's help message.
-* **-editconf [program]**                             
+* **-editconf [program]**
++
 Calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start.
-* **-opencaptures [program]**                              
+* **-opencaptures [program]**
++
 Calls program with as first parameter the location of the captures folder.                        
-* **-opensaves [program]**                              
+* **-opensaves [program]**
++
 Calls program with as first parameter the location of the saves folder.
-* **-eraseconf**                              
+* **-eraseconf**
++
 Erases DOSBox-X's default config file.
-* **-resetconf**                              
+* **-resetconf**
++
 Erases DOSBox-X's default config file.
-* **-printconf**                              
+* **-printconf**
++
 Generates DOSBox-X's config file in the user directory and prints its location.
-* **-erasemapper**                            
+* **-erasemapper**
++
 Erases the mapper file used by the default clean configuration file.
-* **-resetmapper**                            
+* **-resetmapper**
++
 Erases the mapper file used by the default clean configuration file.
-* **-console**                                
+* **-console**
++
 Starts DOSBox-X with the console window (win32 only).
-* **-noconsole**                              
+* **-noconsole**
++
 Starts DOSBox-X without showing the console window (debug+win32 only).
-* **-nogui**                                  
+* **-nogui**
++
 Starts DOSBox-X without showing its GUI menu (win32 only).
-* **-nomenu**                                 
+* **-nomenu**
++
 Starts DOSBox-X without showing its GUI menu (win32 only).
-* **-userconf**                               
+* **-userconf**
++
 Loads the configuration from the user's profile or home directory.
-* **-conf [file]**                           
+* **-conf [file]**
++
 Uses the specified file as DOSBox-X's config file.
-* **-startui** or **-startgui**                      
+* **-startui** or **-startgui**
++
 Starts DOSBox-X with its configuration GUI dialog, where you can review or change its settings.
-* **-startmapper**                            
+* **-startmapper**
++
 Starts DOSBox-X and enters to the keyboard mapper editor directly.
-* **-showcycles**                             
+* **-showcycles**
++
 Shows cycles count (FPS) on the DOSBox-X title bar.
-* **-showrt**                                 
+* **-showrt**
++
 Shows emulation speed relative to realtime on the DOSBox-X title bar.
-* **-fullscreen**                             
+* **-fullscreen**
++
 Starts DOSBox-X in full-screen mode.
-* **-savedir [path]**                         
+* **-savedir [path]**
++
 Uses the specified path as DOSBox-X's save path.
-* **-disable-numlock-check**                  
+* **-disable-numlock-check**
++
 Disables numlock check (win32 only).
-* **-date-host-forced**                       
+* **-date-host-forced**
++
 Forces synchronization of date with the host system.
-* **-debug**                                  
+* **-debug**
++
 Sets all logging levels to debug.
-* **-early-debug**                            
+* **-early-debug**
++
 Logs early initialization messages in DOSBox-X (this option implies -console).
-* **-keydbg**                                 
+* **-keydbg**                    
++
 Logs all SDL key events (debugging).
-* **-lang [message file]**                    
+* **-lang [message file]**
++
 Uses specific message file instead of language= setting.
-* **-nodpiaware**                             
+* **-nodpiaware**
++
 Ignores (don't signal) Windows DPI awareness.
-* **-securemode**                             
+* **-securemode**
++
 Enables DOSBox-X's secure mode. The [autoexec] section of the loaded configuration file will be skipped, and commands such as MOUNT and IMGMOUNT are disabled.
-* **-noautoexec**                             
+* **-noautoexec**
++
 Skips the [autoexec] section of the loaded configuration file.
-* **-exit**                                   
+* **-exit**
++
 Exits after executing the [autoexec] section of the loaded configuration file.
-* **-c [command string]**                              
+* **-c [command string]**
++
 Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
-* **-break-start**                              
+* **-break-start**
++
 Starts DOSBox-X and breaks into its debugger directly.
-* **-time-limit [n]**                              
+* **-time-limit [n]**
++
 Starts and terminates DOSBox-X after 'n' seconds.
-* **-fastbioslogo**                              
+* **-fastbioslogo**
++
 Skips the 1-second BIOS pause with Fast BIOS logo.
-* **-log-con**                              
+* **-log-con**
++
 Logs CON output to a log file.
 
 ### DOSBox-X Guides and Tips
