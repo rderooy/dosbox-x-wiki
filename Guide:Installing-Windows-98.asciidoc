@@ -31,11 +31,8 @@ core=normal
 # If you want networking in Windows, set ne2000=true.
 # This also requires that you set realnic= to a suitable value for your PC
 ne2000=false
+nicirq=10
 realnic=list
-
-[serial]
-# To prevent an IRQ conflict in case you enable NE2000
-serial2=disabled
 
 [fdc, primary]
 int13fakev86io=true
