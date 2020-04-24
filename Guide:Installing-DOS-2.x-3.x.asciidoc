@@ -16,9 +16,6 @@ toc::[]
 ** First version to introduce CONFIG.SYS
 ** First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
 
-### Key new features of PC DOS 2.10
-** Adds support for the IBM PCjr
-
 ### Key new features of DOS 3.00
 ** Maximum partition size of 32MB (using the new FAT16)
 ** First version to support 5.25" 1.2MB disks (HD)
@@ -63,10 +60,18 @@ toc::[]
 * For DOS 2.x, the maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
 * For DOS 3.00-3.21, the maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
 * While it is possible to use a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and depending on the DOS version will either overflow such that a 40MB HDD image becomes a 40-32=8MB partition, or it will create a drive that cannot be formatted.
+* When creating your HDD image with ```IMGMAKE```, instead of specifying a custom size, you can choose a pre-defined template. The advantage of using a pre-defined template in combination with an unsupported partition layout or filesystem is that you don't have to specify the sector-size, sectors, heads and cylinders each time you mount the HDD. The available pre-defined HDD templates can be seen by running ```IMGMAKE``` without arguments.
+** Example: If you create a custom 20MB size HDD image (without partition or filesystem):
+*** ```IMGMAKE hdd.img -t hd -size 20 -nofs```
+*** ```MOUNT 2 hdd.img -size 512,32,2,640 -fs none```
+** Example: If using a pre-defined HDD template:
+*** ```IMGMAKE hdd.img -t hd_st225 -nofs```
+*** ```MOUNT 2 hdd.img -fs none```
 
 |===
 |DOS|OEM|Maximum partition size|Note
 
+|MS-DOS 2.11|Tandy 1000|-|Requires machine=tandy. Could read a HDD image created with PC DOS 2.10, but could not boot from it (after SYS), perhaps with HFORMAT which I could not easily locate...
 |MS-DOS 2.11|Zenith|-|Incompatible disk preparation software
 |MS-DOS 3.10|Compaq|-|Incompatible FDISK
 |MS-DOS 3.10|HP|31MB|Fails to boot from diskette, this can be circumvented by renaming CONFIG.SYS. FDISK hangs with 32MB
