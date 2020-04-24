@@ -7,7 +7,7 @@ Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 toc::[]
 
 # Overview
-DOSBox-X has support for the Novell NE2000 network adapter, but setting it up can be a bit convoluted. This guide hopes to simplify the process.
+DOSBox-X has support for emulating the Novell NE2000 network adapter, but setting it up can be a bit convoluted. This guide hopes to simplify the process.
 
 This guide assumes your DOSBox-X build has been compiled with pcap support, which is not always the case.
 
