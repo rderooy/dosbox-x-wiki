@@ -1,0 +1,286 @@
+:toc: macro
+
+Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
+
+# Installing Microsoft Windows 3.x in DOSBox-X
+
+toc::[]
+
+# Overview
+## Editions this applies to
+
+* Windows 3.0
+** Supports up to 16MB RAM
+* Windows 3.0a
+** Allows programs to call into real-mode when started in standard mode
+** Bug fixes for the installer to alleviate crashes
+* Windows 3.0a with Multimedia Extensions
+** Adds Multimedia Extensions 1.0
+** Multimedia extensions do not support real mode (8086/8088 CPUs)
+** Adds support for recording and playing digital audio files
+** Adds support for MIDI devices
+** Adds support for screensavers
+** Adds support for analogue joysticks
+** Adds support for audio CD-ROMs
+* Windows 3.1
+** Supports up to 256MB RAM
+** Dropped support for real mode (8086/8088 CPUs)
+** Includes updated Multimedia Extensions
+** Adds Truetype
+** Adds optional 32-bit disk access (386 Enhanced Mode only)
+** Adds the Windows Registry
+* Windows 3.11
+** Bug fix release
+* Windows for Workgroups 3.1
+** Adds SMB file sharing (NBF or IPX protocols only)
+** Adds VSHARE.386
+* Windows for Workgroups 3.11
+** Adds 32-bit file redirectors
+** Drops support for standard mode (286 CPUs)
+* Windows for Workgroups 3.11a
+* WIndows 3.2
+** Special Chinese edition
+
+|===
+|Edition|Min CPU|Min RAM|Max RAM|Min HDD space|Min DOS
+
+|3.0| 8086|1MB|16MB|8MB|3.1
+|3.0a| 8086|1MB|16MB|8MB|3.1
+|3.0a MM|286|2MB|16MB|30MB|3.1
+|3.1| 286|2MB|256MB|8MB|3.1
+|3.11| 286|2MB|256MB|8MB|3.1
+|3.1 WfW|386|3MB|256MB|14MB|3.3
+|3.11 WfW|386|3MB|256MB|14MB|3.3
+|===
+
+Windows 3.x was available for both Retail and via OEM, with exception of *Windows 3.0a with Multimedia Extensions* which was available only through OEMs.
+
+## README.1ST
+
+There are already some guides to installing Windows 3.x in DOSBox, and those guides will also work with DOSBox-X. Some examples:
+
+* link:https://www.vogons.org/viewtopic.php?t=9405[Windows 3.1x DOSBox Guide] on Vogons by user Dominus
+* link:https://www.howtogeek.com/230359/how-to-install-windows-3.1-in-dosbox-set-up-drivers-and-play-16-bit-games/[How to Install Windows 3.1 in DOSBox, Set Up Drivers, and Play 16-bit Games] on How-To Geek
+* link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_install.html[Windows 3x on DOSBox guide] on sierrahelp.com
+
+This guide does not seek to replicate those pages. Instead this page will contain some install guidance and hints and tips not covered on those pages, or that are specific to DOSBox-X. It is not intended to be a comprehensive guide.
+
+### Useful links
+
+* link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
+* link:https://en.wikipedia.org/wiki/Windows_3.0[Wikipedia: Windows 3.0]
+* link:https://en.wikipedia.org/wiki/Windows_3.1x[Wikipedia: Windows 3.1x]
+* link:https://betawiki.net/wiki/Windows_3.0[BetaWiki: Windows 3.0]
+* link:https://betawiki.net/wiki/Windows_3.00a_Multimedia_Edition[BetaWiki: Windows 3.00a Multimedia Edition]
+* link:https://betawiki.net/wiki/Windows_3.1xp[BetaWiki: Windows 3.1x]
+* link:http://toastytech.com/guis/win30.html[Windows 3.0 GUI screenshots]
+* link:http://toastytech.com/guis/win3mme.html[Windows 3.0a with Multimedia Extensions 1.0 GUI screenshots]
+* link:http://toastytech.com/guis/win31.html[Windows 3.1 GUI screenshots]
+* link:http://toastytech.com/guis/win311.html[Windows 3.11 GUI screenshots]
+* link:http://toastytech.com/guis/win32.html[Windows 3.2 GUI screenshots]
+
+### General Notes
+* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious key-presses to be registered causing undesirable effects.
+
+### Windows 3.0 specific notes
+* Unless noted otherwise, Windows 3.1 drivers are not backward compatible with Windows 3.0
+
+### Windows 3.0a with Multimedia Extensions specific notes
+* This was available only to OEMs, as such they will be customized to the systems they shipped with. Examples are a OEM specific launcher, but also that the installer may default to specific video and audio options.
+* For versions distributed on CD, the installation can be started by going into the MWIN directory on the CD and running SETUP.EXE
+* Unlike regular Windows which installs by default to C:\WINDOWS this edition installs by default to C:\MWINDOWS
+
+# DOSBox-X config file
+It is recommended that you create a custom DOSBox-X config file for running Windows 3.x
+....
+[dosbox]
+title=Windows 3.x
+memsize=16
+# uncomment the next line if you want want to use Windows 3.0
+#machine=svga_et4000
+
+[cpu]
+cputype=pentium
+
+[pci]
+voodoo=false
+
+[ne2000]
+# If you want networking in WfW (DOS HDD image only!), set ne2000=true.
+# This also requires that you set realnic= to a suitable value for your PC
+ne2000=false
+nicirq=10
+realnic=list
+
+[render]
+scaler=none
+aspect=false
+
+[autoexec]
+....
+
+Copy the above config and save it as *win3x.conf*
+
+*Notes*
+
+* Windows 3.0 supports up to 16MB RAM, but Windows 3.1 and 3.11 support up to 256MB, as such for these Windows versions memsize=256 is the largest safe value.
+* The [autoexec] section will need lines added later.
+* If you want networking in *Windows for Workgroups*, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
+ link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
+* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (machine=svga_et3000 and machine=svga_et4000 respectively), but for the default machine=svga_s3 (S3 Trio64V+) there are apparently only Windows 3.1 drivers.
+* The S3 video option will offer the broadest range of resolutions and colour depths, but do require you to install the correct drivers.
+
+# Preparing for Installation
+Most Windows 3.x versions were shipped on diskettes, requiring anywhere between 5 and 15 disks, depending on media-type and windows version. And while it is definitely possible to install Windows 3.x from diskette images in DOSBox, the process for this is rather tedious for large number of disks. As such it is highly recommended to make a directory such as "INSTALL" and copy the contents of ALL the diskettes into this directory. This way there is no need to swap disks during the installation process.
+
+## Example of copying disk images
+In DOSBox-X you can mount a disk image, copy its contents into a folder, unmount the disk image and do the next. Here is an example of such a procedure:
+
+....
+mount c /home/myuser/winroot
+c:
+mkdir INSTALL
+imgmount a DISK01.IMG
+copy a:\*.* C:\INSTALL
+mount -u a
+imgmount a DISK02.IMG
+copy a:\*.* C:\INSTALL
+mount -u a
+imgmount a DISK03.IMG
+copy a:\*.* C:\INSTALL
+mount -u a
+imgmount a DISK04.IMG
+copy a:\*.* C:\INSTALL
+mount -u a
+imgmount a DISK05.IMG
+copy a:\*.* C:\INSTALL
+mount -u a
+....
+
+## Mounting an installation CD-ROM
+If you have a "Windows 3.0 Multimedia Edition" CD-ROM image, you can simply mount it in DOSBox-X.
+
+e.g.
+....
+IMGMOUNT D win30me.iso -t iso
+....
+
+The installer is normally locate on the CD in the MWIN directory as SETUP.EXE
+
+# Installing in a mounted folder
+*Notes*
+
+* This method is the easiest, but has a few limitations:
+** will not allow for 32-bit disk IO with Windows 3.1x
+** will not allow for networking with Windows for Workgroups
+** will not allow for true SHARE support with Win32S (req. for Office 4.3, Visual C++)
+
+Create a directory on your system that your going to use (mount) as your Windows 3.x C: drive. Valid examples:
+
+* For Windows hosts
+** C:\winroot
+** C:\users\myuser\win31
+* For Linux hosts
+** /home/myuser/winroot
+** /home/myuser/windows/win311
+
+Note: For Windows users, do *NOT* mount the root of your C: drive as the DOSBox C: drive! (e.g. ```MOUNT C C:\``` should NOT be done)
+
+Now create a directory underneath that, which will contain your Windows 3.x installation files. e.g. C:\users\myuser\win31\INSTALL or /home/myuser/winroot/INSTALL and copy the installation files into it.
+
+You are now ready to start DOSBox-X from the command-line, using the newly created win3x.conf. This assumes that dosbox-x is in your path and win3x.conf is in your current directory.
+....
+dosbox-x -conf win3x.conf
+....
+You now need to mount your new folder as the C: drive in DOSBox-X and start the installation.
+....
+MOUNT C /home/myuser/winroot
+C:
+CD INSTALL
+SETUP
+....
+
+The Windows installation will now take place.
+
+Once the installation process has finished, you will be asked if you want to start windows, or exit to DOS. Exit to DOS and type EXIT to close DOSBox-X.
+
+Now edit your win3x.conf config file and add the following lines into the [autoexec] section at the end of the file
+
+....
+MOUNT C /home/myuser/winroot
+C:
+SET PATH=%PATH%;C:\WINDOWS;
+SET TEMP=C:\WINDOWS\TEMP
+C:\WINDOWS\WIN
+EXIT
+....
+
+Adjust the path for mounting the C: drive as needed.
+
+# Install Windows 3.x into a DOS HDD image
+This method does not have any of the disadvantages listed above. But it brings with it a bit of additional inconvenience. For instance you will need to do your own DOS memory management and load DOS drivers for CD-ROM access and Mouse support. You can also not mount a host directory in DOSBox-X. Everything needs to be done using IMAGE files.
+
+The first step is to create a DOS HDD image, for which you can follow the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide]. You need at least DOS 3.1 for Windows 3.0 and 3.1x, and DOS 3.3 for WfW. However it is recommended to use a newer version such as DOS 6.x
+
+Once you have a DOS HDD image, temporarily mount it in DOSBox to transfer your INSTALL folder into your DOS HDD image, together with any drivers and add-ons you might need (preferably already unzipped, such that you don't need to do that in DOS, as it lacks support for that by default).
+
+Something along the lines of:
+
+....
+IMGMOUNT C hdd.img
+MOUNT D .
+XCOPY D:\INSTALL C:\INSTALL /I /E
+XCOPY D:\DRIVERS C:\DRIVERS /I /E
+XCOPY D:\ADDONS C:\ADDONS /I /E
+EXIT
+....
+Adjust paths in the above example as needed.
+
+Now edit your win3x.conf config file and in the [autoexec] section at the end, add the following lines:
+....
+IMGMOUNT C hdd.img
+BOOT -L C
+....
+
+Now start DOSBox-X with your win3x.conf config file from the command-line:
+
+....
+dosbox-x -conf win3x.conf
+....
+
+It should boot to the C: prompt, and you can start the installation process
+....
+CD INSTALL
+SETUP
+....
+
+After the installation is finished you can install your drivers and add-ons.
+
+# Starting Windows 3.x after installation
+After the installation is finished, you can start Windows 3.x from the command-prompt with the following command:
+
+....
+dosbox-x -conf win3x.conf
+....
+
+# Steps to take after Installation
+Once Windows 3.x is installed, here is some additional software you may want to install or update:
+
+* Updated Video and Audio drivers
+* Win32s 1.30c
+* Video for Windows 3.1x
+* WinG API 1.0
+* Quicktime 2.1.2
+* Adobe Type Manager 3.02
+
+# Enabling networking
+This only applies to *Windows for Workgroups* (WfW). To enable networking functionality you will need to create a disk image with real DOS, and install WfW into that. You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default. For instance, if you install WfW inside DOSBox-X with networking support, your supposed to run ```C:\WINDOWS\NET START``` before starting Windows. This command will however return a ```Error 73: (null)``` if run from the DOSbox-X emulated DOS.
+
+Windows for Workgroups by default only supports SMB networking over NBF or IPX. There is no support by default for TCP/IP.
+
+There were 3rd party WinSock solutions, but those were meant for dial-up internet access, and are not specific to WfW.
+
+You can however install *Microsoft TCP/IP-32* to add TCP/IP support to WfW.
+
+# Enabling sound
+TBD
