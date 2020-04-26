@@ -101,6 +101,7 @@ memsize=16
 
 [cpu]
 cputype=pentium
+core=normal
 
 [pci]
 voodoo=false
@@ -111,6 +112,16 @@ voodoo=false
 ne2000=false
 nicirq=10
 realnic=list
+
+[fdc, primary]
+int13fakev86io=true
+
+[ide, primary]
+int13fakev86io=true
+
+[ide, secondary]
+int13fakev86io=true
+cd-rom insertion delay=4000
 
 [render]
 scaler=none
@@ -268,10 +279,29 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 
 * Updated Video and Audio drivers
 * Win32s 1.30c
-* Video for Windows 3.1x
+* Video for Windows 1.1e
 * WinG API 1.0
 * Quicktime 2.1.2
 * Adobe Type Manager 3.02
+
+# Enabling 32-bit File and Disk access
+* Introduced with Windows 3.1, 32-Bit Disk Access allows Windows to bypass the 16-Bit BIOS
+* Introduced with Windows 3.11, 32-Bit File Access allows Windows to bypass the 16-Bit DOS FAT code
+
+Enabling these features means that Windows does not have to leave 32-bit protected mode, and should therefore, at least in theory, be faster.
+
+32-Bit Disk Access uses the WDCTRL driver built into WIN386.EXE that is included with Windows 3.1x, which _should_ works in DOSBox-X if the following conditions are met:
+
+* You must use a real DOS in DOSBox-X
+* Your HDD image must have 1023 cylinders or less (max 504MB)
+* You must have enabled int14fakev86io in your DOSBox-X config file
+
+See link:http://os2museum.com/wp/how-to-please-wdctl/[How to please WDCTL] for more background information.
+
+32-bit File Access has no such requirements, and can be enabled seemingly on any system.
+
+To enable these features, open the "Main" folder, followed by "Control Panel". Now double-click on the "386" chip icon titled "Enhanced".
+Then click on the "Virtual Memory..." button. Under Disk Status you can see what access methods Windows is currently using. Now click on the "Change>>" button. At the bottom there are options for "Use 32-Bit Disk Access" and "Use 32-Bit File Access". If the 32-Bit Disk Access option is greyed out, it probably means your configuration is not compatible with the option.
 
 # Enabling networking
 This only applies to *Windows for Workgroups* (WfW). To enable networking functionality you will need to create a disk image with real DOS, and install WfW into that. You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default. For instance, if you install WfW inside DOSBox-X with networking support, your supposed to run ```C:\WINDOWS\NET START``` before starting Windows. This command will however return a ```Error 73: (null)``` if run from the DOSbox-X emulated DOS.
@@ -284,3 +314,22 @@ You can however install *Microsoft TCP/IP-32* to add TCP/IP support to WfW.
 
 # Enabling sound
 TBD
+
+# Starting a Windows game from DOS
+If you want to silently start a Windows game, without seeing the Windows 3.x splash screen or program manager, and when you exit the game that it exits Windows, here are the steps to take:
+
+First install the game normally in Windows.
+
+You can start the game from DOS simply by appending the Windows game executable behind the WIN.COM executable as such:
+
+....
+WIN \path\to\game\game.exe
+....
+
+This will prevent the Windows splash screen being shown, and will directly start the game without first going to the Program Manager (progman).
+
+The second step you may want to take, is that when you exit the game, you also exit Windows 3.x. For this you need a 3rd party utility called "link:http://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH. Now simply start the game as follows:
+....
+WIN RUNEXIT \path\to\game\game.exe
+....
+Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows. This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
