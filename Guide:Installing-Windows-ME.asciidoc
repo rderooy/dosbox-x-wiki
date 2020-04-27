@@ -22,7 +22,7 @@ If you have the technical skills, and want to assist in improving DOSBox-X, assi
 
 * Follow the Windows 98 installation guide as the process is similar.
 * Use the Windows ME Full OEM version as its CD-ROM is bootable.
-* When booting for the first time from the CD, exit to DOS with CD-ROM support, and start SETUP.EXE with /NM to bypass an error that you must have a 150MHz CPU (unless your wanting to help fix that issue...)
+* When booting for the first time from the CD, exit to DOS with CD-ROM support, and start SETUP.EXE with /NM to bypass an error that you must have a 150MHz CPU
 * A few known issues after installation:
 ** In device manager, a problem with APM support: "The VPOWER.XVD device driver(s) for this device could not load the device driver. (Code 2.)". This is probably related to these errors in the DOSBox-X log:
 *** LOG: APM BIOS negotiated to v1.2
@@ -35,8 +35,10 @@ If you have the technical skills, and want to assist in improving DOSBox-X, assi
 *** LOG: IDE abort dh=0xa0 with error on 0x1f0
 *** LOG: Unknown IDE/ATA command E0
 *** LOG: IDE abort dh=0xa0 with error on 0x1f0
+** SB16 _may_ not be automatically detected, due to missing PnP support for the emulated SB16. Running the "Add hardware wizard" should take care of it.
 ** NE2000 adapter is not automatically detected, and even if you manually add it, it takes the wrong resources (which can be adjusted). This would need PnP support for the NE2000 adapter.
 ** As mentioned, Windows Protection errors. Here is an example of some of the DOSBox-X log messages related to this.
+
 ....
 LOG: Limit check 9ae8+2-1 = 9ae9 > 0
 LOG: Segment limit violation
@@ -52,3 +54,7 @@ LOG: Warning: PAGING_NewPageFault() more than one level, now using level 4
 LOG: Warning: PAGING_NewPageFault() more than one level, now using level 4
 LOG: Warning: PAGING_NewPageFault() more than one level, now using level 4
 ....
+
+It seems that the likelihood of encountering Windows Protection Errors is significantly decreased by setting ```cycles=60000``` in the ```[cpu]``` section of your DOSBox-X config file.
+
+It is also recommended by DOSBox-X developers that at this time, you do not enable int13fakev86io in your config file when using Windows ME.
