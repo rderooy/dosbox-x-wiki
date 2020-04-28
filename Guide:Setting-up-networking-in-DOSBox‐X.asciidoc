@@ -40,7 +40,7 @@ You can either specify it as ```realnic=9``` or ```realnic=Realtek```, or if tha
 It is recommended to use a name, as the order of the numbers can change due to various events on the host (e.g. adding or removing devices, or even launching other virtual machines)
 
 ## Host network adapters
-By default DOSBox-X networking attempts to bridge to your chosen host network adapter. This may not work, depending on the network adapter chosen as it relies on the adapter or its driver supporting true promiscuous mode. In particular WIFI adapters are known to not work.
+By default DOSBox-X networking attempts to bridge to your chosen host network adapter. This may not work, depending on the network adapter chosen as it relies on the adapter and its driver supporting true promiscuous mode. In particular WIFI adapters are known to not work.
 Unfortunately there is no clear error message if you run into this problem, and typically all you will experience is that your not able to get a DHCP address.
 
 A possible solution to this would be something similar to libvirt on Linux. This allows the creation of a virtual network switch which is then connected to a host network adapter (which could be a WIFI adapter) using NAT (Network Address Translation). And DOSBox-X could then attach to this virtual switch, which would allow at least outbound traffic. Inbound traffic could also be allowed using port-forwarding.
