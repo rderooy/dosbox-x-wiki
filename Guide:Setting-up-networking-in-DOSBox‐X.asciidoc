@@ -310,3 +310,24 @@ This can actually have several causes.
 1. Check if you got a valid MAC address when loading the NE2000 packet driver.
 2. Try to set REALNIC= in your ne2000.conf config file to a different network interface. In particular WIFI interfaces are unlikely to work, so try wired Ethernet instead. The order in which the interfaces are listed can also change due to plugging or unplugging devices, or launching certain type of programs like Virtual Machines.
 3. Perhaps you don't have a DHCP server on your network, or it is configured to only listen to known MAC addresses. Try to set manual IP settings, suitable for your network, at the bottom of SAMPLES/SAMPLE.CFG and try if you can ping.
+
+### Common problem: Multiple DOSBox-X instances
+By default all DOSBox-X instances use the exact same MAC address (AC:DE:48:88:99:AA).
+If there are multiple DOSBox-X instances running on the same host, or on different hosts on the same network segment, they will conflict with each other.
+
+Unfortunately not all operating systems will warn you about this, but it will cause problems on the network and the DOSBox-X instances will not be able to communicate with each other.
+
+The solution is to define a new MAC address for at least one of the DOSBox-X instances.
+
+In your DOSBox-X config file, in the ```[ne2000]``` section, add a ```macaddr=``` line with a new MAC address. 
+The AC:DE:48 range is a reserved range for private use, so just modify the last three number blocks.
+
+e.g.
+
+....
+[ne2000]
+ne2000=true
+realnic=1
+nicirq=10
+macaddr=AC:DE:48:88:99:AB
+....
