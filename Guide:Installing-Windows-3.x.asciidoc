@@ -113,15 +113,9 @@ ne2000=false
 nicirq=10
 realnic=list
 
-[fdc, primary]
-int13fakev86io=true
-
 [ide, primary]
+int13fakeio=true
 int13fakev86io=true
-
-[ide, secondary]
-int13fakev86io=true
-cd-rom insertion delay=4000
 
 [render]
 scaler=none
@@ -290,13 +284,15 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 
 Enabling these features means that Windows does not have to leave 32-bit protected mode, and should therefore, at least in theory, be faster.
 
-*32-Bit Disk Access* uses the WDCTRL driver built into WIN386.EXE that is included with Windows 3.1x, which _should_ works in DOSBox-X if the following conditions are met:
+*32-Bit Disk Access* uses the WDCTRL driver (also called FastDisk) built into WIN386.EXE that is included with Windows 3.1x, which _should_ works in DOSBox-X if the following conditions are met:
 
 * You must use a real DOS in DOSBox-X
 * Your HDD image must have 1023 cylinders or less (max 504MB)
+* You can only have one HDD
+* You cannot have a CD-ROM on the same IDE controller as the HDD
 * You must have enabled int14fakev86io in your DOSBox-X config file
 
-See link:http://os2museum.com/wp/how-to-please-wdctl/[How to please WDCTL] for more background information.
+See link:http://os2museum.com/wp/how-to-please-wdctrl/[How to please WDCTRL] for more background information.
 
 *32-Bit File Access* has no such requirements, and can be enabled seemingly on any system.
 
@@ -305,7 +301,7 @@ Then click on the "Virtual Memory..." button. Under Disk Status you can see what
 
 If the *32-Bit Disk Access* option is greyed out, and you think your configuration should be able to support it, you can manually add the line ```32BitDiskAccess=On``` to the ```[386Enh]``` section of ```C:\WINDOWS\SYSTEM.INI```. However this can cause Windows to refuse to start. If that happens, start Windows with ```WIN /B```, which will generate a file ```C:\WINDOWS\BOOTLOG.TXT``` which you can view to see what failed.
 
-There are 3rd party 32-Bit Disk Access drivers which _may_ allow it to function on larger disks, but have not been tested in combination with DOSBox-X.
+There are 3rd party 32-Bit Disk Access drivers which _may_ allow it to function on larger disks, but have not been tested in combination with DOSBox-X. Most 3rd party drivers only work in combination with specific hardware, but the Ontrack ontrackw.386 may work with fewer restrictions.
 
 # Enabling networking
 This only applies to *Windows for Workgroups* (WfW). To enable networking functionality you will need to create a disk image with real DOS, and install WfW into that. You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default. For instance, if you install WfW inside DOSBox-X with networking support, your supposed to run ```C:\WINDOWS\NET START``` before starting Windows. This command will however return a ```Error 73: (null)``` if run from the DOSbox-X emulated DOS.
