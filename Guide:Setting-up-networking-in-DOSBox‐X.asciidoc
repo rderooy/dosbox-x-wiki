@@ -24,6 +24,27 @@ If you want to instead disable COM2, add the following to you DOSBox-X config fi
 serial2=disabled
 ....
 
+## realnic usage
+In the below examples you will see the usage or ```realnic=```. Once you have located the host network adapter to use, using ```realnic=list```, you need to set it to that adapter.
+This can be done in one of two ways.
+You can either specify the number of the adapter, or a part of the name of the adapter.
+
+e.g. If you want to use the entry:
+....
+LOG:  9. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
+    (Network adapter 'Realtek USB NIC' on local host)
+....
+
+You can either specify it as ```realnic=9``` or ```realnic=Realtek```, or if that is not unique you can also fully specify the name like so: ```realnic="Realtek USB NIC"```
+
+It is recommended to use a name, as the order of the numbers can change due to various events on the host (e.g. adding or removing devices, or even launching other virtual machines)
+
+## Host network adapters
+By default DOSBox-X networking attempts to bridge to your chosen host network adapter. This may not work, depending on the network adapter chosen as it relies on the adapter or its driver supporting true promiscuous mode. In particular WIFI adapters are known to not work.
+Unfortunately there is no clear error message if you run into this problem, and typically all you will experience is that your not able to get a DHCP address.
+
+A possible solution to this would be something similar to libvirt on Linux. This allows the creation of a virtual network switch which is then connected to a host network adapter (which could be a WIFI adapter) using NAT (Network Address Translation). And DOSBox-X could then attach to this virtual switch, which would allow at least outbound traffic. Inbound traffic could also be allowed using port-forwarding.
+
 # Setup guide for Linux hosts
 ### Install libpcap
 This depends on your Linux distribution, but you need to have libpcap installed.
@@ -134,23 +155,18 @@ LOG: 15. virbr0-nic
 ....
 
 That is an example of the network interfaces that were detected for my Linux PC. Now look at your own list, and locate an appropriate adapter to use.
-In the above example, 1 is the integrated Ethernet of the PC, which we will use.
+In the above example, 1, or eno1 is the integrated Ethernet of the PC, which we will use.
 
-Edit the ne2000.conf config file and change realnic= to the value of your chosen network interface. e.g.:
+Edit the ne2000.conf config file and change realnic= to the value or name of your chosen network interface. e.g.:
 
 ....
 [ne2000]
 ne2000=true
 nicirq=10
-realnic=1
+realnic=eno1
 ....
 
 You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or use it to run something like mTCP in DOSBox-X.
-
-*Notes*
-
-* Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
-* The order of the _Network Interface List_ is unfortunately not static. Plugging or unplugging devices, or launching virtual machines (KVM, VirtualBox, VMware) can cause the order to change, and cause networking to break.
 
 # Setup guide for Windows hosts
 ## Install PCAP
@@ -207,21 +223,16 @@ LOG: 11. rpcap://\Device\NPF_{AAAAAAAA-BBBB-CCCC-DDDD-XXXXXXXXXXXX}
 That is an example of the network interfaces that were detected for my Windows 10 PC (with the UUIDs masked). Now look at your own list, and locate an appropriate adapter to use.
 In the above example, 9 is the USB Ethernet adapter I want to use. It may take you a few tries to find the correct adapter.
 
-Edit the ne2000.conf config file and change realnic= to the value of your chosen network interface. e.g.:
+Edit the ne2000.conf config file and change realnic= to the value or name of your chosen network interface. e.g.:
 
 ....
 [ne2000]
 ne2000=true
 nicirq=10
-realnic=9
+realnic="Realtek USB NIC"
 ....
 
 You can merge your config snippet with your Windows for Workgroups, Windows 95 or 98 config file, or use it to run something like mTCP in DOSBox-X.
-
-*Notes*
-
-* Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
-* The order of the _Network Interface List_ is unfortunately not static. Plugging or unplugging devices, or launching virtual machines (VirtualPC, VirtualBox, VMware) can cause the order to change, and cause networking to break.
 
 # mTCP example
 This example uses mTCP to test if networking is working in DOSBox-X.
