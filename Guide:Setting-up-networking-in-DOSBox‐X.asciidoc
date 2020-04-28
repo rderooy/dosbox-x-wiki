@@ -10,9 +10,9 @@ toc::[]
 DOSBox-X has support for emulating the Novell NE2000 network adapter, but setting it up can be a bit convoluted. This guide hopes to simplify the process.
 
 ## NE2000 resource usage
-By default the emulated NE2000 will use IRQ3 and IO range 300-31F. This is typical of a real NE2000 and some NE2000 drivers will look there by default. DOSBox-X does not support PnP for the NE2000, meaning that even Windows 95, 98 and ME may not autodetect it, and even if they do, they may assume the wrong resources.
+By default the emulated NE2000 will use IRQ3 and IO range 300-31F. This is typical of a real NE2000 adapter, and some NE2000 drivers will look there by default. DOSBox-X does not support PnP for the NE2000, meaning that Windows 95, 98 and ME may not autodetect it, and even if they do, they may assume the wrong resources.
 
-However, IRQ3 is also used for COM2, and therefore they conflict. Most software will work regardless of the conflict, as long as your not actually using COM2. But some software, notably Windows 95, 98 and ME may complain about a resource conflict.
+The problem lies in the fact that, IRQ3 is also used for COM2, and therefore they conflict. Most software will work regardless of the conflict, as long as your not actually using COM2. But some software, notably Windows 95, 98 and ME may complain about a resource conflict.
 
 As such it is recommended to either move the emulated NE2000 to a different IRQ, or to disable COM2. In the below examples the emulated NE2000 is set to IRQ10 using the ```nicirq=``` setting, to resolve the conflict. But you need to ensure that any NE2000 device drivers that are loaded, are also set to the same resources.
 
