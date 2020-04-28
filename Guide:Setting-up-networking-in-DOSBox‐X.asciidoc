@@ -9,7 +9,20 @@ toc::[]
 # Overview
 DOSBox-X has support for emulating the Novell NE2000 network adapter, but setting it up can be a bit convoluted. This guide hopes to simplify the process.
 
-This guide assumes your DOSBox-X build has been compiled with pcap support, which is not always the case.
+## NE2000 resource usage
+By default the emulated NE2000 will use IRQ3 and IO range 300-31F. This is typical of a real NE2000 and some NE2000 drivers will look there by default. DOSBox-X does not support PnP for the NE2000, meaning that even Windows 95, 98 and ME may not autodetect it, and even if they do, they may assume the wrong resources.
+
+However, IRQ3 is also used for COM2, and therefore they conflict. Most software will work regardless of the conflict, as long as your not actually using COM2. But some software, notably Windows 95, 98 and ME may complain about a resource conflict.
+
+As such it is recommended to either move the emulated NE2000 to a different IRQ, or to disable COM2. In the below examples the emulated NE2000 is set to IRQ10 using the ```nicirq=``` setting, to resolve the conflict. But you need to ensure that any NE2000 device drivers that are loaded, are also set to the same resources.
+
+Note: Setting the NE2000 to IRQ10 is not possible if your emulating a 8086 (machine=8086), as they only have IRQ0-7 available. In that case it is probably better to disable COM2.
+
+If you want to instead disable COM2, add the following to you DOSBox-X config file.
+....
+[serial]
+serial2=disabled
+....
 
 # Setup guide for Linux hosts
 ### Install libpcap
@@ -138,7 +151,6 @@ You can merge your config snippet with your Windows for Workgroups, Windows 95 o
 
 * Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
 * The order of the _Network Interface List_ is unfortunately not static. Plugging or unplugging devices, or launching virtual machines (KVM, VirtualBox, VMware) can cause the order to change, and cause networking to break.
-* The NE2000 IRQ is changed below from the default IRQ 3 to IRQ 10 to prevent conflicts with COM2 (this won't work if your emulating an original 8086 as those only support IRQ 0-7).
 
 # Setup guide for Windows hosts
 ## Install PCAP
@@ -210,7 +222,6 @@ You can merge your config snippet with your Windows for Workgroups, Windows 95 o
 
 * Bridging to a WIFI adapter is unlikely to work, as most WIFI adapters or their drivers don't support true promiscuous mode
 * The order of the _Network Interface List_ is unfortunately not static. Plugging or unplugging devices, or launching virtual machines (VirtualPC, VirtualBox, VMware) can cause the order to change, and cause networking to break.
-* The NE2000 IRQ is changed below from the default IRQ 3 to IRQ 10 to prevent conflicts with COM2 (this won't work if your emulating an original 8086 as those only support IRQ 0-7).
 
 # mTCP example
 This example uses mTCP to test if networking is working in DOSBox-X.
