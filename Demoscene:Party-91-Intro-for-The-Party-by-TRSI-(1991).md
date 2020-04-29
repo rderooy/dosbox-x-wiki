@@ -1,5 +1,5 @@
 <img src="images/Demoscene:Party 91 Intro for The Party by TRSI (1991).gif" width="640" height="400"><br>
-[[1991|Guide:MS-DOS:demoscene:1991]] demoscene entry.
+[[1991|Guide:MS‐DOS:demoscene:1991]] demoscene entry.
 
 # Demo description
 
