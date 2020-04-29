@@ -1,5 +1,5 @@
 <img src="images/Demoscene:Chain-4-by-The-Silents-(1992).gif" width="640" height="400"><br>
-[[1992|Guide:MS-DOS:demoscene:1992]] demoscene entry.
+[[1992|Guide:MS‐DOS:demoscene:1992]] demoscene entry.
 
 # Demo description
 
