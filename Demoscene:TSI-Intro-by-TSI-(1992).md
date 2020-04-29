@@ -1,5 +1,5 @@
 <img src="images/Demoscene:TSI-Intro-by-TSI-(1992).gif" width="640" height="480"><br>
-[[1992|Guide:MS-DOS:demoscene:1992]] demoscene entry.
+[[1992|Guide:MS‐DOS:demoscene:1992]] demoscene entry.
 
 # Demo description
 
