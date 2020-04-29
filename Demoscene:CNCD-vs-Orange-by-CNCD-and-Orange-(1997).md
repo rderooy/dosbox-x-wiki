@@ -1,5 +1,5 @@
 <img src="images/Demoscene:CNCD-vs-Orange-by-CNCD-and-Orange-(1997).gif" width="640" height="400"><br>
-[[1997|Guide:MS-DOS:demoscene:1997]] demoscene entry.
+[[1997|Guide:MS‐DOS:demoscene:1997]] demoscene entry.
 
 # Demo description
 
