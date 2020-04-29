@@ -1,4 +1,4 @@
-# 1992 [[MS-DOS demos|Guide:MS-DOS:demoscene]]
+# 1992 [[MS-DOS demos|Guide:MS‐DOS:demoscene]]
 
 [[Buttman by Twilight Zone (1992)|Demoscene:Buttman by Twilight Zone (1992)]]  
 [[Chain 4 by The Silents (1992)|Demoscene:Chain 4 by The Silents (1992)]]  
