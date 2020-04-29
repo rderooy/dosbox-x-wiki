@@ -25,7 +25,7 @@ toc::[]
 ** Adds DELTREE and MOVE commands
 ** Removed EDLIN, MIRROR, RECOVER and BACKUP
 * MS-DOS 6.20
-** CHKDSK replaced by SCANDISK
+** SCANDISK added featuring a more user-friendly interface than CHKDSK
 ** Improved DBLSPACE stability
 * MS-DOS 6.21
 ** DBLSPACE removed (due to Stacker lawsuit)
@@ -39,7 +39,7 @@ toc::[]
 ## Creating a MS-DOS 6.x HDD image
 Starting with DOS 5.00, installing DOS in DOSBox-X is much more straight forward, as you can have ``IMGMAKE`` create a HDD image that is already partitioned and formatted.
 
-Maximum HDD size has increased to 7.84GB, but the maximum partition size is basically still 2GB, which is a FAT16 limitation.
+Maximum HDD size has increased to 8GB (or more exactly 7.84GB), but the maximum partition size is basically still 2GB, which is a FAT16 limitation.
 
 ....
  IMGMAKE hdd.img -t hd -size 2048
