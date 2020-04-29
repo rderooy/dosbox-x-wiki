@@ -1,5 +1,5 @@
 <img src="images/Demoscene:Inside-by-CNCD-(1996).gif" width="640" height="400"><br>
-[[1996|Guide:MS-DOS:demoscene:1996]] demoscene entry.
+[[1996|Guide:MS‐DOS:demoscene:1996]] demoscene entry.
 
 # Demo description
 
