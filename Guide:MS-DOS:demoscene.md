@@ -2,8 +2,8 @@ This guide explains how to use DOSBox-X with MS-DOS software from the [demoscene
 
 # Demo settings and notes list
 
-[[1991|Guide:MS DOS:demoscene:1991]] * [[1992|Guide:MS DOS:demoscene:1992]] * [[1993|Guide:MS DOS:demoscene:1993]] * [[1994|Guide:MS DOS:demoscene:1994]] * [[1995|Guide:MS DOS:demoscene:1995]] * [[1996|Guide:MS DOS:demoscene:1996]] * [[1997|Guide:MS DOS:demoscene:1997]] * [[1998|Guide:MS DOS:demoscene:1998]] * [[1999|Guide:MS DOS:demoscene:1999]]  
-[[2000|Guide:MS DOS:demoscene:2000]]  
+[[1991|Guide:MS‐DOS:demoscene:1991]] * [[1992|Guide:MS‐DOS:demoscene:1992]] * [[1993|Guide:MS‐DOS:demoscene:1993]] * [[1994|Guide:MS‐DOS:demoscene:1994]] * [[1995|Guide:MS‐DOS:demoscene:1995]] * [[1996|Guide:MS‐DOS:demoscene:1996]] * [[1997|Guide:MS‐DOS:demoscene:1997]] * [[1998|Guide:MS‐DOS:demoscene:1998]] * [[1999|Guide:MS‐DOS:demoscene:1999]]  
+[[2000|Guide:MS‐DOS:demoscene:2000]]  
 
 # General guidelines
 
