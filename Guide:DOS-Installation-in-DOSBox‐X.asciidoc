@@ -107,7 +107,7 @@ image::images/MS-DOS:PC-DOS_1.0.png[Booting IBM PC DOS 1.00]
 * link:Guide%3AInstalling-DOS-2.x-3.x[Guide: Installing DOS 2.x-3.x in DOSBox-X]
 * link:Guide%3AInstalling-DOS-4[Guide: Installing DOS 4.0x in DOSBox-X]
 * link:Guide%3AInstalling-DOS-5[Guide: Installing DOS 5.0x in DOSBox-X]
-* link:Guide%3AInstalling-MS-DOS-6[Guide: Installing MS-DOS 6.x in DOSBox-X]
+* link:Guide%3AInstalling-MS‐DOS-6[Guide: Installing MS-DOS 6.x in DOSBox-X]
 * link:Guide%3AInstalling-PC-DOS-6[Guide: Installing PC DOS 6.x in DOSBox-X]
 * link:Guide%3AInstalling-PC-DOS-7[Guide: Installing PC DOS 7/2000 in DOSBox-X]
 
@@ -115,6 +115,6 @@ image::images/MS-DOS:PC-DOS_1.0.png[Booting IBM PC DOS 1.00]
 ### Shutdown DOS
 Normally when running DOSBox-X, you can simply ```EXIT``` and DOSBox-X will close. But when your running a real DOS Disk image, this no longer works.
 
-The solution to this is a small 3rd party utility called ```ATXOFF.COM```. This can be useful for scripted operations, for instance if your running a program from AUTOEXEC.BAT, and want it to shutdown DOSBox-X when it finishes. ATXOFF relies on the APM support provided by DOSBox-X.
+The solution to this is to use a third party utility like ```ATXOFF.COM```. This can be useful for scripted operations, for instance if your running a program from AUTOEXEC.BAT, and want it to shutdown DOSBox-X when it finishes. ATXOFF relies on the APM support provided by DOSBox-X. There are also similar tools available such as ```SHUTDOWN.COM```.
 
 Note: If SMARTDRV is being used, you MUST do a ```SMARTDRV /C``` *before* running ATXOFF as otherwise you risk filesystem corruption.
