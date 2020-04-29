@@ -1,4 +1,4 @@
-# 1993 [[MS-DOS demos|Guide:MS-DOS:demoscene]]
+# 1993 [[MS-DOS demos|Guide:MS‐DOS:demoscene]]
 
 [[Grr! by Epical (1993)|Demoscene:Grr! by Epical (1993)]]  
 [[Hex Appeal by Cascada (1993)|Demoscene:Hex Appeal by Cascada (1993)]]  
