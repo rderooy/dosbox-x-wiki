@@ -1,5 +1,5 @@
 <img src="images/Demoscene:Demo-1-by-The-Napalm-Star-(1992).gif" width="640" height="400" style="image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; -webkit-optimize-contrast;"><br>
-[[1992|Guide:MS-DOS:demoscene:1992]] demoscene entry.
+[[1992|Guide:MS‐DOS:demoscene:1992]] demoscene entry.
 
 # Demo description
 
