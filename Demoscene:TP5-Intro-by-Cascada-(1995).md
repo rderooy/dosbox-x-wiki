@@ -1,5 +1,5 @@
 <img src="images/Demoscene:TP5-Intro-by-Cascada-(1995).gif" width="640" height="400"><br>
-[[1995|Guide:MS-DOS:demoscene:1995]] demoscene entry.
+[[1995|Guide:MS‐DOS:demoscene:1995]] demoscene entry.
 
 # Demo description
 
