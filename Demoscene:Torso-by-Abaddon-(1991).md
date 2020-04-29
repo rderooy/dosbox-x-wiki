@@ -1,5 +1,5 @@
 <img src="images/Demoscene:Torso-by-Abaddon-(1991).gif" width="640" height="400" style="image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; -webkit-optimize-contrast;"><br>
-[[1991|Guide:MS-DOS:demoscene:1991]] demoscene entry.
+[[1991|Guide:MS‐DOS:demoscene:1991]] demoscene entry.
 
 # Demo description
 
