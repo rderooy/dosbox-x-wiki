@@ -1,5 +1,5 @@
 <img src="images/Demoscene:Grr! by Epical (1993).gif" width="640" height="400"><br>
-[[1993|Guide:MS-DOS:demoscene:1993]] demoscene entry.
+[[1993|Guide:MS‐DOS:demoscene:1993]] demoscene entry.
 
 # Demo description
 
