@@ -537,7 +537,7 @@ Mounts drives from directories or drives in the host system.
 +
 Usage: MOUNT [option] driveletter host_directory  
 +
-Note: Supported options include -nocachedir to not cache the drive, -ro to put drive in read-only mode, and -u to unmount the drive.
+Note: The behavior of its -freesize option can be changed with the freesizecap config option.
 * **MOUSE** (external command)  
 +
 Turns on/off mouse support.  
@@ -794,7 +794,7 @@ Logs CON output to a log file.
 
 DOSBox-X has many features and supports most DOS games and applications. Below are some guides which explain how to use certain software or features within DOSBox-X.
 
-* link:Guide%3AMS-DOS%3Ademoscene[Guide: MS-DOS demoscene]  
+* link:Guide%3AMS‐DOS%3Ademoscene[Guide: MS-DOS demoscene]  
 * link:Guide%3AMS-DOS%3Agames[Guide: MS-DOS games]  
 * link:Guide%3ADOS-Installation-in-DOSBox‐X[Guide: PC DOS or MS-DOS in DOSBox-X]  
 * link:Guide%3AWindows-in-DOSBox‐X[Guide: Windows in DOSBox-X]
