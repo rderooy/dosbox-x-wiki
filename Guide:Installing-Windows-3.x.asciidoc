@@ -289,16 +289,21 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 * Introduced with Windows 3.1, *32-Bit Disk Access* allows Windows to bypass the 16-Bit BIOS
 * Introduced with Windows 3.11, *32-Bit File Access* allows Windows to bypass the 16-Bit DOS FAT code
 
-Enabling these features means that Windows does not have to leave 32-bit protected mode, and should therefore, at least in theory, be faster.
+Enabling these features means that Windows has to leave 32-bit protected mode less often, and should therefore, at least in theory, be faster.
 
 *32-Bit Disk Access* (also called FastDisk) uses the WDCTRL driver built into WIN386.EXE that is included with Windows 3.1x, which _should_ works in DOSBox-X if the following conditions are met:
 
 * You must use a real DOS in DOSBox-X
 * Your HDD image must have 1023 cylinders or less (max 504MB)
 * You can only have one HDD
-* You cannot have a CD-ROM on the same IDE controller as the HDD
+* You cannot have a CD-ROM as a slave on the same IDE controller as the HDD
 * You must have enabled int13fakeio and int13fakev86io in your DOSBox-X config file
 * You must mount your HDD image file with ```-reservecyl 1```
+* You must edit ```C:\WINDOWS\SYSTEM.INI``` and in the ```[386enh]``` section add the following 2 lines (preferably between the ```*pageswap``` and ```*biosxlat``` drivers):
+** ```device=*int13```
+** ```device=*wdctrl```
+* At the bottom of the ```[386enh]``` section add the line:
+** '''32BitDiskAccess=ON'''
 
 See link:http://os2museum.com/wp/how-to-please-wdctrl/[How to please WDCTRL] for more background information.
 
