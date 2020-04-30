@@ -70,6 +70,7 @@ This guide does not seek to replicate those pages. Instead this page will contai
 * link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_3.0[Wikipedia: Windows 3.0]
 * link:https://en.wikipedia.org/wiki/Windows_3.1x[Wikipedia: Windows 3.1x]
+* link:https://microsoft.fandom.com/wiki/Windows_3.1[Fandom: Windwos 3.1]
 * link:https://betawiki.net/wiki/Windows_3.0[BetaWiki: Windows 3.0]
 * link:https://betawiki.net/wiki/Windows_3.00a_Multimedia_Edition[BetaWiki: Windows 3.00a Multimedia Edition]
 * link:https://betawiki.net/wiki/Windows_3.1xp[BetaWiki: Windows 3.1x]
@@ -93,6 +94,9 @@ This guide does not seek to replicate those pages. Instead this page will contai
 # DOSBox-X config file
 It is recommended that you create a custom DOSBox-X config file for running Windows 3.x
 ....
+[sdl]
+autolock=true
+
 [dosbox]
 title=Windows 3.x
 memsize=16
@@ -132,7 +136,7 @@ Copy the above config and save it as *win3x.conf*
 * The [autoexec] section will need lines added later.
 * If you want networking in *Windows for Workgroups*, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
-* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (machine=svga_et3000 and machine=svga_et4000 respectively), but for the default machine=svga_s3 (S3 Trio64V+) there are apparently only Windows 3.1 drivers.
+* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (machine=svga_et3000 and machine=svga_et4000 respectively), but for the default machine=svga_s3 (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The S3 video option will offer the broadest range of resolutions and colour depths, but do require you to install the correct drivers.
 
 # Preparing for Installation
@@ -313,7 +317,45 @@ There were 3rd party WinSock solutions, but those were meant for dial-up interne
 You can however install *Microsoft TCP/IP-32* to add TCP/IP support to WfW.
 
 # Enabling sound
-TBD
+DOSBox-X by default emulates a Creative Labs SoundBlaster 16. link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_InstallSB.html[Download and install] the SB16 driver package.
+This needs to be run from DOS.
+
+Pay close attention during installation to the IRQ. The emulated SB16 in DOSBox-X defaults to IRQ7, while the SB16 driver package assumes IRQ5. So unless you changed the SB IRQ in your DOSBox-X config file, change the IRQ during installation to IRQ7.
+
+## Enabling external MIDI
+By default the SB16 Windows 3.1x drivers will emulate MIDI playback using the OPL chip. However DOSBox-X has built-in support for General MIDI emulation (which is enabled by default), which sounds much better.
+
+To set it up, first ensure the SB16 drivers are installed. In Windows 3.1x go to "Control Panel" and open "MIDI Mapper". Select the "SB16 All MIDI" option from the drop-down menu, and press the "Close" button.
+
+The same can be accomplished with *Windows 3.0a with Multimedia Extensions*, but the "SB16 All MIDI" option will not be listed.
+Instead in the "MIDI Mapper" dialog box click on the "New..." button.
+You will be asked for a name and description.
+You can name it anything you like, for instance "SB16 External MIDI". You will then get a "MIDI Setup" window.
+The only thing you want to change here is the "Port Name". For each Source Channel ("Src Chan") line, change the "Port Name" to "SB MIDI Out". You may also notice that for each line the active checkbox gets checked, this is correct.
+Once finished click ok and confirm the save.
+
+You should now be able to open the Windows 3.x Media Player and playback Canyon.mid.
+
+Note: For Windows 3.0a with Multimedia Extensions the media files are located by default in ```C:\MWINDOWS\MMDATA```.
+
+# Installing Win32s
+Win32s is a 32-bit application runtime environment for Windows 3.1x. Some games and applications require it.
+Win32s version 1.30c is the latest version.
+
+It installs and runs without problems if your running Windows 3.1x under real DOS, but if you run the setup program under DOSBos-X's emulated DOS you will get the error:
+....
+Win32s Setup: SHARE.EXE is not loaded
+
+File-sharing must be enabled. Run SHARE.EXE before starting Windows or add SHARE.EXE to your AUTOEXEC.BAT file.
+....
+
+Confirm the error, and the installation will continue.
+
+To prevent future errors about SHARE.EXE being needed, you can install a small 3rd party utility called "link:https://www.dropbox.com/s/ewd6rf8vndqs5b0/fakeshar.zip?dl=1[FAKESHAR.COM]", and run it before starting Windows 3.1x.
+
+Do note, as the name implies, this FAKES that SHARE.EXE is running.
+This is not safe and can lead some applications that really need it to experience data corruption.
+Office 4.3 and Visual Basic are examples of programs that should not be run without real SHARE.EXE support.
 
 # Starting a Windows game from DOS
 If you want to silently start a Windows game, without seeing the Windows 3.x splash screen or program manager, and when you exit the game that it exits Windows, here are the steps to take:
