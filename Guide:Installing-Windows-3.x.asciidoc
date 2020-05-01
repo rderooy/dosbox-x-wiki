@@ -132,11 +132,11 @@ Copy the above config and save it as *win3x.conf*
 
 *Notes*
 
-* Windows 3.0 supports up to 16MB RAM, but Windows 3.1 and 3.11 support up to 256MB, as such for these Windows versions memsize=256 is the largest safe value.
+* Windows 3.0 supports up to 16MB RAM, but Windows 3.1 and 3.11 support up to 256MB, as such for these Windows versions ```memsize=256``` is the largest safe value.
 * The [autoexec] section will need lines added later.
-* If you want networking in *Windows for Workgroups*, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
+* If you want networking in *Windows for Workgroups*, you need to set ```ne2000=true``` and change the ```realnic=``` value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
-* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (machine=svga_et3000 and machine=svga_et4000 respectively), but for the default machine=svga_s3 (S3 Trio64) there are apparently only Windows 3.1 drivers.
+* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (```machine=svga_et3000``` and ```machine=svga_et4000``` respectively), but for the default ```machine=svga_s3``` (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The S3 video option will offer the broadest range of resolutions and colour depths, but do require you to install the correct drivers.
 
 # Preparing for Installation
@@ -297,7 +297,7 @@ Enabling these features means that Windows has to leave 32-bit protected mode le
 * Your HDD image must have 1023 cylinders or less (max 504MB)
 * You can only have one HDD
 * You cannot have a CD-ROM as a slave on the same IDE controller as the HDD
-* You must have set int13fakeio=true and int13fakev86io=false in your DOSBox-X config file
+* You must have set ```int13fakeio=true``` and ```int13fakev86io=false``` in your DOSBox-X config file
 * You must mount your HDD image file with ```-reservecyl 1```
 * You must edit ```C:\WINDOWS\SYSTEM.INI``` and in the ```[386enh]``` section add the following 2 lines (preferably between the ```*pageswap``` and ```*biosxlat``` drivers):
 ** ```device=*int13```
