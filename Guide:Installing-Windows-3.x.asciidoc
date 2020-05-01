@@ -119,7 +119,7 @@ realnic=list
 
 [ide, primary]
 int13fakeio=true
-int13fakev86io=true
+int13fakev86io=false
 
 [render]
 scaler=none
@@ -297,7 +297,7 @@ Enabling these features means that Windows has to leave 32-bit protected mode le
 * Your HDD image must have 1023 cylinders or less (max 504MB)
 * You can only have one HDD
 * You cannot have a CD-ROM as a slave on the same IDE controller as the HDD
-* You must have enabled int13fakeio and int13fakev86io in your DOSBox-X config file
+* You must have set int13fakeio=true and int13fakev86io=false in your DOSBox-X config file
 * You must mount your HDD image file with ```-reservecyl 1```
 * You must edit ```C:\WINDOWS\SYSTEM.INI``` and in the ```[386enh]``` section add the following 2 lines (preferably between the ```*pageswap``` and ```*biosxlat``` drivers):
 ** ```device=*int13```
