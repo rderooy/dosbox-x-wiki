@@ -44,9 +44,8 @@ Do to the limitations mentioned above, you have the following installation optio
 * Use a virtual machine running DOS to write the DSKF files with LOADDSKF to virtual diskettes, and then convert the virtual diskettes to regular MFM DSK files.
 * Run the SETUP program on the CD image directly from the DOSBox-X integrated DOS. This is the method we will use below.
 
-Note: This method requires us to work around a bug, for which you need to manually copy IBMBIO.COM and IBMDOS.COM files. Also we will disable the DOSBox-X APM emulation during installation, to prevent the PC DOS 2000 setup program from installing the POWER.EXE device driver in CONFIG.SYS, which is incompatible with DOSBox-X.
+Note: This method requires us to work around a bug, for which you need to manually copy IBMBIO.COM and IBMDOS.COM files before running SETUP.EXE.
 ....
- CONFIG -SET CPU APMBIOS=FALSE
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
  IMGMOUNT D PC-DOS_2000.iso -t iso
@@ -65,7 +64,6 @@ BOOT -L C
 ## Creating a PC DOS 2000 HDD image from diskettes
 If you have PC DOS 2000 disk images in non-DSKF format, you can install it as follows:
 ....
- CONFIG -SET CPU APMBIOS=FALSE
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
  BOOT DISK1.IMG DISK2.IMG DISK3.IMG DISK4.IMG DISK5.IMG DISK6.IMG
