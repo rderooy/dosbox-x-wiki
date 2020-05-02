@@ -38,13 +38,13 @@ toc::[]
 Installing PC DOS 7.0, revision 0 is problematic due to the XDF diskettes which are not supported by DOSBox-X. You would need to install it on either a legacy-PC, or a virtual machine like VMware or VirtualBox and then transfer the files manually which is outside the scope of this document.
 
 # Creating a PC DOS 2000 HDD image from CD-ROM
-Do to the limitations mentioned above, you have the following installation options:
+Due to the limitations mentioned above, you have the following installation options:
 
 * Use a real legacy PC to write the DSKF image files with LOADDSKF to diskettes, and then convert the diskettes to regular MFM DSK files.
 * Use a virtual machine running DOS to write the DSKF files with LOADDSKF to virtual diskettes, and then convert the virtual diskettes to regular MFM DSK files.
 * Run the SETUP program on the CD image directly from the DOSBox-X integrated DOS. This is the method we will use below.
 
-Note: This method requires us to work around a bug, for which you need to manually copy IBMBIO.COM and IBMDOS.COM files before running SETUP.EXE.
+Note: This method requires us to work around a bug, for which you need to manually copy IBMBIO.COM and IBMDOS.COM files before running the SETUP program.
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
