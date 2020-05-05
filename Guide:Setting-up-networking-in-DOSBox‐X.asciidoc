@@ -333,13 +333,13 @@ macaddr=AC:DE:48:88:99:AB
 ....
 
 # IPX example
-There are two ways to enable IPX communication which was used by some link:https://www.mobygames.com/attribute/sheet/attributeId,82/p,2/[DOS and Windows games] for multi-player support.
+There are two ways to enable IPX communication, which was used by some link:https://www.mobygames.com/attribute/sheet/attributeId,82/p,2/[DOS and Windows games] for multi-player support.
 
 ## Using DOSBox-X integrated IPX support
 DOSBox-X has integrated support for IPX over IP.
 You do not even have to enable NE2000 emulation for this.
 The advantage of this is that you can communicate with any other system that is directly reachable over TCP/IP.
-To test this, first ```ping``` the remote system to ensure connectivity.
+To test this, first ```ping``` the remote systems to ensure connectivity.
 
 This process is described on the link:https://www.dosbox.com/wiki/Connectivity[DOSBox wiki].
 
