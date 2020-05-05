@@ -333,8 +333,19 @@ macaddr=AC:DE:48:88:99:AB
 ....
 
 # IPX example
-This example uses Novell's IPX which was used by some link:https://www.mobygames.com/attribute/sheet/attributeId,82/p,2/[DOS and Windows games] for multi-player support.
- A disadvantage of IPX is that it is not routable over the Internet, meaning it can only communicate with other systems on your local network.
+There are two ways to enable IPX communication which was used by some link:https://www.mobygames.com/attribute/sheet/attributeId,82/p,2/[DOS and Windows games] for multi-player support.
+
+## Using DOSBox-X integrated IPX support
+DOSBox-X has integrated support for IPX over IP.
+You do not even have to enable NE2000 emulation for this.
+The advantage of this is that you can communicate with any other system that is directly reachable over TCP/IP.
+To test this, first ```ping``` the remote system to ensure connectivity.
+
+This process is described on the link:https://www.dosbox.com/wiki/Connectivity[DOSBox wiki].
+
+## Using the NetWare DOS Client
+
+This example uses Novell's IPX. A disadvantage of this approach is that it is not routable over the Internet, meaning it can only communicate with other systems on your local network. An advantage is that it can communicate with a real retro DOS PC on your local network.
 
 This first of all requires that you download the vlm121_2.exe and vlm121_6.exe files from the Novell NetWare DOS Client.
 The rest of the files are not needed for our purpose of running DOS games that require IPX.
@@ -352,7 +363,7 @@ The easiest way is probably to extract them in DOSBox-X itself.
 * If you want to do a full install of the NetWare Client, you cannot run the INSTALL.EXE in the emulated DOS environment that DOSBox-X provides. It will fail with "An invalid drive was given in path". You can however install it if you boot a real DOS in DOSBox-X.
 * You can extract the self-extracting EXE files on Linux with the command-line ```arj``` utility, but you need to use the ```-he``` switch to disable the Security Envelope check.
 
-## Unpacking the VLM archive in DOSBox-X
+### Unpacking the VLM archive in DOSBox-X
 Move the files to a temporary directory for extraction, and from that directory launch DOSBox-X.
 ....
 MOUNT C .
@@ -377,7 +388,7 @@ The IPX directory that was created now contains the following files:
 * ```NETBIOS.EXE``` (NetBIOS Protocol over IPX)
 * ```NE2000.COM``` (ODI driver for the NE2000 adapter)
 
-## Create NET.CFG
+### Create NET.CFG
 Now create a text file called NET.CFG, and place it in the same directory as LSL.COM, with the following content:
 ....
 Link Driver NE2000
@@ -391,7 +402,7 @@ Link Driver NE2000
 * If you used a different IRQ or IO (port) base address, adjust NET.CFG accordingly.
 * If your running on Linux, be sure the NET.CFG file is saved in DOS format (with CRLF line terminators), otherwise the NE2000 driver will not be loaded at the specified resources. If necessary use ```unix2dos``` to convert it.
 
-## Start IPX
+### Start IPX
 Now modify your ne2000.conf config file that you created earlier, such that it contains the following lines in the [autoexec] section at the end:
 
 ....
