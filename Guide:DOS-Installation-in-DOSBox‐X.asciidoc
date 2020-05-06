@@ -132,6 +132,7 @@ C:\WINDOWS\SMARTDRV.EXE /C
 ATXOFF.COM
 ....
 With this example, it will start Windows automatically on startup, and when you exit Windows, it will flush the disk cache and shutdown DOSBox-X.
+
 ### Long wait on HIMEM.SYS
 If HIMEM is being loaded on startup, you may get a message "HIMEM is testing extended memory...", which can take a considerable amount of time and is pointless in a emulated environment. You can bypass it by editing CONFIG.SYS and changing ```DEVICE=C:\DOS\HIMEM.SYS``` to ```DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF```
 
