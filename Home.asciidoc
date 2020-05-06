@@ -189,7 +189,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **7. The "Drive" menu**
 
-* **A**-**Z**: For each DOS drive, mounts, un-mounts, or re-scans (refreshes the cache) this drive. For Drive A:, C: and D: there is also an option to boot from the drive.
+* **A**-**Z**: For each DOS drive, mounts, un-mounts, or re-scans (refreshes the cache) this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Mounting drives (with various options) in the "Drive" menu is currently only supported for the Windows platform.
 
 ### DOSBox-X's Special Keys
 
