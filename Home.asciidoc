@@ -268,6 +268,13 @@ Enables programs to open data files in specified directories as if the files wer
 Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]  
 +
 Note: It uses the APPEND command from FreeDOS.
++
+* **ALIAS** (internal command)  
++
+Defines or displays aliases.
++
+Usage: ALIAS [name[=value] ... ]
++
 * **ATTRIB** (internal command)  
 +
 Displays or changes file attributes.  
@@ -777,6 +784,9 @@ Exits after executing the [autoexec] section of the loaded configuration file.
 * **-c [command string]**
 +
 Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
+* **-set <section property=value>**
++
+Sets the specified config option, overriding such option (if exists) in the loaded configuration file. Make sure to surround the string in quotes to cover spaces.
 * **-break-start**
 +
 Starts DOSBox-X and breaks into its debugger directly.
