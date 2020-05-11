@@ -156,12 +156,12 @@ XCOPY D:\WIN98 C:\WIN98 /I /E
 ....
 
 ## Running SETUP.EXE
-You can now run SETUP.EXE, but it need to be started with the ```/IS``` parameter to disable the ScanDisk function as it will otherwise fail to successfully scan the DOSBox-X Z: drive.
+You can now run SETUP.EXE to launch the installation program. It can be optionally started with the ```/IS``` parameter to disable the ScanDisk function.
 
 ....
 C:
 CD \WIN98
-SETUP /IS
+SETUP
 ....
 
 Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win98.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
