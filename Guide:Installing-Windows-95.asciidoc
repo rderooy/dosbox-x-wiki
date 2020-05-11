@@ -113,12 +113,12 @@ XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
 
 ## Running SETUP.EXE
-We can now run SETUP.EXE, but we need to start it with the ```/IS``` parameter to disable the ScanDisk function as it will otherwise fail to successfully scan the DOSBox-X Z: drive.
+We can now run SETUP.EXE to launch the installation program. You can optionally start it with the ```/IS``` parameter to disable the ScanDisk function.
 
 ....
 C:
 CD \WIN95
-SETUP /IS
+SETUP
 ....
 
 Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
