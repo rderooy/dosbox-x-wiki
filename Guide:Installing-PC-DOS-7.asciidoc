@@ -44,14 +44,13 @@ Due to the limitations mentioned above, you have the following installation opti
 * Use a virtual machine running DOS to write the DSKF files with LOADDSKF to virtual diskettes, and then convert the virtual diskettes to regular MFM DSK files.
 * Run the SETUP program on the CD image directly from the DOSBox-X integrated DOS. This is the method we will use below.
 
-Note: This method requires us to work around a bug, for which you need to manually copy IBMBIO.COM and IBMDOS.COM files before running the SETUP program.
+Note: This method requires us to work around a bug, for which you need to use the SYS command to transfer the system files before running the SETUP program.
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
  IMGMOUNT D PC-DOS_2000.iso -t iso
  D:
- COPY DOSFILES\IBMBIO.COM C:
- COPY DOSFILES\IBMDOS.COM C:
+ PCDOS7\SYS PCDOS7 C:
  SETUP
 ....
 
