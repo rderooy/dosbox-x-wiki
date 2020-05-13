@@ -15,11 +15,25 @@ toc::[]
 * Windows 95 OSR2.1 (aka 95B)
 * Windows 95 OSR2.5 (aka 95C)
 
-Note: It will not work with the Windows 95 diskette versions, as those use a special format (DMF) which is not supported by DOSBox-X.
+Note: This guide will not work with the Windows 95 diskette versions, as those use a special format (DMF) which is not supported by DOSBox-X.
+
+## External links
+* link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
+* link:https://en.wikipedia.org/wiki/Windows_95[Wikipedia: Windows 95]
+* link:https://microsoft.fandom.com/wiki/Windows_95[Fandom: Windows 95]
+* link:https://betawiki.net/wiki/Windows_95[Betawiki: Windows 95]
+* link:http://toastytech.com/guis/win95.html[Windows 95 GUI screenshots]
+
+There are other guides to installing Windows 95 in DOSBox that may be more or less applicable to DOSBox-X:
+* link:http://dosbox95.darktraveler.com/guide%20select.html[Windows 95 with the DOSBox Daum fork]
+* link:https://www.vogons.org/viewtopic.php?f=39&t=17324[Windows 9x with vanilla DOSBox]
 
 # DOSBox-X config file
 You first need to create a DOSBox-X config file.
 ....
+[sdl]
+autolock=true
+
 [dosbox]
 title=Windows 95
 memsize=64
@@ -66,12 +80,13 @@ Copy the above config and save it as *win95.conf*
 * The [autoexec] section will need lines added later.
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
-** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You need to manually change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
+** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You will probably want to change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
 
 # Method 1: Running setup.exe from DOSBox-X
+
 *Notes*
 
-* This method is probably the easiest, but will only work with *Windows 95 OSR2 _or later_*. If you try to follow this method with an older Windows 95 release, you will get an _Error SU99405_ and setup will not continue.
+* This method relies on DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
 * This method will result in a C: drive using FAT16. If you want a FAT32 C: drive, follow Method 3.
 
 First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
@@ -112,8 +127,11 @@ While not strictly necessary, as it is possible to run SETUP.EXE directly from t
 XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
 
+The files in the above example are copied to the C:\WIN95 directory.
+You may want to use "C:\WINDOWS\OPTIONS\CABS" instead, as that is the directory that OEM installs normally use. But if you do, be aware that the installer will attempt to install into C:\WINDOWS.000 as C:\WINDOWS already exists. You will want to change this back to "C:\WINDOWS".
+
 ## Running SETUP.EXE
-We can now run SETUP.EXE to launch the installation program. You can optionally start it with the ```/IS``` parameter to disable the ScanDisk function.
+We can now run SETUP.EXE.
 
 ....
 C:
@@ -266,7 +284,8 @@ Start DOSBox-X from the command-line with the following command:
 dosbox-x -conf win95.conf
 ....
 
-DOSBox-X will start, and you will briefly see a Windows 95 boot logo appear, after which you will get the MS-DOS prompt. Now type the following commands to start the actual installation:
+DOSBox-X will start, and you will briefly see a Windows 95 boot logo appear, after which you will get the MS-DOS prompt.
+Now type the following commands to start the actual installation:
 
 ....
 CD WIN95
@@ -312,16 +331,36 @@ Once Windows 95 is installed, here is some additional software you may want to i
 link:https://msfn.org/board/topic/176623-last-versions-of-software-for-windows-95/[Forum thread about: Last versions of software for Windows 95]
 
 # Enabling networking
-If you enabled NE2000 support in the DOSBox-X config file, you will probably want to enable TCP/IP. Go to "Start", "Settings" and "Control Panel" and double-click on "Network".
+If you enabled NE2000 support in the DOSBox-X config file, you will probably want to enable TCP/IP.
+Go to "Start", "Settings" and "Control Panel" and double-click on "Network".
 On the Configuration tab, you should see a "NE2000 Compatible" network adapter listed.
 
-If this is not the case, close the Network settings, and in "Control Panel", double-click "Add New Hardware", and let the wizard detect hardware. It should find the NE2000 adapter and install the drivers. Once it is finished, open the "Network" settings again.
+If this is not the case, close the Network settings, and in "Control Panel", double-click "Add New Hardware", and let the wizard detect hardware.
+It should find the NE2000 adapter and install the drivers.
+Once it is finished, open the "Network" settings again.
 
-In the Network settings, you can optionally remove the "IPX/SPX-compatible Protocol" that was automatically installed, as your unlikely to need it nowadays. Now click the Add button, and select "Protocol" and click "Add...". In the "Select Network Protocol" window, select "Microsoft" as the Manufacturer and "TCP/IP" as the protocol, and click OK.
+In the Network settings, you can optionally remove the "IPX/SPX-compatible Protocol" that was automatically installed, as your unlikely to need it nowadays.
+Now click the Add button, and select "Protocol" and click "Add...". In the "Select Network Protocol" window, select "Microsoft" as the Manufacturer and "TCP/IP" as the protocol, and click OK.
 
 By default it will try to get it's network configuration over DHCP, if you need to manually specify the settings, highlight "TCP/IP", and click the "Properties" button.
 
-Once your finished, Click OK to close the Network settings window, and the TCP/IP driver will be installed, and Windows will prompt you to restart your computer. Confirm, and Windows 95 will reboot. After the reboot you should have working TCP/IP networking.
+Once your finished, Click OK to close the Network settings window, and the TCP/IP driver will be installed, and Windows will prompt you to restart your computer.
+Confirm, and Windows 95 will reboot.
+After the reboot you should have working TCP/IP networking.
 
 # Enabling sound
-The Windows 95 installer does not always detect the presence of a sound card, as the emulated soundcard in DOSBox-X does not support PnP. If you do not have sound support, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware". Now simply follow the guide and let it install support for any devices that it detects.
+The Windows 95 installer does not always detect the presence of a sound card (or it may detect it incorrectly), as the emulated soundcard in DOSBox-X does not support PnP.
+
+If you do not have sound support, first go to Device Manager and look under "Sound, video and game controllers" if it detected a "Creative Sound Blaster 16 or AWE-32".
+If you see something unexpected, such as a "Adlib Gold", remove it.
+
+If the SB16 is missing from Device Manager, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware".
+Now simply follow the guide and let it install support for any devices that it detects.
+
+A driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library (ignore that the download claims it is for Windows 98, the update is for both Windows 95 and 98).
+
+## Enabling MIDI
+If you have a working DOSBox-X MIDI setup, either emulated or real, you can use that in Windows 98.
+Open the "Control Panel", and then double-click on "Multimedia Properties".
+
+Now on the "MIDI" tab, change the "Single instrument" option to "MPU-401 Compatible", and click OK to close the window.
