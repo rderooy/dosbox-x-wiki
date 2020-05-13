@@ -287,17 +287,12 @@ Adjust the path and filename to your soundfont as necessary.
 
 ### FluidSynth config options
 
-#### mididevice
-* Default value: default
-
-To use fluidsynth it is necessary to change this to ```mididevice=fluidsynth```
-
 #### fluid.driver
-Default value:
-
-* Linux: jack
-* MacOSX: coreaudio
-* Windows: dsound
+* Default value:
+** Linux: jack
+** MacOSX: coreaudio
+** Windows: dsound
+* Possible values: pulseaudio, alsa, oss, coreaudio, dsound, portaudio, sndman, jack, file, default
 
 This parameter is typically not needed if your running FluidSynth on Windows, where it will automatically use dsound. Likewise on MacOS it will default to CoreAudio.
 
@@ -350,7 +345,7 @@ While the default value of 8 is normally fine for Windows, for Linux and MacOSX,
 
 #### fluid.periodsize
 * Default value: 512
-* Min-Max 64-8192
+* Min - Max: 64-8192
 
 The size of the audio buffers (in frames).
 
@@ -368,55 +363,55 @@ When set to "yes" the chorus effects module is activated. Otherwise, no chorus w
 
 #### fluid.reverb.roomsize
 * Default value: .61
-* Min-Max: 0 - 1
+* Min - Max: 0 - 1
 
 Sets the room size (i.e. amount of wet) reverb.
 
 #### fluid.reverb.damping
 * Default value: .23
-* Min-Max: 0 - 1
+* Min - Max: 0 - 1
 
 Sets the amount of reverb damping.
 
 #### fluid.reverb.width
 * Default value: .76
-* Min-Max: 0 - 100
+* Min - Max: 0 - 100
 
 Sets the stereo spread of the reverb signal.
 
 #### fluid.reverb.level
 * Default value: .57
-* Min-Max: 0 - 1
+* Min - Max: 0 - 1
 
 Sets the reverb output amplitude.
 
 #### fluid.chorus.number
 * Default value: 3
-* Min-Max: 0 - 99
+* Min - Max: 0 - 99
 
 Sets the voice count of the chorus.
 
 #### fluid.chorus.level
 * Default value: 1.2
-* Min-Max: 0 - 10
+* Min - Max: 0 - 10
 
 Specifies the output amplitude of the chorus signal.
 
 #### fluid.chorus.speed
 * Default value: .3
-* Min-Max: 0.1 - 5
+* Min - Max: 0.1 - 5
 
 Sets the modulation speed in Hz.
 
 #### fluid.chorus.depth
 * Default value: 8.0
-* Min-Max: 0 - 256
+* Min - Max: 0 - 256
 
 Specifies the modulation depth of the chorus.
 
 #### fluid.chorus.type
 * Default value: 0
-* Min-Max: 0 - 1
+* Min - Max: 0 - 1
 
 Specifies the chorus type. 0 is sine wave, 1 is triangle wave.
 
