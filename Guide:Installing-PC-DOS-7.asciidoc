@@ -43,7 +43,7 @@ You have the following installation options:
 * Use LOADDSKF to convert the the DSKF image files to regular MFM DSK files, and boot them in DOSBox-X.
 * Run the SETUP program on the CD image directly from the DOSBox-X integrated DOS. This is the method we will use below.
 
-Note: This method requires us to work around a bug, for which you need to use the ```SYS``` to transfer the system files before running the SETUP program. This requires DOSBox-X 0.83.2 or newer.
+Note: This method requires us to work around a bug, for which you need to use the ```SYS``` command to transfer the system files before running the SETUP program. This requires DOSBox-X 0.83.2 or newer.
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
