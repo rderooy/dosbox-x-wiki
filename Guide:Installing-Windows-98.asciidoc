@@ -98,7 +98,7 @@ Now let’s boot from the CD-ROM and start the installation.
 ....
 IMGMOUNT D Win98.iso -t iso
 IMGMOUNT 0 -el-torito D -t floppy -fs none
-BOOT -L A
+BOOT A:
 ....
 
 If the second ```IMGMOUNT``` command gives an error "*El Torito boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
@@ -108,7 +108,7 @@ After the first time the Windows installer reboots, your back at the DOSBox-X ``
 ....
 IMGMOUNT 2 hdd.img -fs none
 IMGMOUNT D Win98.iso -t iso
-BOOT -L C
+BOOT C:
 ....
 
 Now start DOSBox-X as follows to continue the installation process:
@@ -186,7 +186,7 @@ Now run through the install process, until it reboots and your back at the DOSBo
 
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
 
 Save the config file, and at the command-prompt you can type the following to continue the installation process. This is also the command you use, after the installation is finished, to start Windows 98 in DOSBox-X.
