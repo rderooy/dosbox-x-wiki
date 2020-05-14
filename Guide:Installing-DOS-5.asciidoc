@@ -55,5 +55,5 @@ When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by 
 You can now boot these DOS versions directly from the HDD image as follows:
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
