@@ -49,14 +49,14 @@ Note: This method requires us to work around a bug, for which you need to use th
  IMGMOUNT C hdd.img
  IMGMOUNT D PC-DOS_2000.iso -t iso
  D:
- D:\DOSFILES\SYS D:\DOSFILES C:
+ DOSFILES\SYS DOSFILES C:
  SETUP
 ....
 
 After it finished the install, it will reboot DOSBox-X and your again at the ``Z:\>`` prompt. Now type the following to boot PC DOS 2000 normally.
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
 
 ## Creating a PC DOS 2000 HDD image from diskettes
@@ -101,5 +101,5 @@ When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by 
 You can now boot these DOS versions directly from the HDD image as follows:
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
