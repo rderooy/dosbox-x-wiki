@@ -128,7 +128,7 @@ scaler=none
 aspect=false
 
 [autoexec]
-...
+....
 
 Copy the above config and save it as *win3x.conf*
 
@@ -253,7 +253,7 @@ Adjust paths in the above example as needed.
 Now edit your win3x.conf config file and in the [autoexec] section at the end, add the following lines:
 ....
 IMGMOUNT C hdd.img -reservecyl 1
-BOOT -L C
+BOOT C:
 ....
 
 Now start DOSBox-X with your win3x.conf config file from the command-line:
