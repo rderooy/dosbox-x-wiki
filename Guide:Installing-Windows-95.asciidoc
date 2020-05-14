@@ -143,7 +143,7 @@ Now run through the install process, until it reboots and your back at the DOSBo
 
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
 
 Save the config file, and at the command-prompt you can type the following to continue the installation process. This is also the command you use, after the installation is finished, to start Windows 95 in DOSBox-X.
@@ -275,7 +275,7 @@ COPY A:\*.SYS C:
 Now close DOSBox-X, and edit the win95.conf config file and add the following two lines to the [autoexec] section at the end:
 ....
 IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
-BOOT -L C
+BOOT C:
 ....
 
 Start DOSBox-X from the command-line with the following command:
