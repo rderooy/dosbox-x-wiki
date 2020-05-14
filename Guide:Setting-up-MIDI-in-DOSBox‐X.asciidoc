@@ -7,7 +7,7 @@ Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 toc::[]
 
 # Overview
-DOSBox-X has support for emulating either a General Midi or a Roland MT-32 synthesizer. In addition, it is possible to use a real external MIDI synthesizer.
+DOSBox-X has support for emulating either a General MIDI or a Roland MT-32 synthesizer. In addition, it is possible to use a real external MIDI synthesizer.
 
 ### MIDI options
 This section will list the available MIDI configuration options that DOSBox-X provides, with exception of the MT-32 and FluidSynth options which are listed in their respective sections.
@@ -20,7 +20,7 @@ The default "intelligent", also referred to as "normal mode" Roland MPU-401 emul
 
 Setting it to "uart", emulates the later cost-reduced "MPU-401 compatible" options, such as was integrated in various soundcards.
 
-Setting it to "none" disables MPU-401 emulation, and therefore MIDI emulation will be disabled. Both MT-32 and General Midi require MPU-401 emulation.
+Setting it to "none" disables MPU-401 emulation, and therefore MIDI emulation will be disabled. Both MT-32 and General MIDI require MPU-401 emulation.
 
 #### mpubase
 * Default value: 0
@@ -41,9 +41,15 @@ If set to 0, the default I/O address for the IBM PC or NEC PC-98 will be used. F
 
 This is the IRQ of the emulated MPU-401 (intelligent mode only).
 
-If set to -1, the default IRQ address for the IBM PC or NEC PC-98 will be used. For the IBM PC this will IRQ 9, while for the NEC PC-98 it will be IRQ 6.
+If set to -1, the default IRQ address for the IBM PC or NEC PC-98 will be used.
+* For the IBM PC XT this will be IRQ 2
+* For the IBM PC AT (or later) this will be IRQ 9
+* For the NEC PC-98 it will be IRQ 6.
 
-If set to IRQ2 when emulating an IBM PC, it will actually be set to IRQ9.
+The original Roland interfaces for the IBM PC used IRQ2, and as such many software titles default to IRQ2.
+
+If set to IRQ2 when emulating an IBM AT (286) or better, it will actually be set to IRQ9.
+However, the IBM PC BIOS redirects IRQ2 to IRQ9 for backwards compatibility, such that software configured to use IRQ2 for the MPU401 IRQ will work.
 
 #### mididevice
 * Default value: default
@@ -106,13 +112,13 @@ Please use "mididevice=fluidsynth" instead, with the "fluid.samplerate" option i
 
 # Roland MT-32 Emulation
 
-The Roland MT-32 pre-dates General Midi, and was used by a broad range of DOS games, starting in 1988 with King's Quest IV.
+The Roland MT-32 pre-dates General MIDI, and was used by a broad range of DOS games, starting in 1988 with King's Quest IV.
 
 The MT-32 emulation that is provided by DOSBox-X is based on the link:http://munt.sourceforge.net/[Munt project].
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-Note: If a game lists a "Roland Sound Canvas" (SC) option, or a Roland RAP-10, you need to use General Midi emulation instead.
+Note: If a game lists a "Roland Sound Canvas" (SC) option, or a Roland RAP-10, you need to use General MIDI emulation instead.
 
 ## MT-32
 
@@ -163,7 +169,7 @@ mt32.romdir="C:\Users\My User\emu\cm32l"
 Adjust the path as needed.
 In the example above, it points to the CM-32L ROMs, which will cause DOSBox-X to automatically emulate a CM-32L, which will work fine for the majority of games.
 
-You can check the link:https://en.wikipedia.org/wiki/List_of_MT-32-compatible_computer_games#IBM_PC_compatibles[MT-32 compatible games] list on Wikipedia for known compatibility issues for games requiring the MT-32 Old ROMs, or games that are better played with General Midi.
+You can check the link:https://en.wikipedia.org/wiki/List_of_MT-32-compatible_computer_games#IBM_PC_compatibles[MT-32 compatible games] list on Wikipedia for known compatibility issues for games requiring the MT-32 Old ROMs, or games that are better played with General MIDI.
 
 If a PC game asks for the IO address and IRQ, you should be able to use the default IO 330 and IRQ 9.
 
@@ -269,8 +275,6 @@ And then simply adding the following lines to your DOSBox-X config file:
 mididevice=fluidsynth
 fluid.driver=pulseaudio
 fluid.soundfont=/usr/share/soundfonts/default.sf2
-fluid.periods=16
-fluid.periodsize=64
 ....
 Adjust the path to a valid SoundFont as necessary.
 On Debian or Ubuntu the soundfont will be installed by default as ```/usr/share/sounds/sf2/FluidR3_GM.sf2```
@@ -336,30 +340,33 @@ This effects how many voices can be played in parallel.
 By default fluidsynth will use 1 core. If you set this higher, fluidsynth will create additional synthesis threads.
 
 #### fluid.periods
-* Default value: 8
+* Default value: 16 (Linux and MacOS X)
+* Default value: 8 (Windows)
 * Min - Max: 2 - 64
 
-The number of the audio buffers used by the driver. This number of buffers, multiplied by the buffer size (see setting fluid.periodsize), determines the maximum latency of the audio driver.
-
-While the default value of 8 is normally fine for Windows, for Linux and MacOSX, setting it to 16 may give better results.
+The number of the audio buffers used by the driver.
+This number of buffers, multiplied by the buffer size (see setting fluid.periodsize), determines the maximum latency of the audio driver.
 
 #### fluid.periodsize
-* Default value: 512
+* Default value: 64 (Linux and MacOS X)
+* Default value: 512 (Windows)
 * Min - Max: 64-8192
 
 The size of the audio buffers (in frames).
 
-While the default value of 512 is normally fine for Windows, for Linux and MacOSX, setting it to 64 may give better results.
-
 #### fluid.reverb
 * Default value: yes
 
-When set to "yes" the reverb effects module is activated. Otherwise, no reverb will be added to the output signal. Note that the amount of signal sent to the reverb module depends on the "reverb send" generator defined in the SoundFont.
+When set to "yes" the reverb effects module is activated.
+Otherwise, no reverb will be added to the output signal.
+Note that the amount of signal sent to the reverb module depends on the "reverb send" generator defined in the SoundFont.
 
 #### fluid.chorus
 * Default value: yes
 
-When set to "yes" the chorus effects module is activated. Otherwise, no chorus will be added to the output signal. Note that the amount of signal sent to the chorus module depends on the "chorus send" generator defined in the SoundFont.
+When set to "yes" the chorus effects module is activated.
+Otherwise, no chorus will be added to the output signal.
+Note that the amount of signal sent to the chorus module depends on the "chorus send" generator defined in the SoundFont.
 
 #### fluid.reverb.roomsize
 * Default value: .61
