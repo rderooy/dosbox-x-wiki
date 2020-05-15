@@ -43,13 +43,12 @@ You have the following installation options:
 * Use LOADDSKF to convert the the DSKF image files to regular MFM DSK files, and boot them in DOSBox-X.
 * Run the SETUP program on the CD image directly from the DOSBox-X integrated DOS. This is the method we will use below.
 
-Note: This method requires us to work around a bug, for which you need to use the ```SYS``` command to transfer the system files before running the SETUP program. This requires DOSBox-X 0.83.2 or newer.
+Note: This method requires DOSBox-X 0.83.2 or newer.
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
  IMGMOUNT D PC-DOS_2000.iso -t iso
  D:
- DOSFILES\SYS DOSFILES C:
  SETUP
 ....
 
@@ -62,25 +61,25 @@ BOOT C:
 ## Creating a PC DOS 2000 HDD image from diskettes
 If you have the PC DOS 2000 disk images in DSKF format, you first need to convert them, one by one, with LOADDSKF in DOSBox-X as follows:
 ....
- IMGMAKE DISK1.IMG -t fd_1440
- IMGMOUNT A DISK1.IMG -U
- LOADDSKF PCDOS_1.DSK A:
- IMGMAKE DISK2.IMG -t fd_1440
- IMGMOUNT A DISK2.IMG -U
- LOADDSKF PCDOS_2.DSK A:
- IMGMAKE DISK3.IMG -t fd_1440
- IMGMOUNT A DISK3.IMG -U
- LOADDSKF PCDOS_3.DSK A:
- IMGMAKE DISK4.IMG -t fd_1440
- IMGMOUNT A DISK4.IMG -U
- LOADDSKF PCDOS_4.DSK A:
- IMGMAKE DISK5.IMG -t fd_1440
- IMGMOUNT A DISK5.IMG -U
- LOADDSKF PCDOS_5.DSK A:
- IMGMAKE DISK6.IMG -t fd_1440
- IMGMOUNT A DISK6.IMG -U
- LOADDSKF PCDOS_6.DSK A:
- IMGMOUNT A -U
+IMGMAKE DISK1.IMG -t fd_1440
+IMGMOUNT A DISK1.IMG -U
+LOADDSKF PCDOS_1.DSK A:
+IMGMAKE DISK2.IMG -t fd_1440
+IMGMOUNT A DISK2.IMG -U
+LOADDSKF PCDOS_2.DSK A:
+IMGMAKE DISK3.IMG -t fd_1440
+IMGMOUNT A DISK3.IMG -U
+LOADDSKF PCDOS_3.DSK A:
+IMGMAKE DISK4.IMG -t fd_1440
+IMGMOUNT A DISK4.IMG -U
+LOADDSKF PCDOS_4.DSK A:
+IMGMAKE DISK5.IMG -t fd_1440
+IMGMOUNT A DISK5.IMG -U
+LOADDSKF PCDOS_5.DSK A:
+IMGMAKE DISK6.IMG -t fd_1440
+IMGMOUNT A DISK6.IMG -U
+LOADDSKF PCDOS_6.DSK A:
+IMGMOUNT A -U
 ....
 This assumes that you have mounted the directory in DOSBox-X which contains the DSKF image files and LOADDSKF.EXE.
 
