@@ -10,7 +10,7 @@ toc::[]
 
 ### DOSBox-X's Main Focus
 
-Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 1990's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
+Apart from DOSBox's original focus on DOS games, DOSBox-X gives more focus on accurate emulation of the hardware and many more ways to tweak and configure the DOS virtual machine. We believe that a better way to emulate the legacy PC platform is to give the user all the options they need to emulate everything from original IBM PC hardware with 64KB of RAM all the way up to late 1990's hardware, whatever it takes to get that game or software package to run. Our goal is to eventually make DOSBox-X a complete emulation package that covers all pre-2000 DOS and Windows 3.x/9x based hardware scenarios, including peripherals, motherboards, CPUs, and all manner of hardware that was made for PC hardware of that time.
 
 ### What DOSBox-X Can Do
 Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X.
@@ -31,15 +31,15 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for CONFIG.SYS commands (e.g. DEVICE, BUFFERS, FCBS, LASTDRIV)  
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for ROM BIOS images
-* Support for printer output  
-* Support for vertical sync (V-Sync)  
-* Support for long filenames (LFN) for DOS version 7.x
+* Support for printer output
+* Support for FAT32 and large disk images
+* Support for long filenames (LFN) for DOS version 7+
 * Support for clipboard copy and paste (Windows only)  
-* Support for Direct3D with pixel shaders (Windows only)  
-* Support for OpenglHQ  
+* Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
 * Support for Innovation SSI-2001 emulation  
 * Support for 3dfx Glide and Voodoo chip emulation
-* Support for NE2000 Ethernet  
+* Support for vertical sync (V-Sync)
+* Support for NE2000 Ethernet
 * Support for features such as beeping, overscan border and stereo swapping  
 * Various patches such as font, DBCS and Ctrl-Break patch
 
