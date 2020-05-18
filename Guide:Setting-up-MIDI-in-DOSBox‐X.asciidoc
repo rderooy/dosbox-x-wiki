@@ -340,16 +340,14 @@ This effects how many voices can be played in parallel.
 By default fluidsynth will use 1 core. If you set this higher, fluidsynth will create additional synthesis threads.
 
 #### fluid.periods
-* Default value: 16 (Linux and MacOS X)
-* Default value: 8 (Windows)
+* Default value: default (8 on Windows and 16 on Linux and MacOS X)
 * Min - Max: 2 - 64
 
 The number of the audio buffers used by the driver.
 This number of buffers, multiplied by the buffer size (see setting fluid.periodsize), determines the maximum latency of the audio driver.
 
 #### fluid.periodsize
-* Default value: 64 (Linux and MacOS X)
-* Default value: 512 (Windows)
+* Default value: default (512 on Windows and 64 on Linux and MacOS X)
 * Min - Max: 64-8192
 
 The size of the audio buffers (in frames).
