@@ -14,6 +14,7 @@ Printer options in the config are split over two config options, [parallel] and 
 The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 printing standard.
 
 Example of printers that typically work fine:
+
 * Epson LQ-800
 * IBM Pro Printer
 
@@ -34,7 +35,7 @@ Example of printers that typically work fine:
 * When set to use a Windows printer, the printer dialog will only show up once at start
 * Country code setup and other configuration buttons found on a printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
 
-### parallel options
+### [parallel] section options
 This section lists the available configuration options for the [parallel] section that DOSBox-X provides.
 
 #### parallel1
@@ -77,7 +78,7 @@ Additional parameters must be in the same line in the form of
 * Default value: false
 * Possible values: false, true
 
-### printer options
+### [printer] section options
 This section lists the available configuration options for the [printer] section that DOSBox-X provides.
 
 #### printer
