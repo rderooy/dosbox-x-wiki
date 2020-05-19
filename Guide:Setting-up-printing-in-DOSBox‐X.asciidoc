@@ -134,6 +134,16 @@ If nonzero: the time the page will be ejected automatically when no more data ar
 
 # Example: Printing to a real parallel printer
 
+## Windows host
+This assumes you PC still has a printer port integrated on the systemboard. It may not work with USB printer adapters or PCI printer ports.
+
+Make sure your dosbox-x config file contains the statement:
+```
+parallel1=file dev:lpt1
+```
+
+## Linux host
+
 TBD...
 
 # Example: Printing in Windows 3.x
