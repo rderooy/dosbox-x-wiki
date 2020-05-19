@@ -112,7 +112,7 @@ image::images/MS-DOS:PC-DOS_1.0.png[Booting IBM PC DOS 1.00]
 * link:Guide%3AInstalling-PC-DOS-7[Guide: Installing PC DOS 7/2000 in DOSBox-X]
 
 ## Hints and Tips
-### DOS Disk caching software
+### DOS disk caching software
 DOS may put SMARTDRV.EXE in AUTOEXEC.BAT to run on startup. This made sense back in the day, but it provides no speed advantages when run on an emulator on a modern host operating system. In fact it may actually be counter productive. As such it is recommended to disable SmartDrive.
 
 ### Shutdown DOS
@@ -134,7 +134,7 @@ ATXOFF.COM
 With this example, it will start Windows automatically on startup, and when you exit Windows, it will flush the disk cache and shutdown DOSBox-X.
 
 ### Long wait on HIMEM.SYS
-If HIMEM is being loaded on startup, you may get a message "HIMEM is testing extended memory...", which can take a considerable amount of time and is pointless in a emulated environment. You can bypass it by editing CONFIG.SYS and changing ```DEVICE=C:\DOS\HIMEM.SYS``` to ```DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF```
+If HIMEM is being loaded on startup, you may get a message "HIMEM is testing extended memory...", which can take a considerable amount of time and is pointless in a emulated environment. You can bypass it by editing CONFIG.SYS and changing ```DEVICE=C:\DOS\HIMEM.SYS``` to ```DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF```.
 
 ### Reboot DOS
-If for some reason you want to do a reboot (reset) from the command-line, look for a 3rd party utility called RESTART.COM
+If for some reason you want to do a reboot (reset) from the command-line, look for a 3rd party utility called ```RESTART.COM```.
