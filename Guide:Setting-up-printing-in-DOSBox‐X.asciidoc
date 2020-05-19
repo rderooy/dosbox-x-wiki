@@ -6,7 +6,7 @@ Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 
 toc::[]
 
-# Overview
+## Overview
 DOSBox-X has support for printing to either a real parallel printer, or to a text, PS (PostScript) or PNG file.
 
 Printer options in the config are split over two config options, [parallel] and [printer].
@@ -103,9 +103,9 @@ For A4 paper, set the value to 82 (210mm = 8.27 inches)
 * Default value: 110
 * Possible values:
 
-For A4 paper, set the value to 116 (297mm = 11.69 inches)
-
 Height of paper in 1/10 inch. The default 110 corresponds to 11.0" which is the standard height of letter paper size.
+
+For A4 paper, set the value to 116 (297mm = 11.69 inches)
 
 #### printoutput
 * Default value: png
@@ -132,7 +132,15 @@ timeout (in milliseconds).
 
 If nonzero: the time the page will be ejected automatically when no more data arrives at the printer.
 
-# Example: Setting up printing to a real parallel printer
+# Example: Printing to a real parallel printer
+
+TBD...
+
+# Example: Printing in Windows 3.x
+
+TBD...
+
+# Example: Printing in Windows 9x
 
 TBD...
 
