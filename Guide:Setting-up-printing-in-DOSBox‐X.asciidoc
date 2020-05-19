@@ -1,0 +1,140 @@
+:toc: macro
+
+Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+
+# Setting up printing in DOSBox-X
+
+toc::[]
+
+# Overview
+DOSBox-X has support for printing to either a real parallel printer, or to a text, PS (PostScript) or PNG file.
+
+Printer options in the config are split over two config options, [parallel] and [printer].
+
+The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 printing standard.
+
+Example of printers that typically work fine:
+* Epson LQ-800
+* IBM Pro Printer
+
+**Features:**
+
+* Many of the ESC/P and ESC/P2 instructions supported
+* Graphics printing for 24-pin and 48-pin modes supported, up to 360dpi
+* Color output, use "Generic ESC/P 24pin wide" printer on Windows 3.11 or "Epson SQ 860" on Win95
+* Data can be output as Windows bitmap, PNG file, Postscript file, or sent to a Windows
+* Some older non-conflicting IBM control codes are supported
+
+**Limitations:**
+
+* Windows printer output in black & white only
+* Not all ESC/P commands are supported, like custom fonts
+* The default font (courier.ttf)
+* Due to overexact graphics emulation 360dpi printing from Windows (guest) graphics rastering might not look as expected
+* When set to use a Windows printer, the printer dialog will only show up once at start
+* Country code setup and other configuration buttons found on a printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
+
+### parallel options
+This section lists the available configuration options for the [parallel] section that DOSBox-X provides.
+
+#### parallel1
+* Default value: disabled
+* Possible values: disabled, reallpt, file, printer, disney
+
+This enables an emulated LPT1 port on IO base address 0x378.
+
+```
+Additional parameters must be in the same line in the form of
+#              parameter:value.
+#                for reallpt:
+#                Windows:
+#                  realbase (the base address of your real parallel port).
+#                    Default: 378
+#                  ecpbase (base address of the ECP registers, optional).
+#                Linux: realport (the parallel port device i.e. /dev/parport0).
+#                for file: 
+#                  dev:<devname> (i.e. dev:lpt1) to forward data to a device,
+#                  or append:<file> appends data to the specified file.
+#                  Without the above parameters data is written to files in the capture dir.
+#                  Additional parameters: timeout:<milliseconds> = how long to wait before
+#                  closing the file on inactivity (default:500), addFF to add a formfeed when
+#                  closing, addLF to add a linefeed if the app doesn't, cp:<codepage number>
+#                  to perform codepage translation, i.e. cp:437
+#                for printer:
+#                  printer still has it's own configuration section above.
+```
+* "disabled" disables LPT1 in DOSBox-X
+
+#### parallel2
+* Default value: disabled
+* Possible values: disabled, reallpt, file, printer, disney
+
+#### parallel3
+* Default value: disabled
+* Possible values: disabled, reallpt, file, printer, disney
+
+#### dongle
+* Default value: false
+* Possible values: false, true
+
+### printer options
+This section lists the available configuration options for the [printer] section that DOSBox-X provides.
+
+#### printer
+* Default value: false
+* Possible values: true, false
+
+Enables or disables printer emulation.
+
+#### dpi
+* Default value: 360
+* Possible values:
+
+#### width
+* Default value: 85
+* Possible values:
+
+Width of paper in 1/10 inch. The default 85 corresponds to 8.5" which is the standard width of letter paper size.
+
+For A4 paper, set the value to 82 (210mm = 8.27 inches)
+
+#### height
+* Default value: 110
+* Possible values:
+
+For A4 paper, set the value to 116 (297mm = 11.69 inches)
+
+Height of paper in 1/10 inch. The default 110 corresponds to 11.0" which is the standard height of letter paper size.
+
+#### printoutput
+* Default value: png
+* Possible values: png, ps, bmp
+
+#### multipage
+* Default value: false
+* Possible values: true, false
+
+Adds all pages to one PostScript file or printer job until CTRL-F2 is pressed.
+
+#### docpath
+* Default value: .
+
+The path where the output files are stored. Defaults to the current working directory.
+
+Note: On Linux, similar to other dosbox config paths, the use of ~ in paths is not supported.
+
+#### timeout
+* Default value: 0
+* Possible values:
+
+timeout (in milliseconds).
+
+If nonzero: the time the page will be ejected automatically when no more data arrives at the printer.
+
+# Example: Setting up printing to a real parallel printer
+
+TBD...
+
+# Example: Using a parallel dongle
+
+TBD...
