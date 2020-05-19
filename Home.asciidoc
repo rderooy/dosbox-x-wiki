@@ -812,6 +812,7 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 * link:Guide%3AWindows-in-DOSBox‐X[Guide: Windows in DOSBox-X]
 * link:Guide%3AClipboard-support-in-DOSBox‐X[Guide: Clipboard support in DOSBox-X]
 * link:Guide%3ASetting-up-networking-in-DOSBox‐X[Guide: Setting up networking in DOSBox-X]
+* link:Guide%3ASetting-up-printing-in-DOSBox‐X[Guide: Setting up printing in DOSBox-X]
 * link:Guide%3ASetting-up-MIDI-in-DOSBox‐X[Guide: Setting up MIDI in DOSBox-X]
 
 ### Compatibility
