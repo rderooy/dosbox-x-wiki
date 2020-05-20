@@ -9,7 +9,7 @@ toc::[]
 ## Overview
 DOSBox-X has support for printing to either a real printer, redirect to a file, or create a PNG, BMP or PostScript file.
 
-Printer options in the config are split over two config options, ```[parallel]``` and ```[printer]```.
+Printer options in the config are split over two config options, ``[parallel]`` and ``[printer]``.
 
 The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 printing standard.
 
@@ -39,7 +39,7 @@ The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 
 * Country code setup and other configuration buttons found on a printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
 
 ### [parallel] section options
-This section lists the available configuration options for the ```[parallel]``` section that DOSBox-X provides.
+This section lists the available configuration options for the ``[parallel]`` section that DOSBox-X provides.
 
 #### parallel1
 * Default value: disabled
@@ -123,7 +123,7 @@ When set to true, emulates an Atmel 93c46 based dongle attached to the LPT1 port
 Unfortunately this feature is rather incomplete at this time, and requires that dongle.cpp in the source code is edited and the right bytes for the dongle to be emulated are entered in the MEMORY array. After which DOSBox-X needs to be re-compiled.
 
 ### [printer] section options
-This section lists the available configuration options for the ```[printer]``` section that DOSBox-X provides.
+This section lists the available configuration options for the ``[printer]`` section that DOSBox-X provides.
 
 Only one printer can be emulated, and it can only be connected to a single virtual parallel port. It is also necessary for the virtual printer to configure TrueType fonts.
 
@@ -197,7 +197,7 @@ Since not all software will send one, especially if your redirecting output, you
 If non-zero, it specifies the time after which the page will be ejected automatically when no more data arrives at the printer.
 
 # Setting up fonts for the emulated printer
-The emulated printer requires TrueType fonts to be setup. At a minimum you need ```courier.ttf```.
+The emulated printer requires TrueType fonts to be setup. At a minimum you need ``courier.ttf``.
 
 ## Windows host
 In the directory where your dosbox-x.exe is located, create a directory FONTS.
@@ -249,19 +249,19 @@ captures=capture
 [parallel]
 parallel1=file
 ....
-No ```[printer]``` section is needed for this example.
+No ``[printer]`` section is needed for this example.
 
 Now start DOSBox-X, and type the following command:
 ....
 DIR > LPT1
 ....
 
-The above will cause a ```capture\dosbox_000.prt``` ASCII text file to be created.
-The exact save location is dependent on the ```captures=``` setting in the ```[dosbox]``` section.
+The above will cause a ``capture\dosbox_000.prt`` ASCII text file to be created.
+The exact save location is dependent on the ``captures=`` setting in the ``[dosbox]`` section.
 
 You can also use this in most DOS programs, by selecting a generic text printer, or in Windows 3.x, 95 or 98 by selecting the "Generic / Text Only" printer.
 
-Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ```guest os_000.prt``` instead.
+Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ``guest os_000.prt`` instead.
 
 You can also use this with a more advanced printer model selected in your DOS application, but the output will then have printer specific control codes in it.
 
@@ -375,4 +375,4 @@ In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications c
 The output will be saved as ``page1.ps`` in the current directory, and incremented if it already exists.
 Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
 
-To prevent a separate PostScript files from being generated for each page, set ```multipage=true```.
+To prevent a separate PostScript files from being generated for each page, set ``multipage=true``.
