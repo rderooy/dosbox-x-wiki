@@ -186,6 +186,8 @@ Adds all pages to one PostScript file or printer job until CTRL-F2 is pressed.
 
 The path where the output files are stored. Defaults to the current working directory.
 
+Note: On Linux the use of the ~ character is not allowed to specify the home directory.
+
 #### timeout
 * Default value: 0
 * Possible values:
