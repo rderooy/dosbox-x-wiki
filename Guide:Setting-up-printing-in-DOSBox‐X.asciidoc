@@ -9,7 +9,7 @@ toc::[]
 ## Overview
 DOSBox-X has support for printing to either a real parallel printer, or to a text, PNG, PostScript or BMP file.
 
-Printer options in the config are split over two config options, [parallel] and [printer].
+Printer options in the config are split over two config options, ```[parallel]``` and ```[printer]```.
 
 The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 printing standard.
 
@@ -36,7 +36,7 @@ Example of printers that typically work fine:
 * Country code setup and other configuration buttons found on a printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
 
 ### [parallel] section options
-This section lists the available configuration options for the [parallel] section that DOSBox-X provides.
+This section lists the available configuration options for the ```[parallel]``` section that DOSBox-X provides.
 
 #### parallel1
 * Default value: disabled
@@ -81,7 +81,7 @@ This enables an emulated LPT1 port on IO base address 0x278.
 * Possible values: false, true
 
 ### [printer] section options
-This section lists the available configuration options for the [printer] section that DOSBox-X provides.
+This section lists the available configuration options for the ```[printer]``` section that DOSBox-X provides.
 
 Only one printer can be emulated, and it can only be connected to a single virtual parallel port. It is also necessary for the virtual printer to configure TrueType fonts.
 
@@ -99,17 +99,29 @@ Enables or disables printer emulation.
 * Default value: 85
 * Possible values:
 
-Width of paper in 1/10 inch. The default 85 corresponds to 8.5" which is the standard width of letter paper size.
+Width of paper in 1/10 inch. The default 85 corresponds to 8.5".
 
-For A4 paper, set the value to 82 (210mm = 8.27 inches)
+Example of standard paper sizes in portrait orientation:
+
+* Letter = 85 (default)
+* Legal = 85
+* A3 = 116 (297mm = 11.69 inches)
+* A4 = 82 (210mm = 8.27 inches)
+* A5 = 58 (148mm = 5.83 inches)
 
 #### height
 * Default value: 110
 * Possible values:
 
-Height of paper in 1/10 inch. The default 110 corresponds to 11.0" which is the standard height of letter paper size.
+Height of paper in 1/10 inch. The default 110 corresponds to 11.0".
 
-For A4 paper, set the value to 116 (297mm = 11.69 inches)
+Example of standard paper sizes in portrait orientation:
+
+* Letter = 110 (default)
+* Legal = 140
+* A3 = 165 (420mm = 16.53 inches)
+* A4 = 116 (297mm = 11.69 inches)
+* A5 = 82 (210mm = 8.27 inches)
 
 #### printoutput
 * Default value: png
@@ -130,7 +142,7 @@ The path where the output files are stored. Defaults to the current working dire
 * Default value: 0
 * Possible values:
 
-timeout (in milliseconds).
+Timeout (in milliseconds).
 
 If nonzero: the time the page will be ejected automatically when no more data arrives at the printer.
 
