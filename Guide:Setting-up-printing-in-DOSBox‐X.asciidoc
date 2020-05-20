@@ -7,7 +7,7 @@ Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 toc::[]
 
 ## Overview
-DOSBox-X has support for printing to either a real parallel printer, or to a text, PS (PostScript) or PNG file.
+DOSBox-X has support for printing to either a real parallel printer, or to a PNG, PostScript or BMP file.
 
 Printer options in the config are split over two config options, [parallel] and [printer].
 
@@ -44,7 +44,7 @@ This section lists the available configuration options for the [parallel] sectio
 
 This enables an emulated LPT1 port on IO base address 0x378.
 
-```
+....
 Additional parameters must be in the same line in the form of
 #              parameter:value.
 #                for reallpt:
@@ -53,7 +53,7 @@ Additional parameters must be in the same line in the form of
 #                    Default: 378
 #                  ecpbase (base address of the ECP registers, optional).
 #                Linux: realport (the parallel port device i.e. /dev/parport0).
-#                for file: 
+#                for file:
 #                  dev:<devname> (i.e. dev:lpt1) to forward data to a device,
 #                  or append:<file> appends data to the specified file.
 #                  Without the above parameters data is written to files in the capture dir.
@@ -63,12 +63,14 @@ Additional parameters must be in the same line in the form of
 #                  to perform codepage translation, i.e. cp:437
 #                for printer:
 #                  printer still has it's own configuration section above.
-```
+....
 * "disabled" disables LPT1 in DOSBox-X
 
 #### parallel2
 * Default value: disabled
 * Possible values: disabled, reallpt, file, printer, disney
+
+This enables an emulated LPT1 port on IO base address 0x278.
 
 #### parallel3
 * Default value: disabled
@@ -80,6 +82,8 @@ Additional parameters must be in the same line in the form of
 
 ### [printer] section options
 This section lists the available configuration options for the [printer] section that DOSBox-X provides.
+
+Only one printer can be emulated, and it can only be connected to a single virtual parallel port. It is also necessary for the virtual printer to configure TrueType fonts.
 
 #### printer
 * Default value: false
@@ -122,8 +126,6 @@ Adds all pages to one PostScript file or printer job until CTRL-F2 is pressed.
 
 The path where the output files are stored. Defaults to the current working directory.
 
-Note: On Linux, similar to other dosbox config paths, the use of ~ in paths is not supported.
-
 #### timeout
 * Default value: 0
 * Possible values:
@@ -132,15 +134,44 @@ timeout (in milliseconds).
 
 If nonzero: the time the page will be ejected automatically when no more data arrives at the printer.
 
+# Setting up fonts for the emulated printer
+The emulated printer requires TrueType fonts to be setup. At a minimum you need ```courier.ttf```.
+
+# Example: Print to text file
+In this example the output of DOS commands is simply redirected to the virtual LPT port, which in turn will be redirected to a text file.
+
+Setup a DOSBox-X config file with the following lines:
+....
+[dosbox]
+captures=capture
+
+[parallel]
+parallel1=file
+....
+No ```[printer]``` section is needed for this example.
+
+Now start DOSBox-X, and type the following command:
+....
+DIR > LPT1
+....
+
+This will cause a ```capture\dosbox_000.prt``` ASCII text file to be created.
+The exact save location is dependent on the ```captures=``` setting in the ```[dosbox]``` section.
+
+You can also use this in most DOS programs, by selecting a generic text printer, or in Windows 3.x, 95 or 98 by selecting the "Generic / Text Only" printer.
+
+Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ```guest os_000.prt``` instead.
+
+
 # Example: Printing to a real parallel printer
 
 ## Windows host
 This assumes you PC still has a printer port integrated on the systemboard. It may not work with USB printer adapters or PCI printer ports.
 
 Make sure your dosbox-x config file contains the statement:
-```
+....
 parallel1=file dev:lpt1
-```
+....
 
 ## Linux host
 
