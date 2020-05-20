@@ -53,6 +53,8 @@ Some values have additional parameters, which if specified must be on the same l
 
 * Disables the printer port emulation
 
+Note: the parallel1 port may be auto-enabled for Disney Sound Source emulation.
+
 **reallpt**
 
 * Windows:
