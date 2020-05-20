@@ -150,7 +150,8 @@ If nonzero: the time the page will be ejected automatically when no more data ar
 The emulated printer requires TrueType fonts to be setup. At a minimum you need ```courier.ttf```.
 
 ## Windows host
-In the directory where your dosbox-x.exe is located, create a directory FONTS. Now copy from your C:\Windows\Fonts directory the following files to the FONTS directory and rename them.
+In the directory where your dosbox-x.exe is located, create a directory FONTS.
+Now copy from your C:\Windows\Fonts directory the following files to the new FONTS directory and rename them.
 
 |===
 |Original filename and location|New filename and location|Notes
@@ -164,7 +165,9 @@ In the directory where your dosbox-x.exe is located, create a directory FONTS. N
 
 These are recommendations, you are free to substitute them for suitable alternatives.
 
-Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system, and you may need to find those online.
+Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
+They are however rarely needed, and can typically be ignored.
+If you need them you may need to find those online.
 
 ## Linux host
 Create a directory ~/.dosbox/FONTS and copy or symlink the following files.
@@ -179,6 +182,11 @@ Create a directory ~/.dosbox/FONTS and copy or symlink the following files.
 |===
 
 These are recommendations, you are free to substitute them for suitable alternatives.
+
+Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
+They are however rarely needed, and can typically be ignored.
+If you need them you may need to find those online.
+
 
 # Example: Print to text file
 In this example the output of DOS commands is simply redirected to the virtual LPT port, which in turn will be redirected to a text file.
@@ -208,8 +216,6 @@ Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ```
 
 # Example: Printing to a real parallel printer
 
-These examples are untested due to lack of suitable hardware. Confirmation is requested.
-
 ## Windows host
 This assumes you PC still has a printer port integrated on the systemboard, or a legacy ISA printer adapter. It reportedly will not work with USB printer adapters or PCI printer port adapters.
 
@@ -223,7 +229,7 @@ Alternatively you can try to set it up as follows, but this reportedly only work
 
 ....
 [parallel]
-paralel1=reallpt directlpt:378
+parallel1=reallpt directlpt:378
 ....
 
 Another alternative is to install link:http://www.dosprn.com/[DOSPRN], a Shareware application that specifically lists DOSBox-X as supported for printing to any printer configured on the Windows host system.
