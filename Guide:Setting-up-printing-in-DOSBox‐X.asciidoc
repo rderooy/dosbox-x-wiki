@@ -159,7 +159,7 @@ In the directory where your dosbox-x.exe is located, create a directory FONTS. N
 
 |C:\Windows\Fonts\cour.ttf|FONTS\courier.ttf
 |C:\Windows\Fonts\times.ttf|FONTS\roman.ttf
-|C:\Windows\Fonts\refsan.ttf|FONTS\sansserif.ttf
+|C:\Windows\Fonts\arial.ttf|FONTS\sansserif.ttf
 |Download Ocraext.ttf|FONTS\ocra.ttf
 |C:\Windows\Fonts\freescpt.ttf|FONTS\script.ttf
 |===
