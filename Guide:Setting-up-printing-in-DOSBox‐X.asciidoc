@@ -7,16 +7,19 @@ Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 toc::[]
 
 ## Overview
-DOSBox-X has support for printing to either a real parallel printer, or to a text, PNG, PostScript or BMP file.
+DOSBox-X has support for printing to either a real printer, redirect to a file, or create a PNG, BMP or PostScript file.
 
 Printer options in the config are split over two config options, ```[parallel]``` and ```[printer]```.
 
 The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 printing standard.
 
-Example of printers that typically work fine:
+Example of printers that may work:
 
+* Epson SQ-860
 * Epson LQ-800
 * IBM Pro Printer
+* Generic ESC/P 24pin wide (Windows 3.11 running in DOSBox-X)
+* Generic / Text Only (Windows running in DOSBox-X)
 
 **Features:**
 
@@ -30,7 +33,7 @@ Example of printers that typically work fine:
 
 * Windows printer output in black & white only
 * Not all ESC/P commands are supported, like custom fonts
-* The default font (courier.ttf)
+* Needed TrueType font filenames and locations are hard-coded
 * Due to overexact graphics emulation 360dpi printing from Windows (guest) graphics rastering might not look as expected
 * When set to use a Windows printer, the printer dialog will only show up once at start
 * Country code setup and other configuration buttons found on a printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
@@ -44,27 +47,62 @@ This section lists the available configuration options for the ```[parallel]``` 
 
 This enables an emulated LPT1 port on IO base address 0x378.
 
+Some values have additional parameters, which if specified must be on the same line in the form of ``parameter:value``.
+
+**disabled**
+
+* Disables the printer port emulation
+
+**reallpt**
+
+* Windows:
+** ``realbase`` (the base address of your real parallel port).
+*** Default: 378
+** ``ecpbase`` (base address of the ECP registers, optional).
+* Linux:
+** ``realport`` (the parallel port device i.e. /dev/parport0).
+
+**file**
+
+* ``dev:<devname>`` (i.e. ``dev:lpt1``) to forward data to a device
+* ``append:<file>`` appends data to the specified file.
+
+Without one of the above parameters, data is written to files in the capture directory.
+
+* Additional parameters:
+** ``timeout:<milliseconds>`` = how long to wait before
+closing the file on inactivity (default:500)
+** ``addFF`` to add a formfeed when closing
+** ``addLF`` to add a linefeed if the app doesn't
+** ``cp:<codepage number>`` to perform codepage translation, i.e. cp:437
+
+Example:
 ....
-Additional parameters must be in the same line in the form of
-#              parameter:value.
-#                for reallpt:
-#                Windows:
-#                  realbase (the base address of your real parallel port).
-#                    Default: 378
-#                  ecpbase (base address of the ECP registers, optional).
-#                Linux: realport (the parallel port device i.e. /dev/parport0).
-#                for file:
-#                  dev:<devname> (i.e. dev:lpt1) to forward data to a device,
-#                  or append:<file> appends data to the specified file.
-#                  Without the above parameters data is written to files in the capture dir.
-#                  Additional parameters: timeout:<milliseconds> = how long to wait before
-#                  closing the file on inactivity (default:500), addFF to add a formfeed when
-#                  closing, addLF to add a linefeed if the app doesn't, cp:<codepage number>
-#                  to perform codepage translation, i.e. cp:437
-#                for printer:
-#                  printer still has it's own configuration section above.
+[parallel]
+parallel1=file dev:lpt1 timeout=1000 addFF cp:437
 ....
-* "disabled" disables LPT1 in DOSBox-X
+
+**printer**
+
+Printer has it's own configuration section below.
+
+**disney**
+
+Defines that this port has the emulated Disney Sound Source attached (Covox Voice Master and Covox Speech Thing compatible). It requires the following lines in your config:
+
+....
+[speaker]
+disney=true
+
+[parallel]
+parallel1=disney
+....
+
+If you want to have Disney Sound Source emulation, you need to set ``disney=true`` in the ``[speaker]`` section.
+In addition the ``parallel1=`` value needs to be either set to ``disabled`` (will be auto-enabled for the Disney Sound Source emulation), or ``disney``.
+Alternatively you can move the Disney Sound Source on a different parallel port, but most games expect it on the first by default.
+
+If you set ``disney=true`` and have ``parallel1=`` set to a different value, the Disney Sound Source emulation will not work.
 
 #### parallel2
 * Default value: disabled
@@ -79,6 +117,10 @@ This enables an emulated LPT1 port on IO base address 0x278.
 #### dongle
 * Default value: false
 * Possible values: false, true
+
+When set to true, emulates an Atmel 93c46 based dongle attached to the LPT1 port. Examples of such dongles are the Rainbow Sentinel Cplus and MicroPhar.
+
+Unfortunately this feature is rather incomplete at this time, and requires that dongle.cpp in the source code is edited and the right bytes for the dongle to be emulated are entered in the MEMORY array. After which DOSBox-X needs to be re-compiled.
 
 ### [printer] section options
 This section lists the available configuration options for the ```[printer]``` section that DOSBox-X provides.
@@ -127,6 +169,10 @@ Example of standard paper sizes in portrait orientation:
 * Default value: png
 * Possible values: png, ps, bmp
 
+Between PNG and BMP, PNG is better. BMP files will be much larger, while the image quality will be identical.
+
+ps = PostScript.
+
 #### multipage
 * Default value: false
 * Possible values: true, false
@@ -144,7 +190,11 @@ The path where the output files are stored. Defaults to the current working dire
 
 Timeout (in milliseconds).
 
-If nonzero: the time the page will be ejected automatically when no more data arrives at the printer.
+If zero, the page will not be ejected until a form-feed is received.
+
+Since not all software will send one, especially if your redirecting output, you can force a form-feed (eject page) by specifying a non-zero value.
+
+If non-zero, it specifies the time after which the page will be ejected automatically when no more data arrives at the printer.
 
 # Setting up fonts for the emulated printer
 The emulated printer requires TrueType fonts to be setup. At a minimum you need ```courier.ttf```.
@@ -174,11 +224,11 @@ Create a directory ~/.dosbox/FONTS and copy or symlink the following files.
 |===
 |Original filename and location|New filename and location
 
-|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|FONTS\courier.ttf
-|/usr/share/fonts/liberation-serif/LiberationSerif-Regular.ttf|FONTS\roman.ttf
-|/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf|FONTS\sansserif.ttf
-|Download Ocraext.ttf|FONTS\ocra.ttf
-|Download a Script (cursive) font|FONTS\script.ttf
+|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|FONTS/courier.ttf
+|/usr/share/fonts/liberation-serif/LiberationSerif-Regular.ttf|FONTS/roman.ttf
+|/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf|FONTS/sansserif.ttf
+|Download Ocraext.ttf|FONTS/ocra.ttf
+|Download a Script (cursive) font|FONTS/script.ttf
 |===
 
 These are recommendations, you are free to substitute them for suitable alternatives.
@@ -188,7 +238,7 @@ They are however rarely needed, and can typically be ignored.
 If you need them you may need to find those online.
 
 
-# Example: Print to text file
+# Example: Print to file
 In this example the output of DOS commands is simply redirected to the virtual LPT port, which in turn will be redirected to a text file.
 
 Setup a DOSBox-X config file with the following lines:
@@ -206,13 +256,14 @@ Now start DOSBox-X, and type the following command:
 DIR > LPT1
 ....
 
-This will cause a ```capture\dosbox_000.prt``` ASCII text file to be created.
+The above will cause a ```capture\dosbox_000.prt``` ASCII text file to be created.
 The exact save location is dependent on the ```captures=``` setting in the ```[dosbox]``` section.
 
 You can also use this in most DOS programs, by selecting a generic text printer, or in Windows 3.x, 95 or 98 by selecting the "Generic / Text Only" printer.
 
 Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ```guest os_000.prt``` instead.
 
+You can also use this with a more advanced printer model selected in your DOS application, but the output will then have printer specific control codes in it.
 
 # Example: Printing to a real parallel printer
 
@@ -262,8 +313,8 @@ But while this method seems to work on Windows, it does not seem to work properl
 
 # Example: Printing to a real printer
 
-## Windows host
-This method will cause a Windows print dialog to appear on the host, and you can print to any printer configured on the host, including print to PDF.
+This method only works on Windows hosts.
+It will cause a Windows print dialog to appear on the host, and you can print to any printer configured on the host, including print to PDF.
 
 This method requires that you have first completed the FONT installation step above.
 
@@ -277,3 +328,51 @@ printer=true
 printoutput=printer
 timeout=1000
 ....
+
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
+
+# Example: Print to PNG or BMP
+This method prints to a PNG or BMP image file.
+
+This method requires that you have first completed the FONT installation step above.
+
+Make sure your dosbox-x config file contains the statements:
+....
+[parallel]
+parallel1=printer
+
+[printer]
+printer=true
+printoutput=png
+timeout=1000
+....
+The above example uses PNG, but you can simply change it to ``printoutput=bmp`` if you prefer.
+But note that BMP files will be much larger, while the image quality will be identical.
+
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
+
+The output will be saved as ``page1.png`` or ``page1.bmp`` in the current directory, and incremented if it already exists.
+Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
+
+# Example: Print to PostScript
+This method prints to a PostScript (PS) file.
+
+This method requires that you have first completed the FONT installation step above.
+
+Make sure your dosbox-x config file contains the statements:
+....
+[parallel]
+parallel1=printer
+
+[printer]
+printer=true
+printoutput=ps
+timeout=1000
+....
+
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
+
+The output will be saved as ``page1.ps`` in the current directory, and incremented if it already exists.
+Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
+
+To prevent a separate PostScript files from being generated for each page, set ```multipage=true```.
