@@ -149,6 +149,32 @@ If nonzero: the time the page will be ejected automatically when no more data ar
 # Setting up fonts for the emulated printer
 The emulated printer requires TrueType fonts to be setup. At a minimum you need ```courier.ttf```.
 
+Note: this is an area that needs improvement as DOSBox-X could try to use the default system fonts...
+
+## Windows host
+In the directory where your dosbox-x.exe is located, create a directory FONTS. Now copy from your C:\Windows\Fonts directory the following files to the FONTS directory and rename them.
+
+|===
+|Original filename and location|New filename and location
+
+|C:\Windows\Fonts\cour.ttf|FONTS\courier.ttf
+|C:\Windows\Fonts\times.ttf|FONTS\roman.ttf
+|C:\Windows\Fonts\refsan.ttf|FONTS\sansserif.ttf
+|Download Ocraext.ttf|FONTS\ocra.ttf
+|C:\Windows\Fonts\freescpt.ttf|FONTS\script.ttf
+|===
+
+## Linux host
+|===
+|Original filename and location|New filename and location
+
+|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|FONTS\courier.ttf
+|C:\Windows\Fonts\times.ttf|FONTS\roman.ttf
+|C:\Windows\Fonts\refsan.ttf|FONTS\sansserif.ttf
+|Download Ocraext.ttf|FONTS\ocra.ttf
+|C:\Windows\Fonts\freescpt.ttf|FONTS\script.ttf
+|===
+
 # Example: Print to text file
 In this example the output of DOS commands is simply redirected to the virtual LPT port, which in turn will be redirected to a text file.
 
@@ -199,20 +225,29 @@ Another alternative is to install link:http://www.dosprn.com/[DOSPRN], a Sharewa
 
 ## Linux host
 
-This is untested, due to lack of suitable hardware. Similar to the Windows instructions, try the following:
+First you need to give your Linux user access to the /dev/parport0 device, otherwise you will get permission denied errors.
+Replace "username" with your Linux username.
+
+....
+sudo usermod -a -G lp username
+....
+
+Now, similar to the Windows instructions, try the following:
 
 Make sure your dosbox-x config file contains the statements:
+....
+[parallel]
+parallel1=reallpt realport:/dev/parport0
+....
+
+This has been confirmed to work. Alternatively you can try to set it up as follows:
+
 ....
 [parallel]
 parallel1=file dev:/dev/parport0
 ....
 
-Alternatively you can try to set it up as follows:
-
-....
-[parallel]
-paralel1=reallpt realport:/dev/parport0
-....
+But while this method seems to work on Windows, it does not seem to work properly on Linux.
 
 # Example: Printing to a real printer
 
