@@ -335,8 +335,8 @@ timeout=1000
 
 In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
-# Example: Print to PNG or BMP
-This method prints to a PNG or BMP image file.
+# Example: Print to PNG, BMP or PostScript
+This method prints to a PNG, BMP or PostScript (PS) image file.
 
 This method requires that you have first completed the FONT installation step above.
 
@@ -350,33 +350,12 @@ printer=true
 printoutput=png
 timeout=1000
 ....
-The above example uses PNG, but you can simply change it to ``printoutput=bmp`` if you prefer.
-But note that BMP files will be much larger, while the image quality will be identical.
+The above example uses PNG, but you can simply change it to ``printoutput=bmp`` or ``printoutput=ps`` if you prefer.
+But note that BMP files will be much larger then PNG files, while the image quality will be identical.
 
 In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
-The output will be saved as ``page1.png`` or ``page1.bmp`` in the current directory, and incremented if it already exists.
+The output will be saved as ``page1.png``, ``page1.bmp`` or ``page1.ps`` in the current directory, and incremented if it already exists.
 Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
 
-# Example: Print to PostScript
-This method prints to a PostScript (PS) file.
-
-This method requires that you have first completed the FONT installation step above.
-
-Make sure your dosbox-x config file contains the statements:
-....
-[parallel]
-parallel1=printer
-
-[printer]
-printer=true
-printoutput=ps
-timeout=1000
-....
-
-In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
-
-The output will be saved as ``page1.ps`` in the current directory, and incremented if it already exists.
-Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
-
-To prevent a separate PostScript files from being generated for each page, set ``multipage=true``.
+When using PostScript output, you can prevent a separate PostScript files from being generated for each page, by setting ``multipage=true``.
