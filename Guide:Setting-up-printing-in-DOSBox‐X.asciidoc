@@ -13,7 +13,7 @@ Printer options in the config are split over two config options, ```[parallel]``
 
 The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 printing standard.
 
-Example of printers that may work:
+**Example of printers that may work:**
 
 * Epson SQ-860
 * Epson LQ-800
