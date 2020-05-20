@@ -177,26 +177,57 @@ Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ```
 
 # Example: Printing to a real parallel printer
 
-## Windows host
-This assumes you PC still has a printer port integrated on the systemboard. It may not work with USB printer adapters or PCI printer ports.
+These examples are untested due to lack of suitable hardware. Confirmation is requested.
 
-Make sure your dosbox-x config file contains the statement:
+## Windows host
+This assumes you PC still has a printer port integrated on the systemboard, or a legacy ISA printer adapter. It reportedly will not work with USB printer adapters or PCI printer port adapters.
+
+Make sure your dosbox-x config file contains the statements:
 ....
+[parallel]
 parallel1=file dev:lpt1
 ....
 
+Alternatively you can try to set it up as follows, but this reportedly only works if your host is running Windows 9x, or with later Windows versions by installing "PortTalk"
+
+....
+[parallel]
+paralel1=reallpt directlpt:378
+....
+
+Another alternative is to install link:http://www.dosprn.com/[DOSPRN], a Shareware application that specifically lists DOSBox-X as supported for printing to any printer configured on the Windows host system.
+
 ## Linux host
 
-TBD...
+This is untested, due to lack of suitable hardware. Similar to the Windows instructions, try the following:
 
-# Example: Printing in Windows 3.x
+Make sure your dosbox-x config file contains the statements:
+....
+[parallel]
+parallel1=file dev:/dev/parport0
+....
 
-TBD...
+Alternatively you can try to set it up as follows:
 
-# Example: Printing in Windows 9x
+....
+[parallel]
+paralel1=reallpt realport:/dev/parport0
+....
 
-TBD...
+# Example: Printing to a real printer
 
-# Example: Using a parallel dongle
+## Windows host
+This method will cause a Windows print dialog to appear on the host, and you can print to any printer configured on the host, including print to PDF.
 
-TBD...
+This method requires that you have first completed the FONT installation step above.
+
+Make sure your dosbox-x config file contains the statements:
+....
+[parallel]
+parallel1=printer
+
+[printer]
+printer=true
+printoutput=printer
+timeout=1000
+....
