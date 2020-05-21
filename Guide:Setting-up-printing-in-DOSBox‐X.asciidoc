@@ -267,7 +267,8 @@ You can also use this in most DOS programs, by selecting a generic text printer,
 
 Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ``guest os_000.prt`` instead.
 
-You can also use this with a more advanced printer model selected in your DOS application, but the output will then have printer specific control codes in it.
+You may be able to use this with more advanced printer model selected in your DOS application, but the output will then have printer specific control codes in it.
+In addition, this may not work if the application expects to be able to communicate with the printer.
 
 # Example: Printing to a real parallel printer
 
