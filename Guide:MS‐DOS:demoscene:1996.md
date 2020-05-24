@@ -1,4 +1,4 @@
-# 1996 [[MS-DOS demos|Guide:MS‐DOS:demoscene]]
+# 1996 [[MS-DOS demos|Guide:DOS demoscene software in DOSBox‐X]]
 
 [[Inside by CNCD (1996)|Demoscene:Inside by CNCD (1996)]]  
 
