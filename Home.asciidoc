@@ -812,7 +812,7 @@ Logs CON output to a log file.
 DOSBox-X has many features and supports most DOS games and applications. Below are some guides which explain how to use certain software or features within DOSBox-X.
 
 * link:Guide%3AMS‐DOS%3Ademoscene[Guide: MS-DOS demoscene]  
-* link:Guide%3AMS‐DOS%3Agames[Guide: MS-DOS games]  
+* link:Guide%3ADOS-games-in-DOSBox‐X[Guide: DOS games in DOSBox-X]  
 * link:Guide%3ADOS-Installation-in-DOSBox‐X[Guide: PC DOS or MS-DOS in DOSBox-X]  
 * link:Guide%3AWindows-in-DOSBox‐X[Guide: Windows in DOSBox-X]
 * link:Guide%3AClipboard-support-in-DOSBox‐X[Guide: Clipboard support in DOSBox-X]
