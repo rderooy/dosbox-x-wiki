@@ -1,0 +1,9 @@
+:toc: macro
+
+Back to the link:Home[DOSBox-X Wiki Welcome page].
+
+# DOS games in DOSBox-X
+
+toc::[]
+
+This guide explains how to setup and play DOS games in DOSBox-X.
