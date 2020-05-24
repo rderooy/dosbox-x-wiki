@@ -18,10 +18,10 @@ toc::[]
 ** Adds MSCDEX
 ** SmartDrive upgraded with write caching and double buffering
 ** New MS Backup software for DOS and Windows (based on Norton Backup)
-** Adds MS AntiVirus for DOS and Windows (based on Central Point AV)
+** Adds MS AntiVirus for DOS and Windows (based on Central Point AntiVirus)
 ** Adds a Windows version of UNDELETE
 ** Adds APM Power Management (POWER.EXE)
-** Adds InterLink file transfer tool (using Serial or Parallel port)
+** Adds InterLink file transfer tool (using serial or parallel ports)
 ** Adds DELTREE and MOVE commands
 ** Removed EDLIN, MIRROR, RECOVER and BACKUP
 * MS-DOS 6.20
@@ -47,7 +47,7 @@ Maximum HDD size has increased to 8GB (or more exactly 7.84GB), but the maximum 
  BOOT DISK1.IMG DISK2.IMG DISK3.IMG
 ....
 
-When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system" and you will be back at the DOSBox-Z ``Z:\>`` prompt.
+When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system" and you will be back at the DOSBox-X ``Z:\>`` prompt.
 
 You can now boot these DOS versions directly from the HDD image as follows:
 ....
