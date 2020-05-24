@@ -1,4 +1,4 @@
-This guide explains how to use DOSBox-X with MS-DOS software from the [demoscene](http://en.wikipedia.org/wiki/Demoscene).
+This guide explains how to use DOSBox-X with DOS software from the [demoscene](http://en.wikipedia.org/wiki/Demoscene).
 
 # Demo settings and notes list
 
