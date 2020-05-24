@@ -721,16 +721,16 @@ Erases the mapper file used by the default clean configuration file.
 Erases the mapper file used by the default clean configuration file.
 * **-console**
 +
-Starts DOSBox-X with the console window (win32 only).
+Starts DOSBox-X with the console window (Windows builds only).
 * **-noconsole**
 +
-Starts DOSBox-X without showing the console window (debug+win32 only).
+Starts DOSBox-X without showing the console window (Windows debug builds only).
 * **-nogui**
 +
-Starts DOSBox-X without showing its GUI menu (win32 only).
+Starts DOSBox-X without showing its GUI menu (Windows builds only).
 * **-nomenu**
 +
-Starts DOSBox-X without showing its GUI menu (win32 only).
+Starts DOSBox-X without showing its GUI menu (Windows builds only).
 * **-userconf**
 +
 Loads the configuration from the user's profile or home directory.
@@ -757,7 +757,7 @@ Starts DOSBox-X in full-screen mode.
 Uses the specified path as DOSBox-X's save path.
 * **-disable-numlock-check**
 +
-Disables numlock check (win32 only).
+Disables check of the NumLock key (Windows builds only).
 * **-date-host-forced**
 +
 Forces synchronization of date with the host system.
