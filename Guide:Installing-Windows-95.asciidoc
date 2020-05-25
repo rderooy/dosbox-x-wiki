@@ -165,10 +165,8 @@ dosbox-x -conf win95.conf
 * If you want to have your C: drive as FAT32, you need to have a MS-DOS 7.1 boot disk with the corresponding FDISK and FORMAT utilities.
 * You need to have at least *Windows 95 OSR2*, as older releases lack FAT32 support.
 
-## Creating a Windows boot disk
-If you don't have a Windows 95 OSR2 (or later) or Windows 98 boot disk (may also be called a MS-DOS 7.1 boot disk), the easiest way to make such a boot disk with the necessary utilities, is to let Windows 95 OSR2 (or later) or Windows 98 create one for you.
-
-In Windows, select "Start" followed by "Settings" and then "Control Panel". Double-click the "Add/Remove Programs" icon. Once it is started, select the "Startup disk" tab and click on "Create Disk...". Now follow the prompts.
+## Windows boot disk
+This process requires a suitable Windows 95 OSR2 (or later) installation boot disk image. Getting such an image file is outside the scope of this guide.
 
 ## Preparing the Harddisk image
 First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
@@ -196,24 +194,19 @@ Now your in the FDISK main menu, select the following options:
 Confirm that you want to use the maximum available size for the primary DOS partition by pressing Y.
 After this press ESC twice and your back at the MS-DOS prompt.
 
-From the DOSBox-X menu bar, select Main followed by "Reset guest system" and your back at the DOSBox-X ```Z:\>``` prompt.
+Do not reset the guest operating system, as FDISK implies.
 
 ##  Format the drive
-
-First you need to mount the C drive again.
-....
-IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
-....
 
 Next you need to mount the Windows 95 CD-ROM image. This can be in ISO or CUE/BIN format.
 
 ....
-IMGMOUNT E Win95.iso -t cdrom
+IMGMOUNT D Win95.iso -t cdrom
 ....
 
 And boot from the Windows bootdisk.
 ....
-BOOT bootdisk.img
+BOOT A:
 ....
 
 When booting from the Windows 95 bootdisk, it should ask if you want to start Windows 95 Setup, or start the computer with or without CD-ROM support. Select to start the computer with CD-ROM support.
@@ -223,7 +216,7 @@ Now run the following commands:
 D:\WIN95\FORMAT C: /S /V:WIN95
 ....
 
-Once the format is completed, you need to reset the guest operating system again, such that your back at the DOSBox-X ```Z:\``` prompt.
+Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ```Z:\``` prompt.
 
 ## Transfer Windows installation files
 Once again, you need to mount the harddisk image, but because it is now partitioned and formatted you don't need to specify the geometry any longer.
