@@ -46,10 +46,6 @@ cputype=pentium_mmx
 core=normal
 cycles=60000
 
-[pci]
-# Uncomment the line below if you don't want 3dfx Voodoo support
-#voodoo=false
-
 [sblaster]
 irq=5
 
@@ -341,3 +337,26 @@ For more information about setting up MIDI support, see link:Guide%3ASetting-up-
 
 # Enabling printing
 To enable printing support in Windows 95, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
+
+# 3dfx Voodoo
+The emulated 3dfx Voodoo PCI device is enabled by default in DOSBox-X, but Windows 95 lacks drivers for it by default.
+As such it will show in Device Manager with an error.
+
+A driver package is available link:https://www.philscomputerlab.com/drivers-for-voodoo.html[here (v3.01.00).]
+
+If for some reason you do not want 3dfx Voodoo emulation, it can be disabled by adding the following lines to your DOSBox-X config:
+....
+[pci]
+voodoo=false
+....
+
+# Hard Disk Read-ahead optimization
+In "System Properties", select the "Performance" tab, and click the "File System..." button.
+A separate "File System Properties" window will open.
+On the "Hard Disk" tab you can specify the Read-ahead optimization.
+
+Based on benchmark results (WinBench 96), it seems that setting this to "None" gives the best performance in combination with DOSBox-X, although the difference is marginal.
+This is no doubt because the host system is better at caching then the Windows 98 cache function.
+
+# Outstanding issues
+* Resolve "Drive A is using MS-DOS compatibility mode file system"
