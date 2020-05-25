@@ -145,24 +145,20 @@ Most Windows 3.x versions were shipped on diskettes, requiring anywhere between 
 In DOSBox-X you can mount a disk image, copy its contents into a folder, unmount the disk image and do the next. Here is an example of such a procedure:
 
 ....
-mount c /home/myuser/winroot
-c:
-mkdir INSTALL
-imgmount a DISK01.IMG
-copy a:\*.* C:\INSTALL
-mount -u a
-imgmount a DISK02.IMG
-copy a:\*.* C:\INSTALL
-mount -u a
-imgmount a DISK03.IMG
-copy a:\*.* C:\INSTALL
-mount -u a
-imgmount a DISK04.IMG
-copy a:\*.* C:\INSTALL
-mount -u a
-imgmount a DISK05.IMG
-copy a:\*.* C:\INSTALL
-mount -u a
+MOUNT C /home/myuser/winroot
+C:
+MD INSTALL
+IMGMOUNT A DISK01.IMG -U
+COPY A:\*.* C:\INSTALL
+IMGMOUNT A DISK02.IMG -U
+COPY A:\*.* C:\INSTALL
+IMGMOUNT A DISK03.IMG -U
+COPY A:\*.* C:\INSTALL
+IMGMOUNT A DISK04.IMG -U
+COPY A:\*.* C:\INSTALL
+IMGMOUNT A DISK05.IMG -U
+COPY A:\*.* C:\INSTALL
+IMGMOUNT A -U
 ....
 
 ## Mounting an installation CD-ROM
