@@ -82,7 +82,7 @@ This installation method allows FAT32 volumes, which can be greater then 2GB.
 ## Requirements
 
 * DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
-* Windows 98 *Full OEM* edition CD-ROM image (named "Win98.iso" in the example below).
+* Windows 98 *OEM Full* edition CD-ROM image (named "Win98.iso" in the example below).
 
 Getting this image file is outside the scope of this guide.
 
@@ -154,7 +154,7 @@ Once the files are copied, start REGEDIT and navigate to ``HKEY_LOCAL_MACHINE\So
 
 In the case of Windows 98SE, copying the entire directory will require roughly 174MB of diskspace. The \WIN98\OLS and \WIN98\TOUR sub-directories can however be skipped which will save roughly 54MB, bringing the total to roughly 120MB.
 
-# Method 2: Running setup.exe from DOSBox-X
+# Installation Method 2: FAT16 volume up to 2GB
 
 This method will only allow a primary FAT16 drive of up to 2GB. If you want a larger (FAT32) primary drive, follow the first method.
 
@@ -227,6 +227,119 @@ Save the config file, and at the command-prompt you can type the following to co
 ....
 dosbox-x -conf win98.conf
 ....
+
+# Installation Method 3: FAT32 volume
+
+This installation method allows FAT32 volumes, which can be greater then 2GB.
+
+## Requirements
+
+* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+* Windows 98 CD-ROM image (named "Win98.iso" in the example below).
+* Windows 98 bootdisk image (named "bootdisk.img" in the example below)
+
+Getting these image files is outside the scope of this guide.
+
+## Preparing the Harddisk image
+First you need to start DOSBox-X from the command-line, using the newly created win98.conf.
+This assumes that dosbox-x is in your path and win98.conf is in your current directory.
+....
+dosbox-x -conf win98.conf
+....
+Then in DOSBox-X you need to create a new harddisk image file, and mount it as drive 2 (IDE primary master).
+You cannot simply mount it a "C" until the drive is partitioned and formatted.
+
+This FAT32 example uses a 4GB partition.
+According to Microsoft the official maximum size is 32GB, but in actuality FAT32 can support up to 2TB.
+However, sizes larger then 128GB are not supported by the generic IDE driver in Windows 95.
+Larger sizes may be possible with 3rd party drivers, but are not covered here.
+....
+IMGMAKE hdd.img -t hd_4gig -nofs
+IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
+IMGMOUNT A bootdisk.img
+VER SET 7.1
+A:FDISK /FPRMT
+....
+If the HDD image you created is larger then 512MB, FDISK will prompt you if you want to enable large disk support.
+Confirm that you want to enable large disk support by pressing Y.
+
+Now your in the FDISK main menu, select the following options:
+
+* option 1 - Create DOS partition or Logical DOS Drive
+* option 1 - Create Primary DOS Partition
+
+Confirm that you want to use the maximum available size for the primary DOS partition by pressing Y.
+After this press ESC twice and your back at the MS-DOS prompt.
+
+Do not reset the guest operating system, as FDISK implies.
+
+##  Format the drive
+
+Next you need to mount the Windows 98 CD-ROM image. This can be in ISO or CUE/BIN format.
+
+....
+IMGMOUNT D Win98.iso -t cdrom
+....
+
+And boot from the Windows bootdisk.
+....
+BOOT A:
+....
+
+When booting from the Windows 98 bootdisk, it should ask if you want to start Windows 98 Setup, or start the computer with or without CD-ROM support.
+Select to start the computer with CD-ROM support.
+
+Now run the following commands:
+....
+D:\WIN98\FORMAT C: /S /V:WIN98
+....
+
+Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ```Z:\``` prompt.
+
+## Transfer Windows installation files
+Once again, you need to mount the harddisk image, but because it is now partitioned and formatted you don't need to specify the geometry any longer.
+
+....
+IMGMOUNT C hdd.img
+IMGMOUNT D Win98.iso -t cdrom
+....
+
+You will now copy the contents of the CD-ROM to the HDD image.
+
+....
+XCOPY D:\WIN98 C:\WIN98 /I /E
+....
+
+The files in the above example are copied to the C:\WIN98 directory.
+You may want to use "C:\WINDOWS\OPTIONS\CABS" instead, as that is the directory that OEM installs normally use.
+But if you do, be aware that the installer will attempt to install into C:\WINDOWS.000 as C:\WINDOWS already exists.
+You will want to change this back to "C:\WINDOWS".
+
+## Start the installation
+Your now finally ready to start the installation process.
+....
+VER SET 7.1
+C:
+CD WIN98
+SETUP
+....
+
+At the end of the first phase of the installation process, the setup program will reboot DOSBox-X and your again at the `Z:\`` prompt.
+
+Now close DOSBox-X, and edit the win98.conf config file and add the following two lines to the [autoexec] section at the end:
+....
+IMGMOUNT C hdd.img
+BOOT C:
+....
+
+Start DOSBox-X from the command-line with the following command:
+
+....
+dosbox-x -conf win98.conf
+....
+
+DOSBox-X will start, and the Windows 98 installation will continue.
+
 
 # General installation Notes
 
