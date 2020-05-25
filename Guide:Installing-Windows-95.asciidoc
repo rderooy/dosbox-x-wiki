@@ -89,12 +89,17 @@ Copy the above config and save it as *win95.conf*
 ** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You will probably want to change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
 
 # Installation Method 1: FAT16 volume up to 2GB
+This installation method only allows for a primary FAT16 volume, which cannot be greater then 2GB.
+If you want a larger C: drive using FAT32, follow Method 2 below.
 
-*Notes*
+## Requirements
 
-* This method relies on DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
-* This method will result in a C: drive using FAT16. If you want a FAT32 C: drive, follow Method 2.
+* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+* Windows 95 CD-ROM image (named "Win95.iso" in the example below).
 
+Getting the image file is outside the scope of this guide.
+
+## Preparing the Harddisk image
 First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
 ....
 dosbox-x -conf win95.conf
@@ -160,13 +165,15 @@ dosbox-x -conf win95.conf
 
 # Installation Method 2: FAT32 volume
 
-*Notes*
+This installation method allows FAT32 volumes, which can be greater then 2GB.
 
-* If you want to have your C: drive as FAT32, which allows volumes greater then 2GB, you need to have a MS-DOS 7.1 boot disk with the corresponding FDISK and FORMAT utilities.
-* You need to have at least *Windows 95 OSR2*, as older releases lack FAT32 support.
+## Requirements
 
-## Windows boot disk
-This process requires a suitable Windows 95 OSR2 (or later) installation boot disk image. Getting such an image file is outside the scope of this guide.
+* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+* Windows 95 OSR2 (Win95B) or later CD-ROM image (named "Win95.iso" in the example below).
+* Windows 95 OSR2 (Win95B) or later bootdisk image (named "bootdisk.img" in the example below)
+
+Getting these image files is outside the scope of this guide.
 
 ## Preparing the Harddisk image
 First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
