@@ -72,15 +72,10 @@ This guide does not seek to replicate those pages. Instead this page will contai
 * link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_3.0[Wikipedia: Windows 3.0]
 * link:https://en.wikipedia.org/wiki/Windows_3.1x[Wikipedia: Windows 3.1x]
-* link:https://microsoft.fandom.com/wiki/Windows_3.1[Fandom: Windwos 3.1]
+* link:https://microsoft.fandom.com/wiki/Windows_3.1[Fandom: Windows 3.1]
 * link:https://betawiki.net/wiki/Windows_3.0[BetaWiki: Windows 3.0]
 * link:https://betawiki.net/wiki/Windows_3.00a_Multimedia_Edition[BetaWiki: Windows 3.00a Multimedia Edition]
 * link:https://betawiki.net/wiki/Windows_3.1xp[BetaWiki: Windows 3.1x]
-* link:http://toastytech.com/guis/win30.html[Windows 3.0 GUI screenshots]
-* link:http://toastytech.com/guis/win3mme.html[Windows 3.0a with Multimedia Extensions 1.0 GUI screenshots]
-* link:http://toastytech.com/guis/win31.html[Windows 3.1 GUI screenshots]
-* link:http://toastytech.com/guis/win311.html[Windows 3.11 GUI screenshots]
-* link:http://toastytech.com/guis/win32.html[Windows 3.2 GUI screenshots]
 
 ### General Notes
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious key-presses to be registered causing undesirable effects.
@@ -128,7 +123,7 @@ scaler=none
 aspect=false
 
 [autoexec]
-....
+...
 
 Copy the above config and save it as *win3x.conf*
 
