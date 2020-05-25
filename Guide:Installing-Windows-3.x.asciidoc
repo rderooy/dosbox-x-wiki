@@ -57,6 +57,8 @@ toc::[]
 
 Windows 3.x was available for both Retail and via OEM, with exception of *Windows 3.0a with Multimedia Extensions* which was available only through OEMs.
 
+OEM versions may include and default to different drivers in SETUP for things like video and sound.
+
 ## README.1ST
 
 There are already some guides to installing Windows 3.x in DOSBox, and those guides will also work with DOSBox-X. Some examples:
