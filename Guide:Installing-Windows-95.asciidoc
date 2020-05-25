@@ -88,7 +88,7 @@ Copy the above config and save it as *win95.conf*
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 ** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You will probably want to change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
 
-# Method 1: Running setup.exe from DOSBox-X
+# Installation Method 1: FAT16 volume up to 2GB
 
 *Notes*
 
@@ -158,11 +158,11 @@ Save the config file, and at the command-prompt you can type the following to co
 dosbox-x -conf win95.conf
 ....
 
-# Method 3: Booting from a DOS bootdisk - FAT32
+# Installation Method 2: FAT32 volume
 
 *Notes*
 
-* If you want to have your C: drive as FAT32, you need to have a MS-DOS 7.1 boot disk with the corresponding FDISK and FORMAT utilities.
+* If you want to have your C: drive as FAT32, which allows volumes greater then 2GB, you need to have a MS-DOS 7.1 boot disk with the corresponding FDISK and FORMAT utilities.
 * You need to have at least *Windows 95 OSR2*, as older releases lack FAT32 support.
 
 ## Windows boot disk
