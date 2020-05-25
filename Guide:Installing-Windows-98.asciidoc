@@ -255,7 +255,7 @@ Then in DOSBox-X you need to create a new harddisk image file, and mount it as d
 You cannot simply mount it a "C" until the drive is partitioned and formatted.
 
 This FAT32 example uses a 4GB partition.
-According to Microsoft the official maximum size is 32GB, but in actuality FAT32 can support up to 2TB.
+While Windows 2000 or later won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, FAT32 can support up to 2TB as the maximum size.
 However, sizes larger then 128GB are not supported by the generic IDE driver in Windows 95.
 Larger sizes may be possible with 3rd party drivers, but are not covered here.
 ....
