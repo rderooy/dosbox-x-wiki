@@ -123,7 +123,7 @@ scaler=none
 aspect=false
 
 [autoexec]
-...
+....
 
 Copy the above config and save it as *win3x.conf*
 
