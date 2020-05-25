@@ -184,7 +184,7 @@ Then in DOSBox-X you need to create a new harddisk image file, and mount it as d
 
 This FAT32 example uses a 4GB partition. According to Microsoft the official maximum size is 32GB, but in actuality FAT32 can support up to 2TB. However, sizes larger then 128GB are not supported by the generic IDE driver in Windows 95. Larger sizes may be possible with 3rd party drivers, but are not covered here.
 ....
-IMGMAKE hdd.img -t hd_4gig
+IMGMAKE hdd.img -t hd_4gig -nofs
 IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
 IMGMOUNT A bootdisk.img
 VER SET 7.1
