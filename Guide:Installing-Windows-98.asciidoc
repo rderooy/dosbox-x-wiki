@@ -36,9 +36,8 @@ cycles=60000
 cputype=pentium_mmx
 core=normal
 
-[pci]
-# Uncomment the line below if you don't want 3dfx Voodoo support
-#voodoo=false
+[sblaster]
+irq=5
 
 [ne2000]
 # If you want networking in Windows, set ne2000=true.
@@ -61,7 +60,6 @@ cd-rom insertion delay=4000
 
 [render]
 scaler=none
-aspect=false
 
 [autoexec]
 ....
@@ -79,35 +77,65 @@ Copy the above config and save it as *win98.conf*
 # Method 1: Boot from CD-ROM image
 Starting with Windows 98, it is possible to boot directly from the CD-ROM, as long as you have the "OEM Full" edition, in which case no separate bootdisk is needed.
 
+This installation method allows FAT32 volumes, which can be greater then 2GB.
+
+## Requirements
+
+* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+* Windows 98 *Full OEM* edition CD-ROM image (named "Win98.iso" in the example below).
+
+Getting this image file is outside the scope of this guide.
+
 ## Preparing the Harddisk image
 First you need to start DOSBox-X from the command-line, using the newly created win98.conf. This assumes that dosbox-x is in your path and win98.conf is in your current directory.
 ....
 dosbox-x -conf win98.conf
 ....
-Then in DOSBox-X you need to create a new harddisk image file. At this time DOSBox-X's IMGMAKE command has no support for the FAT32 filesystem, although you can use a 3rd party tool to create FAT32 image files. When using the IMGMAKE command to create a disk image that is greater than 2GB, you need to mount it as drive 2 (IDE primary master) instead of a drive letter such as Drive C.
+Then in DOSBox-X you need to create a new harddisk image file.
+At this time DOSBox-X's IMGMAKE command has no support for the FAT32 filesystem, although you can use a 3rd party tool to create FAT32 image files.
+When using the IMGMAKE command to create a disk image that is greater than 2GB, you need to mount it as drive 2 (IDE primary master) instead of a drive letter such as Drive C.
 
-This FAT32 example uses a 4GB partition. While Windows 2000 or later won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, FAT32 can support up to 2TB as the maximum size. However, sizes larger then 128GB are not supported by the generic IDE driver in Windows 98. Larger sizes may be possible with 3rd party drivers, but are not covered here.
+This FAT32 example uses a 4GB partition.
+Technically the FAT32 filesystem is capable of supporting partitions up to 2TB, but the generic IDE driver in Windows 98 cannot handle volumes greater then 128GB.
+Larger partition sizes may be possible with 3rd party drivers, but are not covered here.
+In later Windows version, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and exFAT.
 ....
-IMGMAKE hdd.img -t hd_4gig
-IMGMOUNT 2 hdd.img -fs none
+IMGMAKE hdd.img -t hd_4gig -nofs
+IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
 ....
-Note: If you create a different sized HDD, pay close attention to the output of IMGMAKE and write down the sectors, heads and cylinders as you will need them to access the harddisk from here on. The IMGMOUNT size parameter should be specified as: -size 512,<sectors>,<heads>,<cylinders>.
+Note: If you create a different sized HDD, pay close attention to the output of IMGMAKE and write down the sectors, heads and cylinders as you will need them to access the harddisk until it is partitioned and formatted.
+The IMGMOUNT size parameter should be specified as: -size 512,<sectors>,<heads>,<cylinders>.
 
 == Starting the installation
 Now let’s boot from the CD-ROM and start the installation.
 ....
-IMGMOUNT D Win98.iso -t iso
+IMGMOUNT D Win98.iso -t cdrom
 IMGMOUNT 0 -el-torito D -t floppy -fs none
 BOOT A:
 ....
 
-If the second ```IMGMOUNT``` command gives an error "*El Torito boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
+If the second ``IMGMOUNT`` command gives an error "*El Torito boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
 
-After the first time the Windows installer reboots, your back at the DOSBox-X ```Z:\>``` prompt. Close DOSBox-X and edit your win98.conf config file, and add the following lines in the [autoexec] section at the end of the file:
+You will first get a Startup menu, where you need to select "Boot from CD-ROM".
+
+The installer will now ask you to configure unallocated space. Continue with the recommended settings, and when it asks if you want to enable large disk support, select Yes. After this the Setup program will reboot DOSBox-X, and your again at the ``Z:\`` prompt.
+
+You now need to perform the same IMGMOUNT and BOOT commands as before.
+....
+IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
+IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT 0 -el-torito D -t floppy -fs none
+BOOT A:
+....
+
+At this point it should format the harddisk and the installation process should start.
+
+When the Windows installer again reboots, and your back at the DOSBox-X ``Z:\>`` prompt.
+Close DOSBox-X and edit your win98.conf config file, and add the following lines in the [autoexec] section at the end of the file:
 
 ....
-IMGMOUNT 2 hdd.img -fs none
-IMGMOUNT D Win98.iso -t iso
+IMGMOUNT C hdd.img
+IMGMOUNT D Win98.iso -t cdrom
 BOOT C:
 ....
 
@@ -122,15 +150,20 @@ This is an optional step. It is to prevent Windows from asking for the CD-ROM wh
 
 Boot Windows 98 with the CD-ROM image mounted. In Windows 98, copy the \WIN98 directory and its contents from the CD-ROM to your C: drive. You can copy it to any directory you want, but we assume here that you copied it to C:\WIN98
 
-Once the files are copied, start REGEDIT and navigate to ```HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup``` and change ```SourcePath=``` to the location where you copied the files. e.g. ```SourcePath=C:\WIN98```
+Once the files are copied, start REGEDIT and navigate to ``HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup`` and change ``SourcePath=`` to the location where you copied the files. e.g. ``SourcePath=C:\WIN98``
 
 In the case of Windows 98SE, copying the entire directory will require roughly 174MB of diskspace. The \WIN98\OLS and \WIN98\TOUR sub-directories can however be skipped which will save roughly 54MB, bringing the total to roughly 120MB.
 
 # Method 2: Running setup.exe from DOSBox-X
-*Notes*
 
-* This method will only allow a primary FAT16 drive of up to 2GB. If you want a larger (FAT32) primary drive, follow the first method.
-* This method relies on DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+This method will only allow a primary FAT16 drive of up to 2GB. If you want a larger (FAT32) primary drive, follow the first method.
+
+## Requirements
+
+* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+* Windows 98 CD-ROM image (named "Win98.iso" in the example below).
+
+Getting this image file is outside the scope of this guide.
 
 First you need to start DOSBox-X from the command-line, using the newly created win98.conf. This assumes that dosbox-x is in your path and win98.conf is in your current directory.
 ....
@@ -147,7 +180,7 @@ You will also need to mount the Windows 98 CD-ROM. There are a few ways of doing
 ### Mount as ISO image
 If you have a copy of the Windows 98 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
 ....
-IMGMOUNT D Win98.iso
+IMGMOUNT D Win98.iso -t cdrom
 ....
 
 ### Mount as directory
@@ -182,7 +215,7 @@ CD \WIN98
 SETUP
 ....
 
-Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win98.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
+Now run through the install process, until it reboots and your back at the DOSBox-X ``Z:\`` prompt. At this point close DOSBox-X, and edit your win98.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
 
 ....
 IMGMOUNT C hdd.img
@@ -195,19 +228,10 @@ Save the config file, and at the command-prompt you can type the following to co
 dosbox-x -conf win98.conf
 ....
 
-# Method 3: Booting from a DOS bootdisk
-If none of the installation options are suitable, you can boot from a Windows 98 or DOS 5.0 (or later) boot disk. This process is described on the link:Guide%3AInstalling-Windows-95[Windows 95 installation page] and will not be duplicated here.
-
 # General installation Notes
 
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects.
-* When creating your HDD image with ```IMGMAKE```, instead of specifying a custom size, you can choose a pre-defined template. The advantage of using a pre-defined template in combination with an unsupported partition layout or filesystem (e.g. FAT32) is that you don't have to specify the sector-size, sectors, heads and cylinders each time you mount the HDD. The pre-defined HDD templates can be seen by running ```IMGMAKE``` without arguments.
-** Example: If you create a custom 4GB size HDD image:
-*** ```IMGMAKE hdd.img -t hd -size 4096 -nofs```
-*** ```MOUNT 2 hdd.img -size 512,63,130,1023 -fs none```
-** Example: If using a pre-defined HDD template:
-*** ```IMGMAKE hdd.img -t hd_4gig -nofs```
-*** ```MOUNT 2 hdd.img -fs none```
+* When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 
 # Booting Windows 98 after installation
 After the installation is finished, you can start Windows 98 from the command-prompt with the following command:
@@ -241,8 +265,11 @@ In the Network settings, there may also be a "Dial-Up Adapter" listed, which you
 Additionally, if you only want TCP/IP and don't want the Windows logon dialog on startup, you can remove the "Windows Logon" service from the Network configuration settings (although it will complain that "Your network is not complete", which you can ignore).
 This does mean you can no longer share files over the network using the Windows file sharing functions, but then current Windows versions are not backward compatible with Windows 98 anyway.
 
+If networking does not work, see link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up networking in DOSBox-X]
+
 # Enabling sound
 The Windows 98 installer does not always detect the presence of a sound card (or it may detect it incorrectly), as the emulated soundcard in DOSBox-X does not support PnP.
+Setting the SoundBlaster 16 IRQ to 5 as this config does, seems to improve the chance of it getting detected.
 
 If you do not have sound support, first go to Device Manager and look under "Sound, video and game controllers" if it detected a "Creative Sound Blaster 16 or AWE-32".
 If you see something unexpected, such as a "Adlib Gold", remove it.
@@ -258,6 +285,11 @@ If you have a working DOSBox-X MIDI setup, either emulated or real, you can use 
 Open the "Control Panel", and then double-click on "Multimedia Properties".
 
 Now on the "MIDI" tab, change the "Single instrument" option to "Roland MPU-401", and click OK to close the window.
+
+For more information about setting up MIDI support, see link:Guide%3ASetting-up-MIDI-in-DOSBox%E2%80%90X[Guide: Setting up MIDI in DOSBox-X]
+
+# Enabling printing
+To enable printing support in Windows 95, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
 
 # 3dfx Voodoo
 The emulated 3dfx Voodoo PCI device is enabled by default in DOSBox-X, and both Windows 98 and 98SE include a driver and will automatically detect it.
