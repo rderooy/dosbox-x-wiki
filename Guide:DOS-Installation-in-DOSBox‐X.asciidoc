@@ -138,3 +138,16 @@ If HIMEM is being loaded on startup, you may get a message "HIMEM is testing ext
 
 ### Reboot DOS
 If for some reason you want to do a reboot (reset) from the command-line, look for a 3rd party utility called ```RESTART.COM```.
+
+### Boot menu
+When using ``IMGMAKE`` to create a partitioned image, and when booting from the image afterwards you will get the following boot menu with a 4 second timeout.
+
+....
+F1 . . . Dos
+F5 . . . disk2
+Default: F1
+....
+
+This is due to a special MBR (Master Boot Record) that IMGMAKE creates.
+
+Pressing Enter or F1 will continue the boot process, without having to wait for the timeout. Alternatively you can remove the boot menu by booting to DOS and running ``FDISK /MBR`` to create a new MBR without the boot menu.
