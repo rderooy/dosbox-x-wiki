@@ -74,10 +74,10 @@ Copy the above config and save it as *win98.conf*
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 * Setting cycles=60000 gives significantly better video and disk performance, but slightly worse CPU performance compared to cycles=auto
 
-# Method 1: Boot from CD-ROM image
+# Installation Method 1: Boot from CD-ROM image
 Starting with Windows 98, it is possible to boot directly from the CD-ROM, as long as you have the "OEM Full" edition, in which case no separate bootdisk is needed.
 
-This installation method allows FAT32 volumes, which can be greater then 2GB.
+This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which can be greater then 2GB.
 
 ## Requirements
 
