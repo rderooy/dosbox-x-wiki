@@ -240,6 +240,7 @@ You will want to change this back to "C:\WINDOWS".
 ## Start the installation
 Your now finally ready to start the installation process.
 ....
+VER SET 7.1
 C:
 CD WIN95
 SETUP
