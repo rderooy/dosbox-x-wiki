@@ -26,7 +26,6 @@ This guide also assumes a Full Retail or OEM version of Windows 95. Upgrade edit
 * link:https://en.wikipedia.org/wiki/Windows_95[Wikipedia: Windows 95]
 * link:https://microsoft.fandom.com/wiki/Windows_95[Fandom: Windows 95]
 * link:https://betawiki.net/wiki/Windows_95[Betawiki: Windows 95]
-* link:http://toastytech.com/guis/win95.html[Windows 95 GUI screenshots]
 
 There are other guides to installing Windows 95 in DOSBox that may be more or less applicable to DOSBox-X:
 
