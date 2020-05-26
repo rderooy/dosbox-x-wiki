@@ -28,7 +28,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Better compatibility with DOS applications
 * Built-in external tools such as CWSDPMI, DOSIDLE and IMGMAKE
 * Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
-* Support for CONFIG.SYS commands (e.g. DEVICE, BUFFERS, FCBS, LASTDRIV)
+* Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for ROM BIOS images
 * Support for printer output
