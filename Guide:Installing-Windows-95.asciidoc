@@ -7,6 +7,8 @@ Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
 toc::[]
 
 # Overview
+This guide will give a general description of installing Windows 95 in DOSBox-X, in addition to addressing some common issues.
+
 ## CD-ROM editions this applies to
 
 * Windows 95 (RTM; Original release)
@@ -352,7 +354,7 @@ However, for Windows 95 it is necessary to force the IRQ to 5 to prevent Window 
 
 An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library (ignore that the download claims it is for Windows 98, the update is for both Windows 95 and 98).
 
-## Enabling MIDI
+## Enabling General MIDI
 If you have a working DOSBox-X General MIDI setup, either emulated or real, you can use that in Windows 95.
 Open the "Control Panel", and then double-click on "Multimedia Properties".
 
