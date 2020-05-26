@@ -7,7 +7,7 @@ Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
 toc::[]
 
 # Overview
-This guide will use the S3 Trio64 video adapter and SB16 sound card, which DOSBox-X emulates by default.
+This guide will give a general description of installing Windows 98 in DOSBox-X, in addition to addressing some common issues.
 
 ## CD-ROM editions this applies to
 
@@ -19,7 +19,6 @@ This guide will use the S3 Trio64 video adapter and SB16 sound card, which DOSBo
 * link:https://en.wikipedia.org/wiki/Windows_98[Wikipedia: Windows 98]
 * link:https://microsoft.fandom.com/wiki/Windows_98[Fandom: Windows 98]
 * link:https://betawiki.net/wiki/Windows_98[Betawiki: Windows 98]
-* link:http://toastytech.com/guis/win98.html[Windows 98 GUI screenshots]
 
 # DOSBox-X config file
 You first need to create a DOSBox-X config file.
