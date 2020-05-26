@@ -14,6 +14,8 @@ This guide will give a general description of installing Windows 98 in DOSBox-X,
 * Windows 98 (RTM; Original release)
 * Windows 98 Second Edition (98SE)
 
+This guide assumes a Full Retail or OEM version of Windows 98. Upgrade editions have additional requirements not covered by this guide.
+
 ## External links
 * link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_98[Wikipedia: Windows 98]
