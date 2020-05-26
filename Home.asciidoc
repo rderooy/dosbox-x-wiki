@@ -822,7 +822,9 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 
 ### Compatibility
 
-We are making efforts to ensure that the vast majority of DOS games and applications will run in DOSBox-X. DOSBox-X used to focus on the demoscene (especially anything prior to 1996) because that era of the MS-DOS scene tends to have all manner of weird hardware tricks, bugs, and speed-sensitive issues that make them the perfect kind of stuff to test emulation accuracy against, even more so than old DOS games. But we also test against other DOS games and applications, as well as PC-98 games.
+We are making efforts to ensure that the vast majority of DOS games and applications will run in DOSBox-X, and these include both text-mode and graphical-mode DOS programs. Microsoft Windows versions that are largely DOS-based (such as Windows 3.x and 9x) are officially supported by DOSBox-X as well. Note that certain config settings may need to be changed from the default ones for some of these programs to work smoothly.
+
+DOSBox-X used to focus on the demoscene (especially anything prior to 1996) because that era of the MS-DOS scene tends to have all manner of weird hardware tricks, bugs, and speed-sensitive issues that make them the perfect kind of stuff to test emulation accuracy against, even more so than old DOS games. But without a doubt we also test against other DOS games and applications, as well as PC-98 programs (most of them are games).
 
 DOSBox-X vs Demoscene test results (up to date):
 
