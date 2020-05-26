@@ -353,7 +353,7 @@ However, for Windows 95 it is necessary to force the IRQ to 5 to prevent Window 
 An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library (ignore that the download claims it is for Windows 98, the update is for both Windows 95 and 98).
 
 ## Enabling MIDI
-If you have a working DOSBox-X MIDI setup, either emulated or real, you can use that in Windows 95.
+If you have a working DOSBox-X General MIDI setup, either emulated or real, you can use that in Windows 95.
 Open the "Control Panel", and then double-click on "Multimedia Properties".
 
 Now on the "MIDI" tab, change the "Single instrument" option to "MPU-401 Compatible", and click OK to close the window.
