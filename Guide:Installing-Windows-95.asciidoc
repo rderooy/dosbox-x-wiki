@@ -41,13 +41,13 @@ autolock=true
 [dosbox]
 title=Windows 95
 memsize=64
+vesa modelist width limit=0
+vesa modelist height limit=0
 
 [cpu]
 cputype=pentium_mmx
 core=normal
 cycles=60000
-vesa modelist width limit=0
-vesa modelist height limit=0
 
 [sblaster]
 sbtype=sb16vibra
