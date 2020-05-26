@@ -31,12 +31,15 @@ autolock=true
 title=Windows 98
 memsize=64
 cycles=60000
+vesa modelist width limit=0
+vesa modelist height limit=0
 
 [cpu]
 cputype=pentium_mmx
 core=normal
 
 [sblaster]
+sbtype=sb16vibra
 irq=5
 
 [ne2000]
@@ -379,21 +382,40 @@ This does mean you can no longer share files over the network using the Windows 
 
 If networking does not work, see link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up networking in DOSBox-X]
 
-# Enabling sound
-The Windows 98 installer does not always detect the presence of a sound card (or it may detect it incorrectly), as the emulated soundcard in DOSBox-X does not support PnP.
-Setting the SoundBlaster 16 IRQ to 5 as this config does, seems to improve the chance of it getting detected.
+# Emulated video adapter and video mode
+The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths.
 
-If you do not have sound support, first go to Device Manager and look under "Sound, video and game controllers" if it detected a "Creative Sound Blaster 16 or AWE-32".
-If you see something unexpected, such as a "Adlib Gold", remove it.
+A few enhancements have been made, compared to a real S3 Trio64:
 
-If the SB16 is missing from Device Manager, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware".
-Now simply follow the guide and let it install support for any devices that it detects.
+* No real S3 Trio64 was ever produced with more then 4MB video memory, under DOSBox-X you can optionally configure 8MB.
+* The real cards never supported wide-screen resolutions, wide-screen VESA modes can optionally be enabled in DOSBox-X.
+
+However, these enhancements cannot be used in Windows 98 with the S3 video driver due to driver limitations.
+As such you will be limited to 640x480 in 32bit colour, 1024x768 in 16bit colour or 1280x1024 in 8bit (256) colour.
+
+These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
+First add the following lines to your DOSBox-X config file in the [dosbox] section:
+....
+vmemsize=8
+allow high definition vesa modes=true
+allow unusual vesa modes=true
+allow low resolution vesa modes=false
+....
+Download and extract the latest VBEMP driver package and install the driver from the 032MB directory.
+
+With these settings modes up to 1920x1080 in 32bit colour, or 1920x1440 in 16bit colour are possible.
+
+Note, using the VBEMP driver does have a negative graphics performance impact, which when measured in WinBench96 Graphics WinMark, can be a reduction of up to 59%.
+
+# Emulated sound card
+The emulated sound card used in this guide is the SB16 Vibra, instead of the default SB16. This is because the SB16 Vibra is a ISA PnP card, and therefore automatically detected by Windows.
+The emulated SB16 Vibra does not emulate the CQM, instead if uses the same OPL3 emulation as for the regular SB16 model.
 
 Both Windows 98 and 98SE include SB16 driver version 4.37.00.1998.
-An link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library.
+An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library.
 
-## Enabling MIDI
-If you have a working DOSBox-X MIDI setup, either emulated or real, you can use that in Windows 98.
+## Enabling General MIDI
+If you have a working DOSBox-X General MIDI setup, either emulated or real, you can use that in Windows 98.
 Open the "Control Panel", and then double-click on "Multimedia Properties".
 
 Now on the "MIDI" tab, change the "Single instrument" option to "Roland MPU-401", and click OK to close the window.
