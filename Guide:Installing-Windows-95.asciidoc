@@ -219,7 +219,7 @@ Do not reset the guest operating system, as FDISK implies.
 Next you need to mount the Windows 95 CD-ROM image. This can be in ISO or CUE/BIN format.
 
 ....
-IMGMOUNT D Win95.iso -t cdrom
+IMGMOUNT D Win95.iso
 ....
 
 And boot from the Windows bootdisk.
@@ -241,7 +241,7 @@ Once again, you need to mount the harddisk image, but because it is now partitio
 
 ....
 IMGMOUNT C hdd.img
-IMGMOUNT D Win95.iso -t cdrom
+IMGMOUNT D Win95.iso
 ....
 
 You will now copy the contents of the CD-ROM to the HDD image.
