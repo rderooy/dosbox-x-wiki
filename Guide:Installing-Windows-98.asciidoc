@@ -118,7 +118,7 @@ The IMGMOUNT size parameter should be specified as: -size 512,<sectors>,<heads>,
 == Starting the installation
 Now let’s boot from the CD-ROM and start the installation.
 ....
-IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT D Win98.iso
 IMGMOUNT 0 -el-torito D -t floppy -fs none
 BOOT A:
 ....
@@ -132,7 +132,7 @@ The installer will now ask you to configure unallocated space. Continue with the
 You now need to perform the same IMGMOUNT and BOOT commands as before.
 ....
 IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
-IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT D Win98.iso
 IMGMOUNT 0 -el-torito D -t floppy -fs none
 BOOT A:
 ....
@@ -144,7 +144,7 @@ Close DOSBox-X and edit your win98.conf config file, and add the following lines
 
 ....
 IMGMOUNT C hdd.img
-IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT D Win98.iso
 BOOT C:
 ....
 
@@ -189,7 +189,7 @@ You will also need to mount the Windows 98 CD-ROM. There are a few ways of doing
 ### Mount as ISO image
 If you have a copy of the Windows 98 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
 ....
-IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT D Win98.iso
 ....
 
 ### Mount as directory
@@ -287,7 +287,7 @@ Do not reset the guest operating system, as FDISK implies.
 Next you need to mount the Windows 98 CD-ROM image. This can be in ISO or CUE/BIN format.
 
 ....
-IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT D Win98.iso
 ....
 
 And boot from the Windows bootdisk.
@@ -310,7 +310,7 @@ Once again, you need to mount the harddisk image, but because it is now partitio
 
 ....
 IMGMOUNT C hdd.img
-IMGMOUNT D Win98.iso -t cdrom
+IMGMOUNT D Win98.iso
 ....
 
 You will now copy the contents of the CD-ROM to the HDD image.
