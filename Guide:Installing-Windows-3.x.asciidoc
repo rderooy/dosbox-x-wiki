@@ -166,7 +166,7 @@ If you have a "Windows 3.0 Multimedia Edition" CD-ROM image, you can simply moun
 
 e.g.
 ....
-IMGMOUNT D win30me.iso -t iso
+IMGMOUNT D win30me.iso
 ....
 
 The installer is normally locate on the CD in the MWIN directory as SETUP.EXE
