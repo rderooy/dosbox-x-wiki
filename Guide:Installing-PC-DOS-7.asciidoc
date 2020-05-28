@@ -47,7 +47,7 @@ Note: This method requires DOSBox-X 0.83.2 or newer.
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
- IMGMOUNT D PC-DOS_2000.iso -t iso
+ IMGMOUNT D PC-DOS_2000.iso
  D:
  SETUP
 ....
