@@ -719,12 +719,6 @@ Erases the mapper file used by the default clean configuration file.
 * **-resetmapper**
 +
 Erases the mapper file used by the default clean configuration file.
-* **-console**
-+
-Starts DOSBox-X with the console window (Windows builds only).
-* **-noconsole**
-+
-Starts DOSBox-X without showing the console window (Windows debug builds only).
 * **-nogui**
 +
 Starts DOSBox-X without showing its GUI menu (Windows builds only).
@@ -761,15 +755,6 @@ Disables check of the NumLock key (Windows builds only).
 * **-date-host-forced**
 +
 Forces synchronization of date with the host system.
-* **-debug**
-+
-Sets all logging levels to debug.
-* **-early-debug**
-+
-Logs early initialization messages in DOSBox-X (this option implies -console).
-* **-keydbg**                    
-+
-Logs all SDL key events (debugging).
 * **-lang [message file]**
 +
 Uses specific message file instead of language= setting.
@@ -794,15 +779,35 @@ Executes the specified command in addition to the [autoexec] section of the load
 * **-set <section property=value>**
 +
 Sets the specified config option, overriding such option (if exists) in the loaded configuration file. Make sure to surround the string in quotes to cover spaces.
-* **-break-start**
-+
-Starts DOSBox-X and breaks into its debugger directly.
 * **-time-limit [n]**
 +
 Starts and terminates DOSBox-X after 'n' seconds.
 * **-fastbioslogo**
 +
 Skips the 1-second BIOS pause with Fast BIOS logo.
+* **-helpdebug**
++
+Shows debug-related command-line options.
+* **Debug-related options include the following:**
++
+* **-debug**
++
+Sets all logging levels to debug.
+* **-early-debug**
++
+Logs early initialization messages in DOSBox-X (this option implies -console).
+* **-keydbg**                    
++
+Logs all SDL key events (debugging).
+* **-break-start**
++
+Starts DOSBox-X and breaks into its debugger directly.
+* **-console**
++
+Starts DOSBox-X with the console window (Windows builds only).
+* **-noconsole**
++
+Starts DOSBox-X without showing the console window (Windows debug builds only).
 * **-log-con**
 +
 Logs CON output to a log file.
