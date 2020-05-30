@@ -328,7 +328,7 @@ Clears the screen of all input and returns just the current prompt in the upper 
 Usage: Simply enter CLS without any parameters.
 * **COMMAND** (external command)  
 +
-Restarts DOSBox-X's command shell.  
+Runs DOSBox-X's command shell.  
 +
 Usage: COMMAND [options]
 * **CONFIG** (external command)  
@@ -446,9 +446,9 @@ Jumps to a labeled line in a batch script.
 Usage: GOTO label
 * **HELP** (internal command)             
 +
-Shows command help.  
+Shows DOSBox-X command help.  
 +
-Usage: HELP [/all]
+Usage: HELP [/A or /ALL]
 * **HEXMEM16/HEXMEM32** (external command)  
 +
 Runs DOSLIB's HEXMEM tool, a memory viewer/dumper.  
@@ -651,7 +651,7 @@ Usage: TYPE [drive:][path][filename]
 +
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
 +
-Usage: VER [SET major.minor] or VER [SET major minor]  
+Usage: VER [/R], VER [SET major.minor] or VER [SET major minor]  
 +
 Note: "VER SET 3.3" will set the reported DOS version as 3.3 (3.30), whereas "VER SET 3 3" will set the version as 3.03.
 * **VERIFY** (internal command)  
