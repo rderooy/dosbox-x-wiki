@@ -667,7 +667,8 @@ Usage: VESAMOED [options]
 +
 Note: It was originally written because some old DOS games or demoscene productions, especially those shipped with a UNIVBE binary, assumed video mode numbers instead of enumerating like they should. It can also be used to rearrange VESA BIOS modes for retro developers who want to make sure their code works properly no matter what strange VESA BIOS their code runs into on real hardware. Because of limitations in DOSBox-X SVGA emulation and the render scaler architecture, the maximum resolution possible resolution is 1920x1440.
 * **VFRCRATE** (external command)  
-Forces video emulation to a specific refresh rate (or turn off the forced rate).  
++
+Locks or unlocks the video refresh rate to a specific frame rate.  
 +
 Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]  
 +
@@ -685,7 +686,7 @@ Usage: XCOPY source [destination] [options]
 +
 Note: It uses the XCOPY command from FreeDOS.
 +
-In addition, there are commands for debugging purposes such as **DEBUGBOX**, **INT2FDBG** and **NMITEST**.
+In addition, there are commands for debugging purposes such as **DEBUGBOX**, **INT2FDBG** and **NMITEST**. They are only available on builds that have the debugging feature enabled.
 
 ### DOSBox-X's Command-line Options
 
