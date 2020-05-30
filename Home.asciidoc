@@ -563,13 +563,6 @@ Moves a file or directory to another location.
 Usage: MOVE [/Y | /-Y] source1[, source2[,...]] destination  
 +
 Note: It uses the MOVE command from FreeDOS.
-* **NMITEST** (external command)  
-+
-Generates a non-maskable interrupt (NMI).  
-+
-Usage: NMITEST  
-+
-Note: This is a debugging tool to test that it and the interrupt handler work properly. Currently the only use of the NMI is PCjr emulation which receives an NMI every time a key is pressed on the keyboard.
 * **PATH** (internal command)  
 +
 Displays/Sets a search patch for executable files.  
@@ -691,6 +684,8 @@ Copies files and directory trees.
 Usage: XCOPY source [destination] [options]  
 +
 Note: It uses the XCOPY command from FreeDOS.
++
+In addition, there are commands for debugging purposes such as **DEBUGBOX**, **INT2FDBG** and **NMITEST**.
 
 ### DOSBox-X's Command-line Options
 
