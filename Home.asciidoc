@@ -485,7 +485,7 @@ Changes the layout of the keyboard used for different countries.
 Usage: KEYB [keyboard layout ID [codepage number [codepage file]]]
 * **LABEL** (external command)  
 +
-Changes the label of a drive.  
+Changes the volume label of a drive.  
 +
 Usage: LABEL [drive:][label]
 * **LASTDRIV** (external command)  
@@ -602,7 +602,7 @@ Adds comments in a batch file.
 Usage: REM [comment]
 * **REN/RENAME** (internal command)  
 +
-Renames one or more files.  
+Renames a file/directory or files.  
 +
 Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 filename2
 * **RESCAN** (external command)  
@@ -658,12 +658,12 @@ Usage: TYPE [drive:][path][filename]
 +
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.  
 +
-Usage: VER [SET major minor] or VER [SET major.minor]  
+Usage: VER [SET major.minor] or VER [SET major minor]  
 +
-Note: "VER SET 3 3" will set the reported DOS version as 3.03, whereas "VER SET 3.3" will set the version as 3.30.
+Note: "VER SET 3.3" will set the reported DOS version as 3.3 (3.30), whereas "VER SET 3 3" will set the version as 3.03.
 * **VERIFY** (internal command)  
 +
-Controls whether to verify that your files are written correctly to a disk.  
+Controls whether to verify that the files are written correctly to a disk.  
 +
 Usage: VERIFY [ON | OFF]
 * **VESAMOED** (external command)  
