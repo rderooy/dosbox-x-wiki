@@ -529,9 +529,10 @@ Usage: MEM [options]
 Note: It uses the MEM command from FreeDOS.
 * **MIXER** (external command)  
 +
-Displays current sound levels.  
+Displays or changes the current sound levels.  
 +
-Usage: Simply enter MIXER without any parameters.
+Usage: MIXER [options]
+Note: Simply enter MIXER without any parameters to display the current sound levels.
 * **MODE** (external command)  
 +
 Configures DOS system devices.  
@@ -565,7 +566,7 @@ Note: It uses the MOVE command from FreeDOS.
 +
 Generates a non-maskable interrupt (NMI).  
 +
-Usage: NMITEST [options]  
+Usage: NMITEST  
 +
 Note: This is a debugging tool to test that it and the interrupt handler work properly. Currently the only use of the NMI is PCjr emulation which receives an NMI every time a key is pressed on the keyboard.
 * **PATH** (internal command)  
@@ -607,7 +608,8 @@ Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 f
 +
 Refreshes mounted drives by clearing their caches.  
 +
-Usage: Simply enter RESCAN without any parameters.
+Usage: RESCAN [/A] or RESCAN [drive:]
+Note: Enter RESCAN without any parameters to refresh the current drive.
 * **SET** (internal command)  
 +
 Displays and sets environment variables.  
@@ -811,6 +813,12 @@ Starts DOSBox-X without showing the console window (Windows debug builds only).
 * **-log-con**
 +
 Logs CON output to a log file.
+* **-log-int21**
++
+Logs calls to INT 21h (debug level).
+* **-log-fileio**
++
+Logs file I/O through INT 21h (debug level).
 
 ### DOSBox-X Guides and Tips
 
