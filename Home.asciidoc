@@ -532,6 +532,7 @@ Note: It uses the MEM command from FreeDOS.
 Displays or changes the current sound levels.  
 +
 Usage: MIXER [options]
++
 Note: Simply enter MIXER without any parameters to display the current sound levels.
 * **MODE** (external command)  
 +
@@ -609,7 +610,8 @@ Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 f
 Refreshes mounted drives by clearing their caches.  
 +
 Usage: RESCAN [/A] or RESCAN [drive:]
-Note: Enter RESCAN without any parameters to refresh the current drive.
++
+Note: Simply enter RESCAN without any parameters to refresh the current drive.
 * **SET** (internal command)  
 +
 Displays and sets environment variables.  
