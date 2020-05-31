@@ -21,8 +21,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * GUI menu bar and configuration tool  
 * Built-in debugger and logging options
 * Automatic drive mounting (Windows only)
-* NEC PC-98 support
-* Save and load states
+* NEC PC-98 mode support
 * CPU optimization and Turbo mode
 * Improved customization on the title bar
 * Better compatibility with DOS applications
@@ -30,7 +29,6 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
 * Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
 * Support for more CPU types (e.g. Pentium MMX and Pro)
-* Support for ROM BIOS images
 * Support for printer output
 * Support for FAT32 and large disk images
 * Support for long filenames (LFN) for DOS version 7+
@@ -41,9 +39,9 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for vertical sync (V-Sync)
 * Support for NE2000 Ethernet
 * Support for features such as beeping, overscan border and stereo swapping
-* Various patches such as font, DBCS and Ctrl+Break patch
+* Various patches included such as font, DBCS and Ctrl+Break patch
 
-Note: Some features such as support for saving/loading states and running ROM BIOS images are currently experimental.
+In addition, DOSBox-X also supports some experimental features such as saving and loading states as well as running ROM BIOS images.
 
 ### Running and Configuring DOSBox-X
 
