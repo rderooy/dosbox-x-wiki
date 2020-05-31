@@ -20,7 +20,7 @@ toc::[]
 ** Adds HELP file viewer (OS/2 INF format)
 
 ### PC DOS 2000 (aka PC DOS 7.0, revision 1)
-** First and only commercial DOS release to be available on CD-ROM
+** The only PC DOS release to be available on CD-ROM
 ** Minor Y2K fixes
 ** Adds Euro currency symbol support
 
