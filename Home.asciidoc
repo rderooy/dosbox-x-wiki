@@ -33,11 +33,11 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for long filenames (LFN) for DOS version 7+
 * Support for clipboard copy and paste (Windows only)
 * Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
-* Support for vertical sync, 3dfx Glide and Voodoo chip emulation
+* Support for 3dfx Glide and Voodoo chip emulation
 * Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
 * Support for NE2000 Ethernet for networking features
-* Support for features such as beeping, overscan border and stereo swapping
-* Various patches included such as font, DBCS and Ctrl+Break patch
+* Support for features such as V-Sync, overscan border and stereo swapping
+* Various patches included such as font, DBCS, beeping and Ctrl+Break patch
 
 Furthermore, DOSBox-X supports some experimental features such as save/load states and running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
 
@@ -57,7 +57,7 @@ DOSBox-X features a configuration GUI which allows you to change its settings vi
 
 For example, if you are using the MOUNT command method to mount your host drives/directories as DOSBox-X's drives, you do not have to always type these commands. Instead, you can put these commands in the "autoexec" section of the DOSBox-X configuration interface, and then save them. These correspond to the [autoexec] section of DOSBox-X's configuration file. The commands present there are run each time when DOSBox-X starts, so you can use this section for the automatic mounting.
 
-Even though DOSBox-X runs in a window by default, you can also change it to full-screen mode. Simply press the shortcut F11+F on Windows, or F12-F on Linux and macOS, and DOSBox-X will become full-screen. Alternatively, you may modify this setting in the Sdl section of the DOSBox-X configuration interface (or change the option fullscreen=false to fullscreen=true under the [sdl] section of DOSBox-X's configuration file). To get back from fullscreen mode, simply press the shortcut F11+F again.
+Even though DOSBox-X runs in a window by default, you can also change it to full-screen mode. Simply press the shortcut F11+F on Windows, or F12+F on Linux and macOS, and DOSBox-X will become full-screen. Alternatively, you may modify this setting in the [sdl] section of the DOSBox-X configuration interface (or change the option fullscreen=false to fullscreen=true under the [sdl] section of DOSBox-X's configuration file). To get back from full-screen mode, simply press the shortcut F11+F (or F12+F depending on your platform) again.
 
 You can try the various commands and options in order to be more familiar with the DOSBox-X interface. Once you get used to it, you should be able to do various things such as running DOS applications inside DOSBox-X. If you have questions, you can also ask the community for support.
 
