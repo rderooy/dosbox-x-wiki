@@ -18,8 +18,7 @@ Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joyst
 ### DOSBox-X's Feature Highlights
 Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 
-* GUI menu bar and configuration tool  
-* Built-in debugger and logging options
+* GUI menu bar and configuration tool
 * Automatic drive mounting (Windows only)
 * NEC PC-98 mode support
 * CPU optimization and Turbo mode
@@ -29,19 +28,18 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
 * Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
 * Support for more CPU types (e.g. Pentium MMX and Pro)
-* Support for printer output
-* Support for FAT32 and large disk images
+* Support for printer output, either a real or virtual printer
+* Support for FAT32 file system and large disk images
 * Support for long filenames (LFN) for DOS version 7+
 * Support for clipboard copy and paste (Windows only)
 * Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
-* Support for Innovation SSI-2001 emulation
-* Support for 3dfx Glide and Voodoo chip emulation
-* Support for vertical sync (V-Sync)
-* Support for NE2000 Ethernet
+* Support for vertical sync, 3dfx Glide and Voodoo chip emulation
+* Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
+* Support for NE2000 Ethernet for networking features
 * Support for features such as beeping, overscan border and stereo swapping
 * Various patches included such as font, DBCS and Ctrl+Break patch
 
-In addition, DOSBox-X also supports some experimental features such as saving and loading states as well as running ROM BIOS images.
+Furthermore, DOSBox-X supports some experimental features such as save/load states and running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
 
 ### Running and Configuring DOSBox-X
 
