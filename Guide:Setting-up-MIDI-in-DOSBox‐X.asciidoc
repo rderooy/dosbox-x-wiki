@@ -95,13 +95,13 @@ This can be used to pass special options needed for the chosen "mididevice".
 
 For instance, for the "mididevice=coreaudio" or "synth" options, this can be a path and filename of a soundfont (in sf2 format).
 
-For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your soundcard (most soundcards don't have one), or that of your external MIDI synth. You can use ```aconnect -i``` to list available devices with ALSA. You can use the Client ID with device ID combined and set it for instance as ```midiconfig=14:0```
+For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your soundcard (most soundcards don't have one), or that of your external MIDI synth. You can use ``aconnect -i`` to list available devices with ALSA. You can use the Client ID with device ID combined and set it for instance as ```midiconfig=14:0```
 
-For Windows with "mididevice=win32", this can be used to specify the ID or part of the name of the synth you want to use. It defaults to the "Microsoft GS Wavetable Synth". In DOSBox-X run ```mixer /listmidi``` to list available options.
+For Windows with "mididevice=win32", this can be used to specify the ID or part of the name of the synth you want to use. It defaults to the "Microsoft GS Wavetable Synth". In DOSBox-X run ``mixer /listmidi`` to list available options.
 
 For MacOSX with "mididevice=coremidi", this can be used to specify the ID or part of the name of the synth you want to use. (how to list the options?)
 
-In case of a real Roland MT-32 rev. 0 as MIDI output device, some games may require a delay in order to prevent 'buffer overflow' issues. In that case, add 'delaysysex', for example: ```midiconfig=2 delaysysex``` would cause Windows to use MIDI device 2 (as listed in DOSBox-X with ```mixer /listmidi```), and apply the delaysysex workaround.
+In case of a real Roland MT-32 rev. 0 as MIDI output device, some games may require a delay in order to prevent 'buffer overflow' issues. In that case, add 'delaysysex', for example: ``midiconfig=2 delaysysex`` would cause Windows to use MIDI device 2 (as listed in DOSBox-X with ```mixer /listmidi```), and apply the delaysysex workaround.
 
 #### samplerate
 * Default value: 44100
@@ -118,7 +118,7 @@ The MT-32 emulation that is provided by DOSBox-X is based on the link:http://mun
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-Note: If a game lists a "Roland Sound Canvas" (SC), Roland SCC-1 or a Roland RAP-10, you need to use General MIDI emulation instead.
+Note: If a game offers a "Roland Sound Canvas" (SC), Roland SCC-1 or a Roland RAP-10 option you want to try, you need to use General MIDI emulation instead.
 
 ## MT-32
 
@@ -423,19 +423,76 @@ Specifies the modulation depth of the chorus.
 Specifies the chorus type. 0 is sine wave, 1 is triangle wave.
 
 ## TiMidity{plus}{plus}
-TBD.
+TiMidity{plus}{plus} is a MIDI software synthesis, primarily for Linux.
+You should consider using FluidSynth instead.
+But if you want to try TiMidity{plus}{plus}, install the timidity{plus}{plus} package with your package manager, and also install a soundfont like FluidR3_GM.
+
+You then need to point TiMidity{plus}{plus} to the soundfont you want to use, for this edit ``/etc/timidity++/timidity.cfg`` and make sure the ``soundfont`` setting points to a valid SF2 soundfont file.
+
+TiMidity{plus}{plus} support is not built-in like FluidSynth, instead you need to run it as a separate background service to which DOSBox-X can connect.
+After you have installed the packages, enable and start the timidity service.
+This only needs to be done once.
+On a modern Linux distribution this can be done as follows from the command line:
+....
+sudo systemctl enable timidity
+sudo systemctl start timidity
+....
+
+Before trying MIDI in DOSBox-X, validate that TiMidity{plus}{plus} is working by playing a midi file.
+
+....
+timidity example.midi
+....
+
+Example DOSBox config file, connecting to TiMidity{plus}{plus} over TCP/IP to localhost (127.0.0.1) on port 7777:
+....
+[midi]
+mididevice=timidity
+....
+Using ``option=`` a different host and/or port can be specified:
+....
+[midi]
+mididevice=timidity
+option=localhost:8000
+....
+
+Alternatively it is also possible to connect to TiMidity{plus}{plus} over ALSA as follows.
+First locate the ALSA MIDI device that got assigned to TiMidity{plus}{plus} using ``aconnect -i``. Then use the following config options:
+....
+[midi]
+mididevice=alsa
+option=128:0
+....
 
 ## ALSA
-TBD.
+ALSA is the low-level Linux sound system.
+You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support.
+
+Use ``aconnect -i`` to find which "device" is your MIDI output, and then add the device ID to the ``option=`` line.
+e.g.
+
+....
+[midi]
+mididevice=alsa
+option=128:0
+....
 
 ## OSS
+OSS is an older low-level sound system for Unix and Linux.
+It should not be used if you have ALSA.
+You can use OSS if you have a real MIDI sequencer, or a sound card with MIDI support.
+
 TBD.
 
 ## Microsoft GS Wavetable software synthesizer
-This is the the default MIDI emulation option on Windows if ```mididevice=default``` or ```mididevice=win32```. The advantage is, that it requires no configuration. The disadvantage is that it has high-latency and many of the sounds don't sound correct. On a modern Windows system, there are no configuration options either.
+This is the the default MIDI emulation option on Windows if ```mididevice=default``` or ```mididevice=win32``` (note: the "win32" option is a misnomer as it applies to both 32 and 64bit versions of Windows).
+
+The advantage is, that it requires no configuration.
+The disadvantage is that it has high-latency and many of the sounds don't sound correct.
+On a modern Windows system, there are no configuration options either.
 
 ## CoreAudio
-OSX TBD.
+OSX TBD. Help needed.
 
 ## CoreMIDI
-OSX TBD.
+OSX TBD. Help needed.
