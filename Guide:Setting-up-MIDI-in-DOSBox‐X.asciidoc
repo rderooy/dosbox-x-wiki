@@ -444,16 +444,16 @@ Before trying MIDI in DOSBox-X, validate that TiMidity{plus}{plus} is working by
 timidity example.midi
 ....
 
-Example DOSBox config file, connecting to TiMidity{plus}{plus} over TCP/IP to localhost (127.0.0.1) on port 7777:
+Once you confirmed that MIDI works, set the below options in your DOSBox-X config file. This will cause DOSBox-X to try to connect to TiMidity{plus}{plus} over TCP/IP to localhost (127.0.0.1) on port 7777:
 ....
 [midi]
 mididevice=timidity
 ....
-Using ``option=`` a different host and/or port can be specified:
+Using ``midiconfig=`` a different host and/or port can be specified:
 ....
 [midi]
 mididevice=timidity
-option=localhost:8000
+midiconfig=localhost:8000
 ....
 
 Alternatively it is also possible to connect to TiMidity{plus}{plus} over ALSA as follows.
@@ -461,20 +461,20 @@ First locate the ALSA MIDI device that got assigned to TiMidity{plus}{plus} usin
 ....
 [midi]
 mididevice=alsa
-option=128:0
+midiconfig=128:0
 ....
 
 ## ALSA
 ALSA is the low-level Linux sound system.
-You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support.
+You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support. You can optionally also use ALSA with a software sequencer that creates a ALSA MIDI interface.
 
-Use ``aconnect -i`` to find which "device" is your MIDI output, and then add the device ID to the ``option=`` line.
+Use ``aconnect -i`` to find which "device" is your MIDI output, and then add the device ID to the ``midiconfig=`` line.
 e.g.
 
 ....
 [midi]
 mididevice=alsa
-option=128:0
+midiconfig=128:0
 ....
 
 ## OSS
