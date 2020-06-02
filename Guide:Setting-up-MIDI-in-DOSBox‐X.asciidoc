@@ -118,7 +118,7 @@ The MT-32 emulation that is provided by DOSBox-X is based on the link:http://mun
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-Note: If a game lists a "Roland Sound Canvas" (SC) option, or a Roland RAP-10, you need to use General MIDI emulation instead.
+Note: If a game lists a "Roland Sound Canvas" (SC), Roland SCC-1 or a Roland RAP-10, you need to use General MIDI emulation instead.
 
 ## MT-32
 
@@ -176,7 +176,7 @@ If a PC game asks for the IO address and IRQ, you should be able to use the defa
 #### mt32.romdir
 Default: <working directory>
 
-This should point to the directory with MT-32 or CM32L Control and PCM ROM files.
+This should point to the directory with MT-32 or CM-32L Control and PCM ROM files.
 Emulation will not work without them.
 
 If no path is specified, DOSBox-X will check the directory from which it was started.
@@ -189,7 +189,7 @@ or
 
 * ```MT32_CONTROL.ROM``` and ```MT32_PCM.ROM```
 
-If the directory contains both CM32L and MT32 ROMs, DOSBox-X will use the CM32L ROMs and emulate a Roland CM-32L.
+If the directory contains both CM-32L and MT-32 ROMs, DOSBox-X will use the CM-32L ROMs and emulate a Roland CM-32L.
 
 #### mt32.reverse.stereo
 Default: off
@@ -340,14 +340,16 @@ This effects how many voices can be played in parallel.
 By default fluidsynth will use 1 core. If you set this higher, fluidsynth will create additional synthesis threads.
 
 #### fluid.periods
-* Default value: default (8 on Windows and 16 on Linux and MacOS X)
+* Default value: 16 (Linux and MacOS X)
+* Default value: 8 (Windows)
 * Min - Max: 2 - 64
 
 The number of the audio buffers used by the driver.
 This number of buffers, multiplied by the buffer size (see setting fluid.periodsize), determines the maximum latency of the audio driver.
 
 #### fluid.periodsize
-* Default value: default (512 on Windows and 64 on Linux and MacOS X)
+* Default value: 64 (Linux and MacOS X)
+* Default value: 512 (Windows)
 * Min - Max: 64-8192
 
 The size of the audio buffers (in frames).
