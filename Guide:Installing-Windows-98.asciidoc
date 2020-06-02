@@ -31,6 +31,7 @@ autolock=true
 [dosbox]
 title=Windows 98
 memsize=64
+vmemsize=8
 cycles=60000
 vesa modelist width limit=0
 vesa modelist height limit=0
@@ -384,20 +385,19 @@ This does mean you can no longer share files over the network using the Windows 
 If networking does not work, see link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up networking in DOSBox-X]
 
 # Emulated video adapter and video mode
-The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths.
+The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths. In addition this video adapter is supported out-of-the-box in Windows 98, simplifying the installation process.
 
 A few enhancements have been made, compared to a real S3 Trio64:
 
 * No real S3 Trio64 was ever produced with more then 4MB video memory, under DOSBox-X you can optionally configure 8MB.
 * The real cards never supported wide-screen resolutions, wide-screen VESA modes can optionally be enabled in DOSBox-X.
 
-However, these enhancements cannot be used in Windows 98 with the S3 video driver due to driver limitations.
+However, these enhancements cannot be used in Windows 98 with the S3 video driver due to driver limitations. And no updated S3 Trio64 video driver is available for Windows 98.
 As such you will be limited to 640x480 in 32bit colour, 1024x768 in 16bit colour or 1280x1024 in 8bit (256) colour.
 
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
 First add the following lines to your DOSBox-X config file in the [dosbox] section:
 ....
-vmemsize=8
 allow high definition vesa modes=true
 allow unusual vesa modes=true
 allow low resolution vesa modes=false
@@ -409,8 +409,13 @@ With these settings modes up to 1920x1080 in 32bit colour, or 1920x1440 in 16bit
 Note, using the VBEMP driver does have a negative graphics performance impact, which when measured in WinBench96 Graphics WinMark, can be a reduction of up to 59%.
 
 # Emulated sound card
-The emulated sound card used in this guide is the SB16 Vibra, instead of the default SB16. This is because the SB16 Vibra is a ISA PnP card, and therefore automatically detected by Windows.
-The emulated SB16 Vibra does not emulate the CQM, instead if uses the same OPL3 emulation as for the regular SB16 model.
+The emulated sound card used in this guide is the SB16 Vibra, instead of the default SB16.
+This is simply because the SB16 Vibra is a ISA PnP card, and therefore automatically detected by Windows.
+There is no other real advantage of using the emulated SB16 Vibra over the SB16.
+
+One often heard complaint of the real SB16 Vibra is the CQM synthesis, which was used as a low-cost replacement of the OPL3 chip found on earlier cards.
+However DOSBox-X does not really emulate the CQM, instead if uses the same OPL3 emulation as for the regular SB16 model.
+Therefore the CQM sound quality issues with the SB16 Vibra do not apply to DOSBox-X.
 
 Both Windows 98 and 98SE include SB16 driver version 4.37.00.1998.
 An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library.
