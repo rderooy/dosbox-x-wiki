@@ -21,6 +21,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * GUI menu bar and configuration tool
 * Automatic drive mounting (Windows only)
 * NEC PC-98 mode support
+* Save and load state support
 * CPU optimization and Turbo mode
 * Improved customization on the title bar
 * Better compatibility with DOS applications
@@ -39,7 +40,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for features such as V-Sync, overscan border and stereo swapping
 * Various patches included such as font, DBCS, beeping and Ctrl+Break patch
 
-Furthermore, DOSBox-X supports some experimental features such as save/load states and running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
+Furthermore, DOSBox-X supports some experimental features such as running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
 
 ### Running and Configuring DOSBox-X
 
@@ -184,6 +185,14 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 * **Record FM (OPL) output**: Starts/stops the recording of Yamaha FM (OPL) commands in DRO format.
 
 * **Record MIDI output**: Starts/stops the recording of raw MIDI commands.
+
+* **Force load state**: Selects whether to load the saved state even if there is a mismatch in the DOSBox-X version and/or the program name.
+
+* **Save state**: Saves the current state to the selected save slot.
+
+* **Load state**: Loads the state from the selected save slot.
+
+* **Select save slot**: Select a save slot (1 to 10) to save to or load from.
 
 **7. The "Drive" menu**
 
@@ -337,6 +346,11 @@ Usage: CONFIG [options]
 Copies one or more files.  
 +
 Usage: COPY source [destination]
+* **COUNTRY** (internal command)  
++
+Changes the country code for country-specific date/time formats.  
++
+Usage: COUNTRY [code]
 * **CTTY** (internal command)  
 +
 Changes the standard I/O device.  
@@ -510,7 +524,12 @@ Usage: LOADROM ROM_file
 +
 Loads a program into upper memory (if UMB is available).  
 +
-Usage: LH [program] [options] or Usage: LOADHIGH [program] [options]
+Usage: LH [program] [options] or LOADHIGH [program] [options]
+* **LS** (internal command)  
++
+Lists directory contents in Unix-like style.  
++
+Usage: LS [drive:][path][filename] [/A] [/L] [/P] [/Z]
 * **MD/MKDIR** (internal command)  
 +
 Makes a directory.  
