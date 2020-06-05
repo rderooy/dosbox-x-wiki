@@ -73,7 +73,7 @@ Other options:
 * coreaudio
 ** MacOSX CoreAudio
 ** MacOS X's framework to render the music through the built-in OS X synthesizer.
-** A SF2 soundfount can be specified with the ```midiconfig``` setting.
+** A SF2 soundfount can be specified with the ``midiconfig`` setting.
 * coremidi
 ** MacOSX CoreMidi
 ** MacOS X's framework to route MIDI commands to any device that has been configured in Audio MIDI Setup.
@@ -95,13 +95,13 @@ This can be used to pass special options needed for the chosen "mididevice".
 
 For instance, for the "mididevice=coreaudio" or "synth" options, this can be a path and filename of a soundfont (in sf2 format).
 
-For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your soundcard (most soundcards don't have one), or that of your external MIDI synth. You can use ``aconnect -i`` to list available devices with ALSA. You can use the Client ID with device ID combined and set it for instance as ```midiconfig=14:0```
+For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your soundcard (most soundcards don't have one), or that of your external MIDI synth. You can use ``aconnect -i`` to list available devices with ALSA. You can use the Client ID with device ID combined and set it for instance as ``midiconfig=14:0``
 
 For Windows with "mididevice=win32", this can be used to specify the ID or part of the name of the synth you want to use. It defaults to the "Microsoft GS Wavetable Synth". In DOSBox-X run ``mixer /listmidi`` to list available options.
 
 For MacOSX with "mididevice=coremidi", this can be used to specify the ID or part of the name of the synth you want to use. (how to list the options?)
 
-In case of a real Roland MT-32 rev. 0 as MIDI output device, some games may require a delay in order to prevent 'buffer overflow' issues. In that case, add 'delaysysex', for example: ``midiconfig=2 delaysysex`` would cause Windows to use MIDI device 2 (as listed in DOSBox-X with ```mixer /listmidi```), and apply the delaysysex workaround.
+In case of a real Roland MT-32 rev. 0 as MIDI output device, some games may require a delay in order to prevent 'buffer overflow' issues. In that case, add 'delaysysex', for example: ``midiconfig=2 delaysysex`` would cause Windows to use MIDI device 2 (as listed in DOSBox-X with ``mixer /listmidi``), and apply the delaysysex workaround.
 
 #### samplerate
 * Default value: 44100
@@ -183,11 +183,11 @@ If no path is specified, DOSBox-X will check the directory from which it was sta
 
 Accepted file names are as follows:
 
-* ```CM32L_CONTROL.ROM``` and ```CM32L_PCM.ROM```
+* ``CM32L_CONTROL.ROM`` and ``CM32L_PCM.ROM``
 
 or
 
-* ```MT32_CONTROL.ROM``` and ```MT32_PCM.ROM```
+* ``MT32_CONTROL.ROM`` and ``MT32_PCM.ROM``
 
 If the directory contains both CM-32L and MT-32 ROMs, DOSBox-X will use the CM-32L ROMs and emulate a Roland CM-32L.
 
@@ -277,7 +277,7 @@ fluid.driver=pulseaudio
 fluid.soundfont=/usr/share/soundfonts/default.sf2
 ....
 Adjust the path to a valid SoundFont as necessary.
-On Debian or Ubuntu the soundfont will be installed by default as ```/usr/share/sounds/sf2/FluidR3_GM.sf2```
+On Debian or Ubuntu the soundfont will be installed by default as ``/usr/share/sounds/sf2/FluidR3_GM.sf2``
 
 ### Windows Setup
 Download and install FluidSynth, and add the following lines to your DOSBox-X config.
@@ -300,7 +300,7 @@ Adjust the path and filename to your soundfont as necessary.
 
 This parameter is typically not needed if your running FluidSynth on Windows, where it will automatically use dsound. Likewise on MacOS it will default to CoreAudio.
 
-You can however optionally set it to "file", which will cause a ```fluidsynth.wav``` file to be created in the current working directory with the MIDI output.
+You can however optionally set it to "file", which will cause a ``fluidsynth.wav`` file to be created in the current working directory with the MIDI output.
 
 For Linux, the "jack" (default) and "pulseaudio" options are for different Sound Servers. Most modern Linux distributions by default install PulseAudio.
 Jack is lower latency, but higher CPU.
@@ -485,7 +485,7 @@ You can use OSS if you have a real MIDI sequencer, or a sound card with MIDI sup
 TBD.
 
 ## Microsoft GS Wavetable software synthesizer
-This is the the default MIDI emulation option on Windows if ```mididevice=default``` or ```mididevice=win32``` (note: the "win32" option is a misnomer as it applies to both 32 and 64bit versions of Windows).
+This is the the default MIDI emulation option on Windows if ``mididevice=default`` or ``mididevice=win32`` (note: the "win32" option is a misnomer as it applies to both 32 and 64bit versions of Windows).
 
 The advantage is, that it requires no configuration.
 The disadvantage is that it has high-latency and many of the sounds don't sound correct.

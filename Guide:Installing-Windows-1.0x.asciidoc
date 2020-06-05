@@ -88,7 +88,7 @@ Start by creating a directory on your system that your going to use (mount) as y
 ** /home/myuser/winroot
 ** /home/myuser/windows/win1x
 
-Note: For Windows users, do *NOT* mount the root of your C: drive as the DOSBox-X C: drive! (e.g. ```MOUNT C C:\``` should NOT be done)
+Note: For Windows users, do *NOT* mount the root of your C: drive as the DOSBox-X C: drive! (e.g. ``MOUNT C C:\`` should NOT be done)
 
 Windows 1.0x versions were shipped on diskettes, requiring anywhere between 3 and 7 disks, depending on media-type and windows version.
 And while it is definitely possible to install Windows 1.0x from diskette images in DOSBox-X, the disk-swap process for this is rather tedious for large number of disks.
@@ -136,7 +136,7 @@ Adjust the path for mounting the A: and C: drive as needed.
 
 *Notes*
 
-* If your path contains spaces, you need to enclose it in quotes. e.g. ```MOUNT C "C:\Users\John Doe\winroot"```
+* If your path contains spaces, you need to enclose it in quotes. e.g. ``MOUNT C "C:\Users\John Doe\winroot"``
 
 
 The Windows installation will now take place. See the link:#Windows-1.0x-setup-program[Windows 1.0x setup program] section below.

@@ -59,13 +59,13 @@ toc::[]
 
 * For DOS 2.x, the maximum partition size depends on the OEM version, and should be 16 or 32MB using a FAT12 filesystem.
 * For DOS 3.00-3.21, the maximum partition size is supposed to be 32MB, using a FAT16 filesystem, but in reality this only appears to be the case for PC DOS 3.0 and 3.1. Other DOS versions are in practice limited to either 31MB, or their ``FDISK`` (or equivalent) tool is simply incompatible with DOSBox-X. For this reason the below examples will use 31MB for maximum compatibility between DOS versions.
-* When creating your HDD image with ```IMGMAKE```, instead of specifying a custom size, you can choose a pre-defined template. The advantage of using a pre-defined template in combination with an unsupported partition layout or filesystem is that you don't have to specify the sector-size, sectors, heads and cylinders each time you mount the HDD. The available pre-defined HDD templates can be seen by running ```IMGMAKE``` without arguments.
+* When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The advantage of using a pre-defined template in combination with an unsupported partition layout or filesystem is that you don't have to specify the sector-size, sectors, heads and cylinders each time you mount the HDD. The available pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 ** Example: If you create a custom 20MB size HDD image (without partition or filesystem):
-*** ```IMGMAKE hdd.img -t hd -size 20 -nofs```
-*** ```MOUNT 2 hdd.img -size 512,32,2,640 -fs none```
+*** ``IMGMAKE hdd.img -t hd -size 20 -nofs``
+*** ``MOUNT 2 hdd.img -size 512,32,2,640 -fs none``
 ** Example: If using a pre-defined HDD template:
-*** ```IMGMAKE hdd.img -t hd_st225 -nofs```
-*** ```MOUNT 2 hdd.img -fs none```
+*** ``IMGMAKE hdd.img -t hd_st225 -nofs``
+*** ``MOUNT 2 hdd.img -fs none``
 * While it is possible to use a HDD size larger then the maximum partition size, this is not recommended as these DOS versions only support a maximum of one DOS partition per HDD. In effect, you will not be able to access the additional capacity from DOS, and it is therefore waisted space. In addition the ``FDISK`` option to use the entire fixed disk for DOS gets confused if the drive is larger then 32MB, and depending on the DOS version will either overflow such that a 40MB HDD image becomes a 40-32=8MB partition, or it will create a drive that cannot be formatted.
 |===
 |DOS|OEM|Maximum partition size|Note

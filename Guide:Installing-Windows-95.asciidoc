@@ -95,7 +95,7 @@ Copy the above config and save it as *win95.conf*
 # General installation Notes
 
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects. It can also cause problems with double click with the mouse not working and audio will also not sound properly, so be sure to disable it when using Windows in DOSBox-X.
-* When creating your HDD image with ```IMGMAKE```, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ```IMGMAKE``` without arguments.
+* When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 * If you get a prompt stating that C:\WINDOWS already exists, ignore it, and continue the installation.
 * During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. You may want to select to scan for a soundcard, as otherwise it may not detect your soundcard (sometimes it does, sometimes it doesn't). Likewise, if you have NE2000 enabled in your DOSBox-X config file, you may also want to check the Network adapter box. Your DOSBox-X CD-ROM will be detected regardless if you check it's box or not.
 * In case you installed Windows 95 OSR2.5 you may have noticed that you did not get IE4 and the Active Desktop features. This is because this is an optional install. On the CD, simply run \WIN95\IE4SETUP.EXE to install it. While there is no real advantage to either feature, installing it does bring some new and updated libraries such as MSVCRT.DLL and COMCTL32.DLL that some programs need.
@@ -162,7 +162,7 @@ CD \WIN95
 SETUP
 ....
 
-Now run through the install process, until it reboots and your back at the DOSBox-X ```Z:\``` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
+Now run through the install process, until it reboots and your back at the DOSBox-X ``Z:\`` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
 
 ....
 IMGMOUNT C hdd.img
@@ -238,7 +238,7 @@ Now run the following commands:
 D:\WIN95\FORMAT C: /S /V:WIN95
 ....
 
-Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ```Z:\``` prompt.
+Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ``Z:\`` prompt.
 
 ## Transfer Windows installation files
 Once again, you need to mount the harddisk image, but because it is now partitioned and formatted you don't need to specify the geometry any longer.

@@ -304,7 +304,7 @@ Now run the following commands:
 D:\WIN98\FORMAT C: /S /V:WIN98
 ....
 
-Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ```Z:\``` prompt.
+Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ``Z:\`` prompt.
 
 ## Transfer Windows installation files
 Once again, you need to mount the harddisk image, but because it is now partitioned and formatted you don't need to specify the geometry any longer.

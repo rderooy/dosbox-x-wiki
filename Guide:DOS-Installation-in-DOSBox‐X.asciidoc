@@ -12,7 +12,7 @@ This guide explains how to boot regular IBM PC DOS or Microsoft MS-DOS in DOSBox
 Before going through this guide, consider if you really need this as the integrated DOS functionality in DOSBox-X is more convenient for typical use-cases. Booting regular DOS is normally not necessary to run DOS applications such as games, or even Windows version up to 3.11 in DOSBox-X. And even if you have a application that requires a specific DOS version, you can change the reported version of the integrated DOS in DOSBox-X. There are two ways to change the DOS version:
 
 1. There is a setting "ver" under the [dos] section in DOSBox-X's config file (dosbox-x.conf by default), or from the DOSBox-X Configuration GUI. For example, setting "ver = 7.1" will cause DOSBox-X to set the initial DOS version as 7.1, instead of the default 5.0. Note that LFN (long filename) support will be enabled when the reported version is set to 7.0 or higher with the default setting.
-2. Alternatively, you can set the reported DOS version with the ``VER`` command in the DOSBox-X command line. For example, ``VER SET 6.22`` will cause DOSBox-X to claim to be version 6.22. Also note that ```VER SET 7.1``` will set the reported DOS version to 7.1 (7.10) whereas ```VER SET 7 1``` will set the reported DOS version to 7.01.
+2. Alternatively, you can set the reported DOS version with the ``VER`` command in the DOSBox-X command line. For example, ``VER SET 6.22`` will cause DOSBox-X to claim to be version 6.22. Also note that ``VER SET 7.1`` will set the reported DOS version to 7.1 (7.10) whereas ``VER SET 7 1`` will set the reported DOS version to 7.01.
 
 ## Disadvantages of booting DOS in DOSBox-X
 Some disadvantages of booting regular DOS in DOSBox-X includes:
@@ -116,11 +116,11 @@ image::images/MS-DOS:PC-DOS_1.0.png[Booting IBM PC DOS 1.00]
 DOS may put SMARTDRV.EXE in AUTOEXEC.BAT to run on startup. This made sense back in the day, but it provides no speed advantages when run on an emulator on a modern host operating system. In fact it may actually be counter productive. As such it is recommended to disable SmartDrive.
 
 ### Shutdown DOS
-Normally when running DOSBox-X, you can simply ```EXIT``` and DOSBox-X will close. But when your running a real DOS Disk image, this no longer works.
+Normally when running DOSBox-X, you can simply ``EXIT`` and DOSBox-X will close. But when your running a real DOS Disk image, this no longer works.
 
-The solution to this is a small 3rd party utility called ```ATXOFF.COM```. This can be useful for scripted operations, for instance if your running a program from AUTOEXEC.BAT, and want it to shutdown DOSBox-X when it finishes. ATXOFF relies on the APM support provided by DOSBox-X.
+The solution to this is a small 3rd party utility called ``ATXOFF.COM``. This can be useful for scripted operations, for instance if your running a program from AUTOEXEC.BAT, and want it to shutdown DOSBox-X when it finishes. ATXOFF relies on the APM support provided by DOSBox-X.
 
-Note: If SMARTDRV is being used, you MUST do a ```SMARTDRV /C``` *before* running ATXOFF as otherwise you risk filesystem corruption.
+Note: If SMARTDRV is being used, you MUST do a ``SMARTDRV /C`` *before* running ATXOFF as otherwise you risk filesystem corruption.
 
 Example AUTOEXEC.BAT usage of ATXOFF in combination with Windows 3.x:
 ....
@@ -134,10 +134,10 @@ ATXOFF.COM
 With this example, it will start Windows automatically on startup, and when you exit Windows, it will flush the disk cache and shutdown DOSBox-X.
 
 ### Long wait on HIMEM.SYS
-If HIMEM is being loaded on startup, you may get a message "HIMEM is testing extended memory...", which can take a considerable amount of time and is pointless in a emulated environment. You can bypass it by editing CONFIG.SYS and changing ```DEVICE=C:\DOS\HIMEM.SYS``` to ```DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF```.
+If HIMEM is being loaded on startup, you may get a message "HIMEM is testing extended memory...", which can take a considerable amount of time and is pointless in a emulated environment. You can bypass it by editing CONFIG.SYS and changing ``DEVICE=C:\DOS\HIMEM.SYS`` to ``DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF``.
 
 ### Reboot DOS
-If for some reason you want to do a reboot (reset) from the command-line, look for a 3rd party utility called ```RESTART.COM```.
+If for some reason you want to do a reboot (reset) from the command-line, look for a 3rd party utility called ``RESTART.COM``.
 
 ### Boot menu
 When using ``IMGMAKE`` to create a partitioned image, and when booting from the image afterwards you will get the following boot menu with a 4 second timeout.
@@ -145,9 +145,10 @@ When using ``IMGMAKE`` to create a partitioned image, and when booting from the 
 ....
 F1 . . . Dos
 F5 . . . disk2
+
 Default: F1
 ....
 
-This is due to a special MBR (Master Boot Record) that IMGMAKE creates.
+This is due to a special Master Boot Record (MBR) that IMGMAKE creates.
 
 Pressing Enter or F1 will continue the boot process, without having to wait for the timeout. Alternatively you can remove the boot menu by booting to DOS and running ``FDISK /MBR`` to create a new MBR without the boot menu.

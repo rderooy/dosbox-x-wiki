@@ -23,7 +23,7 @@ If you have the technical skills, and want to assist in improving DOSBox-X, assi
 * Follow the Windows 98 installation guide as the process is similar.
 * It is recommended by DOSBox-X developers that at this time, you do not enable int13fakev86io in your config file when using Windows ME.
 * You may want to use the Windows ME *Full OEM* version, if possible, as its CD-ROM is bootable.
-* When booting for the first time from the CD, exit to DOS with CD-ROM support, and start installation using ```SETUP.EXE /NM``` to bypass an error that you must have a 150MHz CPU
+* When booting for the first time from the CD, exit to DOS with CD-ROM support, and start installation using ``SETUP.EXE /NM`` to bypass an error that you must have a 150MHz CPU
 
 *A few known issues after installation:*
 
@@ -31,4 +31,4 @@ If you have the technical skills, and want to assist in improving DOSBox-X, assi
 * Under Performance, it complains about "Compatibility-mode paging" and that both drive A and C are "using MS-DOS compatibility mode file system".
 * SB16 _may_ not be automatically detected, due to missing PnP support for the emulated SB16. Running the "Add hardware wizard" should take care of it.
 * NE2000 adapter is not automatically detected, and even if you manually add it, it takes the wrong resources (which needs to be adjusted in device manager).
-* As mentioned, Windows Protection errors. It seems that the likelihood of encountering Windows Protection Errors is significantly decreased by setting ```cycles=60000``` in the ```[cpu]``` section of your DOSBox-X config file.
+* As mentioned, Windows Protection errors. It seems that the likelihood of encountering Windows Protection Errors is significantly decreased by setting ``cycles=60000`` in the ``[cpu]`` section of your DOSBox-X config file.

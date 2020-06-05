@@ -131,11 +131,11 @@ Copy the above config and save it as *win3x.conf*
 
 *Notes*
 
-* Windows 3.0 supports up to 16MB RAM, but Windows 3.1 and 3.11 support up to 256MB, as such for these Windows versions ```memsize=256``` is the largest safe value.
+* Windows 3.0 supports up to 16MB RAM, but Windows 3.1 and 3.11 support up to 256MB, as such for these Windows versions ``memsize=256`` is the largest safe value.
 * The [autoexec] section will need lines added later.
-* If you want networking in *Windows for Workgroups*, you need to set ```ne2000=true``` and change the ```realnic=``` value to one suitable for your PC. See:
+* If you want networking in *Windows for Workgroups*, you need to set ``ne2000=true`` and change the ``realnic=`` value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
-* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (```machine=svga_et3000``` and ```machine=svga_et4000``` respectively), but for the default ```machine=svga_s3``` (S3 Trio64) there are apparently only Windows 3.1 drivers.
+* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (``machine=svga_et3000`` and ``machine=svga_et4000`` respectively), but for the default ``machine=svga_s3`` (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The S3 video option will offer the broadest range of resolutions and colour depths, but do require you to install the correct drivers.
 
 # Preparing for Installation
@@ -188,11 +188,13 @@ Create a directory on your system that your going to use (mount) as your Windows
 ** /home/myuser/winroot
 ** /home/myuser/windows/win311
 
-Note: For Windows users, do *NOT* mount the root of your C: drive as the DOSBox C: drive! (e.g. ```MOUNT C C:\``` should NOT be done)
+Note: For Windows users, do *NOT* mount the root of your C: drive as the DOSBox C: drive! (e.g. ``MOUNT C C:\`` should NOT be done)
 
-Now create a directory underneath that, which will contain your Windows 3.x installation files. e.g. ```C:\users\myuser\win31\INSTALL``` or ```/home/myuser/winroot/INSTALL``` and copy the installation files into it.
+Now create a directory underneath that, which will contain your Windows 3.x installation files.
+e.g. ``C:\users\myuser\win31\INSTALL`` or ``/home/myuser/winroot/INSTALL`` and copy the installation files into it.
 
-You are now ready to start DOSBox-X from the command-line, using the newly created win3x.conf. This assumes that dosbox-x is in your path and win3x.conf is in your current directory.
+You are now ready to start DOSBox-X from the command-line, using the newly created win3x.conf.
+This assumes that dosbox-x is in your path and win3x.conf is in your current directory.
 ....
 dosbox-x -conf win3x.conf
 ....
@@ -205,7 +207,7 @@ SETUP
 ....
 Adjust the path for mounting the C: drive as needed.
 
-Note: if your path contains spaces, you need to enclose it in quotes. e.g. ```MOUNT C "C:\Users\John Doe\winroot"```
+Note: if your path contains spaces, you need to enclose it in quotes. e.g. ``MOUNT C "C:\Users\John Doe\winroot"``
 
 The Windows installation will now take place.
 
@@ -290,16 +292,16 @@ Enabling these features means that Windows has to leave 32-bit protected mode le
 
 * You must use a real DOS in DOSBox-X
 * Your HDD image must have 1023 cylinders or less (max 504MB)
-** When creating you harddisk image in DOSBox-X you may want to use ```IMGMAKE hdd.img -t hd_520```, which will give you exactly a 504MB HDD.
+** When creating you harddisk image in DOSBox-X you may want to use ``IMGMAKE hdd.img -t hd_520``, which will give you exactly a 504MB HDD.
 * You can only have one HDD
 * You cannot have a CD-ROM as a slave on the same IDE controller as the HDD
-* You must have set ```int13fakeio=true``` and ```int13fakev86io=false``` in your DOSBox-X config file
-* You must mount your HDD image file with ```-reservecyl 1```
-* You must edit ```C:\WINDOWS\SYSTEM.INI``` and in the ```[386enh]``` section add the following 2 lines (preferably between the ```*pageswap``` and ```*biosxlat``` drivers):
-** ```device=*int13```
-** ```device=*wdctrl```
-* At the bottom of the ```[386enh]``` section add the line:
-** ```32BitDiskAccess=ON```
+* You must have set ``int13fakeio=true`` and ``int13fakev86io=false`` in your DOSBox-X config file
+* You must mount your HDD image file with ``-reservecyl 1``
+* You must edit ``C:\WINDOWS\SYSTEM.INI`` and in the ``[386enh]`` section add the following 2 lines (preferably between the ``*pageswap`` and ``*biosxlat`` drivers):
+** ``device=*int13``
+** ``device=*wdctrl``
+* At the bottom of the ``[386enh]`` section add the line:
+** ``32BitDiskAccess=ON``
 
 See link:http://os2museum.com/wp/how-to-please-wdctrl/[How to please WDCTRL] for more background information.
 
@@ -317,7 +319,7 @@ There are 3rd party 32-Bit Disk Access drivers which _may_ allow it to function 
 Most 3rd party drivers only work in combination with specific hardware, but the Ontrack ontrackw.386 driver may work with fewer restrictions.
 
 # Enabling networking
-This only applies to *Windows for Workgroups* (WfW). To enable networking functionality you will need to create a disk image with real DOS, and install WfW into that. You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default. For instance, if you install WfW inside DOSBox-X with networking support, your supposed to run ```C:\WINDOWS\NET START``` before starting Windows. This command will however return a ```Error 73: (null)``` if run from the DOSbox-X emulated DOS.
+This only applies to *Windows for Workgroups* (WfW). To enable networking functionality you will need to create a disk image with real DOS, and install WfW into that. You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default. For instance, if you install WfW inside DOSBox-X with networking support, your supposed to run ``C:\WINDOWS\NET START`` before starting Windows. This command will however return a ``Error 73: (null)`` if run from the DOSbox-X emulated DOS.
 
 Windows for Workgroups by default only supports SMB networking over NBF or IPX. There is no support by default for TCP/IP.
 
@@ -351,7 +353,7 @@ Once finished click ok and confirm the save.
 
 You should now be able to open the Windows 3.x Media Player and playback Canyon.mid.
 
-Note: For Windows 3.0a with Multimedia Extensions the media files are located by default in ```C:\MWINDOWS\MMDATA```.
+Note: For Windows 3.0a with Multimedia Extensions the media files are located by default in ``C:\MWINDOWS\MMDATA``.
 
 # Installing Win32s
 Win32s is a 32-bit application runtime environment for Windows 3.1x. Some games and applications require it.
