@@ -184,7 +184,8 @@ The installer is normally locate on the CD in the MWIN directory as SETUP.EXE
 ** will not allow for networking with Windows for Workgroups
 ** will not allow for true SHARE support with Win32S
 
-Create a directory on your system that your going to use (mount) as your Windows 3.x C: drive. Valid examples:
+Create a directory on your system that your going to use (mount) as your Windows 3.x C: drive.
+Valid examples:
 
 * For Windows hosts
 ** C:\winroot
@@ -216,7 +217,8 @@ Note: if your path contains spaces, you need to enclose it in quotes. e.g. ``MOU
 
 The Windows installation will now take place.
 
-Once the installation process has finished, you will be asked if you want to start windows, or exit to DOS. Exit to DOS and type EXIT to close DOSBox-X.
+Once the installation process has finished, you will be asked if you want to start windows, or exit to DOS.
+Exit to DOS and type EXIT to close DOSBox-X.
 
 Now edit your win3x.conf config file and add the following lines into the [autoexec] section at the end of the file
 
@@ -232,20 +234,27 @@ EXIT
 Adjust the path for mounting the C: drive as needed.
 
 # Install Windows 3.x into a DOS HDD image
-This method does not have any of the disadvantages listed above. But it brings with it a bit of additional inconvenience. For instance you will need to do your own DOS memory management and load DOS drivers for CD-ROM access and Mouse support. You can also not mount a host directory in DOSBox-X. Everything needs to be done using IMAGE files.
+This method does not have any of the disadvantages listed above.
+But it brings with it a bit of additional inconvenience.
+For instance you will need to do your own DOS memory management and load DOS drivers for CD-ROM access.
+You can also not mount a host directory in DOSBox-X when you boot a disk image.
+Even host directories that you mounted prior to booting the disk image will become unavailable.
+Everything needs to be done using IMAGE files.
 
-The first step is to create a DOS HDD image, for which you can follow the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide]. You need at least DOS 3.1 for Windows 3.0 and 3.1x, and DOS 3.3 for WfW. However it is recommended to use a newer version such as DOS 6.x
+The first step is to create a DOS HDD image, for which you can follow the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide].
+You need at least DOS 3.1 for Windows 3.0 and 3.1x, and DOS 3.3 for WfW.
+However it is recommended to use a newer version such as DOS 6.x
 
-Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your INSTALL folder into your DOS HDD image, together with any drivers and add-ons you might need (preferably already unzipped, such that you don't need to do that in DOS or Windows 3.x, as they lacks support for that by default).
+Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your INSTALL folder into your DOS HDD image, together with any drivers and add-ons you might need (preferably already unzipped, such that you don't need to do that in DOS or Windows 3.x, as they lack support for that by default).
 
 Something along the lines of:
 
 ....
 IMGMOUNT C hdd.img
 MOUNT D .
-XCOPY D:\INSTALL C:\INSTALL /I /E
-XCOPY D:\DRIVERS C:\DRIVERS /I /E
-XCOPY D:\ADDONS C:\ADDONS /I /E
+XCOPY D:\INSTALL C:\INSTALL /I /S
+XCOPY D:\DRIVERS C:\DRIVERS /I /S
+XCOPY D:\ADDONS C:\ADDONS /I /S
 EXIT
 ....
 Adjust paths in the above example as needed.
@@ -359,6 +368,9 @@ Once finished click ok and confirm the save.
 You should now be able to open the Windows 3.x Media Player and playback Canyon.mid.
 
 Note: For Windows 3.0a with Multimedia Extensions the media files are located by default in ``C:\MWINDOWS\MMDATA``.
+
+# Enabling printing
+To enable printing support in Windows 95, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
 
 # Installing Win32s
 Win32s is a 32-bit application runtime environment for Windows 3.1x. Some games and applications require it.

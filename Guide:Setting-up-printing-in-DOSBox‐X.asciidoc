@@ -179,6 +179,8 @@ ps = PostScript.
 * Default value: false
 * Possible values: true, false
 
+Only applicable if ``printoutput=ps``.
+
 Adds all pages to one PostScript file or printer job until CTRL-F2 is pressed.
 
 #### docpath
@@ -224,7 +226,7 @@ They are however rarely needed, and can typically be ignored.
 If you need them you may need to find those online.
 
 ## Linux host
-Create a directory ~/.dosbox/FONTS and copy or symlink the following files.
+Create a directory ~/.config/dosbox-x/FONTS and copy or symlink the following files.
 |===
 |Original filename and location|New filename and location
 
@@ -263,17 +265,18 @@ DIR > LPT1
 The above will cause a ``capture\dosbox_000.prt`` ASCII text file to be created.
 The exact save location is dependent on the ``captures=`` setting in the ``[dosbox]`` section.
 
-You can also use this in most DOS programs, by selecting a generic text printer, or in Windows 3.x, 95 or 98 by selecting the "Generic / Text Only" printer.
+You can also use this in most DOS programs, by selecting a generic text printer, or in Windows 2.x, 3.x, 95 or 98 by selecting the "Generic / Text Only" printer.
 
-Note: If you booted real DOS, or Windows 9x in DOSBox-X the filename will be ``guest os_000.prt`` instead.
+Note: If you booted real DOS, or Windows 9x in DOSBox-X the output filename will be ``guest os_000.prt`` instead.
 
 You may be able to use this with more advanced printer model selected in your DOS application, but the output will then have printer specific control codes in it.
-In addition, this may not work if the application expects to be able to communicate with the printer.
+In addition, this may not work if the application expects to be able to have bi-directional communication with the printer.
 
 # Example: Printing to a real parallel printer
 
 ## Windows host
-This assumes you PC still has a printer port integrated on the systemboard, or a legacy ISA printer adapter. It reportedly will not work with USB printer adapters or PCI printer port adapters.
+This assumes you PC still has a printer port integrated on the systemboard, or a legacy ISA printer adapter.
+It reportedly will not work with USB printer adapters or PCI printer port adapters.
 
 Make sure your dosbox-x config file contains the statements:
 ....
@@ -307,7 +310,8 @@ Make sure your dosbox-x config file contains the statements:
 parallel1=reallpt realport:/dev/parport0
 ....
 
-This has been confirmed to work. Alternatively you can try to set it up as follows:
+This has been confirmed to work.
+Alternatively you can try to set it up as follows:
 
 ....
 [parallel]
@@ -319,7 +323,7 @@ But while this method seems to work on Windows, it does not seem to work properl
 # Example: Printing to a real printer
 
 This method only works on Windows hosts.
-It will cause a Windows print dialog to appear on the host, and you can print to any printer configured on the host, including print to PDF.
+It will cause a Windows print dialogue to appear on the host, and you can print to any printer configured on the host, including print to PDF.
 
 This method requires that you have first completed the FONT installation step above.
 
@@ -352,7 +356,7 @@ printoutput=png
 timeout=1000
 ....
 The above example uses PNG, but you can simply change it to ``printoutput=bmp`` or ``printoutput=ps`` if you prefer.
-But note that BMP files will be much larger then PNG files, while the image quality will be identical.
+But note that BMP files will be much larger than PNG files, while the image quality will be identical.
 
 In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
