@@ -4,6 +4,8 @@ Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
 
 # Installing Microsoft Windows 95 in DOSBox-X
 
+image::images/Windows:Windows_95_SPLASH.png[Windows 95 splash screen]
+
 toc::[]
 
 # Overview

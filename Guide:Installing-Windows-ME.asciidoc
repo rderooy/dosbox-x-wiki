@@ -4,6 +4,8 @@ Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
 
 # Installing Microsoft Windows Millennium Edition in DOSBox-X
 
+image::images/Windows:Windows_ME_SPLASH.png[Windows ME splash screen]
+
 toc::[]
 
 # Overview

@@ -4,6 +4,8 @@ Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
 
 # Installing Microsoft Windows 3.x in DOSBox-X
 
+image::images/Windows:Windows_3.11_SPLASH.png[Windows 1.01 splash screen]
+
 toc::[]
 
 # Overview
@@ -142,7 +144,8 @@ Copy the above config and save it as *win3x.conf*
 Most Windows 3.x versions were shipped on diskettes, requiring anywhere between 5 and 15 disks, depending on media-type and windows version. And while it is definitely possible to install Windows 3.x from diskette images in DOSBox, the process for this is rather tedious for large number of disks. As such it is highly recommended to make a directory such as "INSTALL" and copy the contents of ALL the diskettes into this directory. This way there is no need to swap disks during the installation process.
 
 ## Example of copying disk images
-In DOSBox-X you can mount a disk image, copy its contents into a folder, unmount the disk image and do the next. Here is an example of such a procedure:
+There are various ways to extract the contents of disk images, such as 7zip on Windows or "Disk Image Mounter" on Linux.
+In this example, DOSBox-X itself is used to mount a disk image, copy its contents into a folder, unmount the disk image and do the next.
 
 ....
 MOUNT C /home/myuser/winroot
@@ -160,6 +163,8 @@ IMGMOUNT A DISK05.IMG -U
 COPY A:\*.* C:\INSTALL
 IMGMOUNT A -U
 ....
+
+Your new INSTALL directory now contains the contents of all 5 disks.
 
 ## Mounting an installation CD-ROM
 If you have a "Windows 3.0 Multimedia Edition" CD-ROM image, you can simply mount it in DOSBox-X.

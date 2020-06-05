@@ -4,6 +4,8 @@ Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
 
 # Installing Microsoft Windows 1.0x in DOSBox-X
 
+image::images/Windows:Windows_1.01_SPLASH.png[Windows 1.01 splash screen]
+
 toc::[]
 
 # Overview
@@ -27,12 +29,15 @@ Windows 1.0x was available for both Retail and via OEM. A runtime version was al
 The retail release of Windows 1.04 adds support for the IBM PS/2, but *DID NOT* add support for the IBM PS/2 Mouse, or the newer VGA, MCGA or 8514/A video adapters.
 IBM distributed a special OEM version of Windows 1.04 as part of the "IBM PS/2 Collegiate Kit", which *DOES* have support for these features.
 
-According to Microsoft, _Windows 1.0 required a minimum of 256 kilobyte, two double-sided disk drives and a graphics adapter. A hard disk and 512KB memory are recommended for running multiple programs or when using DOS 3.0 or higher._
+According to Microsoft, _Windows 1.0 required a minimum of 256 kilobyte, two double-sided disk drives and a graphics adapter.
+A hard disk and 512KB memory are recommended for running multiple programs or when using DOS 3.0 or higher._
 
-In reality, it also needs at least DOS 2.0, and the two disk drives are not mandatory if there is a harddisk. It only supports up to 640KB base memory (no support for EMS/XMS/UMB memory).
+In reality, it also needs at least DOS 2.0, and the two disk drives are not mandatory if there is a harddisk.
+It only supports up to 640KB base memory (no support for EMS/XMS/UMB memory).
 
 ## README.1ST
-Apart from the special IBM OEM version of Windows 1.04, there is no support for the default PS/2 mouse that DOSBox-X emulates. Therefore it is necessary if you want mouse support to enable serial mouse support.
+Apart from the special IBM OEM version of Windows 1.04, there is no support for the default PS/2 mouse that DOSBox-X emulates.
+Therefore it is necessary if you want mouse support to enable serial mouse support.
 
 In addition, Windows 1.0x has problems starting if the DOS version is 4.0 or higher.
 Therefore it is necessary to set the reported DOS version to something like 3.30.
@@ -96,8 +101,8 @@ As such it is highly recommended to make a directory such as "INSTALL" and copy 
 This way there is no need to swap disks during the installation process.
 
 ## Example of copying disk images
-There are various ways to extract the contents of disk images, such as the 7zip on Windows or "Disk Image Mounter" on Linux.
-Here we will use DOSBox-X itself to mount a disk image, copy its contents into a folder, unmount the disk image and do the next. Here is an example of such a procedure:
+There are various ways to extract the contents of disk images, such as 7zip on Windows or "Disk Image Mounter" on Linux.
+In this example, DOSBox-X itself is used to mount a disk image, copy its contents into a folder, unmount the disk image and do the next.
 
 ....
 MOUNT C /home/myuser/winroot
@@ -179,7 +184,8 @@ image::images/Windows:Windows_1.04_SETUP_KB_PS2.png[Windows 1.04 SETUP]
 '''
 *Mouse selection*
 
-If you have the special IBM OEM version of Windows 1.04, you can select option 8 "IBM Personal System/2 Mouse" for PS/2 mouse. In which case you need to disable the serialmouse option in your DOSBox-X config file.
+If you have the special IBM OEM version of Windows 1.04, you can select option 8 "IBM Personal System/2 Mouse" for PS/2 mouse.
+In which case you need to disable the serialmouse option in your DOSBox-X config file.
 
 image::images/Windows:Windows_1.04_SETUP_04_PS2.png[Windows 1.04 SETUP MOUSE PS2]
 
