@@ -82,7 +82,7 @@ This guide does not seek to replicate those pages. Instead this page will contai
 * link:https://betawiki.net/wiki/Windows_3.1xp[BetaWiki: Windows 3.1x]
 
 ### General Notes
-* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious key-presses to be registered causing undesirable effects.
+* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects. It can also cause problems with double click with the mouse not working and audio will also not sound properly, so be sure to disable it when using Windows in DOSBox-X.
 
 ### Windows 3.0 specific notes
 * Unless noted otherwise, Windows 3.1 drivers are not backward compatible with Windows 3.0
