@@ -268,6 +268,8 @@ FluidSynth is the preferred software synthesizer for Linux, but it is also avail
 ### Linux Setup
 DOSBox-X provides a range of configuration options, but for most Linux systems you can get it up and running simply by installing a soundfont, using your package manager, such as "fluid-soundfont-gm".
 
+If you installed DOSBox-X using one of the provided RPM packages, this soundfont will be automatically installed by your package manager.
+
 And then simply adding the following lines to your DOSBox-X config file:
 
 ....
