@@ -274,7 +274,7 @@ And then simply adding the following lines to your DOSBox-X config file:
 [midi]
 mididevice=fluidsynth
 ....
-You may also need to specify a soundfont file with ``fluid.soundfont=``, and the sound server with ``fluid.driver=``
+In some cases, you may also need to specify a soundfont file with ``fluid.soundfont=``, and the sound server with ``fluid.driver=``
 
 ### Windows Setup
 Download and install FluidSynth, and add the following lines to your DOSBox-X config.
@@ -284,7 +284,7 @@ Download and install FluidSynth, and add the following lines to your DOSBox-X co
 mididevice=fluidsynth
 fluid.soundfont="C:\My User\soundfonts\FluidR3_GM.sf2"
 ....
-Adjust the path and filename to your soundfont as necessary.
+Adjust the path and filename to your soundfont as necessary. Unless a soundfont is specified, DOSBox-X will try to open C:\soundfonts\default.sf2 if it exists.
 
 ### FluidSynth config options
 
