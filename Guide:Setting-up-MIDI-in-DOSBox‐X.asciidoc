@@ -273,11 +273,8 @@ And then simply adding the following lines to your DOSBox-X config file:
 ....
 [midi]
 mididevice=fluidsynth
-fluid.driver=pulseaudio
-fluid.soundfont=/usr/share/soundfonts/default.sf2
 ....
-Adjust the path to a valid SoundFont as necessary.
-On Debian or Ubuntu the soundfont will be installed by default as ``/usr/share/sounds/sf2/FluidR3_GM.sf2``
+You may also need to specify a soundfont file with ``fluid.soundfont=``, and the sound server with ``fluid.driver=``
 
 ### Windows Setup
 Download and install FluidSynth, and add the following lines to your DOSBox-X config.
