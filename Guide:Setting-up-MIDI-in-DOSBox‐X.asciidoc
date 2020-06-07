@@ -293,7 +293,7 @@ Adjust the path and filename to your soundfont as necessary.
 
 #### fluid.driver
 * Default value:
-** Linux: jack
+** Linux: pulseaudio
 ** MacOSX: coreaudio
 ** Windows: dsound
 * Possible values: pulseaudio, alsa, oss, coreaudio, dsound, portaudio, sndman, jack, file, default
@@ -302,15 +302,22 @@ This parameter is typically not needed if your running FluidSynth on Windows, wh
 
 You can however optionally set it to "file", which will cause a ``fluidsynth.wav`` file to be created in the current working directory with the MIDI output.
 
-For Linux, the "jack" (default) and "pulseaudio" options are for different Sound Servers. Most modern Linux distributions by default install PulseAudio.
+For Linux, the "pulseaudio" (default) and "jack" options are for different Sound Servers. Most modern Linux distributions by default install PulseAudio.
 Jack is lower latency, but higher CPU.
-It is possible to replace PulseAudio with Jack, but many applications will stop working.
-An alternative if you want to use Jack for FluidSynth is to setup Jack as a client of PulseAudio, but the setup of that is beyond the scope of this guide. It is expected that "PipeWire" will replace both PulseAudio and Jack in the near future.
+It is possible to replace your installed PulseAudio Sound Server with Jack, but audio output of many applications will stop working, including web browsers.
+An alternative if you want to use Jack for FluidSynth is to setup PulseAudio as a client of Jack, but the setup of that is beyond the scope of this guide.
+It is expected that "PipeWire" will replace both PulseAudio and Jack in the near future.
 
 For Windows and MacOSX you can optionally download and install link:http://www.fluidsynth.org/[FluidSynth]. Note that not every update is released as binary, so unless you can compile it yourself you may be a few versions behind.
 
 #### fluid.soundfont
-This is a mandatory parameter, and needs to point to a link:https://github.com/FluidSynth/fluidsynth/wiki/SoundFont[SoundFont] file with .sf2 extension. Many soundfonts can be found online, but you want one that covers the whole General MIDI range, also called a "GM SoundFont". FluidR3 is such a free SoundFont.
+* Default value:
+** Windows: C:\soundfonts\default.sf2
+** Other: /usr/share/soundfonts/default.sf2 or /usr/share/sounds/sf2/FluidR3_GM.sf2
+
+This parameter can be used to specify a SF2 link:https://github.com/FluidSynth/fluidsynth/wiki/SoundFont[SoundFont] file.
+
+Many soundfonts can be found online, but you want one that covers the whole General MIDI range, also called a "GM SoundFont". FluidR3_GM.sf2 is such a free SoundFont.
 
 You may optionally want to download a SoundFont that more closely resembles the classic Roland SC-55 (Sound Canvas), which was used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
 

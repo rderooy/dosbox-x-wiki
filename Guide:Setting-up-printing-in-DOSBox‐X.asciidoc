@@ -15,6 +15,7 @@ The Virtual Printer emulates a color dot-matrix printer that follows the ESC/P2 
 
 **Example of printers that may work:**
 
+* Epson MX-80
 * Epson SQ-860
 * Epson LQ-800
 * IBM Pro Printer
@@ -203,7 +204,7 @@ Since not all software will send one, especially if your redirecting output, you
 If non-zero, it specifies the time after which the page will be ejected automatically when no more data arrives at the printer.
 
 # Setting up fonts for the emulated printer
-The emulated printer requires TrueType fonts to be setup. At a minimum you need ``courier.ttf``.
+The emulated printer requires TrueType fonts to be setup to be able to print text. At a minimum it needs ``courier.ttf``.
 
 ## Windows host
 In the directory where your dosbox-x.exe is located, create a directory FONTS.
@@ -219,7 +220,7 @@ Now copy from your C:\Windows\Fonts directory the following files to the new FON
 |C:\Windows\Fonts\freescpt.ttf|FONTS\script.ttf|Installed by MS Office
 |===
 
-These are recommendations, you are free to substitute them for suitable alternatives.
+The source files are recommendations, you are free to substitute them for suitable alternatives.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
@@ -230,14 +231,14 @@ Create a directory ~/.config/dosbox-x/FONTS and copy or symlink the following fi
 |===
 |Original filename and location|New filename and location
 
-|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|FONTS/courier.ttf
-|/usr/share/fonts/liberation-serif/LiberationSerif-Regular.ttf|FONTS/roman.ttf
-|/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf|FONTS/sansserif.ttf
-|Download Ocraext.ttf|FONTS/ocra.ttf
-|Download a Script (cursive) font|FONTS/script.ttf
+|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|~/.config/dosbox-x/FONTS/courier.ttf
+|/usr/share/fonts/liberation-serif/LiberationSerif-Regular.ttf|~/.config/dosbox-x/FONTS/roman.ttf
+|/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf|~/.config/dosbox-x/FONTS/sansserif.ttf
+|Download Ocraext.ttf|~/.config/dosbox-x/FONTS/ocra.ttf
+|Download a Script (cursive) font|~/.config/dosbox-x/FONTS/script.ttf
 |===
 
-These are recommendations, you are free to substitute them for suitable alternatives.
+The source files are recommendations, you are free to substitute them for suitable alternatives.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.

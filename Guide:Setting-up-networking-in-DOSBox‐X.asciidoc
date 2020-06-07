@@ -55,13 +55,16 @@ If your running a recent Debian or Debian based distribution such as Ubuntu, you
 apt-get install libpcap
 ....
 #### Red Hat, SUSE or Fedora
-If your running a recent Red Hat, CentOS, SUSE or Fedora Linux distribution, you can install libpcap from the command-line as follows:
+If you used the provided RPM, libpcap is a dependency and will be automatically installed when using a package manager to install DOSBox-X.
+
+Otherwise if your running a recent Red Hat, CentOS, SUSE or Fedora Linux distribution, you can install libpcap from the command-line as follows:
 ....
 dnf install libpcap
 ....
 
 ### Check if your DOSBox-X binary supports networking
-Not all DOSBox-X binaries have libpcap support enabled during compilation. To check if your binary has networking support, run the following command:
+The provided RPMs have networking enabled, but if you compiled it yourself and the libpcap headers where not installed, the resulting DOSBox-X binary will lack libpcap support.
+To check if your binary has networking support, run the following command:
 
 ....
 ldd /usr/bin/dosbox-x | grep pcap
@@ -69,10 +72,12 @@ ldd /usr/bin/dosbox-x | grep pcap
 ....
 
 In the above example, the DOSBox-X binary has libpcap support, meaning it has networking. If the command returns nothing you do not have networking.
-If you binary has no networking, your options are to either look for another binary that does, or compile it yourself with libpcap support enabled.
+If you binary has no networking, your options are to use the pre-compiled RPM package, or compile it yourself with libpcap support enabled.
 
 ### Setup permissions
-First of all, you need to ensure that the DOSBox-X binary has permission to listen to and generate low level network traffic. You can do this as follows:
+The provided RPM packages automatically setup the necessary permission.
+
+Otherwise, you need to ensure that the DOSBox-X binary has permission to listen to and generate low level network traffic. You can do this as follows:
 
 ....
 $ which dosbox-x
@@ -80,7 +85,9 @@ $ which dosbox-x
 $ getcap /usr/bin/dosbox-x
 $
 ....
-The first command returns the location of the dosbox-x binary (assuming it is in your path), the second command checks its capabilities. In this case getcap does not return anything, meaning it has no special capabilities, which you need to rectify if you want to be able to have networking in DOSBox-X. Run the following command:
+The first command returns the location of the dosbox-x binary (assuming it is in your path), the second command checks its capabilities.
+In this case getcap does not return anything, meaning it has no special capabilities, which you need to rectify if you want to be able to have networking in DOSBox-X.
+Run the following command:
 
 ....
 $ sudo setcap cap_net_raw+ep /usr/bin/dosbox-x
@@ -95,7 +102,7 @@ $ getcap /usr/bin/dosbox-x
 /usr/bin/dosbox-x = cap_net_raw+ep
 ....
 
-Warning: Each time you upgrade DOSBox-X, you will again need to give it the cap_net_raw capability.
+Warning: If your not using the RPM packages, each time you upgrade DOSBox-X, you will again need to give it the cap_net_raw capability.
 
 ### Locate host network interface
 You now need to find which host network interface you want to use for bridging.
