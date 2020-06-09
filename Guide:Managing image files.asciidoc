@@ -7,14 +7,18 @@ Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
 toc::[]
 
 # Overview
-DOSBox-X supports a three types of image files;
+DOSBox-X supports three categories of image files;
 
 * Diskette images
 * Harddisk images
 * CD-ROM or DVD images
 
+TIP: Whenever this guide mentions mounting a image file, such as disk.ima, hdd.img or cdrom.iso, those are files on your host filesystem.
+And they may optionally be prefixed with the host path to the file. e.g. ``disk.ima`` may become ``"C:\John Doe\dosroot\disk.ima"``.
+Also note that if there are any spaces in the host path or filename, you need to enclose it with quotes.
+
 # Diskette images
-DOSbox-X supports diskette images in MFM sector image format.
+DOSbox-X supports diskette or floppy images in MFM sector image format.
 These commonly have an extension of IMG or IMA, and sometimes DSK.
 The IMG extension is also used for harddisk images, so there can be some confusion.
 Files with the extension IMA are automatically treated as diskette images.
@@ -448,6 +452,31 @@ imgmount D: cdrom.iso -t cdrom
 ....
 NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when the extension is not .ISO, .CUE or .MDF.
 
+### Accessing a CD or DVD in real DOS
+With the integrated DOS that DOSBox-X provides, you do not need to worry about loading a CD-ROM driver and MSCDEX.
+If however, you boot real DOS in DOSBox-X, any mounted CD-ROM images will not be accessible until you load both a IDE CD-ROM driver and MSCDEX.
+
+For a IDE CD-ROM driver we recommend either OAKCDROM.SYS or UIDE.SYS.
+
+* OAK stands for OEM Adaptation Kit, and this is the IDE CD-ROM driver shipped on the Windows 95, 98 and ME boot disks.
+* UIDE.SYS is available from FreeDOS.
+
+MSCDEX.EXE is included with DOS 6.x, or you can use the SHSUCDX.EXE redirector available from FreeDOS.
+
+Edit your config.sys and add the following line to it:
+....
+device=c:\dos\oakcdrom.sys /D:cdrom001
+....
+
+Edit your autoexec.bat and add the following line to it:
+....
+device=c:\dos\mscdex.exe /D:cdrom001 /L:D
+....
+The above assumes oakcdrom.sys and mscdex.exe are in your C:\DOS directory in your harddisk image file.
+You can substitute oakcdrom.sys and mscdex.exe with their FreeDOS equivalents with the same parameters.
+
+The ``/L:D`` will cause mscdex to use the D: drive for the CD-ROM, adjust as needed.
+
 ### Mounting multiple CD or DVD images
 Some DOS programs or games came on multiple CD or DVDs, for this purpose it is possible to mount multiple images on one drive letter and swap between them.
 e.g.
@@ -532,9 +561,8 @@ Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO fi
 
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
 * QCOW2 format, mention it in more detail and also how to use the COW functionality
-* source mentions .hdi, .nhd, .nfd, .vhd image files say something about them
+* Mention .vhd image files (no dynamic support)
 * copying files to/from image files from within DOSBox-X using local mounts
-* Mention issue with mounting a CD-ROM image from real dos (need driver)
 * Mention running ``IMGMOUNT`` or ``MOUNT`` without arguments for list of mounts
 * Mention archiving real diskettes
 * Mention windows exclusive ``IMGMOUNT`` -source, -r and -bat options.
@@ -543,4 +571,4 @@ Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO fi
 * how about IDE teriary through octenary controllers in dosbox config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
 * Accessing harddisk images from Windows? Do the same tools as for diskette images work?
 * Accessing image files from MacOS?
-* Anything to add for the PC-98?
+* Anything to add for the PC-98? .nhd/hdi/nfd are supported PC-98 formats
