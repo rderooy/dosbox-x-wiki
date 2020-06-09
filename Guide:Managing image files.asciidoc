@@ -350,14 +350,14 @@ When using the ``-fs none`` option, it is required to use a device ID instead of
 |5|-ide 2s|Secondary|Slave
 |===
 
-A harddisk image that is also not partitioned needs additional parameters, such as a template, the size or CHS.
+A harddisk image that is also not partitioned needs additional parameters, such as a template or the size in SHC.
 
 Using the original template it was based on:
 ....
 imgmount 2 hdd.img -t hd_4gig -fs none
 ....
 
-Or using the original CHS it was based on:
+Or using the original SHC it was based on:
 ....
 imgmount 2 hdd.img -t hdd -size 512,32,2,992 -fs none
 ....
