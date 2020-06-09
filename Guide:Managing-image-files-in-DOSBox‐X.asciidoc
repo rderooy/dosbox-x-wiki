@@ -193,8 +193,8 @@ A subset of commands provided by mtools:
 |Command|DOS equivalent |Note
 
 |mattrib|ATTRIB|View and change file attributes
-|mcopy|COPY|Copy files
-|mdel|DEL|Delete files
+|mcopy|COPY / XCOPY|Copy files
+|mdel|DEL / ERASE|Delete files
 |mdeltree|DELTREE|Delete directory tree
 |mdir|DIR|List directory contents
 |mdu|-|Disk Usage
