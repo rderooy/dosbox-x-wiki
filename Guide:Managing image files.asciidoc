@@ -530,10 +530,17 @@ Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO fi
 
 # Outstanding issues
 
-* for ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
+* For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
 * QCOW2 format, mention it in more detail and also how to use the COW functionality
+* source mentions .hdi, .nhd, .nfd, .vhd image files say something about them
+* copying files to/from image files from within DOSBox-X using local mounts
+* Mention issue with mounting a CD-ROM image from real dos (need driver)
+* Mention running ``IMGMOUNT`` or ``MOUNT`` without arguments for list of mounts
+* Mention archiving real diskettes
+* Mention windows exclusive ``IMGMOUNT`` -source, -r and -bat options.
 * ``imgmount --help`` claims you can specify -size and then drivesize in KB. This does not seem to work. Is this only for RAM disks?
 * How about -t ram
 * how about IDE teriary through octenary controllers in dosbox config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
 * Accessing harddisk images from Windows? Do the same tools as for diskette images work?
 * Accessing image files from MacOS?
+* Anything to add for the PC-98?
