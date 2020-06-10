@@ -565,16 +565,51 @@ Alternatively there is link:https://wincdemu.sysprogs.org/[WinCDEmu] which can m
 
 Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO file
 
+# Copying files into or out of image files from DOSBox-X
+If you need to copy files into, or out of a image file, this can be done from the DOSBox-X integrated DOS.
+
+Obviously, copying files to write-protected media is not possible. As such you cannot copy files to a CD or DVD image, or to write-protected diskette images.
+
+The general steps are as follows:
+
+1. start DOSBox-X
+2. ``imgmount`` the image file in DOSBox-X that you want to copy files into or out of
+3. ``mount`` a host directory or drive
+4. Copy the files using the ``copy`` or ``xcopy`` commands
+
+Example of extracting the contents of a cdrom image file:
+....
+IMGMOUNT d cdrom.iso
+MOUNT C .
+MKDIR C:\CDROM
+XCOPY D: C:\CDROM /I /S
+....
+This will create a new "CDROM" directory on the host system with the contents of the cdrom.iso file.
+
+Example of copying a file into a harddisk image file:
+....
+IMGMOUNT C hdd.img
+MOUNT D .
+COPY D:\UNZIP.EXE C:\DOS
+....
+This copies the file UNZIP.EXE from the host system to the C:\DOS directory in the harddisk image file.
+
+# Creating a RAM drive
+If you need a temporary drive, creating a RAM drive is as simple as running
+....
+IMGMOUNT e -t ram -size 20
+....
+This will create a temporary RAM drive as drive E: with a size of 20MB.
+
+CAUTION: The contents of the RAM drive will be lost if the drive is unmounted, a program or yourself issues a reset in DOSBox-X or DOSBox-X is shut-down. They do however survive booting into real DOS.
+
 # Outstanding issues
 
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
 * QCOW2 format, mention it in more detail and also how to use the COW functionality
 * Mention .vhd image files (no dynamic support)
-* Copying files to/from image files from within DOSBox-X using local mounts
 * Mention archiving real diskettes
 * Mention windows exclusive ``IMGMOUNT`` -source, -r and -bat options.
-* ``imgmount --help`` claims you can specify -size and then drivesize in KB. This does not seem to work. Is this only for RAM disks?
-* How about -t ram
-* how about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
+* How about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
 * Accessing image files from MacOS?
 * Anything to add for the PC-98? .nhd/hdi/nfd are supported PC-98 formats
