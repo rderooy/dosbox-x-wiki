@@ -17,6 +17,14 @@ TIP: Whenever this guide mentions mounting a image file, such as disk.ima, hdd.i
 And they may optionally be prefixed with the host path to the file. e.g. ``disk.ima`` may become ``"C:\John Doe\dosroot\disk.ima"``.
 Also note that if there are any spaces in the host path or filename, you need to enclose it with quotes.
 
+# Listing current mounts
+The currently active mounts can be viewed by running the ``IMGMOUNT`` or ``MOUNT`` commands without arguments.
+The output of the two commands differs somewhat.
+
+* MOUNT will show all active mounts
+* IMGMOUNT will only show mounted images
+* IMGMOUNT will list the device IDs (drive numbers) in use
+
 # Diskette images
 DOSbox-X supports diskette or floppy images in MFM sector image format.
 These commonly have an extension of IMG or IMA, and sometimes DSK.
@@ -204,7 +212,7 @@ A subset of commands provided by mtools:
 |mmove|MOVE|Move file or directory
 |mrd|RD / RMDIR|Remove directory
 |mren|REN / RENAME|Rename file or directory
-|mtype|-|unix type command
+|mtype|TYPE|Show contents of a file
 |===
 
 
@@ -246,10 +254,10 @@ mcopy -s -i disk.ima :: tmp
 ## Using diskette images in Windows
 WARNING: You should never mount a disk image simultaneously in both DOSBox-X and in Windows, as that can cause corruption of files or the filesystem on the diskette image.
 
-Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
+NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
 Unfortunately this support is incompatible with the image files used by DOSBox-X, and the mount will fail.
 
-However, several 3rd party tools are available which can open the diskette image files:
+Several 3rd party tools are available which can open the diskette image files:
 
 * link:https://www.7-zip.org/[7-Zip]
 * link:http://www.winimage.com/winimage.htm[WinImage]
@@ -420,14 +428,14 @@ sudo mount -o loop,offset=32256,uid=$UID hdd.img /mnt
 ....
 The above command will cause hdd.img to be mounted under /mnt
 
-The offset is requires to skip the Master Boot Record (MBR) and partition data at the beginning of the harddisk image.
+The offset is required to skip the Master Boot Record (MBR) and partition data at the beginning of the harddisk image.
 
 TIP: This command will mount the first partition only.
 If the harddisk image contains multiple partitions, you can find the offset for the other partitions by running ``fdisk -l hdd.img`` and looking for the "Start" of the partition, and multiply the value by 512.
 For the first partition this should normally always start at 63*512=32256
 
 ## Using harddisk images in Windows
-Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
+NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
 Unfortunately this support is incompatible with the image files used by DOSBox-X, and the mount will fail.
 
 One tool which is able to open harddisk images is 7-Zip.
@@ -562,13 +570,11 @@ Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO fi
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
 * QCOW2 format, mention it in more detail and also how to use the COW functionality
 * Mention .vhd image files (no dynamic support)
-* copying files to/from image files from within DOSBox-X using local mounts
-* Mention running ``IMGMOUNT`` or ``MOUNT`` without arguments for list of mounts
+* Copying files to/from image files from within DOSBox-X using local mounts
 * Mention archiving real diskettes
 * Mention windows exclusive ``IMGMOUNT`` -source, -r and -bat options.
 * ``imgmount --help`` claims you can specify -size and then drivesize in KB. This does not seem to work. Is this only for RAM disks?
 * How about -t ram
-* how about IDE teriary through octenary controllers in dosbox config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
-* Accessing harddisk images from Windows? Do the same tools as for diskette images work?
+* how about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
 * Accessing image files from MacOS?
 * Anything to add for the PC-98? .nhd/hdi/nfd are supported PC-98 formats
