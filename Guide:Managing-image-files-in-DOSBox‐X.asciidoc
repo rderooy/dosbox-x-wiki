@@ -259,7 +259,7 @@ mcopy -s -i disk.ima :: tmp
 WARNING: You should never mount a disk image simultaneously in both DOSBox-X and in Windows, as that can cause corruption of files or the filesystem on the diskette image.
 
 NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
-Unfortunately this support is incompatible with the image files used by DOSBox-X, and the mount will fail.
+Unfortunately this support is incompatible with the typical MFM image files used by DOSBox-X, and the mount will fail.
 
 Several 3rd party tools are available which can open the diskette image files:
 
@@ -271,11 +271,11 @@ Several 3rd party tools are available which can open the diskette image files:
 # Harddisk images
 DOSBox-X supports mounting harddisk images in the following formats:
 
-* MFM sector image format (typically .img)
-* QCOW2 - QEMU copy-on-write v2 (.qcow2)
+* link:https://en.wikipedia.org/wiki/IMG_(file_format)[MFM sector image format] (typically .img)
+* link:https://en.wikipedia.org/wiki/Qcow[QCOW2] - QEMU copy-on-write v2 (.qcow2)
 ** No support in DOSBox-X for QCOW2 compression or encryption options
 ** Must always be mounted with ``-fs none``as such: ``imgmount 2 hdd.qcow2 -fs none``
-* Virtual HardDisk Volume (.vhd)
+* link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (.vhd)
 ** No support in DOSBox-X for VHD dynamic or encryption options
 * NEC PC-98 harddisk images (.nhd or .hdi)
 
@@ -450,7 +450,7 @@ For the first partition this should normally always start at 63*512=32256
 
 ## Using harddisk images in Windows
 NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
-Unfortunately this support is incompatible with the image files used by DOSBox-X, and the mount will fail.
+Unfortunately this support is incompatible with the typical MFM image files used by DOSBox-X, and the mount will fail.
 
 One tool which is able to open harddisk images is 7-Zip.
 
@@ -648,11 +648,29 @@ boot C:
 The advantage of the QCOW2 format, is the Copy-On-Write (COW) functionality which allows you to create a base image of for instance Windows 98, and then have different snapshots on top of that with different drivers or applications.
 This saves disk space compared to maintaining multiple full installations, and can prevent windows bit-rot.
 
+# Archiving diskettes
+If you have 3.5" or 5.25" diskettes that you want to convert to image files, there are a multitude of ways to accomplished this, and really out of the scope for this Guide.
+
+Some potential useful links:
+
+* link:https://www.archiveteam.org/index.php?title=Rescuing_Floppy_Disks[Rescuing Floppy Disks]
+* link:https://diskpreservation.com/[Floppy Disk Preservation]
+
+If you have a relatively modern PC running Windows with a floppy drive, the ``IMGMAKE`` command supports converting a diskette to an image file.
+This will even work with USB diskette drives.
+....
+IMGMAKE disk.ima -source a -r 3
+....
+The above will try to read the real A: drive on your Windows PC, and convert it to a disk image named disk.ima. The ``-r`` option specifies how many retries are allowed while reading the original diskette.
+
+CAUTION: Do not buy "modern" USB 3.5" floppy drives available from retailers like Amazon.
+They are junk and have a high likelihood of damaging your disk.
+Instead look for an older second-hand USB floppy drive from a known brand like Dell, HP, IBM, Lenovo, Teac or Toshiba.
+
 # Outstanding issues
 
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
-* Mention .vhd image files (no dynamic support)
 * Mention archiving real diskettes
-* Mention windows exclusive ``IMGMOUNT`` -source, -r and -bat options.
+* Mention windows ``IMGMOUNT`` -bat option.
 * How about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
 * Accessing image files from MacOS?
