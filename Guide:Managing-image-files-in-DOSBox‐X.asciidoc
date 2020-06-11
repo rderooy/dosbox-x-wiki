@@ -664,13 +664,12 @@ IMGMAKE disk.ima -source a -r 3
 The above will try to read the real A: drive on your Windows PC, and convert it to a disk image named disk.ima. The ``-r`` option specifies how many retries are allowed while reading the original diskette.
 
 CAUTION: Do not buy "modern" USB 3.5" floppy drives available from retailers like Amazon.
-They are junk and have a high likelihood of damaging your disk.
+The drive mechanisms are junk and have a high likelihood of damaging your disk.
 Instead look for an older second-hand USB floppy drive from a known brand like Dell, HP, IBM, Lenovo, Teac or Toshiba.
 
 # Outstanding issues
 
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
-* Mention archiving real diskettes
 * Mention windows ``IMGMOUNT`` -bat option.
 * How about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
 * Accessing image files from MacOS?
