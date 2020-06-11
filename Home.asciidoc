@@ -291,6 +291,13 @@ Displays or changes file attributes.
 Usage: ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [drive:][path][filename] [/S]
 +
 Note: Changing file attributes only works on local and FAT drives.
+* **AUTOTYPE** (external command)
++
+Performs scripted keyboard entry into a running DOS program.
++
+Usage: AUTOTYPE [-list] [-w WAIT] [-p PACE] button_1 [button_2 [...]]
++
+Note: It can be used to reliably skip intros, provide input to answer initial startup or configuration questions, or conduct a simple demo.
 * **BOOT** (external command)
 +
 Starts disk or BIOS images independent of the operating system emulation offered by DOSBox-X.
