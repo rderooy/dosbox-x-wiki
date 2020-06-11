@@ -343,6 +343,13 @@ IMGMAKE hdd.img -t hd -size 31 -nofs
 ....
 NOTE: DOSBox-X has no integrated FDISK and FORMAT commands, so creating harddisk images that are not partitioned and formatted is typically not recommended.
 
+The ``IMGMAKE`` command also has an optional ''-bat'' option for use on Windows systems.
+....
+IMGMAKE hdd.img -t hd -size 31 -nofs -bat
+....
+Will cause both a hdd.img and a hdd.bat to be generated.
+The BAT file will contain the imgmount command to mount the harddisk image, including geometry.
+
 ## Mounting harddisk images
 Mounting a harddisk image in DOSBox-X is typically as simple as
 
@@ -670,6 +677,8 @@ Instead look for an older second-hand USB floppy drive from a known brand like D
 # Outstanding issues
 
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
-* Mention windows ``IMGMOUNT`` -bat option.
+* It seems from the sourcecode that ``IMGMAKE`` can create VHD images if you use the .vhd extension, but this does not work in practice?
+* imgmount of QCOW2 images only works in combination with ``-nofs``, which is rather restrictive. Can this be easily solved?
 * How about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
-* Accessing image files from MacOS?
+* Accessing image files from MacOS? I have no MacOS system and no experience with them.
+* PC-98 descriptions need checking as I have no experience with them.
