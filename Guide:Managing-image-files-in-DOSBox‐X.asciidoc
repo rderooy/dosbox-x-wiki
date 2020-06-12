@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Home[Back to the DOSBox-X Wiki Welcome page]
+Back to the link:Home[DOSBox-X Wiki Welcome page]
 
 # Managing images files
 
@@ -23,13 +23,13 @@ The output of the two commands differs somewhat.
 
 * MOUNT will show all active mounts
 * IMGMOUNT will only show mounted images
-* IMGMOUNT will list the device IDs (drive numbers) in use
+* IMGMOUNT will list the device numbers (drive numbers) in use
 
 # Diskette images
 DOSBox-X supports mounting diskette images in the following formats:
 
 * MFM sector image format (typically .ima or .img)
-* NEC PC-98 diskette images (.fdi .nfd or .d88)
+* NEC PC-98 diskette images (.fdd .fdi .nfd or .d88)
 
 
 NOTE: The IMG extension is also used for harddisk images, so there can be some confusion.
@@ -372,10 +372,10 @@ A harddisk image that is not formatted, or has an unsupported filesystem can be 
 ....
 imgmount 2 hdd.img -fs none
 ....
-When using the ``-fs none`` option, it is required to use a device ID instead of a drive letter.
+When using the ``-fs none`` option, it is required to use a device number instead of a drive letter.
 
 |===
-|Device ID|Controller option|IDE Controller|Master/Slave
+|Device number|Controller option|IDE Controller|Master/Slave
 
 |2|-ide 1m|Primary|Master
 |3|-ide 1s|Primary|Slave
@@ -679,6 +679,6 @@ Instead look for an older second-hand USB floppy drive from a known brand like D
 * For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
 * It seems from the sourcecode that ``IMGMAKE`` can create VHD images if you use the .vhd extension, but this does not work in practice?
 * imgmount of QCOW2 images only works in combination with ``-nofs``, which is rather restrictive. Can this be easily solved?
-* How about IDE teriary through octenary controllers in dosbox-x config. Do the device ID and/or -ide options continue counting up to ID 18 and ``-ide 8s``?
+* How about IDE teriary through octenary controllers in dosbox-x config. Do the device number and/or -ide options continue counting up to device number 18 and ``-ide 8s``?
 * Accessing image files from MacOS? I have no MacOS system and no experience with them.
 * PC-98 descriptions need checking as I have no experience with them.
