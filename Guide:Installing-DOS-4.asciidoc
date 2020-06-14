@@ -31,8 +31,14 @@ DOS version 4.00 was the first release where IBM had the development lead. It re
 * IBM DOS 4.01
 
 ## Notes
-* First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release. If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required. Also the IBM PC-DOS release is easier to install then the MS-DOS release as it uses fewer disks, but lacks HIMEM.SYS, EMM386.SYS and SMARTDRV.SYS.
-* Unlike with MS-DOS, there is no obvious way to know if you have IBM DOS 4.00 or 4.01. The ``VER`` command will claim Version 4.00 for either, as will the box, manuals and installer. The ways to check are either to look at the disk labels, which will say 4.00 or 4.01, or check if some OS files like IBMBIO.COM and IBMDOS.COM are dated 08-03-1988 (MM-DD-YYYY), in which case you have the 4.01 release. IBM released a corrective service (CSD UR22624) to upgrade a 4.00 installation to 4.01, you can view the README here: http://www.retroarchive.org/garbo/pc/doc-soft/dos400.bug
+WARNING: First of all, consider if you really, really want to use DOS 4.x as it was considered a very buggy release.
+If you decide to continue with a full install, and you have the choice, do yourself a favour and use the 3.5" version as it will minimize the amount of disk swapping required.
+Also the IBM PC-DOS release is easier to install then the MS-DOS release as it uses fewer disks, but lacks HIMEM.SYS, EMM386.SYS and SMARTDRV.SYS.
+
+NOTE: Unlike with MS-DOS, there is no obvious way to know if you have IBM DOS 4.00 or 4.01.
+The ``VER`` command will claim Version 4.00 for either, as will the box, manuals and installer.
+The ways to check are either to look at the disk labels, which will say 4.00 or 4.01, or check if some OS files like IBMBIO.COM and IBMDOS.COM are dated 08-03-1988 (MM-DD-YYYY), in which case you have the 4.01 release.
+IBM released a corrective service (CSD UR22624) to upgrade a 4.00 installation to 4.01, you can view the README here: http://www.retroarchive.org/garbo/pc/doc-soft/dos400.bug
 
 |===
 |OS|Media|Disks

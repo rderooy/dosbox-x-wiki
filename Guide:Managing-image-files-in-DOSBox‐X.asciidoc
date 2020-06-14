@@ -13,7 +13,7 @@ DOSBox-X supports three categories of image files;
 * Harddisk images
 * CD-ROM or DVD images
 
-TIP: Whenever this guide mentions mounting a image file, such as disk.ima, hdd.img or cdrom.iso, those are files on your host filesystem.
+TIP: Whenever this guide mentions mounting an image file, such as disk.ima, hdd.img or cdrom.iso, those are files on your host filesystem.
 And they may optionally be prefixed with the host path to the file. e.g. ``disk.ima`` may become ``"C:\John Doe\dosroot\disk.ima"``.
 Also note that if there are any spaces in the host path or filename, you need to enclose it with quotes.
 
@@ -59,7 +59,7 @@ IMGMAKE disk.ima -t fd_1440
 This will create a 1.44MB formatted disk image named disk.ima.
 The diskette image will appear to have been formatted by MS-DOS 5.0.
 
-NOTE: The filename in this case is not limited to the DOS 8.3 filename length, but rather by your host filesystem.
+NOTE: The filename for the disk image is not limited to the DOS 8.3 filename length, but rather by your host filesystem.
 
 You can optionally create a diskette image that is not formatted with:
 ....
@@ -67,7 +67,7 @@ IMGMAKE disk.ima -t fd_1440 -nofs
 ....
 NOTE: DOSBox-X has no integrated FORMAT command, so creating diskette images that are not formatted is typically not recommended.
 
-DOSBox-X will automatically assume it is a diskette image if the filename extension is .IMA, or if your mounting on the emulated A: or B: drive.
+TIP: DOSBox-X will automatically assume it is a diskette image if the filename extension is .IMA, or if your mounting on the emulated A: or B: drive.
 If this is not the case, you can force a diskette type with the ``-t floppy`` parameter.
 
 Supported diskette sizes options:
@@ -87,7 +87,8 @@ Supported diskette sizes options:
 |3.5" ED|2880KB (2.88MB)|-t fd_2880
 |===
 
-NOTE: the 8-sector formats should be avoided unless your need backward compatibility with DOS 1.x.
+NOTE: The 8-sector formats should be avoided unless your need backward compatibility with DOS 1.x.
+The 10-sector disks were used by the DEC Rainbow 100.
 
 ## Mounting diskette images
 Mounting a diskette image in DOSBox-X is typically as simple as
@@ -108,8 +109,23 @@ imgmount 0 disk.ima -fs none
 ....
 0 represents drive A: and 1 represents drive B:. The use of 0 or 1 is required if your using the ``-fs none`` flag to mount a diskette image.
 
+### Mounting from the Drive menu
+This is exclusive to the Windows version.
+The advantage of this option is, that you don't need to mount all the disks before starting your program or game, but you can mount disk images when needed.
+
+To access it, DOSBox-X needs to be in windowed mode, there is a menu bar with a "Drive" drop down. Select a drive letter, and you will see various mount options.
+
+The only mount option that can be used for image files is the "Mount disk image" option.
+All the other mount options are host folder mounts.
+
+Select the Drive menu, and the "A" or "B" drive and "Mount disk image".
+Now a file browser will allow you to select an image file.
+
+This option does not support read-only disk images.
+
 ### Mounting multiple diskette images
-Some DOS programs or games came on multiple diskettes, for this purpose it is possible to mount multiple diskette images on one drive letter and swap between them.
+Some DOS programs or games came on multiple diskettes.
+For this purpose it is possible to mount multiple diskette images on one drive letter and swap between them.
 e.g.
 ....
 imgmount a disk1.ima disk2.ima disk3.ima
@@ -120,11 +136,11 @@ Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+D and for other platforms F12+CTRL+D.
 Or from the menu you can select "DOS" followed by "Swap floppy".
 
-Unless you have a console open with the log, there is no visual indication of which diskette image is currently mounted.
+Unless there is a console open with the log, there is no visual indication of which diskette image is currently mounted.
 
 ### Write protecting diskette images
 By default diskette images are mounted read-write.
-You can make a diskette image read-only (write protected) by attaching the ``:`` prefix to the filename.
+It is possible to make a diskette image read-only (write protected) by attaching the ``:`` prefix to the filename.
 e.g.
 ....
 imgmount a :disk.ima
@@ -151,7 +167,7 @@ imgmount a disk2.ima -u
 ....
 This will cause the currently mounted disk image (if any) to be unmounted, and disk2.ima to be mounted instead.
 
-Alternatively you can unmount a diskette from the DOSBox-X menu bar by selecting "Drive", followed by the drive letter and "Unmount".
+Alternatively you can unmount a diskette from the DOSBox-X menu bar (when running in Windowed mode) by selecting "Drive", followed by the drive letter and "Unmount".
 
 ## Boot from a diskette image
 You can either mount a disk image first and then boot from it:
@@ -171,11 +187,13 @@ Image files can be made read-only by prefixing the filename with a column charac
 
 CAUTION: DOSBox-X will attempt to boot from a diskette, even if it is not bootable. This is needed to support early PC-Booter games.
 
+TIP: Once a disk image is mounted, you can alternatively also boot from an disk image by selecting "Drive" from the menu bar, followed by the drive letter and "Boot from drive".
+
 ## Using diskette images in Linux
 WARNING: You should never mount a disk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the diskette image.
 
 ### Gnome Disk Image Mounter
-If your using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter". Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
+When using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter". Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
 
 The first time you want to open .IMA files, you need to right-click and choose "Open With Other Application", and then click on "View All Applications" and choose "Disk Image Mounter" from the list.
 The next time you want to open a .IMA file, the option will be available directly from the right-click menu.
@@ -276,6 +294,7 @@ DOSBox-X supports mounting harddisk images in the following formats:
 ** No support in DOSBox-X for QCOW2 compression or encryption options
 ** Must always be mounted with ``-fs none``as such: ``imgmount 2 hdd.qcow2 -fs none``
 * link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (.vhd)
+* Bochs bximage (typically .img)
 ** No support in DOSBox-X for VHD dynamic or encryption options
 * NEC PC-98 harddisk images (.nhd or .hdi)
 
@@ -400,6 +419,19 @@ So instead of specifying the size in CHS order, it needs to be specified in SHC 
 In addition it needs to be prefixed with the bytes-per-sector, which should always be 512 for now.
 So a CHS of 992,2,32 becomes ``-size 512,32,2,992``.
 
+### Mounting from the Drive menu
+This is exclusive to the Windows version.
+
+To access it, DOSBox-X needs to be in windowed mode, there is a menu bar with a "Drive" drop down. Select a drive letter, and you will see various mount options.
+
+The only mount option that can be used for image files is the "Mount disk image" option.
+All the other mount options are host folder mounts.
+
+Select the Drive menu, and for instance the "C" drive and "Mount disk image", now a file browser will allow you to select an image file.
+
+CAUTION: It is recommended to only mount harddisk images when at the integrated DOSBox-X DOS prompt.
+Doing so when running a program, real DOS or Win9x is strongly discouraged as it can lead to data corruption and/or crashes.
+
 ## Unmounting harddisk images
 Harddisk images can be unmounted using the ``-u`` flag. e.g.
 ....
@@ -415,7 +447,10 @@ imgmount c hdd2.img -u
 ....
 This will cause the currently mounted harddisk image (if any) to be unmounted, and hdd2.img to be mounted instead.
 
-Alternatively you can unmount a harddisk image from the DOSBox-X menu bar by selecting "Drive", followed by the drive letter and "Unmount".
+TIP: Alternatively you can unmount a harddisk image from the DOSBox-X menu bar by selecting "Drive", followed by the drive letter and "Unmount".
+
+CAUTION: It is recommended to only unmount harddisk images when at the integrated DOSBox-X DOS prompt.
+Doing so when running a program, real DOS or Win9x is strongly discouraged as it can lead to data corruption and/or crashes.
 
 ## Booting from a harddisk image
 First mount the harddisk image, and then boot from it as follows:
@@ -425,11 +460,13 @@ boot c:
 ....
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
+TIP: Once a disk image is mounted, you can alternatively also boot from an disk image by selecting "Drive" from the menu bar (when in windowed mode), followed by the drive letter and "Boot from drive".
+
 ## Using harddisk images in Linux
 WARNING: You should never mount a harddisk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the diskette image.
 
 ### Gnome Disk Image Mounter
-If your using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter".
+When using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter".
 Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
 
 NOTE: If the harddisk image contains multiple partitions, they will ALL be mounted.
@@ -492,16 +529,16 @@ For a IDE CD-ROM driver we recommend either OAKCDROM.SYS or UIDE.SYS.
 
 MSCDEX.EXE is included with DOS 6.x, or you can use the SHSUCDX.EXE redirector available from FreeDOS.
 
-Edit your config.sys and add the following line to it:
+Edit the config.sys file and add the following line to it:
 ....
 device=c:\dos\oakcdrom.sys /D:cdrom001
 ....
 
-Edit your autoexec.bat and add the following line to it:
+Edit the autoexec.bat file and add the following line to it:
 ....
 device=c:\dos\mscdex.exe /D:cdrom001 /L:D
 ....
-The above assumes oakcdrom.sys and mscdex.exe are in your C:\DOS directory in your harddisk image file.
+The above assumes oakcdrom.sys and mscdex.exe are in the C:\DOS directory in the harddisk image file.
 You can substitute oakcdrom.sys and mscdex.exe with their FreeDOS equivalents with the same parameters.
 
 The ``/L:D`` will cause mscdex to use the D: drive for the CD-ROM, adjust as needed.
@@ -520,6 +557,17 @@ Or from the menu you can select "DOS" followed by "Swap CD".
 
 Unless you have a console open with the log, there is no visual indication of which diskette image is currently mounted.
 
+### Mounting from the Drive menu
+This is exclusive to the Windows version.
+The advantage of this option is, that you don't need to mount all the CD or DVDs before starting your program or game, but you can mount CD or DVD images when needed.
+
+To access it, DOSBox-X needs to be in windowed mode, there is a menu bar with a "Drive" drop down. Select a drive letter, and you will see various mount options.
+
+The only mount option that can be used for image files is the "Mount disk image" option.
+All the other mount options are host folder mounts.
+
+Select the Drive menu, and a suitable drive letter, and "Mount disk image". Now a file browser will allow you to select an image file.
+
 ## Unmounting CD or DVD images
 CD or DVD images can be unmounted using the ``-u`` flag. e.g.
 ....
@@ -535,7 +583,7 @@ imgmount d cdrom2.iso -u
 ....
 This will cause the currently mounted image file (if any) to be unmounted, and cdrom2.iso to be mounted instead.
 
-Alternatively you can unmount a image from the DOSBox-X menu bar by selecting "Drive", followed by the drive letter and "Unmount".
+TIP: Alternatively you can unmount a image from the DOSBox-X menu bar (when in windowed mode) by selecting "Drive", followed by the drive letter and "Unmount".
 
 ## Boot from a CD or DVD image
 DOSBox-X has limited support for booting from a CD or DVD.
@@ -676,7 +724,7 @@ Instead look for an older second-hand USB floppy drive from a known brand like D
 
 # Outstanding issues
 
-* For ``IMGMAKE``, what in the IBM PC world uses 10-sector diskettes??
+* Mention Bochs bximage support in more detail. Does it support flat, sparse, growing formats?
 * It seems from the sourcecode that ``IMGMAKE`` can create VHD images if you use the .vhd extension, but this does not work in practice?
 * imgmount of QCOW2 images only works in combination with ``-nofs``, which is rather restrictive. Can this be easily solved?
 * How about IDE teriary through octenary controllers in dosbox-x config. Do the device number and/or -ide options continue counting up to device number 18 and ``-ide 8s``?
