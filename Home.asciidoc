@@ -35,6 +35,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for clipboard copy and paste (Windows only)
 * Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
 * Support for 3dfx Glide and Voodoo chip emulation
+* Support for cue files with FLAC, Opus, Vorbis, and MP3 CD-DA tracks
 * Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
 * Support for NE2000 Ethernet for networking features
 * Support for features such as V-Sync, overscan border and stereo swapping
