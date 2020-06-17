@@ -37,7 +37,7 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for 3dfx Glide and Voodoo chip emulation
 * Support for cue files with FLAC, Opus, Vorbis, and MP3 CD-DA tracks
 * Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
-* Support for NE2000 Ethernet for networking features
+* Support for NE2000 Ethernet for Internet and Modem Phonebook mapping
 * Support for features such as V-Sync, overscan border and stereo swapping
 * Various patches included such as font, DBCS, beeping and Ctrl+Break patch
 
@@ -203,7 +203,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 ### DOSBox-X's Special Keys
 
-You can use these special keys to achieve certain functions in DOSBox-X, such as switching between the window and full-screen modes. These shortcuts are different from the ones in DOSBox.
+You can use these special keys to achieve certain functions in DOSBox-X, such as switching between the window and full-screen modes. These shortcuts are different from the ones in DOSBox. Note that these are the keys in the default setting, and you can customize them in DOSBox-X's keyboard mapper.
 
 * **[F11/F12]+F**
 Switch to full-screen mode and back.
