@@ -266,6 +266,39 @@ Notes:
 
 * **2:** **LCtrl** means the Left Ctrl key, **LShift** means the Left Shift key, and **LAlt** means the Left Alt key.
 
+### DOSBox-X's Mapper Editor
+You can change mappings for keyboard shortcuts etc in DOSBox-X using the mapper editor. The mapper editor can be started either from the "Main" menu or with the command-line parameter -startmapper. You are presented with an interface including a virtual keyboard, a virtual mouse, as well as virtual joysticks and a table of functions.
+
+The virtual devices correspond to the keys and events DOSBox-X will report to the DOS applications. If you click on a button with your mouse, you can see in the lower left corner with which event it is associated (EVENT) and to what events it is currently bound (BIND).
+
+* **EVENT**
++
+The key or joystick axis/button/hat DOSBox-X will report to DOS applications (the event that will happen during the game, e.g. shooting/jumping/walking).
+
+* **BIND**
++
+The key on your real keyboard or the axis/button/hat on your real joystick(s) (as reported by SDL), which is connected to the EVENT.
+
+* **Mod1,2,3**
++
+Modifiers. These are keys you need to have to be pressed while pressing BIND. Mod1 = Ctrl, Mod2 = Alt, and Mod3 = Shift. These are generally only used when you want to change the special keys of DOSBox-X.
+
+* **Add**
++
+Add a new BIND to this EVENT. Basically add a key from your keyboard or an event from the joystick (button press, axis/hat movement) which will produce the EVENT in DOSBox-X.
+
+* **Del**
++
+Delete the BIND to this EVENT. If an EVENT has no BINDS, then it is not possible to trigger this event in DOSBox-X (that is there's no way to type the key or use the respective action of the joystick).
+
+* **Next**
++
+Go through the list of bindings which map to this EVENT.
+
+For example, if you want to have the X on your keyboard to type a Z in DOSBox-X,
+then please click on the Z on the keyboard mapper. Click "Add". Now you can try
+press the X key on your keyboard.
+
 ### DOSBox-X's Supported Commands
 
 Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles.
