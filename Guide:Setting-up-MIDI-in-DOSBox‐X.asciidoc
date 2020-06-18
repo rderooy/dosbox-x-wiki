@@ -118,7 +118,7 @@ The MT-32 emulation that is provided by DOSBox-X is based on the link:http://mun
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-Note: If a game offers a "Roland Sound Canvas" (SC), Roland SCC-1 or a Roland RAP-10 option you want to try, you need to use General MIDI emulation instead.
+NOTE: If a game offers a "Roland Sound Canvas", Roland SC-55, Roland SCC-1 or a Roland RAP-10 option you want to try, you need to use General MIDI emulation instead.
 
 ## MT-32
 
@@ -260,7 +260,12 @@ MT-32 reverb level
 MT-32 max partials allowed
 
 # General MIDI Emulation
-Unlike with the MT-32 emulation, General MIDI emulation is not provided by DOSBox-X itself, but rather by a separate software synthesizer. DOSBox-X has support for a variety of such software synthesizers.
+Unlike with the MT-32 emulation, General MIDI emulation is not provided by DOSBox-X itself, but rather by a separate software synthesizer.
+DOSBox-X has support for a variety of such software synthesizers.
+
+NOTE: There are also the *GS* extensions to General Midi by Roland, as used on the Roland SoundCanvas devices like the SC-55 and SC-88.
+Some games specifically list "SoundCanvas" as an option, but most of the time it just uses the same driver as if you select General Midi.
+Games known to actually support the GS extensions can be found here: link:https://web.archive.org/web/20180102190328/https://www.vogons.org/viewtopic.php?f=7&t=35811[Sound Driver Enhancement Hacks - General MIDI] (archive.org link, as a recent Vogons update has broken rendering of coloured text).
 
 ## FluidSynth
 FluidSynth is the preferred software synthesizer for Linux, but it is also available for Windows and MacOS.
@@ -286,7 +291,8 @@ Download and install FluidSynth, and add the following lines to your DOSBox-X co
 mididevice=fluidsynth
 fluid.soundfont="C:\My User\soundfonts\FluidR3_GM.sf2"
 ....
-Adjust the path and filename to your soundfont as necessary. When no soundfont is specified, DOSBox-X will try to open C:\soundfonts\default.sf2 if it exists.
+Adjust the path and filename to your soundfont as necessary.
+When no soundfont is specified, DOSBox-X will try to open C:\soundfonts\default.sf2 if it exists.
 
 ### FluidSynth config options
 
@@ -316,9 +322,10 @@ For Windows and MacOSX you can optionally download and install link:http://www.f
 
 This parameter can be used to specify a SF2 link:https://github.com/FluidSynth/fluidsynth/wiki/SoundFont[SoundFont] file.
 
-Many soundfonts can be found online, but you want one that covers the whole General MIDI range, also called a "GM SoundFont". FluidR3_GM.sf2 is such a free SoundFont.
+Many soundfonts can be found online, but you want one that covers the whole General MIDI range, also called a "GM SoundFont".
+FluidR3_GM.sf2 is such a free SoundFont.
 
-You may optionally want to download a SoundFont that more closely resembles the classic Roland SC-55 (Sound Canvas), which was used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
+TIP: For some games, you may optionally want to download a SoundFont that implements the GS extensions such as FluidR3_GS.sf2, or more closely resembles the classic Roland SC-55 (Sound Canvas), which was used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
 
 #### fluid.samplerate
 * Default value: 48000
