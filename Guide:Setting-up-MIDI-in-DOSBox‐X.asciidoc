@@ -263,10 +263,10 @@ MT-32 reverb level
 MT-32 max partials allowed
 
 # General MIDI Emulation
-Unlike with the MT-32 emulation, General MIDI emulation is not provided by DOSBox-X itself, but rather by a separate software synthesizer.
+Unlike with the MT-32 emulation, General MIDI emulation is not implemented in DOSBox-X itself, but rather provided by a separate software synthesizer.
 DOSBox-X has support for a variety of such software synthesizers.
 
-NOTE: There are also the *GS* extensions to General Midi by Roland, as used on the Roland Sound Canvas devices like the SC-55 and SC-88.
+NOTE: There are also the *Roland GS* extensions to General Midi, as used on the Roland Sound Canvas devices like the SC-55 and SC-88.
 Some games specifically list "Sound Canvas" as an option, but most of the time it just uses the same driver as if you select General Midi.
 Games known to actually support the GS extensions can be found here: link:https://web.archive.org/web/20180102190328/https://www.vogons.org/viewtopic.php?f=7&t=35811[Sound Driver Enhancement Hacks - General MIDI] (archive.org link, as a recent Vogons update has broken rendering of coloured text).
 
@@ -329,7 +329,7 @@ Many soundfonts can be found online, but you want one that covers the whole Gene
 FluidR3_GM.sf2 is such a free SoundFont.
 
 TIP: For some games, you may optionally want to download a SoundFont that implements the GS extensions. In that case look for a soundfont that emulates the Roland SC-55 or SC-88.
-The Roland SC-55 or SC-88 (Sound Canvas), were was used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
+The Roland SC-55 or SC-88 (Sound Canvas), were used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
 
 NOTE: While FluidSynth supports stacking soundfonts, this is not supported in this implementation.
 So for instance, you cannot specify both FluidR3_GM and FluidR3_GS.
