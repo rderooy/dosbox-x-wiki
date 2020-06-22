@@ -7,7 +7,8 @@ Back to the link:Home[DOSBox-X Wiki Welcome page]
 toc::[]
 
 # Overview
-DOSBox-X has support for emulating either a General MIDI or a Roland MT-32 synthesizer. In addition, it is possible to use a real external MIDI synthesizer.
+DOSBox-X has support for emulating either a General MIDI or a Roland MT-32 synthesizer.
+In addition, it is possible to use a real external MIDI synthesizer.
 
 ### MIDI options
 This section will list the available MIDI configuration options that DOSBox-X provides, with exception of the MT-32 and FluidSynth options which are listed in their respective sections.
@@ -20,7 +21,8 @@ The default "intelligent", also referred to as "normal mode" Roland MPU-401 emul
 
 Setting it to "uart", emulates the later cost-reduced "MPU-401 compatible" options, such as was integrated in various soundcards.
 
-Setting it to "none" disables MPU-401 emulation, and therefore MIDI emulation will be disabled. Both MT-32 and General MIDI require MPU-401 emulation.
+Setting it to "none" disables MPU-401 emulation, and therefore MIDI emulation will be disabled.
+Both MT-32 and General MIDI require MPU-401 emulation.
 
 #### mpubase
 * Default value: 0
@@ -29,7 +31,8 @@ Setting it to "none" disables MPU-401 emulation, and therefore MIDI emulation wi
 
 This is the base IO address (in hex) of the emulated MPU-401.
 
-If set to 0, the default I/O address for the IBM PC or NEC PC-98 will be used. For the IBM PC this will be 330, while for the NEC PC-98 it will be E0D0.
+If set to 0, the default I/O address for the IBM PC or NEC PC-98 will be used.
+For the IBM PC this will be 330, while for the NEC PC-98 it will be E0D0.
 
 * 300h to 330h are for use with IBM PC mode.
 * C0D0h to F8D0h (in steps of 800h) are for use with NEC PC-98 mode (MPU98).
@@ -96,7 +99,8 @@ This can be used to pass special options needed for the chosen "mididevice".
 For instance, for the "mididevice=coreaudio" or "synth" options, this can be a path and filename of a soundfont (in sf2 or sf3 format).
 
 For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your soundcard (most soundcards don't have one), or that of your external MIDI synth.
-You can use ``aconnect -i`` to list available devices with ALSA. You can use the Client ID with device ID combined and set it for instance as ``midiconfig=14:0``
+You can use ``aconnect -i`` to list available devices with ALSA.
+You can use the Client ID with device ID combined and set it for instance as ``midiconfig=14:0``
 
 For Windows with "mididevice=win32", this can be used to specify the ID or part of the name of the synth you want to use.
 It defaults to the "Microsoft GS Wavetable Synth".
@@ -104,7 +108,8 @@ In DOSBox-X run ``mixer /listmidi`` to list available options.
 
 For MacOSX with "mididevice=coremidi", this can be used to specify the ID or part of the name of the synth you want to use (how to list the options?).
 
-In case of a real Roland MT-32 rev. 0 as MIDI output device, some games may require a delay in order to prevent 'buffer overflow' issues. In that case, add 'delaysysex', for example: ``midiconfig=2 delaysysex`` would cause Windows to use MIDI device 2 (as listed in DOSBox-X with ``mixer /listmidi``), and apply the delaysysex workaround.
+In case of a real Roland MT-32 rev. 0 as MIDI output device, some games may require a delay in order to prevent 'buffer overflow' issues.
+In that case, add 'delaysysex', for example: ``midiconfig=2 delaysysex`` would cause Windows to use MIDI device 2 (as listed in DOSBox-X with ``mixer /listmidi``), and apply the delaysysex workaround.
 
 #### samplerate
 * Default value: 44100
@@ -121,7 +126,7 @@ The MT-32 emulation that is integrated into DOSBox-X is based on the link:http:/
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-NOTE: If a game offers a "Sound Canvas", Roland SC-55, Roland SCC-I or a Roland RAP-10 option you want to try, look at the General MIDI section instead.
+NOTE: If a game offers a "Sound Canvas", Roland SC-55, Roland SCC-I or a Roland RAP-10 option you want to try, look at the link:#General-MIDI-Emulation[General MIDI Emulation] section below instead.
 
 ## MT-32
 
@@ -266,8 +271,8 @@ MT-32 max partials allowed
 Unlike with the MT-32 emulation, General MIDI emulation is not implemented in DOSBox-X itself, but rather provided by a separate software synthesizer.
 DOSBox-X has support for a variety of such software synthesizers.
 
-NOTE: There are also the *Roland GS* extensions to General Midi, as used on the Roland Sound Canvas devices like the SC-55 and SC-88.
-Some games specifically list "Sound Canvas" as an option, but most of the time it just uses the same driver as if you select General Midi.
+NOTE: There are also the *Roland GS* extensions to General MIDI, as used on the Roland Sound Canvas devices like the SC-55, SC-88 and SCC-I.
+Some games specifically list "Sound Canvas" as an option, but most of the time it just uses the same driver as if you select General MIDI.
 Games known to actually support the GS extensions can be found here: link:https://web.archive.org/web/20180102190328/https://www.vogons.org/viewtopic.php?f=7&t=35811[Sound Driver Enhancement Hacks - General MIDI] (archive.org link, as a recent Vogons update has broken rendering of coloured text).
 
 ## FluidSynth
@@ -461,7 +466,7 @@ sudo systemctl enable timidity
 sudo systemctl start timidity
 ....
 
-Before trying MIDI in DOSBox-X, validate that TiMidity{plus}{plus} is working by playing a midi file.
+Before trying MIDI in DOSBox-X, validate that TiMidity{plus}{plus} is working by playing a MIDI file.
 
 ....
 timidity example.midi
