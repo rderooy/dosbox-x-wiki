@@ -11,14 +11,14 @@ toc::[]
 # Overview
 ## Editions this applies to
 
-* Windows 3.0
+* *Windows 3.0*
 ** Supports up to 16MB RAM
 ** Improved UI
 ** Improved memory management (286+ only)
-* Windows 3.0a
+* *Windows 3.0a*
 ** Allows programs to call into real-mode when started in standard mode
 ** Bug fixes for the installer to alleviate crashes
-* Windows 3.0a with Multimedia Extensions
+* *Windows 3.0a with Multimedia Extensions*
 ** Adds Multimedia Extensions 1.0
 ** Multimedia extensions do not support real mode (8086/8088 CPUs)
 ** Adds support for recording and playing digital audio files
@@ -26,22 +26,22 @@ toc::[]
 ** Adds support for screensavers
 ** Adds support for analogue joysticks
 ** Adds support for audio CD-ROMs
-* Windows 3.1
+* *Windows 3.1*
 ** Supports up to 256MB RAM
 ** Dropped support for real mode (8086/8088 CPUs)
 ** Includes updated Multimedia Extensions
 ** Adds Truetype
 ** Adds optional 32-bit disk access (386 Enhanced Mode only)
 ** Adds the Windows Registry
-* Windows 3.11
+* *Windows 3.11*
 ** Bug fix release
-* Windows for Workgroups 3.1
+* *Windows for Workgroups 3.1*
 ** Adds SMB file sharing (NBF or IPX protocols only)
 ** Adds VSHARE.386
-* Windows for Workgroups 3.11
+* *Windows for Workgroups 3.11*
 ** Adds 32-bit file redirectors
 ** Drops support for standard mode (286 CPUs)
-* Windows for Workgroups 3.11a
+* *Windows for Workgroups 3.11a*
 * WIndows 3.2
 ** Special Chinese edition
 
@@ -301,6 +301,7 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 * Introduced with Windows 3.11, *32-Bit File Access* allows Windows to bypass the 16-Bit DOS FAT code
 
 Enabling these features means that Windows has to leave 32-bit protected mode less often, and should therefore, at least in theory, be faster.
+However, based on benchmarks, there is no advantage at this time to enabling these features in DOSBox-X, and it may actually reduce performance!
 
 *32-Bit Disk Access* (also called FastDisk) uses the WDCTRL driver built into WIN386.EXE that is included with Windows 3.1x, which _should_ works in DOSBox-X if the following conditions are met:
 
@@ -311,6 +312,7 @@ Enabling these features means that Windows has to leave 32-bit protected mode le
 * You cannot have a CD-ROM as a slave on the same IDE controller as the HDD
 * You must have set ``int13fakeio=true`` and ``int13fakev86io=false`` in your DOSBox-X config file
 * You must mount your HDD image file with ``-reservecyl 1``
+* You must mount your HDD image file with device number 2, and not the drive letter (this is likely a bug in DOSBox-X)
 * You must edit ``C:\WINDOWS\SYSTEM.INI`` and in the ``[386enh]`` section add the following 2 lines (preferably between the ``*pageswap`` and ``*biosxlat`` drivers):
 ** ``device=*int13``
 ** ``device=*wdctrl``
@@ -330,7 +332,7 @@ At the bottom there are options for "Use 32-Bit Disk Access" and "Use 32-Bit Fil
 If the 32-Bit Disk Access option is greyed out, it probably means your configuration is not compatible with the option.
 
 There are 3rd party 32-Bit Disk Access drivers which _may_ allow it to function on larger disks, but have not been tested in combination with DOSBox-X.
-Most 3rd party drivers only work in combination with specific hardware, but the Ontrack ontrackw.386 driver may work with fewer restrictions.
+Most 3rd party drivers only work in combination with specific hardware, but the Ontrack ontrackw.386 driver works in DOSBox-X, but seems to have similar restrictions.
 
 # Enabling networking
 This only applies to *Windows for Workgroups* (WfW). To enable networking functionality you will need to create a disk image with real DOS, and install WfW into that. You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default. For instance, if you install WfW inside DOSBox-X with networking support, your supposed to run ``C:\WINDOWS\NET START`` before starting Windows. This command will however return a ``Error 73: (null)`` if run from the DOSbox-X emulated DOS.
@@ -367,25 +369,17 @@ Once finished click ok and confirm the save.
 
 You should now be able to open the Windows 3.x Media Player and playback Canyon.mid.
 
-Note: For Windows 3.0a with Multimedia Extensions the media files are located by default in ``C:\MWINDOWS\MMDATA``.
+Note: For "Windows 3.0a with Multimedia Extensions" the media files are located by default in ``C:\MWINDOWS\MMDATA``.
 
 # Enabling printing
-To enable printing support in Windows 95, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
+To enable printing support in Windows 3.x, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
 
 # Installing Win32s
 Win32s is a 32-bit application runtime environment for Windows 3.1x. Some games and applications require it.
 Win32s version 1.30c is the latest version.
 
-It installs and runs without problems, if your running Windows 3.1x under real DOS, but if you run the setup program under DOSBos-X's emulated DOS you will get the error:
-....
-Win32s Setup: SHARE.EXE is not loaded
-
-File-sharing must be enabled. Run SHARE.EXE before starting Windows or add SHARE.EXE to your AUTOEXEC.BAT file.
-....
-
-Confirm the error, and the installation will continue.
-
-To prevent future errors about SHARE.EXE being needed, you can install a small 3rd party utility called "link:https://www.dropbox.com/s/ewd6rf8vndqs5b0/fakeshar.zip?dl=1[FAKESHAR.COM]", and run it before starting Windows 3.1x.
+It installs and runs without problems. But be aware, that unless your running Windows 3.1x under real DOS, that DOSBox-X has an integrated fake SHARE.EXE function that is enabled by default.
+Win32s requires that SHARE.EXE is loaded, so your options are to either fake it, like DOSBox-X does by default, or install Windows 3.1x in real DOS in DOSBox-X.
 
 Do note, as the name implies, this FAKES that SHARE.EXE is running.
 This is not safe and can lead some applications that really need it to experience data corruption.
@@ -411,10 +405,5 @@ WIN RUNEXIT \path\to\game\game.exe
 Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows. This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
 
 # Outstanding issues
-* Resolve why, even though 32-Bit Disk and File Access are enabled, the "Disk Status" still shows:
-** Disk Access: Using BIOS
-** File Access: Drive C: 16-Bit
-* While it should show:
-** Disk Access: Using 32-bit Disk access
-** File Access: Drive C: 32-Bit
-* Using the ontrackw.386 driver does not change the above issue.
+** Using 32Bit Disk and File lowers performance
+** 32Bit Disk and File, requires mounting the HDD image using drive number
