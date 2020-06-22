@@ -328,12 +328,14 @@ This parameter can be used to specify a single SF2 or SF3 link:https://github.co
 Many soundfonts can be found online, but you want one that covers the whole General MIDI range, also called a "GM SoundFont".
 FluidR3_GM.sf2 is such a free SoundFont.
 
-TIP: For some games, you may optionally want to download a SoundFont that implements the GS extensions. In that case look for a soundfont that emulates the Roland SC-55 or SC-88.
-The Roland SC-55 or SC-88 (Sound Canvas), were used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
+TIP: For some games, you may optionally want to download a SoundFont that implements both GM and the GS extensions, or a soundfont that mimics a certain MIDI sound module.
+An example is the link:https://musical-artifacts.com/artifacts/1229[FluidR3 GM+GS soundfont], which has both GM and the GS extensions in a single file.
+Alternatively, you can look for a soundfont that mimics a certain MIDI sound module like the Roland SC-55 or SC-88, but all the Sound Canvas look-alike soundfonts available at present don't seem to implement the GS extensions, and as such are only useful for GM.
+The Roland SC-55 or SC-88 (Sound Canvas) in particular, was used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
 
-NOTE: While FluidSynth supports stacking soundfonts, this is not supported in this implementation.
+NOTE: While FluidSynth supports stacking or chaining of soundfonts, this is not supported in this implementation.
 So for instance, you cannot specify both FluidR3_GM and FluidR3_GS.
-Instead you need a single soundfont that implements all the sounds you need.
+Instead you need a single soundfont that implements all the sounds you need, which the above linked "FluidR3 GM+GS" does.
 
 #### fluid.samplerate
 * Default value: 48000
