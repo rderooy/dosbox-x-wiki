@@ -117,11 +117,11 @@ Please use "mididevice=fluidsynth" instead, with the "fluid.samplerate" option i
 
 The Roland MT-32 pre-dates General MIDI, and was used by a broad range of DOS games, starting in 1988 with King's Quest IV.
 
-The MT-32 emulation that is provided by DOSBox-X is based on the link:http://munt.sourceforge.net/[Munt project].
+The MT-32 emulation that is integrated into DOSBox-X is based on the link:http://munt.sourceforge.net/[Munt project].
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-NOTE: If a game offers a "Sound Canvas", Roland SC-55, Roland SCC-1 or a Roland RAP-10 option you want to try, you need to use General MIDI emulation instead.
+NOTE: If a game offers a "Sound Canvas", Roland SC-55, Roland SCC-I or a Roland RAP-10 option you want to try, look at the General MIDI section instead.
 
 ## MT-32
 
@@ -489,7 +489,8 @@ midiconfig=128:0
 
 ## ALSA
 ALSA is the low-level Linux sound system.
-You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support. You can optionally also use ALSA with a software sequencer that creates a ALSA MIDI interface.
+You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support.
+You can optionally also use ALSA with a separate software sequencer that creates a ALSA MIDI interface, such as TiMidity{plus}{plus} or Munt.
 
 Use ``aconnect -i`` to find which "device" is your MIDI output, and then add the device ID to the ``midiconfig=`` line.
 e.g.
