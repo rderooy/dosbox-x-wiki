@@ -338,7 +338,7 @@ Displays or changes file attributes.
 +
 Usage: ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [drive:][path][filename] [/S]
 +
-Note: Changing file attributes only works on local and FAT drives.
+Note: Changing file attributes only works on mounted local，overlay and FAT drives.
 * **AUTOTYPE** (external command)
 +
 Performs scripted keyboard entry into a running DOS program.
@@ -908,7 +908,7 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 
 We are making efforts to ensure that the vast majority of DOS games and applications will run in DOSBox-X, and these include both text-mode and graphical-mode DOS programs. Microsoft Windows versions that are largely DOS-based (such as Windows 3.x and 9x) are officially supported by DOSBox-X as well. Note that certain config settings may need to be changed from the default ones for some of these programs to work smoothly.
 
-DOSBox-X used to focus on the demoscene (especially anything prior to 1996) because that era of the MS-DOS scene tends to have all manner of weird hardware tricks, bugs, and speed-sensitive issues that make them the perfect kind of stuff to test emulation accuracy against, even more so than old DOS games. But without a doubt we also test against other DOS games and applications, as well as PC-98 programs (most of them are games).
+DOSBox-X used to focus on the demoscene (especially anything prior to 1996) because that era of the MS-DOS scene tends to have all manner of weird hardware tricks, bugs, and speed-sensitive issues that make them the perfect kind of stuff to test emulation accuracy against, even more so than old DOS games. But without a doubt we also actively test against other DOS games and applications, as well as PC-98 programs (most of them are games).
 
 DOSBox-X vs Demoscene test results (up to date):
 
@@ -917,7 +917,7 @@ https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/m
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**
 +
-DOS is short for "**D**isk **O**perating **S**ystem". It refers to the series of operating systems that dominated the IBM PC compatible market in the 1980s and the 1990s. Early versions of Microsoft Windows (1.0-3.x, as well as 9x/ME) are also largely DOS-based. The relevant systems were usually called "X DOS", "X-DOS" or "XDOS" with the X being the brand name (e.g. PC DOS, DR-DOS, and FreeDOS respectively). Despite common usage, none of them were actually called just DOS. Microsoft's system, MS-DOS, was the most-widely used among these operating systems.
+DOS is short for "**D**isk **O**perating **S**ystem". It refers to a family of operating systems that dominated the IBM PC compatible market in the 1980s and the 1990s. Early versions of Microsoft Windows (1.0-3.x, as well as 9x/ME) are also largely DOS-based. The relevant systems were usually called "X DOS", "X-DOS" or "XDOS" with the X being the brand name (e.g. PC DOS, DR-DOS, and FreeDOS respectively). Despite common usage, none of them were actually called just DOS. Microsoft's system, MS-DOS, was the most-widely used among these operating systems.
 
 * **What is DOSBox-X's release pattern?**
 +
