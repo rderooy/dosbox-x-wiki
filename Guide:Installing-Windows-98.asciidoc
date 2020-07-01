@@ -106,7 +106,7 @@ Than in DOSBox-X you need to create a new harddisk image file with ``IMGMAKE``.
 This example uses a 4GB partition.
 Technically the FAT32 filesystem is capable of supporting partitions up to 2TB, but the generic IDE driver in Windows 98 cannot handle volumes greater than 128GB.
 Larger partition sizes may be possible with 3rd party drivers, but are not covered here.
-In later Windows version, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and exFAT.
+In later Windows versions, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and exFAT.
 
 NOTE: Creating a 128GB volume will cause a SU0650 Out of Memory warning during install, you can however continue the installation.
 ....
@@ -114,15 +114,15 @@ IMGMAKE hdd.img -t hd_4gig
 ....
 
 Or if you want to create a larger disk, you can create a custom type.
-This is an example of a 8GB (8192 MB) disk.
+This is an example of a 16GB (16*1024=16384 MB) disk.
 ....
-IMGMAKE hdd.img -size 8192
+IMGMAKE hdd.img -size 16384
 ....
 
 # Installation Method 1: Boot from CD-ROM image
 Starting with Windows 98, it is possible to boot directly from the CD-ROM, as long as you have the "OEM Full" edition, in which case no separate bootdisk is needed.
 
-This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which can be up to 2TB (tested up to 700GB).
+This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which can be up to 128GB.
 
 ## Requirements
 
