@@ -136,7 +136,7 @@ Larger partition sizes may be possible with 3rd party drivers, but are not cover
 In later Windows versions, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and exFAT.
 
 Or if you want to create a larger disk, you can create a custom type.
-This is an example of a 16GB (16*1024=16384MB disk.
+This is an example of a 16GB (16*1024=16384MB) disk.
 ....
 IMGMAKE hdd.img -t hd -size 16384
 ....
