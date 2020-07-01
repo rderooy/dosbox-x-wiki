@@ -50,7 +50,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 * Transcopy (.TC)
 
 ## Creating diskette images
-DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create formatted diskette images in MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create FAT12 formatted diskette images in MFM sector image format from the DOSBox-X command prompt.
 
 example:
 ....
@@ -92,7 +92,6 @@ The 10-sector disks were used by the DEC Rainbow 100.
 
 ## Mounting diskette images
 Mounting a diskette image in DOSBox-X is typically as simple as
-
 ....
 imgmount a disk.ima
 ....
@@ -110,7 +109,7 @@ imgmount 0 disk.ima -fs none
 0 represents drive A: and 1 represents drive B:. The use of 0 or 1 is required if your using the ``-fs none`` flag to mount a diskette image.
 
 ### Mounting from the Drive menu
-This is exclusive to the Windows version.
+This is exclusive to the DOSBox-X Windows version.
 The advantage of this option is, that you don't need to mount all the disks before starting your program or game, but you can mount disk images when needed.
 
 To access it, DOSBox-X needs to be in windowed mode, there is a menu bar with a "Drive" drop down. Select a drive letter, and you will see various mount options.
@@ -187,7 +186,7 @@ Image files can be made read-only by prefixing the filename with a column charac
 
 CAUTION: DOSBox-X will attempt to boot from a diskette, even if it is not bootable. This is needed to support early PC-Booter games.
 
-TIP: Once a disk image is mounted, you can alternatively also boot from a disk image by selecting "Drive" from the menu bar, followed by the drive letter and "Boot from drive". In Windows version you can also mount and boot a disk image in one step by selecting "Boot from disk image" from this submenu.
+TIP: Once a disk image is mounted, you can alternatively also boot from a disk image by selecting "Drive" from the menu bar, followed by the drive letter and "Boot from drive". In the DOSBox-X Windows version you can also mount and boot a disk image in one step by selecting "Boot from disk image" from this submenu.
 
 ## Using diskette images in Linux
 WARNING: You should never mount a disk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the diskette image.
@@ -245,9 +244,9 @@ This will list the contents of the root directory of the diskette image, similar
 mdir -i disk.ima
 ....
 
-Assuming the diskette image has a directory named DOS, the contents can be listed as
+Assuming the diskette image has a directory named GAMES, the contents can be listed as
 ....
-mdir -i disk.ima ::dos
+mdir -i disk.ima ::games
 ....
 
 #### Copy file into a diskette image
@@ -256,9 +255,9 @@ This command will copy the file hello.txt into the root directory of the disk im
 mcopy -i disk.ima hello.txt ::
 ....
 
-This command will copy the file hello.txt into the DOS directory of the disk image.
+This command will copy the file hello.txt into the GAMES directory of the disk image.
 ....
-mcopy -i disk.ima hello.txt ::DOS
+mcopy -i disk.ima hello.txt ::games
 ....
 
 #### Copy file(s) out of a diskette image
@@ -301,13 +300,27 @@ DOSBox-X supports mounting harddisk images in the following formats:
 Creating and accessing harddisk images is very similar to diskette images, with the exception that they also contain partitions and they may contain other filesystems.
 
 ## Creating harddisk images
-DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create partitioned and formatted harddisk images in MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in MFM sector image format from the DOSBox-X command prompt.
 ``IMGMAKE`` only creates a single primary DOS partition per harddisk image file.
 
-Harddisk images up to 2GB will appear to have been partitioned and formatted by MS-DOS 5.0 using FAT16.
+### FAT version
+The ``IMGMAKE`` command supports FAT12, FAT16 and FAT32 formatted partitions, and will try to automatically decide which type to use depending on some rules:
+* If the harddisk size is smaller than 12MB, it will use FAT12
+* If the harddisk size is 12MB or larger, up to 2GB, it will use FAT16
+* If the harddisk size is greater than 2GB it will use FAT32
 
-Harddisk images greater than 2GB, up to 8GB will not be partitioned and formatted.
-This is because FAT16 only supports partitions up to 2GB, and larger partitions require FAT32 which is not supported by ``IMGMAKE`` at this point.
+One exception to the rule is, if your reported DOS version is 7.1 or higher, than harddisks of 512MB or larger will be formatted FAT32.
+
+Using the ``-FAT`` option it is possible to overrule the decision process.
+But this can cause ``IMGMAKE`` to give errors if the partition size is not supported by the filesystem type, or can cause other problems such as performance issues or waisted disk space.
+
+e.g.
+....
+IMGMAKE hdd.img -t hd -size 400 -fat 32
+....
+
+FAT12 and FAT16 harddisk images will appear to have been partitioned and formatted by MS-DOS 5.0.
+FAT32 harddisk images will appear to have been formatted by Windows 98.
 
 ### Using templates
 example:
@@ -317,6 +330,8 @@ IMGMAKE hdd.img -t hd_520
 This will create a 520MB partitioned and formatted harddisk image named hdd.img.
 
 NOTE: The filename in this case is not limited to the DOS 8.3 filename length, but rather by your host filesystem.
+
+You can optionally attempt to force ``IMGMAKE`` to use a certain filesystem type with the ``-fat`` parameter.
 
 You can optionally create a harddisk image that is not partitioned and formatted with:
 ....
@@ -424,7 +439,7 @@ In addition it needs to be prefixed with the bytes-per-sector, which should alwa
 So a CHS of 992,2,32 becomes ``-size 512,32,2,992``.
 
 ### Mounting from the Drive menu
-This is exclusive to the Windows version.
+This is exclusive to the DOSBox-X Windows version.
 
 To access it, DOSBox-X needs to be in windowed mode, there is a menu bar with a "Drive" drop down. Select a drive letter, and you will see various mount options.
 
@@ -464,7 +479,7 @@ boot c:
 ....
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
-TIP: Once a disk image is mounted, you can alternatively also boot from an disk image by selecting "Drive" from the menu bar (when in windowed mode), followed by the drive letter and "Boot from drive". In Windows version you can also mount and boot a disk image in one step by selecting "Boot from disk image" from this submenu.
+TIP: Once a disk image is mounted, you can alternatively also boot from an disk image by selecting "Drive" from the menu bar (when in windowed mode), followed by the drive letter and "Boot from drive". In the DOSBox-X Windows version you can also mount and boot a disk image in one step by selecting "Boot from disk image" from this submenu.
 
 ## Using harddisk images in Linux
 WARNING: You should never mount a harddisk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the diskette image.
@@ -562,7 +577,7 @@ Or from the menu you can select "DOS" followed by "Swap CD".
 Unless you have a console open with the log, there is no visual indication of which diskette image is currently mounted.
 
 ### Mounting from the Drive menu
-This is exclusive to the Windows version.
+This is exclusive to the DOSBox-X Windows version.
 The advantage of this option is, that you don't need to mount all the CD or DVDs before starting your program or game, but you can mount CD or DVD images when needed.
 
 To access it, DOSBox-X needs to be in windowed mode, there is a menu bar with a "Drive" drop down. Select a drive letter, and you will see various mount options.

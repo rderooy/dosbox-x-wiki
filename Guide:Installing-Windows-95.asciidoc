@@ -19,12 +19,13 @@ This guide will give a general description of installing Windows 95 in DOSBox-X,
 * Windows 95 OSR2.1 (aka 95B)
 * Windows 95 OSR2.5 (aka 95C)
 
-Note: This guide will not work with the Windows 95 diskette versions, as those use a special format (DMF) which is not supported by DOSBox-X.
+NOTE: This guide will not work with the Windows 95 diskette versions, as those use a special format (DMF) which is not supported by DOSBox-X.
 
 This guide also assumes a Full Retail or OEM version of Windows 95.
 Upgrade editions have additional requirements not covered by this guide.
 
-If you don't know which Windows 9x version to install, we recommend that you install Windows 98SE. If you want to stick with Windows 95, we recommend to use Windows 95 OSR2 or later.
+If you don't know which Windows 9x version to install, we recommend that you install **Windows 98SE**.
+If you want to stick with Windows 95, we recommend to use **Windows 95 OSR2** or later.
 
 ## External links
 * link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
@@ -49,6 +50,10 @@ memsize=64
 vmemsize=8
 vesa modelist width limit=0
 vesa modelist height limit=0
+
+[dos]
+# Set this to 7.1 if using Win95 OSR2 or later
+ver=7.0
 
 [cpu]
 cputype=pentium_mmx
@@ -88,6 +93,7 @@ Copy the above config and save it as *win95.conf*
 
 *Notes*
 
+* If using Windows 95 OSR2 with FAT32 volumes, be sure to change the DOS version to 7.1 or else you will get errors mounting the FAT32 volume
 * While Windows 95 should support up to 2048MB RAM, in reality more then 480MB can cause problems, as such memsize=480 is the largest safe value.
 * The [autoexec] section will need lines added later.
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
@@ -102,47 +108,63 @@ Copy the above config and save it as *win95.conf*
 * During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. You may want to select to scan for a soundcard, as otherwise it may not detect your soundcard (sometimes it does, sometimes it doesn't). Likewise, if you have NE2000 enabled in your DOSBox-X config file, you may also want to check the Network adapter box. Your DOSBox-X CD-ROM will be detected regardless if you check it's box or not.
 * In case you installed Windows 95 OSR2.5 you may have noticed that you did not get IE4 and the Active Desktop features. This is because this is an optional install. On the CD, simply run \WIN95\IE4SETUP.EXE to install it. While there is no real advantage to either feature, installing it does bring some new and updated libraries such as MSVCRT.DLL and COMCTL32.DLL that some programs need.
 
-# Installation Method 1: FAT16 volume up to 2GB
-This installation method only allows for a primary FAT16 volume, which cannot be greater then 2GB.
-If you want a larger C: drive using FAT32, follow Method 2 below.
+## Creating a Harddisk image
+The ``IMGMAKE`` command supports creating diskette or harddisk images with FAT12, FAT16 or FAT32 filesystems.
+Harddisk images greater than 2GB are always created with the FAT32 filesystem.
+If your reported DOS version is set to 7.10 or greater, then harddisk images of 512MB or greater are also created as FAT32.
+
+Alternatively, you can use the ``-fat`` option to instruct ``IMGMAKE`` to create a certain FAT type (assuming that is possible for the FAT type).
+
+NOTE: Only **Windows 95 OSR2** or later supports FAT32, for older Windows 95 releases you can only use FAT16 up to 2GB.
+
+First you need to start DOSBox-X from the command-line, using the newly created win95.conf.
+This assumes that dosbox-x is in your path and win95.conf is in your current directory.
+....
+dosbox-x -conf win95.conf
+....
+Then in DOSBox-X you need to create a new harddisk image file with ``IMGMAKE``.
+
+This example uses a 2GB harddisk formatted to FAT16, which is the maximum for FAT16, and supported by all Windows 95 versions.
+....
+IMGMAKE hdd.img -t hd_2gig -fat 16
+....
+
+Or if your using **Windows 95 OSR2** or later, you can create a FAT32 volume.
+Technically the FAT32 filesystem is capable of supporting partitions up to 2TB, but the generic IDE driver in Windows 95 cannot handle volumes greater than 32GB.
+Larger partition sizes may be possible with 3rd party drivers, but are not covered here.
+In later Windows version, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and exFAT.
+Or if you want to create a larger disk, you can create a custom type.
+This is an example of a 8000MB disk.
+....
+IMGMAKE hdd.img -t hd -size 8000
+....
+
+# Installation Method
+Other installation methods are possible than the one described below.
+It is however considered to be the quickest method with the least amount of steps.
 
 ## Requirements
 
-* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
+* DOSBox-X 0.83.3 or later, it will NOT work with earlier versions or other DOSBox forks.
 * Windows 95 CD-ROM image (named "Win95.iso" in the example below).
 
 Getting the image file is outside the scope of this guide.
 
-## Preparing the Harddisk image
-First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
+## Starting the installation
+This assumes you have already started DOSBox-X with the win95.conf config file and created your harddisk image.
+
+First mount the harddisk image you created earlier:
 ....
-dosbox-x -conf win95.conf
-....
-Then in DOSBox-X you need to create a new harddisk image file, and mount it as the C: drive. We use a 2048MB (2GB) HDD for this purpose, as that is the maximum size for FAT16.
-....
-IMGMAKE hdd.img -t hd_2gig
 IMGMOUNT C hdd.img
 ....
+NOTE: If you get an error saying that "This operation requires DOS version 7.10 or higher", than your trying to mount a FAT32 volume, and have not set your reported DOS version in your DOSBox-X config to 7.1.
+FAT32 volumes are only supported if your installing **Windows 95 OSR2** or later.
 
-You will also need to mount the Windows 95 CD-ROM. There are a few ways of doing so.
+You will also need to mount the Windows 95 CD-ROM. There are a few ways of doing so, but this guide assumes you have a ISO image.
 
-### Mount as ISO image
 If you have a copy of the Windows 95 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
 ....
 IMGMOUNT D Win95.iso
-....
-
-### Mount as directory
-If instead you have the contents of the Windows 95 CD-ROM copied to your harddisk, in a directory 'win95', you can mount it as follows:
-....
-MOUNT D win95 -t cdrom
-....
-
-### Mount from a CD-ROM drive
-If your running Windows, you can put the Windows 95 CD-ROM in your CD or DVD drive and directly access it from DOSBox-X. In this example, we assume the optical drive is D: on your windows installation, and your also mounting it as D: in DOSBox-X.
-
-....
-MOUNT D D:\ -t cdrom
 ....
 
 ## Copying the contents of the CD-ROM
@@ -153,7 +175,8 @@ XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
 
 The files in the above example are copied to the C:\WIN95 directory.
-You may want to use "C:\WINDOWS\OPTIONS\CABS" instead, as that is the directory that OEM installs normally use. But if you do, be aware that the installer will attempt to install into C:\WINDOWS.000 as C:\WINDOWS already exists. You will want to change this back to "C:\WINDOWS".
+You may want to use "C:\WINDOWS\OPTIONS\CABS" instead, as that is the directory that OEM installs normally use.
+But if you do, be aware that the installer will attempt to install into C:\WINDOWS.000 as C:\WINDOWS already exists. You will want to change this back to "C:\WINDOWS".
 
 ## Running SETUP.EXE
 We can now run SETUP.EXE.
@@ -164,127 +187,20 @@ CD \WIN95
 SETUP
 ....
 
-Now run through the install process, until it reboots and your back at the DOSBox-X ``Z:\`` prompt. At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
+Now run through the install process, until it reboots and your back at the DOSBox-X ``Z:\`` prompt.
+At this point close DOSBox-X, and edit your win95.conf config file. At the end of the file, in the [autoexec] section, add the following two lines:
 
 ....
 IMGMOUNT C hdd.img
 BOOT C:
 ....
 
-Save the config file, and at the command-prompt you can type the following to continue the installation process. This is also the command you use, after the installation is finished, to start Windows 95 in DOSBox-X.
+Save the config file, and at the command-prompt you can type the following to continue the installation process.
+This is also the command you use, after the installation is finished, to start Windows 95 in DOSBox-X.
 
 ....
 dosbox-x -conf win95.conf
 ....
-
-# Installation Method 2: FAT32 volume
-
-This installation method allows FAT32 volumes, which can be greater then 2GB.
-
-## Requirements
-
-* DOSBox-X 0.83.2 or later, it will NOT work with earlier versions or other DOSBox forks.
-* Windows 95 OSR2 (Win95B) or later CD-ROM image (named "Win95.iso" in the example below).
-* Windows 95 OSR2 (Win95B) or later bootdisk image (named "bootdisk.img" in the example below)
-
-Getting these image files is outside the scope of this guide.
-
-## Preparing the Harddisk image
-First you need to start DOSBox-X from the command-line, using the newly created win95.conf. This assumes that dosbox-x is in your path and win95.conf is in your current directory.
-....
-dosbox-x -conf win95.conf
-....
-Then in DOSBox-X you need to create a new harddisk image file, and mount it as drive 2 (IDE primary master). You cannot simply mount it a "C" until the drive is partitioned and formatted.
-
-Technically the FAT32 filesystem is capable of supporting partitions up to 2TB, but the generic IDE driver in Windows 98 cannot handle volumes greater then 128GB.
-Larger partition sizes may be possible with 3rd party drivers, but are not covered here.
-In later Windows version, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and exFAT.
-
-....
-IMGMAKE hdd.img -t hd_4gig -nofs
-IMGMOUNT 2 hdd.img -size 512,63,130,1023 -fs none
-IMGMOUNT A bootdisk.img
-VER SET 7.1
-A:FDISK /FPRMT
-....
-If the HDD image you created is larger then 512MB, FDISK will prompt you if you want to enable large disk support.
-Confirm that you want to enable large disk support by pressing Y.
-
-Now your in the FDISK main menu, select the following options:
-
-* option 1 - Create DOS partition or Logical DOS Drive
-* option 1 - Create Primary DOS Partition
-
-Confirm that you want to use the maximum available size for the primary DOS partition by pressing Y.
-After this press ESC twice and your back at the MS-DOS prompt.
-
-Do not reset the guest operating system, as FDISK implies.
-
-##  Format the drive
-
-Next you need to mount the Windows 95 CD-ROM image. This can be in ISO or CUE/BIN format.
-
-....
-IMGMOUNT D Win95.iso
-....
-
-And boot from the Windows bootdisk.
-....
-BOOT A:
-....
-
-When booting from the Windows 95 bootdisk, it should ask if you want to start Windows 95 Setup, or start the computer with or without CD-ROM support. Select to start the computer with CD-ROM support.
-
-Now run the following commands:
-....
-D:\WIN95\FORMAT C: /S /V:WIN95
-....
-
-Once the format is completed, you need to reset the guest operating system (Select "Main" followed by "Reset guest system" from the menu bar), such that your back at the DOSBox-X ``Z:\`` prompt.
-
-## Transfer Windows installation files
-Once again, you need to mount the harddisk image, but because it is now partitioned and formatted you don't need to specify the geometry any longer.
-
-....
-IMGMOUNT C hdd.img
-IMGMOUNT D Win95.iso
-....
-
-You will now copy the contents of the CD-ROM to the HDD image.
-
-....
-XCOPY D:\WIN95 C:\WIN95 /I /E
-....
-
-The files in the above example are copied to the C:\WIN95 directory.
-You may want to use "C:\WINDOWS\OPTIONS\CABS" instead, as that is the directory that OEM installs normally use.
-But if you do, be aware that the installer will attempt to install into C:\WINDOWS.000 as C:\WINDOWS already exists.
-You will want to change this back to "C:\WINDOWS".
-
-## Start the installation
-Your now finally ready to start the installation process.
-....
-VER SET 7.1
-C:
-CD WIN95
-SETUP
-....
-
-At the end of the first phase of the installation process, the setup program will reboot DOSBox-X and your again at the `Z:\`` prompt.
-
-Now close DOSBox-X, and edit the win95.conf config file and add the following two lines to the [autoexec] section at the end:
-....
-IMGMOUNT C hdd.img
-BOOT C:
-....
-
-Start DOSBox-X from the command-line with the following command:
-
-....
-dosbox-x -conf win95.conf
-....
-
-DOSBox-X will start, and the Windows 95 installation will continue.
 
 # Booting Windows 95 after installation
 After the installation is finished, you can start Windows 95 from the command-prompt with the following command:
@@ -355,7 +271,7 @@ Download and extract the latest VBEMP driver package and install the driver from
 
 With these settings modes up to 1920x1080 in 32bit colour, or 1920x1440 in 16bit colour are possible.
 
-Note, using the VBEMP driver does have a negative graphics performance impact, which when measured in WinBench96 Graphics WinMark, can be a reduction of up to 59%.
+NOTE: Using the VBEMP driver does have a negative graphics performance impact, which when measured in WinBench96 Graphics WinMark, can be a reduction of up to 59%.
 
 # Emulated sound card
 The emulated sound card used in this guide is the SB16 Vibra, instead of the default SB16.
