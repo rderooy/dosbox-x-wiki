@@ -305,6 +305,7 @@ DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create pa
 
 ### FAT version
 The ``IMGMAKE`` command supports FAT12, FAT16 and FAT32 formatted partitions, and will try to automatically decide which type to use depending on some rules:
+
 * If the harddisk size is smaller than 12MB, it will use FAT12
 * If the harddisk size is 12MB or larger, up to 2GB, it will use FAT16
 * If the harddisk size is greater than 2GB it will use FAT32
