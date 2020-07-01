@@ -343,25 +343,22 @@ NOTE: DOSBox-X has no integrated FDISK and FORMAT commands, so creating harddisk
 Supported harddisk sizes options using templates:
 
 |===
-|Disk type|Capacity|CHS|IMGMAKE option
+|Disk type|Capacity|CHS|IMGMAKE option|Filesystem
 
-|Seagate ST225|21MB (~ 20.23MB usable)|615,4,17|-t hd_st225
-|Seagate ST251|41MB (~ 40.65MB usable)|820,6,17|-t hd_st251
-||241MB (~ 240.39MB usable)|489,16,63|-t hd_250
-||504MB (~ 503.21MB usable)|1023,16,63|-t hd_520
-||2GB (~ 1.96GB usable)|1023,64,63|-t hd_2gig
-||4GB|1023,130,63|-t hd_4gig
-||8GB|1023,255,63|-t hd_8gig
+|Seagate ST225|21MB (~ 20.23MB usable)|615,4,17|-t hd_st225|FAT16
+|Seagate ST251|41MB (~ 40.65MB usable)|820,6,17|-t hd_st251|FAT16
+||241MB (~ 240.39MB usable)|489,16,63|-t hd_250|FAT16
+||504MB (~ 503.21MB usable)|1023,16,63|-t hd_520|FAT16
+||2GB (~ 1.96GB usable)|1023,64,63|-t hd_2gig|FAT16
+||4GB|1023,130,63|-t hd_4gig|FAT32
+||8GB|1023,255,63|-t hd_8gig|FAT32
 
 |===
 
-NOTE: The 4 and 8GB options will not be partitioned and formatted.
-This is because disks greater than 2GB cannot be formatted FAT16, and at this time the ``IMGMAKE`` command has no support for FAT32.
-
 ### Custom size
-Instead of using one of the templates, you can create a custom size harddisk up to 8GB by either specifying the size in MB or CHS geometry.
+Instead of using one of the templates, you can create a custom size harddisk up to 2TB using the ``-size`` option, or up to 8GB using the ``-chs`` geometry option.
 
-To create a partitioned and formatted 31MB HDD image:
+To create a partitioned and FAT16 formatted 31MB HDD image:
 ....
 IMGMAKE hdd.img -t hd -size 31
 ....
