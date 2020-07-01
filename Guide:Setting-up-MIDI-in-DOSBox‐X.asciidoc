@@ -45,7 +45,7 @@ For the IBM PC this will be 330, while for the NEC PC-98 it will be E0D0.
 This is the IRQ of the emulated MPU-401 (intelligent mode only).
 
 If set to -1, the default IRQ address for the IBM PC or NEC PC-98 will be used.
-* For the IBM PC XT this will be IRQ 2
+* For the IBM PC XT with a single PIC, this will be IRQ 2
 * For the IBM PC AT (or later) this will be IRQ 9
 * For the NEC PC-98 it will be IRQ 6.
 
@@ -179,7 +179,7 @@ In the example above, it points to the CM-32L ROMs, which will cause DOSBox-X to
 
 You can check the link:https://en.wikipedia.org/wiki/List_of_MT-32-compatible_computer_games#IBM_PC_compatibles[MT-32 compatible games] list on Wikipedia for known compatibility issues for games requiring the MT-32 Old ROMs, or games that are better played with General MIDI.
 
-If a PC game asks for the IO address and IRQ, you should be able to use the default IO 330 and IRQ 9.
+If a PC game asks for the IO address and IRQ, you should be able to use the default IO 330 and IRQ 9 (or IRQ2 will also work).
 
 #### mt32.romdir
 Default: <working directory>
