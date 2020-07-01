@@ -184,7 +184,7 @@ The Windows installation will now take place. See the link:#Windows-2.x-setup-pr
 # Method 2 - Installing in real DOS
 This method is required for most Windows 2.x versions, and requires that you create a DOS HDD image.
 
-In addition, it brings with it several inconvenience.
+In addition, it brings with it several inconveniences.
 For instance you will need to do your own DOS memory management and load DOS drivers for CD-ROM access if you need it.
 You can also not mount a host directory in DOSBox-X when you boot a disk image.
 Even host directories that you mounted prior to booting the disk image will become unavailable.
@@ -333,9 +333,7 @@ image::images/Windows:Windows_2.03_SETUP_10.png[Windows 2.03 SETUP printer]
 
 If you indicated wanting a printer, it now asks you which port the printer is connected to.
 
-Select the number for the "LPT1:" port and press Enter.
-
-Note: In this version, it is option 1, but in other releases it is option 2.
+Select the "LPT1:" port and press Enter.
 
 image::images/Windows:Windows_2.03_SETUP_11.png[Windows 2.03 SETUP printer port]
 
