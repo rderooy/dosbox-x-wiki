@@ -532,7 +532,7 @@ Usage: IF [NOT] ERRORLEVEL number command or IF [NOT] string1==string2 command o
 +
 Makes floppy drive or hard-disk images.
 +
-Usage: IMGMAKE file [-t type] [-size size|-chs geometry] [-nofs] [-source source] [-r retries] [-bat]
+Usage: IMGMAKE file [-t type] [-size size|-chs geometry] [-nofs] [-source source] [-r retries] [-bat] [-fat] [-spc] [-fatcopies] [-rootdir]
 * **IMGMOUNT** (external command)
 +
 Mounts drives from floppy drive, hard-disk, or CD images in the host system.
