@@ -4,7 +4,7 @@
 
 ### Introduction
 
-DOSBox-X is a cross-platform DOS emulator based on link:http://www.dosbox.com[DOSBox]. Like DOSBox, it emulates a PC necessary for running many MS-DOS games and applications that simply cannot be run on modern PCs and operating systems. However, while the main focus of DOSBox is for running DOS games, DOSBox-X goes much further than this. Started as a fork of the DOSBox project, it retains compatibility with the wide base of DOS games and DOS gaming DOSBox was designed for. But it is also a platform for running DOS applications, including emulating the environments to run Windows 3.x, 9x and ME and software written for those versions of Windows. DOSBox-X supports multiple host operating systems such as Windows, Linux and macOS (Mac OS X). Windows binaries (both 32-bit and 64-bit) and Linux RPM packages (64-bit) are officially released periodically, typically at the start of each month. You can download them from the link:https://github.com/joncampbell123/dosbox-x/releases[Releases] page.
+DOSBox-X is a cross-platform DOS emulator based on link:http://www.dosbox.com[DOSBox]. Like DOSBox, it emulates a PC necessary for running many MS-DOS games and applications that simply cannot be run on modern PCs and operating systems. However, while the main focus of DOSBox is for running DOS games, DOSBox-X goes much further than this. Started as a fork of the DOSBox project, it retains compatibility with the wide base of DOS games and DOS gaming DOSBox was designed for. But it is also a platform for running DOS applications, including emulating the environments to run Windows 3.x, 9x and ME and software written for those versions of Windows. DOSBox-X supports multiple host operating systems such as Windows, Linux and macOS (Mac OS X). Windows binaries (both 32-bit and 64-bit), Linux RPM packages (64-bit) and special HX-DOS packages (for real DOS environments) are officially released periodically, typically at the start of each month. You can download them from the link:https://github.com/joncampbell123/dosbox-x/releases[Releases] page.
 
 toc::[]
 
@@ -308,6 +308,14 @@ Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBo
 Changes the DOSBox-X screen to 25/28/50 line mode.
 +
 Usage: Simply enter 25, 28, or 50 without any parameters.
++
+* **4DOS** (external command)
++
+Start the 4DOS 8.00 command shell for 4DOS features and capabilities.
++
+Usage: 4DOS [option]
++
+Note: You can set 4DOS.COM as the default shell to start (instead of COMMAND.COM) via the SHELL option in the config file.
 * **A20GATE** (external command)
 +
 Turns on/off or changes the A20 gate mode.
@@ -390,7 +398,7 @@ Clears the screen of all input and returns just the current prompt in the upper 
 Usage: Simply enter CLS without any parameters.
 * **COMMAND** (external command)
 +
-Runs DOSBox-X's command shell.
+Runs DOSBox-X's internal command shell.
 +
 Usage: COMMAND [options]
 * **CONFIG** (external command)
@@ -692,6 +700,13 @@ Usage: Simply enter SHIFT without any parameters.
 Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.
 +
 Usage: Simply enter SHOWGUI without any parameters.
+* **START** (external command)
++
+Starts a command to run on the Windows host.
++
+Usage: START [option] command [arguments]
++
+Note: This command is only available in the Windows platform, enabled either by the startcmd config option or by the -winrun command-line option.
 * **SUBST** (internal command)
 +
 Assigns an internal directory to a drive.
@@ -776,27 +791,21 @@ Calls program with as first parameter the location of the captures folder.
 * **-opensaves [program]**
 +
 Calls program with as first parameter the location of the saves folder.
-* **-eraseconf**
-+
-Erases DOSBox-X's default config file.
-* **-resetconf**
+* **-eraseconf** or **-resetconf**
 +
 Erases DOSBox-X's default config file.
 * **-printconf**
 +
 Generates DOSBox-X's config file in the user directory and prints its location.
-* **-erasemapper**
-+
-Erases the mapper file used by the default clean configuration file.
-* **-resetmapper**
+* **-erasemapper** or **-resetmapper**
 +
 Erases the mapper file used by the default clean configuration file.
 * **-nogui**
 +
-Starts DOSBox-X without showing its GUI menu (Windows builds only).
+Starts DOSBox-X without showing its GUI menu.
 * **-nomenu**
 +
-Starts DOSBox-X without showing its GUI menu (Windows builds only).
+Starts DOSBox-X without showing its GUI menu.
 * **-userconf**
 +
 Loads the configuration from the user's profile or home directory.
@@ -821,9 +830,12 @@ Starts DOSBox-X in full-screen mode.
 * **-savedir [path]**
 +
 Uses the specified path as DOSBox-X's save path.
+* **-winrun**
++
+Enables launching Windows programs to run on the host (such as the use of START command) and the Windows clipboard communications via the CLIP$ device (Windows version only).
 * **-disable-numlock-check**
 +
-Disables check of the NumLock key (Windows builds only).
+Disables check of the NumLock key (Windows version only).
 * **-date-host-forced**
 +
 Forces synchronization of date with the host system.
