@@ -106,6 +106,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Autolock mouse**: DOSBox-X will lock the mouse automatically for use with the emulated DOS.
 
+* **Quick right mouse button copy/paste**: Check this if you want to use the right mouse button to copy to and paste from the Windows clipboard without any key modifier that may have been set.
+
 * **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
 
 * **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. This allows certain DOS functions to continue to work. For example, if you are running Demoscene games and use this function, then the game itself will be paused but the game music may continue to play. It is also a good way to hear the entire music in a Demoscene production when the demo exits long before the music has time to loop.
