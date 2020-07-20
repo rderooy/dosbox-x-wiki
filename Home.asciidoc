@@ -112,7 +112,9 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. This allows certain DOS functions to continue to work. For example, if you are running Demoscene games and use this function, then the game itself will be paused but the game music may continue to play. It is also a good way to hear the entire music in a Demoscene production when the demo exits long before the music has time to loop.
 
-* **Reset guest system**: Restarts the emulated DOS inside DOSBox-X.
+* **Reset virtual machine**: Restarts the virtual machine inside DOSBox-X.
+
+* **Reboot guest system**: Reboots the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
 
 * **Quit**: Exit from DOSBox-X.
 
@@ -229,7 +231,9 @@ You can use these special keys to achieve certain functions in DOSBox-X, such as
 * **[F11/F12]+F**
 Switch to full-screen mode and back.
 * **[F11/F12]+R**
-Restart the emulated DOS inside DOSBox-X.
+Reset the virtual machine inside DOSBox-X.
+* **[F11/F12]+S**
+Reboot the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
 * **[F11/F12]+M**
 Start DOSBox-X's keyboard mapper.
 * **[F11/F12]+Esc**
@@ -597,7 +601,7 @@ Usage: LOADROM ROM_file
 Loads a program into upper memory (if UMB is available).
 +
 Usage: LH [program] [options] or LOADHIGH [program] [options]
-* **LS** (internal command)
+* **LS** (external command)
 +
 Lists directory contents in Unix-like style.
 +
