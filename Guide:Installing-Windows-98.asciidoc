@@ -126,7 +126,7 @@ This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which 
 
 ## Requirements
 
-* DOSBox-X 0.83.3 or later, it will NOT work with earlier versions or other DOSBox forks.
+* DOSBox-X 0.83.4 or later, it will NOT work with earlier versions or other DOSBox forks.
 * Windows 98 *OEM Full* edition CD-ROM image (named "Win98.iso" in the example below).
 
 Getting this image file is outside the scope of this guide.
@@ -141,7 +141,7 @@ IMGMOUNT C hdd.img
 Now let’s boot from the CD-ROM and start the installation.
 ....
 IMGMOUNT D Win98.iso
-IMGMOUNT 0 -el-torito D -t floppy -fs none
+IMGMOUNT 0 -el-torito D -t floppy
 BOOT A:
 ....
 
