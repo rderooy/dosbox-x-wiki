@@ -104,9 +104,13 @@ NOTE: The ``-t floppy`` parameter is only needed with DOSBox-X when the extensio
 
 A diskette image that is not formatted, or has a unsupported filesystem can be mounted as follows:
 ....
+imgmount 0 disk.ima
+....
+This is equivalent to
+....
 imgmount 0 disk.ima -fs none
 ....
-0 represents drive A: and 1 represents drive B:. The use of 0 or 1 is required if your using the ``-fs none`` flag to mount a diskette image.
+0 represents drive A: and 1 represents drive B:, but due to the use of drive numbers they cannot be directly accessed from the DOSBox-X integrated DOS. Note that when using drive numbers like 0 and 1 to mount a diskette image the ``-fs none`` flag is automatically assumed in DOSBox-X. For vanilla DOSBox, or other forks, the ``-fs none`` flag will be required.
 
 ### Mounting from the Drive menu
 This is exclusive to the DOSBox-X Windows version.
@@ -291,7 +295,7 @@ DOSBox-X supports mounting harddisk images in the following formats:
 * link:https://en.wikipedia.org/wiki/IMG_(file_format)[MFM sector image format] (typically .img)
 * link:https://en.wikipedia.org/wiki/Qcow[QCOW2] - QEMU copy-on-write v2 (.qcow2)
 ** No support in DOSBox-X for QCOW2 compression or encryption options
-** Must always be mounted with ``-fs none``as such: ``imgmount 2 hdd.qcow2 -fs none``
+** Must always be mounted as a drive number as such: ``imgmount 2 hdd.qcow2``
 * link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (.vhd)
 * Bochs bximage (typically .img)
 ** No support in DOSBox-X for VHD dynamic or encryption options
@@ -406,9 +410,9 @@ NOTE: If a harddisk image has multiple partitions, you can only access the first
 
 A harddisk image that is partitioned, but not formatted, or has an unsupported filesystem can be mounted as follows:
 ....
-imgmount 2 hdd.img -fs none
+imgmount 2 hdd.img
 ....
-When using the ``-fs none`` option, it is required to use a device number instead of a drive letter.
+It is required to use a device number instead of a drive letter in this case.
 
 |===
 |Device number|Controller option|IDE Controller|Master/Slave
@@ -423,12 +427,12 @@ A harddisk image that is not yet partitioned needs additional parameters, such a
 
 Using the original template it was based on:
 ....
-imgmount 2 hdd.img -t hd_4gig -fs none
+imgmount 2 hdd.img -t hd_4gig
 ....
 
 Or using the original SHC it was based on:
 ....
-imgmount 2 hdd.img -t hdd -size 512,32,2,992 -fs none
+imgmount 2 hdd.img -t hdd -size 512,32,2,992
 ....
 
 IMPORTANT: The order of the geometry values for the IMGMOUNT command are reversed compared to IMGMAKE.
@@ -609,7 +613,7 @@ Only those that use the El Torito emulated diskette method are supported, such a
 You first need to mount the CD-ROM, then mount the diskette image, located on the CD-ROM, and finally you can boot from the A: drive:
 ....
 imgmount d Win98.iso
-imgmount 0 -el-torito D -t floppy -fs none
+imgmount 0 -el-torito D -t floppy
 boot A:
 ....
 NOTE: If the second command gives the error "*El Torito boot record not found*", the CD-ROM is either not bootable or uses an unsupported boot method.
@@ -696,7 +700,7 @@ DOSBox-X provides limited support for these images.
 * There is no support for creating QCOW2 images in DOSBox-X
 * There is no support for the compression and encryption options
 * Copy-On-Write support needs to be handled manually outside of DOSBox-X
-* Mounting QCOW2 images always requires the ``-fs none`` option
+* Mounting QCOW2 images always requires the use of a drive number
 
 A QCOW2 image can be created with link:https://www.qemu.org/download/[qemu-img] as such:
 
@@ -707,13 +711,13 @@ The above command will create a 2GB QCOW2 file named hdd.qcow2.
 
 Mounting a qcow2 file can be accomplished in DOSBox-X as follows:
 ....
-imgmount 2 hdd.qcow2 -fs none
+imgmount 2 hdd.qcow2
 ....
-Due to the need to mount QCOW2 images with ``-fs none``, the content of a qcow2 file cannot be accessed from the DOSBox-X integrated DOS, but only after booting real DOS or Windows 9x.
+Due to the need to mount QCOW2 images with a drive number, the content of a qcow2 file cannot be accessed from the DOSBox-X integrated DOS, but only after booting real DOS or Windows 9x.
 
 Once a qcow2 file has been partitioned and formatted and made bootable, you can boot from it as such:
 ....
-imgmount 2 hdd.qcow2 -fs none
+imgmount 2 hdd.qcow2
 boot C:
 ....
 
