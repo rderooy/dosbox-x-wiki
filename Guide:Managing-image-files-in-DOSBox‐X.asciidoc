@@ -412,7 +412,7 @@ A harddisk image that is partitioned, but not formatted, or has an unsupported f
 ....
 imgmount 2 hdd.img
 ....
-It is required to use a device number instead of a drive letter in this case.
+It is required to use a device number instead of a drive letter in this case. DOSBox-X automatically assumes the -fs none flag when a drive number is used, but this flag is required for vanilla DOSBox or other DOSBox forks.
 
 |===
 |Device number|Controller option|IDE Controller|Master/Slave
