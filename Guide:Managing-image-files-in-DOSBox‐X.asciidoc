@@ -9,7 +9,7 @@ toc::[]
 # Overview
 DOSBox-X supports three categories of image files;
 
-* Diskette images
+* Diskette images (floppy disk images)
 * Harddisk images
 * CD-ROM or DVD images
 
@@ -25,17 +25,16 @@ The output of the two commands differs somewhat.
 * IMGMOUNT will only show mounted images
 * IMGMOUNT will list the device numbers (drive numbers) in use
 
-# Diskette images
+# Diskette images (floppy disk images)
 DOSBox-X supports mounting diskette images in the following formats:
 
 * MFM sector image format (typically .ima or .img)
 * NEC PC-98 diskette images (.fdd .fdi .nfd or .d88)
 
-
 NOTE: The IMG extension is also used for harddisk images, so there can be some confusion.
 Files with the extension IMA are automatically treated as diskette images.
 
-NOTE: There is no support for any type of copy protected diskettes.
+NOTE: There is no support for any type of copy-protected diskettes.
 Any programs on copy protected diskettes need to be "cracked" to remove the copy protection before they can be used by DOSBox-X.
 
 Some examples of diskette image files that DOSBox-X **does not** support:
@@ -52,7 +51,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 ## Creating diskette images
 DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create FAT12 formatted diskette images in MFM sector image format from the DOSBox-X command prompt.
 
-example:
+Example:
 ....
 IMGMAKE disk.ima -t fd_1440
 ....
@@ -547,8 +546,9 @@ For a IDE CD-ROM driver we recommend either OAKCDROM.SYS or UIDE.SYS.
 
 * OAK stands for OEM Adaptation Kit, and this is the IDE CD-ROM driver shipped on the Windows 95, 98 and ME boot disks.
 * UIDE.SYS is available from FreeDOS.
+* You can also use the VIDE-CDD.SYS driver which loads faster than OAKCDROM.SYS.
 
-MSCDEX.EXE is included with DOS 6.x, or you can use the SHSUCDX.EXE redirector available from FreeDOS.
+MSCDEX.EXE is included with MS-DOS 6.x, or you can use the SHSUCDX.EXE redirector available from FreeDOS.
 
 Edit the config.sys file and add the following line to it:
 ....
@@ -562,7 +562,7 @@ device=c:\dos\mscdex.exe /D:cdrom001 /L:D
 The above assumes oakcdrom.sys and mscdex.exe are in the C:\DOS directory in the harddisk image file.
 You can substitute oakcdrom.sys and mscdex.exe with their FreeDOS equivalents with the same parameters.
 
-The ``/L:D`` will cause mscdex to use the D: drive for the CD-ROM, adjust as needed.
+The ``/L:D`` will cause MSCDEX to use the D: drive for the CD-ROM, adjust as needed.
 
 ### Mounting multiple CD or DVD images
 Some DOS programs or games came on multiple CD or DVDs, for this purpose it is possible to mount multiple images on one drive letter and swap between them.
@@ -667,7 +667,7 @@ The general steps are as follows:
 3. ``mount`` a host directory or drive
 4. Copy the files using the ``copy`` or ``xcopy`` commands
 
-Example of extracting the contents of a cdrom image file:
+Example of extracting the contents of a CD-ROM image file:
 ....
 IMGMOUNT d cdrom.iso
 MOUNT C .
