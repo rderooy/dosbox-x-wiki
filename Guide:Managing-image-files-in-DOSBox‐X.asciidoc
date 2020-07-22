@@ -613,10 +613,10 @@ Only those that use the El Torito emulated diskette method are supported, such a
 You first need to mount the CD-ROM, then mount the diskette image, located on the CD-ROM, and finally you can boot from the A: drive:
 ....
 imgmount d Win98.iso
-imgmount 0 -el-torito D -t floppy
+imgmount a -bootcd d
 boot A:
 ....
-NOTE: If the second command gives the error "*El Torito boot record not found*", the CD-ROM is either not bootable or uses an unsupported boot method.
+NOTE: The second command is equivalent to ``imgmount a -el-torito d`` or ``imgmount a -el-torito d -t floppy``. If this command gives the error "*El Torito boot record not found*", the CD-ROM is either not bootable or uses an unsupported boot method.
 
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
