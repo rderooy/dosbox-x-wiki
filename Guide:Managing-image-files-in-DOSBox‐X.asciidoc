@@ -9,7 +9,7 @@ toc::[]
 # Overview
 DOSBox-X supports three categories of image files;
 
-* Diskette images (floppy disk images)
+* Diskette (floppy disk) images
 * Harddisk images
 * CD-ROM or DVD images
 
@@ -25,7 +25,7 @@ The output of the two commands differs somewhat.
 * IMGMOUNT will only show mounted images
 * IMGMOUNT will list the device numbers (drive numbers) in use
 
-# Diskette images (floppy disk images)
+# Diskette (floppy disk) images
 DOSBox-X supports mounting diskette images in the following formats:
 
 * MFM sector image format (typically .ima or .img)
@@ -35,7 +35,7 @@ NOTE: The IMG extension is also used for harddisk images, so there can be some c
 Files with the extension IMA are automatically treated as diskette images.
 
 NOTE: There is no support for any type of copy-protected diskettes.
-Any programs on copy protected diskettes need to be "cracked" to remove the copy protection before they can be used by DOSBox-X.
+Any programs on copy-protected diskettes need to be "cracked" to remove the copy protection before they can be used by DOSBox-X.
 
 Some examples of diskette image files that DOSBox-X **does not** support:
 
@@ -49,7 +49,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 * Transcopy (.TC)
 
 ## Creating diskette images
-DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create FAT12 formatted diskette images in MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a built-in ``IMGMAKE`` command with which you can create FAT12 formatted diskette images in MFM sector image format from the DOSBox-X command prompt.
 
 Example:
 ....
@@ -58,7 +58,7 @@ IMGMAKE disk.ima -t fd_1440
 This will create a 1.44MB formatted disk image named disk.ima.
 The diskette image will appear to have been formatted by MS-DOS 5.0.
 
-NOTE: The filename for the disk image is not limited to the DOS 8.3 filename length, but rather by your host filesystem.
+NOTE: The filename for the disk image is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X the image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used. You can also specify the ``-force`` parameter to overwrite the file if it already exists.
 
 You can optionally create a diskette image that is not formatted with:
 ....
@@ -303,7 +303,7 @@ DOSBox-X supports mounting harddisk images in the following formats:
 Creating and accessing harddisk images is very similar to diskette images, with the exception that they also contain partitions and they may contain other filesystems.
 
 ## Creating harddisk images
-DOSBox-X has a special built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in MFM sector image format from the DOSBox-X command prompt.
 ``IMGMAKE`` only creates a single primary DOS partition per harddisk image file.
 
 ### FAT version
@@ -327,13 +327,13 @@ FAT12 and FAT16 harddisk images will appear to have been partitioned and formatt
 FAT32 harddisk images will appear to have been formatted by Windows 98.
 
 ### Using templates
-example:
+Example:
 ....
 IMGMAKE hdd.img -t hd_520
 ....
 This will create a 520MB partitioned and formatted harddisk image named hdd.img.
 
-NOTE: The filename in this case is not limited to the DOS 8.3 filename length, but rather by your host filesystem.
+NOTE: The filename in this case is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X the image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used. You can also specify the ``-force`` parameter to overwrite the file if it already exists.
 
 You can optionally attempt to force ``IMGMAKE`` to use a certain filesystem type with the ``-fat`` parameter.
 
