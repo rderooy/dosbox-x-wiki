@@ -137,7 +137,7 @@ With this example, it will start Windows automatically on startup, and when you 
 If HIMEM is being loaded on startup, you may get a message "HIMEM is testing extended memory...", which can take a considerable amount of time and is pointless in a emulated environment. You can bypass it by editing CONFIG.SYS and changing ``DEVICE=C:\DOS\HIMEM.SYS`` to ``DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF``.
 
 ### Reboot DOS
-If for some reason you want to do a reboot (reset) from the command-line, look for a 3rd party utility called ``RESTART.COM``.
+You can reboot (restart) DOS by selecting the "Reboot guest system" menu item (under "Main"). If for some reason you want to do a reboot from the command-line, look for a 3rd party utility called ``RESTART.COM``. For rebooting DOS using such a utility you may also want to check the "Use quick reboot" menu item (under "DOS") for a faster restart of the guest DOS system.
 
 ### Boot menu
 When using ``IMGMAKE`` to create a partitioned image, and when booting from the image afterwards you will get the following boot menu with a 4 second timeout.
