@@ -141,7 +141,7 @@ IMGMOUNT C hdd.img
 Now let’s boot from the CD-ROM and start the installation.
 ....
 IMGMOUNT D Win98.iso
-IMGMOUNT 0 -el-torito D -t floppy
+IMGMOUNT A -bootcd D
 BOOT A:
 ....
 
@@ -321,7 +321,7 @@ Now on the "MIDI" tab, change the "Single instrument" option to "Roland MPU-401"
 For more information about setting up MIDI support, see link:Guide%3ASetting-up-MIDI-in-DOSBox%E2%80%90X[Guide: Setting up MIDI in DOSBox-X]
 
 # Enabling printing
-To enable printing support in Windows 95, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
+To enable printing support in Windows 98, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
 
 # 3dfx Voodoo
 The emulated 3dfx Voodoo PCI device is enabled by default in DOSBox-X, and both Windows 98 and 98SE include a driver and will automatically detect it.
