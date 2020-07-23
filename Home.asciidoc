@@ -191,6 +191,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **PC-98 PIT master clock**: Selects the PIT master clock for the PC-98 system (4MHz/8MHz or 5MHz/10MHz).
 
+* **Use quick reboot**: Selects whether to enable quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
+
 * **Swap floppy**: Swaps the floppy image if you are using multiple floppy disk images.
 
 * **Swap CD**: Swaps the CD image if you are using multiple CD images.
