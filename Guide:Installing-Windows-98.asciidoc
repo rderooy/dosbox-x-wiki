@@ -145,7 +145,7 @@ IMGMOUNT A -bootcd D
 BOOT A:
 ....
 
-If the second ``IMGMOUNT`` command gives an error "*El Torito boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
+If the second ``IMGMOUNT`` command gives an error "*El Torito CD-ROM boot record not found*", your CD-ROM image is not bootable, and you will have to use either a different installation method or a different Windows 98 CD-ROM image.
 
 You will first get a Startup menu, where you need to select "Boot from CD-ROM".
 
