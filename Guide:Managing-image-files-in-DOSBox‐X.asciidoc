@@ -58,7 +58,12 @@ IMGMAKE disk.ima -t fd_1440
 This will create a 1.44MB formatted disk image named disk.ima.
 The diskette image will appear to have been formatted by MS-DOS 5.0.
 
-NOTE: The filename for the disk image is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X the image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used. You can also specify the ``-force`` parameter to overwrite the file if it already exists.
+The image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used, such as the following:
+....
+IMGMAKE -t fd_1440
+....
+
+NOTE: The filename for the disk image is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X you can also specify the ``-force`` parameter to overwrite the file if it already exists.
 
 You can optionally create a diskette image that is not formatted with:
 ....
@@ -99,7 +104,11 @@ This is equivalent to
 imgmount A: disk.ima
 imgmount A: disk.ima -t floppy
 ....
-NOTE: The ``-t floppy`` parameter is only needed with DOSBox-X when the extension is not .IMA, and your wanting to mount a diskette image on drives greater than B:
+If you do not specify an image filename, then the name IMGMAKE.IMG will be used, such as the following:
+....
+imgmount a
+....
+NOTE: The ``-t floppy`` parameter is only needed with DOSBox-X when the extension is not .IMA, and your wanting to mount a diskette image on drives greater than B:. 
 
 A diskette image that is not formatted, or has a unsupported filesystem can be mounted as follows:
 ....
@@ -333,7 +342,12 @@ IMGMAKE hdd.img -t hd_520
 ....
 This will create a 520MB partitioned and formatted harddisk image named hdd.img.
 
-NOTE: The filename in this case is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X the image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used. You can also specify the ``-force`` parameter to overwrite the file if it already exists.
+The image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used, such as the following:
+....
+IMGMAKE -t hd_520
+....
+
+NOTE: The filename in this case is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X you can also specify the ``-force`` parameter to overwrite the file if it already exists.
 
 You can optionally attempt to force ``IMGMAKE`` to use a certain filesystem type with the ``-fat`` parameter.
 
@@ -396,6 +410,10 @@ This is equivalent to
 imgmount C: hdd.img
 imgmount C: disk.ima -t hdd
 imgmount C: disk.ima -t hdd -fs fat
+....
+If you do not specify an image filename, then the name IMGMAKE.IMG will be used, such as the following:
+....
+imgmount c
 ....
 NOTE: The ``-t hdd`` option is only needed with DOSBox-X when mounting a harddisk image on the emulated A: or B: drive, as those are normally reserved for diskettes.
 Or when mounting a harddisk image that is not partitioned or formatted, or formatted with an unsupported filesystem in combination with the ``-size`` parameter.
@@ -604,7 +622,7 @@ imgmount d cdrom2.iso -u
 ....
 This will cause the currently mounted image file (if any) to be unmounted, and cdrom2.iso to be mounted instead.
 
-TIP: Alternatively you can unmount a image from the DOSBox-X menu bar (when in windowed mode) by selecting "Drive", followed by the drive letter and "Unmount".
+TIP: Alternatively you can unmount an image from the DOSBox-X menu bar (when in windowed mode) by selecting "Drive", followed by the drive letter and "Unmount".
 
 ## Boot from a CD or DVD image
 DOSBox-X has limited support for booting from a CD or DVD.
@@ -616,7 +634,7 @@ imgmount d Win98.iso
 imgmount a -bootcd d
 boot A:
 ....
-NOTE: The second command is equivalent to ``imgmount a -el-torito d`` or ``imgmount a -el-torito d -t floppy``. If this command gives the error "*El Torito boot record not found*", the CD-ROM is either not bootable or uses an unsupported boot method.
+NOTE: The second command is equivalent to ``imgmount a -el-torito d`` or ``imgmount a -el-torito d -t floppy``. If this command gives the error "*El Torito CD-ROM boot record not found*", the CD-ROM is either not bootable or uses an unsupported boot method.
 
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
@@ -656,7 +674,7 @@ Alternatively there is link:https://wincdemu.sysprogs.org/[WinCDEmu] which can m
 Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO file
 
 # Copying files into or out of image files from DOSBox-X
-If you need to copy files into, or out of a image file, this can be done from the DOSBox-X integrated DOS.
+If you need to copy files into, or out of an image file, this can be done from the DOSBox-X integrated DOS.
 
 Obviously, copying files to write-protected media is not possible. As such you cannot copy files to a CD or DVD image, or to write-protected diskette images.
 
