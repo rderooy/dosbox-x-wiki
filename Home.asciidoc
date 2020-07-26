@@ -187,7 +187,9 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Mouse**: Changes the mouse settings for the emulated DOS inside DOSBox-X, such as the mouse sensitivity.
 
-* **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto (i.e. auto-enable if the reported DOS version is at least 7).
+* **Reported DOS version**: Changes to the specified reported DOS version from the list, including 3.3, 5.0, 6.22 and 7.1. long filename and FAT32 disk image support will be enabled with a reported DOS version of 7.1.
+
+* **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto per reported DOS version (i.e. enable LFN if the reported DOS version is at least 7).
 
 * **PC-98 PIT master clock**: Selects the PIT master clock for the PC-98 system (4MHz/8MHz or 5MHz/10MHz).
 
