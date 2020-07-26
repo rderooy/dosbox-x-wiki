@@ -6,7 +6,7 @@
 
 DOSBox-X is a cross-platform DOS emulator based on link:http://www.dosbox.com[DOSBox]. Like DOSBox, it emulates a PC necessary for running many MS-DOS games and applications that simply cannot be run on modern PCs and operating systems. However, while the main focus of DOSBox is for running DOS games, DOSBox-X goes much further than this. Started as a fork of the DOSBox project, it retains compatibility with the wide base of DOS games and DOS gaming DOSBox was designed for. But it is also a platform for running DOS applications, including emulating the environments to run Windows 3.x, 9x and ME and software written for those versions of Windows.
 
-DOSBox-X supports multiple host operating systems such as Windows, Linux and macOS (Mac OS X). Windows binaries (both 32-bit and 64-bit), Linux RPM packages (64-bit), macOS packages (64-bit) and special HX-DOS packages (for real DOS environments) are officially released periodically, typically on the last day of a month or at the start of the next month. You can download ZIP (or Linux RPM) packages for the supported platforms from the link:https://github.com/joncampbell123/dosbox-x/releases[Releases] page. See also the link:https://github.com/joncampbell123/dosbox-x/blob/master/INSTALL.md[INSTALL] page for more details about these packages and further installation instructions of DOSBox-X.
+DOSBox-X supports multiple host operating systems such as Windows, Linux and macOS (Mac OS X). Windows binaries (both 32-bit and 64-bit), Linux RPM packages (64-bit), macOS packages (64-bit) and special HX-DOS packages (for real DOS environments) are officially released periodically, typically on the last day of a month or at the start of the next month. Please see the link:https://github.com/joncampbell123/dosbox-x/blob/master/INSTALL.md[INSTALL] page for DOSBox-X installation instructions and package information for the supported platforms. The portable ZIP and Linux RPM packages for these platforms can be found in the link:https://github.com/joncampbell123/dosbox-x/releases[Releases] page.
 
 All-in-one Windows installers for DOSBox-X are also available to ease the installation process, which are especially recommended for new users. You may want to use these auto-installable packages if Windows is your platform, and you will be able to start DOSBox-X as soon as the installation ends. A quick start guide is also included in the package. The Windows installer for the latest official version of DOSBox-X (0.83.3 at this time) is available from: link:https://github.com/Wengier/dosbox-x-wiki/raw/master/DOSBox-X-Setup-Windows-latest.exe[DOSBox-X-Setup-Windows-latest.exe]
 
@@ -187,7 +187,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Mouse**: Changes the mouse settings for the emulated DOS inside DOSBox-X, such as the mouse sensitivity.
 
-* **Reported DOS version**: Changes to the specified reported DOS version from the list, including 3.3, 5.0, 6.22 and 7.1. long filename and FAT32 disk image support will be enabled with a reported DOS version of 7.1.
+* **Reported DOS version**: Changes the reported DOS version to the specified version from the list, including 3.3, 5.0, 6.22 and 7.1. Long filename (LFN) and FAT32 disk image support will be enabled when you select 7.1 as the reported DOS version.
 
 * **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto per reported DOS version (i.e. enable LFN if the reported DOS version is at least 7).
 
