@@ -34,7 +34,6 @@ autolock=true
 title=Windows 98
 memsize=64
 vmemsize=8
-cycles=60000
 vesa modelist width limit=0
 vesa modelist height limit=0
 
@@ -44,6 +43,7 @@ ver=7.1
 [cpu]
 cputype=pentium_mmx
 core=normal
+cycles=60000
 
 [sblaster]
 sbtype=sb16vibra

@@ -99,6 +99,7 @@ Copy the above config and save it as *win95.conf*
 * If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 ** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You will probably want to change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
+* Setting cycles=60000 gives significantly better video and disk performance, but slightly worse CPU performance compared to cycles=auto
 
 # General installation Notes
 
