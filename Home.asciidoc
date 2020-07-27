@@ -756,9 +756,9 @@ Usage: TYPE [drive:][path][filename]
 +
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.
 +
-Usage: VER [/R], VER [SET major.minor] or VER [SET major minor]
+Usage: VER [/R], VER [SET] number or VER SET [major minor]
 +
-Note: "VER SET 3.3" will set the reported DOS version as 3.3 (3.30), whereas "VER SET 3 3" will set the version as 3.03.
+Note: "VER 3.3" or “VER SET 3.3” will set the reported DOS version as 3.3 (3.30), whereas "VER SET 3 3" will set the version as 3.03 if you use the [major minor] format.
 * **VERIFY** (internal command)
 +
 Controls whether to verify that the files are written correctly to a disk.
@@ -934,7 +934,7 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 * link:Guide%3ASetting-up-printing-in-DOSBox‐X[Guide: Setting up printing in DOSBox-X]
 * link:Guide%3ASetting-up-MIDI-in-DOSBox‐X[Guide: Setting up MIDI in DOSBox-X]
 
-### Compatibility
+### DOSBox-X’s Compatibility
 
 We are making efforts to ensure that the vast majority of DOS games and applications will run in DOSBox-X, and these include both text-mode and graphical-mode DOS programs. Microsoft Windows versions that are largely DOS-based (such as Windows 3.x and 9x) are officially supported by DOSBox-X as well. Note that certain config settings may need to be changed from the default ones for some of these programs to work smoothly.
 
