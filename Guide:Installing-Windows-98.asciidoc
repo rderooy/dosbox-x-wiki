@@ -122,7 +122,7 @@ IMGMAKE hdd.img -size 16384
 # Installation Method 1: Boot from CD-ROM image
 Starting with Windows 98, it is possible to boot directly from the CD-ROM, as long as you have the "OEM Full" edition, in which case no separate bootdisk is needed.
 
-This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which can be up to 128GB.
+This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which can be up to 128GB for Windows 98.
 
 ## Requirements
 
@@ -183,7 +183,7 @@ This method will start the install from DOSBox-X, and does not require a bootabl
 
 ## Requirements
 
-* DOSBox-X 0.83.3 or later, it will NOT work with earlier versions or other DOSBox forks.
+* DOSBox-X 0.83.4 or later, it will NOT work with earlier versions or other DOSBox forks.
 * Windows 98 CD-ROM image (named "Win98.iso" in the example below).
 
 Getting this image file is outside the scope of this guide.
