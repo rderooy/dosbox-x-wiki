@@ -7,3 +7,5 @@ Back to the link:Home[DOSBox-X Wiki Welcome page].
 toc::[]
 
 This guide explains how to setup and play DOS games in DOSBox-X.
+
+More information to be added for this guide.
