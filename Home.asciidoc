@@ -319,7 +319,7 @@ press the X key on your keyboard.
 
 ### DOSBox-X's Supported Commands
 
-Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles.
+Many internal or external MS-DOS commands are supported by DOSBox-X. Also, DOSBox-X offers additional commands such as MOUNT and CAPMOUSE, which are not found in MS-DOS or compatibles. Internal commands are built into the DOSBox-X command shell whereas external commands appear as programs on the Z: drive.
 
 * **25/28/50** (external command)
 +
@@ -360,11 +360,11 @@ Usage: ALIAS [name[=value] ... ]
 +
 * **ATTRIB** (internal command)
 +
-Displays or changes file attributes.
+Displays or changes the attributes of files and directories.
 +
 Usage: ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [drive:][path][filename] [/S]
 +
-Note: Changing file attributes only works on mounted local，overlay and FAT drives.
+Note: Changing file attributes only works on mounted local, overlay and FAT drives.
 * **AUTOTYPE** (external command)
 +
 Performs scripted keyboard entry into a running DOS program.
