@@ -18,7 +18,7 @@ When using the SDL2 binary, scancodes are not needed when using non-US keyboard 
 
 When starting DOSBox-X on a Windows system with the default ``keyboardlayout=auto`` config setting, it will try to
 set the keyboard layout automatically, depending on the host OS region, for a wide range of regions. This may not
-necessarily match your actual keyboard, or your region may not currently be supported. In addition, the ```auto```
+necessarily match your actual keyboard, or your region may not currently be supported. In addition, the ``auto``
 setting has no effect on Linux and MacOS.
 
 You can set your keyboard layout manually in the [dos] section of the dosbox-x.conf file. For instance to set a
@@ -52,10 +52,33 @@ on how to do so as a developer.
 Regional settings
 -----------------
 
-Regional settings can be set in the [config] section of the DOSBox-x config file by use of the ```COUNTRY=```
+Regional settings can be set in the [config] section of the DOSBox-x config file by use of the ``COUNTRY=``
 setting. This defaults to 1, which is the US. This setting influences date and time format as used by DOSBox-X,
-for instance by the ``DIR`` command. It may also influence regional settings in other applications.
+such as the ``DIR`` command. It may also influence regional settings in other applications.
 
-``COUNTRY=044``
+For example, the date is displayed in MM/DD/YYYY format with the default US setting:
 
-Will cause DOSBox-X to use the UK date and time format. A list of country codes can be found on the [FreeDOS wiki](http://wiki.freedos.org/wiki/index.php/Country_codes).
+``30-07-2020 12:34p``
+
+If you change the ``COUNTRY=`` setting, the date and time will be displayed in the format associated with the
+specified country code. For example, 44 (or 044) is the country code for the UK, and setting the following:
+
+``COUNTRY=44``
+
+Will cause DOSBox-X to use the UK date and time format:
+
+``07/30/2020 12:34``
+
+You can also instruct DOSBox-X to use the Canadian French date and time format like this: 
+
+``COUNTRY=2``
+
+Then the date and time will be displayed like this:
+
+``2002-07-30 12:34``
+
+A list of country codes and the corresponding date/time formats can be found at http://info.wsisiz.edu.pl/~bse26236/batutil/help/COUNTRN.HTM[MS-DOS COUNTRY Notes].
+
+If you set "COUNTRY=0" in the DOSBox-x config file, then DOSBox-X will try to auto-detect and set the country code based on the system regional setting. This however only works on Windows systems.
+
+Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code, such as ``COUNTRY 61`` for international English. Typing COUNTRY without parameters will display the current country code.
