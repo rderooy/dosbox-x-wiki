@@ -56,7 +56,7 @@ Alternatively, the KEYB command can be used from the DOSBox-X command line to ch
 
 ``KEYB UK``
 
-This command will switch the current keyboard layout to the UK keyboard layout and set code page 858.
+This command will switch the current keyboard layout to the UK keyboard layout and set code page 858. See the "List of supported keyboard layouts" section below for a list of keyboard layouts available for use with DOSBox-X.
 
 Alternatively you can also specify a different codepage by adding the codepage number to the end.
 
@@ -90,11 +90,23 @@ It is also possible to display the Euro symbol instead of the specified ASCII ch
 
 It will work even after you use the KEYB command to change the current codepage of DOSBox-X from the command line. The Euro symbol will be displayed in the specified position instead of the original character in that codepage as long as the ``euro`` setting remains active.
 
+### Use of scancodes for your keyboard layout
+
+NOTE: The information in this section applies to DOSBox-X 0.83.4 and later. Previous versions of DOSBox-X did not support the ``usescancodes=auto`` config setting.
+
+DOSBox-X supports both SDL1 and SDL2 versions, using the cross-platform SDL 1.2 and SDL 2.0 libraries respectively. Since SDL is responsible for input handling in DOSBox-X, there are some differences between the SDL1 binary and the SDL2 binary in regard to the keyboard layout support of DOSBox-X.
+
+The SDL1 version of DOSBox-X in particular only supports the US keyboard layout due to the limitations around the SDL1 library. As such when using the SDL1 version, DOSBox-X will automatically decide whether to use scancodes with the default ``usescancodes=auto`` config setting, which should work around most keyboard layout problems with non-US keyboards.
+
+On the other hand, you can override this by changing the setting ``usescancodes`` to either ``true`` or ``false``. The ``false`` setting was the default setting before DOSBox-X 0.83.4, which worked well for US keyboard layout, but the keys could be messed up for non-US keyboards when you are using the SDL1 version. So it is recommended to leave this setting to ``auto`` for the SDL1 binary.
+
+When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts in DOSBox-X (this setting has no effect in the SDL2 version).
+
 ### Support for external keyboard files
 
-DOSBox-X allows the use of external keyboard files for international keyboard layouts in addition to those that are already built into DOSBox-X.
+DOSBox-X allows the use of external keyboard files for international keyboard layouts in addition to those that are already built into DOSBox-X. A list of supported keyboard layouts in DOSBox-X can be found in the "List of supported keyboard layouts" section below.
 
-The FreeDOS .kl files are supported (FreeDOS keyb2 keyboard layoutfiles) as well as the FreeDOS keyboard.sys/keybrd2.sys/keybrd3.sys libraries which consist of all available .kl files.
+For using external keyboard files in DOSBox-X, the FreeDOS .kl files are supported (FreeDOS keyb2 keyboard layout files) as well as the FreeDOS keyboard.sys/keybrd2.sys/keybrd3.sys libraries which consist of all available .kl files.
 
 Check out the FreeDOS website for precompiled keyboard layouts if the DOSBox-X integrated layouts do not work for some reason, or if updated or new layouts become available.
 
@@ -108,14 +120,61 @@ Additional layouts can be added by copying the corresponding .kl file into the d
 
 The integration of keyboard layout packages (like keybrd2.sys) works similar.
 
-### Use of scancodes for your keyboard layout
+### List of supported keyboard layouts
+This is a list of keyboard layouts that can be used in DOSBox, and by extension DOSBox-X. For layouts marked with * you must have ten ega.cpx files (from FreeDOS) in the DOSBox-X directory.
 
-NOTE: The information in this section applies to DOSBox-X 0.83.4 and later. Previous versions of DOSBox-X did not support the ``usescancodes=auto`` config setting.
+|===
+|Keboard layouts|Country usages
 
-DOSBox-X supports both SDL1 and SDL2 versions, using the cross-platform SDL 1.2 and SDL 2.0 libraries respectively. Since SDL is responsible for input handling in DOSBox-X, there are some differences between the SDL1 binary and the SDL2 binary in regard to the keyboard layout support of DOSBox-X.
-
-The SDL1 version of DOSBox-X in particular only supports the US keyboard layout due to the limitations around the SDL1 library. As such when using the SDL1 version, DOSBox-X will automatically decide whether to use scancodes with the default ``usescancodes=auto`` config setting, which should work around most keyboard layout problems with non-US keyboards.
-
-On the other hand, you can override this by changing the setting ``usescancodes`` to either ``true`` or ``false``. The ``false`` setting was the default setting before DOSBox-X 0.83.4, which worked well for US keyboard layout, but the keys could be messed up for non-US keyboards when you are using the SDL1 version. So it is recommended to leave this setting to ``auto`` for the SDL1 binary.
-
-When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts in DOSBox-X (this setting has no effect in the SDL2 version).
+|us103 (us), ux103 (ux)|US, US International
+|dv103 (dv), lh103 (lh), rh103 (rh)|US Dvorak, Left-Hand, Right-Hand
+|sq448, sq452 (sq)|Albania
+|hy|Armenia*
+|az|Azerbaijan*
+|by463 (bl463,by,bl)|Belarus*
+|be120 (be)|Belgium
+|ba234 (ba)|Bosnia & Herzegovina
+|br274, br275 (br)|Brazil
+|bg241, bg442 (bg)|Bulgaria
+|ca58 (cf58,ca,cf), ca445 (cf445), cf501|Canada
+|hr234 (hr)|Croatia
+|cz243, cz|Czech Republic
+|dk159 (dk)|Denmark
+|ee454 (et454,ee,et)|Estonia*
+|fo|Faroe Islands
+|fi153 (su153,fi,su)|Finland
+|fr120, fr189 (fr)|France
+|ka|Georgia*
+|de129 (gr129,de,gr), de453 (gr453)|Germany
+|gk220 (el220), gk319 (el319,gk,el), gk459 (el459)|Greece
+|hu208, hu|Hungary
+|is458 (is), is161 (is197)|Iceland
+|it141 (it), it142|Italy
+|kk|Kazakhstan*
+|ky|Kyrgyzstan*
+|la171 (la)|atin-American-Spanish
+|lv, lv455|Latvia*
+|lt210, lt211, lt212 (lt), lt221, lt456|Lithuania*
+|mk449 (mk)|Macedonia
+|mt47 (ml47), mt (ml)|Malta
+|mn (mo)|Mongolia*
+|nl143 (nl)|Netherlands
+|no155 (no)|Norway
+|ph|Philippines
+|pl214, pl457 (pl)|Poland
+|po163 (po)|Portugal
+|ro333 (ro), ro446|Romania
+|ru441 (ru), ru443|Russia
+|sr118 (sr), sr450|Serbia & Montenegro
+|sk245 (sk)|Slovakia
+|si234 (si)|Slovenia
+|es172 (sp172,es173,sp173,es,sp)|Spain
+|sv153 (sv)|Sweden
+|sd150 (sg150,sd,sg), sf150 (sf)|Swiss
+|tm|Turkmenistan
+|tr179 (tr), tr440|Turkey
+|ua465 (ur465), ua (ur)|Ukraine*
+|uk166 (uk), uk168|United Kingdom
+|uz|Uzbekistan*
+|yu234 (yu)|Yugoslavia
+|===
