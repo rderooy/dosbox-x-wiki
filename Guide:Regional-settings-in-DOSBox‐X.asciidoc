@@ -12,7 +12,7 @@ You can customize the regional settings in DOSBox-X, such as changing the countr
 
 ### Country-specific date/time formats
 
-The country code can be set in the [config] section of the DOSBox-x config file by use of the ``COUNTRY=`` setting. This defaults to 1, which is the US. This setting influences date and time format as used by DOSBox-X, such as the ``DIR`` command. It may also influence regional settings in other applications.
+The country code can be set in the [config] section of the DOSBox-X config file by use of the ``COUNTRY=`` setting. This defaults to 1, which is the US. This setting influences date and time format as used by DOSBox-X, such as the ``DIR`` command. It may also influence regional settings in other applications.
 
 For example, the date is displayed in MM-DD-YYYY format with the default US setting:
 
@@ -86,7 +86,7 @@ Most western European countries would have used codepage 850 back in the day, bu
 
 Note that software that uses certain box drawing characters may not look 100% accurate unless codepage 437 (default US codepage) is used. But this codepage lacks many diacritic glyphs that may be needed for regional support. As such a choice may have to be made between support for those box drawing characters or diacritic glyphs.
 
-The Japanese keyboard layout is also supported in NEC PC-98 mode. You can start DOSBox-X in PC-98 mode directly by setting "machine=pc98" in the [dosbox] section of the dosbox-x.conf file. DOSBox-X will use codepage 932 in this mode and support double-byte Shift-JIS characters such as Kana and Kanji in addition to ASCII characters.
+The Japanese keyboard layout is also supported in NEC PC-98 mode. You can start DOSBox-X in PC-98 mode directly by setting ``machine=pc98`` in the [dosbox] section of the dosbox-x.conf file. DOSBox-X will use codepage 932 in this mode and support double-byte Shift-JIS characters as used in the Japanese language such as Kana and Kanji in addition to ASCII characters.
 
 ### Support for the Euro symbol
 
@@ -108,11 +108,11 @@ It is also possible to display the Euro symbol instead of the specified ASCII ch
 
 ``euro=128``
 
-It will work even after you use the KEYB command to change the current codepage of DOSBox-X from the command line. The Euro symbol will be displayed in the specified position instead of the original character in that codepage as long as the ``euro`` setting remains active.
+It will work even after you use the ``KEYB`` command to change the current codepage of DOSBox-X from the command line. The Euro symbol will be displayed in the specified position instead of the original character in that codepage as long as the ``euro`` setting remains active.
 
 ### Use of scancodes for your keyboard layout
 
-NOTE: The information in this section applies to DOSBox-X 0.83.4 and later. Previous versions of DOSBox-X did not support the ``usescancodes=auto`` config setting.
+NOTE: The information in this section applies to DOSBox-X 0.83.4 and later only. Previous versions of DOSBox-X did not support the ``usescancodes=auto`` config setting.
 
 DOSBox-X supports both SDL1 and SDL2 versions, using the cross-platform SDL 1.2 and SDL 2.0 libraries respectively. Since SDL is responsible for input handling in DOSBox-X, there are some differences between the SDL1 binary and the SDL2 binary in regard to the keyboard layout support of DOSBox-X.
 
@@ -141,7 +141,7 @@ Additional layouts can be added by copying the corresponding .kl file into the d
 The integration of keyboard layout packages (like keybrd2.sys) works similar.
 
 ### List of supported keyboard layouts
-This is a list of keyboard layouts that can be used in DOSBox, and by extension DOSBox-X. For layouts marked with * you must have ten ega.cpx files (from FreeDOS) in the DOSBox-X directory.
+This is a list of keyboard layouts that can be used in DOSBox, and by extension DOSBox-X. For using layouts marked with * you must have ten ega.cpx files (from FreeDOS) in the DOSBox-X directory.
 
 |===
 |Keboard layouts|Country usages
@@ -172,7 +172,7 @@ This is a list of keyboard layouts that can be used in DOSBox, and by extension 
 |it141 (it), it142|Italy
 |kk|Kazakhstan*
 |ky|Kyrgyzstan*
-|la171 (la)|atin-American-Spanish
+|la171 (la)|Latin-American-Spanish
 |lv, lv455|Latvia*
 |lt210, lt211, lt212 (lt), lt221, lt456|Lithuania*
 |mk449 (mk)|Macedonia
