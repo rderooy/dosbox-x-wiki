@@ -74,7 +74,7 @@ NOTE: The information in this section applies to DOSBox-X 0.83.4 and later. Prev
 
 DOSBox-X supports both SDL1 and SDL2 versions, using the cross-platform SDL 1.2 and SDL 2.0 libraries respectively. Since SDL is responsible for input handling in DOSBox-X, there are some differences between the SDL1 binary and the SDL2 binary in regard to the keyboard layout support of DOSBox-X.
 
-The SDL1 version of DOSBox-X in particular only supports the US keyboard layout due to limitations around the SDL1 library. As such when using the SDL1 version and a non-US keyboard, DOSBox-X will automatically decide whether to use scancodes with the default ``usescancodes=auto`` config setting, which should work around keyboard layout problems.
+The SDL1 version of DOSBox-X in particular only supports the US keyboard layout due to the limitations around the SDL1 library. As such when using the SDL1 version, DOSBox-X will automatically decide whether to use scancodes with the default ``usescancodes=auto`` config setting, which should work around most keyboard layout problems with non-US keyboards.
 
 On the other hand, you can override this by changing the setting ``usescancodes`` to either ``true`` or ``false``. The ``false`` setting was the default setting before DOSBox-X 0.83.4, which worked well for US keyboard layout, but the keys could be messed up for non-US keyboards when you are using the SDL1 version. So it is recommended to leave this setting to ``auto`` for the SDL1 binary.
 
@@ -87,17 +87,17 @@ The Euro symbol is the currency symbol introduced by the European Monetary and C
 Below is a table listing the original codepages (without the Euro symbol) and their counterparts with the Euro symbol enabled.
 
 |===
-|Original codepage|New codepage|Codepage name|Euro sign position
+|Original codepage|New codepage|Codepage name|Euro symbol position
 
-|866|808|Russian|ASCII 253 (0xFD)
 |850|858|Latin 1|ASCII 213 (0xD5) 
 |855|872|Cyrillic|ASCII 207 (0xCF)
+|866|808|Cyrillic Russian|ASCII 253 (0xFD)
 |===
 
-DOSBox-X by default uses the new codepage with the Euro symbol enabled for the specified keyboard layout, if you do not specify a codepage for it. The Euro symbol will be supported and displayed in the above-mentioned ASCII position.
+DOSBox-X by default uses the new codepage with the Euro symbol enabled for the specified keyboard layout (if available), if you do not specify a codepage for it. The Euro symbol will be supported and displayed in the above-mentioned ASCII position.
 
-It is also possible to display the Euro symbol instead of the specified ASCII character in any codepage in DOSBox-X, including the default codepage 437. DOSBox-X has an ``euro`` config option in the [render] section of the config file (dosbox-x.conf by default), which allows you to specify a ASCII position (between 33 and 255) for the Euro symbol to be rendered in place of the original character. For example, setting the following will allow DOSBox-X to display the Euro symbol instead of C-cedilla in position 128.
+It is also possible to display the Euro symbol instead of the specified ASCII character in any codepage in DOSBox-X, including the default codepage 437 and codepages without the Euro symbol such as 850. DOSBox-X has an ``euro`` config option in the [render] section of the config file (dosbox-x.conf by default), which allows you to specify a ASCII position (between 33 and 255) for the Euro symbol to be rendered in place of the original character. For example, setting the following will allow DOSBox-X to display the Euro symbol instead of C-cedilla in position 128.
 
 ``euro=128``
 
-It will work even after you use the KEYB command to change the current codepage of DOSBox-X from the command line. The Euro symbol will still be displayed in the specified position instead of the original character in that codepage.
+It will work even after you use the KEYB command to change the current codepage of DOSBox-X from the command line. The Euro symbol will be displayed in the specified position instead of the original character in that codepage as long as the ``euro`` setting remains active.
