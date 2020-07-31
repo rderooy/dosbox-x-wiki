@@ -16,26 +16,13 @@ by default), or from the DOSBox-X command line.
 
 ### International keyboard layouts and codepages
 
-The US keyboard layout is used by default in DOSBox-X. DOSBox-X supports both SDL1 and SDL2 versions, and since
-SDL is responsible for input handling in DOSBox-X, there are some differences in the keyboard layout support of
-DOSBox-X between SDL1 builds and SDL2 builds. The SDL1 version of DOSBox-X in particular only supports the US
-keyboard layout due to limitations around the SDL1 library. As such when using the SDL1 version and a non-US
-keyboard, DOSBox-X will automatically use scancodes with the default ``usescancodes=auto`` config setting to
-work around keyboard layout problems.
+The US keyboard layout is used by default in DOSBox-X with code page 437. These can be customized to use a different keyboard layout or code page for DOSBox-X.
 
-When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts in DOSBox-X (this setting
-has no effect in the SDL2 version).
+When starting DOSBox-X on a Windows system with the default ``keyboardlayout=auto`` config setting, it will try to set the keyboard layout automatically, depending on the host OS region, for a wide range of regions. This may not necessarily match your actual keyboard, or your region may not currently be supported. In addition, the ``auto`` setting has no effect on Linux and macOS.
 
-When starting DOSBox-X on a Windows system with the default ``keyboardlayout=auto`` config setting, it will try to
-set the keyboard layout automatically, depending on the host OS region, for a wide range of regions. This may not
-necessarily match your actual keyboard, or your region may not currently be supported. In addition, the ``auto``
-setting has no effect on Linux and macOS.
+You can set your keyboard layout manually in the [dos] section of the dosbox-x.conf file. For instance to set a German keyboard layout you can specify ``keyboardlayout=de``. It will also automatically set a suitable codepage. 
 
-You can set your keyboard layout manually in the [dos] section of the dosbox-x.conf file. For instance to set a
-German keyboard layout you can specify ``keyboardlayout=de``. It will also automatically set a suitable codepage. 
-
-Alternatively, the KEYB command can be used from the DOSBox-X command line to change the keyboard layout.
-For example:
+Alternatively, the KEYB command can be used from the DOSBox-X command line to change the keyboard layout. For example:
 
 ``KEYB UK``
 
@@ -45,34 +32,31 @@ Alternatively you can also specify a different codepage by adding the codepage n
 
 ``KEYB UK 850``
 
-Most western-European countries would have used codepage 850 back in the day, but DOSBox-X by
-default uses codepage 858, which is the same as codepage 850 with the addition of the Euro symbol.
+Most western-European countries would have used codepage 850 back in the day, but DOSBox-X by default uses codepage 858, which is the same as codepage 850 with the addition of the Euro symbol.
 
-Note that software that uses certain box drawing characters may not look 100% accurate unless codepage 437
-(default US codepage) is used. But this codepage lacks many diacritic glyphs that may be needed for regional
-support. As such a choice may have to be made between support for those box drawing characters or diacritic glyphs.
+Note that software that uses certain box drawing characters may not look 100% accurate unless codepage 437 (default US codepage) is used. But this codepage lacks many diacritic glyphs that may be needed for regional support. As such a choice may have to be made between support for those box drawing characters or diacritic glyphs.
 
-The Japanese keyboard layout is also supported in NEC PC-98 mode. You can start DOSBox-X in PC-98 mode directly
-by setting "machine=pc98" in the [dosbox] section of the dosbox-x.conf file.
+The Japanese keyboard layout is also supported in NEC PC-98 mode. You can start DOSBox-X in PC-98 mode directly by setting "machine=pc98" in the [dosbox] section of the dosbox-x.conf file.
+
+DOSBox-X supports both SDL1 and SDL2 versions, using SDL 1.2 and SDL 2.0 libraries respectively. Since SDL is responsible for input handling in DOSBox-X, there are some differences in the keyboard layout support of DOSBox-X between SDL1 builds and SDL2 builds. The SDL1 version of DOSBox-X in particular only supports the US keyboard layout due to limitations around the SDL1 library. As such when using the SDL1 version and a non-US keyboard, DOSBox-X will automatically use scancodes with the default ``usescancodes=auto`` config setting to work around keyboard layout problems.
+
+When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts in DOSBox-X (this setting has no effect in the SDL2 version).
 
 ### Country-specific date/time formats
 
-Regional settings can be set in the [config] section of the DOSBox-x config file by use of the ``COUNTRY=``
-setting. This defaults to 1, which is the US. This setting influences date and time format as used by DOSBox-X,
-such as the ``DIR`` command. It may also influence regional settings in other applications.
+Regional settings can be set in the [config] section of the DOSBox-x config file by use of the ``COUNTRY=`` setting. This defaults to 1, which is the US. This setting influences date and time format as used by DOSBox-X, such as the ``DIR`` command. It may also influence regional settings in other applications.
 
-For example, the date is displayed in MM/DD/YYYY format with the default US setting:
+For example, the date is displayed in MM-DD-YYYY format with the default US setting:
 
-``30-07-2020 12:34p``
+``07-30-2020 12:34p``
 
-If you change the ``COUNTRY=`` setting, the date and time will be displayed in the format associated with the
-specified country code. For example, 44 (or 044) is the country code for the UK, and setting the following:
+If you change the ``COUNTRY=`` setting, the date and time will be displayed in the format associated with the specified country code. For example, 44 (or 044) is the country code for the UK, and setting the following:
 
 ``COUNTRY=44``
 
 Will cause DOSBox-X to use the UK date and time format:
 
-``07/30/2020 12:34``
+``30/07/2020 12:34``
 
 You can also instruct DOSBox-X to use the Canadian French date and time format like this: 
 
@@ -80,10 +64,14 @@ You can also instruct DOSBox-X to use the Canadian French date and time format l
 
 Then the date and time will be displayed like this:
 
-``2002-07-30 12:34``
+``2020-07-30 12:34``
 
-A list of country codes and the corresponding date/time formats can be found in the http://info.wsisiz.edu.pl/~bse26236/batutil/help/COUNTRN.HTM[MS-DOS COUNTRY Notes] page.
+A list of country codes and their corresponding date/time formats can be found in the http://info.wsisiz.edu.pl/~bse26236/batutil/help/COUNTRN.HTM[MS-DOS COUNTRY Notes] page.
 
-If you set "COUNTRY=0" in the [config] section of the DOSBox-X config file, then DOSBox-X will try to auto-detect and set the country code based on the regional setting of the host system. This however only works on Windows systems.
+If you set ``COUNTRY=0`` in the [config] section of the DOSBox-X config file, then DOSBox-X will try to auto-detect and set the country code based on the regional setting of the host system. This however only works on Windows systems.
 
-Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code. For example, the command ``COUNTRY 61`` will switch the country code to 61 for international English. Typing ``COUNTRY`` without parameters will display the current country code.
+Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code. For example, the following command will switch the country code to 61 for international English:
+
+``COUNTRY 61``
+
+Typing ``COUNTRY`` without parameters from the DOSBox-X command line will display the current country code.
