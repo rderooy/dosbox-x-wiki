@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
+Back to the link:Guide%3AMicrosoft-Windows-in-DOSBox‐X[Microsoft Windows in DOSBox-X]
 
 # Installing Microsoft Windows 98 in DOSBox-X
 
