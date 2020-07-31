@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Guide%3AWindows-in-DOSBox‐X[Windows Installation in DOSBox-X]
+Back to the link:Guide%3AMicrsoft-Windows-in-DOSBox‐X[Microsoft Windows in DOSBox-X]
 
 # Installing Microsoft Windows 1.0x in DOSBox-X
 
