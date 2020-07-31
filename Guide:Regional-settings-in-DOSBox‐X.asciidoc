@@ -9,8 +9,10 @@ toc::[]
 ### Overview
 
 You can customize the regional settings in DOSBox-X, such as changing the international keyboard layouts and
-codepages, as well as changing the country code for country-specific date/time formats. Both can be done either
-from the DOSBox-x config file (dosbox-x.conf by default), or from the DOSBox-X command line.
+codepages, as well as changing the country code for country-specific date/time formats. If you are a DOSBox-X
+user living outside the United States, you probably want to do this in order for DOSBox-X to match the regional
+settings in your country. Such settings can be configured either from the DOSBox-X config file (dosbox-x.conf
+by default), or from the DOSBox-X command line.
 
 ### International keyboard layouts and codepages
 
@@ -84,4 +86,4 @@ A list of country codes and the corresponding date/time formats can be found at 
 
 If you set "COUNTRY=0" in the [config] section of the DOSBox-x config file, then DOSBox-X will try to auto-detect and set the country code based on the system regional setting. This however only works on Windows systems.
 
-Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code, such as ``COUNTRY 61`` for international English. Typing COUNTRY without parameters will display the current country code.
+Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code. For example, the command ``COUNTRY 61`` will switch the country code to 61 for international English. Typing ``COUNTRY`` without parameters will display the current country code.
