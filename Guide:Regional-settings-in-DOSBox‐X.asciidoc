@@ -14,13 +14,15 @@ from the DOSBox-x config file (dosbox-x.conf by default), or from the DOSBox-X c
 
 ### International keyboard layouts and codepages
 
-The US keyboard layout is used by default in DOSBox-X. DOSBox-X was developed around this keyboard layout just like
-DOSBox, which DOSBox-X is based on. This is primarily due to limitations around the SDL1 (SDL 1.2.x) library. SDL
-is responsible for input handling, and SDL1 in particular only supports US keyboards. As such when using the SDL1
-version and a non-US keyboard, DOSBox-X will automatically use scancodes with the default ``usescancodes=auto``
-config setting to work around keyboard layout problems.
+The US keyboard layout is used by default in DOSBox-X. DOSBox-X supports both SDL1 and SDL2 versions, and since
+SDL is responsible for input handling in DOSBox-X, there are some differences in the keyboard layout support of
+DOSBox-X between SDL1 builds and SDL2 builds. The SDL1 version of DOSBox-X in particular only supports the US
+keyboard layout due to limitations around the SDL1 library. As such when using the SDL1 version and a non-US
+keyboard, DOSBox-X will automatically use scancodes with the default ``usescancodes=auto`` config setting to
+work around keyboard layout problems.
 
-When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts.
+When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts in DOSBox-X (this setting
+has no effect in the SDL2 version).
 
 When starting DOSBox-X on a Windows system with the default ``keyboardlayout=auto`` config setting, it will try to
 set the keyboard layout automatically, depending on the host OS region, for a wide range of regions. This may not
@@ -50,9 +52,6 @@ support. As such a choice may have to be made between support for those box draw
 
 The Japanese keyboard layout is also supported in NEC PC-98 mode. You can start DOSBox-X in PC-98 mode directly
 by setting "machine=pc98" in the [dosbox] section of the dosbox-x.conf file.
-
-If you find that a keyboard layout is not yet supported by DOSBox-X, in order to add additional layouts for use
-with DOSBox-X, please see the https://github.com/joncampbell123/dosbox-x/blob/master/README.keyboard-layout-handling[keyboard layout handling page] on how to do so as a developer.
 
 ### Country-specific date/time formats
 
