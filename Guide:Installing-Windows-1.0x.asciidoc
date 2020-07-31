@@ -1,6 +1,6 @@
 :toc: macro
 
-Back to the link:Guide%3AMicrsoft-Windows-in-DOSBox‐X[Microsoft Windows in DOSBox-X]
+Back to the link:Guide%3AMicrosoft-Windows-in-DOSBox‐X[Microsoft Windows in DOSBox-X]
 
 # Installing Microsoft Windows 1.0x in DOSBox-X
 
@@ -24,7 +24,7 @@ toc::[]
 * Windows 1.04
 ** Adds support for the IBM PS/2 (but no support for PS/2 mouse or VGA)
 
-Windows 1.0x was available for both Retail and via OEM. A runtime version was also included with some applications.
+Windows 1.0x was the first versions of the Microsoft Windows line, available for both Retail and via OEM. A runtime version was also included with some applications.
 
 The retail release of Windows 1.04 adds support for the IBM PS/2, but *DID NOT* add support for the IBM PS/2 Mouse, or the newer VGA, MCGA or 8514/A video adapters.
 IBM distributed a special OEM version of Windows 1.04 as part of the "IBM PS/2 Collegiate Kit", which *DOES* have support for these features.
