@@ -117,7 +117,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Reset virtual machine**: Restarts the virtual machine inside DOSBox-X.
 
-* **Reboot guest system**: Reboots the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
+* **Reboot guest system**: Reboots the kernel of the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X without resetting the virtual machine.
 
 * **Quit**: Exit from DOSBox-X.
 
@@ -179,7 +179,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Increase volume**: Increases the sound volume of the current DOS session.
 
-* **Decrease volume**: Decreases the sound volume of the current DOS session S.
+* **Decrease volume**: Decreases the sound volume of the current DOS session.
 
 * **Increase recording volume**: Increases the sound volume for the current recording.
 
@@ -187,7 +187,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Show sound levels**: Displays the current sound levels in DOSBox-X.
 
-* **Mute**: Mutes or unmutes the sound volume of DOSBox-X's emulated DOS.
+* **Mute**: Mutes or unmutes the sound volume of the current DOS session.
 
 * **Swap stereo**: Selects whether to swap the left and right stereo channels.
 
