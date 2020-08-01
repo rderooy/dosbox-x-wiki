@@ -107,6 +107,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Autolock mouse**: DOSBox-X will lock the mouse automatically for use with the emulated DOS.
 
+* **Mouse wheel movements**: Select whether to auto-convert mouse wheel movements to Up/Down arrow etc.
+
 * **Quick right mouse button copy/paste**: Check this if you want to use the right mouse button to copy to and paste from the Windows clipboard without any key modifier that may have been set.
 
 * **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
@@ -219,7 +221,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Record MIDI output**: Starts/stops the recording of raw MIDI commands.
 
-* **Force load state**: Selects whether to load the saved state even if there is a mismatch in the DOSBox-X version and/or the program name.
+* **Force load state mode**: Selects whether to load the saved state even if there is a mismatch in the DOSBox-X version and/or the program name.
 
 * **Save state**: Saves the current state to the selected save slot.
 
