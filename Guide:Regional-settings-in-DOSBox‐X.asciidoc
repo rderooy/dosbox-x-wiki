@@ -63,12 +63,12 @@ Alternatively, the COUNTRY command can be used from the DOSBox-X command line to
 |Latin America|3|23/01/2020|5:35p
 |Netherlands|31|23-01-2020|17:35
 |Norway|47|23.01.2020|17:35
-|Peoples Republic of China|2020.01.23|17:35
+|Peoples Republic of China|86|2020.01.23|17:35
 |Poland|48|2020-01-23|17:35
 |Portugal|351|23-01-2020|17:35
 |Romania|40|2020-01-23|17:35
 |Russia|7|23.01.2020|17:35
-|South Korea|2020-01-23|17:35
+|South Korea|82|2020-01-23|17:35
 |Spain|34|23/01/2020|17:35
 |Sweden|46|2020-01-23|17.35
 |Switzerland|41|23.01.2020|17,35
