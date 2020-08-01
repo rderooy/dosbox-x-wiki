@@ -113,7 +113,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
 
-* **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. This allows certain DOS functions to continue to work. For example, if you are running Demoscene games and use this function, then the game itself will be paused but the game music may continue to play. It is also a good way to hear the entire music in a Demoscene production when the demo exits long before the music has time to loop.
+* **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. This allows certain DOS functions to continue to work, such as pausing some Demoscene games while allowing the game music to continue to play, or hearing the entire music when the demo exits long before the music has time to loop.
 
 * **Reset virtual machine**: Restarts the virtual machine inside DOSBox-X.
 
@@ -177,9 +177,13 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **4. The "Sound" menu**
 
-* **Increase volume**: Increases the sound volume of DOSBox-X's emulated DOS.
+* **Increase volume**: Increases the sound volume of the current DOS session.
 
-* **Decrease volume**: Decreases the sound volume of DOSBox-X's emulated DOS.
+* **Decrease volume**: Decreases the sound volume of the current DOS session S.
+
+* **Increase recording volume**: Increases the sound volume for the current recording.
+
+* **Decrease recording volume**: Decreases the sound volume for the current recording.
 
 * **Mute**: Mutes or unmutes the sound volume of DOSBox-X's emulated DOS.
 
@@ -194,6 +198,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 * **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto per reported DOS version (i.e. enable LFN if the reported DOS version is at least 7).
 
 * **PC-98 PIT master clock**: Selects the PIT master clock for the PC-98 system (4MHz/8MHz or 5MHz/10MHz).
+
+* **Windows host applications**: Enable this if you want to launch Windows applications from mounted directories to run on the host, and whether to wait for the applications.
 
 * **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibilty with DOSBox.
 
