@@ -34,13 +34,52 @@ Then the date and time will be displayed like this:
 
 ``2020-07-30 12:34``
 
-A list of country codes and their corresponding date/time formats can be found in the http://info.wsisiz.edu.pl/~bse26236/batutil/help/COUNTRN.HTM[MS-DOS COUNTRY Notes] page.
-
 If you set ``COUNTRY=0`` in the [config] section of the DOSBox-X config file, then DOSBox-X will try to auto-detect and set the country code based on the regional setting of the host system. This however only works on Windows systems.
 
 Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code. For example, the following command will switch the country code to 61 for international English:
 
 ``COUNTRY 61``
+
+|===
+|Country|Country Code|Date format|Time format
+
+|Arabic countries|785|23/01/2020|17:35
+|Austria|43|23.01.2020|17:35
+|Belgium|32|23/01/2020|17:35
+|Brazil|55|23/01/2020|17:35
+|Canadian-French|2|2020-01-23|17:35
+|Czechoslovakia|42|2020-01-23|17:35
+|Denmark|45|23-01-2020|17.35
+|Finland|358|23.01.2020|17.35
+|France|33|23.01.2020|17:35
+|Germany|49|23.01.2020|17:35
+|Greece|30|23/01/2020|17:35
+|Hungary|36|2020-01-23|17:35
+|Iceland|354|2020-01-23|17:35
+|International English|61|23-01-2020|5:35p
+|Israel|972|23/01/2020|17:35
+|Italy|39|23/01/2020|17.35
+|Japan|81|2020-01-23|17:35
+|Latin America|3|23/01/2020|5:35p
+|Netherlands|31|23-01-2020|17:35
+|Norway|47|23.01.2020|17:35
+|Peoples Republic of China|2020.01.23|17:35
+|Poland|48|2020-01-23|17:35
+|Portugal|351|23-01-2020|17:35
+|Romania|40|2020-01-23|17:35
+|Russia|7|23.01.2020|17:35
+|South Korea|2020-01-23|17:35
+|Spain|34|23/01/2020|17:35
+|Sweden|46|2020-01-23|17.35
+|Switzerland|41|23.01.2020|17,35
+|Taiwan|886|2020/01/23|17:35
+|Turkey|90|23/01/2020|17:35
+|United Kingdom|44|23/01/2020|17:35
+|United States|1|01-23-2020|5:35p
+|Yugoslavia|38|2020-01-23|17:35
+|===
+
+With a few exceptions, the above codes are based on the international dialling codes of the respective countries. DOSBox-X will accept any other country code not listed above, but in that case will use the Date format 23-01-2020 and 24-hour time format 17:35
 
 Typing ``COUNTRY`` without parameters from the DOSBox-X command line will display the current country code.
 
