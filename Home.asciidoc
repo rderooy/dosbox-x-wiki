@@ -185,6 +185,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Decrease recording volume**: Decreases the sound volume for the current recording.
 
+* **Show sound levels**: Displays the current sound levels in DOSBox-X.
+
 * **Mute**: Mutes or unmutes the sound volume of DOSBox-X's emulated DOS.
 
 * **Swap stereo**: Selects whether to swap the left and right stereo channels.
