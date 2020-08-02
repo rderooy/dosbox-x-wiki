@@ -195,7 +195,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Mouse**: Changes the mouse settings for the emulated DOS inside DOSBox-X, such as the mouse sensitivity.
 
-* **Reported DOS version**: Changes the reported DOS version to the specified version from the list, including 3.3, 5.0, 6.22 and 7.1. Long filename (LFN) and FAT32 disk image support will be enabled when you select 7.1 as the reported DOS version.
+* **Reported DOS version**: Changes the reported DOS version to the specified version from the list, including 3.3, 5.0, 6.22 and 7.1. Long filename (LFN) and FAT32 disk image support will be enabled when you select 7.1 as the reported DOS version. You can also enter a version with “Edit”.
 
 * **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto per reported DOS version (i.e. enable LFN if the reported DOS version is at least 7).
 
@@ -605,7 +605,7 @@ Usage: LFNFOR [ON | OFF]
 Note: This command is only useful if long filename support is currently enabled.
 * **LOADFIX** (external command)
 +
-Loads a program above the first 64K of memory.
+Loads a program above the first 64K of memory. It may be required for some programs to work.
 +
 Usage: LOADFIX [program] [options]
 * **LOADROM** (external command)
