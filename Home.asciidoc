@@ -35,8 +35,8 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for IDE interfaces and improved Windows 3.x/9x emulation
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for printer output, either a real or virtual printer
+* Support for long filenames (LFN) in addition to 8.3 filenames
 * Support for FAT32 file system and large disk images
-* Support for long filenames (LFN) for DOS version 7+
 * Support for clipboard copy and paste (Windows only)
 * Support for launching programs to run on the host (Windows only)
 * Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
