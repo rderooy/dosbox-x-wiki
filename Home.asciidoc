@@ -22,10 +22,10 @@ Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joyst
 ### DOSBox-X's Feature Highlights
 Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 
-* GUI menu bar and configuration tool
-* Automatic drive mounting (Windows only)
+* GUI menu bar and graphical configuration tool
 * Save and load state support (with save slots)
-* Japanese NEC PC-98 mode support
+* Automatic drive mounting (Windows only)
+* Japanese NEC PC-98 mode emulation
 * CPU optimization and Turbo mode
 * Improved customization on the title bar
 * Better compatibility with DOS applications
