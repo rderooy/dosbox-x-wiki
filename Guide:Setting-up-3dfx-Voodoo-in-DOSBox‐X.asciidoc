@@ -13,6 +13,7 @@ The original Voodoo 1 adapters need to be used in conjunction with a separate VG
 As these where the early days of 3D acceleration, it uses it's own proprietary Glide API which was supported by many DOS and Windows 9x games at the time.
 
 DOSBox-X has support for emulating the 3dfx Voodoo 1 in one of two modes.
+
 * Low-Level Emulation, emulating the 3dfx hardware
 * High-Level Emulation, where the Glide API calls are passed through to the host OS.
 
@@ -88,13 +89,17 @@ Copy the GLIDE2X.OVL from the Z: drive to the game directory, overwriting any GL
 instructions needed...
 
 ### Linux: Installing libglide2x.so
+NOTE: Although this library has the same filename as the old Linux Glide library for real 3dfx Voodoo adapters, it is in fact not the same.
+The library used here converts Glide calls to OpenGL, and will not work with a real 3dfx Voodoo adapter.
+It may be possible to use a real 3dfx Voodoo adapter with the original libglide2x.so with the right hardware and software setup, but that has not been tested.
+
 Unfortunately this library is not included with any of the modern Linux distributions, as such you need to compile it yourself.
 The following steps assume that you have the necessary compiler, developer tools and header files already installed.
 
 Run the following commands from a Linux terminal:
 
 ....
-git clone git@github.com:voyageur/openglide.git
+git clone https://github.com/voyageur/openglide.git
 cd openglide
 ./bootstrap
 ./configure
