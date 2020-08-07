@@ -1,0 +1,119 @@
+:toc: macro
+
+Back to the link:Home[DOSBox-X Wiki Welcome page]
+
+# Setting up 3dfx Voodoo in DOSBox-X
+
+toc::[]
+
+# Overview
+The 3dfx Voodoo is a 3D accelerator chipset released in late 1996, and sold by various graphic card manufacturers.
+The original Voodoo 1 adapters need to be used in conjunction with a separate VGA adapter in a pass-through manor.
+
+As these where the early days of 3D acceleration, it uses it's own proprietary Glide API which was supported by many DOS and Windows 9x games at the time.
+
+DOSBox-X has support for emulating the 3dfx Voodoo 1 in one of two modes.
+* Low-Level Emulation, emulating the 3dfx hardware
+* High-Level Emulation, where the Glide API calls are passed through to the host OS.
+
+## Voodoo options
+This section will list the available 3dfx Voodoo configuration options that DOSBox-X provides.
+Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [pci] section of the dosbox-x config file.
+
+### voodoo
+* Default value: auto
+* Possible values: auto, false, software, opengl
+
+Enables low-level voodoo hardware emulation
+
+The "auto" option means it will try to use OpenGL if possible, and otherwise fallback to software rendering.
+
+### glide
+* Default value: false
+* Possible values: true, false
+
+Enables high-level Glide API pass-through to the host OS.
+This requires that the host OS has a Glide API library installed, and in addition it requires a special GLIDE2X.OVL file to be used in DOSBox-X.
+
+### lfb
+* Default value: full_noaux
+* Possible values: full, full_noaux, read, read_noaux, write, write_noaux, none
+
+Enable LFB (Line-Fill-Buffer) CPU Cache access for Glide.
+
+NOTE: OpenGlide does not support locking aux buffer, as such please use _noaux modes.
+
+### splash
+* Default value: true
+* Possible values: true, false
+
+Show 3dfx splash screen
+
+This option only applies when using the high-level Glide API emulation.
+In addition, this is only supported on Windows, and it requires 3dfxSpl2.dll to be installed.
+
+### ignore undefined msr
+* Default value: false
+* Possible values: true, false
+
+This setting is located in the [cpu] section of the dosbox-x config file.
+
+Normally the CPU will fire an Invalid Opcode exception in the case of an undefined MSR (Model-specific register).
+
+This option is off by default, enable if using software or drivers that assumes the presence of certain MSR registers without checking.
+If you are using certain versions of the 3Dfx glide drivers for MS-DOS you will need to set this to TRUE as 3Dfx appears to have coded GLIDE2.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
+
+Another way to circumvent this issue with the 3dfx drivers, is by emulating a Pentium Pro CPU in DOSBox-X by setting ``cputype=ppro_slow`` in the [cpu] section of your DOSBox-X config file.
+
+## Low Level emulation
+This emulation mode has been supported by DOSBox-X for a long time.
+It emulates the original 3dfx Voodoo 1 chipset, and therefore works with the official 3dfx DOS and Windows drivers.
+It is the easiest mode to get working, and is in fact enabled by default.
+Depending on the game, you may not have to do anything, or you just need to select 3dfx Voodoo in the setup program.
+Some other games may require that you install a patch, or that you run a different executable to start in 3dfx mode.
+
+If you want to use 3dfx Voodoo emulation in Windows 95 or 98, you need to use this mode.
+
+## High Level emulation
+This mode requires DOSBox-X 0.83.5 or newer.
+
+Instead of emulating the 3dfx hardware, this method converts the Glide API calls to OpenGL and is therefore more efficient.
+However, it also requires a few more steps to get working.
+It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use a special GLIDE2X.OVL in DOSBox-X, instead of the one provided with the game or provided by 3dfx.
+
+### Windows: Installing glide2x.dll
+### Linux: Installing libglide2x.so
+Unfortunately this library is not included with any of the modern Linux distributions, as such you need to compile it yourself.
+The following steps assume that you have the necessary developer tools and header files installed.
+
+Run the following commands from a Linux terminal:
+
+....
+git clone git@github.com:voyageur/openglide.git
+cd openglide
+./bootstrap
+./configure
+make
+sudo make install
+sudo ldconfig
+....
+
+libglide2x.so will by default be installed in /usr/local/lib which may or may-not be in your default library path.
+To check if ldconfig found the library, run the following command:
+
+....
+ldconfig -p|grep glide
+....
+You should get an output similar to this:
+....
+	libglide2x.so.0 (libc6,x86-64) => /usr/local/lib/libglide2x.so.0
+	libglide2x.so (libc6,x86-64) => /usr/local/lib/libglide2x.so
+....
+In the above example it found the libglide2x.so library.
+If the ldconfig command returns nothing, you need to add the /usr/local/lib directory to your library path and re-run ldconfig as follows:
+....
+sudo sh -c 'echo /usr/local/lib > /etc/ld.so.conf.d/usr-local-lib.conf'
+sudo ldconfig
+....
+
+### macOS: Installing libglide2x.dylib
