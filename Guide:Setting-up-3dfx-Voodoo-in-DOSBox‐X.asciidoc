@@ -86,6 +86,10 @@ When DOSBox-X is started with glide=true the special GLIDE2X.OVL file can be con
 Copy the GLIDE2X.OVL from the Z: drive to the game directory, overwriting any GLIDE2X.OVL that was included with the game.
 
 ### Windows: Installing glide2x.dll
+NOTE: Although this library has the same filename as the old Windows Glide library for real 3dfx Voodoo adapters, it is in fact not the same.
+The library used here converts Glide calls to OpenGL, and will not work with a real 3dfx Voodoo adapter.
+It may be possible to use a real 3dfx Voodoo adapter with the original glide2x.dll with the right hardware and software setup, but that has not been tested.
+
 instructions needed...
 
 ### Linux: Installing libglide2x.so
