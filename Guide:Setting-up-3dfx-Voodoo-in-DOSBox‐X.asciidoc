@@ -61,7 +61,7 @@ This setting is located in the [cpu] section of the dosbox-x config file.
 Normally the CPU will fire an Invalid Opcode exception in the case of an undefined MSR (Model-specific register).
 
 This option is off by default, enable if using software or drivers that assumes the presence of certain MSR registers without checking.
-If you are using certain versions of the 3Dfx glide drivers for MS-DOS you will need to set this to TRUE as 3Dfx appears to have coded GLIDE2.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
+If you are using certain versions of the 3Dfx glide drivers for MS-DOS you will need to set this to TRUE as 3Dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
 
 Another way to circumvent this issue with the 3dfx drivers, is by emulating a Pentium Pro CPU in DOSBox-X by setting ``cputype=ppro_slow`` in the [cpu] section of your DOSBox-X config file.
 
@@ -75,16 +75,21 @@ Some other games may require that you install a patch, or that you run a differe
 If you want to use 3dfx Voodoo emulation in Windows 95 or 98, you need to use this mode.
 
 ## High Level emulation
-This mode requires DOSBox-X 0.83.5 or newer.
+This mode requires DOSBox-X 0.83.5 or newer, and it only works for DOS games that use GLIDE2X.OVL.
 
 Instead of emulating the 3dfx hardware, this method converts the Glide API calls to OpenGL and is therefore more efficient.
 However, it also requires a few more steps to get working.
 It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use a special GLIDE2X.OVL in DOSBox-X, instead of the one provided with the game or provided by 3dfx.
 
+When DOSBox-X is started with glide=true the special GLIDE2X.OVL file can be conveniently found on the emulated Z: drive.
+Copy the GLIDE2X.OVL from the Z: drive to the game directory, overwriting any GLIDE2X.OVL that was included with the game.
+
 ### Windows: Installing glide2x.dll
+instructions needed...
+
 ### Linux: Installing libglide2x.so
 Unfortunately this library is not included with any of the modern Linux distributions, as such you need to compile it yourself.
-The following steps assume that you have the necessary developer tools and header files installed.
+The following steps assume that you have the necessary compiler, developer tools and header files already installed.
 
 Run the following commands from a Linux terminal:
 
@@ -117,3 +122,4 @@ sudo ldconfig
 ....
 
 ### macOS: Installing libglide2x.dylib
+instructions needed...
