@@ -83,7 +83,10 @@ However, it also requires a few more steps to get working.
 It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use a special GLIDE2X.OVL in DOSBox-X, instead of the one provided with the game or provided by 3dfx.
 
 When DOSBox-X is started with glide=true the special GLIDE2X.OVL file can be conveniently found on the emulated Z: drive.
-Copy the GLIDE2X.OVL from the Z: drive to the game directory, overwriting any GLIDE2X.OVL that was included with the game.
+Copy or rename the games original GLIDE2X.OVL to something like GLIDE2X.ORG, and copy the GLIDE2X.OVL from the Z: drive to the game directory, replacing the games original GLIDE2X.OVL.
+
+NOTE: It is good to keep a backup of the games original GLIDE2X.OVL file, as you will need it if you decide you want to use the 3dfx Voodoo hardware emulation later.
+Hardware emulation requires that you use the games original Glide library, and not the special one used for pass-through.
 
 ### Windows: Installing glide2x.dll
 NOTE: Although this library has the same filename as the old Windows Glide library for real 3dfx Voodoo adapters, it is in fact not the same.
