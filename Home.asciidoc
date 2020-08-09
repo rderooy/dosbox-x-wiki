@@ -206,6 +206,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibilty with DOSBox.
 
+* **Quick launch program...** Launch a program selected from the Windows file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
+
 * **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
 
 * **Swap floppy**: Swaps the floppy image if you are using multiple floppy disk images.
@@ -236,7 +238,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Load state**: Loads the state from the selected save slot.
 
-* **Select save slot**: Select a save slot (1 to 10) to save to or load from.
+* **Select save slot**: Select a save slot (1-100) to save to or load from. There are 10 pages for save slots, with 10 save slots in each page.
 
 **7. The "Drive" menu**
 
@@ -966,7 +968,7 @@ Currently, new DOSBox-X versions are made public either on the last day of a mon
 
 * **How can I use the save and load a state in DOSBox-X?**
 +
-DOSBox-X supports the save and load state feature including save slot support (with up to 10 save slots). Under the "Capture" menu you will see menu items including "Save state", "Load state", "Select save slot" and a "Force load state mode" toggle menu. Select a save slot you want to save to, and click "Save state", then the current state will be saved to the computer. When you want to load the state you can just click "Load state" from the menu; but if you want to select a different save slot to load, you need to select that save slot before loading the state. DOSBox-X by default will check for things like program name and memory size to make sure they match, and if they do not DOSBox-X may display a warning. These checks can be bypassed by enabling the "Force load state mode" toggle before you try to load the state.
+DOSBox-X supports the save and load state feature including save slot support (with up to 100 save slots). Under the "Capture" menu you will see menu items including "Save state", "Load state", "Select save slot" and a "Force load state mode" toggle menu. Select a save slot you want to save to, and click "Save state", then the current state will be saved to the computer. When you want to load the state you can just click "Load state" from the menu; but if you want to select a different save slot to load, you need to select that save slot before loading the state. DOSBox-X by default will check for things like program name and memory size to make sure they match, and if they do not DOSBox-X may display a warning. These checks can be bypassed by enabling the "Force load state mode" toggle before you try to load the state.
 
 * **Can I change config options from the command line?**
 +
