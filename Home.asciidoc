@@ -108,7 +108,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Autolock mouse**: DOSBox-X will lock the mouse automatically for use with the emulated DOS.
 
-* **Mouse wheel movements**: Select whether to auto-convert mouse wheel movements to Up/Down arrow etc.
+* **Mouse wheel movements**: Select whether to auto-convert mouse wheel movements to arrow keys (Up & Down arrows etc).
 
 * **Quick right mouse button copy/paste**: Check this if you want to use the right mouse button to copy to and paste from the Windows clipboard without any key modifier that may have been set.
 
@@ -206,7 +206,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibilty with DOSBox.
 
-* **Quick launch program...** Launch a program selected from the Windows file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
+* **Quick launch program...** Launches a program selected from the Windows file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
 
 * **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
 
@@ -238,7 +238,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Load state**: Loads the state from the selected save slot.
 
-* **Select save slot**: Select a save slot (1-100) to save to or load from. There are 10 pages for save slots, with 10 save slots in each page.
+* **Select save slot**: Select a save slot (1 to 100) to save to or load from. There are 10 pages for save slots, with 10 save slots in each page.
 
 **7. The "Drive" menu**
 
