@@ -955,7 +955,9 @@ We are making efforts to ensure that the vast majority of DOS games and applicat
 
 Efforts are also made to aid retro DOS developments, which is why DOSBox-X used to focus on the demoscene (especially anything prior to 1996) because that era of the MS-DOS scene tends to have all manner of weird hardware tricks, bugs, and speed-sensitive issues that make them the perfect kind of stuff to test emulation accuracy against, even more so than old DOS games. But without a doubt we also actively test against other DOS games and applications, as well as PC-98 programs (most of them are games).
 
-DOSBox-X vs Demoscene test results (up to date): link:https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html[DOSBox demoscene compat testing chart]
+DOSBox-X vs MS-DOS application test results: link:https://dosbox-x.com/msdos-compat.html[DOSBox-X DOS application compatibility testing chart]
+
+DOSBox-X vs Demoscene test results: link:https://htmlpreview.github.io/?https://github.com/joncampbell123/demotest/blob/master/compat-chart.html[DOSBox-X demoscene compatibility testing chart]
 
 ### Frequently Asked Questions (FAQ)
 * **What is DOS?**
