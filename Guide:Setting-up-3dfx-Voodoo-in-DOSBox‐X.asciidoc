@@ -80,10 +80,9 @@ This mode requires DOSBox-X 0.83.5 or newer, and it only works for DOS games tha
 
 Instead of emulating the 3dfx hardware, this method converts the Glide API calls to OpenGL and is therefore more efficient.
 However, it also requires a few more steps to get working.
-It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use a special GLIDE2X.OVL in DOSBox-X, instead of the one provided with the game or provided by 3dfx.
+It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use the special GLIDE2X.OVL provided in DOSBox-X, instead of one that may be provided with the game or provided by 3dfx.
 
-When DOSBox-X is started with glide=true the special GLIDE2X.OVL file can be conveniently found on the emulated Z: drive.
-Copy or rename the games original GLIDE2X.OVL to something like GLIDE2X.ORG, and copy the GLIDE2X.OVL from the Z: drive to the game directory, replacing the games original GLIDE2X.OVL.
+When DOSBox-X is started with glide=true the special GLIDE2X.OVL file can be conveniently found on the emulated Z: drive. If the game already provides a GLIDE2X.DLL file located in the game directory, then you need to rename the game’s original GLIDE2X.OVL file to something like GLIDE2X.ORG, and after that you can also optionally copy the GLIDE2X.OVL from the Z: drive to the game directory for use with the game.
 
 NOTE: It is good to keep a backup of the games original GLIDE2X.OVL file, as you will need it if you decide you want to use the 3dfx Voodoo hardware emulation later.
 Hardware emulation requires that you use the games original Glide library, and not the special one used for pass-through.
@@ -93,7 +92,7 @@ NOTE: Although this library has the same filename as the old Windows Glide libra
 The library used here converts Glide calls to OpenGL, and will not work with a real 3dfx Voodoo adapter.
 It may be possible to use a real 3dfx Voodoo adapter with the original glide2x.dll with the right hardware and software setup, but that has not been tested.
 
-instructions needed... Which glide2x.dll implementation? Glidos, DgVoodoo, nGlide or OpenGlide?
+instructions needed... Which glide2x.dll implementation? Glidos, DgVoodoo, nGlide or OpenGlide? Note that 32-bit glide2x.dll is required by 32-bit DOSBox-X binaries, and 64-bit glide2x.dll is required by 64-bit DOSBox-X binaries.
 
 ### Linux: Installing libglide2x.so
 NOTE: Although this library has the same filename as the old Linux Glide library for real 3dfx Voodoo adapters, it is in fact not the same.
