@@ -96,11 +96,11 @@ Copy the above config and save it as *win95.conf*
 * If using Windows 95 OSR2 with FAT32 volumes, be sure to change the DOS version to 7.1 (``ver=7.1`` or from the DOSBox-X prompt: ``ver set 7.1``) or else you will get errors mounting the FAT32 volume
 * While Windows 95 should support up to 2048MB RAM, in reality more then 480MB can cause problems, as such ``memsize=480`` is the largest safe value.
 * The ``[autoexec]`` section will need lines added later.
-* If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
+* If you want networking in Windows, you need to set ``ne2000=true`` and change the ``realnic=`` value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 ** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You will probably want to change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
 * Setting ``cycles=60000`` gives significantly better video and disk performance, but slightly worse CPU performance compared to ``cycles=auto`` or ``cycles=max``.
-* Do not change the ``core=normal`` setting. In particular the dynamic core, while generally faster, is incompatible with Windows 98 non-recursive page fault handling, and will cause stability problems and crashes such as General Protection Faults (GPF).
+* Do not change the ``core=normal`` setting. In particular the dynamic core, while generally faster, is incompatible with Windows 95 non-recursive page fault handling, and will cause stability problems and crashes such as General Protection Faults (GPF).
 
 # General installation Notes
 
