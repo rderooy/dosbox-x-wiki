@@ -258,14 +258,16 @@ Reboot the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
 Start DOSBox-X's keyboard mapper.
 * **[F11/F12]+Esc**
 Show/hide the GUI menu bar.
+* **[F11/F12]+Del**
+Send the Ctrl+Alt+Del key combination to the guest system.
 * **[F11/F12]+{{plus}}**
 Increase the sound volume of DOSBox-X's emulated DOS.
 * **[F11/F12]+{-}**
 Decrease the sound volume of DOSBox-X's emulated DOS.
 * **[F11/F12]+]**
-Increases the emulated DOS's current speed relative to real-time.
+Increase the emulated DOS's current speed relative to real-time.
 * **[F11/F12]+[**
-Decreases the emulated DOS's current speed relative to real-time.
+Decrease the emulated DOS's current speed relative to real-time.
 * **[F11/F12]+{=}**
 Increase DOSBox-X's emulation CPU cycles.
 * **[F11/F12]+{-}**
