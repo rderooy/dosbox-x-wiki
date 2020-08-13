@@ -312,6 +312,8 @@ If for some reason you do not want 3dfx Voodoo emulation, it can be disabled by 
 voodoo=false
 ....
 
+NOTE: Do not enable glide pass-through (``glide=true``) support with Windows 95. Glide pass-through only works with DOS Glide games that utilize GLIDE2X.OVL.
+
 # Hard Disk Read-ahead optimization
 In "System Properties", select the "Performance" tab, and click the "File System..." button.
 A separate "File System Properties" window will open.
