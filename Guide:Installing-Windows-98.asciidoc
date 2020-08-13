@@ -78,11 +78,12 @@ Copy the above config and save it as *win98.conf*
 
 *Notes*
 
-* While Windows 98 should support up to 2048MB RAM, memsize=512 is the largest safe value. Larger values may be possible with tweaks, but are not covered here.
-* The [autoexec] section will need lines added later.
-* If you want networking in Windows, you need to set ne2000=true and change the realnic= value to one suitable for your PC. See:
+* While Windows 98 should support up to 2048MB RAM, ``memsize=512`` is the largest safe value. Larger values may be possible with tweaks, but are not covered here.
+* The ``[autoexec]`` section will need lines added later.
+* If you want networking in Windows, you need to set ``ne2000=true`` and change the ``realnic=`` value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
-* Setting cycles=60000 gives significantly better video and disk performance, but slightly worse CPU performance compared to cycles=auto
+* Setting ``cycles=60000`` gives significantly better video and disk performance, but slightly worse CPU performance compared to ``cycles=auto`` or ``cycles=max``.
+* Do not change the ``core=normal`` setting. In particular the dynamic core, while generally faster, is incompatible with Windows 98 non-recursive page fault handling, and will cause stability problems and crashes such as General Protection Faults (GPF).
 
 # General installation Notes
 
