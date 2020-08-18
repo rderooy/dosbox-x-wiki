@@ -92,7 +92,11 @@ NOTE: Although this library has the same filename as the old Windows Glide libra
 The library used here converts Glide calls to OpenGL, and will not work with a real 3dfx Voodoo adapter.
 It may be possible to use a real 3dfx Voodoo adapter with the original glide2x.dll with the right hardware and software setup, but that has not been tested.
 
-instructions needed... Which glide2x.dll implementation? Glidos, DgVoodoo, nGlide or OpenGlide? Note that 32-bit glide2x.dll is required by 32-bit DOSBox-X binaries, and 64-bit glide2x.dll is required by 64-bit DOSBox-X binaries.
+There are several implementation providers for the Windows glide2x.dll library file, most notably nGlide, dgVoodoo, Glidos, and OpenGlide. They do not necessarily work exactly the same. Before trying to find an implementation of this library file, please keep in mind that the architecture of the DOSBox-X binary you are using does matter, e.g. whether the DOSBox-X executable is a 32-bit x86 or 64-bit x64 build. Due to the way how Windows works, 32-bit glide2x.dll can only be used by 32-bit DOSBox-X binaries, and 64-bit glide2x.dll can only be used by 64-bit DOSBox-X binaries. As a result, in order to make Glide work please make sure that you do not mix up the architectures of the applications and the .DLL files.
+
+nGlide appears to be a popular 3dfx Voodoo Glide wrapper provider for Windows XP and later. It comes with an installer to automatically install the Glide library files including glide2x.dll to your Windows directory. Note however that only 32-bit .DLL files are included in nGlide, as of its latest version. This means that if you choose to use nGlide as the Glide wrapper, then you must use the 32-bit (x86 architecture) DOSBox-X binaries (either SDL1 or SDL2 builds) for the Glide feature. The nGlide installer is available from:
+
+https://www.zeus-software.com/downloads/nglide
 
 ### Linux: Installing libglide2x.so
 NOTE: Although this library has the same filename as the old Linux Glide library for real 3dfx Voodoo adapters, it is in fact not the same.
