@@ -866,7 +866,10 @@ Shows emulation speed relative to realtime on the DOSBox-X title bar.
 Starts DOSBox-X in full-screen mode.
 * **-savedir [path]**
 +
-Uses the specified path as DOSBox-X's save path.
+Uses the specified path as DOSBox-X's save path, including the saved states.
+* **-defaultdir [path]**
++
+Uses the specified path as DOSBox-X's default path, the location for files including the dosbox-x.conf config file.
 * **-winrun**
 +
 Enables launching Windows programs to run on the host (such as the use of START command) and the Windows clipboard communications via the CLIP$ device (Windows version only).
