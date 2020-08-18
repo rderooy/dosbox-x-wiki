@@ -98,6 +98,14 @@ nGlide appears to be a popular 3dfx Voodoo Glide wrapper provider for Windows XP
 
 https://www.zeus-software.com/downloads/nglide
 
+dgVoodoo is another 3dfx Voodoo Glide wrapper provider for Windows. Unlike nGlide it does not come with an installer as of this time, but it does provide both 32-bit and 64-bit glide2x.dll files in its zip packages. Thus with this you can use either the 32-bit x86 build or the 64-bit x64 build of DOSBox-X for the Glide feature, as long as the correct glide2x.dll file is available to the DOSBox-X executable. You can put the glide2x.dll file (extracted from its zip package) either in your DOSBox-X directory, or in the Windows’ System32/SysWOW64 directory (in the case of 64-bit Windows, C:\WINDOWS\SysWOW64 for 32-bit glide2x.dll file and C:\WINDOWS\System32 for 64-bit glide2x.dll file). The zip packages are available from:
+
+http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2.html
+
+Furthermore, for advanced users you can build your own glide2x.dll file(s) if you wish. OpenGlide is an open-source Glide wrapper implementation, so that you can build the library file(s) from the source code by yourself, using Visual Studio or MinGW. The OpenGlide GitHub site is located at:
+
+https://github.com/voyageur/openglide
+
 ### Linux: Installing libglide2x.so
 NOTE: Although this library has the same filename as the old Linux Glide library for real 3dfx Voodoo adapters, it is in fact not the same.
 The library used here converts Glide calls to OpenGL, and will not work with a real 3dfx Voodoo adapter.
