@@ -151,13 +151,18 @@ Unless there is a console open with the log, there is no visual indication of wh
 
 ### Write protecting diskette images
 By default diskette images are mounted read-write.
-It is possible to make a diskette image read-only (write protected) by attaching the ``:`` prefix to the filename.
+It is possible to make a diskette image read-only (write protected) either by using the -ro option, or by attaching the ``:`` prefix to the filename.
 e.g.
+....
+imgmount a disk.ima -ro
+....
+
+It is equivalent to:
 ....
 imgmount a :disk.ima
 ....
 
-This can also be used when mounting multiple diskette images.
+They can also be used when mounting multiple diskette images. If you use the -ro option, then all images specified in the command will become read-only. On the other hand, if you wish to make individual images (instead of all of them) read-only then you can attach the ``:`` prefix to these images, like this:
 ....
 imgmount a :disk1.ima :disk2.ima :disk3.ima userdisk.ima
 ....
