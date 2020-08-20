@@ -82,7 +82,7 @@ Instead of emulating the 3dfx hardware, this method converts the Glide API calls
 However, it also requires a few more steps to get working.
 It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use the special GLIDE2X.OVL provided in DOSBox-X, instead of one that may be provided with the game or provided by 3dfx.
 
-When DOSBox-X is started with glide=true the special GLIDE2X.OVL file will automatically appear on the emulated Z: drive. If the game already provides a GLIDE2X.DLL file located in the game directory, then you need to rename the game’s original GLIDE2X.OVL file to something like GLIDE2X.ORG. The game may be able to automatically find the GLIDE2X.DLL on the Z: drive, but if not, then you also need to copy the GLIDE2X.OVL file from the Z: drive to the game directory for use with the game.
+When DOSBox-X is started with glide=true the special GLIDE2X.OVL file will automatically appear on the emulated Z: drive. If the game already provides a GLIDE2X.DLL file located in the game directory, then you need to rename the game’s original GLIDE2X.OVL file to something like GLIDE2X.ORG. Then the game can usually find the GLIDE2X.DLL on the Z: drive automatically, but if not, you also need to copy the GLIDE2X.OVL file from the Z: drive to the game directory for use with the game.
 
 NOTE: It is good to keep a backup of the games original GLIDE2X.OVL file, as you will need it if you decide you want to use the 3dfx Voodoo hardware emulation later.
 Hardware emulation requires that you use the games original Glide library, and not the special one used for pass-through.
