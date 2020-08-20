@@ -216,6 +216,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
 
+* **Show mounted drive numbers**: Shows details such as the disk name for all mounted drive numbers (0-5).
+
 **6. The "Capture" menu**
 
 * **Take screenshot**: Takes a screenshot of the current DOS screen in PNG format.
@@ -242,7 +244,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 **7. The "Drive" menu**
 
-* **A**-**Z**: For each DOS drive, mounts, un-mounts, or re-scans (refreshes the cache) this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Mounting drives (with various options) in the "Drive" menu is currently only supported for the Windows platform.
+* **A**-**Z**: For each DOS drive, mounts, un-mounts, re-scans (refreshes the cache), or show the information for this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Mounting drives (with various options) in the "Drive" menu is currently only supported for the Windows platform.
 
 ### DOSBox-X's Special Keys
 
