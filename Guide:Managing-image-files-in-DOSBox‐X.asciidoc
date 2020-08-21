@@ -22,8 +22,9 @@ The currently active mounts can be viewed by running the ``IMGMOUNT`` or ``MOUNT
 The output of the two commands differs somewhat.
 
 * MOUNT will show all active mounts
-* IMGMOUNT will only show mounted images
-* IMGMOUNT will list the device numbers (drive numbers) in use
+* IMGMOUNT will show mounted images, and the device numbers (drive numbers) in use
+
+You can also see the currently mounted drive numbers from the DOS menu.
 
 # Diskette (floppy disk) images
 DOSBox-X supports mounting diskette images in the following formats:
