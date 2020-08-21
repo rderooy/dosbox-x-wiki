@@ -109,7 +109,7 @@ If you do not specify an image filename, then the name IMGMAKE.IMG will be used,
 ....
 imgmount a
 ....
-NOTE: The ``-t floppy`` parameter is only needed with DOSBox-X when the extension is not .IMA, and your wanting to mount a diskette image on drives greater than B:. 
+NOTE: The ``-t floppy`` parameter is only needed with DOSBox-X when the extension is not .IMA, and your wanting to mount a diskette image on drives greater than B:.
 
 A diskette image that is not formatted, or has a unsupported filesystem can be mounted as follows:
 ....
@@ -148,7 +148,7 @@ Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+D and for other platforms F12+CTRL+D.
 Or from the menu you can select "DOS" followed by "Swap floppy".
 
-Unless there is a console open with the log, there is no visual indication of which diskette image is currently mounted.
+If you loose track of which disk is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
 
 ### Write protecting diskette images
 By default diskette images are mounted read-write.
@@ -163,7 +163,8 @@ It is equivalent to:
 imgmount a :disk.ima
 ....
 
-They can also be used when mounting multiple diskette images. If you use the -ro option, then all images specified in the command will become read-only. On the other hand, if you wish to make individual images (instead of all of them) read-only then you can attach the ``:`` prefix to these images, like this:
+They can also be used when mounting multiple diskette images. If you use the -ro option, then all images specified in the command will become read-only.
+On the other hand, if you wish to make individual images (instead of all of them) read-only then you can attach the ``:`` prefix to these images, like this:
 ....
 imgmount a :disk1.ima :disk2.ima :disk3.ima userdisk.ima
 ....
@@ -594,13 +595,13 @@ e.g.
 ....
 imgmount d cdrom1.iso cdrom2.iso cdrom3.iso
 ....
-In this example cdrom1.iso will be immediately usable on D: but cdrom2.iso will require a disk-swap action.
+In this example cdrom1.iso will be immediately usable on D: but cdrom2.iso will require a disc-swap action.
 
 Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+C and for other platforms F12+CTRL+C.
 Or from the menu you can select "DOS" followed by "Swap CD".
 
-Unless you have a console open with the log, there is no visual indication of which diskette image is currently mounted.
+If you loose track of which disc is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
 
 ### Mounting from the Drive menu
 This is exclusive to the DOSBox-X Windows version.

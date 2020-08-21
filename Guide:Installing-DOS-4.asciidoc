@@ -88,29 +88,32 @@ and run the following command to format the C: drive and transfer system files:
 
 image::images/MS-DOS:MS-DOS_4.01_FORMAT.png[MS-DOS 4.01 FORMAT]
 
-The HDD image is now bootable and you can optionally copy some of the DOS utilities from the diskette to the HDD and create your ``CONFIG.SYS`` and ``AUTOEXEC.BAT``. Alternatively if you want to do a full install, you can type ``SELECT MENU`` to return to the installer.
+The HDD image is now bootable and you can optionally copy some of the DOS utilities from the diskette to the HDD and create your ``CONFIG.SYS`` and ``AUTOEXEC.BAT``.
+Alternatively if you want to do a full install, you can type ``SELECT MENU`` to return to the installer.
 
 image::images/MS-DOS:MS-DOS_4.01_BOOT_HDD.png[MS-DOS 4.01 HDD Boot]
 
 ### Full install from 3.5" media
 Notes:
 
-* The MS-DOS 4.0x installer can corrupt its own installation diskettes, as such you should change the permission of the disk images in the host OS such that the image files are READ-ONLY. In turn DOSBox-X will treat them as if the disks have the write-protect set.
+* The MS-DOS 4.0x installer can corrupt its own installation diskettes, as such it is important that you set the installation disk images read-only.
 * It is required that you first follow the [#bare-bones-install](Bare-bones) install above, up to the point where the DOS partition has been formatted. The alternative is to use the -NOFS flag with ``IMGMAKE`` to create a HDD image that is not partitioned and formatted, and to let MS-DOS 4.0x installer create the partition for you, but this requires that you go through the first phase of the installation process twice, including creating the "SELECT COPY" backup diskette twice.
 
 For this process, it is assumed that you have followed the Bare-bones install process such that your HDD image file is created, partitioned and formatted with MS-DOS 4.0x.
 
-During install, the installer will insist on a blank disk to be labelled "SELECT COPY", to make a copy of the INSTALL (Setup) disk. Unfortunately while it seems the installer should allow to use the B: drive for this purpose this does not seem to work in practice (it seems this only works if there is no disk in drive B: when the installer starts, which you cannot do with DOSBox-X).
+During install, the installer will insist on a blank disk to be labelled "SELECT COPY", to make a copy of the INSTALL (Setup) disk.
+Unfortunately while it seems the installer should allow to use the B: drive for this purpose this does not seem to work in practice (it seems this only works if there is no disk in drive B: when the installer starts, which you cannot do with DOSBox-X).
 ....
  IMGMAKE SELECT_COPY.IMG -t fd_720
  IMGMOUNT C hdd.img
- BOOT SETUP.IMG SELECT_COPY.IMG SETUP.IMG SELECT_COPY.IMG OPERATING.IMG MSSHELL.IMG
+ BOOT :SETUP.IMG SELECT_COPY.IMG :SETUP.IMG SELECT_COPY.IMG :OPERATING.IMG :MSSHELL.IMG
 ....
 
 Notes:
 
 * You may notice in the above BOOT command, that SETUP.IMG and SELECT_COPY.IMG appear twice. This is not an error, and is done to simplify the installation process due to the fact that the install process will ask for you to swap between those disks.
-* It is important that you keep track of the order of the disks that you specify on the BOOT line, as you will need to switch between them using either a keyboard shortcut or the "Swap floppy" option on the DOSBox-X menu bar located under the DOS heading. Unfortunately at this point there is no visual indication in DOSBox-X itself, as to which diskette is the current one inserted, you can however look at the DOSBox-X messages logged to the console if you have it open to see a message as to which disk is currently inserted. When you cycle through them one by one, once you reach the end, you will simply go back to the first.
+* You may also notice that the original install disks have been pre-fixed with a column (:) character. This is a special way of telling DOSBox-X to treat that disk image as read-only.
+* It is important that you keep track of the order of the disks that you specify on the BOOT line, as you will need to switch between them using either a keyboard shortcut or the "Swap floppy" option on the DOSBox-X menu bar located under the DOS heading. If you loose tray, go to the Drive menu, select A and select 'Drive Information' and you can see which disk is currently active. When you cycle through them one by one, once you reach the end, you will simply go back to the first.
 * While the first MS-DOS 4.0x 3.5" disk is labelled "Setup" the installer will actually refer to it as "INSTALL".
 
 '''
@@ -197,9 +200,14 @@ image::images/MS-DOS:MS-DOS_4.01_INSTALLER10.png[MS-DOS 4.01 Continuing Installa
 
 *Continuing Installation*
 
-This is an important point, you now need to do a disk swap. This can be accomplished with a hot-key combination, or possibly easier from the DOSBox-X menu bar, select the "DOS" menu, followed by "Swap floppy". It is important that you use the "Swap floppy" option each time it asks you to insert a different disk. The disks have been "stacked" with the BOOT command in such a way that they are in the correct order. This is important, as other then looking at the DOSBox-X logging you have no visual indicator as to which diskette is the active one.
+This is an important point, you now need to do a disk swap.
+This can be accomplished with a hot-key combination, or possibly easier from the DOSBox-X menu bar, select the "DOS" menu, followed by "Swap floppy".
+It is important that you use the "Swap floppy" option each time it asks you to insert a different disk.
+The disks have been "stacked" with the BOOT command in such a way that they are in the correct order.
+If you loose track if which disk is inserted, check the 'Drive' > 'A' > 'Drive Information' menu option.
 
-You will be asked in turn to insert the "INSTALL" disk (Setup), the "SELECT COPY" disk, again the "INSTALL DISK" and again the "SELECT COPY" disk. You will then be asked for the OPERATING disk, and finally (if selected to install), the MS-DOS SHELL disk.
+You will be asked in turn to insert the "INSTALL" disk (Setup), the "SELECT COPY" disk, again the "INSTALL DISK" and again the "SELECT COPY" disk.
+You will then be asked for the OPERATING disk, and finally (if selected to install), the MS-DOS SHELL disk.
 
 image::images/MS-DOS:MS-DOS_4.01_INSTALLER11.png[MS-DOS 4.01 Continuing Installation]
 
@@ -225,7 +233,8 @@ image::images/MS-DOS:MS-DOS_4.01_BOOT_HDD2.png[MS-DOS 4.01 Boot HDD to DOS promp
 image::images/MS-DOS:MS-DOS_4.01_DOSSHELL.png[MS-DOS 4.01 Boot HDD to DOS Shell]
 
 ### Full install from 5.25" media
-This process is basically the same as for the 3.5" media, but you have more disks and they are labelled differently. You will also need two blank disks.
+This process is basically the same as for the 3.5" media, but you have more disks and they are labelled differently.
+You will also need two blank disks.
 
 ### Booting MS-DOS 4.0x from HDD
 Now that you have created a bootable HDD image you can boot it from the DOSBox-X ``Z:\>`` prompt with the following commands:
@@ -244,7 +253,9 @@ First start by creating a HDD image file, mount it and boot from disk (this assu
 ....
  IMGMAKE hdd.img -t hd -size 1024
  IMGMOUNT C hdd.img
- BOOT INSTALL.IMG OPERATING.IMG
+ BOOT :INSTALL.IMG :OPERATING.IMG
 ....
 
-You can now largely follow the instructions for MS-DOS 4.0x. There will be fewer questions, for instance you will not get the question if you want to install the DOS Shell. After the install is finished and you boot from the HDD image, it will go directly to the DOS Shell program.
+You can now largely follow the instructions for MS-DOS 4.0x.
+There will be fewer questions, for instance you will not get the question if you want to install the DOS Shell.
+After the install is finished and you boot from the HDD image, it will go directly to the DOS Shell program.
