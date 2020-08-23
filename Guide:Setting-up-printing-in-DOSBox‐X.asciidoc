@@ -203,6 +203,8 @@ Since not all software will send one, especially if your redirecting output, you
 
 If non-zero, it specifies the time after which the page will be ejected automatically when no more data arrives at the printer.
 
+You can also manually eject a form-feed when you want to do so, and this option is available from the DOS menu.
+
 # Setting up fonts for the emulated printer
 The emulated printer requires TrueType fonts in order to be able to print text. At a minimum it needs ``courier.ttf``.
 
@@ -357,7 +359,7 @@ timeout=1000
 The above example uses PNG, but you can simply change it to ``printoutput=bmp`` or ``printoutput=ps`` if you prefer.
 But note that BMP files will be much larger than PNG files, while the image quality will be identical.
 
-In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above. For DOS programs that do not eject a form feed, you may need to manually eject a form feed (available in the DOS menu) before the output files are generated. 
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
 The output will be saved as ``page1.png``, ``page1.bmp`` or ``page1.ps`` in the current directory, and incremented if it already exists.
 Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
