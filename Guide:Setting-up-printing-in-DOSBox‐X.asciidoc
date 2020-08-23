@@ -303,7 +303,7 @@ sudo usermod -a -G lp username
 
 Now, similar to the Windows instructions, try the following:
 
-Make sure your dosbox-x config file contains the statements:
+Make sure your DOSBox-X config file contains the statements:
 ....
 [parallel]
 parallel1=reallpt realport:/dev/parport0
@@ -344,7 +344,7 @@ This method prints to a PNG, BMP or PostScript (PS) image file.
 
 This method requires that you have first completed the FONT installation step above.
 
-Make sure your dosbox-x config file contains the statements:
+Make sure your DOSBox-X config file contains the statements:
 ....
 [parallel]
 parallel1=printer
@@ -357,7 +357,7 @@ timeout=1000
 The above example uses PNG, but you can simply change it to ``printoutput=bmp`` or ``printoutput=ps`` if you prefer.
 But note that BMP files will be much larger than PNG files, while the image quality will be identical.
 
-In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above. For DOS programs that do not eject a form feed, you may need to manually eject a form feed (available in DOS menu) before the output files are generated. 
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above. For DOS programs that do not eject a form feed, you may need to manually eject a form feed (available in the DOS menu) before the output files are generated. 
 
 The output will be saved as ``page1.png``, ``page1.bmp`` or ``page1.ps`` in the current directory, and incremented if it already exists.
 Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
