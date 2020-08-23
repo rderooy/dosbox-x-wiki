@@ -219,7 +219,7 @@ DOSBox-X will first search for fonts in the FONTS subdirectory in the directory 
 |FONTS\script.ttf|C:\Windows\Fonts\freescpt.ttf|Installed by MS Office
 |===
 
-You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table.
+You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table. Moreover, DOSBox-X 0.83.4 and earlier will only search for font files in the FONTS directory.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
@@ -227,7 +227,6 @@ If you need them you may need to find those online.
 
 ## Linux host
 DOSBox-X will first search for fonts in the ~/.config/dosbox-x/FONTS directory. If the fonts cannot be found, then it will search for the fonts in the /usr/share/fonts directory, as follows:
-Create a directory ~/.config/dosbox-x/FONTS and copy or symlink the following files.
 |===
 |Font file in FONTS directory|Font file in system directory|Notes
 
@@ -238,12 +237,11 @@ Create a directory ~/.config/dosbox-x/FONTS and copy or symlink the following fi
 |~/.config/dosbox-x/FONTS/script.ttf|/usr/share/fonts/freescpt.ttf|Download a Script (cursive) font
 |===
 
-You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table.
+You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table. Moreover, DOSBox-X 0.83.4 and earlier will only search for font files in the FONTS directory.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
 If you need them you may need to find those online.
-
 
 # Example: Print to file
 In this example the output of DOS commands is simply redirected to the virtual LPT port, which in turn will be redirected to a text file.
