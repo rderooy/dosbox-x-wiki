@@ -204,41 +204,41 @@ Since not all software will send one, especially if your redirecting output, you
 If non-zero, it specifies the time after which the page will be ejected automatically when no more data arrives at the printer.
 
 # Setting up fonts for the emulated printer
-The emulated printer requires TrueType fonts to be setup to be able to print text. At a minimum it needs ``courier.ttf``.
+The emulated printer requires TrueType fonts in order to be able to print text. At a minimum it needs ``courier.ttf``.
 
 ## Windows host
-In the directory where your dosbox-x.exe is located, create a directory FONTS.
-Now copy from your C:\Windows\Fonts directory the following files to the new FONTS directory and rename them.
+DOSBox-X will first search for fonts in the FONTS subdirectory in the directory where your dosbox-x.exe is located. If the fonts cannot be found, then it will search for the system fonts, as follows:
 
 |===
-|Original filename and location|New filename and location|Notes
+|Font file in FONTS directory|Font file in system directory|Notes
 
-|C:\Windows\Fonts\cour.ttf|FONTS\courier.ttf|
-|C:\Windows\Fonts\times.ttf|FONTS\roman.ttf|
-|C:\Windows\Fonts\arial.ttf|FONTS\sansserif.ttf|
-|Download Ocraext.ttf|FONTS\ocra.ttf|
-|C:\Windows\Fonts\freescpt.ttf|FONTS\script.ttf|Installed by MS Office
+|FONTS\courier.ttf|C:\Windows\Fonts\cour.ttf|
+|FONTS\roman.ttf|C:\Windows\Fonts\times.ttf|
+|FONTS\sansserif.ttf|C:\Windows\Fonts\arial.ttf|
+|FONTS\ocra.ttf|C:\Windows\Fonts\Ocraext.ttf|Download Ocraext.ttf if not installed
+|FONTS\script.ttf|C:\Windows\Fonts\freescpt.ttf|Installed by MS Office
 |===
 
-The source files are recommendations, you are free to substitute them for suitable alternatives.
+You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
 If you need them you may need to find those online.
 
 ## Linux host
+DOSBox-X will first search for fonts in the ~/.config/dosbox-x/FONTS directory. If the fonts cannot be found, then it will search for the fonts in the /usr/share/fonts directory, as follows:
 Create a directory ~/.config/dosbox-x/FONTS and copy or symlink the following files.
 |===
-|Original filename and location|New filename and location
+|Font file in FONTS directory|Font file in system directory|Notes
 
-|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|~/.config/dosbox-x/FONTS/courier.ttf
-|/usr/share/fonts/liberation-serif/LiberationSerif-Regular.ttf|~/.config/dosbox-x/FONTS/roman.ttf
-|/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf|~/.config/dosbox-x/FONTS/sansserif.ttf
-|Download Ocraext.ttf|~/.config/dosbox-x/FONTS/ocra.ttf
-|Download a Script (cursive) font|~/.config/dosbox-x/FONTS/script.ttf
+|~/.config/dosbox-x/FONTS/courier.ttf|/usr/share/fonts/liberation-mono/LiberationMono-Regular.ttf|
+|~/.config/dosbox-x/FONTS/roman.ttf|/usr/share/fonts/liberation-serif/LiberationSerif-Regular.ttf|
+|~/.config/dosbox-x/FONTS/sansserif.ttf|/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf|
+|~/.config/dosbox-x/FONTS/ocra.ttf|/usr/share/fonts/Ocraext.ttf|Download Ocraext.ttf if not installed
+|~/.config/dosbox-x/FONTS/script.ttf|/usr/share/fonts/freescpt.ttf|Download a Script (cursive) font
 |===
 
-The source files are recommendations, you are free to substitute them for suitable alternatives.
+You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
