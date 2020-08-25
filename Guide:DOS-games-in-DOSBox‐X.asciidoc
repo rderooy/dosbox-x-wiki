@@ -8,4 +8,56 @@ toc::[]
 
 This guide explains how to setup and play DOS games in DOSBox-X.
 
-More information to be added for this guide.
+## Running a game
+
+There are several ways you can run a DOS game inside DOSBox-X.
+
+If you use Windows, you can launch a DOS game on your computer easily using the "quick launch" feature. When DOSBox-X is running, select the "DOS" menu and click "Quick launch program...", then you will be able to select a game to run using the Windows file browser. The game directory will be automatically mounted and the game will be started after you select a game executable on your computer.
+
+If you installed DOSBox-X 0.83.5 or later using the Windows installer, you can also launch a DOS game directly from the Windows Explorer, even if DOSBox-X is not currently running. Right click the executable of your DOS game and select "Open with DOSBox-X". Then DOSBox-X will be started and automatically run the game you just selected.
+
+Otherwise, you can manually run the DOS game from the DOSBox-X command line. Now start DOSBox-X. By default there is no drive mounted other than the internal virtual drive Z:. You need to mount the game directory so that it can be seen from within DOSBox-X. You can either mount a drive from the Drive menu, or by typing a command like the following:
+
+```
+MOUNT C C:\GAME
+```
+
+Change ```C:\GAME``` to your actual game directory. After you type Enter, the following message will be displayed:
+
+```
+Drive C mounted as local directory C:\GAME\
+```
+
+To dissect the above:
+
+MOUNT: Tells the program to mount a directory
+C: Tells the program what you want your new drive to be called (leaving it as C: is fine)
+C:\GAME: This is the directory you want to set as the new drive for DOSBox-X. If your game is located in a different directory, then replace it with that directory.
+(Note: If you want to mount a CD-ROM instead of a folder, type this:
+
+```
+MOUNT D D:\ -T CDROM
+```
+
+The following message will be displayed:
+
+```
+MSCDEX installed.
+Drive D is mounted as CDRom D:\
+```
+
+In this example, D:\ -T CDROM tells DOSBox-X that my D:\ drive is a CD-ROM drive, and the first D, tells DOSBox-X what my new drive name should be called. If you are running your game off a CD-ROM then make sure to use D: in place of C: in the following examples. You can find instructions on how to mount other devices, such as floppy drives, in the mount section).
+
+After you have done this, you will be prompted with a Z:\>. Now, just write what you wanted to call your new DOSBox-X drive, such as C: mentioned above. To navigate to that newly mounted drive just type in:
+
+```
+C:
+```
+
+The drive will be changed from Z:\ to C:\. And it is now time to run the game. Most games have an EXE file in their directory that you can run. However, some might require a BAT file, or COM file (common in demos and really old games). Most of the time, the file is in the root folder. Please consult the documentation of your game for which file is needed to start the game. Suppose the game executable is called PLAY.EXE, then you can just type this:
+
+```
+PLAY.EXE
+```
+
+That's it! You can now enjoy the game.
