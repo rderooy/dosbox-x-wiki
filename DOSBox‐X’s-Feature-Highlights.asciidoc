@@ -1,8 +1,6 @@
 Back to the link:Home[DOSBox-X Wiki Welcome page].
 
-# DOSBox‐X’s Feature Highlights
-
-Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
+As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a complete DOS emulation package. Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 
 * GUI menu bar and built-in graphical configuration tool
 * Save and load state support (with up to 100 save slots)
@@ -21,13 +19,18 @@ Apart from having virtually all existing features of DOSBox, DOSBox-X supports m
 * Support for FAT32 file system and large disk images
 * Support for clipboard copy and paste (Windows only)
 * Support for converting mouse wheel movements to arrow keys
-* Support for launching programs to run on the host (Windows only)
+* Support for starting programs to run on the host (Windows only)
+* Support for quick-launch programs to run inside DOSBox-X (Windows only)
 * Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
+* Support for cue sheets with FLAC, MP3, WAV, and OGG Vorbis CD audio tracks
+* Support for FluidSynth MIDI synthesizer with sound fonts
+* Support for Innovation SSI-2001 sound card emulation
 * Support for 3dfx Glide and Voodoo chip emulation
-* Support for cue sheets with FLAC, MP3, WAV, and Vorbis CD-DA tracks
-* Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
 * Support for NE2000 Ethernet for Internet and Modem Phonebook mapping
 * Support for features such as V-Sync, overscan border and stereo swapping
-* Various patches included such as font, DBCS, beeping and Ctrl+Break patch
+* Support for Ctrl+Break in the shell and many internal or external commands
+* Improved debugging features including built-in debugger and logging options
+* Including most patches from DOSBox ECE and many community contributions
+* Lots of gimmicks and usability improvements to make DOSBox-X work better for users
+* Plus many more
 
-Furthermore, DOSBox-X supports some experimental features such as running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
