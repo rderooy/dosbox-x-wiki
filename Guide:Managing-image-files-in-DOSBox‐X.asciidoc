@@ -148,7 +148,7 @@ Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+D and for other platforms F12+CTRL+D.
 Or from the menu you can select "DOS" followed by "Swap floppy".
 
-If you loose track of which disk is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
+If you lose track of which disk is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
 
 ### Write protecting diskette images
 By default diskette images are mounted read-write.
@@ -601,7 +601,7 @@ Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+C and for other platforms F12+CTRL+C.
 Or from the menu you can select "DOS" followed by "Swap CD".
 
-If you loose track of which disc is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
+If you lose track of which disc is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
 
 ### Mounting from the Drive menu
 This is exclusive to the DOSBox-X Windows version.
@@ -712,7 +712,7 @@ This copies the file UNZIP.EXE from the host system to the C:\DOS directory in t
 # Creating a RAM drive
 If you need a temporary drive, creating a RAM drive is as simple as running
 ....
-IMGMOUNT e -t ram -size 20
+IMGMOUNT e -t ram -size 20000
 ....
 This will create a temporary RAM drive as drive E: with a size of 20MB.
 
