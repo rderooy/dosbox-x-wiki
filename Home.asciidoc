@@ -879,9 +879,9 @@ Sets the specified config option, overriding such option (if exists) in the load
 * **-time-limit [n]**
 +
 Starts and terminates DOSBox-X after 'n' seconds.
-* **-fastbioslogo**
+* **-fastlaunch**
 +
-Skips the 1-second BIOS pause with Fast BIOS logo.
+Enables fast launch by skipping the BIOS pause and startup messages.
 * **-helpdebug**
 +
 Shows debug-related command-line options.
