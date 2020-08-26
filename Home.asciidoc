@@ -19,36 +19,7 @@ Unlike DOSBox's original focus on DOS games, DOSBox-X gives more focus on genera
 ### What DOSBox-X Can Do
 Derived from DOSBox, DOSBox-X emulates a PC complete with keyboard, mouse, joystick, sound, graphics, modem, printer, network, communication and storage devices, etc, in order to have a working DOS environment to run software designed for DOS. The vast majority of DOS (MS-DOS and PC DOS in particular) games and applications should run in DOSBox-X, although some of them may require additional configurations. DOSBox-X not only emulates a IBM PC, but also legacy systems such as the Japanese NEC PC-98. With the help of DOSBox-X, you will be able to run your favorite DOS games and programs on modern operating systems (32-bit and 64-bit) such as Microsoft Windows Vista, 7, 8, 10 and various Linux distributions. DOSBox-X also provides additional features that are useful but generally do not exist in a real DOS system, such as support for keyboard remapping and saving/loading states. With all these features it is usually very simple to make your DOS games or programs run smoothly within DOSBox-X.
 
-### DOSBox-X's Feature Highlights
-Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
-
-* GUI menu bar and built-in graphical configuration tool
-* Save and load state support (with up to 100 save slots)
-* Automatic drive mounting (Windows only)
-* Japanese NEC PC-98 mode emulation
-* CPU optimization and Turbo mode
-* Improved customization on the title bar
-* Better compatibility with DOS applications
-* Built-in external tools such as CWSDPMI, DOSIDLE and IMGMAKE
-* Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
-* Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
-* Support for IDE interfaces and improved Windows 3.x/9x emulation
-* Support for more CPU types (e.g. Pentium MMX and Pro)
-* Support for printer output, either a real or virtual printer
-* Support for long filenames (LFN) in addition to 8.3 filenames
-* Support for FAT32 file system and large disk images
-* Support for clipboard copy and paste (Windows only)
-* Support for converting mouse wheel movements to arrow keys
-* Support for launching programs to run on the host (Windows only)
-* Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
-* Support for 3dfx Glide and Voodoo chip emulation
-* Support for cue sheets with FLAC, MP3, WAV, and Vorbis CD-DA tracks
-* Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
-* Support for NE2000 Ethernet for Internet and Modem Phonebook mapping
-* Support for features such as V-Sync, overscan border and stereo swapping
-* Various patches included such as font, DBCS, beeping and Ctrl+Break patch
-
-Furthermore, DOSBox-X supports some experimental features such as running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
+For examples of DOSBox-X's unique features, please see link:DOSBox‐X’s-Feature-Highlights[DOSBox-X's Feature Highlights] page.
 
 ### Setting Up and Running DOSBox-X
 
@@ -950,6 +921,8 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 
 * link:Guide%3ADOS-Installation-in-DOSBox‐X[Guide: MS-DOS or PC DOS in DOSBox-X]
 * link:Guide%3AMicrosoft-Windows-in-DOSBox‐X[Guide: Microsoft Windows in DOSBox-X]
+* link:Guide%3ADOS-games-in-DOSBox‐X[Guide: DOS games in DOSBox-X]
+* link:Guide%3ADOS-demoscene-software-in-DOSBox‐X[Guide: DOS demoscene software in DOSBox-X]
 * link:Guide%3AManaging-image-files-in-DOSBox‐X[Guide: Managing image files in DOSBox‐X]
 * link:Guide%3AClipboard-support-in-DOSBox‐X[Guide: Clipboard support in DOSBox-X]
 * link:Guide%3ARegional-settings-in-DOSBox‐X[Guide: Regional settings in DOSBox‐X]
@@ -957,8 +930,6 @@ DOSBox-X has many features and supports most DOS games and applications. Below a
 * link:Guide%3ASetting-up-MIDI-in-DOSBox‐X[Guide: Setting up MIDI in DOSBox-X]
 * link:Guide%3ASetting-up-printing-in-DOSBox‐X[Guide: Setting up printing in DOSBox-X]
 * link:Guide%3ASetting-up-networking-in-DOSBox‐X[Guide: Setting up networking in DOSBox-X]
-* link:Guide%3ADOS-demoscene-software-in-DOSBox‐X[Guide: DOS demoscene software in DOSBox-X]
-* link:Guide%3ADOS-games-in-DOSBox‐X[Guide: DOS games in DOSBox-X]
 
 ### DOSBox-X’s Compatibility
 
