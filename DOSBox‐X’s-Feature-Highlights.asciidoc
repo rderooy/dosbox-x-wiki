@@ -1,0 +1,33 @@
+Back to the link:Home[DOSBox-X Wiki Welcome page].
+
+# DOSBox‐X’s Feature Highlights
+
+Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
+
+* GUI menu bar and built-in graphical configuration tool
+* Save and load state support (with up to 100 save slots)
+* Automatic drive mounting (Windows only)
+* Japanese NEC PC-98 mode emulation
+* CPU optimization and Turbo mode
+* Improved customization on the title bar
+* Better compatibility with DOS applications
+* Built-in external tools such as CWSDPMI, DOSIDLE and IMGMAKE
+* Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
+* Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
+* Support for IDE interfaces and improved Windows 3.x/9x emulation
+* Support for more CPU types (e.g. Pentium MMX and Pro)
+* Support for printer output, either a real or virtual printer
+* Support for long filenames (LFN) in addition to 8.3 filenames
+* Support for FAT32 file system and large disk images
+* Support for clipboard copy and paste (Windows only)
+* Support for converting mouse wheel movements to arrow keys
+* Support for launching programs to run on the host (Windows only)
+* Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
+* Support for 3dfx Glide and Voodoo chip emulation
+* Support for cue sheets with FLAC, MP3, WAV, and Vorbis CD-DA tracks
+* Support for FluidSynth MIDI synthesizer and Innovation SSI-2001 emulation
+* Support for NE2000 Ethernet for Internet and Modem Phonebook mapping
+* Support for features such as V-Sync, overscan border and stereo swapping
+* Various patches included such as font, DBCS, beeping and Ctrl+Break patch
+
+Furthermore, DOSBox-X supports some experimental features such as running ROM BIOS images. It also has improved debugging features including built-in debugger and logging options.
