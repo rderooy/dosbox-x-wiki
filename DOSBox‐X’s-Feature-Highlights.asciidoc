@@ -23,6 +23,7 @@ As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a comp
 * Support for quick-launch programs to run inside DOSBox-X (Windows only)
 * Support for OpenglHQ and Direct3D with pixel shaders (Windows only)
 * Support for cue sheets with FLAC, MP3, WAV, and OGG Vorbis CD audio tracks
+* Support for Roland MT-32 emulation (requires ROMs)
 * Support for FluidSynth MIDI synthesizer with sound fonts
 * Support for Innovation SSI-2001 sound card emulation
 * Support for 3dfx Glide and Voodoo chip emulation
@@ -33,4 +34,3 @@ As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a comp
 * Including most patches from DOSBox ECE and many community contributions
 * Lots of gimmicks and usability improvements to make DOSBox-X work better for users
 * Plus many more
-
