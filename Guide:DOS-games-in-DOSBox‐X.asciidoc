@@ -22,7 +22,7 @@ Otherwise, you can manually run the DOS game from the DOSBox-X command line. Now
 MOUNT C C:\GAME
 ```
 
-Change ```C:\GAME``` to your actual game directory. After you type Enter, the following message will be displayed:
+Change ``C:\GAME`` to your actual game directory. After you type Enter, the following message will be displayed:
 
 ```
 Drive C mounted as local directory C:\GAME\
@@ -46,7 +46,7 @@ MSCDEX installed.
 Drive D is mounted as CDRom D:\
 ```
 
-In this example, D:\ -T CDROM tells DOSBox-X that my D:\ drive is a CD-ROM drive, and the first D, tells DOSBox-X what my new drive name should be called. If you are running your game off a CD-ROM then make sure to use D: in place of C: in the following examples. You can find instructions on how to mount other devices, such as floppy drives, in the mount section).
+In this example, ``D:\ -T CDROM`` tells DOSBox-X that my D:\ drive is a CD-ROM drive, and the first D, tells DOSBox-X what my new drive name should be called. If you are running your game off a CD-ROM then make sure to use D: in place of C: in the following examples. You can find instructions on how to mount other devices, such as floppy drives, in the mount section).
 
 After you have done this, you will be prompted with a Z:\>. Now, just write what you wanted to call your new DOSBox-X drive, such as C: mentioned above. To navigate to that newly mounted drive just type in:
 
@@ -62,13 +62,13 @@ PLAY.EXE
 
 That's it! You can now enjoy the game.
 
-# Troubleshooting
+## Troubleshooting
 
 **CD-ROM: The game can't find its CD-ROM.**
 
-Be sure to mount the CD-ROM with -t cdrom switch, this will enable the
+Be sure to mount the CD-ROM with ``-t cdrom`` switch, this will enable the
 MSCDEX interface required by DOS games to interface with CD-ROMs.
-Also try adding the correct label (-label LABEL) to the mount command,
+Also try adding the correct label (``-label LABEL``) to the mount command,
 where LABEL is the CD-label (volume ID) of the CD-ROM.
 
 Try creating a CD-ROM image (preferably CUE/BIN pair) and use the
@@ -80,7 +80,7 @@ This enables very good low-level CD-ROM support on any operating system.
 Usually, DOSBox-X detects when a game uses mouse control. When you click on
 the screen it should get locked (confined to the DOSBox-X window) and work.
 With certain games, the DOSBox-X mouse detection doesn't work. In that case
-you will have to lock the mouse manually ("Capture mouse" from "Main" menu).
+you will have to lock the mouse manually ("Capture mouse" from the "Main" menu).
 
 **SOUND: There is no sound.**
 
@@ -99,8 +99,8 @@ If you still don't get any sound set the core to normal in DOSBox-X
 configuration and use some lower fixed cycles value (like cycles=2000). Also
 assure that your host operating sound does provide sound.
 In certain cases it might be useful to use a different emulated sound device
-like a SoundBlaster Pro (sbtype=sbpro1 in the DOSBox-X configuration file) or
-the Gravis Ultrasound (gus=true).
+like a SoundBlaster Pro (``sbtype=sbpro1`` in the DOSBox-X configuration file) or
+the Gravis Ultrasound (``gus=true``).
 
 **SOUND: What sound hardware does DOSBox-X presently emulate?**
 
@@ -124,7 +124,7 @@ is only a best guess as to the sound's accuracy. It is disabled as default.
 
 - Tandy DAC
 
-Some games may require turning off SoundBlaster emulation (sbtype=none)
+Some games may require turning off SoundBlaster emulation (``sbtype=none``)
 for better Tandy DAC sound support. Don't forget to set the sbtype back to
 sb16 if you don't use Tandy sound.
 
@@ -163,17 +163,17 @@ A different device/emulator is needed for Roland LAPC/CM-32L/MT-32 compatibility
 
 - see if it works with a default DOSBox-X installation (unmodified configuration file)
 - try it with sound disabled (use the sound configuration program that comes with the game,
-  additionally you can set ```sbtype=none``` and ```gus=false``` in the DOSBox-X configuration file)
+  additionally you can set ``sbtype=none`` and ``gus=false`` in the DOSBox-X configuration file)
 - change some entries of the DOSBox-X configuration file, especially try:
-* core=normal
-* fixed cycles (for example cycles=10000)
-* ems=false
-* xms=false
+* ``core=normal``
+* fixed cycles (for example ``cycles=10000``)
+* ``ems=false``
+* ``xms=false``
 +
 or combinations of the above settings, similar the machine settings that control the emulated chipset and functionality:
-* machine=vesa_nolfb
+* ``machine=vesa_nolfb``
 or
-* machine=vgaonly
+* ``machine=vgaonly``
 - use loadfix before starting the game
 
 **GENERAL: The game exits to the DOSBox-X prompt with some error message.**
@@ -181,9 +181,9 @@ or
 - read the error message closely and try to locate the error
 - try the hints at the above sections
 - mount differently as some games are picky about the locations,
-  for example if you used ```mount d d:\oldgames\game``` try
-  ```mount c d:\oldgames\game``` and ```mount c d:\oldgames```
-- if the game requires a CD-ROM be sure you used "-t cdrom" when mounting and
+  for example if you used ``mount d d:\oldgames\game`` try
+  ``mount c d:\oldgames\game`` and ``mount c d:\oldgames``
+- if the game requires a CD-ROM be sure you used ``-t cdrom`` when mounting and
   refer to the above "CD-ROM: The game can't find its CD-ROM." for more help.
 - check the file permissions of the game files (remove read-only attributes,
   add write permissions etc.)
