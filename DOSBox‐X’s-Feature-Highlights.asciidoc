@@ -18,9 +18,17 @@ DOSBox-X will automatically let you mount a drive if you try to enter a drive wh
 +
 With DOSBox-X you can now run PC-98 and its games. Set “machine=pc98” to start DOSBox-X in PC-98 mode.
 * CPU optimization and Turbo mode
++
+DOSBox-X can automatically decide the CPU cycles to use for optimized speed, and it provides a Turbo function to increase the speed of the system inside it.
 * Improved customization on the title bar
++
+DOSBox-X allows you to modify or customize things displayed in its title bar.
 * Better compatibility with DOS applications
++
+Aimed to be a complete DOS emulation package, DOSBox-X officially supports DOS applications, not just DOS games. All types of DOS programs are officially supported in DOSBox-X.
 * Built-in external tools such as CWSDPMI, DOSIDLE and IMGMAKE
++
+DOSBox-X has many useful tools already built-in, such as CWSDPMI, DOS4GW, DOSIDLE and IMGMAKE, which will appear on its Z: drive.
 * Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
 * Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
 * Support for 4DOS as the alternative shell with 4DOS 8.00 features and capabilities 
