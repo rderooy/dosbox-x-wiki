@@ -309,8 +309,8 @@ A driver package is available link:https://www.philscomputerlab.com/drivers-for-
 
 If for some reason you do not want 3dfx Voodoo emulation, it can be disabled by adding the following lines to your DOSBox-X config:
 ....
-[pci]
-voodoo=false
+[voodoo]
+voodoo_card=false
 ....
 
 NOTE: Do not enable glide pass-through (``glide=true``) support with Windows 95. Glide pass-through only works with DOS Glide games that utilize GLIDE2X.OVL.
