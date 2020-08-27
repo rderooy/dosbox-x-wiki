@@ -2,10 +2,21 @@ Back to the link:Home[DOSBox-X Wiki Welcome page].
 
 As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a complete DOS emulation package. Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 
-* GUI menu bar and built-in graphical configuration tool
-* Save and load state support (with up to 100 save slots)
+* GUI drop-down menu for easier usage
++
+DOSBox-X features a drop-down menu system so that you can do many things from the GUI menu instead of typing commands or so.
+* Built-in graphical configuration tool
++
+You can configure DOSBox-X‘s settings directly from its built-in GUI configuration tool instead of having to manually modify its config file.
+* Save and load state support (with save slots)
++
+DOSBox-X provides a fully-featured system for saving and loading states with support for up to 100 save slots, selectable from the menu.
 * Automatic drive mounting (Windows only)
++
+DOSBox-X will automatically let you mount a drive if you try to enter a drive which is not yet mounted, and you can also let DOSBox-X automatically mount all available Windows drives at start.
 * Japanese NEC PC-98 mode emulation
++
+With DOSBox-X you can now run PC-98 and its games. Set “machine=pc98” to start DOSBox-X in PC-98 mode.
 * CPU optimization and Turbo mode
 * Improved customization on the title bar
 * Better compatibility with DOS applications
