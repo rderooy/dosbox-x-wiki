@@ -12,6 +12,7 @@ As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a comp
 * Built-in external tools such as CWSDPMI, DOSIDLE and IMGMAKE
 * Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)
 * Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)
+* Support for 4DOS as the alternative shell with 4DOS 8.00 features and capabilities 
 * Support for IDE interfaces and improved Windows 3.x/9x emulation
 * Support for more CPU types (e.g. Pentium MMX and Pro)
 * Support for printer output, either a real or virtual printer
@@ -32,5 +33,6 @@ As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a comp
 * Support for Ctrl+Break in the shell and many internal or external commands
 * Improved debugging features including built-in debugger and logging options
 * Including most patches from DOSBox ECE and many community contributions
-* Lots of gimmicks and usability improvements to make DOSBox-X work better for users
 * Plus many more
+
+DOSBox-X also includes a lot of gimmicks and usability improvements to make DOSBox-X easier to use and work better for users.
