@@ -19,15 +19,23 @@ DOSBox-X has support for emulating the 3dfx Voodoo in one of two modes.
 
 ## Voodoo options
 This section will list the available 3dfx Voodoo configuration options that DOSBox-X provides.
-Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [pci] section of the dosbox-x config file.
+Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [voodoo] section of the dosbox-x config file.
 
-### voodoo
+### voodoo_card
 * Default value: auto
 * Possible values: auto, false, software, opengl
 
 Enables low-level voodoo hardware emulation
 
 The "auto" option means it will try to use OpenGL if possible, and otherwise fallback to software rendering.
+
+### voodoo_maxmem
+* Default value: true
+* Possible values: true, false
+
+Specify whether to enable maximum memory size for the VOODOO hardware.
+
+If true, the memory size will be 12MB (4MB front buffer + 2x4MB texture units). Otherwise, the memory size will be the standard 4MB (2MB front buffer + 1x2MB texture unit).
 
 ### glide
 * Default value: false
