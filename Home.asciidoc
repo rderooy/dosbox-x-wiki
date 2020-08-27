@@ -189,6 +189,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox. In DOSBox-X, the
 
 * **Show mounted drive numbers**: Shows details such as the disk name for all mounted drive numbers (0-5).
 
+* **Send form-feed**: Manually sends a form-feed to the printer for ejecting a new page.
+
 **6. The "Capture" menu**
 
 * **Take screenshot**: Takes a screenshot of the current DOS screen in PNG format.
@@ -881,7 +883,7 @@ Sets the specified config option, overriding such option (if exists) in the load
 Starts and terminates DOSBox-X after 'n' seconds.
 * **-fastlaunch**
 +
-Enables fast launch by skipping the BIOS pause and startup messages.
+Enables fast launch mode by skipping the BIOS pause and welcome banner when DOSBox-X starts.
 * **-helpdebug**
 +
 Shows debug-related command-line options.
