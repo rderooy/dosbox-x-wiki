@@ -10,7 +10,7 @@ toc::[]
 The 3dfx Voodoo is a 3D accelerator chipset released in late 1996, and sold by various graphic card manufacturers.
 The original Voodoo 1 adapters need to be used in conjunction with a separate VGA adapter in a pass-through manor.
 
-As these where the early days of 3D acceleration, it uses it's own proprietary Glide API which was supported by many DOS and Windows 9x games at the time.
+As these where the early days of 3D acceleration, it uses its own proprietary Glide API which was supported by many DOS and Windows 9x games at the time.
 
 DOSBox-X has support for emulating the 3dfx Voodoo in one of two modes.
 
@@ -19,13 +19,13 @@ DOSBox-X has support for emulating the 3dfx Voodoo in one of two modes.
 
 ## Voodoo options
 This section will list the available 3dfx Voodoo configuration options that DOSBox-X provides.
-Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [voodoo] section of the dosbox-x config file.
+Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [voodoo] section of the DOSBox-X config file.
 
 ### voodoo_card
 * Default value: auto
 * Possible values: auto, false, software, opengl
 
-Enables low-level voodoo hardware emulation
+Enables low-level Voodoo hardware emulation.
 
 The "auto" option means it will try to use OpenGL if possible, and otherwise fallback to software rendering.
 
@@ -33,16 +33,16 @@ The "auto" option means it will try to use OpenGL if possible, and otherwise fal
 * Default value: true
 * Possible values: true, false
 
-Specify whether to enable maximum memory size for the VOODOO hardware.
+Enables maximum memory size for the Voodoo hardware.
 
-If true, the memory size will be 12MB (4MB front buffer + 2x4MB texture units). Otherwise, the memory size will be the standard 4MB (2MB front buffer + 1x2MB texture unit).
+If true (default), the memory size will be 12MB (4MB front buffer + 2x4MB texture units). Otherwise, the memory size will be the standard 4MB (2MB front buffer + 1x2MB texture unit).
 
 ### glide
 * Default value: false
 * Possible values: true, false
 
 Enables high-level Glide API pass-through to the host OS.
-This requires that the host OS has a Glide API library installed, and in addition it requires a special GLIDE2X.OVL file to be used in DOSBox-X.
+This requires that the host OS has a Glide API library (or Glide wrapper) installed, and in addition it requires the special GLIDE2X.OVL file provided by DOSBox-X.
 
 ### lfb
 * Default value: full_noaux
@@ -65,7 +65,7 @@ In addition, this is only supported on Windows, and it requires 3dfxSpl2.dll to 
 * Default value: false
 * Possible values: true, false
 
-This setting is located in the [cpu] section of the dosbox-x config file.
+This setting is located in the [cpu] section of the DOSBox-X config file.
 
 Normally the CPU will fire an Invalid Opcode exception in the case of an undefined MSR (Model-specific register).
 
