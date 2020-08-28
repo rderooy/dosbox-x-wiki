@@ -61,6 +61,8 @@ Show 3dfx splash screen
 This option only applies when using the high-level Glide API emulation.
 In addition, this is only supported on Windows, and it requires 3dfxSpl2.dll to be installed.
 
+## [cpu] options
+
 ### ignore undefined msr
 * Default value: false
 * Possible values: true, false
