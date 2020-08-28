@@ -17,7 +17,7 @@ DOSBox-X has support for emulating the 3dfx Voodoo in one of two modes.
 * Low-Level Emulation, emulating the 3dfx Voodoo 1 hardware
 * High-Level Emulation, where the Glide API calls are passed through to the host OS.
 
-## Voodoo options
+## [Voodoo] options
 This section will list the available 3dfx Voodoo configuration options that DOSBox-X provides.
 Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [voodoo] section of the DOSBox-X config file.
 
