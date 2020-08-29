@@ -17,7 +17,7 @@ DOSBox-X has support for emulating the 3dfx Voodoo in one of two modes.
 * Low-Level Emulation, emulating the 3dfx Voodoo 1 hardware
 * High-Level Emulation, where the Glide API calls are passed through to the host OS.
 
-## [Voodoo] options
+## [voodoo] options
 This section will list the available 3dfx Voodoo configuration options that DOSBox-X provides.
 Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [voodoo] section of the DOSBox-X config file.
 
@@ -61,7 +61,7 @@ Show 3dfx splash screen
 This option only applies when using the high-level Glide API emulation.
 In addition, this is only supported on Windows, and it requires 3dfxSpl2.dll to be installed.
 
-## [cpu] options
+## [cpu] option
 
 ### ignore undefined msr
 * Default value: false
@@ -72,7 +72,7 @@ This setting is located in the [cpu] section of the DOSBox-X config file.
 Normally the CPU will fire an Invalid Opcode exception in the case of an undefined MSR (Model-specific register).
 
 This option is off by default, enable if using software or drivers that assumes the presence of certain MSR registers without checking.
-If you are using certain versions of the original 3Dfx glide drivers for MS-DOS you will need to set this to TRUE as 3Dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
+If you are using certain versions of the original 3dfx Glide drivers for MS-DOS you will need to set this to TRUE as 3Dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
 
 Another way to circumvent this issue with the 3dfx drivers, is by emulating a Pentium Pro CPU in DOSBox-X by setting ``cputype=ppro_slow`` in the [cpu] section of your DOSBox-X config file.
 
