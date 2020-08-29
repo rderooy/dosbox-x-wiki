@@ -47,6 +47,11 @@ DOSBox-X supports the BIOS IDE interface, which is especially useful for running
 * **Support for more CPU types (e.g. Pentium MMX and Pro)**
 +
 DOSBox-X supports virtually all CPU types prior to Pentium II at this time, from 8086 to Pentium Pro, including support for Pentium MMX instructions.
+
+* **Support for more video modes (e.g. MDA and MCGA)**
++
+DOSBox-X supports more video modes in addition to the more common ones, such as MDA, MCGA, Amstrad, and a few others.
+
 * **Support for printer output, either a real or virtual printer**
 +
 DOSBox-X supports parallel ports and printers attached to them, whether they are real printers or emulated printers for PostScript or PNG outputs.
