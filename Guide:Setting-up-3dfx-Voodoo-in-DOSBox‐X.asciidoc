@@ -25,7 +25,7 @@ Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in th
 * Default value: auto
 * Possible values: auto, false, software, opengl
 
-Enables low-level Voodoo hardware emulation.
+Enables low-level Voodoo card hardware emulation.
 
 The "auto" option means it will try to use OpenGL if possible, and otherwise fallback to software rendering.
 
@@ -33,7 +33,7 @@ The "auto" option means it will try to use OpenGL if possible, and otherwise fal
 * Default value: true
 * Possible values: true, false
 
-Enables maximum memory size for the Voodoo hardware.
+Enables maximum memory size for the Voodoo card hardware.
 
 If true (default), the memory size will be 12MB (4MB front buffer + 2x4MB texture units). Otherwise, the memory size will be the standard 4MB (2MB front buffer + 1x2MB texture unit).
 
@@ -72,7 +72,7 @@ This setting is located in the [cpu] section of the DOSBox-X config file.
 Normally the CPU will fire an Invalid Opcode exception in the case of an undefined MSR (Model-specific register).
 
 This option is off by default, enable if using software or drivers that assumes the presence of certain MSR registers without checking.
-If you are using certain versions of the original 3dfx Glide drivers for MS-DOS you will need to set this to TRUE as 3Dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
+If you are using certain versions of the original 3dfx Glide drivers for MS-DOS you will need to set this to TRUE as 3dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
 
 Another way to circumvent this issue with the 3dfx drivers, is by emulating a Pentium Pro CPU in DOSBox-X by setting ``cputype=ppro_slow`` in the [cpu] section of your DOSBox-X config file.
 
@@ -90,7 +90,7 @@ This mode requires DOSBox-X 0.83.5 or newer, and it only works for DOS games tha
 
 Instead of emulating the 3dfx hardware, this method converts the Glide API calls to OpenGL and is therefore more efficient.
 However, it also requires a few more steps to get working.
-It requires that the Host OS has a Glide API library installed (glide2x.dll, libglide2x.so or libglide2x.dylib), and that you use the special GLIDE2X.OVL provided in DOSBox-X, instead of one that may be provided with the game or provided by 3dfx.
+It requires that the Host OS has a Glide API library installed (glide2x.dll for Windows, libglide2x.so for Linux, and libglide2x.dylib for macOS), and that you use the special GLIDE2X.OVL provided in DOSBox-X, instead of one that may be provided with the game or provided by 3dfx.
 
 When DOSBox-X is started with glide=true the special GLIDE2X.OVL file will automatically appear on the emulated Z: drive. If the game already provides a GLIDE2X.DLL file located in the game directory, then you need to rename the game’s original GLIDE2X.OVL file to something like GLIDE2X.ORG. Then the game can usually find the GLIDE2X.DLL on the Z: drive automatically, but if not, you also need to copy the GLIDE2X.OVL file from the Z: drive to the game directory for use with the game.
 
