@@ -54,21 +54,25 @@ DOSBox-X has a built-in ``IMGMAKE`` command with which you can create FAT12 form
 
 Example:
 ....
+IMGMAKE disk.ima -t fd
+....
+This is equivalent to
+....
 IMGMAKE disk.ima -t fd_1440
 ....
-This will create a 1.44MB formatted disk image named disk.ima.
+The above command will create a 1.44MB formatted disk image named disk.ima.
 The diskette image will appear to have been formatted by MS-DOS 5.0.
 
 The image filename for this command is optional, and if you do not specify a filename, then the name IMGMAKE.IMG will be used, such as the following:
 ....
-IMGMAKE -t fd_1440
+IMGMAKE -t fd
 ....
 
 NOTE: The filename for the disk image is not limited to the DOS 8.3 filename length, but rather by your host filesystem. In DOSBox-X you can also specify the ``-force`` parameter to overwrite the file if it already exists.
 
 You can optionally create a diskette image that is not formatted with:
 ....
-IMGMAKE disk.ima -t fd_1440 -nofs
+IMGMAKE disk.ima -t fd -nofs
 ....
 NOTE: DOSBox-X has no integrated FORMAT command, so creating diskette images that are not formatted is typically not recommended.
 
@@ -88,7 +92,7 @@ Supported diskette sizes options:
 |5.25" DSDD (10 sector)|400KB|-t fd_400
 |5.25" HD|1200KB (1.2MB)|-t fd_1200
 |3.5" DSDD (2DD)|720KB|-t fd_720
-|3.5" HD|1440KB (1.44MB)|-t fd_1440
+|3.5" HD|1440KB (1.44MB)|-t fd_1440 or -t fd
 |3.5" ED|2880KB (2.88MB)|-t fd_2880
 |===
 
@@ -687,7 +691,7 @@ Obviously, copying files to write-protected media is not possible. As such you c
 
 The general steps are as follows:
 
-1. start DOSBox-X
+1. Start DOSBox-X
 2. ``imgmount`` the image file in DOSBox-X that you want to copy files into or out of
 3. ``mount`` a host directory or drive
 4. Copy the files using the ``copy`` or ``xcopy`` commands
