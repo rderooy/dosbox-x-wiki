@@ -1,0 +1,130 @@
+Back to the link:Home[DOSBox-X Wiki Welcome page].
+
+DOSBox-X supports command-line options. You can start DOSBox-X without any option, or with any of the following options. Options like **-c** and **-set** can be used multiple times in the command line.
+
+* **-?**, **-h** or **-help**
++
+Shows DOSBox-X's help message.
+* **-editconf [program]**
++
+Calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start.
+* **-opencaptures [program]**
++
+Calls program with as first parameter the location of the captures folder.
+* **-opensaves [program]**
++
+Calls program with as first parameter the location of the saves folder.
+* **-eraseconf** or **-resetconf**
++
+Erases DOSBox-X's default config file.
+* **-printconf**
++
+Generates DOSBox-X's config file in the user directory and prints its location.
+* **-erasemapper** or **-resetmapper**
++
+Erases the mapper file used by the default clean configuration file.
+* **-nogui**
++
+Starts DOSBox-X without showing its GUI menu.
+* **-nomenu**
++
+Starts DOSBox-X without showing its GUI menu.
+* **-userconf**
++
+Loads the configuration from the user's profile or home directory.
+* **-conf [file]**
++
+Uses the specified file as DOSBox-X's config file.
+* **-startui** or **-startgui**
++
+Starts DOSBox-X with its configuration GUI dialog, where you can review or change its settings.
+* **-startmapper**
++
+Starts DOSBox-X and enters to the keyboard mapper editor directly.
+* **-showcycles**
++
+Shows cycles count (FPS) on the DOSBox-X title bar.
+* **-showrt**
++
+Shows emulation speed relative to realtime on the DOSBox-X title bar.
+* **-fullscreen**
++
+Starts DOSBox-X in full-screen mode.
+* **-savedir [path]**
++
+Uses the specified path as DOSBox-X's save path, including the saved states.
+* **-defaultdir [path]**
++
+Uses the specified path as DOSBox-X's default path, the location for files including the dosbox-x.conf config file.
+* **-winrun**
++
+Enables launching Windows programs to run on the host (such as the use of START command) and the Windows clipboard communications via the CLIP$ device (Windows version only).
+* **-disable-numlock-check**
++
+Disables check of the NumLock key (Windows version only).
+* **-date-host-forced**
++
+Forces synchronization of date with the host system.
+* **-lang [message file]**
++
+Uses specific message file instead of language= setting.
+* **-nodpiaware**
++
+Ignores (don't signal) Windows DPI awareness.
+* **-securemode**
++
+Enables DOSBox-X's secure mode. The [config] and [autoexec] sections of the loaded configuration file will be skipped, and commands such as MOUNT and IMGMOUNT are disabled.
+* **-noconfig**
++
+Skips the [config] section of the loaded configuration file.
+* **-noautoexec**
++
+Skips the [autoexec] section of the loaded configuration file.
+* **-exit**
++
+Exits after executing the [autoexec] section of the loaded configuration file.
+* **-c [command string]**
++
+Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
+* **-set <section property=value>**
++
+Sets the specified config option, overriding such option (if exists) in the loaded configuration file. Make sure to surround the string in quotes to cover spaces.
+* **-time-limit [n]**
++
+Starts and terminates DOSBox-X after 'n' seconds.
+* **-fastlaunch**
++
+Enables fast launch mode by skipping the BIOS pause and welcome banner when DOSBox-X starts.
+* **-helpdebug**
++
+Shows debug-related command-line options.
+
+**The following are debug-related options:**
+
+* **-debug**
++
+Sets all logging levels to debug.
+* **-early-debug**
++
+Logs early initialization messages in DOSBox-X (this option implies -console).
+* **-keydbg**
++
+Logs all SDL key events (debugging).
+* **-break-start**
++
+Starts DOSBox-X and breaks into its debugger directly.
+* **-console**
++
+Starts DOSBox-X with the console window (Windows builds only).
+* **-noconsole**
++
+Starts DOSBox-X without showing the console window (Windows debug builds only).
+* **-log-con**
++
+Logs CON output to a log file.
+* **-log-int21**
++
+Logs calls to INT 21h (debug level).
+* **-log-fileio**
++
+Logs file I/O through INT 21h (debug level).
