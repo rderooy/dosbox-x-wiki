@@ -188,16 +188,16 @@ Explains how to make and use floppy, hard disk, and optical disc images in DOSBo
 Explains the different ways to copy to and paste from the Windows clipboard in DOSBox-X.
 * link:Guide%3ARegional-settings-in-DOSBox‐X[Guide: Regional settings in DOSBox‐X]
 +
-Explains the ways to customize the regional settings in DOSBox-X, such as support for the Euro symbol and keyboard layouts.
+Explains how to customize DOSBox-X's regional settings, such as support for the Euro symbol and keyboard layouts.
 * link:Guide%3ASetting-up-3dfx-Voodoo-in-DOSBox‐X[Guide: Setting up 3dfx Voodoo in DOSBox-X]
 +
-Explains the emulation of the 3dfx Voodoo using either the Voodoo hardware emulation or the Glide API passthrough.
+Explains the emulation of 3dfx Voodoo, using either the Voodoo hardware emulation or the Glide API passthrough.
 * link:Guide%3ASetting-up-MIDI-in-DOSBox‐X[Guide: Setting up MIDI in DOSBox-X]
 +
-Explains how to set up and use MIDI emulations in DOSBox-X, such as General MIDI and Roland MT-32 synthesizer emulations.
+Explains how to set up and use DOSBox-X's MIDI feature, such as General MIDI and Roland MT-32 emulations.
 * link:Guide%3ASetting-up-printing-in-DOSBox‐X[Guide: Setting up printing in DOSBox-X]
 +
-Explains how to use DOSBox-X's printing feature, either to a real printer or to a virtual printer (e.g. print to PNG or PostScript).
+Explains how to use DOSBox-X's printing feature, either to a real or a virtual printer (e.g. print to PNG or PS).
 * link:Guide%3ASetting-up-networking-in-DOSBox‐X[Guide: Setting up networking in DOSBox-X]
 +
 Explains how to set up and use the network with the emulated Novell NE2000 network adapter.
