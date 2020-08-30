@@ -34,13 +34,13 @@ Starts DOSBox-X without showing its GUI menu.
 Loads the configuration from the user's profile or home directory.
 * **-conf [file]**
 +
-Uses the specified file as DOSBox-X's config file.
+Uses the specified file as DOSBox-X's config file. For example, ``-conf test.conf`` will let DOSBox-X use test.conf as its config file.
 * **-startui** or **-startgui**
 +
-Starts DOSBox-X with its configuration GUI dialog, where you can review or change its settings.
+Starts DOSBox-X with its Configuration GUI interface, where you can review or change its settings.
 * **-startmapper**
 +
-Starts DOSBox-X and enters to the keyboard mapper editor directly.
+Starts DOSBox-X and enters to the keyboard mapper editor directly, where you can change DOSBox-X’s key mappings.
 * **-showcycles**
 +
 Shows cycles count (FPS) on the DOSBox-X title bar.
@@ -55,10 +55,10 @@ Starts DOSBox-X in full-screen mode.
 Uses the specified path as DOSBox-X's save path, including the saved states.
 * **-defaultdir [path]**
 +
-Uses the specified path as DOSBox-X's default path, the location for files including the dosbox-x.conf config file.
+Uses the specified path as DOSBox-X's default path (instead of the current directory which is usually the DOSBox-X program directory), the location for files including the dosbox-x.conf config file.
 * **-winrun**
 +
-Enables launching Windows programs to run on the host (such as the use of START command) and the Windows clipboard communications via the CLIP$ device (Windows version only).
+Enables launching Windows programs to run on the host (such as the use of START command), long filenames support and Windows clipboard communications via the CLIP$ device (Windows version only).
 * **-disable-numlock-check**
 +
 Disables check of the NumLock key (Windows version only).
@@ -67,7 +67,7 @@ Disables check of the NumLock key (Windows version only).
 Forces synchronization of date with the host system.
 * **-lang [message file]**
 +
-Uses specific message file instead of language= setting.
+Uses the specified language file instead of language= setting. For example, ``-lang C:\message.txt`` will use the file "C:\message.txt" as the language file.
 * **-nodpiaware**
 +
 Ignores (don't signal) Windows DPI awareness.
@@ -85,16 +85,16 @@ Skips the [autoexec] section of the loaded configuration file.
 Exits after executing the [autoexec] section of the loaded configuration file.
 * **-c [command string]**
 +
-Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces.
+Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces. For example, ``-c "MOUNT C C:\DOS"`` will cause DOSBox-X to execute the command ``MOUNT C C:\DOS`` at start.
 * **-set <section property=value>**
 +
-Sets the specified config option, overriding such option (if exists) in the loaded configuration file. Make sure to surround the string in quotes to cover spaces.
+Sets the specified config option, overriding such option (if exists) in the loaded configuration file. Make sure to surround the string in quotes to cover spaces. For example, ``-set machine=pc98`` will force DOSBox-X to start in PC-98 mode.
 * **-time-limit [n]**
 +
 Starts and terminates DOSBox-X after 'n' seconds.
 * **-fastlaunch**
 +
-Enables fast launch mode by skipping the BIOS pause and welcome banner when DOSBox-X starts.
+Enables fast launch mode by skipping the BIOS pause and welcome banner when DOSBox-X starts. Especially use for launching a specific program or game at start.
 * **-helpdebug**
 +
 Shows debug-related command-line options.
