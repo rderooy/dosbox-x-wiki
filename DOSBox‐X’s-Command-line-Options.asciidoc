@@ -31,7 +31,7 @@ Starts DOSBox-X without showing its GUI menu.
 Starts DOSBox-X without showing its GUI menu.
 * **-userconf**
 +
-Loads the configuration from the user's profile or home directory.
+Loads the configuration file from the user's profile or home directory.
 * **-conf [file]**
 +
 Uses the specified file as DOSBox-X's config file. For example, ``-conf test.conf`` will let DOSBox-X use test.conf as its config file.
@@ -52,7 +52,7 @@ Shows emulation speed relative to realtime on the DOSBox-X title bar.
 Starts DOSBox-X in full-screen mode.
 * **-savedir [path]**
 +
-Uses the specified path as DOSBox-X's save path, including the saved states.
+Uses the specified path as DOSBox-X's save path, including the location for the saved states.
 * **-defaultdir [path]**
 +
 Uses the specified path as DOSBox-X's default path (instead of the current directory which is usually the DOSBox-X program directory), the location for files including the dosbox-x.conf config file.
@@ -70,7 +70,7 @@ Forces synchronization of date with the host system.
 Uses the specified language file instead of language= setting. For example, ``-lang C:\message.txt`` will use the file "C:\message.txt" as the language file.
 * **-nodpiaware**
 +
-Ignores (don't signal) Windows DPI awareness.
+Ignores (don't signal) Windows DPI awareness. May be useful if DOSBox-X starts in a very small window on some computers.
 * **-securemode**
 +
 Enables DOSBox-X's secure mode. The [config] and [autoexec] sections of the loaded configuration file will be skipped, and commands such as MOUNT and IMGMOUNT are disabled.
@@ -85,7 +85,7 @@ Skips the [autoexec] section of the loaded configuration file.
 Exits after executing the [autoexec] section of the loaded configuration file.
 * **-c [command string]**
 +
-Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces. For example, ``-c "MOUNT C C:\DOS"`` will cause DOSBox-X to execute the command ``MOUNT C C:\DOS`` at start.
+Executes the specified command in addition to the [autoexec] section of the loaded configuration file. Make sure to surround the command in quotes to cover spaces. For example, ``-c "MOUNT C C:\\DOS"`` will cause DOSBox-X to execute the command ``MOUNT C C:\DOS`` at start.
 * **-set <section property=value>**
 +
 Sets the specified config option, overriding such option (if exists) in the loaded configuration file. Make sure to surround the string in quotes to cover spaces. For example, ``-set machine=pc98`` will force DOSBox-X to start in PC-98 mode.
