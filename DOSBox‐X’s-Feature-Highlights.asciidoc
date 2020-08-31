@@ -17,12 +17,15 @@ DOSBox-X will automatically let you mount a drive if you try to enter a drive wh
 * **Japanese NEC PC-98 mode emulation**
 +
 With DOSBox-X you can now run PC-98 and its games. Set ``machine=pc98`` in the config file to start DOSBox-X in PC-98 mode.
-* **CPU optimization and Turbo mode**
+* **More customizable virtual machine**
++
+DOSBox-X provides many more config options that are not found in DOSBox, so that users have more options to customize the virtual machine inside DOSBox-X.
+* **CPU speed optimization and Turbo mode**
 +
 DOSBox-X can automatically decide the CPU cycles to use for optimized speed, and it provides a Turbo function to increase the speed of the system inside it.
 * **Improved customization on the title bar**
 +
-DOSBox-X allows you to modify or customize the strings and additional contents displayed in its title bar.
+DOSBox-X allows you to modify or customize the strings and additional contents displayed in its title bar and its appearance.
 * **Better compatibility with DOS applications**
 +
 Aimed to be a complete DOS emulation package, DOSBox-X officially supports DOS applications, not just DOS games. All types of DOS programs are officially supported in DOSBox-X.
@@ -43,7 +46,7 @@ DOSBox-X supports a [config] section that supports most DOS config.sys commands,
 You can set SHELL=4DOS.COM so that DOSBox-X will run the 4DOS 8.00 shell at start instead of the default shell.
 * **Support for the IDE interface for disk images**
 +
-DOSBox-X supports the BIOS IDE interface, which is especially useful for running guest systems.
+DOSBox-X supports the BIOS IDE interface for hard disk and CD drives, which is especially useful for running guest systems inside DOSBox-X.
 * **Support for more CPU types (e.g. Pentium MMX and Pro)**
 +
 DOSBox-X supports virtually all CPU types prior to Pentium II at this time, from 8086 to Pentium Pro, including support for Pentium MMX instructions.
@@ -57,7 +60,7 @@ DOSBox-X supports more video modes in addition to the more common ones, such as 
 DOSBox-X supports parallel ports and printers attached to them, whether they are real printers or emulated printers for PostScript or PNG outputs.
 * **Support for long filenames (LFN) in addition to 8.3 filenames**
 +
-DOSBox-X fully supports long filenames (LFN) which can be up to 255 characters, not just 8.3 names. Set either ``ver=7.1`` or ``lfn=true`` in the config file to enable the feature.
+DOSBox-X fully supports long filenames (LFN) which can be up to 255 characters, not just 8.3 names. Set either ``ver=7.1`` or ``lfn=true`` in the config file to enable this feature.
 * **Support for FAT32 file system and large disk images**
 +
 FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so you can make and mount drives larger than 2GB. Set ``ver=7.1`` to enable this feature.
@@ -98,7 +101,11 @@ DOSBox-X integrates the emulation of Roland MT-32, which pre-dates General MIDI 
 +
 DOSBox-X supports the FluidSynth MIDI synthesizer, which allows you to use a wide range of sound fonts available online, such as the free FluidR3_GM.sf2.
 * **Support for Innovation SSI-2001 sound card emulation**
++
+The Innovation SSI-2001 sound card is supported in DOSBox-X as well, which gives the emulated system the sound capabilities of a Commodore 64.
 * **Support for OpenglHQ and Direct3D with pixel shaders (Windows only)**
++
+Supporting for OpenglHQ and Direct3D gives DOSBox-X many more output flexibilities on Windows systems.
 * **Support for features such as V-Sync, overscan border and stereo swapping**
 * **Improved debugging features including built-in debugger and logging options**
 * **Including most patches from DOSBox ECE and many community contributions**
