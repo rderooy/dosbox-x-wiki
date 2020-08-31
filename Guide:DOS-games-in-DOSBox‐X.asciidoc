@@ -18,15 +18,15 @@ If you installed DOSBox-X 0.83.5 or later using the Windows installer, you can a
 
 Otherwise, you can manually run the DOS game from the DOSBox-X command line. Now start DOSBox-X. By default there is no drive mounted other than the internal virtual drive Z:. You need to mount the game directory so that it can be seen from within DOSBox-X. You can either mount a drive from the Drive menu, or by typing a command like the following:
 
-```
+....
 MOUNT C C:\GAME
-```
+....
 
 Change ``C:\GAME`` to your actual game directory. After you type Enter, the following message will be displayed:
 
-```
+....
 Drive C mounted as local directory C:\GAME\
-```
+....
 
 To dissect the above:
 
@@ -35,30 +35,30 @@ C: Tells the program what you want your new drive to be called (leaving it as C:
 C:\GAME: This is the directory you want to set as the new drive for DOSBox-X. If your game is located in a different directory, then replace it with that directory.
 (Note: If you want to mount a CD-ROM instead of a folder, type this:
 
-```
+....
 MOUNT D D:\ -T CDROM
-```
+....
 
 The following message will be displayed:
 
-```
+....
 MSCDEX installed.
 Drive D is mounted as CDRom D:\
-```
+....
 
 In this example, ``D:\ -T CDROM`` tells DOSBox-X that my D:\ drive is a CD-ROM drive, and the first D, tells DOSBox-X what my new drive name should be called. If you are running your game off a CD-ROM then make sure to use D: in place of C: in the following examples. You can find instructions on how to mount other devices, such as floppy drives, in the mount section).
 
 After you have done this, you will be prompted with a Z:\>. Now, just write what you wanted to call your new DOSBox-X drive, such as C: mentioned above. To navigate to that newly mounted drive just type in:
 
-```
+....
 C:
-```
+....
 
 The drive will be changed from Z:\ to C:\. And it is now time to run the game. Most games have an EXE file in their directory that you can run. However, some might require a BAT file, or COM file (common in demos and really old games). Most of the time, the file is in the root folder. Please consult the documentation of your game for which file is needed to start the game. Suppose the game executable is called PLAY.EXE, then you can just type this:
 
-```
+....
 PLAY.EXE
-```
+....
 
 That's it! You can now enjoy the game.
 
@@ -66,13 +66,16 @@ That's it! You can now enjoy the game.
 
 **CD-ROM: The game can't find its CD-ROM.**
 
-Be sure to mount the CD-ROM with ``-t cdrom`` switch, this will enable the
+If your mounting a host folder as CD-ROM, or if (on Windows) your want to
+mount your real CD-ROM or DVD-ROM drive for use in DOSBox-X, be sure to
+mount the CD-ROM with the ``-t cdrom`` switch. This will enable the
 MSCDEX interface required by DOS games to interface with CD-ROMs.
 Also try adding the correct label (``-label LABEL``) to the mount command,
 where LABEL is the CD-label (volume ID) of the CD-ROM.
 
-Try creating a CD-ROM image (preferably CUE/BIN pair) and use the
-DOSBox-X's internal IMGMOUNT tool to mount the image (the CUE sheet).
+Alternatively, try creating a CD-ROM image (ISO or CUE/BIN pair) and use
+DOSBox-X's internal IMGMOUNT tool to mount the image. If the CD contains
+multiple tracks, such as redbook audio, you need to use the CUE/BIN format.
 This enables very good low-level CD-ROM support on any operating system.
 
 **MOUSE: The mouse doesn't work.**
@@ -155,7 +158,7 @@ inside DOSBox. It is disabled by default.
 
 A MIDI passthrough interface is also emulated. This method of sound
 output will only work when used with external device/emulator.
-Every Windows XP/Vista/7 and macOS (Mac OS X) has got a default emulator 
+Every Windows XP/Vista/7 and macOS (Mac OS X) has got a default emulator
 compatible with: Sound Canvas/SCC/General Standard/General MIDI/Wave Blaster.
 A different device/emulator is needed for Roland LAPC/CM-32L/MT-32 compatibility.
 
