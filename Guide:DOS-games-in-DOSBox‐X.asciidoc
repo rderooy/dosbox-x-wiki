@@ -167,6 +167,14 @@ A different device/emulator is needed for Roland LAPC/CM-32L/MT-32 compatibility
 
 **GENERAL: Running a certain game closes DOSBox-X, crashes with some message or hangs.**
 
+There can be many reasons that a game crashes or misbehaves.
+DOS compatible PC's existed for a long time, from many different manufacturers.
+And during that time many upgrades to components where made.
+As such, even with a legacy DOS PC you can expect to run into compatibility issues.
+
+It can be that the game needs specific DOSBox-X settings, or the game may simply be
+buggy and behave the same on legacy DOS PC configurations.
+
 - see if it works with a default DOSBox-X installation (unmodified configuration file)
 - try it with sound disabled (use the sound configuration program that comes with the game,
   additionally you can set ``sbtype=none`` and ``gus=false`` in the DOSBox-X configuration file)
@@ -181,6 +189,7 @@ or combinations of the above settings, similar the machine settings that control
 or
 * ``machine=vgaonly``
 - run ``LOADFIX`` before starting the game
+- check if any patches exist for the game
 
 If none of this fixes the problem, try to search for the game on the following
 websites for known issues.
