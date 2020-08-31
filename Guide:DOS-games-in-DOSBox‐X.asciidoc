@@ -64,32 +64,6 @@ That's it! You can now enjoy the game.
 
 ## Troubleshooting
 
-**Crash: The game crashes or misbehaves**
-
-There can be many reasons that a game crashes or misbehaves. One of the more
-common problems with older DOS games, is that they expect not to be loaded
-too low in conventional (base) memory. So one of the first things to try is
-to run ``LOADFIX`` before running the game. LOADFIX will by default allocate
-64kB of RAM. e.g.
-....
-LOADFIX GAME.EXE
-....
-You can specify a different amount as follows:
-....
-LOADFIX -32 GAME.EXE
-....
-Will instead allocate 32kB.
-
-If this does not fix the problem, try to search for the game on the following
-website for known issues.
-
-* link:https://www.dosbox.com/comp_list.php[DOSBox compatibility]
-* link:https://www.pcgamingwiki.com/wiki/Home[PC Gaming Wiki]
-* link:https://www.vogons.org/viewforum.php?f=53[Vogons forums]
-
-Do note that sometimes the information you may find is rather dated, and may
-no longer be applicable for DOSBox-X.
-
 **CD-ROM: The game can't find its CD-ROM.**
 
 If your mounting a host folder as CD-ROM, or if (on Windows) your want to
@@ -207,6 +181,32 @@ or combinations of the above settings, similar the machine settings that control
 or
 * ``machine=vgaonly``
 - use loadfix before starting the game
+
+**GENERAL: The game crashes or misbehaves**
+
+There can be many reasons that a game crashes or misbehaves. One of the more
+common problems with older DOS games, is that they expect not to be loaded
+too low in conventional (base) memory. So one of the first things to try is
+to run ``LOADFIX`` before running the game. LOADFIX will by default allocate
+64kB of RAM. e.g.
+....
+LOADFIX GAME.EXE
+....
+You can specify a different amount as follows:
+....
+LOADFIX -32 GAME.EXE
+....
+Will instead allocate 32kB.
+
+If this does not fix the problem, try to search for the game on the following
+websites for known issues.
+
+* link:https://www.dosbox.com/comp_list.php[DOSBox compatibility]
+* link:https://www.pcgamingwiki.com/wiki/Home[PC Gaming Wiki]
+* link:https://www.vogons.org/viewforum.php?f=53[Vogons forums]
+
+Do note that sometimes the information you may find is rather dated, and may
+no longer be applicable for DOSBox-X.
 
 **GENERAL: The game exits to the DOSBox-X prompt with some error message.**
 
