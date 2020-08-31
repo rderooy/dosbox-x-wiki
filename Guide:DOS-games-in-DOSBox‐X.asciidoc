@@ -180,7 +180,7 @@ or combinations of the above settings, similar the machine settings that control
 * ``machine=vesa_nolfb``
 or
 * ``machine=vgaonly``
-- use loadfix before starting the game
+- run ``LOADFIX`` before starting the game
 
 If none of this fixes the problem, try to search for the game on the following
 websites for known issues.
