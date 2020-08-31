@@ -80,10 +80,13 @@ This enables very good low-level CD-ROM support on any operating system.
 
 **MOUSE: The mouse doesn't work.**
 
-Usually, DOSBox-X detects when a game uses mouse control. When you click on
+By default mouse autolock is disabled in the DOSBox-X config file. You can either
+edit the config file and in the ``[SDL]`` section, set ``autolock=true``.
+Or you can go to the "Main" menu and select "Capture mouse". If DOSBox-X detects
+when a program uses PS/2 mouse control and autolock is enabled, when you click on
 the screen it should get locked (confined to the DOSBox-X window) and work.
-With certain games, the DOSBox-X mouse detection doesn't work. In that case
-you will have to lock the mouse manually ("Capture mouse" from the "Main" menu).
+
+Alternatively you can press Left-CTRL F10 to lock and unlock the mouse.
 
 **SOUND: There is no sound.**
 
