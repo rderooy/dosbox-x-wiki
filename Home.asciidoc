@@ -123,7 +123,7 @@ Notes:
 * **2:** **LCtrl** means the Left Ctrl key, **LShift** means the Left Shift key, and **LAlt** means the Left Alt key.
 
 ### DOSBox-X's Mapper Editor
-You can change mappings for keyboard shortcuts etc in DOSBox-X using the mapper editor. The mapper editor can be started either from the "Main" menu or with the command-line parameter -startmapper. You are presented with an interface including a virtual keyboard, a virtual mouse, as well as virtual joysticks and a table of functions.
+You can define or change mappings for input devices such as keyboard shortcuts and joysticks buttons in DOSBox-X using the mapper editor. The mapper editor can be started either from the "Main" menu or with the command-line parameter -startmapper. You are presented with an interface including a virtual keyboard, a virtual mouse, as well as virtual joysticks and a table of functions.
 
 The virtual devices correspond to the keys and events DOSBox-X will report to the DOS applications. If you click on a button with your mouse, you can see in the lower left corner with which event it is associated (EVENT) and to what events it is currently bound (BIND).
 
