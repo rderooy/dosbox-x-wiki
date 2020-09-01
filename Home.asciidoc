@@ -106,6 +106,10 @@ Start/Stop capturing an AVI video of the current session.
 Start/Stop recording a WAV audio of the current session.
 * **LAlt+Pause**
 Start DOSBox-X's Debugger.
+* **LCtrl+LAlt+F7**
+Select the previous save slot to save to or load from.
+* **LCtrl+LAlt+F8**
+Select the next save slot to save to or load from.
 * **LCtrl+F7**
 Save current state to the selected save slot.
 * **LCtrl+F8**
