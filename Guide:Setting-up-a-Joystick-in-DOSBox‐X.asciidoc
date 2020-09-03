@@ -7,7 +7,7 @@ Back to the link:Home[DOSBox-X Wiki Welcome page]
 toc::[]
 
 # Overview
-While game consoles and most home-computers back in the day had two or more Joystick ports, the IBM PC and its clones had none.
+While game consoles and most home-computers back in the day had two or more Joystick ports, the IBM PC and its clones typically had none.
 IBM did provide a DA-15 game-port adapter option, but few people had it, or a matching PC compatible Joystick.
 As such most PC games are designed to be played with the keyboard, or for later games with the mouse.
 
@@ -22,7 +22,8 @@ The game port's DA-15 connector includes inputs for a total of four analogue cha
 These were almost always implemented as two joysticks with two buttons each.
 To connect two joysticks to one port, a separate Y-splitter cable was needed.
 
-DOSBox-X uses SDL for input, which includes gamepads. Any SDL supported gamepads will automatically become available within DOSBox-X as a joystick.
+DOSBox-X uses SDL for input, which includes gamepads.
+Any SDL supported gamepads will automatically become available within DOSBox-X as a joystick.
 
 For games that do not support Joysticks natively, DOSBox-X provides the possibility to map joystick inputs to keyboard presses.
 
@@ -451,3 +452,15 @@ Deadzone for joystick 2, axis 7-
 * Possible values:
 
 Deadzone for joystick 2, axis 7+
+
+# Known issues
+## Xbox 360 Wireless controller
+The Xbox 360 Wireless controller does not work when plugged in over USB, and cannot be connected over Bluetooth.
+
+This is a limitation of the Xbox 360 Wireless controller.
+Its special USB cable can only be used for charging and identification.
+All controller inputs are transmitted wireless using a proprietary RF protocol. As such, when used with a PC requires the **Wireless Gaming Receiver** USB dongle.
+
+Due to its proprietary wireless protocol, it will also not work with other Bluetooth wireless dongles like the 8BitDo Wireless USB Adapter.
+
+The Xbox 360 Wired controller is not effected, and works when plugged in over USB.
