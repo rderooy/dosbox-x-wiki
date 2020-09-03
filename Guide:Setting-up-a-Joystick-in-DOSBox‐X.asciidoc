@@ -454,13 +454,44 @@ Deadzone for joystick 2, axis 7-
 Deadzone for joystick 2, axis 7+
 
 # Known issues
-## Xbox 360 Wireless controller
+## PS3 controller
+
+## PS4 DualShock4 controller
+There are three modes of operation:
+
+* Direct USB attached
+** It will appear as both an input device, and as an audio device.
+* Regular Bluetooth attached
+** It will work as a wireless controller. The headphone jack will not work.
+* Sony DUALSHOCK 4 USB Wireless Adapter
+** With this optional (and rather expensive) adapter, it will appear to the operating system as being USB attached with support for both input and audio.
+
+NOTE: Since the DualShock4 has an integrated 3.5mm headphone jack, audio may get redirected to this headphone jack when plugged in.
+
+**On Linux** the PS4 controller will immediately work when plugged in over USB, no special configuration is required.
+This includes the headphone jack, and the touchpad which will control the mouse.
+
+Likewise connecting it over Bluetooth is as simple as putting the controller into pairing mode (hold the 'share' button and then the PS button, until it starts to blink rapidly), and discover it in your Bluetooth settings where it will show up as a "Wireless Controller".
+
+**On Windows** it is necessary to manually install drivers. See link:https://github.com/Ryochan7/DS4Windows[] for the download and instructions.
+
+## Xbox 360 controller
 The Xbox 360 Wireless controller does not work when plugged in over USB, and cannot be connected over Bluetooth.
 
 This is a limitation of the Xbox 360 Wireless controller.
 Its special USB cable can only be used for charging and identification.
-All controller inputs are transmitted wireless using a proprietary RF protocol. As such, when used with a PC requires the **Wireless Gaming Receiver** USB dongle.
+All controller inputs are transmitted wireless using a proprietary RF protocol. As such, when used with a PC requires the **Xbox 360 Wireless Gaming Receiver** USB dongle.
 
 Due to its proprietary wireless protocol, it will also not work with other Bluetooth wireless dongles like the 8BitDo Wireless USB Adapter.
 
 The Xbox 360 Wired controller is not effected, and works when plugged in over USB.
+
+## XBox One controller
+Both the XBox One Wired and Wireless controllers work when connected over USB.
+
+For wireless, it depends on the hardware revision of the controller.
+Original controller models use a proprietary RF protocol and require the **Xbox One Wireless Adapter** USB dongle for use with a PC.
+
+Later hardware revisions (with a 3.5mm headphone jack to the bottom of the controller), can optionally connect over Bluetooth.
+
+NOTE: The USB Wireless dongles for the Xbox 360 and Xbox One controllers are not interchangeable.
