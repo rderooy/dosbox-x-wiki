@@ -2,7 +2,7 @@
 
 Back to the link:Home[DOSBox-X Wiki Welcome page]
 
-# Setting up a Joystick in DOSBox-X
+# Setting up joysticks in DOSBox-X
 
 toc::[]
 
