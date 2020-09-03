@@ -194,7 +194,7 @@ Explains the different ways to copy to and paste from the Windows clipboard in D
 * link:Guide%3ARegional-settings-in-DOSBox‐X[Guide: Regional settings in DOSBox‐X]
 +
 Explains how to customize DOSBox-X's regional settings, such as support for the Euro symbol and keyboard layouts.
-* link:Guide%3ASetting-up-a-Joystick-in-DOSBox‐X[Setting up a Joystick in DOSBox-X]
+* link:Guide%3ASetting-up-a-Joystick-in-DOSBox‐X[Guide: Setting up a Joystick in DOSBox-X]
 +
 Explains the different Joystick configuration options in DOSBox-X.
 * link:Guide%3ASetting-up-3dfx-Voodoo-in-DOSBox‐X[Guide: Setting up 3dfx Voodoo in DOSBox-X]
