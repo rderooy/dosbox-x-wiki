@@ -1,4 +1,5 @@
 :toc: macro
+:toclevels: 1
 
 Back to the link:Home[DOSBox-X Wiki Welcome page]
 
