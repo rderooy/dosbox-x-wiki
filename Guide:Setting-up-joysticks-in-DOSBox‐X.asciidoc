@@ -454,7 +454,27 @@ Deadzone for joystick 2, axis 7-
 Deadzone for joystick 2, axis 7+
 
 # Known issues
-## PS3 controller
+## PS3 DualShock3 controller
+There are two modes of operation:
+
+* Direct USB attached
+** It will appear as an input device.
+* Regular Bluetooth attached
+** It will work as a wireless controller. But setting this up can be tricky.
+
+NOTE: If the controller does not work, be sure you pressed the PS button and only one of the player indicator LEDs is lid.
+
+NOTE: The way the PS3 DS3 controller connects wireless, is different from typical Bluetooth devices.
+It is necessary to first connect the controller via USB, where the device driver must then write the computers Bluetooth MAC address into the controller.
+The controller will afterwards try to connect to the computers MAC address when turned on in wireless mode.
+The first time the controller tries to connect to the PC, you should get a notification, asking you to allow the device to connect.
+This works fairly well (although slow) with authentic Sony PS3 controllers, but 3rd party controllers may fail to connect, or may almost immediately again disconnect.
+
+**On Linux** when plugged in with USB, the controller will immediately work.
+Bluetooth as mentioned can be more tricky, but at least authentic Sony PS3 controllers should work.
+
+**On Windows** you will need to install a 3rd party utility and driver.
+See here for instructions: link:https://www.digitaltrends.com/gaming/how-to-connect-a-ps3-controller-to-a-pc/p[]
 
 ## PS4 DualShock4 controller
 There are three modes of operation:
@@ -468,12 +488,16 @@ There are three modes of operation:
 
 NOTE: Since the DualShock4 has an integrated 3.5mm headphone jack, audio may get redirected to this headphone jack when plugged in.
 
-**On Linux** the PS4 controller will immediately work when plugged in over USB, no special configuration is required.
+**On Linux** the PS4 controller is handled by the hid_sony kernel module, and will immediately work when plugged in over USB, no special configuration is required.
 This includes the headphone jack, and the touchpad which will control the mouse.
 
 Likewise connecting it over Bluetooth is as simple as putting the controller into pairing mode (hold the 'share' button and then the PS button, until it starts to blink rapidly), and discover it in your Bluetooth settings where it will show up as a "Wireless Controller".
 
+In 2axis mode, the left analogue stick and the X (Button 1) and O (Button 2) buttons will be used.
+
 **On Windows** it is necessary to manually install drivers. See link:https://github.com/Ryochan7/DS4Windows[] for the download and instructions.
+
+NOTE: If the controller does not work, be sure you pressed the PS button and only one of the player indicator LEDs is lid.
 
 ## Xbox 360 controller
 The Xbox 360 Wireless controller does not work when plugged in over USB, and cannot be connected over Bluetooth.
@@ -486,7 +510,15 @@ Due to its proprietary wireless protocol, it will also not work with other Bluet
 
 The Xbox 360 Wired controller is not effected, and works when plugged in over USB.
 
-## XBox One controller
+**On Linux** the Wired controller, and the Wireless controller (with Wireless Gaming Receiver dongle) typically works out of the box.
+In some cases, like on Fedora it is necessary to manually install the *xpad* kernel module (part of the kernel-modules-extra package).
+
+**On Windows** the controllers will automatically work with Windows 8 and later. For older Windows versions (XP, Vista and Windows 7) a driver will need to be installed. See the following links for more details:
+
+* link:https://support.xbox.com/help/xbox-360/xbox-on-windows/accessories/xbox-controller-for-windows-setup[]
+* link:https://www.microsoft.com/accessories/en-ca/d/xbox-360-controller-for-windows[]
+
+## Xbox One controller
 Both the XBox One Wired and Wireless controllers work when connected over USB.
 
 For wireless, it depends on the hardware revision of the controller.
