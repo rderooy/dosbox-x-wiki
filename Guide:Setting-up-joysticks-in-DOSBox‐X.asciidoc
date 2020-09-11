@@ -36,6 +36,19 @@ Please note that most DOS software supporting joystick input will not react prop
 
 DOSBox-X supports 6 buttons joysticks, to enable support, set joystick type to 4axis. You will find that 5th and 6th buttons are in fact the negative sides of the 2nd port joystick axes. To remedy this problem and use buttons instead, in the mapper add bindings to 'Axis 3 X-' and 'Axis 4 Y-' to buttons you which to act as 5th and 6th buttons on your device. Note that you can only have a single 6 buttons joystick at any time, this is due to how they are implemented (such device in fact use both joystick ports).
 
+# Calibration
+
+While most home computers and game consoles back in the day used digital joysticks or controllers, the IBM PC instead used analogue joysticks.
+
+This has both advantages and disadvantages. An advantage is that it allows more accurate steering, a disadvantage is that it requires calibration.
+
+PC joysticks often had calibration sliders, or some games would give you the ability to perform calibration.
+Others will silently perform a centre calibration on startup, or may omit it completely.
+
+Unfortunately DOSBox-X itself at this point does not have any way to calibrate analogue inputs.
+
+Vogons user jfnagel posted a few link:https://www.vogons.org/viewtopic.php?p=187168#p187168[joystick test programs for DOS] that you may want to try in DOSBox-X to see how your controller behaves with various settings and how accurate the calibration is.
+
 # DOSBox-X config settings
 
 This section will list the available configuration options that DOSBox-X provides that are relevant to joysticks.
@@ -140,7 +153,6 @@ As a result, axis value at rest will stay fairly stable whereas previously lot o
 A default value of 0.26 will do fine on contemporary gamepads (e.g. Xbox One Controller).
 A higher value might be needed for older devices as they tend to loosen over time.
 
-
 ### joy1deadzone2
 * Default value: 0.25
 * Possible values:
@@ -193,7 +205,7 @@ Only applicable if two joysticks are attached, and set to 2axis mode.
 
 Axis for joystick 1, axis 0.
 
-This allows to remap the axis analogue controls.
+These settings allows you to remap physical axes, this is useful when either your device or software has a fixed layout.
 For instance if you want to use the right analogue stick, instead of the left.
 
 ### joy1axis1
@@ -255,8 +267,6 @@ Or if using 4axix_2 mode.
 Axis for joystick 2, axis 1.
 Only applicable if two joysticks are attached, and set to 2axis mode.
 Or if using 4axix_2 mode.
-
-NOTE: These settings allows you to remap physical axes, this is useful when either your device or software has a fixed layout.
 
 ### joy2axis2
 * Default value: 2
