@@ -102,7 +102,7 @@ This assumes that dosbox-x is in your path and win98.conf is in your current dir
 ....
 dosbox-x -conf win98.conf
 ....
-Than in DOSBox-X you need to create a new harddisk image file with ``IMGMAKE``.
+Then in DOSBox-X you need to create a new harddisk image file with ``IMGMAKE``.
 
 This example uses a 4GB partition.
 Technically the FAT32 filesystem is capable of supporting partitions up to 2TB, but the generic IDE driver in Windows 98 cannot handle volumes greater than 128GB.
