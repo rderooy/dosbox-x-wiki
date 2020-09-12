@@ -117,7 +117,7 @@ IMGMAKE hdd.img -t hd_4gig
 Or if you want to create a larger disk, you can create a custom type.
 This is an example of a 16GB (16*1024=16384 MB) disk.
 ....
-IMGMAKE hdd.img -size 16384
+IMGMAKE hdd.img -t hd -size 16384
 ....
 
 # Installation Method 1: Boot from CD-ROM image
