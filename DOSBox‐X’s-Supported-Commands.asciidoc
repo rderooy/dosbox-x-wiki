@@ -87,6 +87,11 @@ Usage: CAPMOUSE [/C|/R]
 Displays or changes the current directory.
 +
 Usage: CD [drive:][path] or CHDIR [drive:][path]
+* **CDPLAY** (external command)
++
+Starts the full-screen CD player for playing CD audio tracks.
++
+Usage: Simply enter CDPLAY without any parameters.
 * **CHOICE** (internal command)
 +
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
@@ -474,7 +479,7 @@ Usage: XCOPY source [destination] [options]
 +
 Note: It uses the XCOPY command from FreeDOS.
 
-Commands for debugging purposes (only available on builds that have the debugging feature enabled):
+The following commands are for debugging purposes (only available on builds that have the debugging feature enabled):
 
 * **DEBUGBOX** (internal command)
 +
@@ -497,3 +502,5 @@ Generates a non-maskable interrupt (NMI).
 Usage: NMITEST
 +
 Note: This will test if the interrupt handler works properly.
+
+Note: As of DOSBox-X version 0.83.6, you can customize the external commands as appeared on the Z: drive. For example, you can add your favorite DOS programs to the drivez directory, which will add to or replace existing programs on the Z: drive. 
