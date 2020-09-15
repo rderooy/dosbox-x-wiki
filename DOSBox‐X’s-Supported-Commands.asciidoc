@@ -2,7 +2,7 @@ Back to the link:Home[DOSBox-X Wiki Welcome page].
 
 DOSBox-X supports many internal or external MS-DOS commands. Also, DOSBox-X offers additional commands such as BOOT, MOUNT and RESCAN, which are not found in MS-DOS or compatibles. Internal commands are built into the DOSBox-X command shell whereas external commands appear as programs on the Z: drive.
 
-Below is a list of internal and external commands built into DOSBox-X. 
+Below is a list of internal and external commands built into DOSBox-X.
 
 * **25/28/50** (external command)
 +
@@ -91,7 +91,9 @@ Usage: CD [drive:][path] or CHDIR [drive:][path]
 +
 Starts the full-screen CD player for playing CD audio tracks.
 +
-Usage: Simply enter CDPLAY without any parameters.
+Usage: CDPLAY [options]
++
+Note: Command-lines usages are accepted. For further information please read the CDPLAY.TXT file on the Z drive.
 * **CHOICE** (internal command)
 +
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
