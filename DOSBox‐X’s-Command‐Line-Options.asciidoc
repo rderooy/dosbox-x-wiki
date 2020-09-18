@@ -37,10 +37,10 @@ Loads the configuration file from the user's profile or home directory.
 Uses the specified file as DOSBox-X's config file. For example, ``-conf test.conf`` will let DOSBox-X use test.conf as its config file.
 * **-startui** or **-startgui**
 +
-Starts DOSBox-X with its Configuration GUI interface, where you can review or change its settings.
+Starts DOSBox-X with its graphical configuration tool, where you can review or change its settings.
 * **-startmapper**
 +
-Starts DOSBox-X and enters to the keyboard mapper editor directly, where you can change DOSBox-X’s key mappings.
+Starts DOSBox-X and enters to the mapper editor directly, where you can change DOSBox-X’s key mappings.
 * **-showcycles**
 +
 Shows cycles count (FPS) on the DOSBox-X title bar.
@@ -56,6 +56,9 @@ Uses the specified path as DOSBox-X's save path, including the location for the 
 * **-defaultdir [path]**
 +
 Uses the specified path as DOSBox-X's default path (instead of the current directory which is usually the DOSBox-X program directory), the location for files including the dosbox-x.conf config file.
+* **-defaultconf**
++
+Uses the default config settings of DOSBox-X (do not try to load default config files such as dosbox-x.conf).
 * **-winrun**
 +
 Enables launching Windows programs to run on the host (such as the use of START command), long filenames support and Windows clipboard communications via the CLIP$ device (Windows version only).
