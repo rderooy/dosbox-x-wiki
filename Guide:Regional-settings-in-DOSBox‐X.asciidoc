@@ -89,11 +89,11 @@ Alternatively, you can start DOSBox-X with the -lang option to use your language
 
 ``dosbox-x -lang C:\message.txt``
 
-If you do not have a DOSBox-X language file yet, and you want to customize or translate the messages as displayed by DOSBox-X, you could do so by generating the language file and then modifying the messages in it. DOSBox-X can generate a language file either from the Configuration GUI, or with the ``CONFIG`` command.
+If you do not have a DOSBox-X language file yet, and you want to customize or translate the messages as displayed by DOSBox-X, you could do so by generating the language file and then modifying the messages in it. DOSBox-X can generate a language file either from the built-in graphical configuration tool, or with the ``CONFIG`` command.
 
-To use the Configuration GUI method:
+To do this using the graphical configuration tool:
 
-1. Open the "Configuration GUI" from the "Main" menu.
+1. Open the "Configuration tool" from the "Main" menu.
 2. Select the "Configuration" menu, then click "Save Language File...".
 3. Either use the default file name or enter a new file name for the language file, then click "OK". 
 
