@@ -1,12 +1,12 @@
 Back to the link:Home[DOSBox-X Wiki Welcome page].
 
-DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achieve many things from the menu without typing commands. There are 7 menus shown in DOSBox-ax’s menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
+DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achieve many things from the menu without typing commands. There are 7 drop-down menus shown in DOSBox-X’s menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture" and "Drive".
 
 **1. The "Main" menu**
 
-* **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press the Esc key three times to exit the editor.
+* **Configuration tool**: Enters the graphical configuration tool for reviewing or changing DOSBox-X settings.
 
-* **Configuration GUI**: Enters the configuration GUI dialog for reviewing or changing DOSBox-X settings.
+* **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press the Esc key three times to exit the editor.
 
 * **Send Key**: Sends special keys such as Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
 
@@ -24,7 +24,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Mouse wheel movements**: Select whether to auto-convert mouse wheel movements to arrow keys (Up & Down arrows etc).
 
-* **Quick right mouse button copy/paste**: Check this if you want to use the right mouse button to copy to and paste from the Windows clipboard without any key modifier that may have been set.
+* **Shared Windows clipboard functions**: Enables or disables the various ways for DOSBox-X to communicate with the Windows clipboard, such as using the right mouse button to copy to and paste from the Windows clipboard in quick edit mode.
 
 * **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
 
