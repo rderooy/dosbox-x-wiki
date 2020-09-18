@@ -172,7 +172,7 @@ Gives detailed information about DOSBox-X's drop-down menu system and its menu i
 * link:DOSBox‐X’s-Supported-Commands[DOSBox‐X’s Supported Commands]
 +
 Lists and explains all the internal and external commands that DOSBox-X provides.
-* link:DOSBox‐X’s-Command-line-Options[DOSBox-X's Command-line Options]
+* link:DOSBox‐X’s-Command%E2%80%90Line-Options[DOSBox-X's Command-Line Options]
 +
 Lists and explains all the command-line options that DOSBox-X supports.
 * link:Guide%3ADOS-Installation-in-DOSBox‐X[Guide: MS-DOS or PC DOS in DOSBox-X]
