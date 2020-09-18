@@ -50,6 +50,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Decrement cycles**: Decreases the amount of CPU instructions DOSBox-X tries to emulate each millisecond.
 
+* **Emulate CPU speed**: Emulate the speed of the a specific CPU class by setting the approximate cycles.
+
 * **Edit cycles**: Sets the amount of CPU instructions DOSBox-X tries to emulate each millisecond to a specific value.
 
 * **CPU core**: Selects the emulated DOS's CPU core - normal, full, simple, dynamic, or auto.
