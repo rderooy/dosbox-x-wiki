@@ -74,10 +74,12 @@ Switch to full-screen mode and back.
 Reset the virtual machine inside DOSBox-X.
 * **[F11/F12]+S**
 Reboot the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
+* **[F11/F12]+C**
+Start DOSBox-X's graphical configuration tool.
 * **[F11/F12]+M**
-Start DOSBox-X's keyboard mapper.
+Start DOSBox-X's mapper editor.
 * **[F11/F12]+Esc**
-Show/hide the GUI menu bar.
+Show/hide DOSBox-X’s drop-down menu bar.
 * **[F11/F12]+Del**
 Send the Ctrl+Alt+Del key combination to the guest system.
 * **[F11/F12]+{{plus}}**
