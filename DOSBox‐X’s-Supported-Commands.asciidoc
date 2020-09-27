@@ -149,6 +149,13 @@ Usage: DEBUG [ [drive:][path]progname [arglist] ]
 Removes one or more files.
 +
 Usage: DEL [/P] [/Q] names or ERASE [/P] [/Q] names
+* **DELTREE** (internal command)
++
+Deletes a directory and all the subdirectories and files in it.
++
+Usage: DELTREE [/Y] [drive:]path [[drive:]path[...]]
++
+Note: This will delete the entire directory tree. Please use this command with caution.
 * **DEVICE** (external command)
 +
 Load device drivers as CONFIG.SYS's DEVICE command.
