@@ -427,6 +427,13 @@ Usage: Simply enter SHIFT without any parameters.
 Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.
 +
 Usage: Simply enter SHOWGUI without any parameters.
+* **SORT** (external command)
++
+Sorts input and writes results to the screen, a file, or another device.
++
+Usage: SORT [/R] [/+num] [/A] [file] or command | SORT
++
+Note: It uses the SORT command from FreeDOS.
 * **START** (external command)
 +
 Starts a command to run on the Windows host.
