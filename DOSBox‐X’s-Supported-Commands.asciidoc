@@ -59,9 +59,9 @@ Note: It can be used to reliably skip intros, provide input to answer initial st
 +
 Starts disk or BIOS images independent of the operating system emulation offered by DOSBox-X.
 +
-Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] [-bios image]
+Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] or BOOT [driveletter:]
 +
-Note: Loading a BIOS image is currently experimental - at this time it will only work for custom code and assembly experiments.
+Note: You can boot a disk image in write-protected mode by putting a lead colon (:).
 * **BREAK** (internal command)
 +
 Sets or clears extended CTRL+C checking.
@@ -99,6 +99,8 @@ Note: Command-lines usages are accepted. For further information please read the
 Starts DOSBox-X's graphical configuration tool, where you can review or change its settings.
 +
 Usage: Simply enter CFGTOOL without any parameters.
++
+Note: You can also use CONFIG command to start DOSBox-X’s command-line configuration utility.
 * **CHOICE** (internal command)
 +
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
@@ -116,9 +118,11 @@ Runs DOSBox-X's internal command shell.
 Usage: COMMAND [options]
 * **CONFIG** (external command)
 +
-Starts DOSBox-X's config tool to change it settings.
+Starts DOSBox-X's command-line configration utility to change it settings.
 +
 Usage: CONFIG [options]
++
+Note: You can also use CFGTOOL command to start DOSBox-X’s graphical configuration tool.
 * **COPY** (internal command)
 +
 Copies one or more files.
