@@ -94,6 +94,11 @@ Starts the full-screen CD player for playing CD audio tracks.
 Usage: CDPLAY [options]
 +
 Note: Command-lines usages are accepted. For further information please read the CDPLAY.TXT file on the Z drive.
+* **CFGTOOL** (external command)
++
+Starts DOSBox-X's graphical configuration tool, where you can review or change its settings.
++
+Usage: Simply enter CFGTOOL without any parameters.
 * **CHOICE** (internal command)
 +
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
@@ -422,11 +427,6 @@ Usage: SET [variable=[string]]
 Left-shifts command-line parameters in a batch script.
 +
 Usage: Simply enter SHIFT without any parameters.
-* **SHOWGUI** (external command)
-+
-Starts DOSBox-X's configuration GUI dialog, where you can review or change its settings.
-+
-Usage: Simply enter SHOWGUI without any parameters.
 * **SORT** (external command)
 +
 Sorts input and writes results to the screen, a file, or another device.
