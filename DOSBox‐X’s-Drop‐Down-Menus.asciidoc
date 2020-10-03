@@ -164,7 +164,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **A**-**Z**: For each DOS drive, mounts, un-mounts, re-scans (refreshes the cache), or show the information for this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Mounting drives (with various options) in the "Drive" menu is currently only supported for the Windows platform.
 
-**8. The “Help” menu**
+**8. The "Help" menu**
 
 * **Introduction**: Shows a dialog box with a short introduction to DOSBox-X.
 
@@ -176,3 +176,10 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **About DOSBox-X**: Shows the about information for DOSBox-X.
 
+DOSBox-X will show the drop-down menus in the windowed mode by default, but you can also hide it if you prefer, using any of the following ways:
+
+* Start with the -nomenu command-line option;
+
+* Under the "Video" menu, select "Hide/show menu bar" when the menu bar is visible;
+
+* Using the key combination ([F11/F12]+Esc by default - F11+Esc on Windows and F12+Esc otherwise) to toggle the menu bar.
