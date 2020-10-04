@@ -1,9 +1,9 @@
-This guide explains how to use DOSBox-X with DOS software from the [demoscene](http://en.wikipedia.org/wiki/Demoscene).
+This guide explains how to use DOSBox-X with DOS software from the link:http://en.wikipedia.org/wiki/Demoscene[demoscene].
 
 # Demo settings and notes list
 
-[[1991|Guide:MS‐DOS:demoscene:1991]] * [[1992|Guide:MS‐DOS:demoscene:1992]] * [[1993|Guide:MS‐DOS:demoscene:1993]] * [[1994|Guide:MS‐DOS:demoscene:1994]] * [[1995|Guide:MS‐DOS:demoscene:1995]] * [[1996|Guide:MS‐DOS:demoscene:1996]] * [[1997|Guide:MS‐DOS:demoscene:1997]] * [[1998|Guide:MS‐DOS:demoscene:1998]] * [[1999|Guide:MS‐DOS:demoscene:1999]]  
-[[2000|Guide:MS‐DOS:demoscene:2000]]  
+link:Guide%3AMS‐DOS%3Ademoscene%3A1991[1991] * link:Guide%3AMS‐DOS%3Ademoscene%3A1992[1992] * link:Guide%3AMS‐DOS%3Ademoscene%3A1993[1993] * link:Guide%3AMS‐DOS%3Ademoscene%3A1994[1994] * link:Guide%3AMS‐DOS%3Ademoscene%3A1995[1995] * link:Guide%3AMS‐DOS%3Ademoscene%3A1996[1996] * link:Guide%3AMS‐DOS%3Ademoscene%3A1997[1997] * link:Guide%3AMS‐DOS%3Ademoscene%3A1998[1998] * link:Guide%3AMS‐DOS%3Ademoscene%3A1999[1999] *
+link:Guide%3AMS‐DOS%3Ademoscene%3A2000[2000] 
 
 # General guidelines
 
@@ -13,7 +13,7 @@ For demos 1997 and later: you should use cputype=pentium and core=dynamic where 
 
 For demos 1995 to 1997: you should use cputype=pentium and core=dynamic where possible. Set cycles count to at least 35000 to simulate the average speed of a Pentium 100MHz system the demos are written against. Set memsize to at least 16MB.
 
-For demos 1994 and earlier: some demos use extended memory, some don't. Unless the demo mentions extended memory it's safe to set memsize=1 (no extended memory). Else you should set xms=true and memsize=8 to be safe. Do not set memsize to any value larger than 8MB, some demos will crash with too much RAM. Remember machines of that time rarely had more than 8MB of RAM except for high-end servers. You may also want to turn off upper memory blocks (umb=false). Some demos require expanded memory for their music playback (most common is to require expanded memory for Sound Blaster MOD music playback), set ems=true and memsize to at least 2-4MB to provide extended memory. There are also demos of this time frame that use their own custom protected mode memory management to varying degrees of success. Remember that compatibility for this time period is hampered somewhat by demos of this time being sort of a "wild west" of experimentation with PC hardware programming tricks. There even exists a [demo](http://www.pouet.net/prod.php?which=1356) that abuses the Intel 486/Pentium CPU to enter "[Huge unreal mode](http://en.wikipedia.org/wiki/Unreal_mode#Huge_versus_Big_real_mode)" to execute it's code and data from a 4GB flat 16-bit code segment. CPU settings should generally aim to emulate a 386, 486, or Pentium, and to emulate a machine with a cycles count of 32000 or less. For many early demos (1991-1992) you should consider using a cycles count between 4000 and 8000. These demos will run too fast and depending on how the video routines were written will also flicker badly.
+For demos 1994 and earlier: some demos use extended memory, some don't. Unless the demo mentions extended memory it's safe to set memsize=1 (no extended memory). Else you should set xms=true and memsize=8 to be safe. Do not set memsize to any value larger than 8MB, some demos will crash with too much RAM. Remember machines of that time rarely had more than 8MB of RAM except for high-end servers. You may also want to turn off upper memory blocks (umb=false). Some demos require expanded memory for their music playback (most common is to require expanded memory for Sound Blaster MOD music playback), set ems=true and memsize to at least 2-4MB to provide extended memory. There are also demos of this time frame that use their own custom protected mode memory management to varying degrees of success. Remember that compatibility for this time period is hampered somewhat by demos of this time being sort of a "wild west" of experimentation with PC hardware programming tricks. There even exists a link:http://www.pouet.net/prod.php?which=1356[demo] that abuses the Intel 486/Pentium CPU to enter "link:http://en.wikipedia.org/wiki/Unreal_mode#Huge_versus_Big_real_mode[Huge unreal mode]" to execute it's code and data from a 4GB flat 16-bit code segment. CPU settings should generally aim to emulate a 386, 486, or Pentium, and to emulate a machine with a cycles count of 32000 or less. For many early demos (1991-1992) you should consider using a cycles count between 4000 and 8000. These demos will run too fast and depending on how the video routines were written will also flicker badly.
 
 ## VGA graphics
 
@@ -33,6 +33,6 @@ For demos 1993 and earlier: Gravis Ultrasound is generally not supported, except
 
 If you want to hear LPT DAC output instead, set disney=true to enable Disney/Covox/LPT DAC emulation.
 
-Quite a few demos of this period used a sound library called "[[Goldplay|Libraries:Goldplay]]" that supported both Sound Blaster and LPT DAC. Setting goldplay=true is recommended, the goldplay library uses a strange hackish method to re-use it's playback method for DMA-based Sound Blaster output that requires special attention from DOSBox to emulate properly.
+Quite a few demos of this period used a sound library called "link:Libraries%3AGoldplay[Goldplay]" that supported both Sound Blaster and LPT DAC. Setting goldplay=true is recommended, the goldplay library uses a strange hackish method to re-use it's playback method for DMA-based Sound Blaster output that requires special attention from DOSBox to emulate properly.
 
 There also exist a few demos that do not use Sound Blaster support but instead play MIDI music through the MPU-401 chip.
