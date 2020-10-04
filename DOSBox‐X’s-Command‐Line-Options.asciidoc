@@ -1,4 +1,7 @@
-Back to the link:Home[DOSBox-X Wiki Welcome page].
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend: .html]
+
+Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 DOSBox-X supports command-line options. You can start DOSBox-X without any option, or with any of the following options. Options like **-c** and **-set** can be used multiple times in the command line.
 
