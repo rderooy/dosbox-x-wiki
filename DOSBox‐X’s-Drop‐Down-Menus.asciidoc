@@ -1,4 +1,7 @@
-Back to the link:Home[DOSBox-X Wiki Welcome page].
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend: .html]
+
+Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achieve many things from the drop-down menu without typing commands. There are 8 menus shown in DOSBox-X’s menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture", "Drive", and “Help”.
 
