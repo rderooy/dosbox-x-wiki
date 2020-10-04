@@ -1,6 +1,9 @@
-:toc: macro
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend: .html]
 
-Back to the link:Home[DOSBox-X Wiki Welcome page]
+Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
+
+:toc: macro
 
 # Setting up 3dfx Voodoo in DOSBox-X
 
