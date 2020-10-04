@@ -1,5 +1,5 @@
-ifdef::asciidoc[:suffixappend: .html]
-ifndef::asciidoc[:suffixappend:]
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend: .html]
 
 :toc: macro
 
