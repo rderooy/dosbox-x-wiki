@@ -1,3 +1,8 @@
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend: .html]
+
+Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
+
 This guide explains how to use DOSBox-X with DOS software from the link:http://en.wikipedia.org/wiki/Demoscene[demoscene].
 
 # Demo settings and notes list
