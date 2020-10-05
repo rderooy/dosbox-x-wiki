@@ -1,5 +1,8 @@
 :toc: macro
 
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend:]
+
 **Welcome to the DOSBox-X Wiki!**
 
 ### Introduction
