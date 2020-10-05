@@ -3,4 +3,4 @@ ifndef::env-github[:suffixappend: .html]
 
 ## 1997 link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[MS-DOS demos].
 
-link:Software%3Ademoscene%3AECNCD-vs-Orange-by-CNCD-and-Orange-(1997)[CNCD vs Orange by CNCD and Orange (1997)]
+link:Software%3Ademoscene%3ACNCD-vs-Orange-by-CNCD-and-Orange-(1997)[CNCD vs Orange by CNCD and Orange (1997)]
