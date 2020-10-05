@@ -1,10 +1,10 @@
+:toc: macro
+:toclevels: 1
+
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend: .html]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
-
-:toc: macro
-:toclevels: 1
 
 # Setting up joysticks in DOSBox-X
 
