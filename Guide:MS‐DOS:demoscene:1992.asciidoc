@@ -1,5 +1,7 @@
-1992 [[MS-DOS demos|Guide:DOS demoscene software in DOSBox‐X]]
---------------------------------------------------------------
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend: .html]
+
+## 1992 link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[MS-DOS demos].
 
 [[Buttman by Twilight Zone (1992)|Software:demoscene:Buttman by Twilight
 Zone (1992)]] +
