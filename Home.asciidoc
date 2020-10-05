@@ -1,6 +1,3 @@
-ifdef::env-github[:suffixappend:]
-ifndef::env-github[:suffixappend: .html]
-
 :toc: macro
 
 **Welcome to the DOSBox-X Wiki!**
