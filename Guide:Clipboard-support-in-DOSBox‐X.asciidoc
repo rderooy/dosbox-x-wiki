@@ -5,15 +5,15 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-# Windows Clipboard Support in DOSBox-X
+# Clipboard Support in DOSBox-X
 
 toc::[]
 
 ### Overview
 
-DOSBox-X has support for copying to and pasting from the Windows clipboard in several ways. For example, you can copy to or paste from to the Windows clipboard inside DOSBox-X using a right mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the Windows clipboard. You will find a menu group "Shared Windows clipboard functions" under the "Main" menu to control the various options for the Windows clipboard feature.
+DOSBox-X has support for copying to and pasting from the host clipboard in several ways. For example, you can copy to or paste from to the clipboard inside DOSBox-X using a right mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the Windows clipboard. You will find a menu group "Shared Windows clipboard functions" under the "Main" menu to control the various options for the Windows clipboard feature.
 
-Note that the feature to access to the clipboard is currently only available in the Windows platform, and as a result, this guide will assume you are using a Windows build (32 or 64-bit, either SDL1 or SDL2) of DOSBox-X.
+Note that some of the functions to access to the clipboard is currently only available in the Windows platform, and as a result, this guide will assume you are using a Windows build (32 or 64-bit, either SDL1 or SDL2) of DOSBox-X for these functions.
 
 ### Copy and paste text using a DOS device
 
