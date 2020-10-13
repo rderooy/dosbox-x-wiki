@@ -67,9 +67,9 @@ DOSBox-X fully supports long filenames (LFN) which can be up to 255 characters, 
 * **Support for FAT32 file system and large disk images**
 +
 FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so you can make and mount drives larger than 2GB. Set ``ver=7.1`` to enable this feature.
-* **Support for clipboard copy and paste (Windows only)**
+* **Support for clipboard text selection, copy and paste**
 +
-With DOSBox-X there are several ways to copy and paste between DOSBox-X and the Windows clipboard, such as using the right mouse button or using a special device for it.
+With DOSBox-X there are several ways to copy and paste between DOSBox-X and the host clipboard, such as using the right mouse button or using a special device for it. Some clipboard functions are only supported for Windows systems.
 * **Support for converting mouse wheel movements to arrow keys**
 +
 You can let DOSBox-X automatically convert mouse wheel movements to arrow keys, so that you can use the mouse wheel for scrolling in DOS applications.
