@@ -65,6 +65,7 @@ Starts disk or BIOS images independent of the operating system emulation offered
 Usage: BOOT [diskimg1.img diskimg2.img] [-l driveletter] or BOOT [driveletter:]
 +
 Note: You can boot a disk image in write-protected mode by putting a lead colon (:).
++
 * **BREAK** (internal command)
 +
 Sets or clears extended CTRL+C checking.
@@ -516,6 +517,12 @@ Note: It uses the XCOPY command from FreeDOS.
 
 The following commands are for debugging purposes (only available on builds that have the debugging feature enabled):
 
+* **BIOSTEST** (external command)
++
+Boots into a BIOS image for running CPU tester BIOS.
++
+Usage: BIOSTEST image_file
++
 * **DEBUGBOX** (internal command)
 +
 Runs program and breaks into debugger at entry point.
