@@ -27,7 +27,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Mouse wheel movements**: Select whether to auto-convert mouse wheel movements to arrow keys (Up & Down arrows etc).
 
-* **Shared Windows clipboard functions**: Enables or disables the various ways for DOSBox-X to communicate with the Windows clipboard, such as using the right mouse button to copy to and paste from the Windows clipboard in quick edit mode.
+* **Shared clipboard functions**: Enables or disables the various ways for DOSBox-X to communicate with the host clipboard, such as using the right mouse button to copy to and paste from the clipboard in quick edit mode. Some options are only available for the Windows platform.
 
 * **Pause**: Check to pause the emulated DOS inside DOSBox-X completely. The emulated DOS will resume when it is unchecked.
 
@@ -71,7 +71,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Double Buffering (Fullscreen)**: Toggles the double-buffering feature in the fullscreen mode. It can reduce screen flickering, but it can also result in a slower speed.
 
-* **Hide/show menu bar**: Select whether to show DOSBox-X's GUI menu bar where supported.
+* **Hide/show menu bar**: Select whether to show DOSBox-X's drop-down menu bar where supported.
 
 * **Reset window size**: Resets the DOSBox-X window to the default size.
 
@@ -89,7 +89,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Compatibility**: Selects whether to allow 9-pixel wide text mode fonts and to enable double-scan mode (double-scanned output emits two scanlines for each source line).
 
-* **PC-98**: Changes the PC-98 related settings, such as whether to allow EGC and GRCG graphics functions.
+* **PC-98**: Changes the PC-98 related settings, such as whether to allow EGC and GRCG graphics functions and whether to use the default U.S. keyboard layout for PC-98 mode.
 
 * **Debug**: Enables video debugging functions, such as blank screen refresh tests.
 
@@ -119,13 +119,11 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto per reported DOS version (i.e. enable LFN if the reported DOS version is at least 7).
 
-* **PC-98 PIT master clock**: Selects the PIT master clock for the PC-98 system (4MHz/8MHz or 5MHz/10MHz).
-
 * **Windows host applications**: Enable this if you want to launch Windows applications from mounted directories to run on the host, and whether to wait for the applications.
 
 * **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibilty with DOSBox.
 
-* **Quick launch program...** Launches a program selected from the Windows file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
+* **Quick launch program...** Launches a program selected from the file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
 
 * **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
 
@@ -155,7 +153,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Record MIDI output**: Starts/stops the recording of raw MIDI commands.
 
-* **Force load state mode**: Selects whether to load the saved state even if there is a mismatch in the DOSBox-X version, program name and/or the memory size.
+* **Save/load state options**: Allows you to check some save and load state related options, such as using a save file instead of save slots.
 
 * **Save state**: Saves the current state to the selected save slot.
 
@@ -163,9 +161,11 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Select save slot**: Select a save slot (1 to 100) to save to or load from. There are 10 pages for save slots, with 10 save slots in each page.
 
+* **Browse save file**: Select a save file to use via the file browser. Only activated when the option to use save files is enabled.
+
 **7. The "Drive" menu**
 
-* **A**-**Z**: For each DOS drive, mounts, un-mounts, re-scans (refreshes the cache), or show the information for this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Mounting drives (with various options) in the "Drive" menu is currently only supported for the Windows platform.
+* **A**-**Z**: For each DOS drive, mounts, un-mounts, re-scans (refreshes the cache), or show the information for this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Various mounting options (either host drives/directories or image files) are available for each drive.
 
 **8. The "Help" menu**
 
