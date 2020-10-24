@@ -11,11 +11,11 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press the Esc key three times to exit the editor.
 
-* **Send Key**: Sends special keys such as Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
+* **Send Key**: Sends special keys such as the logo key, Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
 
 * **Wait on error**: Select this if you want DOSBox-X to wait when an error occurs.
 
-* **Show details**: Select this if you want to show information such as cycles count (FPS) and emulation speed on the DOSBox-X title bar.
+* **Show details**: Select this if you want to show cycles count (FPS) and emulation speed on the DOSBox-X title bar. Equivalent to -showcycles and -showrt command-line options combined.
 
 * **Debugger**: Starts the DOSBox-X Debugger (heavy-debug builds only).
 
