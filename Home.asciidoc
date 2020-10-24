@@ -73,6 +73,8 @@ A list of DOSBox-X default special keys:
 
 * **[F11/F12]+F**
 Switch to full-screen mode and back.
+* **[F11/F12]+Q**
+Quick launch an executable file to run inside DOSBox-X.
 * **[F11/F12]+R**
 Reset the virtual machine inside DOSBox-X.
 * **[F11/F12]+S**
@@ -81,10 +83,14 @@ Reboot the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
 Start DOSBox-X's graphical configuration tool.
 * **[F11/F12]+M**
 Start DOSBox-X's mapper editor.
+* **[F11/F12]+A**
+Copy all text on the DOS screen to the host clipboard.
+* **[F11/F12]+V**
+Paste the text in the host clipboard to the DOS screen.
 * **[F11/F12]+Esc**
 Show/hide DOSBox-X’s drop-down menu bar.
 * **[F11/F12]+Del**
-Send the Ctrl+Alt+Del key combination to the guest system.
+Send the selected special key combination (Ctrl+Alt+Del by default) to the guest system.
 * **[F11/F12]+{{plus}}**
 Increase the sound volume of DOSBox-X's emulated DOS.
 * **[F11/F12]+{-}**
