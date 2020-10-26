@@ -1,0 +1,50 @@
+:toc: macro
+
+ifdef::env-github[:suffixappend:]
+ifndef::env-github[:suffixappend:]
+
+Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
+
+# CPU Type settings in DOSBox-X
+
+toc::[]
+
+### Overview
+
+You can change the emulated CPU type in DOSBox-X either from the DOSBox-X config file (dosbox-x.conf by default), or from the DOSBox-X command line or the menu bar.
+
+### Differences in emulated CPU types
+
+This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and extended/modified for DOSBox-X.
+
+.cputype options
+[cols=",^,^,^,^,^,^,^,^,^,^,^,^,^,^,^,^"]
+|===
+| |8086 | 8086 prefetch | 80186 | 80186 prefetch | 80286 | 80286 prefetch | 386 | 386 prefetch | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | pentium mmx | ppro slow
+
+|386 CPUID                                  | | | | | | |x|x| | | | | | | |
+|486 CPUID                                  | | | | | | | | |x|x|x|x|x| | |
+|Pentium CPUID                              | | | | | | | | | | | | | |x| |
+|386 specific page access level calculation | | | | | | |x|x| | | | | | | |
+|486 specific page access level calculation | | | | | | | | |x|x|x|x| | | |
+|loose (fast) page privilege check          | | | | | | |x|x| | | | | | | |
+|tight (slow) page privilege check          | | | | | | | | | | | | | | | |x
+|BSWAP                                      | | | | | | | | |x|x|x|x|x|x|x|x
+|CMPXCHG                                    | | | | | | | | |x|x|x|x|x|x|x|x
+|XADD                                       | | | | | | | | |x|x|x|x|x|x|x|x
+|INVD                                       | | | | | | | | |x|x|x|x|x|x|x|x
+|WBINVD                                     | | | | | | | | |x|x|x|x|x|x|x|x
+|RDTSC                                      | | | | | | | | | | | | |x|x|x|x
+|486 specific CR register behaviour         | | | | | | | | |x|x|x|x| | | |
+|Pentium specific CR register behaviour     | | | | | | | | | | | | | |x| |
+|Prefetch queue emulation                   | |x| |x| |x| |x| |x| |x| | | |
+|===
+
+### Other CPU types
+Vanilla DOSBox has a few other cputype options not available in DOSBox-X
+
+* 386_slow
+* 486_slow
+* pentium_slow
+
+How are these handled (mapped) in dosbox-x, or are they disregarded?
