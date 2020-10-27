@@ -106,6 +106,6 @@ As such the ``cycles=`` value has no direct relation to the clock frequency or t
 
 For many legacy systems, cycle accurate emulation is desirable.
 But this does not apply to emulating PCs. Due to the vast amount of clone systems and CPU options produced, software developers could not rely on the amount of time it takes to complete a given instruction.
-And therefore used other timing methods, and therefore cycle accurate emulation is simple not needed.
+And therefore used other timing methods, and therefore cycle accurate emulation is simply not needed.
 
 If for some reason cycle accurate emulation is required, we suggest you use the link:https://pcem-emulator.co.uk/[PCem emulator].
