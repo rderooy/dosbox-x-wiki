@@ -9,15 +9,15 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 toc::[]
 
-### Overview
+## Overview
 
 You can change the emulated CPU type in DOSBox-X either from the DOSBox-X config file (dosbox-x.conf by default), or from the DOSBox-X command line or the menu bar.
 
-### Differences in emulated CPU types
+## Differences in emulated CPU types
 
 This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and extended/modified for DOSBox-X.
 
-#### 8086 to 386
+### 8086 to 386
 .cputype options
 [cols=",^,^,^,^,^,^,^,^"]
 |===
@@ -32,7 +32,7 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 |Prefetch queue emulation                   | |x| |x| |x| |x
 |===
 
-#### 486 to Pentium Pro
+### 486 to Pentium Pro
 .cputype options
 [cols=",^,^,^,^,^,^,^,^"]
 |===
@@ -49,14 +49,14 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 |BSWAP, CMPXCHG, XADD, INVD, WBINVD                   |x|x|x|x|x|x|x|x
 |RDTSC                                                | | | | |x|x|x|x
 |CPUID, CMPXCHG8B,RDMSR, WRMSR, RSM                   | | | | | |x|x|x
-|CMOV, FCMOV, FCOMI/FCOMIP/FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | | |x
+|CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | | |x
 |486 specific CR register behaviour                   |x|x|x|x|x| | |
 |Pentium specific CR register behaviour               | | | | | |x|x|x
 |Prefetch queue emulation                             | |x| |x| | | |
 |MMX instruction set                                  | | | | | | |x|
 |===
 
-### Other CPU types
+### Vanilla DOSBox CPU types
 Vanilla DOSBox has a few other cputype options not available in DOSBox-X
 
 * 386_slow
@@ -66,7 +66,14 @@ Vanilla DOSBox has a few other cputype options not available in DOSBox-X
 The ``slow`` part of the name refers to the page privilege check.
 These cputype options are ignored in DOSBox-X, and ``auto`` will be used instead.
 
-TODO: How does DOSBox-X handle this differently? And why is there still a ppro_slow, if the others where removed?
+### Floating Point Unit (FPU)
+Also referred to as the x87, or Math co-processor.
+
+An emulated FPU is enabled by default.
+The following config options are available to change the behaviour.
+
+Under the ``[cpu]`` heading you can set ``fpu=false`` to disable the FPU.
+``[dosbox]`` ``weitek=``
 
 ### FAQ
 #### Why is there no 8088 CPU option?
@@ -105,3 +112,8 @@ But this does not apply to emulating PCs. Due to the vast amount of clone system
 And therefore used other timing methods, and therefore cycle accurate emulation is simply not needed.
 
 If for some reason cycle accurate emulation is required, we suggest you use the link:https://pcem-emulator.co.uk/[PCem emulator].
+
+## TODO
+
+* Why are there the 486old* options? They are presumably the 486 options from vanilla DOSBox, but why retain them?
+* How does DOSBox-X handle page privilege check differently? And why is there still a ppro_slow, if the others where removed?
