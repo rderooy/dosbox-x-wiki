@@ -86,10 +86,11 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 * **V-Sync**: Synchronizes V-Sync timing to the host display. This requires calibration within DOSBox-X.
 
 * **Overscan**: Selects the width of the overscan border, from 0 to 10. This works only if the video output is set to surface.
-
-* **Overscan**: Selects the width of the overscan border, from 0 to 10. This works only if the video output is set to surface.
+rscan border, from 0 to 10. This works only if the video output is set to surface.
 
 * **Text-mode**: Changes some text-mode settings, such as switching between high intensity background color and blinking foreground text, and setting the video modes to for example 80 columns x 50 lines and 132 columns and 60 lines.
+
+* **Compatibility**: Selects whether to allow 9-pixel wide text mode fonts and to enable double-scan mode (double-scanned output emits two scanlines for each source line).
 
 * **PC-98**: Changes the PC-98 related settings, such as whether to allow EGC and GRCG graphics functions and whether to use the default U.S. keyboard layout for PC-98 mode.
 
@@ -108,6 +109,10 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 * **Decrease recording volume**: Decreases the sound volume for the current recording.
 
 * **Show sound levels**: Displays the current sound levels in DOSBox-X.
+
+* **Show Sound Blaster configuration**: Displays the current Sound Blaster configuration of in DOSBox-X.
+
+* **Show MIDI device configuration**: Displays the current MIDI device configuration in DOSBox-X.
 
 * **Mute**: Mutes or unmutes the sound volume of the current DOS session.
 
