@@ -108,7 +108,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Decrease recording volume**: Decreases the sound volume for the current recording.
 
-* **Show sound levels**: Displays the current sound levels in DOSBox-X.
+* **Show sound mixer volumes**: Displays the current sound mixer volumes in DOSBox-X.
 
 * **Show Sound Blaster configuration**: Displays the current Sound Blaster configuration of in DOSBox-X.
 
@@ -128,7 +128,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Windows host applications**: Enable this if you want to launch Windows applications from mounted directories to run on the host, and whether to wait for the applications.
 
-* **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibilty with DOSBox.
+* **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibility with DOSBox.
 
 * **Quick launch program...** Launches a program selected from the file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
 
@@ -172,7 +172,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 **7. The "Drive" menu**
 
-* **A**-**Z**: For each DOS drive, mounts, un-mounts, re-scans (refreshes the cache), or show the information for this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Various mounting options (either host drives/directories or image files) are available for each drive.
+* **A**-**Z**: For each DOS drive, mounts, un-mounts, re-scans (refreshes the cache), or show the information for this drive. For Drive A:, C: and D: there is also an option to boot from the drive. Various mounting options (either host drives/directories or disk/CD image files) are available for each drive.
 
 **8. The "Help" menu**
 
