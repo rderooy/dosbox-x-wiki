@@ -25,7 +25,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Pause with interrupts enabled**: Pauses the emulated DOS inside DOSBox-X without disabling the DOS interrupts. This allows certain DOS functions to continue to work, such as pausing some Demoscene games while allowing the game music to continue to play, or hearing the entire music when the demo exits long before the music has time to loop.
 
-* **Show FPS and RT speed in the title**: Select this if you want to show cycles count (FPS) and emulation speed on the DOSBox-X title bar. Equivalent to -showcycles and -showrt command-line options combined.
+* **Show FPS and RT speed in title bar**: Select this if you want to show cycles count (FPS) and emulation speed on the DOSBox-X title bar. Equivalent to -showcycles and -showrt command-line options combined.
 
 * **Reset virtual machine**: Restarts the virtual machine inside DOSBox-X.
 
@@ -176,7 +176,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **DOSBox-X support**: Links to the DOSBox-X Issue Tracker where you will can report issues or make suggestions.
 
-* **Debug**: Select debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
+* **Debugging**: Select debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
 
 * **About DOSBox-X**: Shows the about information for DOSBox-X.
 
