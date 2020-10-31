@@ -85,9 +85,9 @@ DOSBox-X allows you to set one or more config options from the DOSBox-X command 
 * **Support for Ctrl+C/Ctrl+Break in the shell and many commands**
 +
 You can press the Ctrl+C or Ctrl+Break key to break from the current operation when running in the shell and many internal or external commands.
-* **Support for cue sheets with FLAC, MP3, WAV, OGG and OPUS CD audio tracks**
+* **Support for cue sheets with FLAC, MP3, WAV, OGG Vorbis and Opus CD audio tracks**
 +
-With DOSBox-X it is possible to mount .cue files that include FLAC, MP3, WAV, OGG Vorbis and OPUS music as CD audio tracks.
+With DOSBox-X it is possible to mount .cue files (either from the menu or with IMGMOUNT command) that include FLAC, MP3, WAV, OGG Vorbis and Opus music as CD audio tracks.
 * **Support for 3dfx Voodoo chip and Glide emulation**
 +
 DOSBox-X can emulate the 3dfx Voodoo in either the low-level emulation mode (emulating the 3dfx Voodoo 1 hardware) or the high-level emulation mode (where the Glide API calls are passed through to the host OS).
