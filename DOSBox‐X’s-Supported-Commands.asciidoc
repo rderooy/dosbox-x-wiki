@@ -25,7 +25,7 @@ Note: You can set 4DOS.COM as the default shell to start (instead of COMMAND.COM
 Turns on/off or changes the A20 gate mode.
 +
 Usage: A20GATE SET [off | off_fake | on | on_fake | mask | fast] or A20GATE [ON | OFF]
-* **ADDKEY** (internal command)
+* **ADDKEY** (external command)
 +
 Generates artificial keypresses.
 +
@@ -529,7 +529,7 @@ Runs program and breaks into debugger at entry point.
 +
 Usage: DEBUGBOX [command] [options]
 +
-* **INT2FDBG** (internal command)
+* **INT2FDBG** (external command)
 +
 Hooks INT 2Fh for debugging purposes.
 +
