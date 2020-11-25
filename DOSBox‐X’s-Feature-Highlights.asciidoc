@@ -112,6 +112,9 @@ Advanced OpenGL features including OpenGL-HQ and GLSL shaders are supported by D
 * **Support for Direct3D with pixel shaders (Windows only)**
 +
 DOSBox-X supports Direct3D along with pixel shaders which provides many more output flexibilities on Windows systems.
+* **Support for TrueType fonts (TTF) for text-mode DOS applications**
++
+DOSBox-X supports TrueType fonts (TTF) which provides high-resolution display for DOS shell and program running in text-mode. Features such as on-screen text styles are supported in this output mode too.
 * **Support for features such as V-Sync, overscan border and stereo swapping**
 * **Improved debugging features including built-in debugger and logging options**
 * **Including most patches from DOSBox ECE and many community contributions**
