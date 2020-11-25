@@ -11,9 +11,9 @@ DOSBox-X features a drop-down menu system so that you can do many things from th
 * **Built-in graphical configuration tool**
 +
 You can configure DOSBox-X‘s settings directly from its built-in GUI configuration tool instead of having to manually modify its config file.
-* **Save and load state support (with save slots)**
+* **Save and load state support (with save slots and save files)**
 +
-DOSBox-X provides a fully-featured system for saving and loading states with support for up to 100 save slots, selectable from the menu.
+DOSBox-X provides a fully-featured system for saving and loading states with support for up to 100 save slots, selectable from the menu, as well as supporting for save files.
 * **Automatic drive mounting (Windows only)**
 +
 DOSBox-X will automatically let you mount a drive if you try to enter a drive which is not yet mounted, and you can also let DOSBox-X automatically mount all available Windows drives at start.
@@ -40,7 +40,7 @@ One of DOSBox-X’s main goals is to become a great platform to run Windows 3.x 
 DOSBox-X has many useful tools already built-in, such as CWSDPMI, DOS4GW, DOSIDLE and IMGMAKE, which will appear on its Z: drive.
 * **Support for more DOS commands (e.g. VOL, LABEL, ATTRIB, PROMPT, MOUSE)**
 +
-DOSBox-X includes many DOS commands that are missing in DOSBox, such as FOR, VOL, LABEL, ATTRIB, PROMPT, EDIT, FIND, and MOUSE.
+DOSBox-X includes many DOS commands that are missing in DOSBox, such as FOR, VOL, LABEL, ATTRIB, DELTREE, PROMPT, EDIT, FIND, and MOUSE.
 * **Support for CONFIG.SYS commands (e.g. DOS, DEVICE, FCBS, FILES, LASTDRIVE)**
 +
 DOSBox-X supports a [config] section that supports most DOS config.sys commands, such as COUNTRY, DEVICE, DOS, FCBS, FILES, INSTALL, LASTDRIVE, NUMLOCK, SET, and SHELL.
