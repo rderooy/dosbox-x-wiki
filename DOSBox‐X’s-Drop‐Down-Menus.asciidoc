@@ -13,7 +13,9 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Load mapper file**: Selects a mapper file for use with DOSBox-X. Make sure to select a SDL1 mapper file for SDL1 builds, and SDL2 mapper file for SDL2 builds.
 
-* **Send Key**: Sends special keys such as the logo key, Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
+* **Send special key**: Sends special keys such as the logo key, Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
+
+* **Select host key**: Select a key combination including Ctrl+Alt, Ctrl+Shift or Alt+Shift, or use the mapper-defined host key (F11/F12 by default).
 
 * **Shared clipboard functions**: Enables or disables the various ways for DOSBox-X to communicate with the host clipboard, such as using the right (or middle) mouse button to copy to and paste from the clipboard in quick edit mode. Some options are only available for the Windows platform.
 
@@ -77,7 +79,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Scaler**: Selects a scaler used to enlarge/enhance low resolution modes.
 
-* **Output**: Selects the video system to use for output, such as Surface, Direct3D or OpenGL, and to enable double-scan mode (double-scanned output emits two scanlines for each source line).
+* **Output**: Selects the video system to use for output, such as Surface, OpenGL, Direct3D and TrueType font, and to enable double-scan mode (double-scanned output emits two scanlines for each source line).
 
 * **V-Sync**: Synchronizes V-Sync timing to the host display. This requires calibration within DOSBox-X.
 
