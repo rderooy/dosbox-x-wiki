@@ -140,6 +140,8 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
 
+* **Create blank disk image**: Creates blank floppy or hard disk images of common disk sizes for mounting them as drives.
+
 * **Show mounted drive numbers**: Shows details such as the disk name for all mounted drive numbers (0-5).
 
 * **Show IDE disk or CD status**: Displays the status for each IDE position (1m, 1s, 2m, 2s, etc).
