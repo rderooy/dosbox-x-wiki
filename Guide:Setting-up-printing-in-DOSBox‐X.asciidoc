@@ -312,6 +312,9 @@ In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications c
 This assumes you PC still has a printer port integrated on the systemboard, or a legacy ISA printer adapter.
 It reportedly will not work with USB printer adapters or PCI printer port adapters.
 
+Also note that the output is sent verbatim from the DOS application to the printer, without any filtering or conversion. Therefore it is important that the printer can understand the control codes that are being sent.
+In practice this means that this method is only really meant for situations where you have a legacy printer, or are perhaps only sending pure text.
+
 Make sure your DOSBox-X config file contains the statements:
 ....
 [parallel]
