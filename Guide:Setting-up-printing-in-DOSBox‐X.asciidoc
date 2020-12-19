@@ -66,7 +66,7 @@ Note: the parallel1 port may be auto-enabled for Disney Sound Source emulation.
 *** Default: 378
 ** ``ecpbase`` (base address of the ECP registers, optional).
 * Linux:
-** ``realport`` (the parallel port device i.e. /dev/parport0).
+** ``realport`` (the parallel port device i.e. ``/dev/parport0``).
 
 **file**
 
@@ -81,6 +81,9 @@ closing the file on inactivity (default:500)
 ** ``addFF`` to add a formfeed when closing
 ** ``addLF`` to add a linefeed if the app doesn't
 ** ``cp:<codepage number>`` to perform codepage translation, i.e. cp:437
+** ``openps:<program>`` start a program to open the file if the printer output is detected to be PCL.
+** ``openwith:<program>`` start a program to open the file in all other conditions.
+** ``openerror:<program>`` start a program to open the file if an error had occurred.
 
 Example:
 ....
@@ -119,6 +122,13 @@ This enables an emulated LPT1 port on IO base address 0x278.
 #### parallel3
 * Default value: disabled
 * Possible values: disabled, reallpt, file, printer, disney
+
+#### parallel4-9
+* Default value: disabled
+* Possible values: disabled, reallpt, file, printer, disney
+
+NOTE: LPT1-3 are standard LPT ports in DOS, whereas LPT4-9 are extended LPT ports that are only supported by some applications.
+You can optionally specify base addresses and IRQs for them with base: and irq: options.
 
 #### dongle
 * Default value: false
@@ -173,11 +183,13 @@ Example of standard paper sizes in portrait orientation:
 
 #### printoutput
 * Default value: png
-* Possible values: png, ps, bmp
+* Possible values: png, ps, bmp, printer
 
 Between PNG and BMP, PNG is better. BMP files will be much larger, while the image quality will be identical.
 
 ps = PostScript.
+
+Setting the value to ``printer`` on a Windows host, will cause it to get redirected to your print queue and a print dialogue will appear.
 
 #### multipage
 * Default value: false
@@ -276,9 +288,27 @@ Note: If you booted real DOS, or Windows 9x in DOSBox-X the output filename will
 You may be able to use this with more advanced printer model selected in your DOS application, but the output will then have printer specific control codes in it.
 In addition, this may not work if the application expects to be able to have bi-directional communication with the printer.
 
-# Example: Printing to a real parallel printer
+# Example: Printing to a real printer
 
-## Windows host
+## Windows host, method 1
+It will cause a Windows print dialogue to appear on the host, and you can print to any printer configured on the host, including print to PDF.
+
+This method requires that you have first completed the FONT installation step above.
+
+Make sure your DOSBox-X config file contains the statements:
+....
+[parallel]
+parallel1=printer
+
+[printer]
+printer=true
+printoutput=printer
+timeout=1000
+....
+
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
+
+## Windows host, method 2
 This assumes you PC still has a printer port integrated on the systemboard, or a legacy ISA printer adapter.
 It reportedly will not work with USB printer adapters or PCI printer port adapters.
 
@@ -306,7 +336,7 @@ Replace "username" with your Linux username.
 sudo usermod -a -G lp username
 ....
 
-Now, similar to the Windows instructions, try the following:
+Now, similar to the Windows parallel printing instructions, try the following:
 
 Make sure your DOSBox-X config file contains the statements:
 ....
@@ -323,26 +353,6 @@ parallel1=file dev:/dev/parport0
 ....
 
 But while this method seems to work on Windows, it does not seem to work properly on Linux.
-
-# Example: Printing to a real printer
-
-This method only works on Windows hosts.
-It will cause a Windows print dialogue to appear on the host, and you can print to any printer configured on the host, including print to PDF.
-
-This method requires that you have first completed the FONT installation step above.
-
-Make sure your DOSBox-X config file contains the statements:
-....
-[parallel]
-parallel1=printer
-
-[printer]
-printer=true
-printoutput=printer
-timeout=1000
-....
-
-In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
 # Example: Print to PNG, BMP or PostScript
 This method prints to a PNG, BMP or PostScript (PS) image file.
