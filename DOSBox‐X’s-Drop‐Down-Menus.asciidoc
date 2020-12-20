@@ -11,7 +11,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Mapper editor**: Enters DOSBox-X's keyboard mapper editor, where you can map different keys for use with the emulated DOS. Press the Esc key three times to exit the editor.
 
-* **Load mapper file**: Selects a mapper file for use with DOSBox-X. Make sure to select a SDL1 mapper file for SDL1 builds, and SDL2 mapper file for SDL2 builds.
+* **Load mapper file...**: Selects a mapper file for use with DOSBox-X to replace the currently loaded mapper file (if any).
 
 * **Send special key**: Sends special keys such as the logo key, Ctrl+Esc, Alt+Tab, and Ctrl+Alt+Del to the emulated DOS system.
 
@@ -86,7 +86,9 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 * **Overscan**: Selects the width of the overscan border, from 0 to 10. This works only if the video output is set to surface.
 rscan border, from 0 to 10. This works only if the video output is set to surface.
 
-* **Text-mode**: Changes some text-mode settings, such as allowing 9-pixel wide text mode fonts, switching between high intensity background color and blinking foreground text, and setting the video modes to for example 80 columns x 50 lines and 132 columns and 60 lines. You will also find options for TrueType font (TTF) output here.
+* **Text-mode**: Changes some text-mode settings, such as allowing 9-pixel wide text mode fonts, switching between high intensity background color and blinking foreground text, and setting the video modes to for example 80 columns x 50 lines and 132 columns and 60 lines.
+
+* **TTF options**: Changes settings related to the TrueType font (TTF) output, such as increasing or decreasing the TTF font siz, selection of a word processor and toggling of on-screen text styles (bold, italics, etc).
 
 * **PC-98 options**: Changes the PC-98 related settings, such as whether to allow EGC and GRCG graphics functions and whether to use the default U.S. keyboard layout for PC-98 mode.
 
