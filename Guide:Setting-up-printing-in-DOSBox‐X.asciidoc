@@ -212,6 +212,8 @@ Note: On Linux the use of the ~ character is not allowed to specify the home dir
 
 Start the specified program to open the output file.
 
+e.g. ``openwith=notepad`` will open the file with Notepad on a Windows host.
+
 #### openerror
 * Default value: <blank>
 
