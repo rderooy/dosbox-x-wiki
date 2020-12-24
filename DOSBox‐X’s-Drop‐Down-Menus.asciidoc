@@ -120,21 +120,23 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 **5. The "DOS" menu**
 
-* **Mouse**: Changes the mouse settings for the emulated DOS inside DOSBox-X, such as the mouse sensitivity.
+* **Quick launch program...** Launches a program selected from the file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
 
 * **Reported DOS version**: Changes the reported DOS version to the specified version from the list, including 3.3, 5.0, 6.22 and 7.1. Long filename (LFN) and FAT32 disk image support will be enabled when you select 7.1 as the reported DOS version. You can also enter a version with “Edit”.
 
 * **Long filename support**: Changes the long filename (LFN) setting, either enable, disable, or auto per reported DOS version (i.e. enable LFN if the reported DOS version is at least 7).
 
+* **Mouse emulation**: Changes the mouse settings for the emulated DOS inside DOSBox-X, such as the mouse sensitivity.
+
 * **Expanded Memory (EMS)**: Select a mode for the Expanded Memory (EMS), or disables the EMS for some DOS programs or games.
 
 * **Windows host applications**: Enable this if you want to launch Windows applications from mounted directories to run on the host, and whether to wait for the applications.
 
-* **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibility with DOSBox.
-
-* **Quick launch program...** Launches a program selected from the file browser to run inside DOSBox-X directly. The program folder will be automatically mounted and unmounted, with the option to stay in the program folder after the program finishes.
-
 * **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
+
+* **Synchronize host date/time**: Selects whether to force synchronizations with the date/time of the host system.
+
+* **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibility with DOSBox.
 
 * **Swap floppy**: Swaps the floppy image if you are using multiple floppy disk images.
 
