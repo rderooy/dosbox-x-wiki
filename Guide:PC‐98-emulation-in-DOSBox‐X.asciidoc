@@ -9,7 +9,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 toc::[]
 
-As DOSBox-X aims to be complete DOS emulation package, it officially supports the emulations of the PC-98 system. The NEC PC-9800, also known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000. Most of the PC-98 software are games, but there are also non-gaming PC-98 applications such as the PC-98 version of Windows 3.1. While these were originally designed for Japanese markets, international users who are influenced by the Japanese culture may also want to check this out. For example, earlier Touhou games are PC-98 games, which are well supported by DOSBox-X's PC-98 system.
+As DOSBox-X aims to be complete DOS emulation package, it officially supports the emulations of the Japanese PC-98 system, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese characters. The NEC PC-9800, also known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000. Most of the PC-98 software are games, but there are also non-gaming PC-98 applications such as the PC-98 version of Windows 3.1. While these were originally designed for Japanese markets, international users who are influenced by the Japanese culture may also want to check this out. For example, earlier Touhou games are PC-98 games, which are well supported by DOSBox-X's PC-98 system.
 
 ## Start PC-98 emulation
 
@@ -51,7 +51,7 @@ Once a drive is mounted, you can enter the drive directory and start the desired
 
 The Touhou games are a series of bullet shooting games that are especially famous in the Doujin world. The first five games were targeted for PC-98, so you can actually run them in DOSBox-X's PC-98 mode.
 
-Assuming you have the HDI images for these Touhou games, you can use a mount them as the C drive and then either boot from the drive or start the game directory. For example:
+Assuming you have the HDI images for these Touhou games, you can use a mount them as the C drive and then either start the game directly or boot from the drive. For example:
 
 ```
 IMGMOUNT C TOUHOU1.HDI
@@ -59,7 +59,7 @@ C:
 GAME
 ```
 
-Or boot from it:
+Or boot from the drive:
 
 ```
 IMGMOUNT C TOUHOU1.HDI
