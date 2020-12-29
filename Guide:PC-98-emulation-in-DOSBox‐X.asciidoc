@@ -13,7 +13,7 @@ As DOSBox-X aims to be complete DOS emulation package, it officially supports th
 
 ## Start PC-98 emulation
 
-By default, DOSBox-X starts the standard IBM-compatible DOS system. But you can specify a different system to start with the "machine" config in DOSBox-X's configuration file (dosbox-x.conf by default), which offers system types including PC-98. So if you set "machine" to "pc98" (or "pc9801"/"pc9821" which are synonyms for "pc98" at this time), then DOSBox-X will start in the PC-98 emulation mode. Alternative you can specify the PC-98 machine type directly at the DOSBox-X command line, such as ```dosbox-x -set machine=pc98```, which will also start DOSBox-X in the PC-98 emulation mode regardless of the settings in the DOSBox-X config file.
+By default, DOSBox-X starts the standard IBM-compatible DOS system. But you can specify a different system to start with the "machine" option in DOSBox-X's configuration file (dosbox-x.conf by default), which offers system types including PC-98. So if you set "machine" to "pc98" (or "pc9801"/"pc9821" which are synonyms for "pc98" at this time), then DOSBox-X will start in the PC-98 emulation mode. Alternative you can specify the PC-98 machine type directly at the DOSBox-X command line, such as ```dosbox-x -set machine=pc98```, which will also start DOSBox-X in the PC-98 emulation mode regardless of the settings in the DOSBox-X config file.
 
 ## PC-98 accessory files
 
@@ -31,8 +31,37 @@ Migu 2M Regular: https://github.com/chrissimpkins/codeface/blob/master/cjk-fonts
 
 M+ P Type-1 Regular: https://github.com/chrissimpkins/codeface/blob/master/cjk-fonts/mplus1m/mplus-1m-regular.ttf?raw=true[Download here]
 
-M+ P Type-2 Regular: https://github.com/chrissimpkins/codeface/blob/master/cjk-fonts/mplus1m/mplus-2m-regular.ttf?raw=true[Download here]
+M+ P Type-2 Regular: https://github.com/chrissimpkins/codeface/blob/master/cjk-fonts/mplus2m/mplus-2m-regular.ttf?raw=true[Download here]
 
-In addition, the ``SOUND.ROM`` file is the ROM image of the PC-98 FM board, which may be required by some PC-98 games to make music and sound effects:
+In addition, the ``SOUND.ROM`` file is the ROM image of the PC-98 FM board, which may be needed by some PC-98 games to make music and sound effects:
 
 SOUND.ROM: https://retro-type.com/PC98/files/BIOS/PC98Ce2-model-S2D-Bios/Backup-of-Ce2-Bios/Backup-of-Ce2-Bios/Extracted%20Bios%20Files/PC9821-Ce2-S2D-Bios-MKBIOS/SOUND.ROM[Download here]
+
+## PC-98 settings
+
+There are quite a few PC-98 related options in the DOSBox-X config file, such as the options to enable or disable EGC and GRCG graphical functions. These config options can be found in the [pc98] section of the DOSBox-X config file, and many of them can also be toggled in the "PC-98 options" menu group under the "Video" menu. Many of these options are for advanced users, but there are some options which may be very useful for general users as well, particularly the ```pc-98 force ibm keyboard layout``` config option. Since PC-98 system was originally designed for Japanese users, the default keyboard layout for the PC-98 mode will be the Japanese keyboard layout. However, non-Japanese users who want to use the PC-98 system probably want to use the default U.S. keyboard keyboard layout instead, which can be done by setting ```pc-98 force ibm keyboard layout``` to ```true```, or it can be enabled via the ```Use US keyboard layout``` menu option in the "PC-98 options" menu group. With this enabled you will be able to use DOSBox-X's PC-98 system easily with the standard U.S. keyboard layout.
+
+## Running PC-98 games or applications
+
+Once you are in DOSBox-X's PC-98 system, you can start preparing for playing PC-98 games or running PC-98 applications. First you need to mount a drive for use with PC-98 games or applications. The drive can be mounted either from a drive or directory in the host system, or from a disk image. In general mounting drives in PC-98 mode follows the same procedures as in DOSBox-X's standard mode, although disk images for PC-98 systems may come with HDI or FDD formats rather than the IMG format which is typically seen in a standard system. In any case you can mount the drives with either MOUNT or IMGMOUNT command as usual, or it can be done from the "Drive" menu.
+
+Once a drive is mounted, you can enter the drive directory and start the desired game or application, or boot from the drive in the case of bootable disk images. The actual steps are also similar to how they are done in DOSBox-X's standard system. For example, you can install and run the PC-98 version of Windows 3.1 in DOSBox-X's PC-98 system the same way as you install and run the standard version of Windows 3.1 in DOSBox-X's default machine type.
+
+### Example: Touhou games in DOSBox-X
+
+The Touhou games are a series of bullet shooting games that are especially famous in the Doujin world. The first five games were targeted for PC-98, so you can actually run them in DOSBox-X's PC-98 mode.
+
+Assuming you have the HDI images for these Touhou games, you can use a mount them as the C drive and then either boot from the drive or start the game directory. For example:
+
+```
+IMGMOUNT C TOUHOU1.HDI
+C:
+GAME
+```
+
+Or boot from it:
+
+```
+IMGMOUNT C TOUHOU1.HDI
+BOOT C:
+```
