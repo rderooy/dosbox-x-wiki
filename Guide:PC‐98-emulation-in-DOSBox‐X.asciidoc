@@ -9,7 +9,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 toc::[]
 
-Since DOSBox-X aims to be complete DOS emulation package, it officially supports the emulations of the Japanese PC-98 system, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese characters. The NEC PC-9800, also known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000. Most of the PC-98 software are games, but there are also non-gaming PC-98 applications such as the PC-98 version of Windows 3.1. While these were originally designed for the Japanese market, international users who are influenced by the Japanese culture may also want to check this out. For example, earlier Touhou games are PC-98 games, which are well supported by DOSBox-X's PC-98 system.
+Since DOSBox-X aims to be complete DOS emulation package, it officially supports the emulations of the Japanese PC-98 system, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese characters. The NEC PC-9800, also known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000. Most of the PC-98 software are games, but there are also non-gaming PC-98 applications such as the PC-98 version of Windows 3.1 released by Microsoft. While these were originally designed for the Japanese market, international users who are influenced by the Japanese culture may also want to check this out. For example, earlier Touhou games are PC-98 games, which are well supported by DOSBox-X's PC-98 system.
 
 image::https://upload.wikimedia.org/wikipedia/zh/3/35/Th04cover.jpg[PC-98 Touhou game: 東方幻想郷 〜 Lotus Land Story]
 
@@ -23,11 +23,9 @@ Alternative you can specify the PC-98 machine type directly at the command line 
 
 ## PC-98 font and accessory files
 
-You can start DOSBox-X in PC-98 mode without any additional files apart from the DOSBox-X executable itself. However, in order for DOSBox-X to display Japanese texts correctly you will need additional files. It is recommended to have the ``FREECG98.BMP`` file and/or the ``FONT.ROM`` file located in the DOSBox-X directory, then DOSBox-X will be able to display Japanese texts in the standard PC-98 mode:
+You can start DOSBox-X in PC-98 mode without any additional files apart from the DOSBox-X executable itself. However, in order for DOSBox-X to display Japanese texts (Kana, Kanji, etc) correctly you will need additional files. You can either use the original PC-98 ```FONT.ROM``` ROM file, or use the free alternative ``FREECG98.BMP`` included with DOSBox-X. Make sure the ``FREECG98.BMP`` file and/or the original PC-98 ``FONT.ROM`` file is located in the DOSBox-X directory, then DOSBox-X will be able to display Japanese texts in the standard PC-98 mode:
 
 * FREECG98.BMP: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/FREECG98.BMP?raw=true[Download here]
-
-* FONT.ROM: https://retro-type.com/PC98/files/BIOS/PC98Ce2-model-S2D-Bios/Backup-of-Ce2-Bios/Backup-of-Ce2-Bios/Extracted%20Bios%20Files/PC9821-Ce2-S2D-Bios-MKBIOS/FONT.ROM[Download here]
 
 If you want to use the TrueType font (TTF) output option (i.e. with "output=ttf"), then you will need a Japanese monospaced TrueType font for PC-98 mode. For example, you can use any of the Japanese TrueType fonts from the Migu or M+ P families:
 
@@ -41,9 +39,7 @@ If you want to use the TrueType font (TTF) output option (i.e. with "output=ttf"
 
 Specify the desired Japanese TrueType font with the ttf.font config option for the TTF output, and then DOSBox-X will render the PC-98 text screen using this TTF font.
 
-Moreover, the ``SOUND.ROM`` file is the ROM image of the PC-98 FM board, which may be needed by some PC-98 games to make music and sound effects:
-
-* SOUND.ROM: https://retro-type.com/PC98/files/BIOS/PC98Ce2-model-S2D-Bios/Backup-of-Ce2-Bios/Backup-of-Ce2-Bios/Extracted%20Bios%20Files/PC9821-Ce2-S2D-Bios-MKBIOS/SOUND.ROM[Download here]
+Apart from the ```FONT.ROM``` ROM image file mentioned above, there is another file named ``SOUND.ROM`` which is the ROM image of the PC-98 FM board, which may be needed by some PC-98 games to make music and sound effects. Both of these ROM images can be found online.
 
 ## PC-98 config settings
 
@@ -136,4 +132,4 @@ BOOT C:
 Some external links with useful information:
 
 * link:https://en.wikipedia.org/wiki/PC-9800_series[Wikipedia: PC-9800 series]
-* link:https://en.wikipedia.org/wiki/Touhou_Project#PC-98_games[Wikipedia: PC-98 games]
+* link:https://en.wikipedia.org/wiki/Touhou_Project#PC-98_games[Wikipedia: Touhou Project - PC-98 games]
