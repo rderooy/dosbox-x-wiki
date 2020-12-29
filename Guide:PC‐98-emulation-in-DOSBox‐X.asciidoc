@@ -11,6 +11,10 @@ toc::[]
 
 As DOSBox-X aims to be complete DOS emulation package, it officially supports the emulations of the Japanese PC-98 system, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese characters. The NEC PC-9800, also known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000. Most of the PC-98 software are games, but there are also non-gaming PC-98 applications such as the PC-98 version of Windows 3.1. While these were originally designed for Japanese markets, international users who are influenced by the Japanese culture may also want to check this out. For example, earlier Touhou games are PC-98 games, which are well supported by DOSBox-X's PC-98 system.
 
+image::https://upload.wikimedia.org/wikipedia/zh/3/35/Th04cover.jpg[PC-98 Touhou game: 東方幻想郷 〜 Lotus Land Story]
+
+(PC-98 Touhou game: 東方幻想郷 〜 Lotus Land Story)
+
 ## Start PC-98 emulation
 
 By default, DOSBox-X starts the standard IBM-compatible DOS system. But you can specify a different system to start with the "machine" option in DOSBox-X's configuration file (dosbox-x.conf by default), which offers system types including PC-98. So if you set "machine" to "pc98" (or "pc9801"/"pc9821" which are synonyms for "pc98" at this time), then DOSBox-X will start in the PC-98 emulation mode. Alternative you can specify the PC-98 machine type directly at the DOSBox-X command line, such as ```dosbox-x -set machine=pc98```, which will also start DOSBox-X in the PC-98 emulation mode regardless of the settings in the DOSBox-X config file.
@@ -48,6 +52,10 @@ Once you are in DOSBox-X's PC-98 system, you can start preparing for playing PC-
 Once a drive is mounted, you can enter the drive directory and start the desired game or application, or boot from the drive in the case of bootable disk images. The actual steps are also similar to how they are done in DOSBox-X's standard system. For example, you can install and run the PC-98 version of Windows 3.1 in DOSBox-X's PC-98 system the same way as you install and run the standard version of Windows 3.1 in DOSBox-X's default machine type.
 
 ### Example: Touhou games in DOSBox-X
+
+image::https://upload.wikimedia.org/wikipedia/zh/4/46/Mystic_Square.png[The 5th Touhou game: 東方怪綺談 〜 Mystic Square]
+
+(The 5th Touhou game: 東方怪綺談 〜 Mystic Square)
 
 The Touhou games are a series of bullet shooting games that are especially famous in the Doujin world. The first five games were targeted for PC-98, so you can actually run them in DOSBox-X's PC-98 mode.
 
