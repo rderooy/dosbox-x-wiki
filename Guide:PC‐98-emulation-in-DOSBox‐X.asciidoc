@@ -45,7 +45,49 @@ SOUND.ROM: https://retro-type.com/PC98/files/BIOS/PC98Ce2-model-S2D-Bios/Backup-
 
 ## PC-98 config settings
 
-There are quite a few PC-98 related options in the DOSBox-X config file, such as the options to enable or disable EGC and GRCG graphical functions. These config options can be found in the [pc98] section of the DOSBox-X config file, and many of them can also be toggled in the "PC-98 options" menu group under the "Video" menu. Many of these options are for advanced users, but there are some options which may be very useful for general users as well, particularly the ```pc-98 force ibm keyboard layout``` config option. Since PC-98 system was originally designed for Japanese users, the default keyboard layout for the PC-98 mode will be the Japanese keyboard layout. However, non-Japanese users who want to use the PC-98 system probably want to use the default U.S. keyboard keyboard layout instead, which can be done by setting ```pc-98 force ibm keyboard layout``` to ```true```, or it can be enabled via the ```Use US keyboard layout``` menu option in the "PC-98 options" menu group. With this enabled you will be able to use DOSBox-X's PC-98 system easily with the standard U.S. keyboard layout.
+There are quite a few PC-98 related options in the DOSBox-X config file, such as the options to enable or disable EGC and GRCG graphical functions. These config options can be found in the [pc98] section of the DOSBox-X config file, and many of them can also be toggled in the "PC-98 options" menu group under the "Video" menu. The following config options can be found in the dosbox-x.reference.conf file, while more advanced options can be found in the dosbox-x.reference.full.conf file:
+
+** pc-98 BIOS copyright string
+* Default value: false
+* Possible values: true, false
+* If set, the PC-98 BIOS copyright string is placed at E800:0000. Enable this for software that detects PC-98 vs Epson.
+
+** pc-98 fm board
+* Default value: auto
+* Possible values: auto, off, false, board14, board26k, board86, board86c
+* In PC-98 mode, selects the FM music board to emulate.
+
+** pc-98 enable 256-color
+* Default value: true
+* Possible values: true, false
+* Allow 256-color graphics mode if set, disable if not set.
+
+** pc-98 enable 16-color
+* Default value: true
+* Possible values: true, false
+* Allow 16-color graphics mode if set, disable if not set.
+
+** pc-98 enable grcg
+* Default value: true
+* Possible values: true, false
+* Allow GRCG graphics functions if set, disable if not set.
+
+** pc-98 enable egc
+* Default value: true
+* Possible values: true, false
+* Allow EGC graphics functions if set, disable if not set.
+
+** pc-98 bus mouse
+* Default value: true
+* Possible values: true, false
+* Enable PC-98 bus mouse emulation. Disabling this option does not disable INT 33h emulation.
+
+** pc-98 force ibm keyboard layout
+* Default value: true
+* Possible values: true, false
+* Force to use a default keyboard layout like IBM US-English for PC-98 emulation. Works with PC-98 software using BIOS for keyboard.
+
+You may not need to change most config options for PC-98 mode, but you probably want to look at the last one ```pc-98 force ibm keyboard layout``` if you are not a Japanese user. Since PC-98 system was originally designed for the Japanese market, the default keyboard layout for the PC-98 mode will be the Japanese keyboard layout. However, users outside Japan who want to use the PC-98 system probably want to change the setting to the default U.S. keyboard keyboard layout instead, which can be done by setting ```pc-98 force ibm keyboard layout``` to ```true```, or it may be enabled via the ```Use US keyboard layout``` menu option in the "PC-98 options" menu group. With this enabled you will be able to use DOSBox-X's PC-98 system easily with the standard U.S. keyboard layout.
 
 ## Running PC-98 games or applications
 
