@@ -37,6 +37,10 @@ If you want to use the TrueType font (TTF) output option (i.e. with "output=ttf"
 
 * M+ P Type-2 Regular: https://github.com/chrissimpkins/codeface/blob/master/cjk-fonts/mplus2m/mplus-2m-regular.ttf?raw=true[Download here]
 
+Or the ``UnifontFullMediumMono.TTF`` file found in the DOSBox-X repository:
+
+* UnifontFullMediumMono: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/UnifontFullMediumMono.ttf?raw=true[Download here]
+
 Specify the desired Japanese TrueType font with the ttf.font config option for the TTF output, and then DOSBox-X will render the PC-98 text screen using this TTF font.
 
 Apart from the ``FONT.ROM`` ROM image file mentioned above, there is another PC-98 ROM file named ``SOUND.ROM`` which is the ROM image of the PC-98 FM board, which may be needed by some PC-98 games to make music and sound effects. Both of these ROM images can be found online.
