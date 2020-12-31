@@ -83,10 +83,6 @@ Reboot the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X.
 Start DOSBox-X's graphical configuration tool.
 * **[F11/F12]+M**
 Start DOSBox-X's mapper editor.
-* **[F11/F12]+A**
-Copy all text on the DOS screen to the host clipboard.
-* **[F11/F12]+V**
-Paste the text in the host clipboard to the DOS screen.
 * **[F11/F12]+Esc**
 Show/hide DOSBox-X’s drop-down menu bar.
 * **[F11/F12]+Del**
@@ -109,6 +105,8 @@ Increase the font size for the TrueType font (TTF) output.
 Decrease the font size for the TrueType font (TTF) output.
 * **[F11/F12]+Left**
 Reset the emulated DOS's current CPU speed to the normal speed.
+* **[F11/F12]+Right**
+Toggle DOSBox-X's speed lock.
 * **[F11/F12]+D**
 Swap between mounted CD images.
 * **[F11/F12]+O**
@@ -119,7 +117,7 @@ Take a screenshot of the current screen in PNG format.
 Start/Stop capturing an AVI video of the current session.
 * **[F11/F12]+W**
 Start/Stop recording a WAV audio of the current session.
-* **LAlt+Pause**
+* **Alt+Pause**
 Start DOSBox-X's Debugger.
 * **[F11/F12]+[,]**
 Select the previous save slot to save to or load from.
@@ -129,18 +127,20 @@ Select the next save slot to save to or load from.
 Save current state to the selected save slot.
 * **[F11/F12]+L**
 Load the state from the selected save slot.
-* **LCtrl+F9**
-Exit DOSBox-X.
-* **LCtrl+F10**
-Capture the mouse for use with the emulated DOS.
-* **LCtrl+Pause**
+* **[F11/F12]+Pause**
 Pause emulation (press again to continue).
+* **Ctrl+F5**
+Copy all text on the DOS screen to the host clipboard.
+* **Ctrl+F6**
+Paste the text in the host clipboard to the DOS screen.
+* **Ctrl+F9**
+Exit DOSBox-X.
+* **Ctrl+F10**
+Capture the mouse for use with the emulated DOS.
 
 Notes:
 
-* **1.** **[F11/F12]** is the host key, meaning either F11 or F12 (depending on the operating system). F11 is the host key in Windows, and F12 is the host key in all other platforms (Linux, macOS, etc). The F12 key is avoided being the host key in Windows because it is used internally by Windows for debugging functions. The host key can be redefined in DOSBox-X's keyboard mapper as needed, if you want to use a different key than F11 or F12.
-
-* **2:** **LCtrl** means the Left Ctrl key, **LShift** means the Left Shift key, and **LAlt** means the Left Alt key.
+* **[F11/F12]** is the host key, meaning either F11 or F12 (depending on the operating system). F11 is the host key in Windows, and F12 is the host key in all other platforms (Linux, macOS, etc). The F12 key is avoided being the host key in Windows because it is used internally by Windows for debugging functions. The host key can be redefined in DOSBox-X's keyboard mapper as needed, if you want to use a different key than F11 or F12.
 
 ### DOSBox-X's Mapper Editor
 You can define or change mappings for input devices such as keyboard shortcuts and joysticks buttons in DOSBox-X using the mapper editor. The mapper editor can be started either from the "Main" menu or with the command-line parameter -startmapper. You are presented with an interface including a virtual keyboard, a virtual mouse, as well as virtual joysticks and a table of functions.
