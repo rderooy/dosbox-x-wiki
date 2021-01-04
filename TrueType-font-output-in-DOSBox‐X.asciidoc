@@ -93,7 +93,7 @@ Then the regular text will be rendered using the Consola.ttf font, whereas the b
 
 If you set ``ttf.wp=WP`` which sets WordPerfect as the word processor, the 512-character font (with 256 additional characters from the second VGA font bank) will be supported by default for use with WordPerfect. This can be disabled by setting ``ttf.char512=false`` in the [render] section of the configuration.
 
-If you set ``ttf.wp=WS`` which sets WordStar as the word processor, then you probably want to ``high intensity blinking=false`` for some text styles to be properly displayed visually. You can also toggle this from the menu ("Video" => "Text-mode" => "High intensity: background color").
+If you set ``ttf.wp=WS`` which sets WordStar as the word processor, then you probably want to ``high intensity blinking=false`` for some text styles to be properly displayed visually. You can also toggle this from the menu ("Video" => "Text-mode" => "High intensity: background color"). This option is functionally equivalent to the 4DOS.INI option ``BrightBG=Yes`` if you use the 4DOS shell.
 
 ## Color scheme for the TrueType font output
 
