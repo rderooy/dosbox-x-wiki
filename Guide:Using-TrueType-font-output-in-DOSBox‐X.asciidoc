@@ -9,7 +9,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 toc::[]
 
-This guide explains how to setup and use the TrueType font (TTF) output in DOSBox-X.
+This guide explains how to configure and use the TrueType font (TTF) output in DOSBox-X.
 
 Since DOSBox-X is designed to be a complete DOS emulator, it officially supports DOS applications and more, not just DOS games. Unlike DOS gaming software, most non-gaming DOS software are text-mode applications, which will look much better when rendered with TrueType fonts rather than the standard bitmaps (original DOSBox for example only supports the bitmap rendering). DOSBox-X supports the TrueType font (TTF) output which makes it suitable for running text-mode DOS applications, in addition to graphical-mode DOS software.
 
@@ -22,7 +22,7 @@ output = ttf
 
 Alternatively, you can force the TTF output when starting DOSBox-X from the command-line such as ``dosbox-x -set output=ttf``. Then the TrueType font output will be used when the DOSBox-X window appears.
 
-You can also switch from a different output (such as the standard surface/opengl/direct3d outputs) to the TrueType font output from DOSBox-X's drop-down menu. Under "Video" menu, from the "Output" menu group select "TrueType". Then DOSBox-X will automatically switch to the TTF output from another output. You can switch back and forth between these outputs by selecting a output from the "Output" menu group.
+You can also switch from a different output (such as the standard surface/opengl/direct3d outputs) to the TrueType font output from DOSBox-X's drop-down menu. Under "Video" menu, from the "Output" menu group select "TrueType font". Then DOSBox-X will automatically switch to the TTF output from another output. You can switch back and forth between these outputs by selecting a output from the "Output" menu group.
 
 Note that the TrueType font output only works in the text-mode; for graphical mode DOSBox-X will automatically switch to a different output for rendering graphics. You can specify an output for DOSBox-X to switch to with the ```ttf.outputswitch``` config option (which defaults to auto) in the [render] section of the configuration, or DOSBox-X will switch to a different output automatically otherwise.
 
