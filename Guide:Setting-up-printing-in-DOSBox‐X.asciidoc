@@ -386,7 +386,7 @@ parallel1=file dev:/dev/parport0
 
 But while this method seems to work on Windows, it does not seem to work properly on Linux.
 
-Again, just like in the "Windows host, example 2" above, the output is sent verbatim to the printer, so the printer needs to be able to understand any control codes the DOS application sends.
+Again, just like in the "Windows host, method 2" above, the output is sent verbatim to the printer, so the printer needs to be able to understand any control codes the DOS application sends.
 
 # Example: Print to PNG, BMP or PostScript
 This method prints to a PNG, BMP or PostScript (PS) image file.
