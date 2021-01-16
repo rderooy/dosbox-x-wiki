@@ -104,6 +104,9 @@ Starts and terminates DOSBox-X after 'n' seconds.
 * **-fastlaunch**
 +
 Enables fast launch mode by skipping the BIOS pause and welcome banner when DOSBox-X starts. Especially use for launching a specific program or game at start.
+* **-silent**
++
+Runs DOSBox-X silently without showing the DOSBox-X window and then automatically exits after executing AUTOEXEC.BAT. Useful for batch operations.
 * **-helpdebug**
 +
 Shows debug-related command-line options.
