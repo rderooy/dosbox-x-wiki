@@ -68,6 +68,9 @@ Uses the default key mappings for DOSBox-X (do not try to load a mapper file suc
 * **-winrun**
 +
 Enables launching Windows programs to run on the host (such as the use of START command), long filenames support and Windows clipboard communications via the CLIP$ device (Windows version only).
+* **-display2 <color>**
++
+Enables standard (VGA/EGA/CGA) and monochrome dual-screen mode with the specified color: white, green, amber.
 * **-disable-numlock-check**
 +
 Disables check of the NumLock key (Windows version only).
