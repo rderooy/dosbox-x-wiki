@@ -28,6 +28,10 @@ Note that the TrueType font output only works in the text-mode; for graphical mo
 
 The blinking cursor in the TrueType output can be optionally disabled with the setting ``ttf.blinkc=false`` in the [render] section of the configuration.
 
+A screenshot showing the TrueType output with the default TTF font: 
+
+image::images/DOSBox-X:TrueType_Font_Default.png[TrueType font output with the default TTF font]
+
 ## Use your own TrueType font for the output
 
 By default, DOSBox-X uses the built-in TrueType font for the TTF output. However, the TTF output is very flexible so that users can always specify a different font file to be rendered for the output. For example, you may want to use a different monospaced TTF font such as Consola, Lucon, or Nouveau IBM depending on your preference. If you want to use a TTF font that is not included in the Windows/Linux/macOS system by default you will need to download it (or copy it from another system) first.
@@ -57,6 +61,10 @@ ttf.font=vgasys.fon
 ttf.font=msgothic.ttc
 ```
 
+A screenshot showing the TrueType output with the Lucon TTF font: 
+
+image::images/DOSBox-X:TrueType_Font_Lucon.png[TrueType font output with the Lucon TTF font]
+
 Alternatively, you can dynamically switch the font file to use with the TrueType font output from the menu or the command line. There is a menu option "Select TrueType font (TTF)..." under the "Video" menu which allows users to select a TTF font file to use. Alternatively, you can do so with CONFIG command, such as the following:
 
 ```
@@ -66,7 +74,7 @@ CONFIG -set ttf.font=
 
 The above commands will change the TTF font to Consola.ttf and the built-in TrueType font respectively.
 
-If you use DOSBox-X's PC-98 mode, you probably want to use a Japanese TrueType font so that Shift-JIS characters (Kana, Kanji, etc) will be displayed correctly in this mode. Please look at the link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[Guide: PC‐98 emulation in DOSBox‐X] page for more information about this.
+If you use DOSBox-X's PC-98 mode, you probably want to use a Japanese TrueType font so that Shift-JIS characters (Kana, Kanji, etc) will be displayed correctly in this mode. Please look at the link:Guide%3APC-98-emulation-in-DOSBox-X{suffixappend}[Guide: PC-98 emulation in DOSBox-X] page for more information about this.
 
 ## Modifying the screen dimension for the output
 
