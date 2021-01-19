@@ -39,7 +39,6 @@ These are examples of printers that you may be able to select in a DOS applicati
 
 * Windows printer output in black & white only
 * Not all ESC/P commands are supported, like custom fonts
-* Needed TrueType font filenames and locations are hard-coded
 * Due to over-exact graphics emulation 360dpi printing from Windows (guest) graphics rastering might not look as expected
 * When set to use a Windows printer, the printer dialogue will only show up once at start
 * Country code setup and other configuration switches and buttons found on a real printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
@@ -53,8 +52,7 @@ This section lists the available configuration options for the ``[parallel]`` se
 
 This enables an emulated LPT1 port on IO base address 0x378. Most DOS applications expect a printer on LPT1 port.
 
-Some values have additional parameters, which if specified must be on the same lin
-e in the form of ``parameter:value``.
+Some values have additional parameters, which if specified must be on the same line in the form of ``parameter:value``.
 
 **disabled**
 
