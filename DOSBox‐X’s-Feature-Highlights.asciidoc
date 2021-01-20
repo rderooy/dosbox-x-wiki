@@ -123,6 +123,9 @@ DOSBox-X supports the FluidSynth MIDI synthesizer, which allows you to use a wid
 * **Support for Innovation SSI-2001 sound card emulation**
 +
 The Innovation SSI-2001 sound card is supported in DOSBox-X as well, which gives the emulated system the sound capabilities of a Commodore 64.
+* **Support for pixel-perfect scaling video mode**
++
+DOSBox-X supports the pixel-perfect scaling as an output option (output=openglpp), which improves the video image quality.
 * **Support for advanced OpenGL features such as OpenGL-HQ and GLSL shaders**
 +
 Advanced OpenGL features including OpenGL-HQ and GLSL shaders are supported by DOSBox-X, and you can use for example the pixel-perfect shader for OpenGL outputs.
