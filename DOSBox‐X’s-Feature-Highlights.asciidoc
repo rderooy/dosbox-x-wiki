@@ -78,6 +78,9 @@ DOSBox-X fully supports long filenames (LFN) which can be up to 255 characters, 
 * **Support for FAT32 file system and large disk images**
 +
 FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so you can make and mount drives larger than 2GB. Set ``ver=7.1`` to enable this feature.
+* **Support for file-locking and record-locking functions **
++
+DOSBox-X supports the DOS SHARE functions, which provides file-locking and record-locking for networked environments, especially on the Windows platform. This may be very important for usages such as networked DOS database applications. Hint: you probably want to set "nocachedir=true" and "file access tries=3" for this.
 * **Support for clipboard text selection, copy and paste**
 +
 With DOSBox-X there are several ways to copy and paste between DOSBox-X and the host clipboard, such as using a mouse button (right or center), the arrow keys, or using a special DOS device for it. Some clipboard functions are only supported for Windows systems. Look at the link:Guide%3AClipboard-support-in-DOSBox‐X{suffixappend}[Clipboard support in DOSBox-X] guide page for more information.
