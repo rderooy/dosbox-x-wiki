@@ -57,7 +57,7 @@ You can set SHELL=4DOS.COM so that DOSBox-X will run the 4DOS 8.00 shell at star
 DOSBox-X can be started on a specific window position, or on a specific display with a multi-monitor setup. They can work in combination to specify a window position on the specific display.
 * **Support for the mounting ZIP/7Z archives as drives**
 +
-You can mount ZIP or 7Z archives as DOSBox-X drives and run your DOS programs or games in these mounted drives directly, which will operate in read-only mode.
+You can mount ZIP or 7Z archives as DOSBox-X drives and run your DOS programs or games in these mounted drives directly. They will operate in both read and write modes with overlay mounts.
 * **Support for the IDE interface for disk images**
 +
 DOSBox-X supports the BIOS IDE interface for hard disk and CD drives, which is especially useful for running guest systems inside DOSBox-X.
