@@ -3,7 +3,7 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-## DOSBox‐X’s Feature Highlights
+## DOSBox-X’s Feature Highlights
 
 As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a complete DOS emulation package. Apart from having virtually all existing features of DOSBox, DOSBox-X supports much more. Examples of DOSBox-X's unique features include:
 
@@ -57,7 +57,7 @@ You can set SHELL=4DOS.COM so that DOSBox-X will run the 4DOS 8.00 shell at star
 DOSBox-X can be started on a specific window position, or on a specific display with a multi-monitor setup. They can work in combination to specify a window position on the specific display.
 * **Support for the mounting ZIP/7Z archives as drives**
 +
-You can mount ZIP or 7Z archives as DOSBox-X drives and run your DOS programs or games in these mounted drives directly. They will operate in both read and write modes with overlay mounts.
+You can mount ZIP or 7Z archives as DOSBox-X drives and run your DOS programs or games in these mounted drives directly. They will operate in read+write mode with overlay mounts.
 * **Support for the IDE interface for disk images**
 +
 DOSBox-X supports the BIOS IDE interface for hard disk and CD drives, which is especially useful for running guest systems inside DOSBox-X.
@@ -83,7 +83,7 @@ FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so yo
 DOSBox-X supports the DOS SHARE functions, which provides file-locking and record-locking for networked environments, especially on the Windows platform. This may be very important for usages such as networked DOS database applications. Hint: you probably want to set "nocachedir=true" and "file access tries=3" for this.
 * **Support for clipboard text selection, copy and paste**
 +
-With DOSBox-X there are several ways to copy and paste between DOSBox-X and the host clipboard, such as using a mouse button (right or center), the arrow keys, or using a special DOS device for it. Some clipboard functions are only supported for Windows systems. Look at the link:Guide%3AClipboard-support-in-DOSBox‐X{suffixappend}[Clipboard support in DOSBox-X] guide page for more information.
+With DOSBox-X there are several ways to copy and paste between DOSBox-X and the host clipboard, such as using a mouse button (right or middle), the arrow keys, or using a special DOS device for it. Some clipboard functions are only supported for Windows systems. Look at the link:Guide%3AClipboard-support-in-DOSBox‐X{suffixappend}[Clipboard support in DOSBox-X] guide page for more information.
 * **Support for converting mouse wheel movements to arrow keys**
 +
 You can let DOSBox-X automatically convert mouse wheel movements to arrow keys, so that you can use the mouse wheel for scrolling in DOS applications.
