@@ -320,8 +320,6 @@ In addition, this may not work if the application expects to be able to have bi-
 ## Windows host, method 1
 It will cause a Windows print dialogue to appear on the host, and you can print to any printer configured on the host, including print to PDF.
 
-This method requires that you have first completed the FONT installation step above.
-
 Make sure your DOSBox-X config file contains the statements:
 ....
 [parallel]
@@ -336,7 +334,7 @@ timeout=1000
 In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
 ## Windows host, method 2
-This assumes you PC still has a parallel printer port integrated on the systemboard, or a legacy ISA printer adapter.
+This assumes you PC still has a parallel printer port integrated on the system board, or a legacy ISA printer adapter.
 It reportedly will not work with USB printer adapters or PCI printer port adapters.
 
 Also note that the output is sent verbatim from the DOS application to the printer, without any filtering or conversion. Therefore it is important that the printer can understand the control codes that are being sent.
@@ -388,8 +386,6 @@ Again, just like in the "Windows host, method 2" above, the output is sent verba
 
 # Example: Print to PNG, BMP or PostScript
 This method prints to a PNG, BMP or PostScript (PS) image file.
-
-This method requires that you have first completed the FONT installation step above.
 
 Make sure your DOSBox-X config file contains the statements:
 ....
