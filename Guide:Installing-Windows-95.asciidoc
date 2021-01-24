@@ -102,6 +102,20 @@ Copy the above config and save it as *win95.conf*
 * Setting ``cycles=60000`` gives significantly better video and disk performance, but slightly worse CPU performance compared to ``cycles=auto`` or ``cycles=max``.
 * Do not change the ``core=normal`` setting. In particular the dynamic core, while generally faster, is incompatible with Windows 95 non-recursive page fault handling, and will cause stability problems and crashes such as General Protection Faults (GPF).
 
+### Dynamic core
+Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for some use-cases with Windows 95.
+To enable the dynamic core, merge the following settings into your config file:
+
+....
+[cpu]
+core=dynamic_x86
+use dynamic core with paging on=true
+cycles=max
+....
+
+If your application crashes DOSBox-X, please report it on the github issues page. One known issue is that opening a DOS window in Windows 95 will cause a crash when using ``core=dynamic_x86``.
+In such cases, please switch back to ``core=normal`` until the issue is resolved.
+
 # General installation Notes
 
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects. It can also cause problems with double click with the mouse not working and audio will also not sound properly, so be sure to disable it when using Windows in DOSBox-X.
