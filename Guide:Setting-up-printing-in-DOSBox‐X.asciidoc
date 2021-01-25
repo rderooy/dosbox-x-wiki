@@ -41,7 +41,6 @@ These are examples of printers that you may be able to select in a DOS applicati
 * Windows printer output in black & white only
 * Not all ESC/P commands are supported, like custom fonts
 * Due to over-exact graphics emulation 360dpi printing from Windows (guest) graphics rastering might not look as expected
-* When set to use a Windows printer, the printer dialogue will only show up once at start
 * Country code setup and other configuration switches and buttons found on a real printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
 
 ### [parallel] section options
@@ -369,7 +368,7 @@ timeout=1000
 device=-
 ....
 
-In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above. The printer dialogue will show up once when a printer selection is made. If you want the printer dialogue to show up every time for printing to LPT1, please leave the "device" empty.
 
 ## Windows host, method 2
 This assumes you PC still has a parallel printer port integrated on the system board, or a legacy ISA printer adapter.
