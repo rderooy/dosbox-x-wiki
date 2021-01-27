@@ -108,7 +108,6 @@ To enable the dynamic core, merge the following settings into your config file:
 ....
 [cpu]
 core=dynamic_x86
-use dynamic core with paging on=true
 cycles=max
 ....
 
