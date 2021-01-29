@@ -129,9 +129,9 @@ The Innovation SSI-2001 sound card is supported in DOSBox-X as well, which gives
 * **Support for pixel-perfect scaling video mode**
 +
 DOSBox-X supports the pixel-perfect scaling as an output option (output=openglpp), which improves the video image quality.
-* **Support for advanced OpenGL features such as OpenGL-HQ and GLSL shaders**
+* **Support for loading OpenGL shaders either at start or dynamically**
 +
-Advanced OpenGL features including OpenGL-HQ and GLSL shaders are supported by DOSBox-X, and you can use for example the pixel-perfect shader for OpenGL outputs.
+The OpenGL (GLSL) shaders are fully supported by DOSBox-X for OpenGL outputs, and you can in fact load or change them dynamically in addition to loading them at start.
 * **Support for Direct3D with pixel shaders (Windows only)**
 +
 DOSBox-X supports Direct3D along with pixel shaders which provides many more output flexibilities on Windows systems.
