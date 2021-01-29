@@ -9,16 +9,16 @@ As a cross-platform DOS emulator, DOSBox-X has the eventual goal of being a comp
 
 * **GUI drop-down menu for easier usage**
 +
-DOSBox-X features a drop-down menu system so that you can do many things from the GUI menu instead of typing commands or so.
+DOSBox-X features a drop-down menu system so that you can do many things from the GUI menu instead of typing commands or so. The menu can also be toggled on and off.
 * **Built-in graphical configuration tool**
 +
-You can configure DOSBox-X‘s settings directly from its built-in GUI configuration tool instead of having to manually modify its config file.
+You can configure DOSBox-X‘s settings directly from its built-in GUI configuration tool instead of having to manually modify its config file (you can use either way).
 * **Save and load state support (with save slots and save files)**
 +
 DOSBox-X provides a fully-featured system for saving and loading states with support for up to 100 save slots, selectable from the menu, as well as the option to use your own save files.
-* **Automatic drive mounting (Windows only)**
+* **Automatic image file and drive mounting**
 +
-DOSBox-X will automatically let you mount a drive if you try to enter a drive which is not yet mounted, and you can also let DOSBox-X automatically mount all available Windows drives at start.
+For image files, DOSBox-X allows you to mount them automatically without specifying additional options such as -size and -t. And for drive mounting on Windows, DOSBox-X automatically asks you mount a drive if you try to enter a drive which is not yet mounted, and you can also let DOSBox-X automatically mount all available Windows drives at start.
 * **Japanese NEC PC-98 mode emulation**
 +
 With DOSBox-X you can run the Japanese PC-98 system and PC-98 games and applications. Set ``machine=pc98`` in the config file to start DOSBox-X in the PC-98 mode. Look at the link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[PC‐98 emulation in DOSBox‐X] guide page for more information.
