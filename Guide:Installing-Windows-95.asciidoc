@@ -59,8 +59,8 @@ ver=7.0
 
 [cpu]
 cputype=pentium_mmx
-core=normal
-cycles=60000
+core=dynamic_x86
+cycles=max
 
 [sblaster]
 sbtype=sb16vibra
@@ -103,19 +103,6 @@ Copy the above config and save it as *win95.conf*
 ** By default if Windows 95 detects a network adapter during installation, it will only setup Novell's IPX/SPX protocol with Windows Login, which is pretty useless nowadays. You will probably want to change this afterwards in the Network settings to TCP/IP, by adding the TCP/IP protocol.
 * Setting ``cycles=60000`` gives significantly better video and disk performance, but slightly worse CPU performance compared to ``cycles=auto`` or ``cycles=max``.
 
-### Dynamic core
-Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for some use-cases with Windows 95.
-To enable the dynamic core, merge the following settings into your config file:
-
-....
-[cpu]
-core=dynamic_x86
-cycles=max
-....
-
-If your application crashes DOSBox-X, please report it on the github issues page. One known issue is that opening a DOS window in Windows 95 will cause a crash when using ``core=dynamic_x86``.
-In such cases, please switch back to ``core=normal`` until the issue is resolved.
-
 # General installation Notes
 
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects. It can also cause problems with double click with the mouse not working and audio will also not sound properly, so be sure to disable it when using Windows in DOSBox-X.
@@ -123,6 +110,13 @@ In such cases, please switch back to ``core=normal`` until the issue is resolved
 * If you get a prompt stating that C:\WINDOWS already exists, ignore it, and continue the installation.
 * During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. If you have NE2000 enabled in your DOSBox-X config file, you may want to check the Network adapter check box. Your DOSBox-X CD-ROM and Sound Card will be detected regardless if you check it's box or not.
 * In case you installed Windows 95 OSR2.5 you may have noticed that you did not get IE4 and the Active Desktop features. This is because this is an optional install. On the CD, simply run \WIN95\IE4SETUP.EXE to install it. While there is no real advantage to either feature, installing it does bring some new and updated libraries such as MSVCRT.DLL and COMCTL32.DLL that some programs need.
+
+# Dynamic vs Normal core
+Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 95.
+
+However, should you run into problems such as application crashes or a Windows 95 blue-screen, please check if the same thing happens with ``core=normal``, and if not, please report the issue on the DOSBox-X Git issues page.
+
+One known issue is that opening a DOS window in Windows 95 will cause a crash when not using ``core=normal``.
 
 ## Creating a Harddisk image
 

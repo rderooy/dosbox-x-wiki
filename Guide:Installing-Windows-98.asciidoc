@@ -44,8 +44,8 @@ ver=7.1
 
 [cpu]
 cputype=pentium_mmx
-core=normal
-cycles=60000
+core=dynamic_x86
+cycles=max
 
 [sblaster]
 sbtype=sb16vibra
@@ -86,22 +86,17 @@ Copy the above config and save it as *win98.conf*
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
 * Setting ``cycles=60000`` gives significantly better video and disk performance, but slightly worse CPU performance compared to ``cycles=auto`` or ``cycles=max``.
 
-### Dynamic core
-Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for some use-cases with Windows 98.
-To enable the dynamic core, merge the following settings into your config file:
-
-....
-[cpu]
-core=dynamic_x86
-cycles=max
-....
-
 If your application crashes DOSBox-X, please report it on the github issues page, and switch back to ``core=normal`` until the issue is resolved.
 
 # General installation Notes
 
 * Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects. It can also cause problems with double click with the mouse not working and audio will also not sound properly, so be sure to disable it when using Windows in DOSBox-X.
 * When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
+
+# Dynamic vs Normal core
+Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 98.
+
+However, should you run into problems such as application crashes or a Windows 98 blue-screen, please check if the same thing happens with ``core=normal``, and if not, please report the issue on the DOSBox-X Git issues page.
 
 ## Creating a Harddisk image
 
