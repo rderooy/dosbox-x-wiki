@@ -250,6 +250,20 @@ Once Windows 95 is installed, here is some additional software you may want to i
 
 This may also be of interest: link:https://msfn.org/board/topic/176623-last-versions-of-software-for-windows-95/[Forum thread about: Last versions of software for Windows 95]
 
+# Mounting CD or Diskette images
+DOSBox-X supports mounting CD and diskette (floppy) images, and making those available to a OS booted in DOSBox-X.
+But only if the image files are specified before starting real DOS or Windows 9x.
+The option to load image files from the menu bar becomes unavailable the moment you boot DOS or Win9x in DOSBox-X.
+
+This is a known limitation that hopefully will be resolved in the near future.
+
+For now you can work around it, by specifying multiple image files with the IMGMOUNT command as such:
+....
+IMGMOUNT A disk1.img disk2.img disk3.img
+IMGMOUNT D cd1.iso cd2.iso cd3.iso
+....
+You can then swap between disk images with the swap option from the menu.
+
 # Enabling networking
 If you enabled NE2000 support in the DOSBox-X config file, and Windows 95 did not detect the adapter, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware.
 It should find the emulated Novell NE2000 adapter, and install the drivers.
