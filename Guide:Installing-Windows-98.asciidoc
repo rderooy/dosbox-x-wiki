@@ -33,6 +33,8 @@ autolock=true
 [dosbox]
 title=Windows 98
 memsize=64
+
+[video]
 vmemsize=8
 vesa modelist width limit=0
 vesa modelist height limit=0
@@ -305,7 +307,7 @@ And no updated S3 Trio64 video driver is available for Windows 98.
 As such you will be limited to 640x480 in 32bit colour, 1024x768 in 16bit colour or 1280x1024 in 8bit (256) colour.
 
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
-First add the following lines to your DOSBox-X config file in the [dosbox] section:
+First add the following lines to your DOSBox-X config file in the [video] section:
 ....
 allow high definition vesa modes=true
 allow unusual vesa modes=true
