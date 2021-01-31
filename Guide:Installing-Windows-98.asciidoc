@@ -47,12 +47,10 @@ ver=7.1
 
 [cpu]
 cputype=pentium_mmx
-core=dynamic_x86
-cycles=max
+core=normal
 
 [sblaster]
 sbtype=sb16vibra
-irq=5
 
 [ne2000]
 # If you want networking in Windows, set ne2000=true.
@@ -83,7 +81,7 @@ Copy the above config and save it as *win98.conf*
 
 *Notes*
 
-* While Windows 98 should support up to 2048MB RAM, ``memsize=512`` is the largest safe value. Larger values may be possible with tweaks, but are not covered here.
+* You can increase the allocated RAM up to 512MB by setting ``memsize=512``. Larger values may be possible with tweaks, but are not covered here.
 * The ``[autoexec]`` section will need lines added later.
 * If you want networking in Windows, you need to set ``ne2000=true`` and change the ``realnic=`` value to one suitable for your PC. See:
  link:Guide%3A-Setting-up-networking-in-DOSBox-X[Guide: Setting up networking] for more information.
@@ -96,7 +94,11 @@ Copy the above config and save it as *win98.conf*
 # Dynamic vs Normal core
 Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 98.
 
-However, should you run into problems such as application crashes or a Windows 98 blue-screen, please check if the same thing happens with ``core=normal``, and if not, please report the issue on the DOSBox-X Git issues page.
+However, for now we still recommend that you do the installation of Windows 98 using ``core=normal`` until issue link:https://github.com/joncampbell123/dosbox-x/issues/2215[#2215] is resolved.
+
+But after the installation is finished you should be able to change to ``core=dynamic_x86``.
+
+Should you run into problems such as application crashes or a Windows 98 blue-screen that cannot be reproduced with ``core=normal``,  please report the problem on the DOSBox-X Git link:https://github.com/joncampbell123/dosbox-x/issues[issues] page.
 
 ## Creating a Harddisk image
 
