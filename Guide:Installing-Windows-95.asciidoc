@@ -119,7 +119,7 @@ Should you run into problems such as application crashes or a Windows 95 blue-sc
 
 One known issue is that opening a DOS window in Windows 95 will cause a crash when not using ``core=normal``.
 
-## Creating a Harddisk image
+# Creating a Harddisk image
 
 NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu, and select "Create blank disk image…​".

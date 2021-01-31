@@ -100,7 +100,7 @@ But after the installation is finished you should be able to change to ``core=dy
 
 Should you run into problems such as application crashes or a Windows 98 blue-screen that cannot be reproduced with ``core=normal``,  please report the problem on the DOSBox-X Git link:https://github.com/joncampbell123/dosbox-x/issues[issues] page.
 
-## Creating a Harddisk image
+# Creating a Harddisk image
 
 NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu, and select "Create blank disk image…​".
