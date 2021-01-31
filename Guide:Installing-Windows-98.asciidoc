@@ -250,7 +250,7 @@ image::images/Windows:Windows_98_SETUP_01.png[Windows 98 SETUP.EXE Welcome]
 
 Now run through the install process. The actual steps will not be covered in this guide, but are pretty self explanatory and detailed guides on the Windows98 install process can be found online such as youtube.
 
-When the installer reboots DOSBox-X, and your back at the DOSBox-X ``Z:\`` prompt. type ``EXIT``.
+When the installer reboots DOSBox-X, and your back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
 
 Now edit your ``win98.conf`` config file.
 At the end of the file, in the [autoexec] section, add the following two lines:
@@ -268,11 +268,13 @@ dosbox-x -conf win98.conf
 ....
 
 # Booting Windows 98 after installation
-After the installation is finished, you can start Windows 98 from the command-prompt with the following command:
+After the installation is finished, you can start Windows 98 from the command-prompt of your host PC, with the following command:
 
 ....
 dosbox-x -conf win98.conf
 ....
+
+You can optionally create a shortcut on your desktop to
 
 # Steps to take after Installation
 Once Windows 98 is installed, here is some additional software you may want to install or update:
@@ -304,22 +306,37 @@ IMGMOUNT D cd1.iso cd2.iso cd3.iso
 You can then swap between disk images with the swap option from the menu.
 
 # Enabling networking
-If you enabled NE2000 support in the DOSBox-X config file, and Windows 98 did not detect the adapter, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware.
+If you enabled NE2000 support in the DOSBox-X config file, Windows 98 should detect it during installation and you should get a screen like the following.
+
+image::images/Windows:Windows_98_SETUP_03.png[Windows 98 SETUP.EXE NE2000 Properties]
+
+Change the Interrupt (IRQ) to 10 to match the value set in your ``win98.conf`` file.
+
+If Windows 98 did not detect the adapter during installation, or you enabled NE2000 emulation after you did the installation.
+Go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware.
 It should find the emulated Novell NE2000 adapter, and install the drivers.
 
-By default it will try to get it's network configuration over DHCP, if you need to manually specify the settings, in "Control Panel", double-click "Network".
+By default TCP/IP will try to get it's network configuration over DHCP, if you need to manually specify the settings, in "Control Panel", double-click "Network".
 Once it opens, highlight "TCP/IP", and click the "Properties" button to modify the TCP/IP settings.
 
-In the Network settings, there may also be a "Dial-Up Adapter" listed, which you can safely delete.
+In the Network settings, there will also be a "Dial-Up Adapter" listed, which you can safely remove.
 
-Additionally, if you only want TCP/IP and don't want the Windows logon dialog on startup, you can remove the "Windows Logon" service from the Network configuration settings (although it will complain that "Your network is not complete", which you can ignore).
-This does mean you can no longer share files over the network using the Windows file sharing functions, but then current Windows versions are not backward compatible with Windows 98 anyway.
+Additionally, if you don't want the Windows logon dialog on startup, and don't care for file and printer sharing, you can remove the "Client for Microsoft Networks" component from the Network configuration settings (although it will complain that "Your network is not complete", which you can ignore).
+
+If you want to share files between Windows 98 and Windows 10 on the network, have a look at this blog: link:http://kishy.ca/?p=1511[SMB File Sharing between Win10 and Win98], but apparently this fails with Win10 build 2004 and 20H2.
 
 If networking does not work, see link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up networking in DOSBox-X]
 
 # Emulated video adapter and video mode
 The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths.
 In addition this video adapter is supported out-of-the-box in Windows 98, simplifying the installation process.
+
+The available video modes with the S3 Trio64 driver are:
+
+* 4-bit colour (16): 640x480
+* 8-bit colour (256) : 640x480, 800x600, 1024x768, 1152x864, 1280x1024 and 1600x1200
+* 16-bit colour (65536): 640x480, 800x600 and 1024x768
+* 32-bit colour (16.7M): 640x480 and 800x600
 
 A few enhancements have been made to the emulated S3 Trio64, compared to a real S3 Trio64:
 
@@ -328,9 +345,11 @@ A few enhancements have been made to the emulated S3 Trio64, compared to a real 
 
 However, these enhancements cannot be used in Windows 98 with the S3 video driver due to driver limitations.
 And no updated S3 Trio64 video driver is available for Windows 98.
-As such you will be limited to 640x480 in 32bit colour, 1024x768 in 16bit colour or 1280x1024 in 8bit (256) colour.
+As such you will be limited to the above video modes with this driver.
 
+### VESA driver
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
+
 First add the following lines to your DOSBox-X config file in the [video] section:
 ....
 allow high definition vesa modes=true
@@ -348,18 +367,21 @@ The emulated sound card used in this guide is the SB16 Vibra, instead of the def
 This is simply because the SB16 Vibra is a ISA PnP card, and therefore automatically detected by Windows.
 There is no other real advantage of using the emulated SB16 Vibra over the SB16.
 
-NOTE: One often heard complaint of the real SB16 Vibra is the CQM synthesis, which was used as a low-cost replacement of the OPL3 chip found on earlier cards.
-However DOSBox-X does not really emulate the CQM, instead if uses the same OPL3 emulation as for the regular SB16 model.
-Therefore the CQM sound quality issues with the real SB16 Vibra do not apply to DOSBox-X.
-
 Both Windows 98 and 98SE include SB16 driver version 4.37.00.1998.
 An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library.
 
+NOTE: One often heard complaint of the real SB16 Vibra is its CQM synthesis, which was used as a low-cost replacement of the OPL3 chip found on earlier cards.
+However DOSBox-X does not really emulate the CQM, instead if uses the same OPL3 emulation as for the regular SB16 model.
+Therefore the CQM sound quality issues with the real SB16 Vibra do not apply to DOSBox-X.
+
 ## Enabling General MIDI
 If you have a working DOSBox-X General MIDI setup, either emulated or real, you can use that in Windows 98.
-Open the "Control Panel", and then double-click on "Multimedia Properties".
 
-Now on the "MIDI" tab, change the "Single instrument" option to "Roland MPU-401", and click OK to close the window.
+Go to "Start", "Settings" and open "Control Panel", and then double-click on "Multimedia Properties".
+
+Now on the "MIDI" tab, change the "Single instrument" option to "SB16 MIDI Out [330]", and click OK to close the window.
+
+image::images/Windows:Windows_98_MIDI.png[Windows 98 MIDI setup]
 
 For more information about setting up MIDI support, see link:Guide%3ASetting-up-MIDI-in-DOSBox%E2%80%90X[Guide: Setting up MIDI in DOSBox-X]
 
