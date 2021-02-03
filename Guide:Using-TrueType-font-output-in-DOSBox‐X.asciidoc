@@ -153,7 +153,13 @@ The default color scheme is:
 ttf.colors=#000000 #0000aa #00aa00 #00aaaa #aa0000 #aa00aa #aa5500 #aaaaaa #555555 #5555ff #55ff55 #55ffff #ff5555 #ff55ff #ffff55 #ffffff
 ``
 
-You can supply a different color scheme so that it will be used instead of the default one. For example, the following will give a gray-scaled color scheme:
+You can supply a different color scheme so that it will be used instead of the default one. For example, the following will give a dark color scheme (as in TameDOS):
+
+``
+ttf.colors=#000000 #000080 #008000 #008080 #800000 #800080 #808000 #c0c0c0 #808080 #3300ff #33ff00 #00ffff #ff0000 #ff00ff #ffff00 #ffffff
+``
+
+And the following will give a gray-scaled color scheme:
 
 ``
 ttf.colors=(0,0,0) #0e0e0e (75,75,75) (89,89,89) (38,38,38) (52,52,52) #717171 #c0c0c0 #808080 (28,28,28) (150,150,150) (178,178,178) (76,76,76)  (104,104,104) (226,226,226) (255,255,255)
