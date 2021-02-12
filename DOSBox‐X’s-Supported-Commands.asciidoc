@@ -488,8 +488,6 @@ Usage: TIME [ [/T] [/H] | hh:mm:ss ]
 Graphically displays the directory structure of a drive or path.
 +
 Usage: TREE [drive:][path] [/F] [/A]
-+
-Note: It uses the TREE command from FreeDOS.
 * **TRUENAME** (internal command)
 +
 Finds the fully-expanded name for a file.
@@ -506,7 +504,7 @@ Views and sets the reported DOS version. Also displays the running DOSBox-X vers
 +
 Usage: VER [/R], VER [SET] number or VER SET [major minor]
 +
-Note: "VER 3.3" or “VER SET 3.3” will set the reported DOS version as 3.3 (3.30), whereas "VER SET 3 3" will set the version as 3.03 if you use the [major minor] format.
+Note: "VER 3.3" or "VER SET 3.3" will set the reported DOS version as 3.3 (3.30), whereas "VER SET 3 3" will set the version as 3.03 if you use the [major minor] format.
 * **VERIFY** (internal command)
 +
 Controls whether to verify that the files are written correctly to a disk.
