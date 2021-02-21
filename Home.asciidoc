@@ -49,17 +49,17 @@ You can try the various commands and options in order to be more familiar with t
 
 You can set various configuration options for use with DOSBox-X. DOSBox-X will load the configuration file from either the current directory (typically the directory where the DOSBox-X program is located), or from the platform-dependent user directory.
 
-By default, DOSBox-X will first try to load the file **dosbox-x.conf** (or dosbox.conf) from the current directory. You can specify an alternative directory (instead of the current directory) for DOSBox-X to look for the configuration file with the -defaultdir command-line option, such as ``-defaultdir mydir``. If the config file is not found, DOSBox-X will then try to load the the configuration file from the user directory according to the platform:
+By default, DOSBox-X will first try to load the file **dosbox-x.conf** (or dosbox.conf) from the current directory. You can specify an alternative directory (instead of the current directory) for DOSBox-X to look for the configuration file with the ``-defaultdir`` command-line option, such as ``-defaultdir mydir``. If the config file is not found, DOSBox-X will then try to load the the configuration file from the user directory according to the platform:
 
    (Windows)  C:\Users\<username>\AppData\Local\DOSBox-X\dosbox-x-<version number>.conf
    (Linux)    ~/.config/dosbox-x/dosbox-x-<version number>.conf
    (macOS)    ~/Library/Preferences/DOSBox-X <version number> Preferences
 
-The config file is divided into several sections. Each section starts with a [section name] line. The settings are the property=value lines where value can be altered to customize DOSBox-X. Lines starting with # are comment-lines.
+The config file is divided into several sections. Each section starts with a [section name] line. The settings are the property=value lines where value can be altered to customize DOSBox-X. Lines starting with # are comment-lines. There are three special sections at the end of the config file, namely [4dos], [config] and [autoexec], which intend to emulate the 4DOS.INI (for the 4DOS shell), CONFIG.SYS and AUTOEXEC.BAT files respectively.
 
-Furthermore, you can start DOSBox-X with the -conf parameter to load a specified configuration file and use its settings. If this parameter is used, then DOSBox-X will try to load the specified configuration file before try to load the configuration file from the current directory or the user directory.
+Furthermore, you can start DOSBox-X with the ``-conf`` parameter to load a specified configuration file and use its settings. If this parameter is used, then DOSBox-X will try to load the specified configuration file before try to load the configuration file from the current directory or the user directory. There is also a ``-defaultconf`` command-line option which will force the use of the default DOSBox-X settings (ignoring any config files).
 
-You can override one or more config options when DOSBox-X starts by using the -set command-line option. For example, ``-set machine=pc98`` will force DOSBox-X to start in PC-98 mode regardless of the setting in the config file.
+You can override one or more config options when DOSBox-X starts by using the ``-set`` command-line option. For example, ``-set machine=pc98`` will force DOSBox-X to start in PC-98 mode regardless of the setting in the config file.
 
 DOSBox-X features the graphical configuration tool so that you can use its built-in GUI interface to modify its settings easily. An configuration file can be generated or updated by the configuration tool, or with the built-in CONFIG command (which can be found on the internal Z: drive when you run DOSBox-X).
 
