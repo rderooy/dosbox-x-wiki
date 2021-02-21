@@ -410,11 +410,21 @@ Usage: PATH [drive:]path[;...][;PATH] or PATH ;
 Waits for a keystroke to continue.
 +
 Usage: PAUSE [message]
+* **POPD** (internal command)
++
+Changes to the directory stored by the PUSHD command.
++
+Usage: POPD
 * **PROMPT** (internal command)
 +
 Changes the DOS command prompt.
 +
 Usage: PROMPT [text]
+* **PUSHD** (internal command)
++
+Stores the current directory for use by the POPD command, then changes to the specified directory.
++
+Usage: PUSHD [path]
 * **RD/RMDIR** (internal command)
 +
 Removes a directory.
@@ -435,6 +445,11 @@ Usage: REM [comment]
 Renames a file/directory or files.
 +
 Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 filename2
+* **REPLACE** (external command)
++
+Replaces files in the destination directory with files from the source directory that have the same name.
++
+Usage: REPLACE [drive1:][path1]filename [drive2:][path2] [/switches]
 * **RESCAN** (external command)
 +
 Refreshes mounted drives by clearing their caches.
