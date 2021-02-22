@@ -13,7 +13,7 @@ toc::[]
 
 DOSBox-X has support for copying to and pasting from the host system clipboard in several ways. For example, you can copy to or paste from to the clipboard inside DOSBox-X using a right/middle mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the host clipboard. You will find a menu group "Shared clipboard functions" under the "Main" menu to control the various options for the clipboard feature.
 
-Note that the functions to use a DOS device or DOS program to communicate bidirectionally with the clipboard is currently only available for the Windows platform. Also, clipboard copying and pasting using a mouse button click is not available for the Linux/macOS SDL1 builds.
+Note that the functions to use a DOS program to communicate bidirectionally with the clipboard is currently only available for the Windows platform. Also, clipboard copying and pasting using a mouse button click is not available for the Linux/macOS SDL1 builds.
 
 ### Select, copy and paste text using a mouse button
 Note: This function was only available for the Windows platform in DOSBox-X version 0.83.6 and earlier. In version 0.83.7 and later it is available for Linux/macOS SDL2 builds also.
@@ -34,9 +34,9 @@ In addition to text selection and copy functions, you can also use a keyboard sh
 Similar to pasting text using the right mouse button, you can change the speed for pasting each character from the clipboard to DOSBox-X via the "clip_paste_speed" setting in the [sdl] section of DOSBox-X's config file. As mentioned in the previous section the default value (30) works for many programs, but for some programs you may need to change it from the default one. The higher the value of this setting, the slower each character will be pasted from the clipboard. You can also decrease this value if your DOS program accepts keystrokes quickly. Moreover, when you are pasting long clipboard content you can always force it to stop in the middle with the "Stop clipboard pasting" menu option. 
 
 ### Copy and paste text using a DOS device
-Note: This function is currently only available for the Windows platform.
+Note: This function was only available for the Windows platform in DOSBox-X version 0.83.10 and earlier. In version 0.83.11 and later it is available for Linux/macOS builds also, although in Linux/macOS SDL1 builds only read access is supported.
 
-You can use a DOS device (e.g. CLIP$) to easily copy text to and/or paste text from the Windows clipboard in DOSBox-X. To activate this function, please make sure the "Enable DOS clipboard device access: CLIP$" toggle within the "Shared clipboard functions" menu group is checked. Alternatively, you can enable it via the "dos clipboard device enable" setting in the [dos] section of the DOSBox-X config file (e.g. dosbox-x.conf) by setting it to "true" or "full", then a DOS device (default name: CLIP$) will be added to DOSBox-X to allow bidirectional communications with the Windows clipboard.
+You can use a DOS device (e.g. CLIP$) to easily copy text to and/or paste text from the clipboard in DOSBox-X. To activate this function, please make sure the "Enable DOS clipboard device access: CLIP$" toggle within the "Shared clipboard functions" menu group is checked. Alternatively, you can enable it via the "dos clipboard device enable" setting in the [dos] section of the DOSBox-X config file (e.g. dosbox-x.conf) by setting it to "true" or "full", then a DOS device (default name: CLIP$) will be added to DOSBox-X to allow bidirectional communications with the clipboard.
 
 For example:
 
