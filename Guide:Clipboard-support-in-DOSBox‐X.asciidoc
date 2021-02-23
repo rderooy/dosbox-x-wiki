@@ -11,9 +11,9 @@ toc::[]
 
 ### Overview
 
-DOSBox-X has support for copying to and pasting from the host system clipboard in several ways. For example, you can copy to or paste from to the clipboard inside DOSBox-X using a right/middle mouse button click or keyboard shortcut, and you can also use a DOS device or DOS program to communicate bidirectionally with the host clipboard. You will find a menu group "Shared clipboard functions" under the "Main" menu to control the various options for the clipboard feature.
+DOSBox-X has support for copying to and pasting from the host system clipboard in several ways. For example, you can copy to or paste from to the clipboard inside DOSBox-X using the right/middle mouse buttons, arrow keys or mapped keyboard shortcuts, and you can also use a DOS device or DOS program to communicate bidirectionally with the host clipboard. You will find a menu group "Shared clipboard functions" under the "Main" menu to control the various options for the clipboard feature.
 
-Note that the functions to use a DOS program to communicate bidirectionally with the clipboard is currently only available for the Windows platform. Also, clipboard copying and pasting using a mouse button click is not available for the Linux/macOS SDL1 builds.
+Note that clipboard copying and pasting using mouse buttons or arrow keys is not available for the Linux/macOS SDL1 builds.
 
 ### Select, copy and paste text using a mouse button
 Note: This function was only available for the Windows platform in DOSBox-X version 0.83.6 and earlier. In version 0.83.7 and later it is available for Linux/macOS SDL2 builds also.
@@ -70,11 +70,11 @@ You may also set the "dos clipboard device enable" config option to either "read
 This bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled, and it will also not work if booting into a guest OS.
 
 ### Copy and paste text using a DOS program
-Note: This function is currently only available for the Windows platform.
+Note: This function was only available for the Windows platform in DOSBox-X version 0.83.10 and earlier. In version 0.83.11 and later it is available for Linux/macOS builds also, although in Linux/macOS SDL1 builds only text pasting is supported.
 
-Copying and pasting text to or from the Windows clipboard is also supported via the DOS APIs in DOSBox-X, so DOS programs that can directly access the Windows 3.x/9x clipboard from a DOS window can also be used to copy and paste text to or from the Windows clipboard when running in DOSBox-X. This function may be enabled by default, but can be disabled either by unchecking the option "Enable DOS clipboard API for applications" within the "Shared clipboard functions" menu group, or by setting the config option "dos clipboard api" to "false" in the [dos] section of the config file.
+Copying and pasting text to or from the clipboard is also supported via the DOS APIs in DOSBox-X, so DOS programs that can directly access the Windows 3.x/9x clipboard from a DOS window can also be used to copy and paste text to or from the shared clipboard when running in DOSBox-X. This function may be enabled by default, but can be disabled either by unchecking the option "Enable DOS clipboard API for applications" within the "Shared clipboard functions" menu group, or by setting the config option "dos clipboard api" to "false" in the [dos] section of the config file.
 
-When DOS clipboard APIs are activated, the https://www.horstmuc.de/div.htm#wclip[WCLIP] tool by Horst Schaeffer for example can be used to access the Windows clipboard inside DOSBox-X. Below are some examples of using this program to communicate with the Windows clipboard:
+When DOS clipboard APIs are activated, the https://www.horstmuc.de/div.htm#wclip[WCLIP] tool by Horst Schaeffer for example can be used to access the shared clipboard inside DOSBox-X. Below are some examples of using this program to communicate with the clipboard:
 
 ....
 DIR | WCLIP
@@ -91,6 +91,6 @@ WCLIP RECEIVE
 ....
 Will display the content of the clipboard.
 
-There are also other similar DOS programs that will work in DOSBox-X, such as http://ansis.lv/dosclip/index.en.php[DOSClip 3.2], a TSR program to select, copy or paste text to or from the Windows clipboard.
+There are also other similar DOS programs that will work in DOSBox-X, such as http://ansis.lv/dosclip/index.en.php[DOSClip 3.2], a TSR program to select, copy or paste text to or from the clipboard.
 
 Like copying and pasting text using a DOS device, this bidirectional clipboard access will be deactivated if the secure mode for DOSBox-X is enabled, and it will also not work if booting into a guest OS.
