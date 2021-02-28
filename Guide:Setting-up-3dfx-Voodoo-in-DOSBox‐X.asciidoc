@@ -179,4 +179,4 @@ sudo ldconfig
 
 ### macOS host: Installing libglide2x.dylib
 
-In short, it seems there is no Glide implementation that works on modern macOS systems.
+Work to fix modern macOS support in OpenGlide is ongoing. See link:https://github.com/joncampbell123/dosbox-x/issues/2314[issue 2314] for more information on the current state.
