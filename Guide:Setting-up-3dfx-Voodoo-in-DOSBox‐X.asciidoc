@@ -181,6 +181,9 @@ sudo ldconfig
 Just like on Linux, you will need to compile the library yourself.
 The necessary steps are detailed below.
 
+WARNING: OpenGlide is not compatible with SDL2, as such you can only use it with the DOSBox-X SDL1 version.
+If you do try to use it with the DOSBox-X SDL2 version, it will segfault when trying to use the glide pass-through.
+
 #### Install the OpenGlide dependencies
 
 1. Install Xcode command-line tools:
