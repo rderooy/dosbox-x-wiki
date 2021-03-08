@@ -214,18 +214,16 @@ cd $HOME/Desktop/openglide-master
 ....
 ./bootstrap
 ./configure
-make install
-....
-Note: on macOS 11 (Big Sur) you may need to change the final command to:
-....
 sudo make install
 ....
+
 NOTE: If the make command fails with an error about a missing "features.h" file, you can create one in the correct location with the following command:
 ....
 sudo touch /usr/local/include/features.h
 ....
 
-Then go back to the OpenGlide folder as detailed above, run make again, and it should then work. This features.h file is not needed directly by OpenGlide but sometimes the macOS command line tools require it for the build script to complete successfully.
+Then go back to the OpenGlide folder as detailed above, run make again, and it should then work.
+This features.h file is not needed directly by OpenGlide but sometimes the macOS command line tools require it for the build script to complete successfully.
 
 If the build is successful, the resulting libraries are installed to ``/usr/local/lib/``:
 ....
@@ -235,7 +233,9 @@ libglide2x.a
 libglide2x.dylib
 libglide2x.la
 ....
-NOTE: libglide.so.2 is an alias (symlink) file that has no 'original'. It appears to be a remnant of the Linux based build, and can probably be deleted or otherwise ignored. The macOS dynamic (dlylib) and static (a/la) files are the key components.
+NOTE: libglide.so.2 is an alias (symlink) file that has no 'original'.
+It appears to be a remnant of the Linux based build, and can probably be deleted or otherwise ignored.
+The macOS dynamic (dlylib) and static (a/la) files are the key components.
 
 These files can remain in your library folder and will be automatically found by DOSBox-X.
 
@@ -245,7 +245,8 @@ Alternatively, you can place them inside your DOSBox-X application package (/Con
 
 A good way to test the functionality of your OpenGlide library is to download DOSBox-X and enable glide within the configuration/settings in accordance with the DOSBox-X Wiki.
 
-If the OpenGlide library is successfully detected, when you run DOSBox-X it will generate two output files called OpenGLid.ini and OpenGLid.log (the former providing options to adjust the OpenGlide settings). These should be located in the place as your DOSBox-X application or executable binary.
+If the OpenGlide library is successfully detected, when you run DOSBox-X it will generate two output files called OpenGLid.ini and OpenGLid.log (the former providing options to adjust the OpenGlide settings).
+These should be located in the same place as your DOSBox-X application or executable binary.
 
 #### Optimize the OpenGLid.ini settings
 
