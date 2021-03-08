@@ -222,8 +222,8 @@ NOTE: If the make command fails with an error about a missing "features.h" file,
 sudo touch /usr/local/include/features.h
 ....
 
-Then go back to the OpenGlide folder as detailed above, run make again, and it should then work.
-This features.h file is not needed directly by OpenGlide but sometimes the macOS command line tools require it for the build script to complete successfully.
+Then run make again, and it should work.
+The features.h file is not needed directly by OpenGlide but sometimes the macOS command line tools require it for the build script to complete successfully.
 
 If the build is successful, the resulting libraries are installed to ``/usr/local/lib/``:
 ....
