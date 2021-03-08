@@ -178,6 +178,8 @@ sudo ldconfig
 ....
 
 ### macOS host: Installing libglide2x.dylib
+Just like on Linux, you will need to compile the library yourself.
+The necessary steps are detailed below.
 
 #### Install the OpenGlide dependencies
 
