@@ -136,6 +136,8 @@ If you set ``ttf.wp=WP`` which sets WordPerfect as the word processor, the 512-c
 
 If you set ``ttf.wp=WS`` which sets WordStar as the word processor, then you probably want to ``high intensity blinking=false`` for some text styles to be properly displayed visually. You can also toggle this from the menu ("Video" => "Text-mode" => "High intensity: background color"). This option is functionally equivalent to the 4DOS.INI option ``BrightBG=Yes`` if you use the 4DOS shell.
 
+There is additionally a ```ttf.wpbg``` option which you can specify a color to match the background color of the specified word processor, in case you use a customized background color for the word processor. Use the DOS color number (0-15) for this option.
+
 ## Color scheme for the TrueType font output
 
 There are also other settings related to the TrueType font output, such as changing the default color scheme for the output.
@@ -182,3 +184,5 @@ SETCOLOR 1 -
 ``
 
 Entering ``SETCOLOR 1`` will display the current color value of Color #1.
+
+If you want to change the default console foreground and background colors, then use the ``COLOR`` command, which works the same way as the same-named command in the Windows Command Prompt. For example, the command ``COLOR 61`` produces red on blue. The ``COLOR`` command without an argument restores the original color.
