@@ -11,18 +11,18 @@ toc::[]
 # Overview
 This guide will give a general description of installing Windows 95 in DOSBox-X, in addition to addressing some common issues.
 
-## CD-ROM editions this applies to
+## Windows CD-ROM editions this guide applies to
 
-* Windows 95 (RTM; Original release)
-* Windows 95 OSR1 (aka 95A)
-* Windows 95 OSR2 (aka 95B)
-* Windows 95 OSR2.1 (aka 95B)
-* Windows 95 OSR2.5 (aka 95C)
+* Windows 95 (RTM; Original release) - Retail Full
+* Windows 95 (RTM; Original release) - OEM Full
+* Windows 95 OSR1 (aka 95A) - OEM Full
+* Windows 95 OSR2 (aka 95B) - OEM Full
+* Windows 95 OSR2.1 (aka 95B) - OEM Full
+* Windows 95 OSR2.5 (aka 95C) - OEM Full
 
-NOTE: This guide will not work with the Windows 95 diskette versions, as those use a special format (DMF) which is not supported by DOSBox-X.
+NOTE: This guide is not meant for the Windows 95 diskette edition, as that uses a special format (DMF) which is not supported by DOSBox-X.
 
-This guide also assumes a Full Retail or OEM version of Windows 95.
-Upgrade editions have additional requirements not covered by this guide.
+NOTE: Windows 95 **Upgrade** editions have additional requirements and are not covered by this guide.
 
 If you don't know which Windows 9x version to install, we recommend that you install **Windows 98SE**.
 If you want to stick with Windows 95, we recommend to use **Windows 95 OSR2** or later.
@@ -246,7 +246,7 @@ Once Windows 95 is installed, here is some additional software you may want to i
 * Install WinG 1.0 (needed by just a few games, and those games typically include it)
 * Install/Update to DirectX 8.0a (this will also update your video and audio drivers)
 * Install/Update to Windows Media Player 6.4
-* Install/Update to Adobe Flash Player 7.0.73
+* Install/Update to Adobe Flash Player 8.0.24.0
 * Install Apple Quicktime 5.0.5
 * Install the link:https://www.philscomputerlab.com/drivers-for-voodoo.html[3dfx Voodoo 3.01.00 reference drivers]
 
@@ -282,7 +282,8 @@ In the Network settings, you can optionally remove the "IPX/SPX-compatible Proto
 Now click the Add button, and select "Protocol" and click "Add...".
 In the "Select Network Protocol" window, select "Microsoft" as the Manufacturer and "TCP/IP" as the protocol, and click OK.
 
-By default, it will try to get it's network configuration over DHCP, which should work in most cases. If you need to manually specify the settings, highlight "TCP/IP", and click the "Properties" button.
+NOTE: By default, TCP/IP will try to get it's network configuration over DHCP, which should work in most cases.
+If you need to manually specify the settings, highlight "TCP/IP", and click the "Properties" button.
 
 Once your finished, Click OK to close the Network settings window, and the TCP/IP driver will be installed, and Windows will prompt you to restart your computer.
 Confirm, and Windows 95 will reboot.

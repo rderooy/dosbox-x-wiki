@@ -11,15 +11,16 @@ toc::[]
 # Overview
 This guide will give a general description of installing Windows 98 in DOSBox-X, in addition to addressing some common issues.
 
-## CD-ROM editions this applies to
+## Windows editions this guide applies to
 
-* Windows 98 (RTM; Original release)
-* Windows 98 Second Edition (98SE)
+* Windows 98 (RTM; Original release) - Retail Full
+* Windows 98 (RTM; Original release) - OEM Full
+* Windows 98 Second Edition (98SE) - Retail Full
+* Windows 98 Second Edition (98SE) - OEM Full
 
-This guide assumes a Full Retail or OEM version of Windows 98.
-Upgrade editions have additional requirements not covered by this guide.
+NOTE: Windows 98 or 98SE **Upgrade** editions have additional requirements and are not covered by this guide.
 
-If you don't know which Windows 98 version to install, we recommend that you install **Windows 98SE**.
+If you don't know which Windows 98 edition to install, we recommend that you install **Windows 98SE**.
 
 ## External links
 * link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
@@ -286,8 +287,8 @@ Once Windows 98 is installed, here is some additional software you may want to i
 * Install Windows Installer 2.0
 * Install WinG 1.0 (needed by just a few games, and those games typically include it)
 * Install GDI+ redistributable
-* Install/Update to Adobe Flash Player 7.0.73
-* Install Apple Quicktime 5.0.5
+* Install/Update to Adobe Flash Player 9.0.47.0
+* Install Apple Quicktime 6.5.2
 
 This may also be of interest: link:https://msfn.org/board/topic/105936-last-versions-of-software-for-windows-98se/[Forum thread about: Last versions of software for Windows 98SE]
 
@@ -316,14 +317,14 @@ If Windows 98 did not detect the adapter during installation, or you enabled NE2
 Go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware", and let the wizard detect hardware.
 It should find the emulated Novell NE2000 adapter, and install the drivers.
 
-By default TCP/IP will try to get it's network configuration over DHCP, if you need to manually specify the settings, in "Control Panel", double-click "Network".
+NOTE: By default TCP/IP will try to get it's network configuration over DHCP, if you need to manually specify the settings you can do so, in "Control Panel", double-click "Network".
 Once it opens, highlight "TCP/IP", and click the "Properties" button to modify the TCP/IP settings.
 
-In the Network settings, there will also be a "Dial-Up Adapter" listed, which you can safely remove.
+NOTE: In the Network settings, there will also be a "Dial-Up Adapter" listed, which you can safely remove.
 
-Additionally, if you don't want the Windows logon dialog on startup, and don't care for file and printer sharing, you can remove the "Client for Microsoft Networks" component from the Network configuration settings (although it will complain that "Your network is not complete", which you can ignore).
+NOTE: If you don't want the Windows logon dialog on startup, and don't care for file and printer sharing, you can remove the "Client for Microsoft Networks" component from the Network configuration settings (although it will complain that "Your network is not complete", which you can ignore).
 
-If you want to share files between Windows 98 and Windows 10 on the network, have a look at this blog: link:http://kishy.ca/?p=1511[SMB File Sharing between Win10 and Win98], but apparently this fails with Win10 build 2004 and 20H2.
+NOTE: If you want to share files between Windows 98 and Windows 10 on the network, have a look at this blog: link:http://kishy.ca/?p=1511[SMB File Sharing between Win10 and Win98], but apparently this fails with the latest Win10 builds 2004 and 20H2.
 
 If networking does not work, see link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up networking in DOSBox-X]
 
