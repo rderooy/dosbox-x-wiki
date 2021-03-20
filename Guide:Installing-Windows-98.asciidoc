@@ -53,11 +53,6 @@ core=normal
 [sblaster]
 sbtype=sb16vibra
 
-[ne2000]
-ne2000=true
-nicirq=10
-backend=slirp
-
 [fdc, primary]
 int13fakev86io=true
 
