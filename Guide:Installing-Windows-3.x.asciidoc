@@ -426,15 +426,16 @@ You should now be able to open the Windows 3.1x Media Player and playback ``C:\W
 ## Enabling external MIDI in Windows 3.0a with MM Extensions
 The same can be accomplished with *Windows 3.0a with Multimedia Extensions*, but the "SB16 All MIDI" option will not be listed.
 
+[cols="2a,3a"]
 |===
-a|Instead in the "MIDI Mapper" dialog box click on the "New..." button.
+|Instead in the "MIDI Mapper" dialog box click on the "New..." button.
 You will be asked for a name and description.
 You can name it anything you like, for instance "SB16 Ext MIDI", and click the "OK" button.
-You do not have to enter anything for Description. a|image::images/Windows:Windows_3.0_MIDI_1.png[Windows 3.0a MIDI]
-a|You will then get a "MIDI Setup" window.
+You do not have to enter anything for Description. |image::images/Windows:Windows_3.0_MIDI_1.png[Windows 3.0a MIDI]
+|You will then get a "MIDI Setup" window.
 The only thing you want to change here is the "Port Name" to "SB MIDI Out" for all 16 lines.
 You may also notice that for each line the active checkbox gets checked, this is correct.
-Once finished click the "OK" button and confirm the save. a|image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI, 600]
+Once finished click the "OK" button and confirm the save. |image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI, 600]
 |===
 
 You should now be able to open the Windows 3.0a Media Player and playback ``C:\MWINDOWS\MMDATA\CANYON.MID``.
