@@ -140,17 +140,22 @@ This effectively prevents the guest from accessing the hosts 127.0.0.0/8 loopbac
 
 ##### mtu
 * Default value: 0
-* Valid values:
+* Valid values: 576-?
 
 The maximum transmission unit for Ethernet packets transmitted from the guest.
 Specifying 0 will use libslirp's default MTU size of 1500 bytes.
+MTU and MRU sizes should normally be identical.
+
+NOTE: If you want to use a larger MTU than default, your hosts network adapter and your network switch needs to support it, otherwise the packets will get truncated.
 
 ##### mru
 * Default value: 0
-* Valid values:
+* Valid values: 576-?
 The maximum recieve unit for Ethernet packets transmitted to the guest.
-Specifying 0 will use libslirp's default MRU size of 1500 bytes
+Specifying 0 will use libslirp's default MRU size of 1500 bytes.
 MRU and MTU sizes should normally be identical.
+
+NOTE: If you want to use a larger MRU than default, your hosts network adapter and your network switch needs to support it, otherwise the packets will get truncated.
 
 ##### ipv4_network
 * Default value: 10.0.2.0
