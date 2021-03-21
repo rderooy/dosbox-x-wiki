@@ -416,28 +416,26 @@ However DOSBox-X has built-in support for General MIDI emulation (which is enabl
 To set it up, first ensure the SB16 drivers are installed.
 Then in Windows 3.1x go to "Control Panel" and open "MIDI Mapper".
 |===
-a|In Windows 3.1x go to "Control Panel", and open "MIDI Mapper. If there is no "MIDI Mapper" icon in "Control Panel", the Sound Blaster drivers were not installed. a|image::images/Windows:Windows_3.1_MIDI.png[Windows 3.1x MIDI]
+a|In Windows 3.1x go to "Control Panel", and open "MIDI Mapper.
+If there is no "MIDI Mapper" icon in "Control Panel", the Sound Blaster drivers were not installed.
+Select the "SB16 All MIDI" option from the drop-down menu, and press the "Close" button. a|image::images/Windows:Windows_3.1_MIDI.png[Windows 3.1x MIDI]
 |===
-Select the "SB16 All MIDI" option from the drop-down menu, and press the "Close" button.
 
 You should now be able to open the Windows 3.1x Media Player and playback ``C:\WINDOWS\CANYON.MID``.
 
 ## Enabling external MIDI in Windows 3.0a with MM Extensions
 The same can be accomplished with *Windows 3.0a with Multimedia Extensions*, but the "SB16 All MIDI" option will not be listed.
 
-Instead in the "MIDI Mapper" dialog box click on the "New..." button.
+|===
+a|Instead in the "MIDI Mapper" dialog box click on the "New..." button.
 You will be asked for a name and description.
-
-image::images/Windows:Windows_3.0_MIDI_1.png[Windows 3.0a MIDI]
-
 You can name it anything you like, for instance "SB16 Ext MIDI", and click the "OK" button.
-
-image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI]
-
-You will then get a "MIDI Setup" window.
+You do not have to enter anything for Description. a|image::images/Windows:Windows_3.0_MIDI_1.png[Windows 3.0a MIDI]
+a|You will then get a "MIDI Setup" window.
 The only thing you want to change here is the "Port Name" to "SB MIDI Out" for all 16 lines.
 You may also notice that for each line the active checkbox gets checked, this is correct.
-Once finished click the "OK" button and confirm the save.
+Once finished click the "OK" button and confirm the save. a|image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI]
+|===
 
 You should now be able to open the Windows 3.0a Media Player and playback ``C:\MWINDOWS\MMDATA\CANYON.MID``.
 
