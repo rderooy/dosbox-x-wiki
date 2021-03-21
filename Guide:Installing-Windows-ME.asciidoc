@@ -35,7 +35,7 @@ autolock=true
 
 [dosbox]
 title=Windows ME
-memsize=64
+memsize=128
 
 [video]
 vmemsize=8
@@ -73,11 +73,10 @@ scaler=none
 
 Copy the above config and save it as *winme.conf*
 
-*Notes*
+NOTE: It is recommended by DOSBox-X developers that at this time, you do not enable int13fakev86io in your config file when using Windows ME.
 
-* It is recommended by DOSBox-X developers that at this time, you do not enable int13fakev86io in your config file when using Windows ME.
-* You can increase the allocated RAM up to 512MB by setting ``memsize=512``. Larger values may be possible with tweaks, but are not covered here.
-* The ``[autoexec]`` section will need lines added later.
+NOTE: You can increase the allocated RAM up to the Windows ME maximum of 512MB by setting ``memsize=512``.
+Larger values may be possible with tweaks, but are not covered here.
 
 # General installation Notes
 
@@ -295,11 +294,11 @@ IMGMOUNT D cd1.iso cd2.iso cd3.iso
 You can then swap between disk images with the swap option from the menu.
 
 # Enabling networking
-To enable networking you first need to enable NE2000 adapter emulation in your winme.conf file and select an appropriate back-end for the NE2000 emulation.
+To enable networking you first need to enable NE2000 adapter emulation in your winme.conf config file and select an appropriate back-end for the NE2000 emulation.
 
 ## Enabling NE2000 in your DOSBox-X config file
 
-DOSBox-X supports two different back-ends to the NE2000 adapter emulation.
+Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
 The default is ``backend=pcap``.
 
 ### backend=pcap
@@ -318,6 +317,7 @@ To enable NE2000 emulation with the pcap back-end, add the following to your win
 
 ....
 [ne2000]
+ne2000=true
 nicirq=10
 backend=pcap
 
@@ -330,7 +330,7 @@ See link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up net
 
 ### backend=slirp
 Unlike the PCAP back-end, the SLIRP back-end does not require Promiscuous mode.
-As such it will work with WIFI, WAN and BT adapters, and it will work in sandboxed environments.
+As such it will work with WIFI, WAN and BT adapters, and it will work in most sandboxed environments.
 
 But obviously, it has its own limitations.
 
@@ -342,6 +342,7 @@ To enable NE2000 emulation with the slirp back-end, add the following to your wi
 
 ....
 [ne2000]
+ne2000=true
 nicirq=10
 backend=slirp
 ....
