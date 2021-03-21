@@ -434,7 +434,7 @@ You do not have to enter anything for Description. a|image::images/Windows:Windo
 a|You will then get a "MIDI Setup" window.
 The only thing you want to change here is the "Port Name" to "SB MIDI Out" for all 16 lines.
 You may also notice that for each line the active checkbox gets checked, this is correct.
-Once finished click the "OK" button and confirm the save. a|image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI]
+Once finished click the "OK" button and confirm the save. a|image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI, 600]
 |===
 
 You should now be able to open the Windows 3.0a Media Player and playback ``C:\MWINDOWS\MMDATA\CANYON.MID``.
