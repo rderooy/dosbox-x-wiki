@@ -11,7 +11,7 @@ toc::[]
 
 This guide explains how to configure and use the TrueType font (TTF) output in DOSBox-X.
 
-Since DOSBox-X is designed to be a complete DOS emulator, it officially supports DOS applications and more, not just DOS games. Unlike DOS gaming software, when you are in the DOS shell or running most non-gaming DOS software the text-mode is active, which will look much better when rendered with scalable TrueType fonts rather than the standard bitmaps (original DOSBox for example only supports the bitmap rendering). DOSBox-X supports the TrueType font (TTF) output which makes it suitable for running text-mode DOS applications, in addition to graphical-mode DOS software.
+Since DOSBox-X is designed to be a complete DOS emulator, it officially supports DOS applications and more, not just DOS games. While the graphical mode is required by most DOS gaming software, the text mode is active when you are in the DOS shell or running most non-gaming DOS software, and the text screen will look much better when rendered with scalable TrueType fonts rather than the standard bitmaps (original DOSBox and most forks only support the bitmap rendering). DOSBox-X supports the TrueType font (TTF) output which makes it suitable for running text-mode DOS applications, in addition to graphical-mode DOS programs or games.
 
 ## Activating the TrueType font output
 You can start DOSBox-X with the TrueType font (TTF) output by setting it from the [sdl] section of the DOSBox-X configuration, like this:
