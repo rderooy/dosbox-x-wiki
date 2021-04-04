@@ -580,6 +580,8 @@ imgmount D: cdrom.iso -t cdrom
 ....
 NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when the extension is not .ISO, .CUE or .MDF.
 
+NOTE: If the names of your CD/DVD images contain characters of foreign languages such as Russian, please make sure that the current DOS code page matches the language you use before mounting the images. If you decide to put such commands in the [autoexec] section of the config file, please also make sure the encoding of your config file matches your language when you save the config file.
+
 ### Accessing a CD or DVD in real DOS
 With the integrated DOS that DOSBox-X provides, you do not need to worry about loading a CD-ROM driver and MSCDEX.
 If however, you boot real DOS in DOSBox-X, any mounted CD-ROM images will not be accessible until you load both a IDE CD-ROM driver and MSCDEX.
