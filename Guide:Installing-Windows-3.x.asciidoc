@@ -137,9 +137,9 @@ Copy the above config and save it as *win3x.conf*
 * There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (``machine=svga_et3000`` and ``machine=svga_et4000`` respectively), but for the default ``machine=svga_s3`` (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The default S3 video option will offer the broadest range of resolutions and colour depths but do require you to install the correct drivers.
 
-# Preparing for Installation
-Most Windows 3.x versions were shipped on diskettes, requiring anywhere between 5 and 15 disks, depending on media-type and windows version.
-And while it is possible to install Windows 3.x from floppy images in DOSBox-X, the process for this is rather tedious for substantial number of disks.
+# Preparing for installation
+Practically all Windows 3.x versions were shipped on floppies, requiring anywhere between 5 and 15 disks, depending on media-type and windows version.
+And while it is possible to install Windows 3.x from floppy images in DOSBox-X, the disk-swap process for this is rather tedious for substantial number of disks.
 As such it is highly recommended to make a directory such as "INSTALL" and copy the contents of ALL the diskettes into this directory.
 This way there is no need to swap disks during the installation process.
 
@@ -163,7 +163,6 @@ IMGMOUNT A DISK05.IMG -U
 COPY A:\*.* C:\INSTALL
 IMGMOUNT A -U
 ....
-
 Your new INSTALL directory now holds the contents of all 5 disks in this example.
 
 ## Mounting an installation CD-ROM
