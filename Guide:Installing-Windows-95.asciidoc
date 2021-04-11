@@ -265,7 +265,7 @@ IMGMOUNT D cd1.iso cd2.iso cd3.iso
 You can then swap between disk images with the swap option from the menu.
 
 # Enabling networking
-To enable networking, you first need to enable NE2000 adapter emulation in your win95.conf config file and select an appropriate back-end for the NE2000 emulation.
+To enable networking, you first need to enable NE2000 adapter emulation in your ``win95.conf`` config file and select an appropriate back-end for the NE2000 emulation.
 
 ## Enabling NE2000 in your DOSBox-X config file
 
@@ -296,7 +296,7 @@ backend=pcap
 realnic=list
 ....
 
-The ''list'' value for ''realnic='' will need to be replaced by a value representing your actual network adapter.
+The ``list`` value for ``realnic=`` will need to be replaced by a value representing your actual network adapter.
 See link:Guide%3ASetting-up-networking-in-DOSBox%E2%80%90X[Guide: Setting up networking in DOSBox-X] for more information.
 
 ### backend=slirp
@@ -307,7 +307,7 @@ But obviously, it has its own limitations.
 
 - For now, it only works on Linux.
 - It only supports the TCP/IP protocol (other protocols must be TCP/IP encapsulated).
-- It is effectively behind a NAT gateway, meaning that you can communicate outbound, but no systems on the LAN can instantiate a new connection to it. Which means that two DOSBox-X instances on the same LAN using ``backend=slirp`` cannot communicate with each other.
+- It is effectively behind a NAT (Network Address Translation) gateway, meaning that you can communicate outbound, but no systems on the LAN can instantiate a new connection to it. Which means that two DOSBox-X instances on the same LAN using ``backend=slirp`` cannot communicate with each other.
 
 To enable NE2000 emulation with the slirp back-end, add the following to your win95.conf config file:
 
