@@ -92,7 +92,7 @@ It can also cause problems with double click with the mouse not working and audi
 * Unless noted otherwise, Windows 3.1 drivers are not backward compatible with Windows 3.0.
 
 ### Windows 3.0a with Multimedia Extensions specific notes
-* This edition available only to OEMs, as such they will be customized to the systems it was shipped with.
+* This edition was available only to OEMs (Original Equipment Manufacturers), as such Windows will be customized to the systems it was shipped with.
 Examples of such customization, are an OEM specific launcher, but also that the installer may default to custom audio and video options.
 * For versions distributed on CD, the installation can be started by going into the ``MWIN`` directory on the CD and running ``SETUP.EXE``.
 * Unlike regular Windows which installs by default to ``C:\WINDOWS`` this edition installs by default to ``C:\MWINDOWS``.
