@@ -318,7 +318,7 @@ nicirq=10
 backend=slirp
 ....
 
-## Setting up NE2000 networking in Windows 95
+## Setting up NE2000 networking
 
 ### Detection during installation
 Windows 95 setup wizard will ask if you want to detect additional hardware during installation.
@@ -460,9 +460,10 @@ An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate
 
 ## Enabling General MIDI
 If you have a working DOSBox-X General MIDI setup, either emulated or real, you can use that in Windows 95.
-Open the "Control Panel", and then double-click on "Multimedia".
 
-Now in "Multimedia Properties" on the "MIDI" tab, change the "Single instrument" option to "MPU-401 Compatible", and click OK to close the window.
+Go to "Start", "Settings" and open "Control Panel", and then double-click on "Multimedia".
+
+Now on the "MIDI" tab, change the "Single instrument" option to "MPU-401 Compatible", and click OK to close the window.
 
 image::images/Windows:Windows_95_MIDI.png[Windows 95 MIDI setup]
 
@@ -501,7 +502,8 @@ glide=true
 ....
 
 You will also need a specially patched link:https://www.vogons.org/download/file.php?id=102360[GLIDE2X.DLL] which you can place in either the ``C:\Windows\System`` directory of Windows 95, or in the game directory.
-But be aware that some games come with their own GLIDE2X.DLL, which typically gets installed in the game directory. If so, you will have to remove this DLL file for glide pass-through to work.
+But be aware that some games come with their own GLIDE2X.DLL, which typically gets installed in the game directory.
+If so, you will have to remove this DLL file for glide pass-through to work.
 
 For more detail on 3dfx Voodoo emulation, see the link:Guide%3ASetting-up-3dfx-Voodoo-in-DOSBox%E2%80%90X[Guide: Setting up 3dfx Voodoo in DOSBox-X]
 

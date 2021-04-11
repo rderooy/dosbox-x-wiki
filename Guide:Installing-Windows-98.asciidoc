@@ -238,7 +238,8 @@ SETUP
 
 image::images/Windows:Windows_98_SETUP_01.png[Windows 98 SETUP.EXE Welcome]
 
-Now run through the install process. The actual steps will not be covered in this guide but are pretty self-explanatory and detailed guides on the Windows 98 install process can be found online such as youtube.
+Now run through the install process.
+The actual steps will not be covered in this guide but are pretty self-explanatory and detailed guides on the Windows 98 install process can be found online such as youtube.
 
 When the installer reboots DOSBox-X, and your back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
 
@@ -349,7 +350,7 @@ nicirq=10
 backend=slirp
 ....
 
-## Setting up NE2000 networking in Windows 98
+## Setting up NE2000 networking
 If you enabled NE2000 support in the DOSBox-X config file, Windows 98 should detect it during installation, and you should get a screen like the following.
 
 image::images/Windows:Windows_98_SETUP_03.png[Windows 98 SETUP.EXE NE2000 Properties]
@@ -462,7 +463,8 @@ glide=true
 ....
 
 You will also need a specially patched link:https://www.vogons.org/download/file.php?id=102360[GLIDE2X.DLL] which you can place in either the ``C:\Windows\System`` directory of Windows 98, or in the game directory.
-But be aware that some games come with their own GLIDE2X.DLL, which typically gets installed in the game directory. If so, you will have to remove this DLL file for glide pass-through to work.
+But be aware that some games come with their own GLIDE2X.DLL, which typically gets installed in the game directory.
+If so, you will have to remove this DLL file for glide pass-through to work.
 
 For more detail on 3dfx Voodoo emulation, see the link:Guide%3ASetting-up-3dfx-Voodoo-in-DOSBox%E2%80%90X[Guide: Setting up 3dfx Voodoo in DOSBox-X]
 
