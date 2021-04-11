@@ -288,6 +288,8 @@ After the installation is finished, you can start Windows 3.x from the command-p
 dosbox-x -conf win3x.conf
 ....
 
+You can optionally create a shortcut on your desktop to start Windows 3.x directly.
+
 # Steps to take after installation
 Once Windows 3.x is installed, here is some additional software you may want to install or update:
 

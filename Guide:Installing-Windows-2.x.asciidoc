@@ -391,6 +391,8 @@ If you don't want DOSBox-X to close when exiting Windows 2.x, remove the ``EXIT`
 # Starting Windows 2.x after installation
 After the installation is finished, you can start Windows 2.x from the command-prompt with the following command:
 
+You can optionally create a shortcut on your desktop to start Windows 2.x directly.
+
 ....
 dosbox-x -conf win2x.conf
 ....
