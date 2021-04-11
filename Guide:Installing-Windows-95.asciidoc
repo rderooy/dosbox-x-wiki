@@ -86,7 +86,7 @@ Copy the above config and save it as *win95.conf*
 
 NOTE: If using Windows 95 OSR2 (or later) with FAT32 volumes, be sure to change the DOS version to 7.1 (``ver=7.1`` or from the DOSBox-X prompt: ``ver set 7.1``) or else you will get errors mounting the FAT32 volume.
 
-NOTE: You can increase the allocated RAM up to Windows 95 maximum of 480MB by setting ``memsize=480``.
+NOTE: You can increase the allocated RAM up to the Windows 95 maximum of 480MB by setting ``memsize=480``.
 Larger values may be possible with tweaks, but are not covered here.
 
 # General installation Notes
@@ -132,7 +132,8 @@ dosbox-x -conf win95.conf
 ....
 Then in DOSBox-X you need to create a new harddisk image file with ``IMGMAKE``.
 
-This example uses a 2GB harddisk formatted to FAT16, which is the maximum for FAT16, and supported by all Windows 95 versions.
+This example uses a 2GB hard disk image with a single FAT16 formatted partition.
+This is the maximum size for FAT16, and supported by all Windows 95 releases.
 ....
 IMGMAKE hdd.img -t hd_2gig -fat 16
 ....
@@ -148,7 +149,7 @@ IMGMAKE hdd.img -t hd_8gig
 ....
 
 Or if you want to create a larger disk, you can create a custom type.
-This is an example of a 16GB (16*1024=16384 MB) disk, formatted as FAT32.
+This is an example of a 16GB (16*1024=16384 MB) disk, which due to its size, will be formatted as FAT32.
 ....
 IMGMAKE hdd.img -t hd -size 16384
 ....
