@@ -98,9 +98,9 @@ This option allows for various common harddisk types to be created, for less com
 
 Some quick rules about IMGMAKE (for more detail, see: link:Guide%3AManaging-image-files-in-DOSBox%E2%80%90X[Guide: Managing image files in DOSBox-X]):
 
-- Diskette (floppy) images are always created as FAT12
-- If your reported DOS version is 7.1 or higher, then harddisk images up to 512MB will use FAT16 by default
-- Larger size harddisk images will use FAT32 by default (larger than 2GB can only be created as FAT32)
+- Diskette (floppy) images are always created as FAT12.
+- If your reported DOS version is 7.1 or higher, then harddisk images up to 512MB will use FAT16 by default.
+- Larger size harddisk images will use FAT32 by default (larger than 2GB can only be created as FAT32).
 
 Alternatively, you can use the ``-fat`` option to instruct ``IMGMAKE`` to create a certain FAT type (assuming that is possible for the harddisk size).
 
@@ -212,7 +212,7 @@ IMGMOUNT D Win98.iso
 ....
 
 ## Copying the contents of the CD-ROM
-While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (as long as you have the CD-ROM automatically mounted in your [autoexec] section of the config file).
+While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (if you have the CD-ROM automatically mounted in your [autoexec] section of the config file).
 It is recommended to copy the installation files (contents of the WIN98 directory on the CD-ROM) to your HDD image, as it will prevent Windows 98 from asking for the CD-ROM when it needs additional files later.
 
 ....
@@ -238,7 +238,7 @@ SETUP
 
 image::images/Windows:Windows_98_SETUP_01.png[Windows 98 SETUP.EXE Welcome]
 
-Now run through the install process. The actual steps will not be covered in this guide but are pretty self-explanatory and detailed guides on the Windows98 install process can be found online such as youtube.
+Now run through the install process. The actual steps will not be covered in this guide but are pretty self-explanatory and detailed guides on the Windows 98 install process can be found online such as youtube.
 
 When the installer reboots DOSBox-X, and your back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
 
@@ -309,11 +309,11 @@ This has the advantage that DOSBox-X can support various legacy network protocol
 This mode not only allows communication between DOSBox-X instances on the same network, but also with legacy PCs on the same network.
 
 However, for this to work DOSBox-X needs to have very low-level access to your real network adapter.
-In some cases this is not possible, such as:
+In some cases, this is not possible, such as:
 
-- Network Adapter or Driver not supporting Promiscuous mode (most WIFI, WAN and BT adapters fall into this category)
+- Network Adapter or Driver not supporting Promiscuous mode (most WIFI, WAN and BT adapters fall into this category).
 - Your Ethernet switch not allowing multiple MAC addresses on a single port or doing any kind of MAC address whitelisting.
-- Sandboxed versions of DOSBox-X (e.g. Flatpak) not allowing the required low-level access.
+- Sandboxed versions of DOSBox-X (e.g., Flatpak) not allowing the required low-level access.
 
 To enable NE2000 emulation with the pcap back-end, add the following to your win98.conf config file:
 
@@ -336,8 +336,8 @@ As such it will work with WIFI, WAN and BT adapters, and it will work in most sa
 
 But obviously, it has its own limitations.
 
-- For now, it only works on Linux
-- It only supports the TCP/IP protocol (other protocols must be TCP/IP encapsulated)
+- For now, it only works on Linux.
+- It only supports the TCP/IP protocol (other protocols must be TCP/IP encapsulated).
 - It is effectively behind a NAT gateway, meaning that you can communicate outbound, but no systems on the LAN can instantiate a new connection to it. Which means that two DOSBox-X instances on the same LAN using ``backend=slirp`` cannot communicate with each other.
 
 To enable NE2000 emulation with the slirp back-end, add the following to your win98.conf config file:
@@ -408,7 +408,7 @@ NOTE: Using the VBEMP driver does have a negative graphics performance impact, w
 
 # Emulated sound card
 The emulated sound card used in this guide is the SB16 Vibra, instead of the default SB16.
-This is simply because the SB16 Vibra is a ISA PnP card, and therefore automatically detected by Windows.
+This is simply because the SB16 Vibra is an ISA PnP card, and therefore automatically detected by Windows.
 There is no other real advantage of using the emulated SB16 Vibra over the SB16.
 
 Both Windows 98 and 98SE include SB16 driver version 4.37.00.1998.
@@ -430,7 +430,7 @@ image::images/Windows:Windows_98_MIDI.png[Windows 98 MIDI setup]
 For more information about setting up MIDI support, see link:Guide%3ASetting-up-MIDI-in-DOSBox%E2%80%90X[Guide: Setting up MIDI in DOSBox-X]
 
 # Enabling printing
-To enable printing support in Windows 98, see link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
+To enable printing support in Windows 98, see: link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
 
 # 3dfx Voodoo
 The emulated 3dfx Voodoo PCI device is enabled by default in DOSBox-X, and both Windows 98 and 98SE include a driver and will automatically detect it.
@@ -450,7 +450,7 @@ Starting with DOSBox-X 0.83.10 it is possible to use glide pass-through with Win
 There are however a few points you need to be aware of.
 
 * The DOSBox-X and glide-wrapper installed on the host need to be the same architecture.
-So, if you're using a 64bit DOSBox-X, you need to use a 64-bit glide-wrapper
+So, if you're using a 64bit DOSBox-X, you need to use a 64-bit glide-wrapper.
 * The Linux SDL2 DOSBox-X does not work with OpenGlide, this is a limitation of OpenGlide (see OpenGlide issue link:https://github.com/voyageur/openglide/issues/20[#20]).
 The work-around is to use the SDL1 DOSBox-X instead.
 
