@@ -264,7 +264,7 @@ After the installation is finished, you can start Windows 98 from the command-pr
 dosbox-x -conf win98.conf
 ....
 
-You can optionally create a shortcut on your desktop to
+You can optionally create a shortcut on your desktop to start Windows 98 directly.
 
 # Steps to take after Installation
 Once Windows 98 is installed, here is some additional software you may want to install or update:

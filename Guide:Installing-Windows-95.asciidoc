@@ -229,6 +229,8 @@ After the installation is finished, you can start Windows 95 from the command-pr
 dosbox-x -conf win95.conf
 ....
 
+You can optionally create a shortcut on your desktop to start Windows 95 directly.
+
 # Steps to take after Installation
 Once Windows 95 is installed, here is some additional software you may want to install or update:
 
@@ -371,7 +373,7 @@ If you don't know what to type, just type "WORKGROUP".
 
 You may also want to provide a more descriptive "Computer Name".
 
-Don't close the dialogue just yet though, click on "Configuration" tab instead.
+Don't close the dialogue just yet though, click on the "Configuration" tab instead.
 
 image::images/Windows:Windows_95_NE2000_08.png[Windows 95 - Network settings]
 
@@ -411,15 +413,24 @@ It can typically be found online as w9520204.zip.
 This update however does not add support for 8MB video RAM, or wide-screen video modes.
 If you installed Windows 95 OSR2 or later, you already have the latest video driver installed.
 
+The available video modes with the S3 Trio64 driver are:
+
+* 4-bit colour (16): 640x480
+* 8-bit colour (256) : 640x480, 800x600, 1024x768, 1152x864, 1280x1024 and 1600x1200
+* 16-bit colour (65536): 640x480, 800x600 and 1024x768
+* 32-bit colour (16.7M): 640x480 and 800x600
+
 A few enhancements have been made to the emulated S3 Trio64, compared to a real S3 Trio64:
 
 * No real S3 Trio64 was ever produced with more than 4MB video memory, under DOSBox-X you can optionally configure 8MB.
 * The real cards never supported wide-screen resolutions, wide-screen VESA modes can optionally be enabled in DOSBox-X.
 
 However, these enhancements cannot be used in Windows 95 with the S3 video driver due to driver limitations.
-As such you will be limited to 640x480 in 32bit colour, 1024x768 in 16bit colour or 1280x1024 in 8bit (256) colour.
+As such you will be limited to the above video modes with this driver.
 
+### VESA driver
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
+
 First add the following lines to your DOSBox-X config file in the [video] section:
 ....
 allow high definition vesa modes=true
