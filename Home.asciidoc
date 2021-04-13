@@ -211,6 +211,9 @@ Explains DOSBox-X's TrueType font (TTF) output, which is very useful for text-mo
 Explains how to make and use floppy, hard disk, and optical disc images in DOSBox-X.
 * link:Guide%3AClipboard-support-in-DOSBox‐X{suffixappend}[Guide: Clipboard support in DOSBox-X]
 +
+Explains the CPU emulation and different CPU types in DOSBox-X.
+* link:Guide%3ACPU-settings-in-DOSBox‐X{suffixappend}[Guide: CPU settings in DOSBox‐X]
++
 Explains the different ways to copy to and paste from the host clipboard in DOSBox-X.
 * link:Guide%3ARegional-settings-in-DOSBox‐X{suffixappend}[Guide: Regional settings in DOSBox‐X]
 +
