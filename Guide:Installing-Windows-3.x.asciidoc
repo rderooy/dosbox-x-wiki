@@ -109,6 +109,9 @@ memsize=16
 # uncomment the next line if you want to use Windows 3.0
 #machine=svga_et4000
 
+[dos]
+hard drive data rate limit=0
+
 [cpu]
 cputype=pentium
 core=normal
