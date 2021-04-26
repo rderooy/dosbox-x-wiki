@@ -275,17 +275,17 @@ Yes, you can! DOSBox-X supports the SHELL= option in [config] section of dosbox-
 
 * **How can I improve the performance in DOSBox-X?**
 +
-DOSBox-X comes with a default setting for general usages, but you may want to change certain settings for better performance. If you want to have a better speed for running your specific games or programs (such as data processing programs), you can consider setting the following in the DOSBox-X config file (dosbox-x.conf):
+DOSBox-X comes with a default setting for general usages, but you may want to change certain settings for better performance. If you want to have a better speed for running your specific games or programs (such as data processing programs), you can consider setting the following in the DOSBox-X config file (dosbox-x.conf), which will disable the BIOS logo and welcome banner at launch as well as using the dynamic core and disabling the drive rate limit:
 
 ```
 [dosbox]
 fastbioslogo = true
 startbanner = false
 
-[dos]
-hard drive data rate limit = 0
-
 [cpu]
 core = dynamic
 cycles = max
+
+[dos]
+hard drive data rate limit = 0
 ```
