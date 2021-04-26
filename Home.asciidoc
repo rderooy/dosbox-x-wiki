@@ -49,7 +49,7 @@ You can try the various commands and options in order to be more familiar with t
 
 You can set various configuration options for use with DOSBox-X. DOSBox-X will load the configuration file from either the current directory (typically the directory where the DOSBox-X program is located), or from the platform-dependent user directory.
 
-By default, DOSBox-X will first try to load the file **dosbox-x.conf** (or dosbox.conf) from the current directory. You can specify an alternative directory (instead of the current directory) for DOSBox-X to look for the configuration file with the ``-defaultdir`` command-line option, such as ``-defaultdir mydir``. If the config file is not found, DOSBox-X will then try to load the the configuration file from the user directory according to the platform:
+By default, DOSBox-X will first try to load the file **dosbox-x.conf** (or dosbox.conf) from the current directory, followed by the DOSBox-X program directory. You can specify an alternative directory (instead of the current directory) for DOSBox-X to look for the configuration file with the ``-defaultdir`` command-line option, such as ``-defaultdir mydir``. If the config file is not found, DOSBox-X will then try to load the the configuration file from the user directory according to the platform:
 
    (Windows)  C:\Users\<username>\AppData\Local\DOSBox-X\dosbox-x-<version number>.conf
    (Linux)    ~/.config/dosbox-x/dosbox-x-<version number>.conf
@@ -62,6 +62,8 @@ Furthermore, you can start DOSBox-X with the ``-conf`` parameter to load a speci
 You can override one or more config options when DOSBox-X starts by using the ``-set`` command-line option. For example, ``-set machine=pc98`` will force DOSBox-X to start in PC-98 mode regardless of the setting in the config file.
 
 DOSBox-X features the graphical configuration tool so that you can use its built-in GUI interface to modify its settings easily. An configuration file can be generated or updated by the configuration tool, or with the built-in CONFIG command (which can be found on the internal Z: drive when you run DOSBox-X).
+
+Starting with DOSBox-X version 0.83.13, DOSBox-X may also prompt for a directory if the config file dosbox-x.conf (or dosbox.conf) is not found in the current directory, and the -conf (or -defaultonf) option is not specified. You can select a folder that will become the working directory for DOSBox-X. You may customize this via the "working directory option" and "working directory default" options in the [dosbox] section of the global config file (i.e. the DOSBox-X config file in the DOSBox-X program directory or the user configuration directory).
 
 ### DOSBox-X's Special Keys
 
@@ -277,7 +279,7 @@ Yes, you can! DOSBox-X supports the SHELL= option in [config] section of dosbox-
 +
 Yes, you can let DOSBox-X synchronize them automatically with config options, or they may become desynchronized if they are changed outside of DOSBox-X. To synchronize the content of mounted local drives with the host file system automatically, you can set ``nocachedir=true`` in [dosbox] section of the config file. Alternatively, you can synchronize individual drive with the host file system by adding the ``-nocachedir`` option to ``MOUNT`` command, e.g. ``MOUNT D D:\ -nocachedir``. Likewise, to synchronize the internal clock with the host system clock automatically, you can set ``synchronize time=true`` in [dosbox] section of the config file, or you can toggle this from the drop-down menu ("DOS" => "synchronize host date/time"). Note that you can also use ``RESCAN`` command to manually synchronize the content of mounted local drives with the host file system (type ``RESCAN /?`` for more information about this command), and you can use ``DATE /H`` or ``TIME /H`` command to manually synchronize the internal date/time with the host system date/time.
 
-* **How can I improve the performance in DOSBox-X?**
+* **How can I improve the loading speed or general performance in DOSBox-X?**
 +
 DOSBox-X comes with a default setting for general usages, but you may want to change certain settings for better performance. If you want to have a better speed for running your specific games or programs (such as data processing programs), you can consider setting the following in the DOSBox-X config file (dosbox-x.conf), which will disable the BIOS logo and welcome banner at launch as well as using the dynamic core and disabling the drive rate limit:
 
