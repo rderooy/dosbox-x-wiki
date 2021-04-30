@@ -393,7 +393,13 @@ Alternatively you can try to set it up as follows, but this reportedly only work
 parallel1=reallpt directlpt:378
 ....
 
-Other alternatives are to install either link:http://sourceforge.net/projects/winprint/[WinPrint] (Open Source), or link:http://www.dosprn.com/[DOSPRN], a Shareware application that specifically lists DOSBox-X as supported for printing to any printer configured on the Windows host system.
+## Windows host, in combination with 3rd-party printing solution
+
+In addition to use the built-in printing solution, DOSBox-X can also work in combination with external third-party printing solutions like link:http://sourceforge.net/projects/winprint/[WinPrint] (Open Source), link:https://www.printfil.com/[Printfil], link:http://www.dosprn.com/[DOSPRN]. Both Printfil and DOSPRN are shareware applications that specifically list DOSBox-X as supported for printing to any printer configured on the Windows host system.
+
+### Windows host, using Printfil
+
+According to the description, Printfil allows text-based applications to print to any Windows printer, including USB, network printers, faxmodems and PDF writers, without any changes to the original applications. You can set your application to print to an ASCII file, or have Printfil capturing a parallel port (PRN: and from LPT1: to LPT9:) or serial port (from COM1: to COM9:), automatically redirecting your print jobs to any printer.
 
 ## Linux host
 
