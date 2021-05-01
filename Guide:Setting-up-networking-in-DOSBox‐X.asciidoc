@@ -16,17 +16,18 @@ This guide hopes to simplify the process.
 ## NE2000 resource usage
 By default the emulated NE2000 will use IRQ 3 and IO range 300-31F.
 This is typical of a real NE2000 adapter, and some NE2000 drivers will look there by default.
-DOSBox-X does not support PnP for the NE2000, meaning that Windows 95, 98 and ME may not autodetect it, and even if they do, they may assume the wrong resources.
+
+NOTE: DOSBox-X does not support PnP for the NE2000, meaning that Windows 95, 98 and ME may not autodetect it, and even if they do, they may assume the wrong resources.
 
 The problem lies in the fact that, IRQ 3 is also used for COM2, and therefore they conflict.
 Most software will work regardless of the conflict, as long as your not actually using COM2.
 But some software, notably Windows 95, 98 and ME may complain about a resource conflict.
 
-As such it is recommended to either move the emulated NE2000 to a different IRQ, or to disable COM2.
+As such it is recommended to either move the emulated NE2000 adapter to a different IRQ, or to disable COM2.
 In the below examples the emulated NE2000 is set to IRQ10 using the ``nicirq=`` setting, to resolve the conflict.
 But you need to ensure that any NE2000 device drivers that are loaded, are also set to look for it at the same resources.
 
-NOTE: Setting the NE2000 to IRQ 10 is not possible if your emulating a 8086 (machine=8086), as they only have IRQ 0-7 available. In that case it is probably better to disable COM2.
+NOTE: Setting the NE2000 to IRQ 10 is not possible if your emulating a 8086 (``machine=8086``), as they only have IRQ 0-7 available. In that case it is probably better to disable COM2.
 
 If you want to instead disable COM2, and leave the emulated NE2000 at its default resources, add the following to you DOSBox-X config file.
 ....
@@ -35,6 +36,50 @@ serial2=disabled
 ....
 
 To enable networking you first need to enable NE2000 adapter emulation in your win95.conf config file and select an appropriate back-end for the NE2000 emulation.
+
+## [ne2000] config options
+
+### ne2000
+* Default value: false
+* Valid values: true, false
+
+This setting enables or disables the NE2000 emulation.
+
+### nicbase
+* Default value: 300
+* Valid values: 200, 220, 240, 260, 280, 2C0, 300, 320, 340, 360
+
+This is the IO base address of the emulated NE2000 adapter.
+You may sometimes see the base address written as 0x300 which means hex 300.
+
+It will require 32bits, starting at the defined base address.
+So for the default base value of 300 the full IO range used is actually 300-31F.
+
+### nicirq
+* Default value: 3
+* Valid values: 3, 4, 5, 9, 10, 11, 12, 14, 15
+
+This is the IRQ (Interrupt Request Level) of the emulated NE2000 adapter.
+
+WARNING: The default IRQ value (3) conflicts with the emulated COM2 port that is enabled by default.
+
+### macaddr
+* Default value: AC:DE:48:88:99:AA
+
+This is the MAC address of the emulated NE2000 adapter.
+Only one instance of a MAC address may exist on a network.
+
+WARNING: If you want to run multiple DOSBox-X instances on the same network, you MUST ensure they all have a different MAC address.
+
+The first 3 bytes are known as the OUI (Organizational Unique Identifier), and typically represent the network card manufacturer.
+The **AC:DE:48** OUI used by default, is a special private range, and it is recommended that you use this range.
+
+The last 3 bytes can be freely chosen. Each byte can range from 00 to FF.
+
+Some examples of valid alternative MAC addresses:
+- AC:DE:48:11:22:33
+- AC:DE:48:AA:BB:CC
+- AC:DE:48:1D:2E:3F
 
 ## Selecting a back-end for NE2000
 Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
