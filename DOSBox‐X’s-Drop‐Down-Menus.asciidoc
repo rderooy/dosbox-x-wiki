@@ -73,7 +73,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Reset window size**: Resets the DOSBox-X window to the default size.
 
-* **Frameskip**: Changes the frameskip setting, i.e. how many frames DOSBox-X skips before drawing one, from 0 to 10.
+* **Refresh rate...**: Sets the video refresh rate (0 for unlocking the refresh rate).
 
 * **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fit a scaler in the resolution used at full screen may require a border or side bars. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
 
@@ -85,6 +85,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Overscan**: Selects the width of the overscan border, from 0 to 10. This works only if the video output is set to surface.
 rscan border, from 0 to 10. This works only if the video output is set to surface.
+
+* **Frameskip**: Changes the frameskip setting, i.e. how many frames DOSBox-X skips before drawing one, from 0 to 10.
 
 * **Text-mode**: Changes some text-mode settings, such as allowing 9-pixel wide text mode fonts, switching between high intensity background color and blinking foreground text, and setting the video modes to for example 80 columns x 50 lines and 132 columns and 60 lines.
 
@@ -145,6 +147,8 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 * **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
 
 * **Create blank disk image**: Creates blank floppy or hard disk images of common disk sizes for mounting them as drives.
+
+* **Enables A20 gate**: Turns the A20 gate on or off if it is not locked.
 
 * **Show mounted drive numbers**: Shows details such as the disk name for all mounted drive numbers (0-5).
 
