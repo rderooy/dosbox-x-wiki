@@ -498,6 +498,13 @@ Usage: SUBST [drive1: [drive2:]path] or SUBST drive1: /D
 Displays or changes the internal time.
 +
 Usage: TIME [ [/T] [/H] | hh:mm:ss ]
+* **TITLE** (external command)
++
+Sets the window title for the DOSBox-X window.
++
+Usage: TITLE [string]
++
+Note: You can also set the DOSBox-X window title via the "title" option in the config file.
 * **TREE** (external command)
 +
 Graphically displays the directory structure of a drive or path.
