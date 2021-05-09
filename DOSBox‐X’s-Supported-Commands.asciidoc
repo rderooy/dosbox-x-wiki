@@ -11,7 +11,7 @@ Below is a list of internal and external commands built into DOSBox-X.
 +
 Changes the DOSBox-X screen to 25/28/50 line mode.
 +
-Usage: Simply enter 25, 28, or 50 without any parameters.
+Usage: Simply enter 25, 28, or 50 without any parameters. See also the Z:\TEXTUTIL directory for more text-mode related tools.
 +
 * **4DOS** (external command)
 +
@@ -559,6 +559,12 @@ The following commands are for debugging purposes (only available on builds that
 Boots into a BIOS image for running CPU tester BIOS.
 +
 Usage: BIOSTEST image_file
++
+* **CGASNOW** (external command)
++
+Turns CGA snow emulation on or off.
++
+Usage: CGASNOW [ON|OFF]
 +
 * **DEBUGBOX** (internal command)
 +
