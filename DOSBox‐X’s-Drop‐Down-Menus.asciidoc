@@ -144,11 +144,11 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Config options as commands**: Selects whether to allow entering config file options as shell commands to get and set settings. This is disabled by default to avoid name clashes, but can be enabled to improve backward compatibility with DOSBox.
 
-* **Swap floppy**: Swaps the floppy image if you are using multiple floppy disk images.
+* **Swap floppy drive**: Swaps the floppy image if you are using multiple floppy disk images on floppy drive(s).
 
-* **Swap CD**: Swaps the CD image if you are using multiple CD images.
+* **Swap CD drive**: Swaps the CD image if you are using multiple CD images on CD drive(s).
 
-* **Change current floppy image...**: Changes the current active floppy image(s) on floppy drive(s), including when a guest OS is active.
+* **Change current floppy image...**: Changes the current active floppy disk image(s) on floppy drive(s), including when a guest OS is active.
 
 * **Change current CD image...**: Changes the current active ISO/CUE image(s) on CD drive(s), including when a guest OS is active.
 
