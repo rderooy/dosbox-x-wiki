@@ -20,11 +20,6 @@ Starts the 4DOS 8.00 command shell for 4DOS features and capabilities.
 Usage: 4DOS [option]
 +
 Note: You can set 4DOS.COM as the default shell to start (instead of COMMAND.COM) via the SHELL option in the config file.
-* **A20GATE** (external command)
-+
-Views, turns on/off or changes the A20 gate mode.
-+
-Usage: A20GATE SET [off | off_fake | on | on_fake | mask | fast] or A20GATE [ON | OFF]
 * **ADDKEY** (external command)
 +
 Generates artificial keypresses.
@@ -332,11 +327,6 @@ Note: This command is only useful if long filename support is currently enabled.
 Loads a program above the first 64K of memory. It may be required for some programs to work.
 +
 Usage: LOADFIX [program] [options]
-* **LOADROM** (external command)
-+
-Loads the specified Video BIOS ROM image file.
-+
-Usage: LOADROM ROM_file
 * **LH/LOADHIGH** (internal command)
 +
 Loads a program into upper memory (if UMB is available).
@@ -532,20 +522,6 @@ Note: "VER 3.3" or "VER SET 3.3" will set the reported DOS version as 3.3 (3.30)
 Controls whether to verify that the files are written correctly to a disk.
 +
 Usage: VERIFY [ON | OFF]
-* **VESAMOED** (external command)
-+
-Runs the VESA BIOS mode editor utility, which can be used to add, modify or delete VESA BIOS modes.
-+
-Usage: VESAMOED [options]
-+
-Note: It was originally written because some old DOS games or demoscene productions, especially those shipped with a UNIVBE binary, assumed video mode numbers instead of enumerating like they should. It can also be used to rearrange VESA BIOS modes for retro developers who want to make sure their code works properly no matter what strange VESA BIOS their code runs into on real hardware. Because of limitations in DOSBox-X SVGA emulation and the render scaler architecture, the maximum resolution possible resolution is 1920x1440.
-* **VFRCRATE** (external command)
-+
-Locks or unlocks the video refresh rate to a specific frame rate.
-+
-Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]
-+
-Note: It was originally written to run demoscene games at 59.94Hz (NTSC) so that no frame blending is needed to author to DVD. It can also be used for development and testing to simulate a PC whose refresh rate is locked in hardware, such as what happens when running a DOS program on laptops. Even though standard VGA is 60Hz or 70Hz, laptops will lock the refresh rate to 60Hz when sending video to the internal display.
 * **VOL** (internal command)
 +
 Displays the disk volume label and serial number, if they exist.
@@ -559,8 +535,13 @@ Usage: XCOPY source [destination] [options]
 +
 Note: It uses the XCOPY command from FreeDOS.
 
-The following commands are for debugging purposes (only available on builds that have the debugging feature enabled):
+The following commands are for debugging purposes (many of them only available on builds that have the debugging feature enabled):
 
+* **A20GATE** (external command)
++
+Views, turns on/off or changes the A20 gate mode.
++
+Usage: A20GATE SET [off | off_fake | on | on_fake | mask | fast] or A20GATE [ON | OFF]
 * **BIOSTEST** (external command)
 +
 Boots into a BIOS image for running CPU tester BIOS.
@@ -587,6 +568,11 @@ Usage: INT2FDBG [/I]
 +
 Note: The option install the hook which will hook INT 2Fh at the top of the call chain for debugging information.
 +
+* **LOADROM** (external command)
++
+Loads the specified Video BIOS ROM image file.
++
+Usage: LOADROM ROM_file
 * **NMITEST** (external command)
 +
 Generates a non-maskable interrupt (NMI).
@@ -594,5 +580,19 @@ Generates a non-maskable interrupt (NMI).
 Usage: NMITEST
 +
 Note: This will test if the interrupt handler works properly.
+* **VESAMOED** (external command)
++
+Runs the VESA BIOS mode editor utility, which can be used to add, modify or delete VESA BIOS modes.
++
+Usage: VESAMOED [options]
++
+Note: It was originally written because some old DOS games or demoscene productions, especially those shipped with a UNIVBE binary, assumed video mode numbers instead of enumerating like they should. It can also be used to rearrange VESA BIOS modes for retro developers who want to make sure their code works properly no matter what strange VESA BIOS their code runs into on real hardware. Because of limitations in DOSBox-X SVGA emulation and the render scaler architecture, the maximum resolution possible resolution is 1920x1440.
+* **VFRCRATE** (external command)
++
+Locks or unlocks the video refresh rate to a specific frame rate.
++
+Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]
++
+Note: It was originally written to run demoscene games at 59.94Hz (NTSC) so that no frame blending is needed to author to DVD. It can also be used for development and testing to simulate a PC whose refresh rate is locked in hardware, such as what happens when running a DOS program on laptops. Even though standard VGA is 60Hz or 70Hz, laptops will lock the refresh rate to 60Hz when sending video to the internal display.
 
-Note: As of DOSBox-X version 0.83.6, you can customize the external commands as appeared on the Z: drive. For example, you can add your favorite DOS programs to the drivez directory, which will add to or replace existing programs on the Z: drive. 
+Note: As of DOSBox-X version 0.83.6, you can customize the external commands as appeared on the Z: drive. For example, you can add your favorite DOS programs to the drivez directory, which will add to or replace existing programs on the Z: drive.
