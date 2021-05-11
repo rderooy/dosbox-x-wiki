@@ -238,7 +238,7 @@ If you get the above screen during SETUP, select "Other directory" to change it 
 ## Running SETUP.EXE
 You can now run SETUP.EXE.
 
-NOTE: It is necessary to use the ``/NM`` option when running SETUP.EXE, as otherwise Windows ME will not install in DOSBox-X as it will claim that it needs at least a 150MHz CPU.
+NOTE: It is necessary to use the ``/NM`` option when running SETUP.EXE, as otherwise Windows ME will not install in DOSBox-X as it will claim that it needs at least a 150MHz CPU. Alternatively, you may overcome this issue by selecting "CPU" => "Emulate CPU speed" => "Pentium 166MHz MMX (~97240 cycles)" from the drop-down menu.
 
 ....
 C:
