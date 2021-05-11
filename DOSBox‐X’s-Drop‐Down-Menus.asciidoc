@@ -35,7 +35,9 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Reboot guest system**: Reboots the kernel of the emulated DOS (integrated DOS or guest DOS) inside DOSBox-X without resetting the virtual machine.
 
-* **Quit**: Exit from DOSBox-X.
+* **Restart DOSBox-X with config file...**: Restart DOSBox-X automatically with the select config file loaded.
+
+* **Quit from DOSBox-X**: Exit from DOSBox-X.
 
 **2. The "CPU" menu**
 
@@ -134,6 +136,8 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Windows host applications**: Enable this if you want to launch Windows applications from mounted directories to run on the host, and whether to wait for the applications.
 
+* **Enables A20 gate**: Turns the A20 gate on or off if it is not locked.
+
 * **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
 
 * **Synchronize host date/time**: Selects whether to force synchronizations with the date/time of the host system.
@@ -144,15 +148,17 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Swap CD**: Swaps the CD image if you are using multiple CD images.
 
-* **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
+* **Change current floppy image...**: Changes the current active floppy image(s) on floppy drive(s), including when a guest OS is active.
+
+* **Change current CD image...**: Changes the current active ISO/CUE image(s) on CD drive(s), including when a guest OS is active.
 
 * **Create blank disk image**: Creates blank floppy or hard disk images of common disk sizes for mounting them as drives.
-
-* **Enables A20 gate**: Turns the A20 gate on or off if it is not locked.
 
 * **Show mounted drive numbers**: Shows details such as the disk name for all mounted drive numbers (0-5).
 
 * **Show IDE disk or CD status**: Displays the status for each IDE position (1m, 1s, 2m, 2s, etc).
+
+* **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
 
 * **Send form-feed**: Manually sends a form-feed to the printer for ejecting a new page.
 
