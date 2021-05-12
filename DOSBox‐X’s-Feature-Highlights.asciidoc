@@ -141,6 +141,9 @@ DOSBox-X supports Direct3D along with pixel shaders which provides many more out
 * **Support for TrueType fonts (TTF) for text-mode DOS applications**
 +
 DOSBox-X supports TrueType fonts (TTF) which provides high-resolution display for DOS shell and program running in text-mode. Features such as on-screen text styles are supported in this output mode too. Look at the link:Guide%3AUsing-TrueType-font-output-in-DOSBox‐X{suffixappend}[Using TrueType font output in DOSBox‐X] guide page for more information.
+* **Support for additional code pages, including DBCS code pages used by CJK (Chinese/Japanese/Korean) languages**
++
+DOSBox-X supports many additional code pages for conversions between the host and guest systems, both for the TrueType font (TTF) output and other outputs. For the TrueType font output, DOSBox-X also supports DBCS code pages used by Chinese, Japanese, and Korean languages, so with a suitable TTF font you will be able to run text-mode DOS applications in these languages using the output. 
 * **Support for features such as V-Sync, overscan border and stereo swapping**
 * **Improved debugging features including built-in debugger and logging options**
 * **Including most patches from DOSBox ECE and many community contributions**
