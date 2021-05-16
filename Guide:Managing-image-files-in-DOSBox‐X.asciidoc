@@ -798,7 +798,7 @@ The drive mechanisms are junk and have a high likelihood of damaging your disk.
 Instead look for an older second-hand USB floppy drive from a known brand like Dell, HP, IBM, Lenovo, Teac or Toshiba.
 
 # Known limitations
-When booting a Guest OS (DOS or Win9x) in DOSBox-X most of the Drive options will become unavailable (greyed out).
+When booting a Guest OS (DOS or Win9x) in DOSBox-X all of the Drive options will become unavailable (greyed out).
 This is because, once you boot a guest OS, the drive letter mapping loses its meaning as the guest OS is responsible for drive letter assignment.
 
 The only mapping that DOSBox-X still has at that point, is that of drive numbers to the image file.
