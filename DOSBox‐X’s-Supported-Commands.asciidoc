@@ -19,7 +19,7 @@ Starts the 4DOS 8.00 command shell for 4DOS features and capabilities.
 +
 Usage: 4DOS [option]
 +
-Note: You can set 4DOS.COM as the default shell to start (instead of COMMAND.COM) via the SHELL option in the config file.
+Note: You can set 4DOS.COM as the default shell to start (instead of COMMAND.COM) via the SHELL option in the config file. When in the 4DOS shell, type OPTION to set 4DOS options.
 * **ADDKEY** (external command)
 +
 Generates artificial keypresses.
@@ -458,7 +458,7 @@ Views or changes the text-mode color scheme settings.
 +
 Usage: SETCOLOR [color# [value]]
 +
-Note: Changing the text-mode color schemes is only supported for the TrueType font (TTF) output. Use COLOR command to change the current background and foreground colors.
+Note: Use COLOR command to change the current background and foreground colors.
 * **SHIFT** (internal command)
 +
 Left-shifts command-line parameters in a batch script.
