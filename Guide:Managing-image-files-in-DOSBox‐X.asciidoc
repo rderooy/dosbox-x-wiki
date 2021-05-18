@@ -92,7 +92,7 @@ If this is not the case, you can force a diskette type with the ``-t floppy`` pa
 Supported diskette sizes options:
 
 |===
-|Disk type|Sectors|Capacity|IMGMAKE option
+|Disk type|Sectors per Track|Capacity|IMGMAKE option
 
 |5.25" SSDD|8|160KB|-t fd_160
 |**5.25" SSDD**|9|180KB|-t fd_180
@@ -100,10 +100,10 @@ Supported diskette sizes options:
 |5.25" DSDD|8|320KB|-t fd_320
 |**5.25" DSDD**|9|360KB|-t fd_360
 |5.25" DSDD|10|400KB|-t fd_400
-|**5.25" HD**|9|1200KB (1.2MB)|-t fd_1200
-|3.5" DSDD (2DD)|9|720KB|-t fd_720
+|**5.25" HD**|15|1200KB (1.2MB)|-t fd_1200
+|3.5" DSDD (2DD)|18|720KB|-t fd_720
 |**3.5" HD**|9|1440KB (1.44MB)|-t fd_1440 or -t fd
-|3.5" ED|9|2880KB (2.88MB)|-t fd_2880
+|3.5" ED|36|2880KB (2.88MB)|-t fd_2880
 |===
 
 NOTE: Common PC disk types in bold. The 8-sector formats should be avoided unless your need backward compatibility with DOS 1.x.
