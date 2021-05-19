@@ -212,9 +212,13 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **List printer devices**: Displays the list of printer devices for the printing feature on Windows systems.
 
-* **Debugging options**: Select debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
+* **Debugging options**: Functions related to the logging console on Windows systems. Non-debugging builds only.
 
 * **About DOSBox-X**: Shows the about information for DOSBox-X.
+
+**9. The "Debug" menu**
+
+Previously the “Debugging options” under “Help” menu, it is now a separate top-level menu appearing in debugging builds for debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
 
 DOSBox-X will show the drop-down menus in the windowed mode by default, but you can also hide it if you prefer, using any of the following methods:
 
