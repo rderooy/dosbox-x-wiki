@@ -3,7 +3,7 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achieve many things from the drop-down menu without typing commands. There are 8 menus shown in DOSBox-X’s menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture", "Drive", and “Help”.
+DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achieve many things from the drop-down menu without typing commands. There are 9 menus shown in DOSBox-X’s menu bar, namely "Main", "CPU", "Video", "Sound", "DOS", "Capture", "Drive", “Help”, and “Debug”.
 
 **1. The "Main" menu**
 
@@ -218,7 +218,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 **9. The "Debug" menu**
 
-Previously the “Debugging options” under “Help” menu, it is now a separate top-level menu appearing in debugging builds for debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
+* Previously the “Debugging options” under “Help” menu, it is now a separate top-level menu appearing in debugging builds for debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
 
 DOSBox-X will show the drop-down menus in the windowed mode by default, but you can also hide it if you prefer, using any of the following methods:
 
