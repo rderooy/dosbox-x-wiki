@@ -140,7 +140,7 @@ If you set ``ttf.wp=WP`` which sets WordPerfect as the word processor, the 512-c
 
 If you set ``ttf.wp=WS`` which sets WordStar as the word processor, then you probably want to set ``high intensity blinking`` to ``false`` for some text styles to be properly displayed visually. You can also toggle this from the menu ("Video" => "Text-mode" => "High intensity: background color"). This option is functionally equivalent to the 4DOS.INI option ``BrightBG=Yes`` if you use the 4DOS shell.
 
-There is additionally a ``ttf.wpbg`` option which you can specify a color to match the background color of the specified word processor, in case you use a customized background color for the word processor. Use the DOS color number (0-15) for this option.
+There is additionally a ``ttf.wpbg`` option which you can specify a color to match the background color of the specified word processor, in case you use a customized background color for the word processor. Use the DOS color number (0-15) for this option. Similarly, there is a ``ttf.wpfg`` option which you can specify a foreground color (0-7).
 
 ## Color scheme for the TrueType font output
 
