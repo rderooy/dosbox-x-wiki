@@ -250,10 +250,18 @@ The path (directory) where the output files are stored. Defaults to the current 
 
 The path (directory) where the TTF fonts (courier.ttf, ocra.ttf, roman.ttf, sansserif.ttf, script.ttf) are stored. Defaults to the FONTS subdirectory in the current working directory (or where the DOSBox-X executable is located).
 
+#### printdbcs
+* Default value: auto
+* Possible values: true, false, auto
+
+Allows DOSBox-X to print Chinese/Japanese/Korean DBCS (double-byte) characters when a DBCS code pages (932: Japanese, 936: Simplified Chinese; 949: Korean; 950: Traditional Chinese) is active. If set to auto (default), this is enabled only for the TrueType font (TTF) output with the DBCS support enabled.
+
 #### openwith
 * Default value: \<blank\>
 
 Start the specified program to open the output file.
+
+If set, the command window will be hidden for openwith/openerror options on the Windows platform.
 
 e.g. ``openwith=notepad`` will open the file with Notepad on a Windows host.
 
@@ -267,6 +275,12 @@ Some examples:
 * Default value: \<blank\>
 
 Start the specified program to open the output file if an error had occurred.
+
+#### shellhide
+* Default value: false
+* Possible values: true, false
+
+If set, the command window will be hidden for openwith/openerror options. Only supported in the Windows platform.
 
 #### timeout
 * Default value: 0
@@ -285,7 +299,7 @@ You can also manually eject a form-feed when you want to do so, and this option 
 # Setting up fonts for the emulated printer
 The emulated printer requires TrueType fonts in order to be able to print text.
 
-If no TTF font can be found then DOSBox-X will print with the internal TTF font (UnifontFullMediumMono) as used by the TrueType font output.
+If no TTF font can be found then DOSBox-X will print with the internal TTF font as used by the TrueType font output, or the currently-used TTF font if the TrueType font output is currently active and the ``ttf.printfont`` option (in [render] section) is enabled (default).
 
 ## Windows host
 DOSBox-X will first search for fonts in the FONTS subdirectory in the current working directory or the directory where your dosbox-x.exe is located.
