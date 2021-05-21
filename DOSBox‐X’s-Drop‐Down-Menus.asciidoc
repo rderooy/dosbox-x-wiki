@@ -160,7 +160,9 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Rescan all drives**: Refreshes the cache for all DOS drives inside DOSBox-X.
 
-* **Send form-feed**: Manually sends a form-feed to the printer for ejecting a new page.
+* **Print text screen**: Prints the current DOS text screen to the default printer (if the printing feature has been enabled).
+
+* **Send form-feed**: Manually sends a form-feed to the printer for ejecting a new page (if the printing feature has been enabled).
 
 **6. The "Capture" menu**
 
@@ -212,13 +214,13 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **List printer devices**: Displays the list of printer devices for the printing feature on Windows systems.
 
-* **Debugging options**: Functions related to the logging console on Windows systems. Non-debugging builds only.
+* **Logging console**: Functions related to the logging console on Windows systems. Non-debugging builds only.
 
 * **About DOSBox-X**: Shows the about information for DOSBox-X.
 
 **9. The "Debug" menu**
 
-* Previously the “Debugging options” under “Help” menu, it is now a separate top-level menu appearing in debugging builds for debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
+* Previously the "Debugging options" under “Help” menu, it is now a separate top-level menu appearing in debugging builds for debugging-related functions, such as showing the debugger and the logging console as well as other debugging-related functions like the blank screen refresh tests.
 
 DOSBox-X will show the drop-down menus in the windowed mode by default, but you can also hide it if you prefer, using any of the following methods:
 
