@@ -228,17 +228,19 @@ TIP: Once a disk image is mounted, you can alternatively also boot from a disk i
 WARNING: You should never mount a disk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the diskette image.
 
 ### Gnome Disk Image Mounter
-When using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter". Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
+When using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter". Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted READ-ONLY in the Gnome file manager.
 
 The first time you want to open .IMA files, you need to right-click and choose "Open With Other Application", and then click on "View All Applications" and choose "Disk Image Mounter" from the list.
 The next time you want to open a .IMA file, the option will be available directly from the right-click menu.
 
 Disks can be unmounted from the Gnome file manager by clicking the unmount button next to the volume name.
 
-Disk images can also be mounted from the Linux Terminal using:
+Disk images can also be mounted READ-WRITE from the Linux Terminal using:
 ....
-gnome-disk-image-mounter disk.ima
+gnome-disk-image-mounter -w disk.ima
 ....
+
+Or if you run ``gnome-disk-image-mounter`` without arguments, it will ask you which disk image to mount, and give you the ability to mount it READ-WRITE.
 
 ### Mounting a diskette image from the Linux shell
 The more traditional Linux method of mounting diskette image files from a Linux terminal.
