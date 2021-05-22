@@ -539,16 +539,18 @@ WARNING: You should never mount a harddisk image simultaneously in both DOSBox-X
 
 ### Gnome Disk Image Mounter
 When using the Gnome desktop environment, you can open .IMG disks with the "Disk Image Mounter".
-Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
+Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted READ-ONLY in the Gnome file manager.
 
 NOTE: If the harddisk image contains multiple partitions, they will ALL be mounted.
 
 Disks can be unmounted from the Gnome file manager by clicking the unmount button next to the volume name.
 
-Disk images can also be mounted from the Linux Terminal using:
+Disk images can also be mounted READ-WRITE from the Linux Terminal using:
 ....
-gnome-disk-image-mounter hdd.img
+gnome-disk-image-mounter -w hdd.img
 ....
+
+Or if you run ``gnome-disk-image-mounter`` without arguments, it will ask you which disk image to mount, and give you the ability to mount it READ-WRITE.
 
 ### Mounting a harddisk image from the Linux shell
 The more traditional Linux method of mounting harddisk image files from a Linux terminal. This method requires sudo access.
