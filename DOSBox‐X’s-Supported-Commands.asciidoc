@@ -473,11 +473,11 @@ Usage: SORT [/R] [/+num] [/A] [file] or command | SORT
 Note: It uses the SORT command from FreeDOS.
 * **START** (external command)
 +
-Starts a command to run on the Windows host.
+Starts a command or program to run on the host system.
 +
 Usage: START [option] command [arguments]
 +
-Note: This command is only available in the Windows platform, enabled either by the startcmd config option or by the -winrun command-line option.
+Note: This command is disabled by default, but can be enabled either by the startcmd config option or by the -hostrun command-line option.
 * **SUBST** (internal command)
 +
 Assigns an internal directory to a drive.
