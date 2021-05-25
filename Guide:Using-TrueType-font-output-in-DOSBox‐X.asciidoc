@@ -117,7 +117,7 @@ The above commands will change the screen dimension to 30 lines and 100 columns 
 
 ## On-screen text styles for DOS applications
 
-DOSBox-X supports on-screen text styles for DOS applications like WordPerfect, WordStar, and XyWrite. You will need to specify a word processor (WP=WordPerfect, WS=WordStar, XY=XyWrite) for this, and then text styles such as bold, italics, and underlines will be displayed visually when running these applications using the TrueType font output in DOSBox-X. For example:
+DOSBox-X supports on-screen text styles for DOS applications like WordPerfect, WordStar, XyWrite, and FastEdit. You will need to specify a word processor (WP=WordPerfect, WS=WordStar, XY=XyWrite, FE=FastEdit) for this, and then text styles such as bold, italics, and underlines will be displayed visually when running these applications using the TrueType font output in DOSBox-X. For example:
 
 ```
 ttf.wp=XY
@@ -138,7 +138,7 @@ Then the regular text will be rendered using the Consola.ttf font, whereas the b
 
 If you set ``ttf.wp=WP`` which sets WordPerfect as the word processor, the 512-character font (with 256 additional characters from the second VGA font bank) will be supported by default for use with WordPerfect. This can be disabled by setting ``ttf.char512=false`` in the [render] section of the configuration.
 
-If you set ``ttf.wp=WS`` which sets WordStar as the word processor, then you probably want to set ``high intensity blinking`` to ``false`` for some text styles to be properly displayed visually. You can also toggle this from the menu ("Video" => "Text-mode" => "High intensity: background color"). This option is functionally equivalent to the 4DOS.INI option ``BrightBG=Yes`` if you use the 4DOS shell.
+If you set ``ttf.wp=WS`` (or ``ttf.wp=FE``) which sets WordStar (or FastEdit) as the word processor, then you probably want to set ``high intensity blinking`` to ``false`` for some text styles to be properly displayed visually. You can also toggle this from the menu ("Video" => "Text-mode" => "High intensity: background color"). This option is functionally equivalent to the 4DOS.INI option ``BrightBG=Yes`` if you use the 4DOS shell.
 
 There is additionally a ``ttf.wpbg`` option which you can specify a color to match the background color of the specified word processor, in case you use a customized background color for the word processor. Use the DOS color number (0-15) for this option. Similarly, there is a ``ttf.wpfg`` option which you can specify a foreground color (0-7).
 
