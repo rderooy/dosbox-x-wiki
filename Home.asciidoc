@@ -301,3 +301,29 @@ cycles = max
 [dos]
 hard drive data rate limit = 0
 ```
+
+Using the TrueType font (TTF) output and disabling double-scanning can improve the performance too (especially for text-mode applications):
+
+```
+[sdl]
+output=ttf
+doublescan=false
+```
+
+If you do need any sound output, you can also set the following to further improve the speed when DOSBox-X starts:
+
+```
+[mixer]
+nosound=true
+
+[midi]
+mididevice=none
+
+[sblaster]
+sbtype=none
+
+[speaker]
+pcspeaker=false
+```
+
+If you want to launch DOSBox-X to run some command(s) and then exit automatically without showing the DOSBox-X window at all, you can start DOSBox-X with the command-line option ``-silent`` to achieve this result.
