@@ -82,8 +82,8 @@ Some examples of valid alternative MAC addresses:
 - AC:DE:48:1D:2E:3F
 
 ## Selecting a back-end for NE2000
-Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
-The default is ``backend=pcap``.
+Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation, namely pcap and slirp.
+The default is ``backend=auto``, which implies ``backend=slirp`` if SLIRP support is available, otherwise ``backend=pcap`` is implied if PCAP support is available.
 
 ### backend=pcap
 The PCAP back-end uses something called "Promiscuous mode".
