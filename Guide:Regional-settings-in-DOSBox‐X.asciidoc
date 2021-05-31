@@ -88,7 +88,11 @@ If you already have a DOSBox-X language file available, you can specify its file
 
 ``language=C:\message.txt``
 
-For example, the Spanish language file for DOSBox-X is available from:
+For example, the Chinese (Simplified), Japanese and Spanish language files for DOSBox-X are available from:
+
+* https://github.com/joncampbell123/dosbox-x/blob/master/contrib/translations/zh/zh_CN.lng?raw=true[zh_CN.lng]
+
+* https://github.com/joncampbell123/dosbox-x/blob/master/contrib/translations/ja/ja_JP.lng?raw=true[ja_JP.lng]
 
 * https://github.com/joncampbell123/dosbox-x/blob/master/contrib/translations/es/es_ES.lng?raw=true[es_ES.lng]
 
@@ -96,7 +100,7 @@ Alternatively, you can start DOSBox-X with the -lang option to use your language
 
 ``dosbox-x -lang C:\message.txt``
 
-Note: It is important to set the correct code page in the config file, via the ``COUNTRY=`` setting in [config] section of the config file, e.g. ``COUNTRY=42,852`` for the Czech language, and perhaps also the ``keyboardlayout`` config option mentioned in the next section.
+Note: It is important to set the correct code page in the config file, via the ``COUNTRY=`` setting in [config] section of the config file, e.g. ``COUNTRY=42,852`` for the Czech language, and perhaps the ``keyboardlayout`` config option mentioned in the next section.
 
 If you do not have a DOSBox-X language file yet, and you want to customize or translate the messages as displayed by DOSBox-X, you could do so by generating the language file and then modifying the messages in it. DOSBox-X can generate a language file either from the built-in graphical configuration tool, or with the ``CONFIG`` command.
 
