@@ -257,7 +257,7 @@ The path (directory) where the TTF fonts (courier.ttf, ocra.ttf, roman.ttf, sans
 Allows DOSBox-X to print Chinese/Japanese/Korean DBCS (double-byte) characters when a DBCS code pages (932: Japanese, 936: Simplified Chinese; 949: Korean; 950: Traditional Chinese) is active. If set to auto (default), this is enabled only for the TrueType font (TTF) output with the DBCS support enabled.
 
 #### openwith
-* Default value: \<blank\>
+* Default value: <blank>
 
 Start the specified program to open the output file.
 
@@ -276,7 +276,7 @@ Some examples:
 - macOS host: ``openwith=open -s "Preview"`` will cause the file to be opened with the application associated with the file extension
 
 #### openerror
-* Default value: \<blank\>
+* Default value: <blank>
 
 Start the specified program to open the output file if an error had occurred.
 
