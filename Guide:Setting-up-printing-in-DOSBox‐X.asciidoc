@@ -266,9 +266,13 @@ If set, the command window will be hidden for openwith/openerror options on the 
 e.g. ``openwith=notepad`` will open the file with Notepad on a Windows host.
 
 Some examples:
+
 - Linux host: ``openwith=xdg-open`` will cause the file to be opened with the application associated with the file extension
+
 - Windows host: ``openwith=start`` will cause the file to be opened with the application associated with the file extension
+
 - Windows host: ``openwith=notepad`` will open the file with the Notepad application
+
 - macOS host: ``openwith=open -s "Preview"`` will cause the file to be opened with the application associated with the file extension
 
 #### openerror
