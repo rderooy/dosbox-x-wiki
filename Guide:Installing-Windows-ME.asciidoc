@@ -310,7 +310,7 @@ To enable networking you first need to enable NE2000 adapter emulation in your w
 ## Enabling NE2000 in your DOSBox-X config file
 
 Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
-The default is ``backend=pcap``.
+The default is ``backend=auto``, which implies ``backend=slirp`` if SLIRP support is available, otherwise ``backend=pcap`` is implied if PCAP support is available.
 
 ### backend=pcap
 The PCAP back-end uses something called "Promiscuous mode".
