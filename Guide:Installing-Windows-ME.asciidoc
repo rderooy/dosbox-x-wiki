@@ -345,7 +345,7 @@ As such it will work with WIFI, WAN and BT adapters, and it will work in most sa
 
 But obviously, it has its own limitations.
 
-- For now, it only works on Linux.
+- It is not supported in all platforms, such as Windows Visual Studio builds.
 - It only supports the TCP/IP protocol (other protocols must be TCP/IP encapsulated).
 - It is effectively behind a NAT gateway, meaning that you can communicate outbound, but no systems on the LAN can instantiate a new connection to it. Which means that two DOSBox-X instances on the same LAN using ``backend=slirp`` cannot communicate with each other.
 
