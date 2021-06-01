@@ -10,8 +10,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 toc::[]
 
 # Overview
-DOSBox-X has support for emulating the Novell NE2000 network adapter, but setting it up can be a bit convoluted.
-This guide hopes to simplify the process.
+DOSBox-X has support for emulating the Novell NE2000 network adapter, and this guide describes how to set it up and and also tries to simplify the process for users.
 
 ## NE2000 resource usage
 By default the emulated NE2000 will use IRQ 3 and IO range 300-31F.
