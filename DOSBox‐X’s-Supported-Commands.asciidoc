@@ -3,7 +3,7 @@ ifndef::env-github[:suffixappend: .html]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-DOSBox-X supports many internal or external MS-DOS commands. Also, DOSBox-X offers additional commands such as BOOT, MOUNT and RESCAN, which are not found in MS-DOS or compatibles. Internal commands are built into the DOSBox-X command shell whereas external commands appear as programs on the Z: drive.
+DOSBox-X supports many internal or external MS-DOS commands. Also, DOSBox-X offers additional commands such as BOOT, MOUNT and RESCAN, which are not found in MS-DOS or compatibles. Internal commands are built into the DOSBox-X command shell whereas external commands appear as programs on the Z: drive (in subdirectories of this drive as of DOSBox-X version 0.83.14).
 
 Below is a list of internal and external commands built into DOSBox-X.
 
@@ -595,4 +595,4 @@ Usage: VFRCRATE [SET OFF|PAL|NTSC|rate]
 +
 Note: It was originally written to run demoscene games at 59.94Hz (NTSC) so that no frame blending is needed to author to DVD. It can also be used for development and testing to simulate a PC whose refresh rate is locked in hardware, such as what happens when running a DOS program on laptops. Even though standard VGA is 60Hz or 70Hz, laptops will lock the refresh rate to 60Hz when sending video to the internal display.
 
-Note: As of DOSBox-X version 0.83.6, you can customize the external commands as appeared on the Z: drive. For example, you can add your favorite DOS programs to the drivez directory, which will add to or replace existing programs on the Z: drive.
+Note: As of DOSBox-X version 0.83.6, you can customize the external commands as appeared on the Z: drive. For example, you can add your favorite DOS programs to the drivez directory, which will add to or replace existing programs on the Z: drive. As of DOSBox-X version 0.83.14, support for one-level subdirectories on the Z: drive is also added.
