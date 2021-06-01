@@ -348,7 +348,7 @@ You can merge your config snippet with your Windows for Workgroups, Windows 95 o
 First you need to install PCAP support. As WinPcap is no longer maintained, Npcap seems the best candidate these days:
 https://nmap.org/npcap/
 
-NOTE: At this point SLIRP support is limited to Linux, however this may change in the future.
+NOTE: At this point SLIRP is only supported in some MinGW builds, and not in Visual Studio builds.
 
 ### Locate host network interface
 You now need to find which host network interface you want to use for bridging.
