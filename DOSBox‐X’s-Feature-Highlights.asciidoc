@@ -52,6 +52,9 @@ DOSBox-X supports a [config] section that supports most DOS config.sys commands,
 * **Support for 4DOS as the alternative shell with 4DOS 8.00 features and capabilities**
 +
 You can set SHELL=4DOS.COM so that DOSBox-X will run the 4DOS 8.00 shell at start instead of the default shell.
+* **Support for complete customization of Virtual Drive Z:**
++
+DOSBox-X allows you to freely customize the internal virtual drive Z:, including adding your own files to the Z drive, or hiding/replacing existing files on the Z drive, with directory support.
 * **Support for starting DOSBox-X on a specific display or window position**
 +
 DOSBox-X can be started on a specific window position, or on a specific display with a multi-monitor setup. They can work in combination to specify a window position on the specific display.
@@ -64,7 +67,6 @@ DOSBox-X supports the BIOS IDE interface for hard disk and CD drives, which is e
 * **Support for more CPU types (e.g. Pentium MMX and Pro) and emulating CPU speed**
 +
 DOSBox-X supports virtually all CPU types prior to Pentium II at this time, from 8086 to Pentium Pro, including support for Pentium MMX instructions. DOSBox-X also allow you to emulate the speed of a specific CPU (from 8088 XT 4.77MHz to Pentium 166MHz MMX) in terms of cycles. Select them from the "CPU" menu.
-
 * **Support for more video modes (e.g. MDA and MCGA)**
 +
 DOSBox-X supports more video modes in addition to the more common ones, such as MDA, MCGA, Amstrad, and a few others, in addition to the standard ones.
