@@ -23,7 +23,7 @@ Alternative you can specify the PC-98 machine type directly at the command line 
 
 ## PC-98 font and accessory files
 
-You can start DOSBox-X in PC-98 mode without any additional files apart from the DOSBox-X executable itself. Note, however, that in order for DOSBox-X to display Japanese texts (Kana, Kanji, etc) correctly you may need to supply a font file. This becomes optional since DOSBox-X version 0.83.15 (the internal Japanese DOS/V font will be used if no other font found), but it is still recommended to use a font file specifically designed for PC-98. You can either use the original PC-98 ``FONT.ROM`` ROM file, or use the free alternative ``FREECG98.BMP`` included with DOSBox-X. Put the ``FREECG98.BMP`` file or the original PC-98 ``FONT.ROM`` file in the DOSBox-X directory, then DOSBox-X will render Japanese characters in the PC-98 mode using this font (if both ``FREECG98.BMP`` and ``FONT.ROM`` files are found in the directory then the latter will be used):
+You can start DOSBox-X in PC-98 mode without any additional files apart from the DOSBox-X executable itself. Note, however, that in order for DOSBox-X to display Japanese characters (Kana, Kanji, etc) correctly you may need to supply a font file. This becomes optional starting with DOSBox-X version 0.83.15 (the internal Japanese DOS/V font will be used if no other font found, unless the TrueType font output is used, see below), but it is still recommended to use a font file specifically designed for PC-98. You can either use the original PC-98 ``FONT.ROM`` ROM file, or use the free alternative ``FREECG98.BMP`` included with DOSBox-X. Put the ``FREECG98.BMP`` file or the original PC-98 ``FONT.ROM`` file in the DOSBox-X directory, then DOSBox-X will render Japanese texts in the PC-98 mode using this font (if both ``FREECG98.BMP`` and ``FONT.ROM`` files are found in the directory then the latter will be used):
 
 * FREECG98.BMP: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/FREECG98.BMP?raw=true[Download here]
 
@@ -41,7 +41,7 @@ Or the ``UnifontFullMediumMono.TTF`` file found in the DOSBox-X repository:
 
 * UnifontFullMediumMono: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/UnifontFullMediumMono.ttf?raw=true[Download here]
 
-Specify the desired Japanese TrueType font with the ttf.font config option for the TTF output, and then DOSBox-X will render the PC-98 text screen using this TTF font.
+Specify the desired Japanese TrueType font with the ``ttf.font`` config option for the TTF output, and then DOSBox-X will render the PC-98 text screen using this TTF font.
 
 Apart from the ``FONT.ROM`` ROM image file mentioned above, there is another PC-98 ROM file named ``SOUND.ROM`` which is the ROM image of the PC-98 FM board, which may be needed by some PC-98 games to make music and sound effects. Both of these ROM images can be found online.
 
