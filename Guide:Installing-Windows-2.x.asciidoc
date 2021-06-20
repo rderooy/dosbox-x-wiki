@@ -57,6 +57,9 @@ Windows/386 2.01 was the first Windows 2.x release and meant for Compaq 386 comp
 As such it has a very small selection of drivers, and for instance no driver for a PS/2 mouse.
 Therefore, if you want to run this version in DOSBox-X, you should enable ``serial1=serialmouse`` support.
 
+If given the option during installation, do not select the "IBM Personal Systems/2 Mouse", as it seems to cause Windows to hang at the title screen.
+Instead select the "Microsoft Mouse connected to PS/2 Mouse Port".
+
 Windows 2.1x will complain if the High Memory Area (HMA) is used.
 This can be resolved by setting ``DOS=LOW`` in the [config] section of the DOSBox-X config file.
 
@@ -291,6 +294,8 @@ image::images/Windows:Windows_2.03_SETUP_06.png[Windows 2.03 SETUP Keyboard]
 *Mouse selection*
 
 Select "**Microsoft Mouse connected to PS/2 Mouse Port**" and press Enter to continue.
+
+NOTE: Do not use the **IBM Personal Systems/2 Mouse** option, as it seems to cause Windows to hang at the title screen.
 
 NOTE: If installing Windows/386 2.01, you will need to select the **Microsoft serial mouse** instead and activate serial mouse support in your dosbox-x config file.
 
