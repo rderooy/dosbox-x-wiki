@@ -11,6 +11,8 @@ toc::[]
 
 Since DOSBox-X aims to be complete DOS emulation package, it officially supports the emulations of the Japanese PC-98 system, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese characters. The NEC PC-9800, also known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000. Most of the PC-98 software are games, but there are also non-gaming PC-98 applications such as the PC-98 version of Windows 3.1 released by Microsoft. While these were originally designed for the Japanese market, international users who are influenced by the Japanese culture may also want to check this out. For example, earlier Touhou games are PC-98 games, which are well supported by DOSBox-X's PC-98 system.
 
+As of DOSBox-X version 0.83.15, DOSBox-X also supports native DOS/V service and JEGA (AX) emulations so that you can also run programs or games designed for them in these modes.
+
 image::https://upload.wikimedia.org/wikipedia/zh/3/35/Th04cover.jpg[PC-98 Touhou game: 東方幻想郷 〜 Lotus Land Story]
 
 (PC-98 Touhou game: 東方幻想郷 〜 Lotus Land Story)
