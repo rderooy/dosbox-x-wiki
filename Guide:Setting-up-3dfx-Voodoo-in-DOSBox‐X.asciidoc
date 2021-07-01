@@ -293,7 +293,7 @@ NoSplash=1
 ....
 
 # Frequently asked questions
-## No glide2x.ovl on z: drive
+## No GLIDE2X.OVL on z: drive
 Q: I have set ``glide=true`` in my config file, yet there is no ``GLIDE2X.OVL`` to be found in ``Z:\SYSTEM``?
 
 A: In addition to setting ``glide=true``, DosBOX-X also checks if it finds a compatible glide library on the host. If this check fails, ``GLIDE2X.OVL`` will not appear.
