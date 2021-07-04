@@ -816,7 +816,6 @@ Some limitations of this support:
 * Requires an image to be mounted before you boot a Guest OS, otherwise you will get an error such as "No floppy drive is currently available.". In other words, you cannot boot with an empty drive, and then add an image later.
 * You cannot "eject" or unmount an image
 
-
 # Outstanding issues with this page
 
 * Mention Bochs bximage support in more detail. Does it support flat, sparse, growing formats?
