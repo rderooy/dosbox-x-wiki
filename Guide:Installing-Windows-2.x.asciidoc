@@ -390,8 +390,21 @@ And then edit your ``win2x.conf`` config file and add the following lines into t
 ....
 MOUNT C /home/myuser/winroot
 C:
+IF EXIST C:\WINDOWS\WIN.COM GOTO WINDOWS
+IF EXIST C:\WIN386\WIN386.EXE GOTO WIN386
+GOTO END
+
+:WINDOWS
 SET PATH=%PATH%;C:\WINDOWS;
-C:\WINDOWS\WIN
+C:\WINDOWS\WIN.COM
+GOTO END
+
+:WIN386
+SET PATH=%PATH%;C:\WIN386
+C:\WIN386\WIN386.EXE
+GOTO END
+
+:END
 EXIT
 ....
 
