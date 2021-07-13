@@ -135,7 +135,7 @@ Copy the above config and save it as *win3x.conf*
 *Notes*
 
 * The above config uses 16MB RAM as that is the maximum supported by Windows 3.0, but for Windows 3.1 and 3.11 you can go up to 256MB, as such for these Windows versions ``memsize=256`` is the largest safe value.
-* There are Windows 3.0 and 3.1 drivers for the Tseng Lans ET3000 and ET4000 (``machine=svga_et3000`` and ``machine=svga_et4000`` respectively), but for the default ``machine=svga_s3`` (S3 Trio64) there are apparently only Windows 3.1 drivers.
+* There are Windows 3.0 and 3.1 drivers for the Tseng Labs ET3000 and ET4000 (``machine=svga_et3000`` and ``machine=svga_et4000`` respectively), but for the default ``machine=svga_s3`` (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The default S3 video option will offer the broadest range of resolutions and colour depths but do require you to install the correct drivers.
 
 # Preparing for installation
