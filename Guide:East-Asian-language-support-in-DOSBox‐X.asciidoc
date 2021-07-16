@@ -5,7 +5,7 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-# Chinese/Japanese/Korean support in DOSBox-X
+# East Asian language support in DOSBox-X
 
 toc::[]
 
