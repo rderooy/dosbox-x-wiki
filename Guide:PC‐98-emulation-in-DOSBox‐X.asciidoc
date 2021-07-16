@@ -41,7 +41,9 @@ If you want to use the TrueType font (TTF) output option (i.e. with ``output=ttf
 
 * M+ P Type-2 Regular: https://github.com/chrissimpkins/codeface/blob/master/cjk-fonts/mplus2m/mplus-2m-regular.ttf?raw=true[Download here]
 
-Or the ``UnifontFullMediumMono.TTF`` file found in the DOSBox-X repository:
+The ``SarasaGothicFixed.ttf`` and ``UnifontFullMediumMono.ttf`` font files are also available in the DOSBox-X repository:
+
+* Sarasa-Gothic Fixed: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/SarasaGothicFixed.ttf?raw=true[Download here]
 
 * UnifontFullMediumMono: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/UnifontFullMediumMono.ttf?raw=true[Download here]
 
