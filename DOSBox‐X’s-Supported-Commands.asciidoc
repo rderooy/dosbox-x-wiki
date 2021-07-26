@@ -104,7 +104,9 @@ Note: You can also use CONFIG command to start DOSBox-X’s command-line configu
 +
 Displays the current DOS code page, or changes the current code page when using the TrueType font (TTF) output.
 +
-Usage: CHCP [codepage]
+Usage: CHCP [codepage [file]]
++
+Note: Type CHCP /? to see a list of supported code pages. Specify a code page file for a custom code page.
 * **CHOICE** (internal command)
 +
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
