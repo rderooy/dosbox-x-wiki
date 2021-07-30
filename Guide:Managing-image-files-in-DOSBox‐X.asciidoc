@@ -508,8 +508,17 @@ Doing so when running a program, real DOS or Win9x is strongly discouraged as it
 ## Specifying the partition to mount
 If the harddisk image contains multiple partitions, by default DOSBox-X will only mount the first primary partition.
 
-You can optionally specify the ``-o partidx=0`` parameter, where 0 needs to be replaced by the partition you want to mount.
-Zero is the same as not specifying the parameter as it represents the first primary partition.
+You can optionally specify the ``-o partidx=`` parameter, where you can specify the partition number you want to mount.
+
+- -1 means autodetect (default)
+- 0 is the 1st primary partition
+- 1 is the 2nd primary partition
+- 2 is the 3rd primary partition
+- 3 is the 4th primary partition or the Extended partition
+- 4 is the 1st logical partition
+- 5 is the 2nd logical partition
+- 6 is the 3rd logical partition
+- 7 is the 4th logical partition
 
 e.g.
 
@@ -518,6 +527,8 @@ imgmount C: hdd.img -o partidx=1
 ....
 
 NOTE: DOSBox-X only allows one partition per harddisk image to be mounted in the integrated DOS. When booting real DOS, all partitions will be available.
+
+NOTE: If the harddisk image has an Extended partition, that partition cannot be mounted, but the logical partitions it contains can.
 
 ## Unmounting harddisk images
 Harddisk images can be unmounted using the ``-u`` flag. e.g.
