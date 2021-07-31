@@ -21,6 +21,8 @@ DOSBox-X has support for emulating the 3dfx Voodoo in one of two modes.
 * Low-Level Emulation, emulating the 3dfx Voodoo 1 hardware. This requires a fairly fast PC.
 * High-Level Emulation, where the Glide API calls are passed through to the host OS, where it is then converted to a modern 3D Graphics API.
 
+You can find out whether they are currently enabled in DOSBox-X from the menu group ``Video`` => ``3dfx emulation``.
+
 ## [voodoo] options
 This section will list the available 3dfx Voodoo configuration options that DOSBox-X provides.
 Unless otherwise noted the options effecting the 3dfx Voodoo emulation are in the [voodoo] section of the DOSBox-X config file.
@@ -296,7 +298,7 @@ NoSplash=1
 ## No GLIDE2X.OVL on Z: drive
 Q: I have set ``glide=true`` in my config file, yet there is no ``GLIDE2X.OVL`` to be found in ``Z:\SYSTEM``?
 
-A: In addition to setting ``glide=true``, DosBOX-X also checks if it finds a compatible glide library on the host. If this check fails, ``GLIDE2X.OVL`` will not appear.
+A: In addition to setting ``glide=true``, DosBOX-X also checks if it finds a compatible glide library on the host. If this check fails, ``GLIDE2X.OVL`` will not appear, and the menu option ``Video`` ⇒ ``3dfx emulation`` => ``Glide passthrough`` will not be checked.
 
 The glide library installed on the host needs to be the same CPU architecture as the DOSBox-X executable. So for instance, if you are using a 32bit x86 Glide library, such as nGlide, you must also use a 32bit x86 DOSBox-X executable.
 
