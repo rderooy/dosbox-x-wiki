@@ -25,7 +25,7 @@ A screenshot of the Japanese DOS/V mode:
 
 image::https://user-images.githubusercontent.com/8216923/124234430-036ef700-dae2-11eb-9f22-e744a9bf1e2d.png[Japanese DOS/V emulation]
 
-In addition, there is a ``fontxdbcs14`` option which is useful for displaying CJK characters in the Configuration Tool and Mapper Editor. It is similar to the ``fontdbcs`` option, but it accepts 14-pixel DBCS fonts rather than 16-pixel ones. Use link:https://github.com/aguegu/BitmapFont/blob/master/font/HZK14[HZK14] for Simplified Chinese, and STDFONT.15 for Traditional Chinese.
+In addition, there is a ``fontxdbcs14`` option which is useful for displaying CJK characters in the Configuration Tool and Mapper Editor (if you use a language file). It is similar to the ``fontdbcs`` option, but it accepts 14-pixel DBCS fonts rather than 16-pixel ones. Use link:https://github.com/aguegu/BitmapFont/blob/master/font/HZK14[HZK14] for Simplified Chinese, and STDFONT.15 for Traditional Chinese.
 
 == TrueType font output with CJK support ==
 
@@ -34,6 +34,8 @@ In addition to DOS/V modes, you can enable CJK support using the TrueType font (
 * Sarasa-Gothic Fixed: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/SarasaGothicFixed.ttf?raw=true[Download here]
 
 * UnifontFullMediumMono: https://github.com/joncampbell123/dosbox-x/blob/master/contrib/fonts/UnifontFullMediumMono.ttf?raw=true[Download here]
+
+As of DOSBox-X version 0.83.16, the ``SarasaGothicFixed.ttf`` font file is also included in the Windows installer, and DOSBox-X will try to automatically load it if you start DOSBox-X with a CJK code page and no other TTF font is specified.
 
 A screenshot of the TrueType font output with the Simplified Chinese code page (936) using the ``SarasaGothicFixed.ttf`` font file:
 
