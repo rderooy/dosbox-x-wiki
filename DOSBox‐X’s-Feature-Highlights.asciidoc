@@ -85,7 +85,7 @@ DOSBox-X supports parallel ports and printers attached to them, whether they are
 DOSBox-X fully supports long filenames (LFN) which can be up to 255 characters, not just 8.3 names. Set either ``ver=7.1`` or ``lfn=true`` in the config file to enable this feature.
 * **Support for FAT32 file system and large disk images**
 +
-FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so you can make and mount drives larger than 2GB. Set ``ver=7.1`` to enable this feature.
+FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so you can make and mount drives larger than 2GB. Set ``ver=7.1`` to enable this feature. You can also mount logical partitions within disk images with an option.
 * **Support for file-locking and record-locking functions **
 +
 DOSBox-X supports the DOS SHARE functions, which provides file-locking and record-locking for networked environments, especially on the Windows platform. This may be very important for usages such as networked DOS database applications. Hint: you probably want to set "nocachedir=true" and "file access tries=3" for this.
@@ -116,6 +116,9 @@ DOSBox-X supports various different types of disk images, such as Virtual Hard D
 * **Support for cue sheets with FLAC, MP3, WAV, OGG Vorbis and Opus CD audio tracks**
 +
 With DOSBox-X it is possible to mount .cue files (either from the menu or with IMGMOUNT command) that include FLAC, MP3, WAV, OGG Vorbis and Opus music as CD audio tracks.
+* **Support for transparent DOSBox-X window**
++
+DOSBox-X allows you to change the transparency of its window, from 0 (no transparency) to 90 (high transparency), giving you a different feeling when running the DOS emulation. Supported on all Windows builds and SDL2 builds of Linux/macOS platforms.
 * **Support for xBRz scalers and additional scaling options**
 +
 DOSBox-X supports many additional scalers such as the xBRz scalers, and other additional scaling options gray, gray2x, hardware_none, hardware2x, hardware3x, hardware4x, hardware5x. 
