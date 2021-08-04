@@ -390,7 +390,7 @@ A few enhancements have been made to the emulated S3 Trio64, compared to a real 
 * The real cards never supported wide-screen resolutions, wide-screen VESA modes can optionally be enabled in DOSBox-X.
 
 However, these enhancements cannot be used in Windows 98 with the S3 video driver due to driver limitations.
-And no updated S3 Trio64 video driver is available for Windows 98.
+And no updated S3 Trio64 video driver is available for Windows 98 (not even via installing DirectX 9c).
 As such you will be limited to the above video modes with this driver.
 
 ### VESA driver
