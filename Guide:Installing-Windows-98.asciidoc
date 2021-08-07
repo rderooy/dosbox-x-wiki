@@ -274,6 +274,7 @@ Once Windows 98 is installed, here is some additional software you may want to i
 * Install Microsoft .NET framework version 1.0, 1.1 and 2.0
 * Install Visual C++ 2005 runtime
 * Update to Internet Explorer 6.0 (rarely needed)
+* Update to DCOM 4.71.1015.0
 * Update to DirectX 9.0c
 * Install Windows Installer 2.0
 * Install WinG 1.0 (needed by just a few games, and those games typically include it)
