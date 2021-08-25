@@ -65,7 +65,7 @@ This is the IRQ (Interrupt Request Level) of the emulated NE2000 adapter.
 
 WARNING: The default IRQ value (3) conflicts with the emulated COM2 port that is enabled by default.
 
-WARNING: If your emulating a 8086 CPU machine type, the valid IRQ needs to be in the range of 0-7, which in this case means 3, 4 or 5.
+WARNING: If your emulating a 8086 CPU machine type, the valid IRQ needs to be in the range of 0-7, which in this case effectively means 3, 4 or 5.
 
 ### macaddr
 * Default value: AC:DE:48:88:99:AA
