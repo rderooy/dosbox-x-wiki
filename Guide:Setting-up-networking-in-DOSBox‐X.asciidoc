@@ -73,12 +73,13 @@ Only one instance of a MAC address may exist on a network.
 
 WARNING: If you want to run multiple DOSBox-X instances on the same network, you MUST ensure they all have a different MAC address.
 
-The first 3 bytes are known as the OUI (Organizational Unique Identifier), and typically represent the network card manufacturer.
+The first 3 bytes are known as the OUI (Organisational Unique Identifier), and typically represent the network card manufacturer.
 The **AC:DE:48** OUI used by default, is a special private range, and it is recommended that you use this range.
 
 The last 3 bytes can be freely chosen. Each byte can range from 00 to FF.
 
-Some examples of valid alternative MAC addresses:
+Some examples of valid alternative MAC addresses with the same OUI:
+
 - AC:DE:48:11:22:33
 - AC:DE:48:AA:BB:CC
 - AC:DE:48:1D:2E:3F
