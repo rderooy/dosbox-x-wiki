@@ -37,7 +37,7 @@ If you want to instead disable COM2, and leave the emulated NE2000 at its defaul
 serial2=disabled
 ....
 
-To enable networking you first need to enable NE2000 adapter emulation in your win95.conf config file and select an appropriate back-end for the NE2000 emulation.
+To enable networking you first need to enable NE2000 adapter emulation in your DOSBox-X config file and select an appropriate back-end for the NE2000 emulation.
 
 ## [ne2000] config options
 
