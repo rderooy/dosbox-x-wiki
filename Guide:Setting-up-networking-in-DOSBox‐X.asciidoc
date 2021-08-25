@@ -63,6 +63,18 @@ So for the default base value of 300 the full IO range used is actually 300-31F.
 
 This is the IRQ (Interrupt Request Level) of the emulated NE2000 adapter.
 
+You cannot just select a random value as many IRQs are already pre-assigned to various devices. e.g.
+
+- IRQ3 to COM2 serial port (enabled by default in DOSBox-X)
+- IRQ4 to COM1 serial port (enabled by default in DOSBox-X)
+- IRQ5 **may** be assigned to the sound card (not the case by default in DOSBox-X)
+- IRQ9 is an alias from IRQ2 but should be safe to use
+- IRQ10 free
+- IRQ11 free
+- IRQ12 used by the PS/2 mouse emulation
+- IRQ14 used by the primary IDE/ATA emulation
+- IRQ15 used by the secondary IDE/ATA emulation (usually CD-ROM drive)
+
 WARNING: The default IRQ value (3) conflicts with the emulated COM2 port that is enabled by default.
 
 WARNING: If your emulating a 8086 CPU machine type, the valid IRQ needs to be in the range of 0-7, which in this case effectively means 3, 4 or 5.
