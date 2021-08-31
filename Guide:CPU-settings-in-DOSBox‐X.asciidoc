@@ -40,15 +40,16 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 
 |Protected mode                                       |x|x|x|x|x|x|x|x
 |Virtual 8086 mode                                    |x|x|x|x|x|x|x|x
-|486 CPUID                                            |x|x|x|x|x| | |
+|486 CPUID                                            | | |x|x|x| | |
 |Pentium CPUID                                        | | | | | |x|x|
 |Pentium Pro CPUID                                    | | | | | | | |x
 |486 specific page access level calculation           |x|x|x|x| | | |
 |loose (fast) page privilege check                    | | | | | | | |
 |tight (slow) page privilege check                    | | | | | | | |x
-|BSWAP, CMPXCHG, XADD, INVD, WBINVD                   |x|x|x|x|x|x|x|x
+|BSWAP, XADD, INVD, WBINVD                            |x|x|x|x|x|x|x|x
+|CMPXCHG                                              | | |x|x|x|x|x|x
 |RDTSC                                                | | | | |x|x|x|x
-|CPUID, CMPXCHG8B,RDMSR, WRMSR, RSM                   | | | | | |x|x|x
+|CMPXCHG8B,RDMSR, WRMSR, RSM                          | | | | | |x|x|x
 |CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | | |x
 |486 specific CR register behaviour                   |x|x|x|x|x| | |
 |Pentium specific CR register behaviour               | | | | | |x|x|x
