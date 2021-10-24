@@ -522,6 +522,13 @@ Note: This command is disabled by default, but can be enabled either by the star
 Assigns an internal directory to a drive.
 +
 Usage: SUBST [drive1: [drive2:]path] or SUBST drive1: /D
+* **SYS** (external command)
++
+Transfers DOS system files and command interpreter to a disk.
++
+Usage: SYS [source] drive: [bootsect] [{option}]
++
+Note: It uses the SYS command from FreeDOS.
 * **TIME** (internal command)
 +
 Displays or changes the internal time.
