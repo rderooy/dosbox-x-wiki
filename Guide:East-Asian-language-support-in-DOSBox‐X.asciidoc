@@ -17,7 +17,7 @@ Simplified Chinese language file: link:https://raw.githubusercontent.com/joncamp
 
 Traditional Chinese language file: link:https://raw.githubusercontent.com/joncampbell123/dosbox-x/master/contrib/translations/zh/zh_TW.lng[zh_TW.lng]
 
-Inputting Chinese/Japanese/Korean characters is also supported via Windows or Linux system IMEs in these code pages, which can be controlled via the ``ime`` option in [dosbox] section of dosbox-x.conf. They are supported on Windows and Linux systems and allow users to enter CJK characters as in other applications of these operating systems.
+Inputting Chinese/Japanese/Korean characters is also supported via Windows or Linux system IMEs in these code pages, which can be controlled via the ``ime`` option in [dosbox] section of the DOSBox-X configuration (dosbox-x.conf). They are supported on Windows and Linux systems and allow users to enter CJK characters as in other applications of these operating systems.
 
 == DOS/V support ==
 
@@ -44,6 +44,8 @@ A screenshot of the TrueType font output with the Simplified Chinese code page (
 image::https://user-images.githubusercontent.com/8216923/125918507-b0b40979-45c2-4fd1-9ee6-187c198a49c9.png[Truetype font output with the Simplified Chinese code page]
 
 There are some TTF config options related to CJK support, such as automatic box-drawing recognition and SBCS <=> DBCS mode switch, as found in the [ttf] section of the config file. These can also be toggled dynamically from the drop-down menu (inside "Video" => "TTF options" menu group).
+
+DOSBox-X additionally allows to run (Simplified or Traditional) Chinese DOS systems such as CCDOS 97, PDOS, or TechWay SCS to run when in the TTF output. DOSBox-X will automatically switch to a graphical output to let Chinese DOS systems to render correctly in this case. For the ETen Chinese DOS system, please set the option ``vga fill active memory`` to ``true`` in [video] section of the DOSBox-X configuration (supported by DOSBox-X 0.83.19 and later) so that it will start properly.
 
 == PC-98 mode ==
 
