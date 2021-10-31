@@ -573,6 +573,14 @@ Usage: VERIFY [ON | OFF]
 Displays the disk volume label and serial number, if they exist.
 +
 Usage: VOL [drive]
+* **VTEXT** (external command)
++
+Changes V-text mode for the DOS/V emulation.
++
+Usage: VTEXT [0|1|2]
++
+Note: This command is only available in DOS/V emulation mode.
+
 * **XCOPY** (external command)
 +
 Copies files and directory trees.
