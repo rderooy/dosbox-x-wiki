@@ -17,7 +17,7 @@ Simplified Chinese language file: link:https://raw.githubusercontent.com/joncamp
 
 Traditional Chinese language file: link:https://raw.githubusercontent.com/joncampbell123/dosbox-x/master/contrib/translations/zh/zh_TW.lng[zh_TW.lng]
 
-Inputting Chinese/Japanese/Korean characters is also supported via Windows or Linux system IMEs in these code pages, which can be controlled via the ``ime`` option in [dosbox] section of the DOSBox-X configuration (dosbox-x.conf). They are supported on Windows and Linux systems and allow users to enter CJK characters as in other applications of these operating systems.
+Inputting Chinese/Japanese/Korean characters is also supported via Windows or Linux system IMEs in these code pages, which can be controlled via the ``ime`` option in [dosbox] section of the DOSBox-X configuration (dosbox-x.conf). They are supported on Windows and Linux systems and allow users to enter CJK characters as in other applications (such as Notepad) of these operating systems.
 
 == DOS/V support ==
 
@@ -47,7 +47,7 @@ image::https://user-images.githubusercontent.com/8216923/125918507-b0b40979-45c2
 
 There are some TTF config options related to CJK support, such as automatic box-drawing recognition and SBCS <=> DBCS mode switch, as found in the [ttf] section of the config file. These can also be toggled dynamically from the drop-down menu (inside "Video" => "TTF options" menu group).
 
-DOSBox-X additionally allows to run (Simplified or Traditional) Chinese DOS systems such as CCDOS 97, PDOS, or TechWay SCS to run when in the TTF output. DOSBox-X will automatically switch to a graphical output to let Chinese DOS systems to render correctly in this case. For the ETen Chinese DOS system, please set the option ``vga fill active memory`` to ``true`` in [video] section of the DOSBox-X configuration (supported by DOSBox-X 0.83.19 and later) so that it will start properly.
+DOSBox-X additionally allows to run (Simplified or Traditional) Chinese DOS systems such as CCDOS 97, PDOS, or TechWay SCS (天汇) to run when in the TTF output. DOSBox-X will automatically switch to a graphical output to let Chinese DOS systems to render correctly in this case. For the ETen Chinese DOS system (倚天中文系統), please set the option ``machine=svga_et4000`` (in [dosbox] section) and ``vga fill active memory=true`` (in [video] section) of the DOSBox-X configuration (the latter option is supported by DOSBox-X 0.83.19 and later) so that it will run properly.
 
 == PC-98 mode ==
 
