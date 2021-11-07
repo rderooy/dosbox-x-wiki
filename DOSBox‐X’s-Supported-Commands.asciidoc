@@ -325,6 +325,11 @@ Mounts drives from floppy drive, hard-disk, or CD images in the host system.
 Usage: IMGMOUNT drive filename [options] or IMGMOUNT -u drive|driveLocation
 +
 Note: You can write-protect a disk image by putting a leading colon (:) before the image file name in the default setting.
+* **IMGSWAP** (external command)
++
+Swaps floppy, hard drive and optical disc images (when there are multiple disks mounted on the same drive).
++
+Usage: IMGSWAP drive [position]
 * **INTRO** (external command)
 +
 A full-screen introduction.
