@@ -578,14 +578,6 @@ Usage: VERIFY [ON | OFF]
 Displays the disk volume label and serial number, if they exist.
 +
 Usage: VOL [drive]
-* **VTEXT** (external command)
-+
-Changes V-text mode for the DOS/V emulation.
-+
-Usage: VTEXT [0|1|2]
-+
-Note: This command is only available in DOS/V emulation mode.
-
 * **XCOPY** (external command)
 +
 Copies files and directory trees.
@@ -593,6 +585,49 @@ Copies files and directory trees.
 Usage: XCOPY source [destination] [options]
 +
 Note: It uses the XCOPY command from FreeDOS.
+
+The following commands are for switching modes in the text mode:
+
+* **80x25**, **80x43**, **80x50**, **80x60**, **132x25**, **132x43**, **132x50**, **132x60** (external command)
++
+Changes the text mode to 80x25, 80x43, 80x50, 80x60, 132x25, 132x43, 132x50, and 132x60 modes respectively.
++
+Note: This command is only available with a VGA machine type.
+* **CGA** (external command)
++
+Changes the video mode to the CGA emulation mode.
++
+Usage: CGA
++
+Note: This command is only available with a VGA machine type.
+* **DCGA** (external command)
++
+Changes the video mode to the DCGA emulation mode.
++
+Usage: DCGA
++
+Note: This command can be used to enter J-3100 DCGA mode with Japanese support when J-3100 is enabled along with `dosv=jp`.
+* **EGA** (external command)
++
+Changes the video mode to the EGA emulation mode.
++
+Usage: EGA
++
+Note: This command is only available with a VGA machine type.
+* **VGA** (external command)
++
+Changes the video mode to the VGA mode.
++
+Usage: VGA
++
+Note: This command can be used to return from other video modes (such as CGA or DCGA mode) back to the VGA mode.
+* **VTEXT** (external command)
++
+Changes V-text mode for the DOS/V emulation.
++
+Usage: VTEXT [0|1|2]
++
+Note: This command is only available in DOS/V emulation mode.
 
 The following commands are for debugging purposes (many of them only available on builds that have the debugging feature enabled):
 
