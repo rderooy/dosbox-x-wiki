@@ -33,7 +33,7 @@ A screenshot of the TrueType font output with the Simplified Chinese code page (
 
 image::https://user-images.githubusercontent.com/8216923/125918507-b0b40979-45c2-4fd1-9ee6-187c198a49c9.png[Truetype font output with the Simplified Chinese code page]
 
-For the Simplified Chinese, the GB2312 charset is supported by default, but you can optionally enable the GBK extension with the `gbk` config option. Similar for the Traditional Chinese, where the ChinaSea (中國海字集) extension for the Big5 charset can be optionally enabled with the `chinasea` config option. You can also enable either the GBK or ChinaSea extension from the drop-down menu (inside "Video" => "TTF options" menu group). Below is a screenshot showing the TrueType font output running Hyper Editor 5 (漢書5) with the Traditional Chinese code page (950) and ChinaSea extension enabled:
+For the Simplified Chinese, the GB2312 charset is supported by default, but you can optionally enable the GBK extension with the `gbk` config option. Similar for the Traditional Chinese, where the ChinaSea (中國海字集) extension for the Big5 charset can be optionally enabled with the `chinasea` config option. You can also enable either the GBK or ChinaSea extension from the drop-down menu (inside "Video" => "TTF options" menu group). Below is a screenshot showing the TrueType font output running link:http://cndos.fam.cx/dosware/he5.zip[Hyper Editor 5.03] (漢書5) with the Traditional Chinese code page (950) and ChinaSea extension enabled:
 
 image::https://user-images.githubusercontent.com/8216923/142175764-bdf9a617-2dff-4780-91de-273e7587ec73.png[Truetype font output running Hyper Editor 5 with the Traditional Chinese code page and ChinaSea extension]
 
