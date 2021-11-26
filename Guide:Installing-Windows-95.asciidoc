@@ -415,18 +415,17 @@ If networking does not work, see: link:Guide%3ASetting-up-networking-in-DOSBox%E
 # Emulated video adapter and video mode
 The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths.
 
-If you installed Windows 95 RTM (original release), or Windows 95 OSR1 (aka Win95A), there is a newer S3 video driver with additional supported resolutions.
-This video driver is v2.02.04 and dated April 18, 1996.
-It can typically be found online as w9520204.zip.
-This update however does not add support for 8MB video RAM, or wide-screen video modes.
-If you installed Windows 95 OSR2 or later, you already have the latest video driver installed.
+There is a newer S3 video driver for Win95, version link:http://files.mpoli.fi/hardware/display/s3/w9521103.zip[2.11.03], dated June 12, 1996.
 
-The available video modes with the S3 Trio64 driver are:
+This update adds some additional video modes. But it does not add support for 8MB video RAM, or wide-screen video modes.
+
+The available video modes with the updated S3 Trio64 driver are:
 
 * 4-bit colour (16): 640x480
 * 8-bit colour (256): 640x480, 800x600, 1024x768, 1152x864, 1280x1024 and 1600x1200
-* 16-bit colour (65536): 640x480, 800x600 and 1024x768
-* 32-bit colour (16.7M): 640x480 and 800x600
+* 16-bit colour (65536): 640x480, 800x600, 1024x768 and 1280x1024
+* 24-bit colour (16.7M): 640x480
+* 32-bit colour (16.7M + alpha): 640x480, 800x600 and 1024x768
 
 A few enhancements have been made to the emulated S3 Trio64, compared to a real S3 Trio64:
 
