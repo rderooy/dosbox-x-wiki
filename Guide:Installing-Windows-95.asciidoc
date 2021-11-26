@@ -435,6 +435,10 @@ A few enhancements have been made to the emulated S3 Trio64, compared to a real 
 However, these enhancements cannot be used in Windows 95 with the S3 video driver due to driver limitations.
 As such you will be limited to the above video modes with this driver.
 
+NOTE: If you use the S3 2.02.04 driver you will experience graphical problems (green tint) in 32-bit colour mode.
+These problems will not be completely solved by upgrading from 2.02.04 to 2.11.03.
+The only known solution for now if you used the 2.02.04 driver is to re-install Win95 and use the 2.11.03 driver instead.
+
 ### VESA driver
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
 
