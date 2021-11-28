@@ -432,8 +432,12 @@ Loads the NE2000 packet driver for the NE2000 networking feature.
 +
 Usage: NE2000 [options]
 +
-
 Note: This command is available when the NE2000 networking emulation is enabled.
+* **PARALLEL** (external command)
++
+Views or changes the parallel port settings.
++
+Usage: PARALLEL [port] [type] [option]
 * **PATH** (internal command)
 +
 Displays/Sets a search patch for executable files.
@@ -491,6 +495,11 @@ Refreshes mounted drives by clearing their caches.
 Usage: RESCAN [/A] or RESCAN [drive:]
 +
 Note: Simply enter RESCAN without any parameters to refresh the current drive. You can also refresh drives from the menu (under "DOS" for all drives or "Drive" for individual drives).
+* **SERIAL** (external command)
++
+Views or changes the serial port settings.
++
+Usage: SERIAL [port] [type] [option]
 * **SET** (internal command)
 +
 Displays and sets environment variables.
