@@ -424,7 +424,7 @@ The available video modes with the updated S3 Trio64 driver are:
 * 4-bit colour (16): 640x480
 * 8-bit colour (256): 640x480, 800x600, 1024x768, 1152x864, 1280x1024 and 1600x1200
 * 16-bit colour (65536): 640x480, 800x600, 1024x768 and 1280x1024
-* 24-bit colour (16.7M): 640x480
+* 24-bit colour (16.7M): 640x480 (currently broken in DOSBox-X)
 * 32-bit colour (16.7M + alpha): 640x480, 800x600 and 1024x768
 
 A few enhancements have been made to the emulated S3 Trio64, compared to a real S3 Trio64:
