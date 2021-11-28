@@ -46,6 +46,9 @@ These are examples of printers that you may be able to select in a DOS applicati
 ### [parallel] section options
 This section lists the available configuration options for the ``[parallel]`` section that DOSBox-X provides.
 
+NOTE: Starting with DOSBox-X v0.83.20 it is possible to modify parallel port settings directly from the DOSBox-X DOS prompt with either the ``parallel`` or ``config -set parallel`` commands.
+This however does not allow changing the emulated printer settings, and the settings are lost when you restart DOSBox-X.
+
 #### parallel1
 * Default value: printer
 * Possible values: disabled, reallpt, file, printer, disney
