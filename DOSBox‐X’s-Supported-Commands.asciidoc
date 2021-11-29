@@ -209,6 +209,13 @@ Usage: DEVICE [program] [options]
 Lists available files and sub-directories inside the current directory.
 +
 Usage: DIR [drive:][path][filename] [options]
+* **DISKCOPY** (external command)
++
+Optimizes file loading times by moving file fragments together.
++
+Usage: DISKCOPY [drive1:] [drive2:] [options]
++
+Note: It uses the DISKCOPY command from FreeDOS.
 * **DOS32A** (external command)
 +
 Starts DOS32A, a 32-bit DOS extender used by various DOS games/applications.
@@ -254,9 +261,7 @@ Usage: ECHO [message] or ECHO [ON | OFF]
 +
 Starts the full-screen file editor.
 +
-Usage: EDIT [/B] [/I] [/H] [/R] [file(s)]
-+
-Note: It uses the EDIT command from FreeDOS.
+Usage: EDIT [file] [-l LineNum]
 * **EDLIN** (external command)
 +
 Edits files by lines.
@@ -472,6 +477,13 @@ Usage: PAUSE [message]
 Changes to the directory stored by the PUSHD command.
 +
 Usage: POPD
+* **PRINT** (external command)
++
+Prints a file in the background.
++
+Usage: PRINT file [options]
++
+Note: It uses the PRINT command from FreeDOS.
 * **PROMPT** (internal command)
 +
 Changes the DOS command prompt.
