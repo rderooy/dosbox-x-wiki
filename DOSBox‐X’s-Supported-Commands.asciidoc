@@ -136,6 +136,13 @@ Note: Use SETCOLOR command to views or changes the text-mode color scheme settin
 Runs DOSBox-X's internal command shell.
 +
 Usage: COMMAND [options]
+* **COMP** (external command)
++
+Compares files.
++
+Usage: COMP file1 [file2] [options]
++
+Note: It uses the COMP command from FreeDOS.
 * **CONFIG** (external command)
 +
 Starts DOSBox-X's command-line configuration utility to change it settings.
@@ -250,11 +257,23 @@ Starts the full-screen file editor.
 Usage: EDIT [/B] [/I] [/H] [/R] [file(s)]
 +
 Note: It uses the EDIT command from FreeDOS.
+* **EDLIN** (external command)
++
+Edits files by lines.
++
+Usage: EDLIN [file]
 * **EXIT** (internal command)
 +
 Exits from the batch file or DOSBox-X.
 +
 Usage: Simply enter EXIT without any parameters.
+* **FC** (external command)
++
+Compares two files or sets of files and displays the differences between them.
++
+Usage: FC file1 file2 [options]
++
+Note: It uses the FC command from FreeDOS.
 * **FCBS** (external command)
 +
 Displays or changes the CONFIG.SYS's FCBS setting.
@@ -517,6 +536,11 @@ Note: Use COLOR command to change the current background and foreground colors.
 Left-shifts command-line parameters in a batch script.
 +
 Usage: Simply enter SHIFT without any parameters.
+* **SHUTDOWN** (external command)
++
+Restarts or shuts down DOSBox-X.
++
+Usage: SHUTDOWN [/R|/S]
 * **SORT** (external command)
 +
 Sorts input and writes results to the screen, a file, or another device.
