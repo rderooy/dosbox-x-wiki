@@ -291,6 +291,11 @@ Manages partitions on the hard drive.
 Usage: FDISK [options]
 +
 Note: It uses the FDISK command from FreeDOS.
+* **FILES** (external command)
++
+Displays or changes the CONFIG.SYS's FILES setting.
++
+Usage: FILES [filenum]
 * **FIND** (external command)
 +
 Prints lines of a file that contains the specified string.
