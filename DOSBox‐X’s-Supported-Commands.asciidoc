@@ -611,6 +611,13 @@ Usage: TRUENAME file
 Displays the contents of a text-file.
 +
 Usage: TYPE [drive:][path][filename]
+* **UTF8** (external command)
++
+Converts UTF-8 (or UTF-16 BE/LE) text to the current code page.
++
+Usage: UTF8 [/BE|/LE] < [drive:][path]filename or command-name | UTF8 [/BE|/LE]
++
+Note: The /BE and /LE options enable the UTF-16 BE/LE (instead of UTF-8) conversions respectively. 
 * **VER** (internal command)
 +
 Views and sets the reported DOS version. Also displays the running DOSBox-X version.
