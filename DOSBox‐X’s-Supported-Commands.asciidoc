@@ -611,6 +611,11 @@ Usage: TRUENAME file
 Displays the contents of a text-file.
 +
 Usage: TYPE [drive:][path][filename]
+* **UTF16** (external command)
++
+Converts UTF-16 text to view in the current code page.
++
+Usage: UTF16 [/BE|/LE] < [drive:][path]filename or command-name | UTF16 [/BE|/LE]
 * **UTF8** (external command)
 +
 Converts UTF-8 text to view in the current code page.
