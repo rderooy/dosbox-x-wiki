@@ -599,6 +599,26 @@ Unfortunately this support is incompatible with the typical MFM image files used
 
 One tool which is able to open harddisk images is 7-Zip.
 
+## Using harddisk images in macOS
+MFM Harddisk images can be opened in macOS from the terminal using `hdiutil` as such:
+
+....
+hdiutil attach hdd.img
+/dev/disk6              FDisk_partition_scheme
+/dev/disk6a1            DOS_FAT_16
+....
+
+The output will tell you where the disk is attached.
+In the above example the disk is mounted on `/dev/disk6`, and the first partition as `/dev/disk6a1`.
+
+After this the harddisk image should be available from both the terminal and from Finder.
+Once your done, you can detach it as follows:
+
+....
+hdiutil detach /dev/disk6
+"disk6" ejected.
+....
+
 # CD-ROM or DVD images
 DOSbox-X supports CD-ROM or DVD image files with the ISO9660 filesystem in ISO, CUE/BIN or MDF image format.
 
@@ -717,7 +737,7 @@ gnome-disk-image-mounter cdrom.iso
 ....
 
 ### CDEmu
-link:https://cdemu.sourceforge.io/[CDEmu] is a CD-ROM emulator for Linux. It supports numerous image formats, including ISO and CUE/BIN.
+link:https://cdemu.sourceforge.io/[CDEmu] is a CD-ROM emulator for Linux. It supports numerous image formats, including ISO, CUE+BIN and MDF.
 
 ### Mounting a ISO image from the Linux shell
 The more traditional Linux method of mounting diskette image files from a Linux terminal.
@@ -733,7 +753,7 @@ The above command will cause cdrom.iso to be mounted under /mnt.
 
 Windows 8 and later has integrated support for mounting ISO files. Simply right-click a ISO file and select "Mount".
 
-Alternatively there is link:https://wincdemu.sysprogs.org/[WinCDEmu] which can mount amongst others ISO, CUE/BIN and MDF images.
+Alternatively there is link:https://wincdemu.sysprogs.org/[WinCDEmu] which can mount amongst others ISO, CUE+BIN and MDF images.
 
 Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO file
 
