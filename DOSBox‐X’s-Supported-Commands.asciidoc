@@ -39,6 +39,12 @@ Defines or displays aliases.
 +
 Usage: ALIAS [name[=value] ... ]
 +
+* **ASSOC** (internal command)
++
+Displays or changes file extension associations.
++
+Usage: ASSOC [.ext[=command] ... ]
++
 * **ATTRIB** (internal command)
 +
 Displays or changes the attributes of files and directories.
@@ -155,7 +161,7 @@ Note: You can also use CFGTOOL command to start DOSBox-X’s graphical configura
 Copies one or more files.
 +
 Usage: COPY source [destination]
-* **COUNTRY** (internal command)
+* **COUNTRY** (external command)
 +
 Changes the country code for country-specific date/time formats.
 +
