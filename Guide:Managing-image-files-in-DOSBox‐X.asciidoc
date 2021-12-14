@@ -629,10 +629,10 @@ hdiutil detach /dev/disk6
 ....
 
 # CD-ROM or DVD images
-DOSbox-X supports CD-ROM or DVD image files with the ISO9660 filesystem in ISO, CUE/BIN or MDF image format.
+DOSbox-X supports CD-ROM or DVD image files with the ISO9660 filesystem in ISO, CUE+BIN or MDF image format.
 
 ISO is the easiest format to work with, as long as there is only a single track on the CD or DVD.
-If the CD or DVD contains multiple tracks, the use of CUE/BIN or MDF is required.
+If the CD or DVD contains multiple tracks, the use of CUE+BIN or MDF is required.
 
 ## Mounting CD or DVD images
 Mounting a CD or DVD image in DOSBox-X is typically as simple as
@@ -732,11 +732,11 @@ NOTE: The second command is equivalent to ``imgmount a -el-torito d`` or ``imgmo
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
 ## Using CD or DVD images in Linux
-ISO images are fully supported by standard Linux tools, but CUE/BIN and MDF are not.
+ISO images are fully supported by standard Linux tools, but CUE+BIN and MDF are not.
 
 ### Gnome Disk Image Mounter
 If your using the Gnome desktop environment, you can open .ISO disks with the "Disk Image Mounter". Simply right click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
-This method will not work for CUE/BIN or MDF files.
+This method will not work for CUE+BIN or MDF files.
 
 Disks can be unmounted from the Gnome file manager by clicking the unmount button next to the volume name.
 
@@ -750,7 +750,7 @@ link:https://cdemu.sourceforge.io/[CDEmu] is a CD-ROM emulator for Linux. It sup
 
 ### Mounting a ISO image from the Linux shell
 The more traditional Linux method of mounting diskette image files from a Linux terminal.
-This method will not work for CUE/BIN or MDF files.
+This method will not work for CUE+BIN or MDF files.
 This method requires sudo access.
 
 ....
