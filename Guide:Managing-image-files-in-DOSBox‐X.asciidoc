@@ -564,7 +564,7 @@ boot c:
 ....
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
-TIP: Once a disk image is mounted, you can alternatively also boot from an disk image by selecting "Drive" from the menu bar (when in windowed mode), followed by the drive letter and "Boot from drive".
+TIP: Once a disk image is mounted, you can alternatively also boot from a disk image by selecting "Drive" from the menu bar (when in windowed mode), followed by the drive letter and "Boot from drive".
 You can also mount and boot a disk image in one step by selecting "Boot from disk image" from this submenu.
 
 ## Using harddisk images in Linux
