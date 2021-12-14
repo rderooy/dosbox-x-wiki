@@ -166,13 +166,13 @@ Enables or disables virtual printer emulation.
 
 #### dpi
 * Default value: 360
-* Possible values:
+* Possible values: 0-65535
 
 Sets the dots-per-inch of the virtual printer.
 
 #### width
 * Default value: 85
-* Possible values:
+* Possible values: 0-65535
 
 Width of paper in 1/10 inch. The default of 85 corresponds to 8.5".
 
@@ -186,7 +186,7 @@ Example of some standard paper sizes in portrait orientation:
 
 #### height
 * Default value: 110
-* Possible values:
+* Possible values: 0-65535
 
 Height of paper in 1/10 inch. The default of 110 corresponds to 11.0".
 
@@ -199,7 +199,7 @@ Example of some standard paper sizes in portrait orientation:
 * A5 = 82 (210mm = 8.27 inches)
 
 #### printoutput
-* Default value: printer
+* Default value: printer (windows host), else png
 * Possible values: png, ps, bmp, printer
 
 **printer**
@@ -212,11 +212,13 @@ You can specify the target printer with the device option.
 
 Create a PNG or BMP file with the print output.
 
-Between PNG and BMP, PNG is better. BMP files will be much larger, while the image quality will be identical.
+Between PNG and BMP, PNG is more modern format.
+BMP will create larger files, due to lack of compression, while the image quality will be identical.
 
 **ps**
 
-Create a PostScript file. This is typically the best option for Linux and macOS hosts, as it supports multi-page documents and can easily be converted to PDF.
+Create a PostScript file.
+This is typically the best option for Linux and macOS hosts, as it supports multi-page documents and can easily be converted to PDF.
 
 #### multipage
 * Default value: false
@@ -231,7 +233,7 @@ See also the ``timeout`` option below.
 * Default value: -
 * Possible values: ``-`` or device name or number
 
-Only applicable on Windows hosts and if ``printoutput=printer``.
+Only applicable on Windows hosts and when ``printoutput=printer``.
 
 The default value will cause you to get asked for the printer the first time you print after starting DOSBox-X.
 Any subsequent prints will go to the same printer, until DOSBox-X is restarted.
@@ -483,8 +485,8 @@ Again, just like in the "Windows host, method 2" above, the output is sent verba
 
 NOTE: In the case of a real parallel port, the first port will be ``/dev/parport0``, but in the case of a USB parallel port adapter it will be ``/dev/usblp0``.
 
-# Example: Print to PNG, BMP or PostScript
-This method prints to a PNG, BMP or PostScript (PS) image file.
+# Example: Print to PNG or BMP
+This method prints to a PNG or BMP image file.
 
 Make sure your DOSBox-X config file contains the statements:
 ....
@@ -496,15 +498,35 @@ printer=true
 printoutput=png
 timeout=1000
 ....
-The above example uses PNG, but you can simply change it to ``printoutput=bmp`` or ``printoutput=ps`` if you prefer.
+The above example uses PNG, but you can simply change it to ``printoutput=bmp`` if you prefer.
 But note that BMP files will be much larger than PNG files, while the image quality will be identical.
 
 In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
 
-The output will be saved as ``page1.png``, ``page1.bmp`` or ``page1.ps`` in the current directory, and incremented if it already exists.
+The output will be saved as ``page1.png`` or ``page1.bmp`` in the current directory, and incremented if it already exists.
 Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
 
-When using PostScript output, you can prevent a separate PostScript files from being generated for each page, by setting ``multipage=true``.
+# Example: Print to PostScript
+This method prints to a PostScript (PS) image file, which can be easily converted to PDF.
+
+Make sure your DOSBox-X config file contains the statements:
+....
+[parallel]
+parallel1=printer
+
+[printer]
+printer=true
+printoutput=ps
+multipage=true
+timeout=1000
+....
+
+In DOSBox-X you can now simply redirect output to LPT1, or in DOS applications configure one of the printers listed above.
+
+The output will be saved as ``page1.ps`` in the current directory, and incremented if it already exists.
+Alternatively you can specify a different directory using the ``docpath=`` setting as documented above.
+
+The ``multipage=true`` setting is specific to PostScript output, and prevents a separate PostScript file from being generated for each printed page.
 
 # Example: Redirect print output to a program on the host
 
