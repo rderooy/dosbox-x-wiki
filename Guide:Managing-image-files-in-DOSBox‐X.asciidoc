@@ -883,5 +883,4 @@ Some limitations of this support:
 * It seems from the sourcecode that ``IMGMAKE`` can create VHD images if you use the .vhd extension, but this does not work in practice?
 * imgmount of QCOW2 images only works in combination with ``-nofs``, which is rather restrictive. Can this be easily solved?
 * How about IDE teriary through octenary controllers in dosbox-x config. Do the device number and/or -ide options continue counting up to device number 18 and ``-ide 8s``?
-* Accessing image files from MacOS? I have no MacOS system and no experience with them.
 * PC-98 descriptions need checking as I have no experience with them.
