@@ -14,37 +14,9 @@ DOSBox-X has support for printing to either a real printer, redirect to a file, 
 
 Printer options in the DOSBox-X config file are split over two sections, ``[parallel]`` and ``[printer]``.
 
-The Virtual Printer option emulates a colour dot-matrix printer that follows the Epson link:https://en.wikipedia.org/wiki/ESC/P[ESC/P2] printing standard.
-It also has partial support for the IBM Pro Printer, where the control codes do not conflict with the Epson control codes.
-
-**Example of printers that may work:**
-
-These are examples of printers that you may be able to select in a DOS application, which may work with the virtual printer option.
-
-* Epson MX-80
-* Epson SQ-860
-* Epson LQ-800
-* IBM Pro Printer (limited function)
-* Generic ESC/P 24pin wide (Windows 3.11 running in DOSBox-X)
-* Generic / Text Only (Windows running in DOSBox-X)
-
-**Features:**
-
-* Many of the Epson ESC/P and ESC/P2 instructions are supported
-* Graphics printing for 24-pin and 48-pin modes supported, up to 360dpi
-* Colour output, use "Generic ESC/P 24pin wide" printer on Windows 3.11 or "Epson SQ 860" on Win95
-* Data can be output as Windows bitmap, PNG file, PostScript file, or sent to a Windows
-* Some older non-conflicting IBM control codes are supported
-
-**Limitations:**
-
-* Windows printer output in black & white only
-* Not all ESC/P commands are supported, like custom fonts
-* Due to over-exact graphics emulation 360dpi printing from Windows (guest) graphics rastering might not look as expected
-* Country code setup and other configuration switches and buttons found on a real printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
-
 ### [parallel] section options
 This section lists the available configuration options for the ``[parallel]`` section that DOSBox-X provides.
+Is is used to configure the virtual parallel ports provided inside DOSBox-X.
 
 NOTE: Starting with DOSBox-X v0.83.20 it is possible to modify parallel port settings directly from the DOSBox-X DOS prompt with either the ``parallel`` or ``config -set parallel`` commands.
 This however does not allow changing the emulated printer settings, and the settings are lost when you restart DOSBox-X.
@@ -155,25 +127,56 @@ Unfortunately this feature is rather incomplete at this time, and requires that 
 This section lists the available configuration options for the ``[printer]`` section that DOSBox-X provides.
 
 Only one printer can be emulated, and it can only be connected to a single virtual parallel port.
-It is also recommended for the virtual printer to configure TrueType fonts.
+It is also recommended for the virtual printer to configure TrueType fonts if you intend to print text.
+
+The Virtual Printer option emulates a colour dot-matrix printer that follows the Epson link:https://en.wikipedia.org/wiki/ESC/P[ESC/P2] printing standard.
+It also has partial support for the IBM Pro Printer, where the control codes do not conflict with the Epson control codes.
+
+**Example of printers that may work:**
+
+These are examples of printers that you may be able to select in a DOS application, which may work with the virtual printer option.
+
+* Epson MX-80
+* Epson SQ-860
+* Epson LQ-800
+* IBM Pro Printer (limited function)
+* Generic ESC/P 24pin wide (Windows 3.11 running in DOSBox-X)
+* Generic / Text Only (Windows running in DOSBox-X)
+
+**Features:**
+
+* Many of the Epson ESC/P and ESC/P2 instructions are supported
+* Graphics printing for 24-pin and 48-pin modes supported, up to 360dpi
+* Colour output, use "Generic ESC/P 24pin wide" printer on Windows 3.11 or "Epson SQ 860" on Win95
+* Data can be output as Windows bitmap, PNG file, PostScript file, or sent to a Windows
+* Some older non-conflicting IBM control codes are supported
+
+**Limitations:**
+
+* Windows printer output in black & white only
+* Not all ESC/P commands are supported, like custom fonts
+* Due to over-exact graphics emulation 360dpi printing from Windows (guest) graphics rasterising might not look as expected
+* Country code setup and other configuration switches and buttons found on a real printer are not available, this may be overcome by sending special ESC/P commands to the printer before printing
 
 #### printer
 * Default value: false
 * Possible values: true, false
 
-Enables or disables printer emulation.
+Enables or disables virtual printer emulation.
 
 #### dpi
 * Default value: 360
 * Possible values:
 
+Sets the dots-per-inch of the virtual printer.
+
 #### width
 * Default value: 85
 * Possible values:
 
-Width of paper in 1/10 inch. The default 85 corresponds to 8.5".
+Width of paper in 1/10 inch. The default of 85 corresponds to 8.5".
 
-Example of standard paper sizes in portrait orientation:
+Example of some standard paper sizes in portrait orientation:
 
 * Letter = 85 (default)
 * Legal = 85
@@ -185,9 +188,9 @@ Example of standard paper sizes in portrait orientation:
 * Default value: 110
 * Possible values:
 
-Height of paper in 1/10 inch. The default 110 corresponds to 11.0".
+Height of paper in 1/10 inch. The default of 110 corresponds to 11.0".
 
-Example of standard paper sizes in portrait orientation:
+Example of some standard paper sizes in portrait orientation:
 
 * Letter = 110 (default)
 * Legal = 140
@@ -201,17 +204,19 @@ Example of standard paper sizes in portrait orientation:
 
 **printer**
 
-To send the output to a printer in Windows.
-A print dialogue will appear.
+To send the output to a printer on a Windows host.
+A Windows print dialogue will appear.
 You can specify the target printer with the device option.
 
 **png or bmp**
+
+Create a PNG or BMP file with the print output.
 
 Between PNG and BMP, PNG is better. BMP files will be much larger, while the image quality will be identical.
 
 **ps**
 
-PostScript, which is the best option typically for Linux and macOS hosts as it supports multipage documents and can easily be converted to PDF.
+Create a PostScript file. This is typically the best option for Linux and macOS hosts, as it supports multi-page documents and can easily be converted to PDF.
 
 #### multipage
 * Default value: false
@@ -219,18 +224,20 @@ PostScript, which is the best option typically for Linux and macOS hosts as it s
 
 Only applicable if ``printoutput=ps``.
 
-Adds all pages to one PostScript file or printer job until CTRL-F2 is pressed.
+Adds all pages printed to one PostScript file until a timeout, or until CTRL-F2 is pressed.
 See also the ``timeout`` option below.
 
 #### device
 * Default value: -
 * Possible values: ``-`` or device name or number
 
-Only applicable if ``printoutput=printer``.
+Only applicable on Windows hosts and if ``printoutput=printer``.
 
 The default value will cause you to get asked for the printer the first time you print after starting DOSBox-X.
-You can alternatives specify the printer device name (or a partial name) or the device number.
-From a consistency perspective it is best to specify a device name, as the device number can change due to devices being added or removed.
+Any subsequent prints will go to the same printer, until DOSBox-X is restarted.
+
+You can use this option to specify the printer device name (or a partial name), or the device number.
+From a consistency perspective it is best to specify a device name, as the device number can change due to devices being added or removed on the host.
 
 To see the list of available devices, start DOSBox-X and open the DOS menu, followed by "List printer devices".
 
@@ -272,13 +279,11 @@ If set, the command window will be hidden for openwith/openerror options on the 
 
 e.g. ``openwith=notepad`` will open the file with Notepad on a Windows host.
 
-Some examples:
+Some other examples:
 
 - Linux host: ``openwith=xdg-open`` will cause the file to be opened with the application associated with the file extension
 
 - Windows host: ``openwith=start`` will cause the file to be opened with the application associated with the file extension
-
-- Windows host: ``openwith=notepad`` will open the file with the Notepad application
 
 - macOS host: ``openwith=open -s "Preview"`` will cause the file to be opened with the application associated with the file extension
 
@@ -291,7 +296,8 @@ Start the specified program to open the output file if an error had occurred.
 * Default value: false
 * Possible values: true, false
 
-If set, the command window will be hidden for openwith/openerror options. Only supported on the Windows platform.
+If set, the command window will be hidden for openwith/openerror options.
+Only supported on the Windows platform.
 
 #### timeout
 * Default value: 0
@@ -305,7 +311,7 @@ Since not all software will send one, especially if your redirecting output, you
 
 If non-zero, it specifies the time after which the page will be ejected automatically when no more data arrives at the printer.
 
-You can also manually eject a form-feed when you want to do so, and this option is available from the DOS menu.
+You can also manually send a form-feed, by pressing CTRL-F2 or using the form-feed option available from the DOS menu.
 
 # Setting up fonts for the emulated printer
 The emulated printer requires TrueType fonts in order to be able to print text.
@@ -328,7 +334,6 @@ If the fonts cannot be found, then it will search for the system fonts, as follo
 |===
 
 You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table.
-Moreover, DOSBox-X 0.83.4 and earlier will only search for font files in the FONTS directory.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
@@ -349,7 +354,6 @@ If the fonts cannot be found, then it will search for the fonts in the ``/usr/sh
 |===
 
 You are free to use suitable alternatives for these fonts, by copying them to the FONTS directory with file names mentioned in the first column of the above table.
-Moreover, DOSBox-X 0.83.4 and earlier will only search for font files in the FONTS directory.
 
 Ocra (OCR-A) and Script (cursive) fonts may not be installed on your system.
 They are however rarely needed, and can typically be ignored.
@@ -406,10 +410,10 @@ If you want the printer dialogue to show up every time for printing to LPT1, ple
 
 ## Windows host, method 2
 This assumes you PC still has a parallel printer port integrated on the system board, or a legacy ISA printer adapter.
-It reportedly will not work with USB printer adapters or PCI printer port adapters.
+It reportedly will not work with USB parallel printer adapters or PCI parallel printer port adapters.
 
 Also note that the output is sent verbatim from the DOS application to the printer, without any filtering or conversion.
-Therefore it is important that the printer can understand the control codes that are being sent.
+Therefore it is important that the printer can understand the printer control codes that are being sent by the application.
 In practice this means that this method is only really meant for situations where you have a legacy printer, or are perhaps only sending pure text.
 
 Make sure your DOSBox-X config file contains the statements:
@@ -449,8 +453,9 @@ image::images/Printfil_configuration_window.png[The Printfil configuration windo
 
 ## Linux host
 
-First you need to give your Linux user access to the ``/dev/parport0`` device, otherwise you will get permission denied errors.
-Replace "username" with your Linux username.
+First you need to give your Linux user access to the printer port on the Linux host, otherwise you will get permission denied errors.
+
+Replace "username" in the example below with your own Linux username.
 
 ....
 sudo usermod -a -G lp username
@@ -475,6 +480,8 @@ parallel1=file dev:/dev/parport0
 But while this method seems to work on Windows, it does not seem to work properly on Linux.
 
 Again, just like in the "Windows host, method 2" above, the output is sent verbatim to the printer, so the printer needs to be able to understand any control codes the DOS application sends.
+
+NOTE: In the case of a real parallel port, the first port will be ``/dev/parport0``, but in the case of a USB parallel port adapter it will be ``/dev/usblp0``.
 
 # Example: Print to PNG, BMP or PostScript
 This method prints to a PNG, BMP or PostScript (PS) image file.
