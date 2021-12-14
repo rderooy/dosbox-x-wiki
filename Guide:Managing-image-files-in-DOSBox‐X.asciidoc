@@ -323,6 +323,12 @@ Several 3rd party tools are available which can open the diskette image files:
 * link:https://www.win-rar.com/[WinRAR]
 * link:https://www.winzip.com/[WinZIP]
 
+## Using diskette images in macOS
+You can mount MFM image files with the extension IMG in macOS from the Finder by double-clicking on it.
+You can unmount it by clicking on the "Eject" button next to it in the Finder.
+
+It is also possible to mount the image file from the macOS Terminal using `hdiutil`
+
 # Harddisk images
 DOSBox-X supports mounting harddisk images in the following formats:
 
@@ -600,7 +606,10 @@ Unfortunately this support is incompatible with the typical MFM image files used
 One tool which is able to open harddisk images is 7-Zip.
 
 ## Using harddisk images in macOS
-MFM Harddisk images can be opened in macOS from the terminal using `hdiutil` as such:
+You can mount MFM harddisk image files with the extension IMG in macOS from the Finder by double-clicking on it.
+You can unmount it by clicking on the "Eject" button next to it in the Finder.
+
+MFM Harddisk images can also be opened in macOS from the Terminal using `hdiutil` as such:
 
 ....
 hdiutil attach hdd.img
@@ -750,12 +759,17 @@ sudo mount -o loop cdrom.iso /mnt
 The above command will cause cdrom.iso to be mounted under /mnt.
 
 ## Using CD or DVD images in Windows
-
 Windows 8 and later has integrated support for mounting ISO files. Simply right-click a ISO file and select "Mount".
 
 Alternatively there is link:https://wincdemu.sysprogs.org/[WinCDEmu] which can mount amongst others ISO, CUE+BIN and MDF images.
 
 Programs like 7-Zip, WinRAR and WinZIP can also extract the contents of a ISO file
+
+## Using CD or DVD images in macOS
+You can mount ISO image files with the extension ISO in macOS from the Finder by double-clicking on it.
+You can unmount it by clicking on the "Eject" button next to it in the Finder.
+
+ISO images can also be opened in macOS from the Terminal using `hdiutil`.
 
 # Copying files into or out of image files from DOSBox-X
 If you need to copy files into, or out of an image file, this can be done from the DOSBox-X integrated DOS.
