@@ -411,8 +411,7 @@ This only applies to *Windows for Workgroups* (WfW).
 To enable networking functionality, you will need to create a disk image with real DOS and install WfW into that.
 You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default.
 
-For instance, if you install WfW inside DOSBox-X with networking support, you're supposed to run ``C:\WINDOWS\NET START`` before starting Windows.
-This command will however return an ``Error 73: (null)`` if run from the DOSbox-X emulated DOS.
+For instance, if you install WfW inside DOSBox-X with networking support, you need to run ``DEVICE C:\WINDOWS\IFSHLP.SYS`` and ``C:\WINDOWS\NET START`` before starting Windows if run from DOSBox-X's internal DOS.
 
 Windows for Workgroups by default only supports SMB networking over NBF (NetBIOS Frames aka NetBEUI) or IPX.
 There is no support by default for TCP/IP.
