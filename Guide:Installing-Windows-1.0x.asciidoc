@@ -291,10 +291,11 @@ But first type ``EXIT`` to close DOSBox-X.
 And then edit your ``win1x.conf`` config file and add the following lines into the ``[autoexec]`` section at the end of the file:
 
 ....
+@ECHO OFF
 MOUNT C /home/myuser/winroot
 C:
 SET PATH=%PATH%;C:\WINDOWS;
-C:\WINDOWS\WIN
+C:\WINDOWS\WIN.COM
 EXIT
 ....
 
