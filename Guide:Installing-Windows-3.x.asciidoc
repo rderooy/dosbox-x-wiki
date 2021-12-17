@@ -185,7 +185,6 @@ The installer is normally found on the CD as ``\MWIN\SETUP.EXE``.
 
 * This method is the easiest, but has a few limitations:
 ** Will not allow for 32-bit disk IO with Windows 3.1x.
-** Will not allow for networking with Windows for Workgroups.
 
 Create a directory on your system that you're going to use (mount) as your Windows 3.x C: drive.
 Valid examples:
@@ -226,36 +225,49 @@ Exit to DOS and type EXIT to close DOSBox-X.
 Now edit your win3x.conf config file and add the following lines into the [autoexec] section at the end of the file.
 
 ....
+@ECHO OFF
 MOUNT C /home/myuser/winroot
 C:
-IF EXIST C:\WINDOWS\WIN.COM GOTO WINDOWS
+IF EXIST C:\WINDOWS\IFSHLP.SYS GOTO WFW
 IF EXIST C:\MWINDOWS\WIN.COM GOTO MWINDOWS
+IF EXIST C:\WINDOWS\WIN.COM GOTO WINDOWS
 GOTO END
 
-:WINDOWS
+:WFW
+echo Starting Windows for Workgroups 3.1x
 SET PATH=%PATH%;C:\WINDOWS;
 SET TEMP=C:\WINDOWS\TEMP
+DEVICE C:\WINDOWS\IFSHLP.SYS
+C:\WINDOWS\NET.EXE START
 C:\WINDOWS\WIN.COM
+GOTO END
 
 :MWINDOWS
+echo Starting Windows 3.0a with Multimedia Extensions
 SET PATH=%PATH%;C:\MWINDOWS;
 SET TEMP=C:\MWINDOWS\TEMP
 C:\MWINDOWS\WIN.COM
+GOTO END
+
+:WINDOWS
+echo Starting Windows for 3.x
+SET PATH=%PATH%;C:\WINDOWS;
+SET TEMP=C:\WINDOWS\TEMP
+C:\WINDOWS\WIN.COM
+GOTO END
 
 :END
 EXIT
 ....
 
-Adjust the path for mounting the C: drive as needed.
+Adjust the ``MOUNT`` path above for mounting the C: drive as needed.
 
 # Install Windows 3.x into a DOS HDD image
-This method does not have any of the disadvantages listed above.
-But it brings with it a bit of added inconvenience.
+This method brings with it a bit of added inconvenience.
 For instance, you will need to do your own DOS memory management and load DOS drivers for CD-ROM access.
 You can also not mount a host directory in DOSBox-X when you boot a disk image.
 Even host directories that you mounted prior to booting the disk image will become unavailable.
 Everything needs to be done using IMAGE files.
-And you cannot change image files once you boot a guest OS, not even from the menu bar.
 
 The first step is to create a DOS HDD image, for which you can follow the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide].
 You need at least DOS 3.1 for Windows 3.0 and 3.1x, and DOS 3.3 for Windows for Workgroups.
@@ -409,12 +421,11 @@ backend=slirp
 ## Setting up NE2000 networking
 This only applies to *Windows for Workgroups* (WfW).
 To enable networking functionality, you will need to create a disk image with real DOS and install WfW into that.
-You cannot run the networking components of WfW in the emulated DOS environment that DOSBox-X provides by default.
 
 For instance, if you install WfW inside DOSBox-X with networking support, you need to run ``DEVICE C:\WINDOWS\IFSHLP.SYS`` and ``C:\WINDOWS\NET START`` before starting Windows if run from DOSBox-X's internal DOS.
 
 Windows for Workgroups by default only supports SMB networking over NBF (NetBIOS Frames aka NetBEUI) or IPX.
-There is no support by default for TCP/IP.
+There is no support by default for the TCP/IP protocol.
 
 There were 3rd party WinSock solutions, but those were meant for dial-up internet access and are not specific to WfW.
 
