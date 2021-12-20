@@ -486,7 +486,7 @@ Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting
 ## Print to PostScript
 For the best print quality, you will want to print to a PostScript printer in Windows 95.
 
-For Windows 95, select any Colour PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
+For Windows 95, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
 
 Once the printer is installed, open the printers properties, and on the "Details" tab click on the "Spool Settings..." button.
 In the "Spool Settings", you must select "Print directly to the printer" and click OK.
@@ -505,15 +505,15 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
-When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a postscript file.
+When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
-On Linux and macOS, postscript files are natively supported and can be viewed and printed.
+On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
 On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
 
 ## Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the quality will be noticeably reduced.
 
-For Windows 95, select the "Epson LQ-860+" option during printer setup connected to LPT1
+For Windows 95, select any Epson dot-matrix printer, such as the "Epson LQ-860+" option during printer setup connected to LPT1
 
 image::images/Windows:Windows_95_EPSON.png[Windows 95 - Epson Graphics Properties]
 
