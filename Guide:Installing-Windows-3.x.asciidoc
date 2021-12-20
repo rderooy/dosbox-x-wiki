@@ -9,6 +9,8 @@ image::images/Windows:Windows_3.11_SPLASH.png[Windows 3.11 splash screen]
 toc::[]
 
 # Overview
+This guide will give a general description of installing Windows 3.x in DOSBox-X, in addition to addressing some common issues.
+
 ## Editions this applies to
 
 * *Windows 3.0*
@@ -126,12 +128,11 @@ int13fakev86io=false
 
 [render]
 scaler=none
-aspect=false
 
 [autoexec]
 ....
 
-Copy the above config and save it as *win3x.conf*
+Copy the above config and save it as ``win3x.conf``
 
 *Notes*
 
@@ -324,6 +325,7 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 * Video for Windows 1.1e
 * WinG API 1.0
 * QuickTime 2.1.2
+* Adobe Acrobat Reader
 * Adobe Type Manager 3.02
 
 # Enabling 32-bit File and Disk access
@@ -384,7 +386,7 @@ In some cases, this is not possible, such as:
 - Your Ethernet switch not allowing multiple MAC addresses on a single port or doing any kind of MAC address whitelisting.
 - Sandboxed versions of DOSBox-X (e.g., Flatpak) not allowing the required low-level access.
 
-To enable NE2000 emulation with the pcap back-end, add the following to your win3x.conf config file:
+To enable NE2000 emulation with the pcap back-end, add the following to your ``win3x.conf`` config file:
 
 ....
 [ne2000]
@@ -405,11 +407,11 @@ As such it will work with WIFI, WAN and BT adapters, and it will work in most sa
 
 But obviously, it has its own limitations.
 
-- For now, it only works on Linux.
+- It is not supported in all platforms, such as Windows Visual Studio builds.
 - It only supports the TCP/IP protocol (other protocols must be TCP/IP encapsulated).
 - It is effectively behind a NAT (Network Address Translation) gateway, meaning that you can communicate outbound, but no systems on the LAN can instantiate a new connection to it. Which means that two DOSBox-X instances on the same LAN using ``backend=slirp`` cannot communicate with each other.
 
-To enable NE2000 emulation with the slirp back-end, add the following to your win3x.conf config file:
+To enable NE2000 emulation with the slirp back-end, add the following to your ``win3x.conf`` config file:
 
 ....
 [ne2000]
@@ -420,9 +422,8 @@ backend=slirp
 
 ## Setting up NE2000 networking
 This only applies to *Windows for Workgroups* (WfW).
-To enable networking functionality, you will need to create a disk image with real DOS and install WfW into that.
 
-For instance, if you install WfW inside DOSBox-X with networking support, you need to run ``DEVICE C:\WINDOWS\IFSHLP.SYS`` and ``C:\WINDOWS\NET START`` before starting Windows if run from DOSBox-X's internal DOS.
+If you install WfW inside DOSBox-X with networking support, you need to run ``DEVICE C:\WINDOWS\IFSHLP.SYS`` and ``C:\WINDOWS\NET START`` before starting Windows if run from DOSBox-X's internal DOS.
 
 Windows for Workgroups by default only supports SMB networking over NBF (NetBIOS Frames aka NetBEUI) or IPX.
 There is no support by default for the TCP/IP protocol.
@@ -480,9 +481,7 @@ Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting
 ## Print to PostScript
 For the best print quality, you will want to print to a PostScript printer in Windows 3.x.
 
-For Windows 3.x, select any PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
-
-Next, setup your DOSBox-X config to print to a file as such:
+First, setup your DOSBox-X config to print to a file as such:
 
 ....
 [dosbox]
@@ -492,22 +491,17 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
-When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a postscript file.
+For Windows 3.x, select any PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
+
+When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
 On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
 
 ## Epson emulation
-As an alternative, you can use the integrated Epson printer emulation, but the quality will be noticeably reduced.
+As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
-- For Windows 3.0, select any Epson dot-matrix printer, such as the "Epson LQ-850/950/1050" option during printer setup connected to LPT1
-- For Windows 3.1x, select any Epson dot-matrix printer, such as the "Epson LQ-860" option during printer setup connected to LPT1
-
-WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
-
-image::images/Windows:Windows_3.0_EPSON_SETUP.png[Windows 3.0 Epson setup]
-
-Next, setup your DOSBox-X config to emulate an Epson printer as such:
+First, setup your DOSBox-X config to emulate an Epson printer as such:
 ....
 [parallel]
 parallel1=printer
@@ -519,7 +513,14 @@ multipage=true
 timeout=2000
 ....
 
-This will create a PostScript file with the .ps extension in your current working directory.
+- For Windows 3.0, select any Epson dot-matrix printer, such as the "Epson LQ-850/950/1050" option during printer setup connected to LPT1
+- For Windows 3.1x, select any Epson dot-matrix printer, such as the "Epson LQ-860" option during printer setup connected to LPT1
+
+WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
+
+image::images/Windows:Windows_3.0_EPSON_SETUP.png[Windows 3.0 Epson setup]
+
+When you print, a PostScript file with the .ps extension will be created in your current working directory.
 The emulated Epson printer settings can be adjusted as documented on the above linked wiki printing guide.
 
 # Installing Win32s

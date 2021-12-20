@@ -85,7 +85,7 @@ scaler=none
 [autoexec]
 ....
 
-Copy the above config and save it as *win95.conf*
+Copy the above config and save it as ``win95.conf``
 
 NOTE: If using Windows 95 OSR2 (or later) with FAT32 volumes, be sure to change the DOS version to 7.1 (``ver=7.1`` or from the DOSBox-X prompt: ``ver set 7.1``) or else you will get errors mounting the FAT32 volume.
 
@@ -289,7 +289,7 @@ In some cases, this is not possible, such as:
 - Your Ethernet switch not allowing multiple MAC addresses on a single port or doing any kind of MAC address whitelisting.
 - Sandboxed versions of DOSBox-X (e.g., Flatpak) not allowing the required low-level access.
 
-To enable NE2000 emulation with the pcap back-end, add the following to your win95.conf config file:
+To enable NE2000 emulation with the pcap back-end, add the following to your ``win95.conf`` config file:
 
 ....
 [ne2000]
@@ -314,7 +314,7 @@ But obviously, it has its own limitations.
 - It only supports the TCP/IP protocol (other protocols must be TCP/IP encapsulated).
 - It is effectively behind a NAT (Network Address Translation) gateway, meaning that you can communicate outbound, but no systems on the LAN can instantiate a new connection to it. Which means that two DOSBox-X instances on the same LAN using ``backend=slirp`` cannot communicate with each other.
 
-To enable NE2000 emulation with the slirp back-end, add the following to your win95.conf config file:
+To enable NE2000 emulation with the slirp back-end, add the following to your ``win95.conf`` config file:
 
 ....
 [ne2000]
@@ -486,16 +486,7 @@ Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting
 ## Print to PostScript
 For the best print quality, you will want to print to a PostScript printer in Windows 95.
 
-For Windows 95, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
-
-Once the printer is installed, open the printers properties, and on the "Details" tab click on the "Spool Settings..." button.
-In the "Spool Settings", you must select "Print directly to the printer" and click OK.
-
-image::images/Windows:Windows_95_SPOOL.png[Windows 95 - QMS ColorScript Spool Settings]
-
-WARNING: Failing to change the spool setting, when printing to a file, will result in corrupted PostScript files!
-
-Next, setup your DOSBox-X config to print to a file as such:
+First, setup your DOSBox-X config to print to a file as such:
 
 ....
 [dosbox]
@@ -505,21 +496,24 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
+For Windows 95, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
+
+Once the printer is installed, open the printers properties, and on the "Details" tab click on the "Spool Settings..." button.
+In the "Spool Settings", you must select "Print directly to the printer" and click OK.
+
+image::images/Windows:Windows_95_SPOOL.png[Windows 95 - QMS ColorScript Spool Settings]
+
+WARNING: Failing to change the spool setting, when printing to a file, will result in corrupted PostScript files!
+
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
 On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
 
 ## Epson emulation
-As an alternative, you can use the integrated Epson printer emulation, but the quality will be noticeably reduced.
+As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
-For Windows 95, select any Epson dot-matrix printer, such as the "Epson LQ-860+" option during printer setup connected to LPT1
-
-image::images/Windows:Windows_95_EPSON.png[Windows 95 - Epson Graphics Properties]
-
-WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
-
-Next, setup your DOSBox-X config to emulate an Epson printer as such:
+First, setup your DOSBox-X config to emulate an Epson printer as such:
 ....
 [parallel]
 parallel1=printer
@@ -530,8 +524,13 @@ printoutput=ps
 multipage=true
 timeout=2000
 ....
+For Windows 95, select any Epson dot-matrix printer, such as the "Epson LQ-860+" option during printer setup connected to LPT1
 
-This will create a PostScript file with the .ps extension in your current working directory.
+WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
+
+image::images/Windows:Windows_95_EPSON.png[Windows 95 - Epson Graphics Properties]
+
+When you print, a PostScript file with the .ps extension will be created in your current working directory.
 The emulated Epson printer settings can be adjusted as documented on the above linked wiki printing guide.
 
 # 3dfx Voodoo
