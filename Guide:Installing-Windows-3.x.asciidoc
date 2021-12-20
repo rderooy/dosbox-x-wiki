@@ -513,8 +513,9 @@ multipage=true
 timeout=2000
 ....
 
-- For Windows 3.0, select any Epson dot-matrix printer, such as the "Epson LQ-850/950/1050" option during printer setup connected to LPT1
-- For Windows 3.1x, select any Epson dot-matrix printer, such as the "Epson LQ-860" option during printer setup connected to LPT1
+Next in Windows 3.x, select any Epson dot-matrix printer such as:
+- For Windows 3.0, the "Epson LQ-850/950/1050" option during printer setup connected to LPT1
+- For Windows 3.1x, the "Epson LQ-860" option during printer setup connected to LPT1
 
 WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
 
