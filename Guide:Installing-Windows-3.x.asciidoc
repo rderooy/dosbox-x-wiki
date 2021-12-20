@@ -475,7 +475,52 @@ image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI]
 You should now be able to open the Windows 3.0a Media Player and playback ``C:\MWINDOWS\MMDATA\CANYON.MID``.
 
 # Enabling printing
-To enable printing support in Windows 3.x, see: link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
+Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
+
+## Print to PostScript
+For the best print quality, you will want to print to a PostScript printer in Windows 3.x.
+
+For Windows 3.x, select a Colour PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
+
+Next, setup your DOSBox-X config to print to a file as such:
+
+....
+[dosbox]
+captures=capture
+
+[parallel]
+parallel1=file timeout=2000
+....
+
+When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a postscript file.
+
+On Linux and macOS, postscript files are natively supported and can be viewed and printed.
+On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
+
+## Epson emulation
+As an alternative, you can use the integrated Epson printer emulation, but the quality will be unnoticeably reduced.
+
+- For Windows 3.0, select the "Epson LQ-850/950/1050" option during printer setup connected to LPT1
+- For Windows 3.1x, select the "Epson LQ-860" option during printer setup connected to LPT1
+
+WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution greater than 180x180, or the output will be corrupted.
+
+image::images/Windows:Windows_3.0_EPSON_SETUP.png[Windows 3.0 Epson setup]
+
+Next, setup your DOSBox-X config to emulate an Epson printer as such:
+....
+[parallel]
+parallel1=printer
+
+[printer]
+printer=true
+printoutput=ps
+multipage=true
+timeout=2000
+....
+
+This will create a PostScript file with the .ps extension in your current working directory.
+The emulated Epson printer settings can be adjusted as documented on the above linked wiki printing guide.
 
 # Installing Win32s
 Win32s is a 32-bit application runtime environment for Windows 3.1x.
@@ -496,14 +541,14 @@ First install the game normally in Windows.
 You can then start the game from DOS simply by appending the Windows game executable behind the WIN.COM executable as such:
 
 ....
-WIN \path\to\game\game.exe
+WIN \path\to\game.exe
 ....
 
 This will prevent the Windows splash screen being shown and will directly start the game without first going to the Program Manager (progman).
 
 The second step you may want to take, is that when you exit the game, you also exit Windows 3.x. For this you need a 3rd party utility called "link:http://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH. Now simply start the game as follows:
 ....
-WIN RUNEXIT \path\to\game\game.exe
+WIN RUNEXIT \path\to\game.exe
 ....
 Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows. This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
 
