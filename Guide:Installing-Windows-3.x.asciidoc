@@ -498,12 +498,12 @@ On Linux and macOS, postscript files are natively supported and can be viewed an
 On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
 
 ## Epson emulation
-As an alternative, you can use the integrated Epson printer emulation, but the quality will be unnoticeably reduced.
+As an alternative, you can use the integrated Epson printer emulation, but the quality will be noticeably reduced.
 
 - For Windows 3.0, select the "Epson LQ-850/950/1050" option during printer setup connected to LPT1
 - For Windows 3.1x, select the "Epson LQ-860" option during printer setup connected to LPT1
 
-WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution greater than 180x180, or the output will be corrupted.
+WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
 
 image::images/Windows:Windows_3.0_EPSON_SETUP.png[Windows 3.0 Epson setup]
 
