@@ -280,6 +280,7 @@ Once Windows 98 is installed, here is some additional software you may want to i
 * Install Windows Installer 2.0
 * Install WinG 1.0 (needed by just a few games, and those games typically include it)
 * Install GDI+ redistributable
+* Install Adobe Acrobat Reader 6.0
 * Install/Update to Adobe Flash Player 9.0.47.0
 * Install Apple Quicktime 6.5.2
 
