@@ -467,7 +467,7 @@ On a Windows host, it is necessary to install a separate PostScript viewer such 
 ## Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the quality will be noticeably reduced.
 
-For Windows 95, select the "Epson LQ-860+" option during printer setup connected to LPT1
+For Windows 98, select the "Epson LQ-860+" option during printer setup connected to LPT1
 
 image::images/Windows:Windows_95_EPSON.png[Windows 95 - Epson Graphics Properties]
 
