@@ -248,6 +248,7 @@ Once Windows 95 is installed, here is some additional software you may want to i
 * Install DCOM 4.71.1015.0 (DCOM95.EXE)
 * Install/Update to DirectX 8.0a
 * Install/Update to Windows Media Player 6.4
+* Install Adobe Acrobat Reader 5.05
 * Install/Update to Adobe Flash Player 8.0.24.0
 * Install Apple Quicktime 5.0.5
 * Install the link:https://www.philscomputerlab.com/drivers-for-voodoo.html[3dfx Voodoo 3.01.00 reference drivers]
@@ -464,6 +465,9 @@ However, DOSBox-X does not really emulate the CQM, instead if uses the same OPL3
 Therefore, the CQM sound quality issues with the real SB16 Vibra do not apply to DOSBox-X.
 
 An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library (ignore that the download claims it is for Windows 98, the update is for both Windows 95 and 98).
+
+WARNING: There have been reports from some users that with sound enabled, that Windows 9x games crash.
+If you encounter similar issues, try to set ``sbtype=none`` and see if the game works.
 
 ## Enabling General MIDI
 If you have a working DOSBox-X General MIDI setup, either emulated or real, you can use that in Windows 95.
