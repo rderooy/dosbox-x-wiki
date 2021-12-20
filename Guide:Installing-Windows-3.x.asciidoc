@@ -491,7 +491,7 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
-For Windows 3.x, select any PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
+Next in Windows 3.x, select any PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
 
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
