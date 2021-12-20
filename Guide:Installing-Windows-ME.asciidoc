@@ -18,8 +18,8 @@ This guide will give a general description of installing Windows Millennium Edit
 
 NOTE: Windows ME **Upgrade** editions have additional requirements and are not covered by this guide.
 
-WARNING: In general Windows ME has received less testing, and also has more compatibility issues with programs designed for Windows 95 and 98.
-As such, unless you have a specific requirement for Windows ME, the DOSBox-X team recommands to use Windows 98SE instead.
+WARNING: In general Windows ME has received less testing with DOSBox-X, and also has more compatibility issues with programs designed for Windows 95 and 98.
+As such, unless you have a specific requirement for Windows ME, the DOSBox-X team recommends to use Windows 98SE instead.
 
 ## External links
 * link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
@@ -526,10 +526,10 @@ If so, you will have to remove this DLL file for glide pass-through to work.
 
 For more detail on 3dfx Voodoo emulation, see the link:Guide%3ASetting-up-3dfx-Voodoo-in-DOSBox%E2%80%90X[Guide: Setting up 3dfx Voodoo in DOSBox-X]
 
-# Hard Disk Read-ahead optimization
+# Hard Disk Read-ahead optimisation
 In "System Properties", select the "Performance" tab, and click the "File System..." button.
 A separate "File System Properties" window will open.
-On the "Hard Disk" tab you can specify the Read-ahead optimization.
+On the "Hard Disk" tab you can specify the Read-ahead optimisation.
 
 Based on benchmark results (WinBench 96), it seems that setting this to "None" gives the best performance in combination with DOSBox-X, although the difference is marginal.
 This is no doubt because the host system is better at caching then the Windows ME cache function.
