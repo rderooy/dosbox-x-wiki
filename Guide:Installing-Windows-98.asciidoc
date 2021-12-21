@@ -459,6 +459,9 @@ image::images/Windows:Windows_95_SPOOL.png[Windows 95 - QMS ColorScript Spool Se
 
 WARNING: Failing to change the spool setting, when printing to a file, will result in corrupted PostScript files!
 
+NOTE: If two files end up being generated instead of just one for a printjob, you will want to revert the above spool setting.
+And perhaps try changing the spool setting to "Start printing after last page is spooled".
+
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.

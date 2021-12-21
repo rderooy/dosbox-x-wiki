@@ -202,7 +202,7 @@ NOTE: For users running Windows natively on their computer, do *NOT* mount the r
 Now create a directory underneath that, which will hold your Windows 3.x installation files.
 e.g., ``C:\users\myuser\win31\INSTALL`` or ``/home/myuser/winroot/INSTALL`` and copy the installation files into it.
 
-You are now ready to start DOSBox-X from the command-line, using the newly created win3x.conf.
+You are now ready to start DOSBox-X from the command-line, using the newly created ``win3x.conf``.
 This assumes that the ``dosbox-x`` program is in your path and ``win3x.conf`` is in your current directory.
 ....
 dosbox-x -conf win3x.conf
@@ -223,7 +223,7 @@ The Windows installation will now take place.
 Once the installation process has finished, you will be asked if you want to start windows or exit to DOS.
 Exit to DOS and type EXIT to close DOSBox-X.
 
-Now edit your win3x.conf config file and add the following lines into the [autoexec] section at the end of the file.
+Now edit your ``win3x.conf`` config file and add the following lines into the [autoexec] section at the end of the file.
 
 ....
 @ECHO OFF
@@ -294,7 +294,7 @@ IMGMOUNT C hdd.img -reservecyl 1
 BOOT C:
 ....
 
-Now start DOSBox-X with your win3x.conf config file from the command-line:
+Now start DOSBox-X with your ``win3x.conf`` config file from the command-line:
 
 ....
 dosbox-x -conf win3x.conf

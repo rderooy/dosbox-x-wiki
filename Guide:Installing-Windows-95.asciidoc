@@ -129,7 +129,7 @@ Alternatively, you can use the ``-fat`` option to instruct ``IMGMAKE`` to create
 NOTE: Only **Windows 95 OSR2** or later supports FAT32, for older Windows 95 releases you can only use FAT16 up to 2GB.
 
 First you need to start DOSBox-X from the command-line, using your newly created ``win95.conf``.
-This assumes that dosbox-x is in your path and win95.conf is in your current directory.
+This assumes that dosbox-x is in your path and ``win95.conf`` is in your current directory.
 ....
 dosbox-x -conf win95.conf
 ....
@@ -505,6 +505,9 @@ In the "Spool Settings", you must select "Print directly to the printer" and cli
 image::images/Windows:Windows_95_SPOOL.png[Windows 95 - QMS ColorScript Spool Settings]
 
 WARNING: Failing to change the spool setting, when printing to a file, will result in corrupted PostScript files!
+
+NOTE: If two files end up being generated instead of just one for a printjob, you will want to revert the above spool setting.
+And perhaps try changing the spool setting to "Start printing after last page is spooled".
 
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
