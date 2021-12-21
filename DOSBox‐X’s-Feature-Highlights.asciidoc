@@ -127,9 +127,9 @@ DOSBox-X can emulate the 3dfx Voodoo in either the low-level emulation mode (emu
 * **Support for NE2000 Ethernet for network features**
 +
 DOSBox-X supports the emulation of the Novell NE2000 network adapter, which allows you to connect to the Internet from inside DOSBox-X, such as a guest Windows 9x system running with DOSBox-X. Both PCAP and Slirp backends are supported. Look at the link:Guide%3ASetting-up-networking-in-DOSBox‐X{suffixappend}[Setting up networking in DOSBox-X] guide page for more information.
-* **Support for phone book mapping for the emulated modem**
+* **Support for UDP connection and phone book mapping for the emulated modem**
 +
-With this feature you can map fake phone numbers to Internet addresses which is useful for programs where limitations on phone number input field are too strict.
+With these features you can connect the emulated modem via reliable UDP (in addition to TCP), and you may also map fake phone numbers to Internet addresses which is useful for programs where limitations on phone number input field are too strict.
 * **Support for direct browsing for UNC network paths (Windows only)**
 +
 With this feature you can access or browse UNC network paths in the form \\COMPUTER\FOLDER directly on Windows systems, including listing, opening, writing, copying, and executing files on UNC network paths directly without having to mount them as DOS drives first.
@@ -157,6 +157,9 @@ DOSBox-X supports TrueType fonts (TTF) which provides high-resolution display fo
 * **Support for additional code pages, including both SBCS and DBCS code pages**
 +
 DOSBox-X supports many additional code pages for conversions between the host and guest systems, both for the TrueType font (TTF) output and other outputs, and this includes standard SBCS code pages and also DBCS code pages used by Chinese, Japanese, and Korean languages. With a suitable TTF font you will be able to run text-mode DOS applications in these languages using the TTF output as well as printing texts in these languages.
+* **Support for viewing Unicode (UTF-8 or UTF-16) text in the current code page**
++
+DOSBox-X allows you to view text encoded in UTF-8 or UTF-16 just like normal ASCII text in the current code page. For example, the command ``UTF8 < txtutf8.txt`` will view the UTF-8 encoded file named "txtutf8.txt", whereas the command ``UTF16 < txtutf16.txt`` will view the UTF-16 encoded file named "txtutf16.txt".
 * **Support for features such as V-Sync, overscan border and stereo swapping**
 * **Improved debugging features including built-in debugger and logging options**
 * **Including most patches from DOSBox ECE and many community contributions**
