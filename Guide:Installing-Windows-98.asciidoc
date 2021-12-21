@@ -106,8 +106,8 @@ Some quick rules about IMGMAKE (for more detail, see: link:Guide%3AManaging-imag
 
 Alternatively, you can use the ``-fat`` option to instruct ``IMGMAKE`` to create a certain FAT type (assuming that is possible for the harddisk size).
 
-First you need to start DOSBox-X from the command-line, using your newly created win98.conf.
-This assumes that dosbox-x is in your path and win98.conf is in your current directory.
+First you need to start DOSBox-X from the command-line, using your newly created ``win98.conf``.
+This assumes that dosbox-x is in your path and ``win98.conf`` is in your current directory.
 ....
 dosbox-x -conf win98.conf
 ....
@@ -143,7 +143,7 @@ This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which 
 Getting this image file is outside the scope of this guide.
 
 ## Starting the installation
-This assumes you have already started DOSBox-X with the win98.conf config file and created your harddisk image.
+This assumes you have already started DOSBox-X with the ``win98.conf`` config file and created your harddisk image.
 
 First mount the harddisk image you created earlier:
 ....
@@ -163,7 +163,7 @@ You will first get a Startup menu, where you need to select "Boot from CD-ROM".
 At this point it should format the harddisk and the installation process should start.
 
 When the Windows installer reboots, and your back at the DOSBox-X ``Z:\>`` prompt.
-Close DOSBox-X and edit your win98.conf config file, and add the following lines in the [autoexec] section at the end of the file:
+Close DOSBox-X and edit your ``win98.conf`` config file, and add the following lines in the [autoexec] section at the end of the file:
 
 ....
 IMGMOUNT C hdd.img
@@ -200,7 +200,7 @@ This method will start the install from DOSBox-X and does not require a bootable
 Getting this image file is outside the scope of this guide.
 
 ## Starting the installation
-This assumes you have already started DOSBox-X with the win98.conf config file and created your harddisk image.
+This assumes you have already started DOSBox-X with the ``win98.conf`` config file and created your harddisk image.
 
 First mount the harddisk image you created earlier:
 ....
@@ -301,7 +301,7 @@ IMGMOUNT D cd1.iso cd2.iso cd3.iso
 You can then swap between disk images with the swap option from the menu.
 
 # Enabling networking
-To enable networking, you first need to enable NE2000 adapter emulation in your win98.conf config file and select an appropriate back-end for the NE2000 emulation.
+To enable networking, you first need to enable NE2000 adapter emulation in your ``win98.conf`` config file and select an appropriate back-end for the NE2000 emulation.
 
 ## Enabling NE2000 in your DOSBox-X config file
 

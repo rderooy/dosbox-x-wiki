@@ -128,7 +128,7 @@ Alternatively, you can use the ``-fat`` option to instruct ``IMGMAKE`` to create
 
 NOTE: Only **Windows 95 OSR2** or later supports FAT32, for older Windows 95 releases you can only use FAT16 up to 2GB.
 
-First you need to start DOSBox-X from the command-line, using your newly created win95.conf.
+First you need to start DOSBox-X from the command-line, using your newly created ``win95.conf``.
 This assumes that dosbox-x is in your path and win95.conf is in your current directory.
 ....
 dosbox-x -conf win95.conf
@@ -169,7 +169,7 @@ This method is however considered to be the quickest one with the least number o
 Getting this image file is outside the scope of this guide.
 
 ## Starting the installation
-This assumes you have already started DOSBox-X with the win95.conf config file and created your harddisk image.
+This assumes you have already started DOSBox-X with the ``win95.conf`` config file and created your harddisk image.
 
 First mount the harddisk image you created earlier:
 ....
@@ -210,7 +210,8 @@ CD \WIN95
 SETUP
 ....
 
-Now run through the install process. The actual steps will not be covered in this guide but are pretty self-explanatory and detailed guides on the Windows 95 install process can be found online such as youtube.
+Now run through the install process.
+The actual steps will not be covered in this guide but are pretty self-explanatory and detailed guides on the Windows 95 install process can be found online such as youtube.
 
 When the installer reboots DOSBox-X, and your back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
 
