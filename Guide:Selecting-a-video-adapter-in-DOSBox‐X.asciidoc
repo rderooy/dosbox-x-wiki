@@ -226,7 +226,7 @@ as these later cards do not support the composite mode, you will get RGBI output
 But you may have to find a way to force the game to use CGA, if it also supports EGA or VGA.
 
 #### Keyboard shortcuts:
-By default the following keyboard shortcuts, specific to CGA are available:
+By default the following keyboard shortcuts, specific to CGA and PCjr are available:
 
 - CTRL-F7 switch between early and late model IBM CGA adapter emulation
 - CTRL-F8 switch between Auto, RGBI and Composite monitor output
@@ -335,7 +335,24 @@ Video memory is fixed to 128KiB and cannot be changed.
 
 NOTE: Enabling PCjr mode, also enables PCjr sound emulation
 
+In addition, DOSBox-X also has a few PCjr variants.
+
+* ``pcjr_composite`` emulates an early model IBM CGA connected to a composite monitor.
+* ``pcjr_composite2`` emulates a late model IBM CGA connected to a composite monitor.
+
+NOTE: The difference between ``machine=pcjr``, ``machine=pcjr_composite`` and ``machine=pcjr_composite2`` options, is that the former will only use composite mode if it detects that a game is trying to use artefact colours.
+While the later two will start in composite mode, so you will always get artefact colours even if the game was not designed for it.
+You can however use the CTRL-F7 and CTRL-F8 key combinations with any of them to switch to different output options.
+
 * link:https://en.wikipedia.org/wiki/IBM_PCjr#Video[Wikipedia article on the IBM PCjr]
+
+#### Keyboard shortcuts:
+By default the following keyboard shortcuts, specific to CGA and PCjr are available:
+
+- CTRL-F7 switch between early and late model IBM CGA adapter emulation
+- CTRL-F8 switch between Auto, RGBI and Composite monitor output
+- CTRL-Shift-F7 Decrease Hue
+- CTRL-Shift-F8 Increase Hue
 
 [.float-group]
 --
