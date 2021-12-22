@@ -456,6 +456,7 @@ It was not very successful, as IBM introduced VGA shortly after which has a simi
 This mode can be set using ``machine=jega`` in your DOSBox-X config file.
 Video memory defaults to 256KiB.
 
+* link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[Guide: East Asian language support in DOSBox‐X]
 * link:https://en.wikipedia.org/wiki/AX_architecture[Wikipedia article on AX]
 
 ## MCGA
