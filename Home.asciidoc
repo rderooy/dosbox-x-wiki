@@ -203,6 +203,9 @@ Explains how to install and run Microsoft Windows 1.x/2.0/3.x and 9x/ME in DOSBo
 Explains how to setup and play DOS games in DOSBox-X.
 * link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[Guide: DOS demoscene software in DOSBox-X]
 +
+Explains about the different supported video modes
+*  link:Guide%3ASelecting-a-video-adapter-in-DOSBox‐X{suffixappend}[Guide: Selecting a video adapter in DOSBox-X]
++
 Explains how to use DOSBox-X with DOS software from the demoscene.
 * link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[Guide: PC‐98 emulation in DOSBox‐X]
 +
@@ -262,7 +265,7 @@ Currently, new DOSBox-X versions are usually made public on the last day of a mo
 
 * **Can I start to run my DOS program or game immediately?**
 +
-To start your DOS program or game immediately when DOSBox-X runs, you can put the executable program in the [autoexec] section of DOSBox-X's configuration. Or you can provide the executable program as the parameter to the DOSBox-X program, e.g. ``dosbox-x myapp.exe``. As DOSBox-X is highly customizable, there are also further options to improve your experience. For example, if you want to bypass the DOSBox-X BIOS splash screen, you can set the config option ``fastbioslogo`` to ``true``; if you want to bypass the welcome banner, you can set the config option ``startbanner`` to ``false``. Alternatively, you may want to use the command-line option "-fastlaunch" (see the link:DOSBox‐X’s-Command%E2%80%90Line-Options{suffixappend}[DOSBox-X's Command-Line Options] page for a list of DOSBox-X's supported command-line options), which will bypass both the BIOS splash screen and the welcome banner when DOSBox-X starts.  
+To start your DOS program or game immediately when DOSBox-X runs, you can put the executable program in the [autoexec] section of DOSBox-X's configuration. Or you can provide the executable program as the parameter to the DOSBox-X program, e.g. ``dosbox-x myapp.exe``. As DOSBox-X is highly customizable, there are also further options to improve your experience. For example, if you want to bypass the DOSBox-X BIOS splash screen, you can set the config option ``fastbioslogo`` to ``true``; if you want to bypass the welcome banner, you can set the config option ``startbanner`` to ``false``. Alternatively, you may want to use the command-line option "-fastlaunch" (see the link:DOSBox‐X’s-Command%E2%80%90Line-Options{suffixappend}[DOSBox-X's Command-Line Options] page for a list of DOSBox-X's supported command-line options), which will bypass both the BIOS splash screen and the welcome banner when DOSBox-X starts.
 
 * **How can I save and load a state in DOSBox-X?**
 +
