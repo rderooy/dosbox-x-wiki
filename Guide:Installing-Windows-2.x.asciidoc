@@ -330,7 +330,7 @@ image::images/Windows:Windows_2.03_SETUP_09.png[Windows 2.03 SETUP printer]
 
 If you indicated wanting to setup a printer, SETUP now asks you which model.
 
-For this guide, scroll to the "**Epson LQ-800 [Epson LQ 2]**", and press Enter.
+For this guide, scroll to the "**Epson LQ-850 [Epson LQ 2]**" (or **Epson LQ-1050** for wide formats), and press Enter.
 
 Later releases may have more options, such as a "**Generic / Text Only**" printer which can also be used.
 
