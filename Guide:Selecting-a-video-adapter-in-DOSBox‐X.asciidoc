@@ -170,8 +170,9 @@ MDA stands for *Monochrome Display Adapter*, and it was introduced by IBM alongs
 As the name implies it is monochrome. It was normally used in combination with a green or amber display.
 Moreover, it can only display text and characters from the built-in font in 80 columns and 25 lines with a font size of 7x11 (in a 9x14 'box').
 The only extras that it has are underlined text, bright text and reverse video.
+The vertical refresh of MDA is only 50Hz, but with the phosphor glow of green and amber monochrome monitors this was not noticeable.
 
-The main selling feature of this adapter, compared to CGA, was its clarity as it uses effectively a 720x348 resolution, which made it very popular for business software.
+The main selling feature of this adapter, compared to CGA, was its clarity as it uses effectively a 720x350 resolution, which made it very popular for business software.
 For games your going to be limited to text mode games, like text adventures.
 
 This mode can be set using ``machine=mda`` in your DOSBox-X config file.
@@ -198,6 +199,7 @@ CGA stands for *Color Graphics Adapter*, and like MDA was introduced by IBM alon
 As the name implies, it supports colour, and unlike MDA, it supports drawing to the screen which made it popular for games.
 Due to the higher price of the adapter and monitor, and the lower resolution, it was less popular for business use than MDA and later Hercules.
 Also note that CGA is not backward compatible with MDA.
+The vertical refresh of CGA is 60Hz, which matches up well with the majority of modern 60Hz LCD displays.
 
 #### Graphics modes:
 
@@ -292,8 +294,9 @@ NOTE: To get the above CGA RGB screenshot of KQ1 with ``machine=cga_rgb``, it wa
 
 ## Hercules
 The Hercules Graphics Card was released in 1982 by Hercules Computer Technology.
-It is a monochrome card that is backward compatible with MDA, with the addition of a single 720x348 graphics mode.
+It is a monochrome card that is backward compatible with MDA, with the addition of a single 720x350 graphics mode.
 This made it a very popular card for businesses, and due to its graphics support it is supported by many games.
+The vertical refresh of Hercules like MDA is only 50Hz, but with the phosphor glow of green and amber monochrome monitors this was not noticeable.
 
 This mode can be set using ``machine=hercules`` in your DOSBox-X config file.
 Video memory is fixed to 64KiB and cannot be changed.
@@ -329,6 +332,8 @@ It's integrated video card is backwards compatible with CGA, but adds a few new 
 - 160x200 at 16 colours
 - 320x200 at 16 colours
 - 640x200 at 4 colours
+
+The vertical refresh of the PCjr like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCD displays.
 
 This mode can be set using ``machine=pcjr`` in your DOSBox-X config file.
 Video memory is fixed to 128KiB and cannot be changed.
@@ -369,6 +374,8 @@ Later Tandy 1000 models added an additional video mode, called "Tandy Video II" 
 Tandy computers with Tandy Graphics were available on the market for much longer than the IBM PCjr, resulting in many games that supported it.
 Tandy computers were also available with faster processors, up to a 286 running at 10MHz while the original IBM PCjr was only ever available with a 4.77MHz 8088.
 
+The vertical refresh of the Tandy 1000 like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCD displays.
+
 This mode can be set using ``machine=tandy`` in your DOSBox-X config file.
 Video memory is fixed to 128KiB and cannot be changed.
 
@@ -397,6 +404,8 @@ Some EGA clones even provided 256KiB, and additional high-res video modes.
 
 One feature it dropped however, was the composite output support.
 As such, it does not support the CGA artefact colours.
+
+The vertical refresh of EGA like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCD displays.
 
 The EGA emulation provided by DOSBox-X by default provides 256KiB of video RAM, by setting ``vmemsizekb=`` in the ``[video]``section of the DOSBox-X config file, it is possible to reduce it instead to 64 or 128KB. e.g.,
 ....
@@ -453,6 +462,8 @@ Very little software exists that can use this mode.
 One example was the bundled GEM Paint program, and another is a pretty bad and obscure boxing game "link:https://www.mobygames.com/game/dos/frank-brunos-boxing[Frank Bruno's Boxing]".
 Lastly there is a link:http://sierrahelp.com/Patches-Updates/MiscUpdates.html[PC1512.DRV] driver for old Sierra SCI0 and SCI1 games.
 
+The vertical refresh of the Amstrad like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCD displays.
+
 This mode can be set using ``machine=amstrad`` in your DOSBox-X config file.
 Video memory is fixed to 64KiB and cannot be changed.
 
@@ -471,6 +482,8 @@ JEGA is a variation of EGA for the Japanese market, conceived by Microsoft Japan
 It's intended purpose was the display of KANJI DBCS (Double Byte Character Set) which required a higher resolution, as such this added a 640x480 video mode.
 
 It was not very successful, as IBM introduced VGA shortly after which has a similar video mode.
+
+The vertical refresh of JEGA like EGA and CGA is 60Hz, which matches up well with the majority of modern 60Hz LCD displays.
 
 This mode can be set using ``machine=jega`` in your DOSBox-X config file.
 Video memory defaults to 256KiB.
