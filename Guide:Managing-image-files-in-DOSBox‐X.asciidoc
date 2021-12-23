@@ -631,8 +631,8 @@ hdiutil detach /dev/disk6
 # CD-ROM or DVD images
 DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in ISO, CUE+BIN or MDF image format.
 
-ISO is the easiest format to work with, as long as there is only a single track on the CD or DVD.
-If the CD or DVD contains multiple tracks, the use of CUE+BIN or MDF is required.
+ISO is the easiest format to work with, as long as there is only a single data track on the CD or DVD.
+If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audio) the use of CUE+BIN or MDF is required.
 
 ## Mounting CD or DVD images
 Mounting a CD or DVD image in DOSBox-X is typically as simple as
