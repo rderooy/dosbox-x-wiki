@@ -120,7 +120,7 @@ Checks a volume and returns a status report.
 Usage: CHKDSK [drive:] [options]
 +
 Note: It uses the CHKDSK command from FreeDOS.
-* **CHOICE** (internal command)
+* **CHOICE** (external command)
 +
 Waits for a key press and sets ERRORLEVEL. Displays the given prompt followed by [Y,N]? for yes or no response.
 +
