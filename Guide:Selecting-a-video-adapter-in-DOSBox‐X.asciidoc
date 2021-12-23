@@ -374,6 +374,8 @@ Video memory is fixed to 128KiB and cannot be changed.
 
 NOTE: Enabling Tandy mode, also enables Tandy sound emulation (which is likewise derived from the IBM PCjr)
 
+NOTE: While early Tandy 1000 models had composite out similar to CGA and the PCjr, this is not currently emulated in DOSBox-X.
+
 NOTE: Many games that support both Tandy and EGA, look near identical in both. It would appear that game developers took a lowest-common-denominator approach and simply used the same resolution and graphic assets for both.
 
 * link:https://en.wikipedia.org/wiki/Tandy_Graphics_Adapter[Wikipedia article on Tandy Graphics]
