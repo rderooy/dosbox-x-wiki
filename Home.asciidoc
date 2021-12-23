@@ -203,10 +203,10 @@ Explains how to install and run Microsoft Windows 1.x/2.0/3.x and 9x/ME in DOSBo
 Explains how to setup and play DOS games in DOSBox-X.
 * link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[Guide: DOS demoscene software in DOSBox-X]
 +
-Explains about the different supported video modes
+Explains how to use DOSBox-X with DOS software from the demoscene.
 *  link:Guide%3ASelecting-a-video-adapter-in-DOSBox‐X{suffixappend}[Guide: Selecting a video adapter in DOSBox-X]
 +
-Explains how to use DOSBox-X with DOS software from the demoscene.
+Explains about the different supported video modes
 * link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[Guide: PC‐98 emulation in DOSBox‐X]
 +
 Explains DOSBox-X's PC-98 system and how to use it to run PC-98 games or applications in DOSBox-X.
