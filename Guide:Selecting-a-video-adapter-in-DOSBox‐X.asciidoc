@@ -480,7 +480,7 @@ image::images/Game:KQ1_SCI_Amstrad.png[float="left"]
 
 The NEC PC-9800, simply known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese DBCS (Double Byte Character Set) characters. It's supported in DOSBox-X by setting ``machine=pc98`` in your DOSBox-X config file. More information about PC-98 support can be found in the PC-98 guide page:
 
-* link:Guide%3APC-98-emulation-in-DOSBox‐X{suffixappend}[Guide: PC-98 emulation in DOSBox‐X]
+* link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[Guide: PC‐98 emulation in DOSBox‐X]
 
 ## JEGA
 JEGA is a variation of EGA for the Japanese market, conceived by Microsoft Japan and released in 1987 as part of AX (Architecture eXtended).
@@ -495,13 +495,21 @@ This mode can be set using ``machine=jega`` in your DOSBox-X config file.
 Video memory defaults to 256KiB.
 
 * link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[Guide: East Asian language support in DOSBox‐X]
-* link:https://en.wikipedia.org/wiki/AX_architecture[Wikipedia article on AX]
+
+## DCGA
+DCGA is the video mode used by the Olivetti M24, AT&T 6300 and Toshiba T3100. DOSBox-X emulates the DCGA mode via the VGA mode.
+
+This mode can be enter via ``DCGA`` command when you are in a VGA video mode.
+
+If you enable Toshiba J-3100 emulation (by setting ``dosv=jp`` and ``j3100=on`` in your DOSBox-X config file), then the J-3100 mode will be enabled when DOSBox-X starts. Typing ``VGA`` command to go to the Japanese DOS/V mode, and then typing ``DCGA`` command will return to the J-3100 emulation mode.
+
+* link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[Guide: East Asian language support in DOSBox‐X]
 
 ## MCGA
 MCGA stands for *Multi-Color Graphics Array* and was introduced by IBM in 1987 as integrated in the IBM PS/2 Model 30 and a bit later the Model 25.
 No stand-alone MCGA cards were ever produced.
 
-MCGA supports all CGA display modes (RGBI only) plus 640×480 monochrome at a refresh rate of 60 Hz, and 320×200 with 256 colours (out of a palette of 262,144) at 70 Hz.
+MCGA supports all CGA display modes (RGBI only) plus 640×480 monochrome at a refresh rate of 60 Hz, and 320×200 with 256 colours (out of a palette of 262,144) at 70 Hz.p
 It does not however provide backwards compatibility with EGA.
 In effect, MCGA can be thought of as either an enhanced CGA card, or a cost-reduced VGA card.
 
