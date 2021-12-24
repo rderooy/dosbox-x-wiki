@@ -476,10 +476,16 @@ Video memory is fixed to 64KiB and cannot be changed.
 image::images/Game:KQ1_SCI_Amstrad.png[float="left"]
 --
 
+## PC-98
+
+The NEC PC-9800, simply known as the PC-98, were a family of computers made by NEC and sold in Japan throughout 1982 to 2000, which used MS-DOS with modifications to support the PC-98 BIOS and Japanese DBCS (Double Byte Character Set) characters. It's supported in DOSBox-X by setting ``machine=pc98`` in your DOSBox-X config file. More information about PC-98 support can be found in the PC-98 guide page:
+
+* link:Guide%3APC-98-emulation-in-DOSBox‐X{suffixappend}[Guide: PC-98 emulation in DOSBox‐X]
+
 ## JEGA
 JEGA is a variation of EGA for the Japanese market, conceived by Microsoft Japan and released in 1987 as part of AX (Architecture eXtended).
 
-It's intended purpose was the display of KANJI DBCS (Double Byte Character Set) which required a higher resolution, as such this added a 640x480 video mode.
+Its intended purpose was the display of the Japanese characters which required a higher resolution, as such this added a 640x480 video mode.
 
 It was not very successful, as IBM introduced VGA shortly after which has a similar video mode.
 
