@@ -509,7 +509,7 @@ If you enable Toshiba J-3100 emulation (by setting ``dosv=jp`` and ``j3100=on`` 
 MCGA stands for *Multi-Color Graphics Array* and was introduced by IBM in 1987 as integrated in the IBM PS/2 Model 30 and a bit later the Model 25.
 No stand-alone MCGA cards were ever produced.
 
-MCGA supports all CGA display modes (RGBI only) plus 640×480 monochrome at a refresh rate of 60 Hz, and 320×200 with 256 colours (out of a palette of 262,144) at 70 Hz.p
+MCGA supports all CGA display modes (RGBI only) plus 640×480 monochrome at a refresh rate of 60 Hz, and 320×200 with 256 colours (out of a palette of 262,144) at 70 Hz.
 It does not however provide backwards compatibility with EGA.
 In effect, MCGA can be thought of as either an enhanced CGA card, or a cost-reduced VGA card.
 
