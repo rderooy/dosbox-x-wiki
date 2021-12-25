@@ -94,7 +94,10 @@ Larger values may be possible with tweaks but are not covered here.
 
 # General installation Notes
 
-* Some parts of the installation can take a considerable amount of time. You can speed this up somewhat by using the DOSBox-X Turbo mode. From the drop-down menu select "CPU" followed by "Turbo (Fast Forward)". But if you decide to use this, be sure to disable Turbo mode whenever you need to enter data or make choices, as it can cause spurious keypresses to be registered causing undesirable effects. It can also cause problems with double click with the mouse not working and audio will also not sound properly, so be sure to disable it when using Windows in DOSBox-X.
+* Some parts of the installation can take a considerable amount of time.
+You may be able to speed this up considerably (depending on host CPU speed) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
+This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
+Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
 * When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 * If you get a prompt stating that C:\WINDOWS already exists, ignore it, and continue the installation.
 * During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. If you have NE2000 enabled in your DOSBox-X config file, you may want to check the Network adapter check box. Your DOSBox-X CD-ROM and Sound Card will be detected regardless if you check its box or not.
