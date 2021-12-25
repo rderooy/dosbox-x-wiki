@@ -255,13 +255,13 @@ Forwards one or more TCP ports from the host into the DOS guest.
 
 The format is:
 
-* port1  port2  port3 ... (e.g., 21 80 443)
+* port1  port2  port3 ... (e.g., ``21 80 443``)
 ** This which will forward FTP, HTTP, and HTTPS into the DOS guest.
-* If the ports are privileged on the host, a host:guest mapping can be used ... (e.g., 8021:21 8080:80).
+* If the ports are privileged on the host, a host:guest mapping can be used ... (e.g., ``8021:21 8080:80``).
 ** This will forward ports 8021 and 8080 on the host to FTP and HTTP in the guest.
-* A range of adjacent ports can be abbreviated with a dash: start-end ... (e.g., 27910-27960)
+* A range of adjacent ports can be abbreviated with a dash: start-end ... (e.g., ``27910-27960``)
 ** This will forward ports 27910 to 27960 into the DOS guest.
-* Mappings and ranges can be combined, too: hstart-hend:gstart-gend ..., (e.g, 8040-8080:20-60)
+* Mappings and ranges can be combined, too: hstart-hend:gstart-gend ..., (e.g, ``8040-8080:20-60``)
 ** This forwards ports 8040 to 8080 on the host into ports 20 to 60 in the guest
 
 Notes:
