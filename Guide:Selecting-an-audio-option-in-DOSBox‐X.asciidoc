@@ -168,7 +168,7 @@ By default DOSBox-X, just like regular DOSBox on which is it based, enables emul
 Some games support Roland MT-32 and/or General MIDI output.
 See the link:Guide%3ASetting-up-MIDI-in-DOSBox‐X{suffixappend}[Guide: Setting up MIDI in DOSBox-X] for instructions.
 
-MIDI was a very expensive option at the time, that is able to deliver high quality music, but was poorly suited for sound effects and could not produce voice.
+MIDI was a very expensive option at the time, that is able to deliver high quality music, but is poorly suited for sound effects and can not produce voice.
 
 Some early DOS games with MIDI support may only offer you one output option, so you need to choose for instance the Roland MT-32 or Adlib, but not both.
 Depending on the game, this may mean that you get MIDI background music, but no sound or voice effects if you choose the MT-32.
