@@ -50,7 +50,7 @@ By default DOSBox-X, just like regular DOSBox on which is it based, enables emul
 | TI SN76489
 | -
 
-| Adlib Music Synthesizer Card
+| AdLib Music Synthesizer Card
 | 1987
 | 9
 | -
@@ -170,7 +170,7 @@ See the link:Guide%3ASetting-up-MIDI-in-DOSBox‐X{suffixappend}[Guide: Setting 
 
 MIDI was a very expensive option at the time, that is able to deliver high quality music, but is poorly suited for sound effects and cannot produce voice.
 
-Some early DOS games with MIDI support may only offer you one output option, so you need to choose for instance the Roland MT-32 or Adlib, but not both.
+Some early DOS games with MIDI support may only offer you one output option, so you need to choose for instance the Roland MT-32 or AdLib, but not both.
 Depending on the game, this may mean that you get MIDI background music, but no sound or voice effects if you choose the MT-32.
 Some games however did try to map all or some of the sound effects to MIDI sounds.
 
@@ -279,7 +279,7 @@ The AdLib Music Synthesizer Card was released by Ad Lib in 1987.
 It was the first popular sound card for IBM PC's and compatibles.
 It was an easy card to clone, resulting in many AdLib compatible sound cards.
 
-Adlib can be emulated with the following config settings:
+AdLib can be emulated with the following config settings:
 ....
 [sblaster]
 sbtype=none
@@ -292,7 +292,7 @@ NOTE: Some programs may require the AdLib ``SOUND.COM`` TSR to be loaded. See th
 
 * link:https://en.wikipedia.org/wiki/Ad_Lib,_Inc.[Wikipedia: AdLib]
 * link:http://www.dosdays.co.uk/topics/Manufacturers/adlib.php[DOS Days: AdLib]
-* link:https://www.mobygames.com/attribute/sheet/attributeId,21/[MobyGames: Games supporting Adlib sound]
+* link:https://www.mobygames.com/attribute/sheet/attributeId,21/[MobyGames: Games supporting AdLib sound]
 
 ## CMS / GameBlaster
 FM synthesizer card, released by Creative Technology in 1987.
@@ -612,11 +612,11 @@ Type of Yamaha OPL emulation.
 * Default value: false
 * Valid values: true, false
 
-If set, Adlib/OPL emulation will signal 'overflow' on timers after 50 I/O reads.
+If set, AdLib/OPL emulation will signal 'overflow' on timers after 50 I/O reads.
 This is a temporary hack to work around timing bugs noted in DOSBox-X.
 
-Certain games (Wolfenstein 3D) poll the Adlib status port a fixed number of times assuming that the poll loop takes long enough for the Adlib timer to run out.
-If the game cannot reliably detect Adlib at higher cycles counts, but can reliably detect at lower cycles counts, set this option.
+Certain games (Wolfenstein 3D) poll the AdLib status port a fixed number of times assuming that the poll loop takes long enough for the AdLib timer to run out.
+If the game cannot reliably detect AdLib at higher cycles counts, but can reliably detect at lower cycles counts, set this option.
 
 NOTE: Technically this decreases emulation accuracy, however it also reflects the fact that DOSBox-X's I/O timing code needs some work to better match the slowness of the ISA bus per I/O read in consideration of DOS games.
 
@@ -814,7 +814,7 @@ oplmode=opl3gold
 
 It will work with some games in this mode, such as Dune 2.
 
-NOTE: Adlib Gold 1000 emulation is experimental, it is not meant for regular use.
+NOTE: AdLib Gold 1000 emulation is experimental, it is not meant for regular use.
 
 - link:http://www.vgmpf.com/Wiki/index.php/AdLib_Gold_1000[VGMPF: AdLib Gold 1000]
 - link:https://168-168-never.blogspot.com/2021/03/the-adlib-gold-experience.html[Blogspot: The AdLib Gold Experience]
