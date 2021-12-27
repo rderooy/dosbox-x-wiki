@@ -19,6 +19,8 @@ The available audio option can be found in a few sections, such as ``[pcspeaker]
 
 By default DOSBox-X, just like regular DOSBox on which is it based, enables emulation of a *PC Speaker* and the *SoundBlaster 16*.
 
+NOTE: DOSBox-X does not support microphone and/or line-in for any of the emulated soundcards.
+
 [cols=6*,stripes=even]
 |===
 
@@ -168,7 +170,7 @@ By default DOSBox-X, just like regular DOSBox on which is it based, enables emul
 Some games support Roland MT-32 and/or General MIDI output.
 See the link:Guide%3ASetting-up-MIDI-in-DOSBox‐X{suffixappend}[Guide: Setting up MIDI in DOSBox-X] for instructions.
 
-MIDI was a very expensive option at the time, that is able to deliver high quality music, but is poorly suited for sound effects and cannot produce voice.
+MIDI was a very expensive option at the time, and therefore rare. It is able to deliver high quality music, but is poorly suited for sound effects and cannot produce voice.
 
 Some early DOS games with MIDI support may only offer you one output option, so you need to choose for instance the Roland MT-32 or AdLib, but not both.
 Depending on the game, this may mean that you get MIDI background music, but no sound or voice effects if you choose the MT-32.
@@ -345,9 +347,7 @@ The following option is available in the ``[speaker]`` section of you config fil
 * Valid values: true, false
 
 Enables or disables Disney Sound Source emulation on the parallel port.
-This feature is *Covox Voice Master* and *Covox Speech Thing* compatible.
-
-??? is this really Covox Voice Master compatible, as that was a ISA device with DMA support!!! Need to test with a compatible game like Alone in the Dark.
+This feature is backward compatible with the *Covox Speech Thing* and *Covox Voice Master* parallel port dongles.
 
 ## Creative SoundBlaster
 Creative Technology created a range of SoundBlaster cards, which quickly became the industry standard for PC sound.
@@ -613,12 +613,9 @@ Type of Yamaha OPL emulation.
 * Valid values: true, false
 
 If set, AdLib/OPL emulation will signal 'overflow' on timers after 50 I/O reads.
-This is a temporary hack to work around timing bugs noted in DOSBox-X.
 
-Certain games (Wolfenstein 3D) poll the AdLib status port a fixed number of times assuming that the poll loop takes long enough for the AdLib timer to run out.
+Certain games (e.g., Wolfenstein 3D) poll the AdLib status port a fixed number of times assuming that the poll loop takes long enough for the AdLib timer to run out.
 If the game cannot reliably detect AdLib at higher cycles counts, but can reliably detect at lower cycles counts, set this option.
-
-NOTE: Technically this decreases emulation accuracy, however it also reflects the fact that DOSBox-X's I/O timing code needs some work to better match the slowness of the ISA bus per I/O read in consideration of DOS games.
 
 #### oplemu
 * Default value: default
