@@ -901,6 +901,8 @@ As such it may not work properly with some programs, and it is limited to MDA on
 
 NOTE: It is advised that you set your terminal window to 80x25 as it may experience rendering issues otherwise.
 
+NOTE: Because both the second display code and the integrated debugger uses the terminal, they are mutually exclusive. e.g., the "Start DOSBox-X Debugger" option will be greyed out when you start with the ``-display2`` option.
+
 links:
 
 * link:http://www.seasip.info/VintagePC/dualhead.html[Dual-Head Operation on a Vintage PC]
