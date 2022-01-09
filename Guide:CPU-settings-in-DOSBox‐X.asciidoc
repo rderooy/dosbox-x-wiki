@@ -23,6 +23,7 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 |===
 | | 8086 | 8086 prefetch | 80186 | 80186 prefetch | 286 | 286 prefetch | 386 | 386 prefetch
 
+|Real mode                                  |x|x|x|x|x|x|x|x
 |Protected mode                             | | | | |x|x|x|x
 |Virtual 8086 mode                          | | | | | | |x|x
 |386 CPUID                                  | | | | | | |x|x
@@ -38,6 +39,7 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 |===
 | | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | ppro slow | pentium mmx | pentium ii | pentium iii
 
+|Real mode                                            |x|x|x|x|x|x|x|x|x|x
 |Protected mode                                       |x|x|x|x|x|x|x|x|x|x
 |Virtual 8086 mode                                    |x|x|x|x|x|x|x|x|x|x
 |486 CPUID                                            | | |x|x|x| | | | |
