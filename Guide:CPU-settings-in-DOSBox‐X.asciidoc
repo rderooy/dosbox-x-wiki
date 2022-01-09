@@ -32,29 +32,29 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 |Prefetch queue emulation                   | |x| |x| |x| |x
 |===
 
-### 486 to Pentium Pro
+### 486 to Pentium III
 .cputype options
 [cols=",^,^,^,^,^,^,^,^"]
 |===
-| | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | pentium mmx | ppro slow
+| | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | ppro slow | pentium mmx | Pentium II | Pentium III
 
-|Protected mode                                       |x|x|x|x|x|x|x|x
-|Virtual 8086 mode                                    |x|x|x|x|x|x|x|x
-|486 CPUID                                            | | |x|x|x| | |
-|Pentium CPUID                                        | | | | | |x|x|
-|Pentium Pro CPUID                                    | | | | | | | |x
-|486 specific page access level calculation           |x|x|x|x| | | |
-|loose (fast) page privilege check                    | | | | | | | |
-|tight (slow) page privilege check                    | | | | | | | |x
-|BSWAP, XADD, INVD, WBINVD                            |x|x|x|x|x|x|x|x
-|CMPXCHG                                              | | |x|x|x|x|x|x
-|RDTSC                                                | | | | |x|x|x|x
-|CMPXCHG8B,RDMSR, WRMSR, RSM                          | | | | | |x|x|x
-|CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | | |x
-|486 specific CR register behaviour                   |x|x|x|x|x| | |
-|Pentium specific CR register behaviour               | | | | | |x|x|x
-|Prefetch queue emulation                             | |x| |x| | | |
-|MMX instruction set                                  | | | | | | |x|
+|Protected mode                                       |x|x|x|x|x|x|x|x|x|x
+|Virtual 8086 mode                                    |x|x|x|x|x|x|x|x|x|x
+|486 CPUID                                            | | |x|x|x| | | | |
+|Pentium CPUID                                        | | | | | |x|x|x|x|x
+|486 specific page access level calculation           |x|x|x|x| | | | | |
+|loose (fast) page privilege check                    | | | | | | | | | |
+|tight (slow) page privilege check                    | | | | | | |x| | |
+|BSWAP, XADD, INVD, WBINVD                            |x|x|x|x|x|x|x|x|x|x
+|CMPXCHG                                              | | |x|x|x|x|x|x|x|x
+|RDTSC                                                | | | | |x|x|x|x|x|x
+|CMPXCHG8B,RDMSR, WRMSR, RSM                          | | | | | |x|x|x|x|x
+|CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | |x| |x|x
+|486 specific CR register behaviour                   |x|x|x|x|x| | | | |
+|Pentium specific CR register behaviour               | | | | | |x|x|x|x|x
+|Prefetch queue emulation                             | |x| |x| | | | | |
+|MMX instruction set                                  | | | | | | | |x|x|x
+|SSE instruction set                                  | | | | | | | | | |x
 |===
 
 ### Vanilla DOSBox CPU types
@@ -64,7 +64,7 @@ Vanilla DOSBox has a few other cputype options not available in DOSBox-X
 * 486_slow
 * pentium_slow
 
-The ``slow`` part of the name refers to the page privilege check.
+The ``slow`` part of the name refers to the more accurate page privilege check emulation.
 These cputype options are ignored in DOSBox-X, and ``auto`` will be used instead.
 
 ### Floating Point Unit (FPU)
@@ -86,7 +86,7 @@ If your running Windows as the host OS, you can either disable the FPU emulation
 
 #### Weitek FPU
 Weitek in the 80's made Math co-processors compatible with the FPU socket found on x86 systemboards.
-But note that these FPUs were not software compatible with Intel and AMD FPU units, and required special software that was specifically written for it.
+But note that these Weitek FPUs are not software compatible with Intel and AMD FPU units, and can only be used by applications that specifically support it.
 DOSBox-X supports emulation of Weitek FPUs, but only in combination with 386 and 486 cpu types.
 ....
 [dosbox]
