@@ -37,8 +37,9 @@ NOTE: Windows 95 or other pre-emptive multitasking OSes will not work with the d
 * Default value: true
 * Valid values: true, false
 
+Floating Point Unit (FPU).
 Also referred to as the x87, or Math co-processor.
-An emulated FPU is enabled by default.
+FPU emulation is enabled by default.
 
 If ``cputype=`` is a 486 variation and ``fpu=true``, the CPUID instruction will report a 486DX, while if ``fpu=false``, it will report a 486SX.
 
