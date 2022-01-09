@@ -49,7 +49,7 @@ Disabling the FPU could cause problems with software that expects a FPU to be pr
 
 WARNING: The real FPUs have an 80bit precision.
 This is however not supported with Windows DOSBox-X builds compiled using the Microsoft Visual Studio (MSVS) compiler, which is limited to just 64bits precision.
-Very few DOS games used the FPU, but for those that do, this lesser precision can cause a verity of problem, from graphical glitches to crashes, to incorrect outcomes in DOS applications.
+Very few DOS games used the FPU, but for those that do, this lesser precision can cause a variety of problems, from graphical glitches to crashes, to incorrect outcomes in DOS applications.
 If your running Windows as the host OS, you can either disable the FPU emulation, or if proper FPU emulation is important, use the MinGW builds.
 
 ### segment limits
