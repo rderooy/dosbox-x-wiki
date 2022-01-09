@@ -36,7 +36,7 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 .cputype options
 [cols=",^,^,^,^,^,^,^,^"]
 |===
-| | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | ppro slow | pentium mmx | Pentium II | Pentium III
+| | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | ppro slow | pentium mmx | pentium ii | pentium iii
 
 |Protected mode                                       |x|x|x|x|x|x|x|x|x|x
 |Virtual 8086 mode                                    |x|x|x|x|x|x|x|x|x|x
