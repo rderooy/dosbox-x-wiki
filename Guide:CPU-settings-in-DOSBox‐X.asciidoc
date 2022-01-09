@@ -170,10 +170,20 @@ According to forum discussions, setting this to 1 can aid debugging, however doi
 
 CPU Type used in emulation.
 
-* "auto" emulates a 486 which tolerates Pentium instructions.
-* "experimental" enables newer instructions not normally found in the CPU types emulated by DOSBox-X, such as FISTTP.
-* *_prefetch CPU types enable more accurate prefetch queue emulation, at the expense of speed
-* *_slow CPU types enable more accurate page privilege check emulation, at the expense of speed
+* ``auto`` - Emulates a 486 which tolerates Pentium instructions.
+* ``8086`` - Similar to the 8088 found in the original IBM PC and IBM PC XT.
+* ``80186`` - Similar to the 8086, rarely found in IBM PC Compatibles.
+* ``286`` - Sequel to the 8086, as found in the IBM PC AT. Also called the 80286.
+* ``386`` - Sequel to the 286. Also called the 80386. First 32-bit capable x86 CPU.
+* ``486`` - Sequel to the 386. Also called the 80486 or i486.
+* ``pentium`` - Sequel to the 486. Also called the 586.
+* ``pentium_mmx`` - Similar to the Pentium, but with additional (MMX) instructions added.
+* ``ppro`` - Pentium Pro, sequel to the Pentium (without MMX). Also called the 686.
+* ``pentium_ii`` - Pentium II (aka P2), sequel to the Pentium Pro, but with MMX instructions.
+* ``pentium_iii`` - Pentium III (aka P3), sequel to the Pentium II, with added SSE instructions.
+* ``experimental`` - Enables newer instructions not normally found in the CPU types emulated by DOSBox-X, such as FISTTP.
+* ``*_prefetch`` - CPU types enable more accurate prefetch queue emulation, at the expense of speed
+* ``*_slow`` - CPU types enable more accurate page privilege check emulation, at the expense of speed
 
 NOTE: Regular DOSBox has a few other cputype options not available in DOSBox-X (``386_slow``, ``486_slow`` and ``pentium_slow``). These cputype options are ignored in DOSBox-X, and ``auto`` will be used instead.
 
