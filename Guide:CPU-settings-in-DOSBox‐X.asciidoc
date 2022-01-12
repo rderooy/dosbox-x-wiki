@@ -239,7 +239,7 @@ NOTE: More host CPU cores do not help to increase emulation speed. A newer gener
 * Default value: 10
 * Valid values: 1-1000000
 
-Amount of cycles to increase with the mapped keyboard shortcut
+Amount of cycles to increase with the mapped keyboard shortcut.
 Setting the value lower than 100, and it will be interpreted as a percentage.
 
 The default value of 10 will be interpreted as 10%.
@@ -248,7 +248,7 @@ The default value of 10 will be interpreted as 10%.
 * Default value: 20
 * Valid values: 1-1000000
 
-Amount of cycles to decrease with the mapped keyboard shortcut
+Amount of cycles to decrease with the mapped keyboard shortcut.
 Setting the value lower than 100, and it will be interpreted as a percentage.
 
 The default value of 20 will be interpreted as 20%.
