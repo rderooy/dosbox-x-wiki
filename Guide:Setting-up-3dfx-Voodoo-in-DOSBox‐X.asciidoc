@@ -87,10 +87,10 @@ This setting is located in the [cpu] section of the DOSBox-X config file.
 
 Normally the CPU will fire an Invalid Opcode exception in the case of an undefined MSR (Model-specific register).
 
-This option is off by default, enable if using software or drivers that assumes the presence of certain MSR registers without checking.
+This option is off by default, enable if using software or drivers that assumes the presence of certain 686 MSR registers without checking.
 If you are using certain versions of the original 3dfx Glide drivers for MS-DOS you will need to set this to TRUE as 3dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
 
-Another way to circumvent this issue with the 3dfx drivers, is by emulating a Pentium Pro CPU in DOSBox-X by setting ``cputype=ppro_slow`` in the [cpu] section of your DOSBox-X config file.
+Another (probably better) way to circumvent this issue with the 3dfx drivers, is to emulate a Pentium Pro or Pentium II CPU in DOSBox-X by setting either ``cputype=ppro_slow`` or ``cputype=pentium_ii`` in the [cpu] section of your DOSBox-X config file.
 
 ## Low Level emulation
 This emulation mode has been supported by DOSBox-X for a long time.
