@@ -106,16 +106,16 @@ It does not actually emulate the fdiv bug behaviour.
 * Valid values: true, false
 
 Allow RDMSR/WRMSR (Read and Write of model-specific register) instructions.
-This option is only meaningful when ``cputype=pentium``.
+This option is only meaningful when ``cputype=pentium`` (or later CPU models).
 
-WARNING: Leaving this option enabled while installing Windows 95/98/ME can cause crashes.
+NOTE: If you experience crashes with running or installing Windows 95/98/ME, you may want to try to disable this.
 
 ### enable cmpxchg8b
 * Default value: true
 * Valid values: true, false
 
 Enable Pentium CMPXCHG8B (compare and exchange 8 bytes) instruction.
-This option is only meaningful when ``cputype=pentium``.
+This option is only meaningful when ``cputype=auto`` or ``cputype=pentium`` (or later CPU models).
 
 Enable this explicitly if using software that uses this instruction.
 
@@ -126,7 +126,7 @@ NOTE: You must enable this option to run Windows ME because portions of the wind
 * Valid values: true, false
 
 Allow SYSENTER/SYSEXIT (Fast call to enter/exit to privilege level 0) instructions.
-This option is only meaningful when ``cputype=pentium_ii``.
+This option is only meaningful when ``cputype=pentium_ii`` (or later CPU models).
 
 ### ignore undefined msr
 * Default value: false
@@ -138,7 +138,7 @@ Normally the CPU will fire an Invalid Opcode exception in that case.
 This option is off by default, enable if using software or drivers that assumes the presence of certain MSR registers without checking.
 
 If you are using certain versions of the 3dfx Glide drivers for MS-DOS you will need to set this to TRUE as 3dfx appears to have coded GLIDE2X.OVL to assume the presence of Pentium Pro/Pentium II MTRR registers.
-Of course setting ``cputype=ppro_slow`` or ``cputype=pentium_ii`` will also prevent this issue, and is probably a better fix.
+Of course a better fix is to set ``cputype=ppro_slow``, ``cputype=pentium_ii`` or ``cputype=pentium_iii`` which will prevent this issue.
 
 WARNING: Leaving this option enabled while installing Windows 95/98/ME can cause crashes.
 
@@ -343,7 +343,7 @@ Please note at this time that 32-bit APM is unstable under Windows ME.
 Enable DOSBox-X integration I/O device.
 This could be used in the future by the guest OS to match mouse pointer position, for example.
 
-EXPERIMENTAL!
+EXPERIMENTAL! Do not enable unless your a developer wanting to work on this functionality.
 
 ### integration device pnp
 * Default value: false
@@ -372,7 +372,8 @@ Needed for the Project Angel demo.
 
 ## Differences in emulated CPU types
 
-This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and extended/modified for DOSBox-X.
+NOTE: This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and extended/modified for DOSBox-X.
+It is not guaranteed to be 100% accurate.
 
 ### 8086 to 386
 .cputype options
@@ -396,24 +397,24 @@ This is based on: https://www.vogons.org/viewtopic.php?p=905713#p905713 and exte
 |===
 | | 486old | 486old prefetch | 486 | 486 prefetch | auto | pentium | ppro slow | pentium mmx | pentium ii | pentium iii
 
-|Real mode                                            |x|x|x|x|x|x|x|x|x|x
-|Protected mode                                       |x|x|x|x|x|x|x|x|x|x
-|Virtual 8086 mode                                    |x|x|x|x|x|x|x|x|x|x
-|486 CPUID                                            | | |x|x|x| | | | |
-|Pentium CPUID                                        | | | | | |x|x|x|x|x
-|486 specific page access level calculation           |x|x|x|x| | | | | |
-|loose (fast) page privilege check                    | | | | | | | | | |
-|tight (slow) page privilege check                    | | | | | | |x| | |
-|BSWAP, XADD, INVD, WBINVD                            |x|x|x|x|x|x|x|x|x|x
-|CMPXCHG                                              | | |x|x|x|x|x|x|x|x
-|RDTSC                                                | | | | |x|x|x|x|x|x
-|CMPXCHG8B,RDMSR, WRMSR, RSM                          | | | | | |x|x|x|x|x
+|Real mode                                             |x|x|x|x|x|x|x|x|x|x
+|Protected mode                                        |x|x|x|x|x|x|x|x|x|x
+|Virtual 8086 mode                                     |x|x|x|x|x|x|x|x|x|x
+|486 CPUID                                             | | |x|x|x| | | | |
+|Pentium CPUID                                         | | | | | |x|x|x|x|x
+|486 specific page access level calculation            |x|x|x|x| | | | | |
+|loose (fast) page privilege check                     | | | | | | | | | |
+|tight (slow) page privilege check                     | | | | | | |x| | |
+|BSWAP, XADD, INVD, WBINVD                             |x|x|x|x|x|x|x|x|x|x
+|CMPXCHG                                               | | |x|x|x|x|x|x|x|x
+|RDTSC                                                 | | | | |x|x|x|x|x|x
+|CMPXCHG8B,RDMSR, WRMSR, RSM                           | | | | | |x|x|x|x|x
 |CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | |x| |x|x
-|486 specific CR register behaviour                   |x|x|x|x|x| | | | |
-|Pentium specific CR register behaviour               | | | | | |x|x|x|x|x
-|Prefetch queue emulation                             | |x| |x| | | | | |
-|MMX instruction set                                  | | | | | | | |x|x|x
-|SSE instruction set                                  | | | | | | | | | |x
+|486 specific CR register behaviour                    |x|x|x|x|x| | | | |
+|Pentium specific CR register behaviour                | | | | | |x|x|x|x|x
+|Prefetch queue emulation                              | |x| |x| | | | | |
+|MMX instruction set                                   | | | | | | | |x|x|x
+|SSE instruction set                                   | | | | | | | | | |x
 |===
 
 ### Weitek FPU
@@ -455,13 +456,13 @@ Q: Does DOSBox-X emulate the CPU cycles accurately?
 
 A: No. This would just slow down the emulation, and is practical never needed for running PC programs and games.
 
-On a legacy PC the amount of cycles it takes to complete an instruction can vary depending on the type of instruction and the CPU generation and vendor.
+On a legacy PC the amount of CPU cycles it takes to complete an instruction can vary depending on the type of instruction and the CPU generation and CPU vendor.
 DOSBox and by extension DOSBox-X instead completes one instruction per emulated-cycle.
 As such the ``cycles=`` value has no direct relation to the clock frequency or the amount of flops of the emulated system.
 
 For many legacy systems, cycle accurate emulation is desirable.
 But this does not apply to emulating PCs. Due to the vast amount of clone systems and CPU options produced, software developers could not rely on the amount of time it takes to complete a given instruction.
-And therefore used other timing methods, and therefore cycle accurate emulation is simply not needed.
+Software developers therefore used other timing methods, and therefore cycle accurate emulation is simply not needed.
 
 If for some reason cycle accurate emulation is required, we suggest you use the link:https://pcem-emulator.co.uk/[PCem emulator].
 
