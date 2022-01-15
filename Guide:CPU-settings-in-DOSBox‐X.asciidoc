@@ -421,6 +421,8 @@ It is not guaranteed to be 100% accurate.
 Weitek in the 80's made Math co-processors compatible with the FPU socket found on x86 systemboards.
 But note that these Weitek FPUs are not software compatible with Intel and AMD FPU units, and can only be used by applications that specifically support it.
 DOSBox-X supports emulation of Weitek FPUs, but only in combination with 386 and 486 cpu types.
+
+To enable Weitek FPU emulation, set the following options in your config file:
 ....
 [dosbox]
 weitek=true
