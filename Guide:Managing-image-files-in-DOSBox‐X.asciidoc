@@ -603,7 +603,7 @@ For the first partition this should normally always start at 63*512=32256
 NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
 Unfortunately this support is incompatible with the typical MFM image files used by DOSBox-X, and the mount will fail.
 
-One tool which is able to open harddisk images is 7-Zip.
+One tool which is able to open harddisk images is 7-Zip, but only in read-only mode.
 
 ## Using harddisk images in macOS
 You can mount MFM harddisk image files with the extension IMG in macOS from the Finder by double-clicking on it.
