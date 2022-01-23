@@ -59,8 +59,8 @@ title=Windows 1.0x
 ver=3.4
 
 [serial]
-= Comment out the line below if you have the special OEM Windows 1.04
-= release from the IBM PS/2 Collegiate Kit, which supports PS/2 mouse.
+# Comment out the line below if you have the special OEM Windows 1.04
+# release from the IBM PS/2 Collegiate Kit, which supports PS/2 mouse.
 serial1=serialmouse
 
 [parallel]

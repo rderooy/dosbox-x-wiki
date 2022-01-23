@@ -55,7 +55,7 @@ vesa modelist width limit=0
 vesa modelist height limit=0
 
 [dos]
-= Set 'ver=7.1' if using Win95 OSR2 (95B) or later
+# Set 'ver=7.1' if using Win95 OSR2 (95B) or later
 ver=7.0
 hard drive data rate limit=0
 floppy drive data rate limit=0
