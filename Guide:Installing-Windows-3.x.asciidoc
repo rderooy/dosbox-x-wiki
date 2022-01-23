@@ -420,7 +420,7 @@ nicirq=10
 backend=slirp
 ....
 
-== Setting up NE2000 networking
+=== Setting up NE2000 networking in Windows for Workgroups
 This only applies to *Windows for Workgroups* (WfW).
 
 If you install WfW inside DOSBox-X with networking support, you need to run ``DEVICE C:\WINDOWS\IFSHLP.SYS`` and ``C:\WINDOWS\NET START`` before starting Windows if run from DOSBox-X's internal DOS.
@@ -441,7 +441,7 @@ Pay close attention during installation to the IRQ.
 The emulated SB16 in DOSBox-X defaults to IRQ7, while the SB16 driver package assumes IRQ5.
 So, unless you changed the SB IRQ in your DOSBox-X config file, change the IRQ during installation to IRQ7.
 
-== Enabling external MIDI in Windows 3.1x
+=== Enabling external MIDI in Windows 3.1x
 By default, the SB16 Windows 3.1x drivers will emulate MIDI playback using the OPL chip.
 However, DOSBox-X has built-in support for General MIDI emulation (which is enabled by default), and which sounds much better.
 
@@ -456,7 +456,7 @@ image::images/Windows:Windows_3.1_MIDI.png[Windows 3.1x MIDI]
 
 You should now be able to open the Windows 3.1x Media Player and playback ``C:\WINDOWS\CANYON.MID``.
 
-== Enabling external MIDI in Windows 3.0a with MM Extensions
+=== Enabling external MIDI in Windows 3.0a with MM Extensions
 The same can be carried out with *Windows 3.0a with Multimedia Extensions*, but the "SB16 All MIDI" option will not be listed.
 
 Instead, in the "MIDI Mapper" dialogue box click on the "New..." button.
