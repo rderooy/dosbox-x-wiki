@@ -242,7 +242,7 @@ dosbox-x -conf win95.conf
 
 You can optionally create a shortcut on your desktop to start Windows 95 directly.
 
-=== Steps to take after installation
+== Steps to take after installation
 Once Windows 95 is installed, here is some additional software you may want to install or update:
 
 * Install Microsoft .NET framework version 1.0 and 1.1 (includes Visual C++ 2003 runtime)
@@ -259,7 +259,7 @@ Once Windows 95 is installed, here is some additional software you may want to i
 
 This may also be of interest: link:https://msfn.org/board/topic/176623-last-versions-of-software-for-windows-95/[Forum thread about: Last versions of software for Windows 95]
 
-=== Mounting CD or Diskette images
+== Mounting CD or Diskette images
 DOSBox-X supports mounting CD and diskette (floppy) images, and making those available to an OS booted in DOSBox-X.
 But only if the image files are specified before starting real DOS or Windows 9x.
 The option to load image files from the menu bar becomes unavailable the moment you boot DOS or Win9x in DOSBox-X.
@@ -273,10 +273,10 @@ IMGMOUNT D cd1.iso cd2.iso cd3.iso
 ....
 You can then swap between disk images with the swap option from the menu.
 
-=== Enabling networking
+== Enabling networking
 To enable networking, you first need to enable NE2000 adapter emulation in your ``win95.conf`` config file and select an appropriate back-end for the NE2000 emulation.
 
-==== Enabling NE2000 in your DOSBox-X config file
+=== Enabling NE2000 in your DOSBox-X config file
 
 Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
 The default is ``backend=auto``, which implies ``backend=slirp`` if SLIRP support is available, otherwise ``backend=pcap`` is implied if PCAP support is available.
