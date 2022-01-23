@@ -357,7 +357,7 @@ nicirq=10
 backend=slirp
 ....
 
-== Setting up NE2000 networking
+=== Setting up NE2000 networking in Windows 98
 If you enabled NE2000 support in the DOSBox-X config file, Windows 98 should detect it during installation, and you should get a screen like the following.
 
 image::images/Windows:Windows_98_SETUP_03.png[Windows 98 SETUP.EXE NE2000 Properties]
