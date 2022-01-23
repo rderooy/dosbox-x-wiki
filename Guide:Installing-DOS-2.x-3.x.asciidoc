@@ -14,7 +14,7 @@ toc::[]
 ** First version to support TSRs
 ** First version to support installable device drivers
 ** First version to introduce CONFIG.SYS
-** First to support 5.25" 9-sector 180KB (SSDD) and 360KB disks (DSDD)
+** First to support 5.25" 9-sector 180KB (SSDD) and 360KB (DSDD) disks
 
 === Key new features of DOS 3.00
 ** Maximum partition size of 32MB (using the new FAT16)
@@ -24,7 +24,7 @@ toc::[]
 ** First version to include SHARE.EXE, ATTRIB.EXE, KEYBxx.COM
 
 === Key new features of DOS 3.10
-** Adds networking features for (e.g. IFS, remote file and print API)
+** Adds features for networking (e.g. IFS, remote file and print API)
 
 === Key new features of DOS 3.20
 ** First version to support 3.5" 720kB disks (2DD)
