@@ -327,9 +327,9 @@ nicirq=10
 backend=slirp
 ....
 
-== Setting up NE2000 networking
+=== Setting up NE2000 networking in Windows 95
 
-=== Detection during installation
+==== Detection during installation
 Windows 95 setup wizard will ask if you want to detect additional hardware during installation.
 The exact options presented may vary depending on the Windows 95 edition.
 You can tick the "Network adapter" checkbox, and it should continue and find the emulated NE2000 adapter.
@@ -358,7 +358,7 @@ Once you're finished adjusting the resources, click the "OK" button, and Windows
 NOTE: By default, Windows 95 only enables Novell's IPX/SPX protocol.
 Most Windows 95 applications expect TCP/IP which you will need to manually enable in the Network settings.
 
-=== Detection after installation
+==== NE2000 Detection after installation
 
 If you enabled NE2000 support in your DOSBox-X config file after Windows 95 installation, go to "Start", "Settings" and "Control Panel" and double-click on "Add New Hardware".
 
