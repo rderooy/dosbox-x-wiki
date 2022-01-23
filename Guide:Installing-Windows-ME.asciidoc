@@ -364,7 +364,7 @@ nicirq=10
 backend=slirp
 ....
 
-== Setting up NE2000 networking
+=== Setting up NE2000 networking in Windows ME
 Windows ME does not detect the emulated NE2000 adapter during installation as it is not a ISA PnP or PCI adapter.
 As such you need to set it up manually afterwards, which is quite a bit more involved than in older Windows versions.
 
