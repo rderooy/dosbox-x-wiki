@@ -58,6 +58,8 @@ In addition, there is a ``fontxdbcs14`` option which is useful for displaying CJ
 == Standard outputs with CJK support ==
 Starting with DOSBox-X version 0.83.22, rendering of Chinese/Japanese/Korean characters is also supported in output options rather than the TrueType font output, when a DBCS code page is active, but without enabling a DOS/V mode. This is available for the VGA and EGA machine types, but not for CGA or Hercules machine types. 14-pixel and 16-pixel font options for the DOS/V modes as descripted in the previous section are also supported for this mode. The setting of the ``fontxdbcs`` option will apply to the VGA mode whereas the ``fontxdbcs14`` option will apply to the EGA mode. As with DOS/V modes DOSBox-X will try to get or use the fonts for the active code page, but you can also specify your own font files as described in the previous section.
 
+image::https://user-images.githubusercontent.com/8216923/151722802-c90c74ce-1f6d-48ba-b106-48149bcd03f7.png[Chinese code page in DirectX output]
+
 By default DOSBox-X will render Chinese/Japanese/Korean characters in a DBCS code page with a standard (non-TTF) output (e.g. OpenGL, Direct3D, Surface) if a language file is loaded. But you can change this behavior with the ``showdbcsdosv`` config option. If it is set to ``true``, then DOSBox-X will enable the Chinese/Japanese/Korean character rendering in a DBCS code page regardless of whether a language file is loaded; if it is set to ``false``, then DOSBox-X will not render Chinese/Japanese/Korean characters in a DBCS code page in non-DOS/V and non-TTF modes. In every case you can also run external programs such as CCDOS 97, PDOS, and ETen so that Chinese/Japanese/Korean characters will be rendered by such programs.
 
 == J-3100 mode ==
