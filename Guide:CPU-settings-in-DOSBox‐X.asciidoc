@@ -64,6 +64,17 @@ Enforce checks for segment limits on 80286 and higher CPU types.
 
 Emulate double fault exception
 
+=== processor serial number
+* Default value: <blank>
+* Valid values: 
+
+For Pentium III emulation, this sets the 96-bit Processor Serial Number returned by CPUID.
+
+If not set, then emulation will act as if the PSN has been disabled by the BIOS.
+Enter as 4 sets of 16-bit hexadecimal digits XXXX-XXXX-XXXX-XXXX.
+
+NOTE: The processor info and feature bits form the topmost 32 bits of the PSN and cannot be changed.
+
 === reset on triple fault
 * Default value: true
 * Valid values: true, false
