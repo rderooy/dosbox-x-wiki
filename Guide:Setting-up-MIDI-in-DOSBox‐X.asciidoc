@@ -52,6 +52,7 @@ For the IBM PC this will be 330, while for the NEC PC-98 it will be E0D0.
 This is the IRQ of the emulated MPU-401 (intelligent mode only).
 
 If set to -1, the default IRQ address for the IBM PC or NEC PC-98 will be used.
+
 * For the IBM PC XT with a single PIC, this will be IRQ 2
 * For the IBM PC AT (or later) this will be IRQ 9
 * For the NEC PC-98 it will be IRQ 6.
