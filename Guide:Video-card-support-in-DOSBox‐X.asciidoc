@@ -556,13 +556,13 @@ Many clones were produced of the VGA adapter, often with enhanced capabilities l
 
 * link:https://en.wikipedia.org/wiki/Super_VGA[Wikipedia article on SVGA Graphics]
 
-==== S3 Graphics
+=== SVGA - S3 Graphics
 * link:https://en.wikipedia.org/wiki/S3_Graphics[Wikipedia article on S3 Graphics]
 * link:http://www.dosdays.co.uk/topics/Manufacturers/s3.php[DOS Days on S3 Graphics]
 
 NOTE: The default ``machine=svga_s3`` option refers to the S3 Trio64.
 
-===== S3 Trio64
+==== S3 Trio64
 NOTE: This is the default video card emulated by DOSBox-X. It currently supports the widest range of video modes of all fully supported cards.
 
 Introduced in 1994. Successor to the Vision864, and has support for VESA VBE.
@@ -584,10 +584,10 @@ There are a few variations of the Trio64 that are available:
 * link:https://en.wikipedia.org/wiki/S3_Triop[S3 Trio at Wikipedia]
 * link:http://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[S3 Trio64 at the VGA Museum]
 
-===== Experimental S3 models
+==== Experimental S3 models
 The emulation of the following S3 SVGA models should be considered experimental.
 
-====== S3 86c928
+===== S3 86c928
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in July 1992.
@@ -599,7 +599,7 @@ This mode can be set using ``machine=svga_s386c928`` in your DOSBox-X config fil
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/344-s3-p86c928[S3 86c928 at the VGA Museum]
 
-====== S3 Vision864
+===== S3 Vision864
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in November 1993.
@@ -608,7 +608,7 @@ This mode can be set using ``machine=svga_s3vision864`` in your DOSBox-X config 
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
 
-====== S3 Vision868
+===== S3 Vision868
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in 1994.
@@ -618,7 +618,7 @@ This mode can be set using ``machine=svga_s3vision868`` in your DOSBox-X config 
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
 
-====== S3 Trio32
+===== S3 Trio32
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in 1994.
@@ -628,7 +628,7 @@ This mode can be set using ``machine=svga_s3trio32`` in your DOSBox-X config fil
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[S3 Trio32 at the VGA Museum]
 
-====== S3 Trio64V+
+===== S3 Trio64V+
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in June 1995. Successor to the Vision868.
@@ -638,7 +638,7 @@ This mode can be set using ``machine=svga_s3trio64v+`` in your DOSBox-X config f
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[S3 Trio64V+ at the VGA Museum]
 
-====== S3 ViRGE
+===== S3 ViRGE
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in November 1995.
@@ -652,7 +652,7 @@ This mode can be set using ``machine=svga_s3virge`` in your DOSBox-X config file
 * link:http://www.vgamuseum.info/index.php/component/k2/item/365-s3-virge[S3 ViRGE at the VGA Museum]
 * link:https://www.vogons.org/viewtopic.php?t=33483[List of games supporting S3D mode]
 
-====== S3 ViRGE/VX
+===== S3 ViRGE/VX
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
 
 Introduced in November 1995.
@@ -662,12 +662,12 @@ This mode can be set using ``machine=svga_s3virgevx`` in your DOSBox-X config fi
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/366-s3-virge-vx[S3 ViRGE/VX at the VGA Museum]
 
-==== Tseng Labs
+=== SVGA - Tseng Labs
 * link:https://en.wikipedia.org/wiki/Tseng_Labs[Wikipedia article on Tseng Labs]
 * link:http://www.dosdays.co.uk/topics/Manufacturers/tseng_labs.php[DOS Days on Tseng Labs]
 * link:http://vogonsdrivers.com/index.php?catid=63[VOGONS Vintage Driver Library for Tseng Labs]
 
-===== Tseng Labs ET3000
+==== Tseng Labs ET3000
 
 Introduced in 1987.
 Early VGA clone card.
@@ -683,7 +683,7 @@ Video memory defaults to 512KiB and cannot be adjusted.
 
 * link:http://www.vgamuseum.info/index.php/companies/item/460-tseng-et3000ax[Tseng Labs ET3000 at the VGA Museum]
 
-===== Tseng Labs ET4000
+==== Tseng Labs ET4000
 
 Introduced in 1989.
 Became fairly popular, and supported in SVGA mode by various games.
@@ -714,7 +714,7 @@ vmemsizekb=512
 * link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET-4000.ZIP[Tseng Labs ET4000 driver package]
 * link:http://www.vgamuseum.info/index.php/companies/item/461-tseng-et4000ax[Tseng Labs ET4000 at the VGA Museum]
 
-==== Paradise Systems PVGA1A
+=== SVGA - Paradise Systems PVGA1A
 
 Introduced in 1988.
 Generic clone VGA card.
@@ -746,7 +746,7 @@ vmemsizekb=0
 * link:http://www.dosdays.co.uk/topics/Manufacturers/paradise.php[DOS Days on Paradise Systems]
 * link:http://www.vgamuseum.info/index.php/companies/item/478-paradise-systems-pvga1a[Paradise Systems PVGA1A]
 
-==== VESA BIOS Extensions (VBE)
+=== VESA BIOS Extensions (VBE)
 During the late 80's and early 90's many video card manufacturers existed, and as IBM was no longer leading the market, each manufacturer was doing its own thing in regard to setting the cards SVGA modes. This made it very difficult for software developers as they needed to support a plethora of different cards if they wanted to offer more than basic VGA.
 
 As such the Video Electronics Standards Association (VESA) was born, and one of the first standardization efforts they led was the VESA BIOS Extensions (VBE).
