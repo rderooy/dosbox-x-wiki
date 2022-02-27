@@ -775,7 +775,8 @@ Links:
 * link:http://www.vgamuseum.info/index.php/companies/item/478-paradise-systems-pvga1a[Paradise Systems PVGA1A]
 
 === VESA BIOS Extensions (VBE)
-During the late 80's and early 90's many video card manufacturers existed, and as IBM was no longer leading the market, each manufacturer was doing its own thing in regard to setting the cards SVGA modes. This made it very difficult for software developers as they needed to support a plethora of different cards if they wanted to offer more than basic VGA.
+During the late 80's and early 90's many video card manufacturers existed, and as IBM was no longer leading the market, each manufacturer was doing its own thing in regard to setting the cards SVGA modes.
+This made it very difficult for software developers as they needed to support a plethora of different cards if they wanted to offer more than basic VGA.
 
 As such the Video Electronics Standards Association (VESA) was born, and one of the first standardization efforts they led was the VESA BIOS Extensions (VBE).
 
@@ -884,7 +885,7 @@ links:
 
 == Dual monitor
 The original IBM PC could already support dual-monitor by using both MDA and CGA video cards at the same time.
-This also works with MDA+EGA, MDA+VGA and MDA+SVGA. Hercules can be used as a more capable substitute for MDA.
+This also works with MDA+EGA, MDA+VGA and MDA+SVGA. Hercules can also be used as a more capable substitute for MDA.
 
 This is possible because MDA (and Hercules) don't conflict with the resources needed for CGA/EGA/VGA and SVGA.
 As such it is not possible for instance to have two VGA cards, as they would conflict.
