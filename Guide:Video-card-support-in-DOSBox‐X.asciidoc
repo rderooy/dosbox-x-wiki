@@ -592,8 +592,8 @@ Links:
 * link:https://en.wikipedia.org/wiki/S3_Triop[S3 Trio at Wikipedia]
 * link:http://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[S3 Trio64 at the VGA Museum]
 
-==== Experimental S3 models
-The emulation of the following S3 SVGA models should be considered experimental.
+==== S3 Graphics - Experimental support
+The emulation of the following S3 SVGA models should be considered experimental for the time being.
 
 ===== S3 86c928
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
