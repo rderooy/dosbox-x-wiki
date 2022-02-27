@@ -1,4 +1,5 @@
 :toc: macro
+:toclevels: 4
 
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend:]
