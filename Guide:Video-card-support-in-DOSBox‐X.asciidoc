@@ -840,9 +840,10 @@ This is another way the modelist can be capped for DOS applications that have tr
 ** ``vesa vbe put modelist in vesa information`` (default: false)
 **** If set, the VESA modelist is placed in the VESA information structure itself when the DOS application queries information on the VESA BIOS.
 Setting this option may help with some games, though it limits the mode list reported to the DOS application.
-** ``vesa vbe 1.2 modes are 32bpp`` (default: true)
+** ``vesa vbe 1.2 modes are 32bpp`` (default: auto)
 **** If set, truecolor (16M color) VESA BIOS modes in the 0x100-0x11F range are 32bpp. If clear, they are 24bpp.
-Some DOS games and demos assume one bit depth or the other and do not enumerate VESA BIOS modes, which is why this option exists.
+Some DOS games and demos assume one bit depth or the other and do not enumerate VESA BIOS modes, which is why this
+option exists. If set to auto, this is determined by the type of SVGA chipset emulated.
 ** ``allow low resolution vesa modes`` (default: true)
 **** If set, allow low resolution VESA modes (320x200x16/24/32bpp and so on).
 You could set this too false to simulate SVGA hardware with a BIOS that does not support the lowres modes for testing purposes.
