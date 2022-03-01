@@ -568,9 +568,36 @@ Many clones were produced of the VGA adapter, often with more memory allowing hi
 
 NOTE: The default ``machine=svga_s3`` option refers to the S3 Trio64.
 
-===== S3 Trio64
-NOTE: This is the default video card emulated by DOSBox-X. It currently supports the widest range of video modes of all fully supported cards.
+===== S3 Vision864
+Introduced in November 1993.
 
+This mode can be set using ``machine=svga_s3vision864`` in your DOSBox-X config file.
+
+Links:
+
+* link:http://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
+
+===== S3 Vision868
+Introduced in 1994.
+Based on the Vision864, with added motion video acceleration.
+
+This mode can be set using ``machine=svga_s3vision868`` in your DOSBox-X config file.
+
+Links:
+
+* link:http://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
+
+===== S3 Trio32
+Introduced in 1994.
+Low-cost 32bit version of the Trio64.
+
+This mode can be set using ``machine=svga_s3trio32`` in your DOSBox-X config file.
+
+Links:
+
+* link:http://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[S3 Trio32 at the VGA Museum]
+
+===== S3 Trio64
 Introduced in 1994. Successor to the S3 Vision864, and has support for VESA VBE.
 The original S3 Trio64 cards would have had VESA VBE 1.2, but the card emulated by DOSBox-X defaults to VESA VBE 2.0.
 
@@ -592,11 +619,22 @@ Links:
 * link:https://en.wikipedia.org/wiki/S3_Triop[S3 Trio at Wikipedia]
 * link:http://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[S3 Trio64 at the VGA Museum]
 
+===== S3 Trio64V+
+Introduced in June 1995. Successor to the Vision868.
+Similar to the Trio64, but adds partial MPEG-1 decode acceleration.
+
+This mode can be set using ``machine=svga_s3trio64v+`` in your DOSBox-X config file.
+
+Links:
+
+* link:http://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[S3 Trio64V+ at the VGA Museum]
+
 ==== S3 Graphics - Experimental support
 The emulation of the following S3 SVGA models should be considered experimental for the time being.
 
 ===== S3 86c928
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
+The only known issue remaining is a display issue with Win95 and highcolor (16-bit) affecting the start menu and window decorations.
 
 Introduced in July 1992.
 Early Windows accelerator card.
@@ -608,53 +646,6 @@ This mode can be set using ``machine=svga_s386c928`` in your DOSBox-X config fil
 Links:
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/344-s3-p86c928[S3 86c928 at the VGA Museum]
-
-===== S3 Vision864
-WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
-
-Introduced in November 1993.
-
-This mode can be set using ``machine=svga_s3vision864`` in your DOSBox-X config file.
-
-Links:
-
-* link:http://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
-
-===== S3 Vision868
-WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
-
-Introduced in 1994.
-Based on the Vision864, with added motion video acceleration.
-
-This mode can be set using ``machine=svga_s3vision868`` in your DOSBox-X config file.
-
-Links:
-
-* link:http://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
-
-===== S3 Trio32
-WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
-
-Introduced in 1994.
-Low-cost 32bit version of the Trio64.
-
-This mode can be set using ``machine=svga_s3trio32`` in your DOSBox-X config file.
-
-Links:
-
-* link:http://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[S3 Trio32 at the VGA Museum]
-
-===== S3 Trio64V+
-WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.
-
-Introduced in June 1995. Successor to the Vision868.
-Similar to the Trio64, but adds partial MPEG-1 decode acceleration.
-
-This mode can be set using ``machine=svga_s3trio64v+`` in your DOSBox-X config file.
-
-Links:
-
-* link:http://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[S3 Trio64V+ at the VGA Museum]
 
 ===== S3 ViRGE
 WARNING: The emulation of this card is considered experimental. It is not recommended for regular use.

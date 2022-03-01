@@ -330,11 +330,10 @@ MT-32 reverb decaying time
 MT-32 reverb level
 
 ==== mt32.rate
-* Default: 44100
+* Default: 48000
 * Possible values: 44100, 48000, 32000, 22050, 16000, 11025, 8000, 49716
 
 Sample rate in Hz of the MT-32 emulation.
-You should set this to the same sample rate as the `rate=` option in the `[mixer]` section, or you will experience issues that the pitch is too low.
 
 ==== mt32.src.quality
 * Default: 2
