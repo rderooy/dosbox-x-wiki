@@ -568,6 +568,8 @@ Many clones were produced of the VGA adapter, often with more memory allowing hi
 
 NOTE: The default ``machine=svga_s3`` option refers to the S3 Trio64.
 
+NOTE: All the emulated S3 cards have VESA VBE 2.0 support.
+
 ===== S3 Vision864
 Introduced in November 1993.
 
