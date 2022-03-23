@@ -189,6 +189,12 @@ The above command change Color #1 to the specified color value. You can also ret
 SETCOLOR 1 -
 ``
 
+Or return it to the color scheme as specified by the ``colors`` config option (if set):
+
+``
+SETCOLOR 1 +
+``
+
 (Starting with DOSBox-X version 0.83.19, there is also a menu option ``Reset TTF color scheme`` in the ``TTF options`` menu group to return the whole color scheme to the default one)
 
 Entering ``SETCOLOR 1`` will display the current color value of Color #1.
