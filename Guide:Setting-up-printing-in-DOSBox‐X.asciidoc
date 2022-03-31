@@ -626,6 +626,8 @@ The output is sent verbatim to the printer, so the printer needs to be able to u
 
 NOTE: In the case of a real parallel port, the first port will be ``/dev/parport0``, but in the case of a USB parallel port adapter it will be ``/dev/usblp0``, but it is unclear if a USB parallel port adapter will work.
 
+NOTE: On Linux there has been some success with using a StarTech PEX1P2 PCIe parallel port adapter. But it is necessary to first do a `modprobe parport_pc` which will create the necessary `/dev/parport0` device.
+
 == Example: Print to PNG or BMP
 This method prints to a PNG or BMP image file.
 
