@@ -589,7 +589,7 @@ NOTE: The default ``machine=svga_s3`` option refers to the S3 Trio64.
 NOTE: All the emulated S3 cards have VESA VBE 2.0 support.
 
 ===== S3 Vision864
-Introduced in November 1993.
+Introduced in early 1994.
 
 Available in 1, 2 and 4MB video memory configurations.
 
@@ -599,8 +599,20 @@ Links:
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
 
+==== S3 Vision964
+Introduced in early 1994.
+Apart from faster dual-ported video memory and larger memory sizes, identical to the Vision864.
+
+Available in 2, 4 and 8MB video memory configurations.
+
+This mode can be set using ``machine=svga_s3vision964`` in your DOSBox-X config file.
+
+Links:
+
+* link:http://www.vgamuseum.info/index.php/cpu/item/354-s3-vision964[S3 Vision964 at the VGA Museum]
+
 ===== S3 Vision868
-Introduced in May 1994.
+Introduced in 1995.
 
 Available in 1, 2 and 4MB video memory configurations.
 Based on the Vision864, with added motion video acceleration.
@@ -610,6 +622,18 @@ This mode can be set using ``machine=svga_s3vision868`` in your DOSBox-X config 
 Links:
 
 * link:http://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
+
+==== S3 Vision968
+Introduced in April 1995.
+Apart from faster dual-ported video memory and larger memory sizes, identical to the Vision868.
+
+Available in 2, 4 and 8MB video memory configurations.
+
+This mode can be set using ``machine=svga_s3vision968`` in your DOSBox-X config file.
+
+Links:
+
+* link:http://www.vgamuseum.info/index.php/cpu/item/355-s3-vision968[S3 Vision968 at the VGA Museum]
 
 ===== S3 Trio32
 Introduced in 1994.
