@@ -429,7 +429,7 @@ It is not guaranteed to be 100% accurate.
 |CMPXCHG                                               | | |x|x|x|x|x|x|x|x
 |RDTSC                                                 | | | | |x|x|x|x|x|x
 |CMPXCHG8B,RDMSR, WRMSR, RSM                           | | | | | |x|x|x|x|x
-|CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2 | | | | | | |x| |x|x
+|CMOV, FCMOV, FCOMI/FCOMIP, FUCOMI/FUCOMIP, RDPMC, UD2, NOPL | | | | | | |x| |x|x
 |486 specific CR register behaviour                    |x|x|x|x|x| | | | |
 |Pentium specific CR register behaviour                | | | | | |x|x|x|x|x
 |Prefetch queue emulation                              | |x| |x| | | | | |
