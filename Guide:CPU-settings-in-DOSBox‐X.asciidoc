@@ -486,7 +486,7 @@ For many legacy systems, cycle accurate emulation is desirable.
 But this does not apply to emulating PCs. Due to the vast amount of clone systems and CPU options produced, software developers could not rely on the amount of time it takes to complete a given instruction.
 Software developers therefore used other timing methods, and therefore cycle accurate emulation is simply not needed.
 
-If for some reason cycle accurate emulation is required, we suggest you use the link:https://pcem-emulator.co.uk/[PCem emulator].
+If for some reason cycle accurate emulation is required, we suggest you use the link:https://pcem-emulator.co.uk/[PCem] or link:https://86box.net/[86Box] emulator.
 
 == TODO
 
