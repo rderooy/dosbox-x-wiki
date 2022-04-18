@@ -913,7 +913,7 @@ If your game is not sensitive to VGA RAM I/O speed, then turning on this option 
 
 === vmemsize
 * default value: -1
-* possible values: -1, 0, 1, 2, 4, 8
+* possible values: -1, 0, 1, 2, 4, 8, 16
 
 Amount of video memory in megabytes for the emulated SVGA adapter.
 
@@ -925,6 +925,7 @@ The maximum resolution and color depth the emulated SVGA adapter will be able to
 * `vmemsize=2`: 2MB for 1600x1200 at 256 colors or 1024x768 at 64k colors or 640x480 at 16M colors
 * `vmemsize=4`: 4MB for 1600x1200 at 64k colors or 1024x768 at 16M colors
 * `vmemsize=8`: 8MB for up to 1600x1200 at 16M colors
+* `vmemsize=16`: 16MB only supported for VESA modes (regular S3 will be limited to 8MB)
 
 For link:https://en.wikipedia.org/wiki/Build_(game_engine)[build engine games], use more memory than in the list above so it can use triple buffering and thus won't flicker.
 
