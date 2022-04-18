@@ -1006,7 +1006,7 @@ If set, load the VGA BIOS from the specified file (must be between 1KB to 64KB i
 If left unset, and DOSBox-X is asked to load a VGA BIOS from a file, a file name is chosen automatically based on the machine type.
 For example, Tseng ET4000 emulation (`machine=svga_et4000`) will look for `et4000.bin`.
 
-VGA BIOS ROM images can be dumped from real hardware or downloaded from the PCem ROMs collection.
+VGA BIOS ROM images can be dumped from real hardware or downloaded from the PCem or 86Box ROMs collection.
 
 Default ROM filenames:
 
