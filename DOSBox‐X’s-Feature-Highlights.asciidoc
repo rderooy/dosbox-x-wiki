@@ -5,7 +5,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 ## DOSBox-X’s Feature Highlights
 
-As a cross-platform DOS emulator, DOSBox-X officially supports different types of DOS software, including DOS applications, Windows 3.x and 9x/Me, in addition to DOS games (which are the focus of original DOSBox). Compared with DOSBox, DOSBox-X focuses more on general emulation and accuracy, supporting more subareas of DOS including East Asian system support (such as DOS/V and NEC PC-98 emulation). While incorporating virtually all existing features of DOSBox, DOSBox-X provides many more for different purposes. Examples of DOSBox-X's unique features include (note that these are just examples):
+As a cross-platform DOS emulator, DOSBox-X officially supports different types of DOS software, including DOS applications, Windows 3.x and 9x/Me, in addition to DOS games (which are the focus of original DOSBox). Compared with DOSBox, DOSBox-X focuses more on general emulation and accuracy, supporting more subareas of DOS including East Asian systems and languages (such as DOS/V and NEC PC-98 emulation). While incorporating virtually all existing features of DOSBox, DOSBox-X provides many more for different purposes. Examples of DOSBox-X's unique features include (note that these are just examples):
 
 * **GUI drop-down menu for easier usage**
 +
@@ -24,7 +24,7 @@ For image files, DOSBox-X allows you to mount them automatically without specify
 With DOSBox-X you can run the Japanese PC-98 system and PC-98 games and applications, as well as the Japanese AX (JEGA) and J-3100 systems. Set ``machine=pc98`` or ``machine=jega`` in the config file to start DOSBox-X in the PC-98 or JEGA mode. Look at the link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[PC‐98 emulation in DOSBox‐X] guide page for more information about PC-98 support.
 * **Support for native DOS/V service emulations**
 +
-DOSBox-X implements native DOS/V services for Chinese/Japanese/Korean language support, so that are these languages can be displayed without any external tools. Set "dosv" to "jp", "chs" (or "cn"), "cht" (or "tw"), or "ko" for different CJK languages. Look at the link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[East Asian language support in DOSBox‐X] guide page for more information about support for East Asian languages and systems.
+DOSBox-X implements native DOS/V services for Chinese/Japanese/Korean language support, so that are these languages can be displayed without any external tools. Set ``dosv`` to ``jp``, ``chs`` (or ``cn``), ``cht`` (or ``tw``), or ``ko`` for different CJK languages. Look at the link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[East Asian language support in DOSBox‐X] guide page for more information about support for East Asian languages and systems.
 * **Support for SDL2 in addition to SDL1**
 +
 DOSBox-X officially supports both SDL1 and SDL2 and provides both SDL1 and SDL2 builds, so that you can choose either the SDL1 or SDL2 build to use. While most features are common to both SDL builds, certain functions may only be found in one of them.
@@ -33,7 +33,7 @@ DOSBox-X officially supports both SDL1 and SDL2 and provides both SDL1 and SDL2 
 DOSBox-X allows you to translate its various user interfaces, including text in the DOS window, the drop-down menus, the graphical Configuration Tool and the Mapper Editor. Both standard SBCS languages and DBCS languages are supported. Several language files can be found in the repository and are ready to use.
 * **More customizable virtual machine**
 +
-DOSBox-X provides many more config options that are not found in DOSBox, so that users have more options to customize the virtual machine inside DOSBox-X. For example, you can skip the splash screen and the welcome banner, or even starting DOSBox-X in silent mode (-silent), along with a lot more.
+DOSBox-X provides many more config options that are not found in DOSBox, so that users have more options to customize the virtual machine inside DOSBox-X. For example, you can skip the splash screen and the welcome banner, or even starting DOSBox-X in silent mode (``-silent``), along with a lot more.
 * **CPU speed optimization and Turbo mode**
 +
 DOSBox-X can automatically decide the CPU cycles to use for optimized speed, and it provides a Turbo function to increase the speed of the system inside it, which can be toggled at run-time.
@@ -78,7 +78,7 @@ You can mount ZIP or 7Z archives as DOSBox-X drives and run your DOS programs or
 DOSBox-X supports the BIOS IDE interface for hard disk and CD drives, which is especially useful for running guest systems inside DOSBox-X.
 * **Support for more CPU types (e.g. Pentium MMX and Pro/2/3) and emulating CPU speed**
 +
-DOSBox-X supports virtually all CPU types prior to Pentium 4 at this time, from 8086/8088 to Pentium Pro/2/3, including support for Pentium MMX instructions. DOSBox-X also allow you to emulate the speed of a specific CPU (from 8088 XT 4.77MHz to Pentium 166MHz MMX) in terms of cycles. Select them from the "CPU" menu.
+DOSBox-X supports virtually all CPU types prior to Pentium 4 at this time, from 8086/8088 to Pentium Pro/2/3, including support for Pentium MMX instructions. DOSBox-X also allow you to emulate the speed of a specific CPU (from 8088 XT 4.77MHz to Pentium III) in terms of cycles. Select them from the "CPU" menu.
 * **Support for more video modes (e.g. MDA and MCGA)**
 +
 DOSBox-X supports more video modes in addition to the more common ones, such as MDA, MCGA, Amstrad, and a few others, in addition to the standard ones.
@@ -93,7 +93,7 @@ DOSBox-X fully supports long filenames (LFN) which can be up to 255 characters, 
 FAT32 file system is supported in DOSBox-X in addition to FAT12 and FAT16, so you can make and mount drives larger than 2GB. Set ``ver=7.1`` to enable this feature. You can also mount logical partitions within disk images with an option.
 * **Support for file-locking and record-locking functions **
 +
-DOSBox-X supports the DOS SHARE functions, which provides file-locking and record-locking for networked environments, especially on the Windows platform. This may be very important for usages such as networked DOS database applications. Hint: you probably want to set "nocachedir=true" and "file access tries=3" for this.
+DOSBox-X supports the DOS SHARE functions, which provides file-locking and record-locking for networked environments, especially on the Windows platform. This may be very important for usages such as networked DOS database applications. Hint: you probably want to set ``nocachedir=true`` and ``file access tries=3`` for this.
 * **Support for clipboard text selection, copy and paste**
 +
 With DOSBox-X there are several ways to copy and paste between DOSBox-X and the host clipboard, such as using a mouse button (right or middle), the arrow keys, mapped keyboard shortcuts, or using a special DOS device or DOS program for doing so. Look at the link:Guide%3AClipboard-support-in-DOSBox‐X{suffixappend}[Clipboard support in DOSBox-X] guide page for more information.
@@ -135,7 +135,7 @@ DOSBox-X supports the emulation of the Novell NE2000 network adapter, which allo
 With these features you can connect the emulated modem via reliable UDP (in addition to TCP), and you may also map fake phone numbers to Internet addresses which is useful for programs where limitations on phone number input field are too strict.
 * **Support for direct browsing for UNC network paths (Windows only)**
 +
-With this feature you can access or browse UNC network paths in the form \\COMPUTER\FOLDER directly on Windows systems, including listing, opening, writing, copying, and executing files on UNC network paths directly without having to mount them as DOS drives first.
+With this feature you can access or browse UNC network paths in the form ``\\COMPUTER\FOLDER`` directly on Windows systems, including listing, opening, writing, copying, and executing files on UNC network paths directly without having to mount them as DOS drives first.
 * **Support for Roland MT-32 emulation**
 +
 DOSBox-X integrates the emulation of Roland MT-32, which pre-dates General MIDI and was used by a broad range of DOS games (starting in 1988 with King’s Quest IV).
@@ -147,7 +147,7 @@ DOSBox-X supports the FluidSynth MIDI synthesizer, which allows you to use a wid
 The Innovation SSI-2001 sound card is supported in DOSBox-X as well, which gives the emulated system the sound capabilities of a Commodore 64.
 * **Support for pixel-perfect scaling video mode**
 +
-DOSBox-X supports the pixel-perfect scaling as an output option ("output=openglpp"), which improves the video image quality.
+DOSBox-X supports the pixel-perfect scaling as an output option (``output=openglpp``), which improves the video image quality.
 * **Support for loading OpenGL shaders either at start or dynamically**
 +
 The OpenGL (GLSL) shaders are fully supported by DOSBox-X for OpenGL outputs, and you can in fact load or change them dynamically in addition to loading them at start.
