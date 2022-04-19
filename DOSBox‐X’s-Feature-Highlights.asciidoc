@@ -5,7 +5,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 ## DOSBox-X’s Feature Highlights
 
-As a cross-platform DOS emulator, DOSBox-X officially supports different types of DOS software, including DOS applications, Windows 3.x and 9x/Me, in addition to DOS games (which are the focus of original DOSBox). Compared with DOSBox, DOSBox-X focuses more on general emulation and accuracy, supporting more areas of DOS such as DOS/V and NEC PC-98 emulation. While incorporating virtually all existing features of DOSBox, DOSBox-X provides many more for different purposes. Examples of DOSBox-X's unique features include (note that these are just examples):
+As a cross-platform DOS emulator, DOSBox-X officially supports different types of DOS software, including DOS applications, Windows 3.x and 9x/Me, in addition to DOS games (which are the focus of original DOSBox). Compared with DOSBox, DOSBox-X focuses more on general emulation and accuracy, supporting more subareas of DOS including East Asian system support (such as DOS/V and NEC PC-98 emulation). While incorporating virtually all existing features of DOSBox, DOSBox-X provides many more for different purposes. Examples of DOSBox-X's unique features include (note that these are just examples):
 
 * **GUI drop-down menu for easier usage**
 +
