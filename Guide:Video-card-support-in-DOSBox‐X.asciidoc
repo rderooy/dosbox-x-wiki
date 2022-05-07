@@ -425,7 +425,7 @@ NOTE: Emulating 64KiB of video memory with EGA is not recommended, as the code f
 
 NOTE: Some clone EGA cards added extra video memory and video modes, typically known as SuperEGA cards. The emulation of such cards is not supported by DOSBox-X.
 
-==== EGA on a MDA or CGA monitor
+==== EGA with a MDA or CGA monitor
 It is possible to use an MDA, CGA or EGA monitor with an IBM EGA card.
 DOSBox-X however emulates EGA always with a matching colour EGA monitor.
 
