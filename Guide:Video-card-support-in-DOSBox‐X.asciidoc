@@ -403,7 +403,7 @@ image::images/Game:Monkey_Island_Tandy.png[,640,float="left"]
 EGA stands for *Enhanced Graphics Adapter* and was introduced by IBM in 1984, as the official follow-on to CGA.
 It still only supports up to 16 colours on-screen, but out of a gamut of 64 colours and at higher resolution.
 
-The original adapters came with 64KiB video RAM, but could be upgraded to 128 or 192KiB.
+The original IBM adapters came with just 64KiB video RAM, but could be upgraded to 128 or 192KiB.
 Some EGA clones even provided 256KiB, and additional high-res video modes.
 
 One feature it dropped however, was the composite output support.
@@ -425,20 +425,16 @@ NOTE: Emulating 64KiB of video memory with EGA is not recommended, as the code f
 
 NOTE: Some clone EGA cards added extra video memory and video modes, typically known as SuperEGA cards. The emulation of such cards is not supported by DOSBox-X.
 
-==== Graphics modes:
-In addition to being backward compatible with CGA, EGA supports:
+==== EGA on a MDA or CGA monitor
+It is possible to use an MDA, CGA or EGA monitor with an IBM EGA card.
+DOSBox-X however emulates EGA always with a matching colour EGA monitor.
 
-- 640×350 w/16 colours (from a 6 bit palette of 64 colours), pixel aspect ratio of 1:1.37.
-- 640×350 w/2 colours, pixel aspect ratio of 1:1.37.
-- 640×200 w/16 colours, pixel aspect ratio of 1:2.4.
-- 320×200 w/16 colours, pixel aspect ratio of 1:1.2.
+Using a CGA monitor with an EGA card, would reduce the resolution from 350-lines to 200-line.
+But this mode will not work on EGA monitors.
 
-==== Text modes:
+As such the IBM EGA adapter had a "compatibility" switch on the back of the card to allow software meant for EGA on a CGA monitor to run.
 
-- 40×25 with 8×8 pixel font (effective resolution of 320×200)
-- 80×25 with 8×8 pixel font (effective resolution of 640×200)
-- 80×25 with 8×14 pixel font (effective resolution of 640×350)
-- 80×43 with 8×8 pixel font (effective resolution of 640×344)
+Neither a CGA monitor, nor the compatibility switch is emulated in DOSBox-X, and therefore a demo like link:https://www.os2museum.com/wp/fantasyland-on-vga/[Fantasy Land] will not work properly.
 
 ==== EGA machine options
 This mode can be set using ``machine=ega`` in your DOSBox-X config file
