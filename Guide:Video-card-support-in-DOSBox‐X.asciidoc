@@ -696,6 +696,7 @@ Links:
 
 ===== S3 ViRGE
 WARNING: The emulation of this card is considered experimental. It is not recommended for normal use at this time.
+It seems to work well enough for regular use, but the S3D functionality still needs to be implemented.
 
 The S3 Video and Rendering Graphics Engine (ViRGE) was introduced in November 1995. Available in 2 or 4MB video RAM configurations.
 
@@ -712,7 +713,7 @@ Links:
 * link:https://www.vogons.org/viewtopic.php?t=33483[List of games supporting S3D mode]
 
 ===== S3 ViRGE/VX
-WARNING: The emulation of this card is considered experimental. It is not recommended for normal use at this time.
+WARNING: Like the regular S3 ViRGE, the emulation of this card is considered experimental. It is not recommended for normal use at this time.
 
 Introduced in November 1995.
 Similar to the regular S3 ViRGE but available with 2, 4 or 8MB VRAM, allowing higher resolution and higher colour depths graphics modes.
