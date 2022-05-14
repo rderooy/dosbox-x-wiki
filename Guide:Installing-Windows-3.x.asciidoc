@@ -329,10 +329,41 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 * Adobe Type Manager 3.02
 
 == Mouse support
-By default Windows 3.x will find a PS/2 mouse when installed in DOSBox-X.
-This mouse support has an important limitation, namely you need to lock the mouse to the session to interact with Windows 3.x and need to unlock it to go outside DOSBox-X.
+When running Windows in DOSBox-X the integration is not seamless.
+You need to capture the mouse and again release it when you want to leave the DOSBox-X window.
+This is because Windows uses it's own driver instead of using the integrated mouse support that DOSBox-X provides.
 
-DOSBox-X 0.83.24 or later however also supports the VMware mouse protocol, and there is a 3rd party link:https://github.com/NattyNarwhal/vmwmouse[VMware mouse driver for Windows 3.x] written by NattyNarwhal.
+There are two possible solutions to this.
+
+== DOSBox-X mouse integration driver
+There is experimental support in DOSBox-X for seamless integration.
+To get this working take the following steps:
+
+Go to link:https://github.com/joncampbell123/doslib/releases[doslib releases] and download the latest binary release of doslib.
+Unpack the archive, and you will find a Windows 3.0 or 3.1 mouse driver in respectively the `windrv/dosboxpi/bin/win30` or `windrv/dosboxpi/bin/win31` directory.
+
+- Copy the `DBOXMPI.DRV` and `OEMSETUP.INF` files for your windows version to a place where the Windows SETUP.EXE program will be able to find it
+- When you run SETUP.EXE, select to change the mouse and then select the "Other (requires disk provided by a hardware manufacturer)" option
+- Enter the path where you saved the `DBOXMPI.DRV` and `OEMSETUP.INF` files
+- Select the "DOSBox-X Mouse Pointer Integration" option
+- If SETUP asks for the "DOSBox-X Guest Additions" disk, give it the same path as before.
+- Continue the setup as normal
+
+In addition, set the following options in your DOSBox-X config file:
+```
+[sdl]
+mouse emulation=integration
+
+[cpu]
+integration device=true
+```
+Now when you run Windows 3.x, you should have seamless mouse support.
+
+NOTE: These old windows versions had no support for mice with scroll wheels. By default DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.
+This can be controlled by the `mouse_wheel_key=` setting in the `[sdl]` section of your DOSBox-X config file.
+
+=== VMWare mouse driver
+DOSBox-X 0.83.24 or later also supports the VMware mouse protocol, and there is a 3rd party link:https://github.com/NattyNarwhal/vmwmouse[VMware mouse driver for Windows 3.x] written by NattyNarwhal.
 As such you can install the VMware mouse driver for Windows 3.x and you will be able to move the mouse in and out of DOSBox-X seamlessly.
 
 Simply run the DOS based SETUP.EXE program for Windows 3.x and select "Mouse" followed by "Other". Then type the location where you saved the unpacked VMware mouse driver for Windows 3.x.
