@@ -592,5 +592,7 @@ Only image mounts (HDD, Floppy or CD) using `imgmount` are possible in combinati
 - If you intend at any point to use a Floppy or CD during your usage of Windows 95, you must attach a floppy and/or CD image **before** starting Windows 95.
 You can load a different CD or Floppy image, once you booted Windows 95, but if a floppy or CD is not present when starting Windows 95 the drive is simply missing and you cannot add it without rebooting the guest OS.
 
+- When mounting a CD-ROM image using `imgmount`, before booting Windows 95, you may have to specify the IDE device to attach it to for it to work properly in Windows 95. e.g. `imgmount d game_cd.iso -ide 2m` to make the CD-ROM drive appear as the master device on the secondary IDE controller.
+
 == Outstanding issues
 * Resolve "Drive A is using MS-DOS compatibility mode file system"
