@@ -94,7 +94,7 @@ Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the mome
 * Unless noted otherwise, Windows 3.1 drivers are not backward compatible with Windows 3.0.
 
 === Windows 3.0a with Multimedia Extensions specific notes
-* This edition was available only to OEMs (Original Equipment Manufacturers), as such Windows will be customized to the systems it was shipped with.
+* This edition was available only to OEMs (Original Equipment Manufacturers) for bundling with a multimedia PC or multimedia upgrade set, as such Windows will be customized to that multimedia system or upgrade set.
 Examples of such customization, are an OEM specific launcher, OEM specific applications, but also that the installer may default to custom audio and video options.
 * For versions distributed on CD, the installation can be started by going into the ``MWIN`` directory on the CD and running ``SETUP.EXE``.
 * Unlike regular Windows which installs by default to ``C:\WINDOWS`` this edition installs by default to ``C:\MWINDOWS``.
@@ -136,7 +136,7 @@ Copy the above config and save it as ``win3x.conf``
 
 *Notes*
 
-* The above config uses 16MB RAM as that is the maximum supported by Windows 3.0, but for Windows 3.1 and 3.11 you can go up to 256MB, as such for these Windows versions ``memsize=256`` is the largest safe value.
+* The above config uses 16MB RAM as that is the maximum supported by Windows 3.0, and should be more then enough for most Windows 3.x applications. But for Windows 3.1 and 3.11 you can go up to 256MB, as such for these Windows versions ``memsize=256`` is the largest safe value.
 * There are Windows 3.0 and 3.1 drivers for the Tseng Labs ET3000 and ET4000 (``machine=svga_et3000`` and ``machine=svga_et4000`` respectively), but for the default ``machine=svga_s3`` (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The default S3 video option will offer the broadest range of resolutions and colour depths but do require you to install the correct drivers.
 
@@ -182,10 +182,7 @@ SETUP.EXE
 The installer is normally found on the CD as ``\MWIN\SETUP.EXE``.
 
 == Installing in a mounted folder
-*Notes*
-
-* This method is the easiest, but has a few limitations:
-** Will not allow for 32-bit disk IO with Windows 3.1x.
+NOTE: This method is the easiest, but has a limitation in that it will not allow for 32-bit disk IO with Windows 3.1x. However, no software needs this, and it does not provide a real performance benefit in DOSBox-X.
 
 Create a directory on your system that you're going to use (mount) as your Windows 3.x C: drive.
 Valid examples:
@@ -266,7 +263,7 @@ Adjust the ``MOUNT`` path above for mounting the C: drive as needed.
 == Install Windows 3.x into a DOS HDD image
 This method brings with it a bit of added inconvenience.
 For instance, you will need to do your own DOS memory management and load DOS drivers for CD-ROM access.
-You can also not mount a host directory in DOSBox-X when you boot a disk image.
+You can also not mount a host directory (folder mount) in DOSBox-X when you boot a disk image.
 Even host directories that you mounted prior to booting the disk image will become unavailable.
 Everything needs to be done using IMAGE files.
 
@@ -597,6 +594,19 @@ The second step you may want to take, is that when you exit the game, you also e
 WIN RUNEXIT \path\to\game.exe
 ....
 Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows. This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
+
+== Known limitations
+- When booting a guest OS, such a MS-DOS with Windows 3.x in DOSBox-X, so-called folder mounts are not supported.
+Any folders of the host you mount before starting MS-DOS will **NOT** be available in DOS and Windows 3.x.
+Only image mounts (HDD, Floppy or CD) using `imgmount` are possible in combination with booting a guest OS.
+
+- If you intend at any point to use a Floppy during your usage of Windows 3.x, you must mount a floppy **before** starting Windows 3.x.
+You can load a different Floppy, once you started Windows 3.x this way from the DOSBox-X menus.
+If you don't load a floppy before and attach it afterwards, it may appear to work in Windows 3.x but it will not work properly and you get strange errors.
+
+- If you intend at any point to use a CD during your usage of Windows 3.x, you must mount a CD **before** starting Windows 3.x.
+You can load a different CD from the DOSBox-X menus, once you started Windows 3.x.
+But if a CD is not present when starting Windows 3.x the drive is simply missing, and you cannot add it without quitting and restarting Windows 3.x.
 
 == Outstanding issues
 ** Using 32Bit Disk and File lowers performance.
