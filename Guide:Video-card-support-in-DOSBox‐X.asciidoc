@@ -433,6 +433,8 @@ Some software such as the link:https://www.os2museum.com/wp/fantasyland-on-vga/[
 Starting with DOSBox-X 0.84.1 an EGA adapter attached to a 200-line CGA monitor can be emulated by setting ``machine=ega200``.
 When using this reduced mode, the regular 350-line EGA modes will not be be available.
 
+NOTE: There is no support for emulating an EGA adapter with monochrome MDA monitor at this time.
+
 ==== EGA machine options
 Regular EGA mode can be set using ``machine=ega``, or the reduced 200-line mode with ``machine=ega200`` in your DOSBox-X config file.
 
