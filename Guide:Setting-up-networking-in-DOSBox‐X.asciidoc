@@ -345,7 +345,7 @@ You now need to find which host network interface you want to use for bridging w
 For this you need to have a DOSBox-X config file with NE2000 support enabled, and you need to know which host network adapter will be used for bridging.
 It is highly recommended to only bridge to wired Ethernet adapters, as wireless adapters generally do not work with PCAP.
 
-Create a simple ne2000.conf config file as follows:
+Create a simple ``ne2000.conf`` config file as follows:
 
 ....
 [ne2000]
