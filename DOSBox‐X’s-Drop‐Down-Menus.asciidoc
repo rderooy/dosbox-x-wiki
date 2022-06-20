@@ -81,6 +81,8 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Reset window size**: Resets the DOSBox-X window to the default size.
 
+* **Set transparency...**: Sets the transparency of the DOSBox-X screen (0 to 90).
+
 * **Refresh rate...**: Sets the video refresh rate (0 for unlocking the refresh rate).
 
 * **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fit a scaler in the resolution used at full screen may require a border or side bars. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
