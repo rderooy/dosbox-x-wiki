@@ -163,8 +163,10 @@ In this example disk1.ima will be immediately usable on A: but disk2.ima will re
 Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+D and for other platforms F12+CTRL+D.
 Or from the menu you can select "DOS" followed by "Swap floppy".
+Lastly, you can use the `IMGSWAP` command to swap between images.
 
 If you lose track of which disk is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
+This information can also be retrieved from the `IMGSWAP` command.
 
 ==== Write protecting diskette images
 By default, diskette images are mounted read-write.
@@ -687,8 +689,10 @@ In this example cdrom1.iso will be immediately usable on D: but cdrom2.iso will 
 Disk-swap can be done using either a hot-key combination, or using the menu bar.
 The hot-key for Windows is F11+CTRL+C and for other platforms F12+CTRL+C.
 Or from the menu you can select "DOS" followed by "Swap CD".
+Lastly, you can use the `IMGSWAP` command to swap between images.
 
 If you lose track of which disc is currently active, open the 'Drive' menu option, select the drive letter and select 'Drive Information'.
+This information can also be retrieved from the `IMGSWAP` command.
 
 === Mounting from the Drive menu
 The advantage of this option is, that you don't need to mount all the CD or DVDs before starting your program or game, but you can mount CD or DVD images when needed.
