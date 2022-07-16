@@ -584,11 +584,32 @@ On the "Hard Disk" tab you can specify the Read-ahead optimization.
 Based on benchmark results (WinBench 96), it seems that setting this to "None" gives the best performance in combination with DOSBox-X, although the difference is marginal.
 This is no doubt because the host system is better at caching then the Windows 98 cache function.
 
-== Known limitations
-- When booting a guest OS, such a Windows 95 in DOSBox-X, so-called folder mounts are not supported.
-Any folders of the host you mount before starting Windows 95 will **NOT** be available in Windows 95.
-Only image mounts (HDD, Floppy or CD) using `imgmount` are possible in combination with booting a guest OS.
+== Folder mounts
+Starting with DOSBox-X 0.84.2, there is optional support to dynamically convert a host folder mount to an emulated FAT harddisk for use when you need to boot a guest OS, such as Windows 95.
+This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
+Or by setting the following option in your DOSBox-X config file:
+```
+[sdl]
+convertdrivefat = true
+```
+
+When you now boot from a real image file, it will attempt to convert **ALL** folder mounts at the time of booting to emulated FAT Harddisks.
+
+NOTE: You cannot boot from such an emulated FAT harddisk. You will still need some other bootable image file to actually boot a guest OS.
+
+NOTE: This conversion is dynamic, effectively creating an emulated FAT harddisk out of a folder mount. This converted FAT harddisk is not stored permanently.
+
+NOTE: There is currently no support for creating emulated CD-ROM or Floppy drives out of folder mounts with this method. Any CD-ROM or Floppy folder mounts will also be converted to harddisk folder mounts, and may not actually work for the intended purpose.
+
+One thing to note, is that there is no way to specify the FAT type to use for the conversion.
+The FAT type will be automatically selected based on the available disk-space on the host.
+If there is more than 2GiB of space free (which is very likely on any modern system), it will convert it into a FAT32 disk, which in turn will require a guest OS with FAT32 support.
+
+If you need FAT16 instead, you can use the `-convertfatro` option with the `boot` command. This will cause the emulated FAT HDD to be sized based on the size of the files in the folder with no free space.
+As long as there is less then 2GiB of files, this should be an emulated FAT16 harddisk. However, this option will also make the emulated FAT harddisk read-only.
+
+== Known limitations
 - If you intend at any point to use a Floppy or CD during your usage of Windows 95, you must attach a floppy and/or CD image **before** starting Windows 95.
 You can load a different CD or Floppy image, once you booted Windows 95, but if a floppy or CD is not present when starting Windows 95 the drive is simply missing and you cannot add it without rebooting the guest OS.
 
