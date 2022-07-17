@@ -584,7 +584,7 @@ On the "Hard Disk" tab you can specify the Read-ahead optimization.
 Based on benchmark results (WinBench 96), it seems that setting this to "None" gives the best performance in combination with DOSBox-X, although the difference is marginal.
 This is no doubt because the host system is better at caching then the Windows 98 cache function.
 
-== Folder mounts
+== Host Folder mounts
 Starting with DOSBox-X 0.84.2, there is optional support to dynamically convert a host folder mount to an emulated FAT harddisk for use when you need to boot a guest OS, such as Windows 95.
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
@@ -601,6 +601,7 @@ NOTE: You cannot boot from such an emulated FAT harddisk. You will still need so
 NOTE: This conversion is dynamic, effectively creating an emulated FAT harddisk out of a folder mount.
 This converted FAT harddisk is not automatically stored permanently.
 You can however, store it as a permanent image file that you can later mount with `IMGMOUNT`, using the "Drive" > "drive letter" > "Save to disk image" option from the menus.
+Please see the "Creating harddisk images from folder mounts" section in the link:Guide%3AManaging-image-files-in-DOSBox‐X#Creating_harddisk_images_from_folder_mounts[Guide: Managing image files in DOSBox-X] for more information.
 
 NOTE: There is currently no support for creating emulated CD-ROM or Floppy drives out of folder mounts with this method. Any CD-ROM or Floppy folder mounts will also be converted to harddisk folder mounts, and may not actually work for the intended purpose.
 
