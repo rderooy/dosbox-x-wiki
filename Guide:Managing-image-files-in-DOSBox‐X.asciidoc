@@ -441,6 +441,21 @@ IMGMAKE hdd.img -t hd -size 31 -nofs -bat
 Will cause both a hdd.img and a hdd.bat to be generated.
 The BAT file will contain the imgmount command to mount the harddisk image, including geometry.
 
+=== Creating harddisk images from folder mounts
+Starting with DOSBox-X 0.84.2 it is possible to convert a host folder mount to a harddisk image file.
+
+The steps are simply to first `mount` a host folder, and then from the menus (when running in Windowed mode), select "Drive" > "drive letter" > "Save to disk image".
+
+The FAT version will be automatically selected, based on the aggregate amount of files in the folder, plus (by default) 250MiB of free space.
+If the total does not exceed 2GiB, it will be converted to a FAT16 harddisk image file, otherwise it will become a FAT32 image instead.
+
+The amount of free space can be adjusted in the DOSBox-X config file as such:
+```
+[sdl]
+convert fat free space = 10
+```
+This will limit the free space to 10MiB. Set it to 0 for read-only (no free space) and -1 to attempt to use the actual free space on the host drive (subject to FAT filesystem limits).
+
 === Mounting harddisk images
 Mounting a harddisk image in DOSBox-X is typically as simple as
 
