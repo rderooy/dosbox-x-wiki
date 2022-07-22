@@ -681,6 +681,13 @@ Support for Rock Ridge and Joliet is automatically enabled when emulating DOS 7.
 
 If DOSBox-X detects a CD image with both Rock Ridge and Joliet extensions, it will only use the Joliet extensions.
 
+Rock Ridge, Joliet or UDF support can be enabled or disabled when mounting a CD image with the `-o [rr|joliet|udf]` image mount option.
+
+e.g. to disable Rock Ridge support:
+```
+imgmount D: cdrom.iso -o rr=0
+```
+
 === Accessing a CD or DVD in real DOS
 With the integrated DOS that DOSBox-X provides, you do not need to worry about loading a CD-ROM driver and MSCDEX.
 If however, you boot real DOS in DOSBox-X, any mounted CD-ROM images will not be accessible until you load both an IDE CD-ROM driver and MSCDEX.
