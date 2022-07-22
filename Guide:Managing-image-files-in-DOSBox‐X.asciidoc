@@ -649,6 +649,11 @@ hdiutil detach /dev/disk6
 == CD-ROM or DVD images
 DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in ISO, CUE+BIN or MDF image format.
 
+Starting with DOSBox-X 0.84.2 there is also support for:
+- Rock Ridge extensions to ISO-9660 (typically used by Unix systems, such as Linux)
+- Joliet extensions to ISO-9660 (64 character long file names, introduced for Windows 95)
+- UDF filesystem (introduced for Windows 98)
+
 ISO is the easiest format to work with, as long as there is only a single data track on the CD or DVD.
 If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audio) the use of CUE+BIN or MDF is required.
 
@@ -667,6 +672,13 @@ imgmount D: cdrom.iso -t cdrom
 NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when the extension is not .ISO, .CUE or .MDF.
 
 NOTE: If the names of your CD/DVD images contain characters of foreign languages such as Russian, please make sure that the current DOS code page matches the language you use before mounting the images. If you decide to put such commands in the [autoexec] section of the config file, please also make sure the encoding of your config file matches your language when you save the config file.
+
+=== Rock Ridge, Joliet and UDF
+Starting with DOSBox-X 0.84.2, there is support for the Rock Ridge and Joliet extensions to the ISO-9660 filesystem, in addition to support for the UDF filesystem.
+
+Support for Rock Ridge and Joliet is automatically enabled when emulating DOS 7.0 or later. Support for UDF is enabled when emulating DOS 7.1 or later. Alternatively, Rock Ridge and Joliet support is also enabled when the `lfn=true` setting is set in the DOSBox-X config file.
+
+If DOSBox-X detects a CD image with both Rock Ridge and Joliet extensions, it will only use the Joliet extensions.
 
 === Accessing a CD or DVD in real DOS
 With the integrated DOS that DOSBox-X provides, you do not need to worry about loading a CD-ROM driver and MSCDEX.
@@ -689,10 +701,10 @@ Edit the autoexec.bat file and add the following line to it:
 ....
 device=c:\dos\mscdex.exe /D:cdrom001 /L:D
 ....
-The above assumes oakcdrom.sys and mscdex.exe are in the C:\DOS directory in the harddisk image file.
-You can substitute oakcdrom.sys and mscdex.exe with their FreeDOS equivalents with the same parameters.
+The above assumes `oakcdrom.sys` and `mscdex.exe` are in the `C:\DOS` directory in the harddisk image file.
+You can substitute `oakcdrom.sys` and `mscdex.exe` with their FreeDOS equivalents with the same parameters.
 
-The ``/L:D`` option will cause MSCDEX to use the D: drive for the CD-ROM, adjust as needed.
+The ``/L:D`` option will cause MSCDEX to use the D: drive letter for the CD-ROM, adjust as needed.
 
 === Mounting multiple CD or DVD images
 Some DOS programs or games came on multiple CD or DVDs, for this purpose it is possible to mount multiple images on one drive letter and swap between them.
