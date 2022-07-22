@@ -651,8 +651,8 @@ DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) f
 
 Starting with DOSBox-X 0.84.2 there is also support for:
 
-- Rock Ridge extensions to ISO-9660 (typically used by Unix systems, such as Linux)
-- Joliet extensions to ISO-9660 (64 character long file names, introduced for Windows 95)
+- Rock Ridge extensions to ISO-9660, allowing up to 255 character file names (typically used by Unix systems, such as Linux)
+- Joliet extensions to ISO-9660, allowing up to 64 character file names (introduced for Windows 95)
 - UDF filesystem (introduced for Windows 98)
 
 ISO is the easiest format to work with, as long as there is only a single data track on the CD or DVD.
@@ -675,7 +675,7 @@ NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when
 NOTE: If the names of your CD/DVD images contain characters of foreign languages such as Russian, please make sure that the current DOS code page matches the language you use before mounting the images. If you decide to put such commands in the [autoexec] section of the config file, please also make sure the encoding of your config file matches your language when you save the config file.
 
 === Rock Ridge, Joliet and UDF
-Starting with DOSBox-X 0.84.2, there is support for the Rock Ridge and Joliet extensions to the ISO-9660 filesystem, in addition to support for the UDF filesystem.
+Starting with DOSBox-X 0.84.2, there is support for the Rock Ridge and Joliet extensions (for long filenames) to the ISO-9660 filesystem, in addition to support for the UDF filesystem.
 
 Support for Rock Ridge and Joliet is automatically enabled when emulating DOS 7.0 or later. Support for UDF is enabled when emulating DOS 7.1 or later. Alternatively, Rock Ridge and Joliet support is also enabled when the `lfn=true` setting is set in the DOSBox-X config file.
 
