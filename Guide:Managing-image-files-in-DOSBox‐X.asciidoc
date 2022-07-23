@@ -683,7 +683,7 @@ If DOSBox-X detects a CD image with both Rock Ridge and Joliet extensions, it wi
 
 Rock Ridge, Joliet or UDF support can be enabled or disabled when mounting a CD image with the `-o [rr|joliet|udf]` image mount option.
 
-e.g. to disable Rock Ridge support:
+e.g. to mount a CD image and disable Rock Ridge support:
 ```
 imgmount D: cdrom.iso -o rr=0
 ```
