@@ -94,16 +94,16 @@ Supported diskette sizes options:
 |===
 |Disk type|Sides|Tracks per Side|Sectors per Track|Capacity|IMGMAKE option
 
-|5.25" SSDD     |1|40|8 |160KB          |-t fd_160
-|**5.25" SSDD** |1|40|9 |180KB          |-t fd_180
-|5.25" SSDD     |1|40|10|200KB          |-t fd_200
-|5.25" DSDD     |2|40|8 |320KB          |-t fd_320
-|**5.25" DSDD** |2|40|9 |360KB          |-t fd_360
-|5.25" DSDD     |2|40|10|400KB          |-t fd_400
-|**5.25" HD**   |2|80|15|1200KB (1.2MB) |-t fd_1200
-|3.5" DSDD (2DD)|2|80|9 |720KB          |-t fd_720
-|**3.5" HD**    |2|80|18|1440KB (1.44MB)|-t fd_1440 or -t fd
-|3.5" ED        |2|80|36|2880KB (2.88MB)|-t fd_2880
+|5.25" SSDD     |1|40|8 |160KB          |`-t fd_160`
+|**5.25" SSDD** |1|40|9 |180KB          |`-t fd_180`
+|5.25" SSDD     |1|40|10|200KB          |`-t fd_200`
+|5.25" DSDD     |2|40|8 |320KB          |`-t fd_320`
+|**5.25" DSDD** |2|40|9 |360KB          |`-t fd_360`
+|5.25" DSDD     |2|40|10|400KB          |`-t fd_400`
+|**5.25" HD**   |2|80|15|1200KB (1.2MB) |`-t fd_1200`
+|3.5" DSDD (2DD)|2|80|9 |720KB          |`-t fd_720`
+|**3.5" HD**    |2|80|18|1440KB (1.44MB)|`-t fd_1440` or `-t fd`
+|3.5" ED        |2|80|36|2880KB (2.88MB)|`-t fd_2880`
 |===
 
 NOTE: Common PC disk types in bold. The 8-sector formats should be avoided unless your need backward compatibility with DOS 1.x.
