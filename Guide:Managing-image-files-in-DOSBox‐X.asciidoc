@@ -651,7 +651,7 @@ DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) f
 
 Starting with DOSBox-X 0.84.2 there is also support for:
 
-- Rock Ridge extensions to ISO-9660, allowing up to 255 character file names (typically used by Unix systems, such as Linux)
+- Rock Ridge extensions to ISO-9660, allowing up to 255 character file names (typically used by Unix or Unix-like systems, such as Linux)
 - Joliet extensions to ISO-9660, allowing up to 64 character file names (introduced for Windows 95)
 - UDF filesystem (introduced for Windows 98)
 
