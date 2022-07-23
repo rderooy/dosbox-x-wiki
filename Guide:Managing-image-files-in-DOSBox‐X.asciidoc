@@ -649,7 +649,7 @@ hdiutil detach /dev/disk6
 == CD-ROM or DVD images
 DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in ISO, CUE+BIN or MDF image format.
 
-By default ISO-9660 Level 1 is used. When emulating DOS version 7.0 or later (or `lfn=true` in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
+By default ISO-9660 Level 1 is used, limited to traditional DOS 8.3 character filenames. When emulating DOS version 7.0 or later (or `lfn=true` in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
 
 Starting with DOSBox-X 0.84.2 there is also support for:
 
