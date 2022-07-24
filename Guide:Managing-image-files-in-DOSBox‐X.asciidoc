@@ -586,7 +586,7 @@ TIP: Once a disk image is mounted, you can alternatively also boot from a disk i
 You can also mount and boot a disk image in one step by selecting "Boot from disk image" from this submenu.
 
 === Using harddisk images in Linux
-WARNING: You should never mount a harddisk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the diskette image.
+WARNING: You should never mount a harddisk image simultaneously in both DOSBox-X and in Linux, as that can cause corruption of files or the filesystem on the disk image.
 
 ==== Gnome Disk Image Mounter
 When using the Gnome desktop environment, you can open `.IMG` disks with the "Disk Image Mounter".
