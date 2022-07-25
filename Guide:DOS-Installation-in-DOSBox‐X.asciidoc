@@ -134,7 +134,7 @@ image::images/MS-DOS:PC-DOS_1.0.png[Booting IBM PC DOS 1.00]
 
 == Hints and Tips
 === Host Folder Mounts
-Starting with DOSBox-X 0.84.2, there is optional support to dynamically convert a host folder mount to an emulated FAT harddisk for use when you need to boot a guest OS, such as PC DOS, MS-DOS or FreeDOS.
+Starting with DOSBox-X 2022.08.0, there is optional support to dynamically convert a host folder mount to an emulated FAT harddisk for use when you need to boot a guest OS, such as PC DOS, MS-DOS or FreeDOS.
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
@@ -197,7 +197,7 @@ If for some reason you want to do a reboot from the command-line, you can do so 
 For rebooting DOS with such a command you may also want to check the "Enable quick reboot" menu item (under "DOS") for a faster restart of the guest DOS system.
 
 === Boot menu
-If you used ``IMGMAKE`` from DOSBox-X prior to 0.84.2 to create a partitioned image, when booting from the image you will get the following boot menu with a 4-second timeout.
+If you used ``IMGMAKE`` from DOSBox-X prior to 2022.08.0 to create a partitioned image, when booting from the image you will get the following boot menu with a 4-second timeout.
 
 ....
 F1 . . . Dos
@@ -207,7 +207,7 @@ Default: F1
 ....
 
 This is due to a special Master Boot Record (MBR) that IMGMAKE creates.
-Images created with `IMGMAKE` from DOSBox-X 0.84.2 or later will no longer show this menu.
+Images created with `IMGMAKE` from DOSBox-X 2022.08.0 or later will no longer show this menu.
 
 Pressing Enter or F1 will continue the boot process, without having to wait for the timeout.
 Alternatively you can remove the boot menu by booting to DOS and running ``FDISK /MBR`` to create a new MBR without the boot menu.
