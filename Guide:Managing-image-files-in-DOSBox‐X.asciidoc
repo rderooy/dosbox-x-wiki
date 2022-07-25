@@ -442,7 +442,7 @@ Will cause both a hdd.img and a hdd.bat to be generated.
 The BAT file will contain the imgmount command to mount the harddisk image, including geometry.
 
 === Creating harddisk images from folder mounts
-Starting with DOSBox-X 0.84.2 it is possible to convert a host folder mount to a harddisk image file.
+Starting with DOSBox-X 2022.08.0 it is possible to convert a host folder mount to a harddisk image file.
 
 The steps are simply to first `mount` a host folder, and then from the menus (when running in Windowed mode), select "Drive" > "drive letter" > "Save to disk image".
 
@@ -651,7 +651,7 @@ DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) f
 
 By default ISO-9660 Level 1 is used, which is limited to traditional DOS 8.3 character filenames. When emulating DOS version 7.0 or later (or `lfn=true` is set in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
 
-Starting with DOSBox-X 0.84.2 there is also support for:
+Starting with DOSBox-X 2022.08.0 there is also support for:
 
 - Rock Ridge extensions to ISO-9660, allowing up to 255 character mixed-case file names with Unicode (typically used by Unix or Unix-like systems, such as Linux)
 - Joliet extensions to ISO-9660, allowing up to 64 character mixed-case file names with Unicode (introduced for Windows 95)
@@ -677,7 +677,7 @@ NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when
 NOTE: If the names of your CD/DVD images contain characters of foreign languages such as Japanese, please make sure that the current DOS code page matches the language you use before mounting the images. If you decide to put such commands in the [autoexec] section of the config file, please also make sure the encoding of your config file matches your language when you save the config file.
 
 === Rock Ridge, Joliet and UDF
-Starting with DOSBox-X 0.84.2, there is support for the Rock Ridge and Joliet extensions (for long filenames) to the ISO-9660 filesystem, in addition to support for the UDF filesystem.
+Starting with DOSBox-X 2022.08.0, there is support for the Rock Ridge and Joliet extensions (for long filenames) to the ISO-9660 filesystem, in addition to support for the UDF filesystem.
 
 Support for Rock Ridge and Joliet is automatically enabled when emulating DOS 7.0 or later. Support for UDF is enabled when emulating DOS 7.1 or later. Alternatively, Rock Ridge and Joliet support is also enabled when the `lfn=true` setting is set in the DOSBox-X config file.
 
