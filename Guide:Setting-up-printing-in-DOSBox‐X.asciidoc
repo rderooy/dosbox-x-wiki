@@ -345,7 +345,7 @@ You can specify the default target printer with the `device=` option.
 
 Create a PNG or BMP file with the print output.
 
-Between PNG and BMP, PNG is more modern format.
+Between PNG and BMP, PNG is a more modern format.
 BMP will create larger files, due to lack of compression, while the image quality will be identical.
 
 **ps**
