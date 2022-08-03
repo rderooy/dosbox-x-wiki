@@ -209,7 +209,7 @@ or
 
 * ``MT32_CONTROL.ROM`` and ``MT32_PCM.ROM``
 
-If the directory contains both CM-32L and MT-32 ROMs, DOSBox-X will use the CM-32L ROMs and emulate a Roland CM-32L.
+If the directory contains both CM-32L and MT-32 ROMs, DOSBox-X will default to emulating a Roland CM-32L.
 
 ==== mt32.reverse.stereo
 * Default: false
