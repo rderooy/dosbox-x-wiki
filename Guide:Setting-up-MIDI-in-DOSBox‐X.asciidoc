@@ -24,11 +24,14 @@ This section will list the available MIDI configuration options that DOSBox-X pr
 * Default value: intelligent
 * Other values: uart, none
 
-The default "intelligent", also referred to as "normal mode" Roland MPU-401 emulation should provide the broadest range of compatibility with games.
+The MPU-401 is a PC to MIDI interface, originally developed by Roland.
 
-Setting it to "uart", emulates the later cost-reduced "MPU-401 compatible" options, such as was integrated in various soundcards.
+The default "intelligent" setting, also referred to as "normal mode" Roland MPU-401 emulation should provide the broadest range of compatibility with games.
+
+Setting it to "uart", emulates the later cost-reduced "MPU-401 compatible" options, such as was integrated in various sound cards.
 
 Setting it to "none" disables MPU-401 emulation, and therefore MIDI emulation will be disabled.
+
 Both MT-32 and General MIDI require MPU-401 emulation.
 
 ==== mpubase
