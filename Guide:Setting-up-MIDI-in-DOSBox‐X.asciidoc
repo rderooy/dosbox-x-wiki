@@ -104,9 +104,9 @@ Other options:
 
 This can be used to pass special options needed for the chosen "mididevice".
 
-For instance, for the "mididevice=coreaudio" or "synth" options, this can be a path and filename of a soundfont (in sf2 or sf3 format).
+For instance, for the "mididevice=coreaudio" or "synth" options, this can be a path and filename of a SoundFont (in sf2 or sf3 format).
 
-For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your soundcard (most soundcards don't have one), or that of your external MIDI synth.
+For Linux with "mididevice=alsa" or "oss" this is the ID or part of the name of the wavetable synth module of your sound card (most sound cards don't have one), or that of your external MIDI synth.
 You can use ``aconnect -i`` to list available devices with ALSA.
 You can use the Client ID with device ID combined and set it for instance as ``midiconfig=14:0``
 
@@ -365,9 +365,9 @@ Games known to actually support the GS extensions can be found here: link:https:
 FluidSynth is the preferred software synthesizer for Linux, but it is also available for Windows and macOS.
 
 === Linux Setup
-DOSBox-X provides a range of configuration options, but for most Linux systems you can get it up and running simply by installing a soundfont, from the distro package manager, such as "fluid-soundfont-gm".
+DOSBox-X provides a range of configuration options, but for most Linux systems you can get it up and running simply by installing a SoundFont, from the distro package manager, such as "fluid-soundfont-gm".
 
-If you installed DOSBox-X using one of the provided RPM packages, this soundfont will be automatically installed by your package manager.
+If you installed DOSBox-X using one of the provided RPM packages, this SoundFont will be automatically installed by your package manager.
 
 And then simply adding the following lines to your DOSBox-X config file:
 
@@ -375,7 +375,7 @@ And then simply adding the following lines to your DOSBox-X config file:
 [midi]
 mididevice=fluidsynth
 ....
-In some cases, you may also need to specify a soundfont file with ``fluid.soundfont=``, and the sound server with ``fluid.driver=``
+In some cases, you may also need to specify a SoundFont file with ``fluid.soundfont=``, and the sound server with ``fluid.driver=``
 
 === Windows Setup
 FluidSynth support is included in both Visual Studio and MinGW builds by default in DOSBox-X version 0.83.7 and later. You can add the following lines to your DOSBox-X config file.
@@ -385,7 +385,7 @@ FluidSynth support is included in both Visual Studio and MinGW builds by default
 mididevice=fluidsynth
 fluid.soundfont="C:\DOSBox-X\soundfonts\FluidR3_GM.sf2"
 ....
-Adjust the path and filename to your soundfont as necessary (e.g. "C:\DOSBox-X\GeneralUser_GS.sf2" instead of "C:\DOSBox-X\soundfonts\FluidR3_GM.sf2").
+Adjust the path and filename to your SoundFont as necessary (e.g. "C:\DOSBox-X\GeneralUser_GS.sf2" instead of "C:\DOSBox-X\soundfonts\FluidR3_GM.sf2").
 When no soundfont is specified, DOSBox-X will try to open C:\soundfonts\default.sf2 if it exists.
 
 === FluidSynth config options
@@ -419,14 +419,14 @@ This parameter can be used to specify a single SF2 or SF3 link:https://github.co
 Many sound fonts can be found online, but you want one that covers the whole General MIDI range, also called a "GM SoundFont".
 FluidR3_GM.sf2 is such a free SoundFont.
 
-TIP: For some games, you may optionally want to download a SoundFont that implements both GM and the GS extensions, or a soundfont that mimics a certain MIDI sound module.
-An example is the link:https://musical-artifacts.com/artifacts/1229[FluidR3 GM+GS soundfont], which has both GM and the GS extensions in a single file.
-Alternatively, you can look for a soundfont that mimics a certain MIDI sound module like the Roland SC-55 or SC-88, but all the Sound Canvas look-alike sound fonts available at present don't seem to implement the GS extensions, and as such are only useful for GM.
+TIP: For some games, you may want to use a SoundFont that implements both GM and the GS extensions, or a SoundFont that mimics a certain MIDI sound module.
+An example is the link:https://musical-artifacts.com/artifacts/1229[FluidR3 GM+GS SoundFont], which has both GM and the GS extensions in a single file.
+Alternatively, you can look for a SoundFont that mimics a certain MIDI sound module like the Roland SC-55 or SC-88, but all the Sound Canvas look-alike sound fonts available at present don't seem to implement the GS extensions, and as such are only useful for GM.
 The Roland SC-55 or SC-88 (Sound Canvas) in particular, was used by many musicians back in the day to compose General MIDI music for DOS and Windows games.
 
 NOTE: While FluidSynth supports stacking or chaining of sound fonts, this is not supported in this implementation.
 So for instance, you cannot specify both FluidR3_GM and FluidR3_GS.
-Instead, you need a single soundfont that implements all the sounds you need, which the above linked "FluidR3 GM+GS" does.
+Instead, you need a single SoundFont that implements all the sounds you need, which the above linked "FluidR3 GM+GS" does.
 
 ==== fluid.samplerate
 * Default value: 48000
@@ -542,9 +542,9 @@ Specifies the chorus type. 0 is sine wave, 1 is triangle wave.
 == TiMidity{plus}{plus}
 TiMidity{plus}{plus} is a MIDI software synthesis, primarily for Linux.
 You should consider using FluidSynth instead.
-But if you want to try TiMidity{plus}{plus}, install the timidity{plus}{plus} package with your package manager, and also install a soundfont like FluidR3_GM.
+But if you want to try TiMidity{plus}{plus}, install the timidity{plus}{plus} package with your package manager, and also install a SoundFont like FluidR3_GM.
 
-You then need to point TiMidity{plus}{plus} to the soundfont you want to use, for this edit ``/etc/timidity++/timidity.cfg`` and make sure the ``soundfont`` setting points to a valid SF2 or SF3 soundfont file.
+You then need to point TiMidity{plus}{plus} to the SoundFont you want to use, for this edit ``/etc/timidity++/timidity.cfg`` and make sure the ``soundfont`` setting points to a valid SF2 or SF3 SoundFont file.
 
 TiMidity{plus}{plus} support is not built-in like FluidSynth, instead you need to run it as a separate background service to which DOSBox-X can connect.
 After you have installed the packages, enable and start the timidity service.
