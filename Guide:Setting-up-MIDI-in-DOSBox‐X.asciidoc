@@ -616,7 +616,7 @@ The disadvantage is that it has high-latency and many of the sounds don't sound 
 On a modern Windows system, there are no configuration options either.
 
 == CoreAudio
-OSX TBD. Help needed.
+macOS TBD. Help needed.
 
 == CoreMIDI
-OSX TBD. Help needed.
+macOS TBD. Help needed.
