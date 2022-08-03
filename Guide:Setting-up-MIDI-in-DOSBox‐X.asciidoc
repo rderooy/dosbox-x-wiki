@@ -11,7 +11,7 @@ toc::[]
 
 == Overview
 DOSBox-X has support for emulating either a General MIDI or a Roland MT-32 synthesizer.
-In addition, it is possible to use a real external MIDI synthesizer.
+In addition, it is possible to use an external MIDI synthesizer, either real or software.
 
 NOTE: As of DOSBox-X version 0.83.6, the DOSMID program is included in DOSBox-X and will appear on the virtual Z: drive, and you can use it to play MIDI/RMI/MUS audio files.
 
