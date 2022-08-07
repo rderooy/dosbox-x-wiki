@@ -53,7 +53,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 * Teledisk (`.TD0`)
 * Transcopy (`.TC`)
 
-NOTE: While DOSBox-X does not support mounting or booting from diskette images in IBM DSKF format, it is possible to use the ``link:http://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` program in DOSBox-X to convert an IBM DSKF file to a regular MFM Disk format.
+NOTE: While DOSBox-X does not support mounting or booting from diskette images in IBM DSKF format, it is possible to use the ``link:http://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` program in DOSBox-X to convert an IBM DSKF file to a regular RAW MFM Disk format.
 
 === Creating diskette images
 NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create diskette images at any time from the DOSBox-X menu.
@@ -316,7 +316,7 @@ mcopy -s -i disk.ima :: tmp
 WARNING: You should never mount a disk image simultaneously in both DOSBox-X and in Windows, as that can cause corruption of files or the filesystem on the diskette image.
 
 NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a .IMG file.
-Unfortunately this support is incompatible with the typical MFM image files used by DOSBox-X, and the mount will fail.
+Unfortunately this support is incompatible with the typical RAW MFM image files used by DOSBox-X, and the mount will fail.
 
 Several 3rd party tools are available which can open the diskette image files:
 
@@ -326,7 +326,7 @@ Several 3rd party tools are available which can open the diskette image files:
 * link:https://www.winzip.com/[WinZIP]
 
 === Using diskette images in macOS
-You can mount MFM image files with the extension `.IMG` in macOS from the Finder by double-clicking on it.
+You can mount RAW MFM image files with the extension `.IMG` in macOS from the Finder by double-clicking on it.
 You can unmount it by clicking on the "Eject" button next to it in the Finder.
 
 It is also possible to mount the image file from the macOS Terminal using `hdiutil`
@@ -619,15 +619,15 @@ For the first partition this should normally always start at 63*512=32256
 
 === Using harddisk images in Windows
 NOTE: Windows 8 and newer has integrated support for mounting image files, and will offer the "Mount" option when you right-click a `.IMG` file.
-Unfortunately this support is incompatible with the typical MFM image files used by DOSBox-X, and the mount will fail.
+Unfortunately this support is incompatible with the typical RAW MFM image files used by DOSBox-X, and the mount will fail.
 
 One tool which is able to open harddisk images is 7-Zip, but only in read-only mode.
 
 === Using harddisk images in macOS
-You can mount MFM harddisk image files with the extension `.IMG` in macOS from the Finder by double-clicking on it.
+You can mount RAW MFM harddisk image files with the extension `.IMG` in macOS from the Finder by double-clicking on it.
 You can unmount it by clicking on the "Eject" button next to it in the Finder.
 
-MFM Harddisk images can also be opened in macOS from the Terminal using `hdiutil` as such:
+RAW MFM Harddisk images can also be opened in macOS from the Terminal using `hdiutil` as such:
 
 ....
 hdiutil attach hdd.img
