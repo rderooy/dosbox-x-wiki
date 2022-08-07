@@ -369,7 +369,7 @@ The ``IMGMAKE`` command supports FAT12, FAT16 and FAT32 formatted partitions, an
 Using the ``-FAT`` option it is possible to overrule the decision process.
 But this can cause ``IMGMAKE`` to give errors if the partition size is not supported by the filesystem type, or can cause other problems such as performance issues or waisted disk space.
 
-e.g.
+e.g., to create a 400MiB HDD image formatted as FAT32:
 ....
 IMGMAKE hdd.img -t hd -size 400 -fat 32
 ....
