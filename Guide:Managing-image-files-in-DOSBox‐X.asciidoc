@@ -33,7 +33,7 @@ Note that both of these options will only show image mounts, not folder mounts.
 == Diskette (floppy disk) images
 DOSBox-X supports mounting diskette (aka Floppy) images in the following formats:
 
-* MFM sector image format (typically ending in `.ima` or `.img`)
+* RAW MFM sector image format (typically ending in `.ima` or `.img`)
 * Microsoft DMF (typically ending in `.dmf`)
 * NEC PC-98 diskette images (typically ending in `.fdd`, `.fdi`, `.nfd` or `.d88`)
 
@@ -60,7 +60,7 @@ NOTE: In addition to the below DOSBox-X command line utility, starting with DOSB
 Go to the "DOS" menu, and select "Create blank disk image...".
 This option allows most common floppy disk types to be created, for less common types you need to use the command line utility.
 
-DOSBox-X has a built-in ``IMGMAKE`` command with which you can create FAT12 formatted diskette images in MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a built-in ``IMGMAKE`` command with which you can create FAT12 formatted diskette images in RAW MFM sector image format from the DOSBox-X command prompt.
 
 Example:
 ....
@@ -334,7 +334,7 @@ It is also possible to mount the image file from the macOS Terminal using `hdiut
 == Harddisk images
 DOSBox-X supports mounting harddisk images in the following formats:
 
-* link:https://en.wikipedia.org/wiki/IMG_(file_format)[MFM sector image format] (typically `.img`)
+* link:https://en.wikipedia.org/wiki/IMG_(file_format)[RAW MFM sector image format] (typically `.img`)
 * link:https://en.wikipedia.org/wiki/Qcow[QCOW2] - QEMU copy-on-write v2 (`.qcow2`)
 ** No support in DOSBox-X for QCOW2 compression or encryption options
 ** Must always be mounted as a drive number as such: ``imgmount 2 hdd.qcow2``
@@ -350,7 +350,7 @@ NOTE: In addition to the below DOSBox-X command line utility, starting with DOSB
 Go to the "DOS" menu, and select "Create blank disk image…".
 This option allows a few common HDD sizes to be created, for less common types you need to use the command line utility.
 
-DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in RAW MFM sector image format from the DOSBox-X command prompt.
 ``IMGMAKE`` only creates a single primary DOS partition per harddisk image file.
 
 ==== FAT version
