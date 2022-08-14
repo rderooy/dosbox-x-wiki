@@ -71,12 +71,13 @@ Some examples:
 * link:https://www.vogons.org/viewtopic.php?t=9405[Windows 3.1x DOSBox Guide] on Vogons by user Dominus
 * link:https://www.howtogeek.com/230359/how-to-install-windows-3.1-in-dosbox-set-up-drivers-and-play-16-bit-games/[How to Install Windows 3.1 in DOSBox, Set Up Drivers, and Play 16-bit Games] on How-To Geek
 * link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_install.html[Windows 3x on DOSBox guide] on sierrahelp.com
+* link:https://nerdlypleasures.blogspot.com/2016/12/windows-30-multimedia-edition-early.html[Windows 3.0 Multimedia Edition install guide]
 
 This guide does not look to replicate those guides. Instead, this guide will have some install guidance and hints and tips not covered on those pages, or that are specific to DOSBox-X. It is not intended to be a comprehensive guide.
 
 === Useful links
 
-* link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
+* link:https://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_3.0[Wikipedia: Windows 3.0]
 * link:https://en.wikipedia.org/wiki/Windows_3.1x[Wikipedia: Windows 3.1x]
 * link:https://microsoft.fandom.com/wiki/Windows_3.1[Fandom: Windows 3.1]
@@ -96,8 +97,13 @@ Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the mome
 === Windows 3.0a with Multimedia Extensions specific notes
 * This edition was available only to OEMs (Original Equipment Manufacturers) for bundling with a multimedia PC or multimedia upgrade set, as such Windows will be customized to that multimedia system or upgrade set.
 Examples of such customization, are an OEM specific launcher, OEM specific applications, but also that the installer may default to custom audio and video options.
-* For versions distributed on CD, the installation can be started by going into the ``MWIN`` directory on the CD and running ``SETUP.EXE``.
+* It seems all versions were distributed on CD, the installation can be started by going into the ``MWIN`` directory on the CD and running ``SETUP.EXE``.
 * Unlike regular Windows which installs by default to ``C:\WINDOWS`` this edition installs by default to ``C:\MWINDOWS``.
+* The two editions which have been archived, shipped with Multimedia upgrade kits, are from Tandy and Creative Labs respectively.
+* The Tandy edition shipped as part of a Sound and CD-ROM upgrade kit, included a "Tandy Sound Blaster Pro 16". Despite the name, this is not actually a SB16, but rather a modified SB Pro (aka SB Pro 1.0). Drivers for this are included with the Windows installation and you should emulate a SB Pro 1 for the best experience.
+* The Creative Labs edition shipped as part of a Sound and CD-ROM upgrade kit, included a "Sound Blaster Pro" (aka SB Pro 1.0). Drivers for this are included with the Windows installation and you should emulate a SB Pro 1 for the best experience.
+* During Windows setup, change the default "Palettized VGA 640x480 with 16 colors" display option to "VGA", or audio playback will cause Windows to crash. You can install the ET4000 drivers afterwards.
+* If during Windows setup you are asked to provide the path to "mouse.sys", skip it. It is looking for the Microsoft DOS Mouse driver, which is not needed.
 
 == DOSBox-X config file
 It is recommended that you create a custom DOSBox-X config file for running Windows 3.x
@@ -118,6 +124,10 @@ floppy drive data rate limit=0
 [cpu]
 cputype=pentium
 core=normal
+
+[sblaster]
+# uncomment the next line if you want to use Windows 3.0 Multimedia Edition
+#sbtype=sbpro1
 
 [pci]
 voodoo=false
@@ -325,6 +335,80 @@ Once Windows 3.x is installed, here is some additional software you may want to 
 * Adobe Acrobat Reader
 * Adobe Type Manager 3.02
 
+== Windows 3.0 video driver
+See link:Guide%3AVideo-card-support-in-DOSBox‐X[Video card support in DOSBox‐X] for more information about the various video cards, and available options.
+
+TIP: For Windows 3.0 the recommended display adapter is the Tseng Labs ET4000.
+
+Here are the recommended drivers, depending on the video adapter you are emulating.
+
+* **Tseng Labs**
+** ET3000 using `machine=svga_et3000`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET3-W31.ZIP[Windows 3.0 and 3.1beta - ET3000 drivers, Jan 15 1992]
+** ET4000 using `machine=svga_et4000`
+*** link:http://vogonsdrivers.com/getfile.php?fileid=292&menustate=0[Windows 3.0 - ET4000 drivers, Jan 15 1992]
+* **Paradise Systems**
+** PVGA1A using `machine=svga_paradise`
+*** link:http://vogonsdrivers.com/getfile.php?fileid=243&menustate=0[Windows 3.0 - PVGA drivers, Dec 19 1990]
+
+== Windows 3.1x video driver
+See link:Guide%3AVideo-card-support-in-DOSBox‐X[Video card support in DOSBox‐X] for more information about the various video cards, and available options.
+
+NOTE: The generic "Super VGA" driver included with Windows 3.1x only works with `machine=svga_et4000`.
+Regardless, It is recommended to use the default VGA video driver during Windows 3.1x installation, and install a 3rd party SVGA driver afterwards.
+
+For installing a 3rd party display driver, you should follow the instructions (e.g. README) included with the driver.
+If there are no instructions included, exit Windows 3.1x back to the DOSBox-X prompt, then go into the WINDOWS subdirectory, and run `SETUP`. e.g.,
+
+....
+cd \WINDOWS
+SETUP
+....
+
+Select the "Display" option, followed by the "Other" option at the bottom of the list.
+
+image::images/Windows:Windows_3.11_SETUP_Display.png[Windows 3.11 splash screen]
+
+Now provide the path where the unpacked driver can be found, and continue and the driver should install.
+
+Here are the recommended drivers, depending on the video adapter you are emulating.
+
+TIP: For Windows 3.1x the recommended display adapter is the default S3 Trio64.
+
+* **S3 Graphics**
+** S3 86c928 using `machine=svga_s386c928`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/S3WIN230.ZIP[Windows 3.1x - S3 928 drivers version 2.3B11, April 25 1994]
+** S3 Vision864 using `machine=svga_s3vision864`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/864141B5.ZIP[Windows 3.1x - S3 864 drivers version 1.41B5, March 2 1995]
+** S3 Vision868 using `machine=svga_s3vision868`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/868141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2 1995]
+** S3 Vision964 using `machine=svga_s3vision964`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/964141B5.ZIP[Windows 3.1x - S3 964 drivers version 1.41B5, March 2 1995]
+** S3 Vision968 using `machine=svga_s3vision968`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/968141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2 1995]
+** S3 Trio32 using `machine=svga_s3trio32`
+*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22 1997]
+** S3 Trio64 (**default**) using `machine=svga_s3` or `machine=svga_s3trio64`
+*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22 1997]
+** S3 Trio64V+ using `machine=svga_s3trio64v+`
+*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22 1997]
+** S3 ViRGE using `machine=svga_s3virge` (experimental)
+*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2 1997]
+** S3 ViRGE/VX using `machine=svga_s3virgevx` (experimental)
+*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2 1997]
+* **Tseng Labs**
+** ET3000 using `machine=svga_et3000`
+*** link:http://vogonsdrivers.com/getfile.php?fileid=245&menustate=0[Windows 3.1x - ET3000 drivers, Dec 8 1994]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET4-W31.ZIP[Windows 3.0/3.1x - Jan 15 1992 ]
+** ET4000 using `machine=svga_et4000`
+*** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/W31ET4.ZIP[Windows 3.1x - ET4000 drivers, Dec 8 1994]
+* **Paradise Systems**
+** PVGA1A using `machine=svga_paradise`
+*** There does not appear to be a Windows 3.1x specific driver, use the Windows 3.0 driver instead.
+
+NOTE: The above video drivers are so-called "flat mode" drivers, which only work in Windows 3.1x Enhanced Mode (386 and above).
+If for some reason you want to run Windows 3.1x standard mode (e.g. on a 286), use the Windows 3.0 drivers instead.
+
 == Mouse support
 When running Windows in DOSBox-X the integration is not seamless.
 You need to capture the mouse and again release it when you want to leave the DOSBox-X window.
@@ -347,13 +431,13 @@ Unpack the archive, and you will find a Windows 3.0 or 3.1 mouse driver in respe
 - Continue the setup as normal
 
 In addition, set the following options in your DOSBox-X config file:
-```
+....
 [sdl]
 mouse emulation=integration
 
 [cpu]
 integration device=true
-```
+....
 Now when you run Windows 3.x, you should have seamless mouse support.
 
 NOTE: These old windows versions had no support for mice with scroll wheels. By default DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.
@@ -472,9 +556,12 @@ There were 3rd party WinSock solutions, but those were meant for dial-up interne
 You can however install *Microsoft TCP/IP-32*, which was sold separately, to add TCP/IP support to WfW.
 
 == Enabling sound
-DOSBox-X by default emulates a Creative Labs SoundBlaster 16.
+DOSBox-X by default emulates a Creative Labs Sound Blaster 16.
 link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_InstallSB.html[Download and install] the SB16 driver package.
 This needs to be run from DOS.
+
+NOTE: In the case of Windows 3.0 with Multimedia Extensions, the driver shipped with the Tandy and Creative Labs CD-ROM upgrade kits works best with the SB Pro 1 emulation.
+The sound driver for this is included with the Windows installation.
 
 Pay close attention during installation to the IRQ.
 The emulated SB16 in DOSBox-X defaults to IRQ7, while the SB16 driver package assumes IRQ5.
@@ -496,11 +583,11 @@ image::images/Windows:Windows_3.1_MIDI.png[Windows 3.1x MIDI]
 You should now be able to open the Windows 3.1x Media Player and playback ``C:\WINDOWS\CANYON.MID``.
 
 === Enabling external MIDI in Windows 3.0a with MM Extensions
-The same can be carried out with *Windows 3.0a with Multimedia Extensions*, but the "SB16 All MIDI" option will not be listed.
+The same can be carried out with *Windows 3.0a with Multimedia Extensions*, but no option similar to the above "SB16 All MIDI" option will not be listed.
 
 Instead, in the "MIDI Mapper" dialogue box click on the "New..." button.
 You will be asked for a name and description.
-You can name it anything you like, for instance "SB16 Ext MIDI", and click the "OK" button.
+You can name it anything you like, for instance "SBPro Ext MIDI", and click the "OK" button.
 You do not have to enter anything for the Description.
 
 image::images/Windows:Windows_3.0_MIDI_1.png[Windows 3.0a MIDI]
