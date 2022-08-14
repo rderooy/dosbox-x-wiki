@@ -442,13 +442,13 @@ Unpack the archive, and you will find a Windows 2.0 mouse driver in the `windrv/
 
 
 In addition, set the following options in your DOSBox-X config file:
-```
+....
 [sdl]
 mouse emulation=integration
 
 [cpu]
 integration device=true
-```
+....
 Now when you run Windows 2.0, you should have seamless mouse support.
 
 NOTE: These old windows versions had no support for mice with scroll wheels. By default DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.

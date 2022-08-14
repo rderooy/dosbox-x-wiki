@@ -450,10 +450,10 @@ The FAT version will be automatically selected, based on the aggregate amount of
 If the total does not exceed 2GiB, it will be converted to a FAT16 harddisk image file, otherwise it will become a FAT32 image instead (which will require a guest OS with FAT32 support).
 
 The amount of free space can be adjusted in the DOSBox-X config file as such:
-```
+....
 [sdl]
 convert fat free space = 10
-```
+....
 This will limit the free space to 10MiB.
 Set it to 0 for read-only (no free space) and -1 to attempt to use the actual free space on the host drive (subject to FAT filesystem limits).
 
@@ -686,9 +686,9 @@ If DOSBox-X detects a CD image with both Rock Ridge and Joliet extensions, it wi
 Rock Ridge, Joliet or UDF support can be enabled or disabled when mounting a CD image with the `-o [rr|joliet|udf]` image mount option.
 
 e.g. to mount a CD image and disable Rock Ridge support:
-```
+....
 imgmount D: cdrom.iso -o rr=0
-```
+....
 
 === Accessing a CD or DVD in real DOS
 With the integrated DOS that DOSBox-X provides, you do not need to worry about loading a CD-ROM driver and MSCDEX.
