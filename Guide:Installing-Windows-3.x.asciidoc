@@ -97,6 +97,8 @@ Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the mome
 * Unless noted otherwise, Windows 3.1 drivers are not backward compatible with Windows 3.0.
 
 === Windows 3.0a with Multimedia Extensions specific notes
+Also called **Windows 3.0 Multimedia Edition**
+
 * This edition was available only to OEMs (Original Equipment Manufacturers) for bundling with a multimedia PC or multimedia upgrade set, as such Windows will be customized to that multimedia system or upgrade set.
 Examples of such customization, are an OEM specific launcher, OEM specific applications, but also that the installer may default to custom audio and video options.
 * It seems all versions were distributed on CD, the installation can be started by going into the ``MWIN`` directory on the CD and running ``SETUP.EXE``.
@@ -605,7 +607,7 @@ A few known titles to support it:
 
 The only available sound drivers, are the once included with the installation. Later Windows 3.1 sound drivers will not work.
 
-There are two edition for which information is available:
+There are two editions for which information is available:
 
 - Tandy Multimedia upgrade kit with "Tandy Sound Blaster Pro 16", which is actually a modified SB Pro 1.0
 - Creative Labs Multimedia upgrade kit with SB Pro 1.0
