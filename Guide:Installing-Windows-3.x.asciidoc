@@ -13,14 +13,14 @@ This guide will give a general description of installing Windows 3.x in DOSBox-X
 
 === Editions this applies to
 
-* *Windows 3.0*
+* *Windows 3.0* (released May 22, 1990)
 ** Supports up to 16MB RAM.
 ** Improved UI.
 ** Improved memory management (286+ only).
-* *Windows 3.0a*
+* *Windows 3.0a* (released Dec,, 1990)
 ** Allow programs to call into real-mode when started in standard mode.
 ** Bug fixes for the installer to alleviate crashes.
-* *Windows 3.0a with Multimedia Extensions*
+* *Windows 3.0a with Multimedia Extensions* (released Oct, 1991)
 ** Adds Multimedia Extensions 1.0.
 ** Multimedia extensions do not support real mode (8086/8088 CPUs).
 ** Adds support for recording and playing digital audio files.
@@ -28,23 +28,24 @@ This guide will give a general description of installing Windows 3.x in DOSBox-X
 ** Adds support for screensavers.
 ** Adds support for analogue joysticks.
 ** Adds support for audio CD-ROMs.
-* *Windows 3.1*
+* *Windows 3.1* (released Apr 6, 1992)
 ** Supports up to 256MB RAM.
 ** Dropped support for real mode (8086/8088 CPUs).
 ** Includes updated Multimedia Extensions.
 ** Adds TrueType font support.
 ** Adds optional 32-bit disk access (386 Enhanced Mode only).
 ** Adds the Windows Registry.
-* *Windows 3.11*
+* *Windows 3.11* (released Nov 8, 1993)
 ** Bug fix release.
-* *Windows for Workgroups 3.1*
+* *Windows for Workgroups 3.1* (released Oct, 1992)
 ** Adds SMB file sharing (NBF or IPX protocols only).
 ** Adds VSHARE.386.
-* *Windows for Workgroups 3.11*
+* *Windows for Workgroups 3.11* (released Nov 8, 1993)
 ** Adds 32-bit file redirectors.
 ** Drops support for standard mode (286 CPUs).
 * *Windows for Workgroups 3.11a*
-* *Windows 3.2*
+** Removed compression support from Remote Access software
+* *Windows 3.2* (released Nov 22, 1993)
 ** Chinese language release of Windows 3.1.
 
 |===
@@ -71,7 +72,6 @@ Some examples:
 * link:https://www.vogons.org/viewtopic.php?t=9405[Windows 3.1x DOSBox Guide] on Vogons by user Dominus
 * link:https://www.howtogeek.com/230359/how-to-install-windows-3.1-in-dosbox-set-up-drivers-and-play-16-bit-games/[How to Install Windows 3.1 in DOSBox, Set Up Drivers, and Play 16-bit Games] on How-To Geek
 * link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_install.html[Windows 3x on DOSBox guide] on sierrahelp.com
-* link:https://nerdlypleasures.blogspot.com/2016/12/windows-30-multimedia-edition-early.html[Windows 3.0 Multimedia Edition install guide]
 
 This guide does not look to replicate those guides. Instead, this guide will have some install guidance and hints and tips not covered on those pages, or that are specific to DOSBox-X. It is not intended to be a comprehensive guide.
 
@@ -84,6 +84,8 @@ This guide does not look to replicate those guides. Instead, this guide will hav
 * link:https://betawiki.net/wiki/Windows_3.0[BetaWiki: Windows 3.0]
 * link:https://betawiki.net/wiki/Windows_3.00a_Multimedia_Edition[BetaWiki: Windows 3.00a Multimedia Edition]
 * link:https://betawiki.net/wiki/Windows_3.1xp[BetaWiki: Windows 3.1x]
+* link:https://nerdlypleasures.blogspot.com/2016/12/windows-30-multimedia-edition-early.html[Nerdly Pleasures: Windows 3.0 Multimedia Edition - Early Windows Multimedia Gaming]
+* link:https://nerdlypleasures.blogspot.com/2016/11/windows-31-dawn-of-windows-gaming.html[Nerdly Pleasures: Windows 3.1 - The Dawn of Windows Gaming]
 
 === General Notes
 * Some parts of the installation can take a considerable amount of time.
@@ -582,37 +584,50 @@ There were 3rd party WinSock solutions, but those were meant for dial-up interne
 
 You can however install *Microsoft TCP/IP-32*, which was sold separately, to add TCP/IP support to WfW.
 
-== Enabling sound
-DOSBox-X by default emulates a Creative Labs Sound Blaster 16.
-link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_InstallSB.html[Download and install] the SB16 driver package.
-This needs to be run from DOS.
+== Sound in Windows 3.0
+Windows 3.0 and 3.0a does not really support sound. It only supports the PC Speaker, and even then is limited to a simple "beep" sound.
 
-NOTE: In the case of Windows 3.0 with Multimedia Extensions, the driver shipped with the Tandy and Creative Labs CD-ROM upgrade kits works best with the SB Pro 1 emulation.
-The sound driver for this is included with the Windows installation.
+Some early Windows games will directly access the PC Speaker, without a driver, to get more complex sounds.
 
-Pay close attention during installation to the IRQ.
-The emulated SB16 in DOSBox-X defaults to IRQ7, while the SB16 driver package assumes IRQ5.
-So, unless you changed the SB IRQ in your DOSBox-X config file, change the IRQ during installation to IRQ7.
+In addition, it is possible to install early versions of Sound Blaster software for Windows, which provides its own API, to allow the included Jukebox and Mixer to access the hardware.
 
-=== Enabling external MIDI in Windows 3.1x
-By default, the SB16 Windows 3.1x drivers will emulate MIDI playback using the OPL chip.
-However, DOSBox-X has built-in support for General MIDI emulation (which is enabled by default), and which sounds much better.
+link:http://files.mpoli.fi/hardware/SOUND/CLABS/WIN30.ZIP[SB 1.0/1.5/2.0 and SB Pro 1.0 drivers for Windows 3.0]
 
-To set it up, first ensure the SB16 drivers are installed.
-Then in Windows 3.1x go to "Control Panel" and open "MIDI Mapper".
+== Sound in Windows 3.0 Multimedia Edition
+As mentioned, this Windows edition was only available as part of a Multimedia PC purchase, or Multimedia upgrade kit.
 
-In Windows 3.1x go to "Control Panel", and open "MIDI Mapper.
-If there is no "MIDI Mapper" icon in "Control Panel", the Sound Blaster drivers were not installed.
-Select the "SB16 All MIDI" option from the drop-down menu and press the "Close" button.
+Very few Windows games support this edition.
+Look for a combination of Windows 3.0 and the "Multimedia Windows" or "Windows MPC" logo on the box.
+A few known titles to support it:
 
-image::images/Windows:Windows_3.1_MIDI.png[Windows 3.1x MIDI]
+- Early Sierra Online Windows versions such as: Mixed Up Mother Goose, King's Quest V, Space Quest IV, Laura Bow 2, King's Quest VI, Freddy Pharkas, EcoQuest 1
+- Battle Chess Enhanced CD-ROM
 
-You should now be able to open the Windows 3.1x Media Player and playback ``C:\WINDOWS\CANYON.MID``.
+The only available sound drivers, are the once included with the installation. Later Windows 3.1 sound drivers will not work.
 
-=== Enabling external MIDI in Windows 3.0a with MM Extensions
-The same can be carried out with *Windows 3.0a with Multimedia Extensions*. but no option similar to the above "SB16 All MIDI" option will not be listed.
+There are two edition for which information is available:
 
-Instead, in the "MIDI Mapper" dialogue box click on the "New..." button.
+- Tandy Multimedia upgrade kit with "Tandy Sound Blaster Pro 16", which is actually a modified SB Pro 1.0
+- Creative Labs Multimedia upgrade kit with SB Pro 1.0
+
+For both of these edition, it is best to use `sbtype=sbpro1` in your DOSBox-X config file.
+
+During Windows installation, the Tandy edition will only offer the option to change the base IO port from the default 220.
+Options to change the IRQ and DMA are not given. For this edition, you should either set `irq=10` and `dma=3` in your DOSBox-X config file, or modify the defaults manually after installation in `C:\MWINDOWS\SYSTEM.INI`
+
+For the Creative Labs edition, it will ask for the base IO port, IRQ and DMA during installation.
+Unless you changed the settings in your DOSBox-X config file, the default is IO 220, IRQ 7 and DMA 1.
+
+NOTE: Setting the wrong SB settings can cause Windows to crash when it tries to play sounds, which it will do by default on Windows startup.
+
+=== Enabling external MIDI in Windows 3.0 Multimedia Edition
+By default, the SBPro Windows drivers will emulate MIDI playback using the dual OPL2 chips.
+
+However, DOSBox-X has built-in support for General MIDI emulation (which is normally enabled by default), and which sounds much better.
+
+To set it up, in Windows 3.0 Multimedia Edition, go to "Control Panel" and open "MIDI Mapper".
+
+In the "MIDI Mapper" dialogue box click on the "New..." button.
 You will be asked for a name and description.
 You can name it anything you like, for instance "SBPro Ext MIDI", and click the "OK" button.
 You do not have to enter anything for the Description.
@@ -626,7 +641,33 @@ Once finished click the "OK" button and confirm the save.
 
 image::images/Windows:Windows_3.0_MIDI_2.png[Windows 3.0a MIDI]
 
-You should now be able to open the Windows 3.0a Media Player and playback ``C:\MWINDOWS\MMDATA\CANYON.MID``.
+You should now be able to open the Windows 3.0 Media Player and playback something like ``C:\MWINDOWS\MMDATA\CANYON.MID``.
+
+== Sound in Windows 3.1x
+Starting with Windows 3.1, multimedia support is standard.
+
+DOSBox-X by default emulates a Creative Labs Sound Blaster 16.
+link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_InstallSB.html[Download and install] the SB16 driver package.
+The installer needs to be run from DOS.
+
+Pay close attention during installation to the IRQ.
+The emulated SB16 in DOSBox-X defaults to IRQ7, while the SB16 driver package assumes IRQ5.
+So, unless you changed the SB IRQ in your DOSBox-X config file, change the IRQ during installation to IRQ7.
+
+=== Enabling external MIDI in Windows 3.1x
+By default, the SB16 Windows 3.1x drivers will emulate MIDI playback using the OPL3 chip.
+However, DOSBox-X has built-in support for General MIDI emulation (which is enabled by default), and which sounds much better.
+
+To set it up, first ensure the SB16 drivers are installed.
+Then in Windows 3.1x go to "Control Panel" and open "MIDI Mapper".
+
+In Windows 3.1x go to "Control Panel", and open "MIDI Mapper.
+If there is no "MIDI Mapper" icon in "Control Panel", the Sound Blaster drivers were not installed.
+Select the "SB16 All MIDI" option from the drop-down menu and press the "Close" button.
+
+image::images/Windows:Windows_3.1_MIDI.png[Windows 3.1x MIDI]
+
+You should now be able to open the Windows 3.1x Media Player and playback something like ``C:\WINDOWS\CANYON.MID``.
 
 == Enabling printing
 Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting up printing in DOSBox-X]
