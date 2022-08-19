@@ -354,7 +354,7 @@ The following option is available in the ``[speaker]`` section of you config fil
 * Valid values: true, false
 
 Enables or disables Disney Sound Source emulation on the parallel port.
-This feature is backward compatible with the *Covox Speech Thing* and *Covox Voice Master* parallel port dongles.
+This feature is backward compatible with the *Covox Speech Thing* and *Intersound MDO* parallel port dongles.
 
 === Creative Sound Blaster
 Creative Technology created a range of Sound Blaster cards, which quickly became the industry standard for PC sound.
