@@ -281,7 +281,7 @@ Sample rate, in Hz, at which the Tandy emulation generates sound.
 You should set this to the same sample rate as the `rate=` option in the `[mixer]` section.
 
 === AdLib Music Synthesizer Card
-The AdLib Music Synthesizer Card was released by Ad Lib in 1987.
+The AdLib Music Synthesizer Card (typically simple referred to as "AdLib") was released by Ad Lib in 1987, and is based on the Yamaha OPL2 chip.
 It was the first popular sound card for IBM PC's and compatibles.
 It was an easy card to clone, resulting in many AdLib compatible sound cards.
 
@@ -292,7 +292,7 @@ sbtype=none
 oplmode=opl2
 ....
 
-However, the above is normally not needed as the later Sound Blaster cards, such as the sb16 that DOSBox-X by default emulates, are all backward compatible with the AdLib.
+However, the above is normally not needed as the later Sound Blaster cards, such as the sb16 that DOSBox-X by default emulates, are all backward compatible with the AdLib Music Synthesizer Card.
 
 NOTE: Some programs may require the AdLib ``SOUND.COM`` TSR to be loaded. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
@@ -302,6 +302,8 @@ NOTE: Some programs may require the AdLib ``SOUND.COM`` TSR to be loaded. See th
 
 === CMS / Game Blaster
 FM synthesizer card, released by Creative Technology in 1987.
+Based around two Philips SAA-1099 chips, allowing for stereo sound.
+
 Originally named the *Creative Music System* (CMS), but the year after rebranded as the *Game Blaster*.
 
 CMS/Game Blaster emulation can be enabled by setting ``sbtype=gb`` in the ``[sblaster]`` section of your config file.
@@ -363,7 +365,7 @@ This feature is backward compatible with the *Covox Speech Thing* and *Intersoun
 === Creative Sound Blaster
 Creative Technology created a range of Sound Blaster cards, which quickly became the industry standard for PC sound.
 
-NOTE: The SB cards are backwards compatible with the AdLib cards. As such the AdLib ``sound.com`` TSR works on them, but Creative had to create their own version as they could not distribute the one from AdLib. The Creative TSR is named ``sb-sound.com``, but is not 100% compatible. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
+NOTE: The SB cards are backwards compatible with the AdLib Music Synthesizer Card. As such the AdLib ``sound.com`` TSR works on them, but Creative had to create their own version as they could not distribute the one from AdLib. The Creative TSR is named ``sb-sound.com``, but is not 100% compatible. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
 NOTE: Some programs may require the Creative ``SBFMDRV.COM`` TSR or ``CT-VOICE.DRV``. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
@@ -372,7 +374,7 @@ The Sound Blaster 1.0 was released by Creative Technology in 1989, followed a ye
 
 Some key features of the SB 1.x cards
 
-- Backward compatible with the AdLib
+- Backward compatible with the AdLib Music Synthesizer Card
 - Backward compatible with the CMS/Game Blaster (optional for the SB 1.5)
 - 8bit 22kHz DAC for digital samples
 
@@ -383,7 +385,7 @@ The Sound Blaster 2.0 was released by Creative Technology in October 1991.
 
 Some key features of the SB 2.0
 
-- Backward compatible with AdLib
+- Backward compatible with AdLib Music Synthesizer Card
 - Optional backward compatibility with CMS/Game Blaster
 - Backward compatible with the Sound Blaster 1.x
 - 8bit 44kHz DAC for digital samples
@@ -395,7 +397,7 @@ The Sound Blaster Pro was released by Creative Technology in May 1991.
 
 Some key features of the SB Pro
 
-- Backward compatible with the AdLib
+- Backward compatible with the AdLib Music Synthesizer Card
 - Backward compatible with the Sound Blaster 1.x
 - Backward compatible with the Sound Blaster 2.0
 - Dual Yamaha OPL2 for stereo FM sound
@@ -404,7 +406,7 @@ Some key features of the SB Pro
 NOTE: This adapter was retroactively often named the SB Pro 1 or SB Pro 1.0.
 
 NOTE: Any software making use of the Stereo FM feature will sound wrong if it was coded for the later SB Pro 2 (or vice versa).
-Therefore, it is important that you select the right SB Pro model in DOSBox-X and in the software setup of the game.
+Therefore, it is important that you select the right SB Pro model in DOSBox-X, to correspond to that supported by the game.
 
 Sound Blaster Pro emulation can be enabled by setting ``sbtype=sbpro1`` in the ``[sblaster]`` section of your config file.
 
@@ -413,13 +415,13 @@ The Sound Blaster Pro 2 was released by Creative Technology in 1991, and quickly
 
 Some key features of the SB Pro 2
 
-- Backward compatible with the AdLib
+- Backward compatible with the AdLib Music Synthesizer Card
 - Backward compatible with the Sound Blaster 1.x
 - Backward compatible with the Sound Blaster 2.0
 - Single Yamaha OPL3 for stereo FM sound
 
 NOTE: Any software making use of the Stereo FM feature will sound wrong if it was coded for the original SB Pro (or vice versa).
-Therefore, it is important that you select the right SB Pro model in DOSBox-X and in the software setup of the game.
+Therefore, it is important that you select the right SB Pro model in DOSBox-X, to correspond to that supported by the game.
 
 Sound Blaster Pro 2 emulation can be enabled by setting ``sbtype=sbpro2`` in the ``[sblaster]`` section of your config file.
 
@@ -428,7 +430,7 @@ The Sound Blaster 16 was released by Creative Technology in June 1992.
 
 Some key features of the SB 16
 
-- Backward compatible with the AdLib
+- Backward compatible with the AdLib Music Synthesizer Card
 - Backward compatible with the Sound Blaster 1.x
 - Backward compatible with the Sound Blaster 2.0
 - Backward compatible with the Sound Blaster Pro 2
@@ -835,7 +837,7 @@ This chip was used by a range of sound cards from different manufacturers, and i
 
 It provides backward compatibility with:
 
-- AdLib
+- AdLib Music Synthesizer Card
 - Sound Blaster 1.x
 - Sound Blaster Pro 2
 - Windows Sound System
@@ -850,7 +852,7 @@ It was also offered by Packard Bell as the *Forte 16SBP*.
 
 It provides backward compatibility with:
 
-- AdLib
+- AdLib Music Synthesizer Card
 - Sound Blaster 2.0
 - Sound Blaster Pro 2
 - Windows Sound System
@@ -868,7 +870,7 @@ It was a popular sound card in certain circles, such as the demo scene, but neve
 The downside is that it offered no hardware compatibility with other sound cards.
 It did ship with a TSR (SBOS) that needed to be loaded into memory to provide AdLib or Sound Blaster emulation, but this caused many issues.
 
-In practice, you only want to use this option, if the GUS is specifically supported by the software.
+In practice, you only want to use this emulation option, if the GUS is specifically supported by the software.
 
 Configuring the GUS is more complex than other soundcards, as quite a few software titles that supports the GUS require that you have a configured "ULTRASND" directory setup with the necessary files in it.
 By default, this directory is expected to be located at ``C:\ULTRASND`` within DOSBox-X.
