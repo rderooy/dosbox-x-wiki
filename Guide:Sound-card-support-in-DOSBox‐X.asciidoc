@@ -242,7 +242,7 @@ NOTE: Enabling PCjr mode, also enables PCjr video emulation
 
 * link:https://en.wikipedia.org/wiki/IBM_PCjr#Video[Wikipedia article on the IBM PCjr]
 * link:https://www.mobygames.com/attribute/sheet/attributeId,32/[MobyGames: Games supporting Tandy/PCjr sound]
-* link:http://nerdlypleasures.blogspot.com/2015/10/the-journey-of-pcjrtandy-sound-chip.html[Nerdy Pleasures: The Journey of the "PCjr./Tandy Sound Chip"]
+* link:https://nerdlypleasures.blogspot.com/2015/10/the-journey-of-pcjrtandy-sound-chip.html[Nerdy Pleasures: The Journey of the "PCjr./Tandy Sound Chip"]
 
 === Tandy 1000
 Tandy audio, was introduced with the Tandy 1000 in 1984, which began as a clone of the IBM PCjr.
@@ -257,7 +257,7 @@ NOTE: The Tandy DAC will be disabled if Sound Blaster emulation is enabled, due 
 So to enable the Tandy DAC, you need to set ``sblaster=none``.
 
 * link:https://en.wikipedia.org/wiki/Tandy_Graphics_Adapter[Wikipedia article on Tandy Graphics]
-* link:http://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days on the Tandy 1000 Series]
+* link:https://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days on the Tandy 1000 Series]
 * link:https://www.youtube.com/watch?v=mYHtojsaRkY[YouTube : The Tandy 1000 - The best MS-DOS computer in 1984]
 * link:https://www.mobygames.com/attribute/sheet/attributeId,32/[MobyGames: Games supporting Tandy sound]
 * link:https://www.mobygames.com/attribute/sheet/attributeId,33/[MobyGames: Games supporting the Tandy DAC]
@@ -297,7 +297,7 @@ However, the above is normally not needed as the later Sound Blaster cards, such
 NOTE: Some programs may require the AdLib ``SOUND.COM`` TSR to be loaded. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
 * link:https://en.wikipedia.org/wiki/Ad_Lib,_Inc.[Wikipedia: AdLib]
-* link:http://www.dosdays.co.uk/topics/Manufacturers/adlib.php[DOS Days: AdLib]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/adlib.php[DOS Days: AdLib]
 * link:https://www.mobygames.com/attribute/sheet/attributeId,21/[MobyGames: Games supporting AdLib sound]
 
 === CMS / Game Blaster
@@ -309,7 +309,7 @@ CMS/Game Blaster emulation can be enabled by setting ``sbtype=gb`` in the ``[sbl
 NOTE: Some programs may require the Creative ``CMSDRV.COM`` TSR to be loaded. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
 * link:https://www.mobygames.com/attribute/sheet/attributeId,42/p,2/[MobyGames: Games supporting the Game Blaster]
-* link:http://www.dosdays.co.uk/topics/Manufacturers/creative.php[DOS Days: Creative Labs]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/creative.php[DOS Days: Creative Labs]
 
 === IBM PS/1 Audio Card
 Optional audio card released in 1990 for IBM PS/1 computers (model 2011 and 2121).
@@ -345,7 +345,10 @@ DOSBox-X provides emulation for the Disney Sound Source, which is effectively ba
 Also games compatible with the *Intersound MDO* should work with this, as it is effectively a Covox Speech Thing clone.
 
 * link:https://en.wikipedia.org/wiki/Covox_Speech_Thing[Wikipedia: Covox Speech Thing]
-* link:http://nerdlypleasures.blogspot.com/2014/09/the-mysterious-covox-pc-sound-devices.html[The Mysterious Covox PC Sound Devices]
+* link:https://nerdlypleasures.blogspot.com/2014/09/the-mysterious-covox-pc-sound-devices.html[The Mysterious Covox PC Sound Devices]
+* link:https://www.mobygames.com/attribute/sheet/attributeId,43/p,2/[MobyGames: Games supporting the Covox Speech Thing]
+* link:https://www.mobygames.com/attribute/sheet/attributeId,1860/p[MobyGames: Games supporting the Intersound MDO]
+* link:https://www.mobygames.com/attribute/sheet/attributeId,44/p,2/[MobyGames: Games supporting the Disney Sound Source]
 
 The following option is available in the ``[speaker]`` section of you config file:
 
@@ -354,6 +357,7 @@ The following option is available in the ``[speaker]`` section of you config fil
 * Valid values: true, false
 
 Enables or disables Disney Sound Source emulation on the parallel port.
+
 This feature is backward compatible with the *Covox Speech Thing* and *Intersound MDO* parallel port dongles.
 
 === Creative Sound Blaster
@@ -838,7 +842,7 @@ It provides backward compatibility with:
 
 NOTE: ESS688 emulation is experimental, it is not meant for regular use.
 
-- link:http://www.dosdays.co.uk/topics/Manufacturers/ess.php[DOS Days: Electronic Speech Systems (ESS)]
+- link:https://www.dosdays.co.uk/topics/Manufacturers/ess.php[DOS Days: Electronic Speech Systems (ESS)]
 
 === Reveal SC400
 According to DOS Days, the Reveal SC400 is an OEM version of the *Aztech Nova 16*, which was released in 1994.
@@ -853,7 +857,7 @@ It provides backward compatibility with:
 
 NOTE: Reveal SC400 emulation is experimental, it is not meant for regular use.
 
-- link:http://dosdays.co.uk/topics/Manufacturers/aztech.php[DOS Days: Aztech]
+- link:https://dosdays.co.uk/topics/Manufacturers/aztech.php[DOS Days: Aztech]
 
 === Gravis UltraSound
 The Gravis UltraSound (aka GUS) was released in 1992 by Advanced Gravis Computer Technology.
@@ -874,7 +878,7 @@ One way is to install the Gravis UltraSound driver disks inside DOSBox-X, anothe
 - link:https://en.wikipedia.org/wiki/Gravis_Ultrasound[Wikipedia: Gravis UltraSound]
 - link:http://www.vgmpf.com/Wiki/index.php/UltraSound[VGMPF: UltraSound]
 - link:https://www.vogons.org/viewtopic.php?t=36661[Vogons: Gravis Ultrasound - Hardware Mixing Game List]
-- link:http://www.dosdays.co.uk/topics/Manufacturers/gravis.php[DOS Days: Advanced Gravis]
+- link:https://www.dosdays.co.uk/topics/Manufacturers/gravis.php[DOS Days: Advanced Gravis]
 - link:https://www.mobygames.com/attribute/sheet/attributeId,20/[MobyGames: Games supporting the Gravis UltraSound / ACE]
 - link:https://www.mobygames.com/attribute/sheet/attributeId,1045/[MobyGames: Games supporting the Gravis UltraSound MAX]
 
