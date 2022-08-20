@@ -234,6 +234,9 @@ Explains DOSBox-X's support for East Asian (Chinese, Japanese, Korean) languages
 * link:Guide%3ASetting-up-joysticks-in-DOSBox‐X{suffixappend}[Guide: Setting up joysticks in DOSBox-X]
 +
 Explains the different Joystick configuration options in DOSBox-X.
+* link:Guide%3AMouse-support-in-DOSBox‐X{suffixappend}[Guide: Mouse support in DOSBox-X]
++
+Explains DOSBox-X's mouse emulation options.
 * link:Guide%3ASetting-up-3dfx-Voodoo-in-DOSBox‐X{suffixappend}[Guide: Setting up 3dfx Voodoo in DOSBox-X]
 +
 Explains the emulation of 3dfx Voodoo, using either the Voodoo hardware emulation or the Glide API passthrough.
