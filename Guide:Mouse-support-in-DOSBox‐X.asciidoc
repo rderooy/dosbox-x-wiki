@@ -21,16 +21,16 @@ It means the mouse, when moved, gives an offset and the application will move th
 
 Absolute mode is where the mouse (as is typical for a touchscreen), returns the exact position of the mouse.
 
-Relative mode works well in fullscreen mode, but starts to be a problem when running something like DOSBox-X in a window, when the mouse is not confined to the window.
+Relative mode works well in fullscreen mode, but starts to be a problem when running something like DOSBox-X in a window, when the mouse is not confined to the window (seamless).
 After a bit the mouse would start to drift and the host mouse cursor and the mouse cursor in DOSBox-X would start to diverge, causing problems properly controlling the guest mouse cursor.
 
-As such, when running DOSBox-X in a window, using the integrated mouse support, it defaults to absolute mode.
+As such, when running DOSBox-X in a window, using the integrated mouse support, it defaults to absolute mode which allows to seamlessly move the mouse in and out of the DOSBox-X window.
 This works because the integrated mouse support (unlike legacy mouse drivers), supports absolute mode.
 
 However, if the application loads its own mouse driver, it will typically revert to relative mode and DOSBox-X will require that the mouse is locked to the window.
 Example of cases where you will encounter this:
 
-- Running Windows inside DOSBox-X
+- Running Windows inside DOSBox-X (using the standard Windows mouse drivers)
 - Booting a guest OS, like MS-DOS, and loading a typical DOS mouse driver
 - Some rare applications and games that have their own mouse driver built-in
 
@@ -38,7 +38,7 @@ In some cases, such as running Windows inside DOSBox-X, there may be a 3rd party
 See the link:Guide%3AMicrosoft-Windows-in-DOSBox‐X{suffixappend}[Windows installation guides] for more information on this.
 
 == Capturing mouse
-When running DOSBox-X in windowed mode, by default you can capture and release the mouse using CTRL-F10 (this key combination can be remapped in the key mapper).
+When running DOSBox-X in windowed mode, by default you can capture (confine to the DOSBox-X window), and release the mouse using CTRL-F10 (this key combination can be remapped in the key mapper).
 
 Alternatively, you can select "Main" -> "Capture mouse" from the menus.
 
@@ -46,13 +46,14 @@ From the menus, you can also get it to autolock the mouse when you click in the 
 
 These options can also be controlled from the DOSBox-X config file.
 
-NOTE: While capturing the mouse in windowed mouse is typically not needed, in some cases you will want to do it anyway, as leaving the DOSBox-X window with the mouse may cause gameplay problems.
+NOTE: While capturing the mouse in windowed mouse is typically not needed, as DOSBox-X will try to enable seamless integration with the host OS.
+In some cases you will want to do it anyway, as leaving the DOSBox-X window with the mouse may cause gameplay problems.
 
 === autolock
 * Default value: false
 * Possible values: false, true
 
-Set in the `[sdl]` section, to allow the mouse to be captured when clicking in the DOSBox-X window:
+Set in the `[sdl]` section, to allow the mouse to be captured, when clicking in the DOSBox-X window:
 
 === autolock_feedback
 * Default value: beep
@@ -74,20 +75,29 @@ If set to "both", it works regardless of `autolock=` setting.
 
 == Mouse wheel support
 The first mice with scroll wheel came out in 1995. But the much more popular Microsoft IntelliMouse came out in 1996, together with drivers for Windows 95.
-As such, legacy DOS applications don't support it (as DOS and DOS applications at this time, generally were being sunset).
 
-DOSBox-X has support for the Microsoft IntelliMouse with scroll wheel, but only from the integrated emulated DOS.
-It currently does not work if you boot a guest OS.
-To get the scroll wheel working, you will have to set `mouse_wheel_key=0`, as this option will otherwise interfere.
+=== True mouse wheel support
+DOSBox-X has support for the Microsoft IntelliMouse with scroll wheel from the integrated emulated DOS.
 
-But since most DOS applications (and early Windows) don't support scroll wheel, DOSBox-X supports mapping the mouse wheel movements to keyboard keys.
-By default DOSBox-X maps the mouse wheel to the up/down arrow keys.
+But true mouse wheel support is disabled by default as legacy DOS applications don't support it (DOS and DOS applications at this time, generally were being sunset).
 
-The mouse wheel options can be found, when running in a window, from the menu bar under "Main" -> "Mouse wheel movements"
+To get the scroll wheel working, you will have to set `mouse_wheel_key=0` in the `[SDL]` section of the DOSBox-X config file, as this option will otherwise interfere.
+
+The option can also be disabled from the menus, by selecting the "Main" -> "Mouse wheel movements" -> "Do not convert to arrow keys" option.
+But this will not be saved on DOSBox-X shutdown.
+
+If you boot DOS as a guest OS, you will also need to load the CuteMouse driver v2.1 as such: `CTM-EN /O`, and make sure no other mouse drivers are being loaded in the `AUTOEXEC.BAT` file.
+
+=== Emulated mouse wheel support
+Since most DOS applications (and early Windows) don't support the scroll wheel, DOSBox-X by default maps the mouse wheel movements to keyboard keys.
+By default DOSBox-X maps the mouse wheel to the up/down arrow (aka cursor) keys.
+
+The mouse wheel options can be found, when running DOSBox-X in a window, from the menu bar under "Main" -> "Mouse wheel movements".
+But changes here will not be saved on DOSBox-X shutdown.
 
 These options can also be controlled from the DOSBox-X config file.
 
-=== mouse_wheel_key
+==== mouse_wheel_key
 * Default value: -1
 * Possible values: -7 to 7
 
@@ -119,34 +129,38 @@ Needed for PS/2 mouse emulation in a guest OS such as Windows ME which does not 
 * Default value: intellimouse
 * Possible values: none, 2button, 3button, intellimouse, intellimouse45
 
-Set in the `[keyboard]` section, sets the type of PS/2 mouse attached to the AUX port.
+Set in the `[keyboard]` section if the DOSBox-X config file. Sets the type of PS/2 mouse attached to the AUX port.
 
-valid settings:
+valid options:
 
-- none: disables PS/2 mouse emulation
-- 2button: emulate a Microsoft 2 button mouse
-- 3button: emulate a Microsoft 3 button mouse
-- intellimouse: emulate a MS IntelliMouse with scroll wheel
-- intellimouse45: emulate a MS IntelliMouse with scroll wheel and 4th and 5th button
+- `auxdevice = none`: disables PS/2 mouse emulation
+- `auxdevice = 2button`: emulate a Microsoft 2 button mouse
+- `auxdevice = 3button`: emulate a Microsoft 3 button mouse
+- `auxdevice = intellimouse`: emulate a MS IntelliMouse with scroll wheel
+- `auxdevice = intellimouse45`: emulate a MS IntelliMouse Explorer with scroll wheel and 4th and 5th button
+
+NOTE: The `auxdevice=3button` option requires that you set `middle_unlock=none` in the `[sdl]` section of the DOSBox-X config file.
+Also this option does not currently work when you boot a guest OS.
 
 === mouse_emulation
 * Default value: locked
 * Possible values: integration, locked, always, never
 
-Set in the `[sdl]` section, determines whenn is mouse emulated ?
+Set in the `[sdl]` section of the DOSBox-X config file.
+Determines when the mouse is emulated ?
 
-Valid settings:
+Valid options:
 
-- integration: when not locked
-- locked:      when locked
-- always:      every time
-- never:       at no time
+- `mouse_emulation = integration`: when not locked
+- `mouse_emulation = locked`:      when locked
+- `mouse_emulation = always`:      every time
+- `mouse_emulation = never`:       at no time
 
 If disabled, the mouse position in DOSBox-X is exactly where the host OS reports it.
 
 When using a high DPI mouse, the emulation of mouse movement can noticeably reduce the sensitiveness of your device, i.e. the mouse is slower but more precise.
 
-For the "integration" setting, the setting `integration device=true` must also be set in the `[cpu]` section.
+For the "integration" option, the setting `integration device=true` must also be set in the `[cpu]` section.
 
 === sensitivity
 * Default value: 100
@@ -160,7 +174,8 @@ The optional second parameter specifies vertical sensitivity (e.g. 100,-50).
 * Possible values: false, true
 
 Set in the `[sdl]` section, uses the mouse cursor of the host system instead of drawing a DOS mouse cursor.
-Activated when the mouse is not locked.
+
+Activated when the mouse is not locked to the window.
 
 === vmware
 * Default value: true
@@ -185,6 +200,7 @@ If set, the cursor on the host will be hidden if the DOS application provides it
 * Possible values: false, true
 
 If set, the cursor on the host will be hidden even if the DOS application has also hidden the cursor in the guest, as long as the DOS application is polling position and button status.
+
 This can be useful for DOS programs that draw the cursor on their own instead of using the mouse driver, including most games and DeluxePaint II.
 
 === int33 disable cell granularity
@@ -192,7 +208,9 @@ This can be useful for DOS programs that draw the cursor on their own instead of
 * Possible values: false, true
 
 If set, the mouse pointer position is reported at full precision (as if 640x200 coordinates) in all modes.
+
 If not set, the mouse pointer position is rounded to the top-left corner of a character cell in text modes.
+
 This option is OFF by default.
 
 === biosps2
@@ -210,6 +228,7 @@ In other cases there is no harm in leaving this enabled
 * Possible values: false, true
 
 Set to true if the guest OS or DOS program assigns an INT 15h mouse callback, but does not properly preserve CPU registers.
+
 Diagnostic function only (default off).
 
 == Serial mouse
