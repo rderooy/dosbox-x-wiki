@@ -86,7 +86,7 @@ To get the scroll wheel working, you will have to set `mouse_wheel_key=0` in the
 The option can also be disabled from the menus, by selecting the "Main" -> "Mouse wheel movements" -> "Do not convert to arrow keys" option.
 But this will not be saved on DOSBox-X shutdown.
 
-If you boot DOS as a guest OS, you will also need to load the CuteMouse driver v2.1 as such: `CTM-EN /O`, and make sure no other mouse drivers are being loaded in the `AUTOEXEC.BAT` file.
+If you boot DOS as a guest OS, you will also need to load the CuteMouse driver v2.1 as such: `CTMOUSE /O`, and make sure no other mouse drivers are being loaded in the `AUTOEXEC.BAT` file.
 
 === Emulated mouse wheel support
 Since most DOS applications (and early Windows) don't support the scroll wheel, DOSBox-X by default maps the mouse wheel movements to keyboard keys.
@@ -105,14 +105,14 @@ Set in the `[sdl]` section, converts mouse wheel movements into keyboard presses
 
 valid settings:
 
-- 0: disabled
-- 1: up/down arrows
-- 2: left/right arrows
-- 3: PgUp/PgDn keys
-- 4: Ctrl+up/down arrows
-- 5: Ctrl+left/right arrows
-- 6: Ctrl+PgUp/PgDn keys
-- 7: Ctrl+W/Z, as supported by text editors like WordStar and MS-DOS EDIT.
+- `mouse_wheel_key = 0`: disabled
+- `mouse_wheel_key = 1`: up/down arrows
+- `mouse_wheel_key = 2`: left/right arrows
+- `mouse_wheel_key = 3`: PgUp/PgDn keys
+- `mouse_wheel_key = 4`: Ctrl+up/down arrows
+- `mouse_wheel_key = 5`: Ctrl+left/right arrows
+- `mouse_wheel_key = 6`: Ctrl+PgUp/PgDn keys
+- `mouse_wheel_key = 7`: Ctrl+W/Z, as supported by text editors like WordStar and MS-DOS EDIT.
 
 Putting a minus sign in front will disable the conversion for guest systems.
 
@@ -251,4 +251,4 @@ When booting a guest OS, such as MS-DOS or Windows 95, DOSBox-X no longer provid
 In the case of MS-DOS, IBM PC-DOS or FreeDOS, the recommended mouse driver is link:http://cutemouse.sourceforge.net/[CuteMouse (aka ctmouse)].
 It supports both PS/2 and Serial mice, and requires less memory then other mouse drivers.
 
-However, any Microsoft mouse compatible mouse driver should work.
+However, any Microsoft mouse compatible mouse driver should work, at least for basic functionality.
