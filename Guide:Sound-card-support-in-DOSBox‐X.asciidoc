@@ -14,7 +14,7 @@ toc::[]
 DOSBox-X supports the emulation of a wide range of audio output options that were common in the DOS days.
 This document attempts to help the novice user, especially those that never experienced DOS PC's during the 80's and 90's with selecting an appropriate audio output option for games.
 
-You can set the audio output option to emulate in your DOSBox-X config file.
+You can set the audio output option to emulate in the DOSBox-X config file.
 The available audio option can be found in a few sections, such as ``[pcspeaker]``, ``[sblaster]``, ``[gus]`` and ``[innova]``.
 
 By default, DOSBox-X just like regular DOSBox on which is it based, enables emulation of a *PC Speaker* and the *Sound Blaster 16*.
@@ -190,12 +190,12 @@ It is effectively a single-channel square-wave generator, and with considerable 
 Sound quality was heavily dependent on the type of speaker and the placement and PC case it was built into.
 Originally a dynamic speaker was used, but later model PCs used a tiny piezo speaker instead which further reduced sound quality and volume.
 
-PC Speaker emulation is enabled by default, but can be disabled by setting ``pcspeaker=false`` in the ``[speaker]`` section of your config file.
+PC Speaker emulation is enabled by default, but can be disabled by setting ``pcspeaker=false`` in the ``[speaker]`` section of the DOSBox-X config file.
 
 * link:https://en.wikipedia.org/wiki/PC_speaker[Wikipedia: PC Speaker]
 * link:https://en.wikipedia.org/wiki/RealSound[Wikipedia: RealSound]
 
-The following options are available in the ``[speaker]`` section of you config file:
+The following options are available in the ``[speaker]`` section of the DOSBox-X config file:
 
 ==== pcspeaker
 * Default value: true
@@ -236,7 +236,7 @@ You should set this to the same sample rate as the `rate=` option in the `[mixer
 === IBM PCjr
 The PCjr was introduced by IBM in March 1984, and discontinued due to poor sales just over a year later.
 
-PCjr audio is automatically enabled when you set ``machine=pcjr`` in the ``[dosbox]`` section of your config file.
+PCjr audio is automatically enabled when you set ``machine=pcjr`` in the ``[dosbox]`` section of the DOSBox-X config file.
 
 NOTE: Enabling PCjr mode, also enables PCjr video emulation
 
@@ -247,7 +247,7 @@ NOTE: Enabling PCjr mode, also enables PCjr video emulation
 === Tandy 1000
 Tandy audio, was introduced with the Tandy 1000 in 1984, which began as a clone of the IBM PCjr.
 
-Tandy audio is automatically enabled when you set ``machine=tandy`` in the ``[dosbox]`` section of your config file.
+Tandy audio is automatically enabled when you set ``machine=tandy`` in the ``[dosbox]`` section of the DOSBox-X config file.
 
 NOTE: Enabling Tandy mode this way, also enables Tandy video emulation
 
@@ -306,7 +306,7 @@ Based around two Philips SAA-1099 chips, allowing for stereo sound.
 
 Originally named the *Creative Music System* (CMS), but the year after rebranded as the *Game Blaster*.
 
-CMS/Game Blaster emulation can be enabled by setting ``sbtype=gb`` in the ``[sblaster]`` section of your config file.
+CMS/Game Blaster emulation can be enabled by setting ``sbtype=gb`` in the ``[sblaster]`` section of the DOSBox-X config file.
 
 NOTE: Some programs may require the Creative ``CMSDRV.COM`` TSR to be loaded. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
@@ -378,7 +378,7 @@ Some key features of the SB 1.x cards
 - Backward compatible with the CMS/Game Blaster (optional for the SB 1.5)
 - 8bit 22kHz DAC for digital samples
 
-Sound Blaster 1.x emulation can be enabled by setting ``sbtype=sb1`` in the ``[sblaster]`` section of your config file.
+Sound Blaster 1.x emulation can be enabled by setting ``sbtype=sb1`` in the ``[sblaster]`` section of the DOSBox-X config file.
 
 ==== Sound Blaster 2.0
 The Sound Blaster 2.0 was released by Creative Technology in October 1991.
@@ -390,7 +390,7 @@ Some key features of the SB 2.0
 - Backward compatible with the Sound Blaster 1.x
 - 8bit 44kHz DAC for digital samples
 
-Sound Blaster 2.0 emulation can be enabled by setting ``sbtype=sb2`` in the ``[sblaster]`` section of your config file.
+Sound Blaster 2.0 emulation can be enabled by setting ``sbtype=sb2`` in the ``[sblaster]`` section of the DOSBox-X config file.
 
 ==== Sound Blaster Pro
 The Sound Blaster Pro was released by Creative Technology in May 1991.
@@ -408,7 +408,7 @@ NOTE: This adapter was retroactively often named the SB Pro 1 or SB Pro 1.0.
 NOTE: Any software making use of the Stereo FM feature will sound wrong if it was coded for the later SB Pro 2 (or vice versa).
 Therefore, it is important that you select the right SB Pro model in DOSBox-X, to correspond to that supported by the game.
 
-Sound Blaster Pro emulation can be enabled by setting ``sbtype=sbpro1`` in the ``[sblaster]`` section of your config file.
+Sound Blaster Pro emulation can be enabled by setting ``sbtype=sbpro1`` in the ``[sblaster]`` section of the DOSBox-X config file.
 
 ==== Sound Blaster Pro 2
 The Sound Blaster Pro 2 was released by Creative Technology in 1991, and quickly replaced the earlier SB Pro.
@@ -423,7 +423,7 @@ Some key features of the SB Pro 2
 NOTE: Any software making use of the Stereo FM feature will sound wrong if it was coded for the original SB Pro (or vice versa).
 Therefore, it is important that you select the right SB Pro model in DOSBox-X, to correspond to that supported by the game.
 
-Sound Blaster Pro 2 emulation can be enabled by setting ``sbtype=sbpro2`` in the ``[sblaster]`` section of your config file.
+Sound Blaster Pro 2 emulation can be enabled by setting ``sbtype=sbpro2`` in the ``[sblaster]`` section of the DOSBox-X config file.
 
 ==== Sound Blaster 16
 The Sound Blaster 16 was released by Creative Technology in June 1992.
@@ -436,7 +436,7 @@ Some key features of the SB 16
 - Backward compatible with the Sound Blaster Pro 2
 - 16bit 44kHz DAC for digital samples
 
-Sound Blaster 16 emulation is enabled by default, and can be enabled by setting ``sbtype=sb16`` in the ``[sblaster]`` section of your config file.
+Sound Blaster 16 emulation is enabled by default, and can be enabled by setting ``sbtype=sb16`` in the ``[sblaster]`` section of the DOSBox-X config file.
 
 NOTE: DOSBox-X also provides a ``sbtype=sb16vibra`` variation, which emulates the Sound Blaster ViBRA16.
 There is no advantage for games to use the sb16vibra over the sb16.
@@ -875,7 +875,7 @@ In practice, you only want to use this emulation option, if the GUS is specifica
 Configuring the GUS is more complex than other soundcards, as quite a few software titles that supports the GUS require that you have a configured "ULTRASND" directory setup with the necessary files in it.
 By default, this directory is expected to be located at ``C:\ULTRASND`` within DOSBox-X.
 
-One way is to install the Gravis UltraSound driver disks inside DOSBox-X, another is to find a configured ULTRASND folder online that you can simply unpack to the root of your virtual C: drive.
+One way is to install the Gravis UltraSound driver disks inside DOSBox-X, another is to find a configured ULTRASND folder online that you can simply unpack to the root of the virtual C: drive.
 
 - link:https://en.wikipedia.org/wiki/Gravis_Ultrasound[Wikipedia: Gravis UltraSound]
 - link:http://www.vgmpf.com/Wiki/index.php/UltraSound[VGMPF: UltraSound]
