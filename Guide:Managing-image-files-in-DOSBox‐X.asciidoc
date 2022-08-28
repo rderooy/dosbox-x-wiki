@@ -647,9 +647,10 @@ hdiutil detach /dev/disk6
 ....
 
 == CD-ROM or DVD images
-DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in `.ISO`, `.CUE'+`.BIN' or `.MDF` image format.
+DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in `.ISO`, `.CUE`+`.BIN` or `.MDF` image format.
 
-By default ISO-9660 Level 1 is used, which is limited to traditional DOS 8.3 character filenames. When emulating DOS version 7.0 or later (or `lfn=true` is set in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
+By default ISO-9660 Level 1 is used, which is limited to traditional DOS 8.3 character filenames.
+When emulating DOS version 7.0 or later (or `lfn=true` is set in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
 
 Starting with DOSBox-X 2022.08.0 there is also support for:
 
@@ -659,6 +660,14 @@ Starting with DOSBox-X 2022.08.0 there is also support for:
 
 `.ISO` is the easiest format to work with, as long as there is only a single data track on the CD or DVD.
 If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audio) the use of `.CUE`+`.BIN` or `.MDF` is required.
+
+== Copy protected media
+DOSBox-X has limited support for copy protected CD-ROMs.
+
+- In DOSBox-X 2022.08.00 the IDE emulation was enhanced such that SafeDisc 1 games should work
+- In DOSBox-X 2022.09.00 another minor change was introduced to solve one of the issues with SafeDisc 2
+
+If you run into issues with copy protected media, look for "cracks" for the game to bypass the copy protection.
 
 === Mounting CD or DVD images
 Mounting a CD or DVD image in DOSBox-X is typically as simple as
