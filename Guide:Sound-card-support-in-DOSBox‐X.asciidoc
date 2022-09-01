@@ -227,7 +227,7 @@ The default value of -1 causes it to default depending on the machine type:
 
 ==== pcrate
 * Default value: 44100
-* Valid values: 44100, 48000, 32000, 22050, 16000, 11025, 8000, 49716
+* Valid values: 8000, 11025, 16000, 22050, 32000, 44100, 48000, 49716, 65536
 
 Sample rate, in Hz, at which the PC-Speaker generates sound.
 
