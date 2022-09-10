@@ -69,7 +69,7 @@ That's it! You can now enjoy the game.
 
 **CD-ROM: The game can't find its CD-ROM.**
 
-If your mounting a host folder as CD-ROM, or if (on Windows) your want to
+If you're mounting a host folder as CD-ROM, or if (on Windows) you want to
 mount your real CD-ROM or DVD-ROM drive for use in DOSBox-X, be sure to
 mount the CD-ROM with the ``-t cdrom`` switch. This will enable the
 MSCDEX interface required by DOS games to interface with CD-ROMs.

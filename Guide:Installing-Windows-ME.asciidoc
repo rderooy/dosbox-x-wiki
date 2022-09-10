@@ -172,7 +172,7 @@ SETUP.EXE /NM
 
 At this point it should format the harddisk and the installation process should start.
 
-When the Windows installer reboots, and your back at the DOSBox-X ``Z:\>`` prompt.
+When the Windows installer reboots, and you're back at the DOSBox-X ``Z:\>`` prompt.
 Close DOSBox-X and edit your ``winme.conf`` config file, and add the following lines in the [autoexec] section at the end of the file:
 
 ....
@@ -256,7 +256,7 @@ image::images/Windows:Windows_ME_SETUP_01.png[Windows ME SETUP.EXE Welcome]
 Now run through the installation process.
 The actual steps will not be covered in this guide, but are pretty self-explanatory and detailed guides on the Windows ME install process can be found online such as YouTube.
 
-When the installer reboots DOSBox-X, and your back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
+When the installer reboots DOSBox-X, and you're back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
 
 Now edit your ``winme.conf`` config file.
 At the end of the file, in the [autoexec] section, add the following two lines:

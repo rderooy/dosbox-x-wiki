@@ -28,7 +28,7 @@ These pages assume that you have Windows diskette or CD-ROM images.
 Getting these image files is outside the scope of this guide.
 
 == Wine
-If your running Linux on an x86 or x86-64 PC, you can also try running Windows games and applications using link:https://www.winehq.org/[Wine].
+If you're running Linux on an x86 or x86-64 PC, you can also try running Windows games and applications using link:https://www.winehq.org/[Wine].
 Especially 32-bit Windows games and applications, typically work quite well, and this may be an easier and faster solution and provide better integration with your desktop environment.
 16-bit or mixed 16/32-bit Windows games and applications are more problematic with Wine as modern 64-bit Linux distributions typically have the required kernel functionality for running 16-bit code (e.g., `X86_16BIT` and `MODIFY_LDT_SYSCALL`) disabled at kernel compile time.
 

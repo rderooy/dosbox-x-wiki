@@ -120,7 +120,7 @@ Chooses emulation depending on real joystick(s).
 If only a single gamepad is detected, it will be set to 4axis.
 While if two gamepads are detected, it will be set to 2axis.
 
-TIP: If your having problems with the game when using a joystick, try setting it explicitly to 2axis mode.
+TIP: If you're having problems with the game when using a joystick, try setting it explicitly to 2axis mode.
 
 === timed
 * Default value: true

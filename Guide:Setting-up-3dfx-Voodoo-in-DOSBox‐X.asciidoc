@@ -322,7 +322,7 @@ Q: I don't see the 3dfx splash screen when starting a game
 A: This is normal when you're running the game in high-level emulation mode (`glide=true`).
 This 3dfx splash screen is not part of the game, but rather built into the original Glide library (GLIDE2X.OVL for DOS, or GLIDE2X.DLL for Windows 9x).
 But the special versions used for Glide pass-through to the host do not have this animation.
-If your running 32bit Windows on the host, you may want to have a look at the ``splash=true`` setting, mentioned above.
+If you're running 32bit Windows on the host, you may want to have a look at the ``splash=true`` setting, mentioned above.
 
 === Slow Glide emulation
 Q: I set ``glide=true`` yet the game is very slow

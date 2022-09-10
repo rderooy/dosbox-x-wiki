@@ -106,7 +106,7 @@ Supported diskette sizes options:
 |3.5" ED        |2|80|36|2880KB (2.88MB)|`-t fd_2880`
 |===
 
-NOTE: Common PC disk types in bold. The 8-sector formats should be avoided unless your need backward compatibility with DOS 1.x.
+NOTE: Common PC disk types in bold. The 8-sector formats should be avoided unless you need backward compatibility with DOS 1.x.
 The 10-sector disks were used by the DEC Rainbow 100, and should likewise be avoided for compatibility reasons.
 
 === Mounting diskette images

@@ -166,7 +166,7 @@ Epson itself suggested in some of their literature to look for printers in the f
 NOTE: Starting with DOSBox-X v0.83.21 it is possible to modify emulated printer settings directly from the DOSBox-X DOS prompt with the ``config -set printer`` commands.
 Any settings you modify this way are however lost when you restart DOSBox-X.
 
-NOTE: If your wanting to print in landscape on US Letter or A4 paper, or in portrait on A3 paper, select a wide printer in your DOS application, as otherwise the software may not give you the possibility to configure the paper properly.
+NOTE: If you're wanting to print in landscape on US Letter or A4 paper, or in portrait on A3 paper, select a wide printer in your DOS application, as otherwise the software may not give you the possibility to configure the paper properly.
 
 NOTE: For printing in text mode it should not matter which Epson printer is selected, as DOSBox-X will use TrueType Fonts to render the text at the selected DPI. As such for text mode printing, it does not matter if a 9 or 24-pin printer is selected.
 
@@ -503,7 +503,7 @@ If you need them you may need to find those online.
 == Example: Print to file
 In this example the output of a DOS command or application is simply redirected to the virtual LPT port in DOSBox-X, which in turn will be redirected to a file on the host.
 
-This is useful if your printing just simple text, as the file on the host will contain the exact text.
+This is useful if you're printing just simple text, as the file on the host will contain the exact text.
 
 If the application expects a printer that can do more than just simple text, and sends control codes for that printer, the file will also contain those control codes.
 

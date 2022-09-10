@@ -198,7 +198,7 @@ Everything needs to be done using IMAGE files.
 
 The first step is to create a DOS HDD image, for which you can follow the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide].
 It is recommended to use at least DOS 3.1, as it is compatible with all Windows 2.x releases.
-When using DOS 5.0 or higher however, it will be necessary to use link:https://web.csulb.edu/~murdock/setver.html[SETVER] to make Windows 2.x think your using and older DOS version like version 4.0.
+When using DOS 5.0 or higher however, it will be necessary to use link:https://web.csulb.edu/~murdock/setver.html[SETVER] to make Windows 2.x think you're using and older DOS version like version 4.0.
 
 Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your INSTALL folder into your DOS HDD image, together with any drivers and add-ons you might need (preferably already unzipped, such that you don't need to do that in DOS or Windows 3.x, as they lack support for that by default).
 
@@ -368,7 +368,7 @@ image::images/Windows:Windows_2.03_SETUP_13.png[Windows 2.03 SETUP country]
 
 You can now optionally view the README files. Select "**F**" and press Enter when ready.
 
-* If your following Method 1, you can simply press Enter.
+* If you're following Method 1, you can simply press Enter.
 * If you're using disk images to install Windows, you must now swap the disk using the menu item "DOS" followed by "Swap floppy".
 And then press enter.
 

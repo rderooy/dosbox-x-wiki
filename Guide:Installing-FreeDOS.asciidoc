@@ -35,7 +35,7 @@ BOOT A:
 
 It will now boot to the setup program. You should be able to follow the on-screen installation prompts.
 
-After it finished the installation, it will reboot DOSBox-X and your again at the ``Z:\>`` prompt. Now type the following to boot FreeDOS normally.
+After it finished the installation, it will reboot DOSBox-X and you're again at the ``Z:\>`` prompt. Now type the following to boot FreeDOS normally.
 ....
 IMGMOUNT C hdd.img
 BOOT C:

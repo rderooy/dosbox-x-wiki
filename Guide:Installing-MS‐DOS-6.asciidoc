@@ -34,7 +34,7 @@ toc::[]
 
 === Notes
 * From this point, Microsoft MS-DOS and IBM PC DOS have diverged.
-* MS-DOS 6.x was available to both OEM's and end-users. However, the only version (officially) available to end-users was the "Upgrade" release, which requires that you already have DOS installed. It will refuse to install on a clean system. The workaround to this is fairly simple. You boot from the first disk, at the welcome screen press F3 twice and your at the command prompt. You can now, if necessary, partition and format the HDD and transfer the system files (``SYS C:``). After your done, just run SETUP.EXE or simply reboot from Disk 1 and the installer, because there are now system files on the HDD, will allow you to install MS-DOS 6.x Upgrade edition.
+* MS-DOS 6.x was available to both OEM's and end-users. However, the only version (officially) available to end-users was the "Upgrade" release, which requires that you already have DOS installed. It will refuse to install on a clean system. The workaround to this is fairly simple. You boot from the first disk, at the welcome screen press F3 twice and you're at the command prompt. You can now, if necessary, partition and format the HDD and transfer the system files (``SYS C:``). After you're done, just run SETUP.EXE or simply reboot from Disk 1 and the installer, because there are now system files on the HDD, will allow you to install MS-DOS 6.x Upgrade edition.
 
 == Creating an MS-DOS 6.x HDD image
 

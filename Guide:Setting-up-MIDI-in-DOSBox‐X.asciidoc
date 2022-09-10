@@ -399,7 +399,7 @@ When no soundfont is specified, DOSBox-X will try to open C:\soundfonts\default.
 ** Windows: dsound
 * Possible values: pulseaudio, alsa, oss, coreaudio, dsound, portaudio, sndman, jack, file, default
 
-This parameter is typically not needed if your running FluidSynth on Windows, where it will automatically use dsound. Likewise on macOS it will default to CoreAudio.
+This parameter is typically not needed if you're running FluidSynth on Windows, where it will automatically use dsound. Likewise on macOS it will default to CoreAudio.
 
 You can however optionally set it to "file", which will cause a ``fluidsynth.wav`` file to be created in the current working directory with the MIDI output.
 

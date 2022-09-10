@@ -174,7 +174,7 @@ The only extras that it has are underlined text, bright text and reverse video.
 The vertical refresh of MDA is only 50Hz, but with the phosphor glow of green and amber monochrome monitors this was not noticeable.
 
 The main selling feature of this adapter, compared to CGA, was its clarity as it uses effectively a 720x350 resolution, which made it very popular for business software.
-For games your going to be limited to text mode games, like text adventures.
+For games you're going to be limited to text mode games, like text adventures.
 
 This mode can be set using ``machine=mda`` in your DOSBox-X config file.
 Video memory is fixed to 4KiB and cannot be changed.
