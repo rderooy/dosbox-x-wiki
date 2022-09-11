@@ -582,9 +582,11 @@ If you install WfW inside DOSBox-X with networking support, you need to run ``DE
 Windows for Workgroups by default only supports SMB networking over NBF (NetBIOS Frames aka NetBEUI) or IPX.
 There is no support by default for the TCP/IP protocol.
 
-There were 3rd party WinSock solutions, but those were meant for dial-up internet access and are not specific to WfW.
-
 You can however install *Microsoft TCP/IP-32*, which was sold separately, to add TCP/IP support to WfW.
+
+NOTE: There were many other 3rd party network stacks.
+See link:http://sunsite.uakom.sk/sunworldonline/asm-08-1994/asm-08-tcpip.html[A happy hookup: TCP/IP joins Unix to PCs] and link:http://sunsite.uakom.sk/sunworldonline/swol-10-1995/swol-10-tcp.html[Comparing TCP/IP products for PCs] for an overview of TCP/IP stacks for both Windows 3.1 and WfW3.11.
+These have not been tested, and may or may-not work.
 
 == Sound in Windows 3.0
 Windows 3.0 and 3.0a does not really support sound. It only supports the PC Speaker, and even then is limited to a simple "beep" sound.
