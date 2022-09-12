@@ -37,7 +37,7 @@ is used. http://en.wikipedia.org/wiki/Mode_X[Mode X appears to be used
 for fast polygon filling and page flipping]. Sound Blaster support
 assumes IRQ 7, demo will not produce sound otherwise.
 
-[[images/Demoscene:Chain-4-by-The-Silents-(1992)-et4000-vs-vga.png]]
+image::images/Demoscene:Chain-4-by-The-Silents-(1992)-et4000-vs-vga.png[Chain-4-by-The-Silents-(1992)-et4000-vs-vga]
 
 A cycles count between 5000 and 12000 is recommended to avoid flickering
 and visible redraw. If the cycles count is too high, the audio clip
