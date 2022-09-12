@@ -32,7 +32,7 @@ initial frequency=0
 == Incompatible VGA memory mapping trick
 
 This demo appears to use a trick where 2 bits in the Graphics Controller
-registers can be modified to change where the VGA hardware maps it’s
+registers can be modified to change where the VGA hardware maps its
 video memory. Normally this 2-bit value is 1=A0000-AFFFF 2=B0000-B7FFF
 3=B8000-BFFFF, but some cards allow mapping the first 128KB of RAM by
 setting it to 0 which maps to A0000-BFFFF. This demo apparently relies

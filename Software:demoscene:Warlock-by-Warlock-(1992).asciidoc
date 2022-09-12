@@ -31,7 +31,7 @@ dma=1
 
 The demo supports SVGA 640x480x256 graphics mode. It can work with the
 VESA BIOS, or if a Tseng ET4000 is detected, it can use the BIOS to set
-the mode then use it’s own support code to draw the same.
+the mode then use its own support code to draw the same.
 
 The demo apparently crashes if you force SVGA when machine=vgaonly.
 

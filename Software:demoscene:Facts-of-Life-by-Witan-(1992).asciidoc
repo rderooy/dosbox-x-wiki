@@ -33,7 +33,7 @@ gusdma=3
 
 == GUS-only house music version
 
-Besides the main demo, there also exists a version containing only the
+Other than the main demo, there also exists a version containing only the
 dance portion for Gravis Ultrasound cards (WTNHOUSE.ZIP).
 
 == More information

@@ -11,7 +11,7 @@ FreeDOS is a free and open-source re-implementation of DOS.
 
 This installation method uses the link:https://www.freedos.org/download/[FreeDOS 1.3 LegacyCD download].
 
-== Creating a HDD image file
+== Creating an HDD image file
 
 NOTE: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu, and select "Create blank disk image…​".
@@ -35,7 +35,7 @@ BOOT A:
 
 It will now boot to the setup program. You should be able to follow the on-screen installation prompts.
 
-After it finished the installation, it will reboot DOSBox-X and you're again at the ``Z:\>`` prompt. Now type the following to boot FreeDOS normally.
+After it finished the installation, it will reboot DOSBox-X, and you're again at the ``Z:\>`` prompt. Now type the following to boot FreeDOS normally.
 ....
 IMGMOUNT C hdd.img
 BOOT C:

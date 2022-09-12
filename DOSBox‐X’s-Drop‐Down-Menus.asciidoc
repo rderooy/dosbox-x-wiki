@@ -51,7 +51,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Turbo (Fast Forward)**: Increases the emulated DOS's current CPU speed to 200%-300% of the normal speed (this will cause the clock to get out of sync inside DOSBox-X).
 
-* **Normal speed**: Restores the emulated DOS's current speed relative to real-time to the normal speed.
+* **Normal speed**: Restores the emulated DOS's current speed relative too real-time to the normal speed.
 
 * **Speed up**: Increases the emulated DOS's current speed relative to real-time. You can speed up the emulation with this if you want to play a game at greater than 100% normal speed.
 
@@ -61,7 +61,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Decrement cycles**: Decreases the amount of CPU instructions DOSBox-X tries to emulate each millisecond.
 
-* **Emulate CPU speed**: Emulate the speed of the a specific CPU class by setting the approximate cycles.
+* **Emulate CPU speed**: Emulate the speed of a specific CPU class by setting the approximate cycles.
 
 * **Edit cycles**: Sets the amount of CPU instructions DOSBox-X tries to emulate each millisecond to a specific value.
 
@@ -89,7 +89,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Adjust refresh rate...**: Sets the video refresh rate (0 for unlocking the refresh rate).
 
-* **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fit a scaler in the resolution used at full screen may require a border or side bars. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
+* **Force scaler**: Forces the use of a scaler even if the result might not be desired. To fit a scaler in the resolution used at full screen may require a border or sidebars. To fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.
 
 * **Scaler**: Selects a scaler used to enlarge/enhance low resolution modes.
 
@@ -110,7 +110,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **3dfx emulation**: Toggle the 3dfx emulation, including low-level Voodoo card emulation and high-level Glide emulation.
 
-* **Select pixel shader...**: Selects a Direct3D pixel shader file for use with the Direct3D output in Windows. In case the shader fails to load, there is no visual indication but it will be written to the log file (so if you want more immediate feedback on success or failure, use the menu to show the DOSBox-X console which will also show the reason for the shader failure).
+* **Select pixel shader...**: Selects a Direct3D pixel shader file for use with the Direct3D output in Windows. In case the shader fails to load, there is no visual indication, but it will be written to the log file (so if you want more immediate feedback on success or failure, use the menu to show the DOSBox-X console which will also show the reason for the shader failure).
 
 * **Select OpenGL (GLSL) shader...**: Selects a OpenGL (GLSL) shader file for use with the OpenGL outputs (opengl/openglnb/openglhq).
 
@@ -152,7 +152,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **Enables A20 gate**: Turns the A20 gate on or off if it is not locked.
 
-* **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when DOS programs (or Windows 9x guest systems) make calls to restart the system.
+* **Enable quick reboot**: Selects whether to use quick reboot mode so that the kernel of the emulated DOS (integrated DOS or guest DOS) will be restarted instead of the whole virtual machine when a DOS program (or Windows 9x guest systems) make calls to restart the system.
 
 * **Synchronize host date/time**: Selects whether to force synchronizations with the date/time of the host system.
 
@@ -226,7 +226,7 @@ rscan border, from 0 to 10. This works only if the video output is set to surfac
 
 * **DOSBox-X Wiki guide**: Links to the DOSBox-X Wiki where you will find the DOSBox-X user guide.
 
-* **DOSBox-X support**: Links to the DOSBox-X Issue Tracker where you will can report issues or make suggestions.
+* **DOSBox-X support**: Links to the DOSBox-X Issue Tracker where you can report issues or make suggestions.
 
 * **List network interfaces**: Displays the list of network interfaces for the NE2000 networking feature.
 

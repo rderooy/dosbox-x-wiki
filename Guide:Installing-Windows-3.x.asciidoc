@@ -17,7 +17,7 @@ This guide will give a general description of installing Windows 3.x in DOSBox-X
 ** Supports up to 16MB RAM.
 ** Improved UI.
 ** Improved memory management (286+ only).
-* *Windows 3.0a* (released Dec,, 1990)
+* *Windows 3.0a* (released Dec, 1990)
 ** Allow programs to call into real-mode when started in standard mode.
 ** Bug fixes for the installer to alleviate crashes.
 * *Windows 3.0a with Multimedia Extensions* (released Oct, 1991)
@@ -105,7 +105,7 @@ Examples of such customization, are an OEM specific launcher, OEM specific appli
 * Unlike regular Windows which installs by default to ``C:\WINDOWS`` this edition installs by default to ``C:\MWINDOWS``.
 * The two editions which have been archived, shipped with Multimedia upgrade kits, are from Tandy and Creative Labs respectively.
 * The Tandy edition shipped as part of a Sound and CD-ROM upgrade kit, included a "Tandy Sound Blaster Pro 16". Despite the name, this is not actually a SB16, but rather a modified SB Pro (aka SB Pro 1.0). Drivers for this are included with the Windows installation and you should emulate a SB Pro 1 for the best experience. The card by default was set to IO 220, IRQ 10 and DMA 3, and you should either use those settings in your DOSBox-X config file, or modify `C:\MWINDOWS\SYSTEM.INI` after installation.
-* The Creative Labs edition shipped as part of a Sound and CD-ROM upgrade kit, included a "Sound Blaster Pro" (aka SB Pro 1.0). Drivers for this are included with the Windows installation and you should emulate a SB Pro 1 for the best experience.
+* The Creative Labs edition shipped as part of a Sound and CD-ROM upgrade kit, included a "Sound Blaster Pro" (aka SB Pro 1.0). Drivers for this are included with the Windows installation, and you should emulate an SB Pro 1 for the best experience.
 * During Windows setup, change the default "Palettized VGA 640x480 with 16 colors" display option to "VGA", or audio playback will cause Windows to crash. You can install the ET4000 drivers afterwards.
 * If during Windows setup you are asked to provide the path to "mouse.sys", skip it. It is looking for the Microsoft DOS Mouse driver, which is not needed.
 
@@ -150,7 +150,7 @@ Copy the above config and save it as ``win3x.conf``
 
 *Notes*
 
-* The above config uses 16MB RAM as that is the maximum supported by Windows 3.0, and should be more then enough for most Windows 3.x applications. But for Windows 3.1 and 3.11 you can go up to 256MB, as such for these Windows versions ``memsize=256`` is the largest safe value.
+* The above config uses 16MB RAM as that is the maximum supported by Windows 3.0, and should be more than enough for most Windows 3.x applications. But for Windows 3.1 and 3.11 you can go up to 256MB, as such for these Windows versions ``memsize=256`` is the largest safe value.
 * There are Windows 3.0 and 3.1 drivers for the Tseng Labs ET3000 and ET4000 (``machine=svga_et3000`` and ``machine=svga_et4000`` respectively), but for the default ``machine=svga_s3`` (S3 Trio64) there are apparently only Windows 3.1 drivers.
 * The default S3 video option will offer the broadest range of resolutions and colour depths but do require you to install the correct drivers.
 
@@ -302,7 +302,7 @@ NOTE: There is currently no support for creating emulated CD-ROM or Floppy drive
 
 One thing to note, is that there is no way to specify the FAT type to use for the conversion.
 The FAT type will be automatically selected based on the aggregate size of files in the folder, plus 250MiB (this can be adjusted with the `convert fat free space` option in the DOSBox-X config file).
-If the total space of files + 250MiB does not exceed 2GiB, it will convert it into a FAT16 disk. Otherwise it will become a FAT32, which in turn will require a guest OS with FAT32 support.
+If the total space of files + 250MiB does not exceed 2GiB, it will convert it into a FAT16 disk. Otherwise, it will become a FAT32, which in turn will require a guest OS with FAT32 support.
 
 Alternatively, you can also make the emulated FAT drive read-only by using the `-convertfatro` option with the `boot` command. Or by setting `convert fat free space=0` option in the DOSBox-X config file.
 
@@ -408,25 +408,25 @@ TIP: For Windows 3.1x the recommended display adapter is the default S3 Trio64.
 
 * **S3 Graphics**
 ** S3 86c928 using `machine=svga_s386c928`
-*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/S3WIN230.ZIP[Windows 3.1x - S3 928 drivers version 2.3B11, April 25 1994]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/S3WIN230.ZIP[Windows 3.1x - S3 928 drivers version 2.3B11, April, 25 1994]
 ** S3 Vision864 using `machine=svga_s3vision864`
-*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/864141B5.ZIP[Windows 3.1x - S3 864 drivers version 1.41B5, March 2 1995]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/864141B5.ZIP[Windows 3.1x - S3 864 drivers version 1.41B5, March 2, 1995]
 ** S3 Vision868 using `machine=svga_s3vision868`
-*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/868141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2 1995]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/868141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2, 1995]
 ** S3 Vision964 using `machine=svga_s3vision964`
-*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/964141B5.ZIP[Windows 3.1x - S3 964 drivers version 1.41B5, March 2 1995]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/964141B5.ZIP[Windows 3.1x - S3 964 drivers version 1.41B5, March 2, 1995]
 ** S3 Vision968 using `machine=svga_s3vision968`
-*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/968141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2 1995]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/S3/968141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2, 1995]
 ** S3 Trio32 using `machine=svga_s3trio32`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22 1997]
+*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
 ** S3 Trio64 (**default**) using `machine=svga_s3` or `machine=svga_s3trio64`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22 1997]
+*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
 ** S3 Trio64V+ using `machine=svga_s3trio64v+`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22 1997]
+*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
 ** S3 ViRGE using `machine=svga_s3virge` (experimental)
-*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2 1997]
+*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2, 1997]
 ** S3 ViRGE/VX using `machine=svga_s3virgevx` (experimental)
-*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2 1997]
+*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2, 1997]
 * **Tseng Labs**
 ** ET3000 using `machine=svga_et3000`
 *** link:http://vogonsdrivers.com/getfile.php?fileid=245&menustate=0[Windows 3.1x - ET3000 drivers, Dec 8 1994]
@@ -443,7 +443,7 @@ If for some reason you want to run Windows 3.1x standard mode (e.g. on a 286), u
 == Mouse support
 When running Windows in DOSBox-X the integration is not seamless.
 You need to capture the mouse and again release it when you want to leave the DOSBox-X window.
-This is because Windows uses it's own driver instead of using the integrated mouse support that DOSBox-X provides.
+This is because Windows uses its own driver instead of using the integrated mouse support that DOSBox-X provides.
 
 There are two possible solutions to this.
 
@@ -454,7 +454,7 @@ To get this working take the following steps:
 Go to link:https://github.com/joncampbell123/doslib/releases[doslib releases] and download the latest binary release of doslib.
 Unpack the archive, and you will find a Windows 3.0 or 3.1 mouse driver in respectively the `windrv/dosboxpi/bin/win30` or `windrv/dosboxpi/bin/win31` directory.
 
-- Copy the `DBOXMPI.DRV` and `OEMSETUP.INF` files for your windows version to a place where the Windows SETUP.EXE program will be able to find it
+- Copy the `DBOXMPI.DRV` and `OEMSETUP.INF` files for your Windows version to a place where the Windows SETUP.EXE program will be able to find it
 - When you run SETUP.EXE, select to change the mouse and then select the "Other (requires disk provided by a hardware manufacturer)" option
 - Enter the path where you saved the `DBOXMPI.DRV` and `OEMSETUP.INF` files
 - Select the "DOSBox-X Mouse Pointer Integration" option
@@ -471,12 +471,12 @@ integration device=true
 ....
 Now when you run Windows 3.x, you should have seamless mouse support.
 
-NOTE: These old windows versions had no support for mice with scroll wheels. By default DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.
+NOTE: These old windows versions had no support for mice with scroll wheels. By default, DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.
 This can be controlled by the `mouse_wheel_key=` setting in the `[sdl]` section of your DOSBox-X config file.
 
 === VMWare mouse driver
 DOSBox-X 0.83.24 or later also supports the VMware mouse protocol, and there is a 3rd party link:https://github.com/NattyNarwhal/vmwmouse[VMware mouse driver for Windows 3.x] written by NattyNarwhal.
-As such you can install the VMware mouse driver for Windows 3.x and you will be able to move the mouse in and out of DOSBox-X seamlessly.
+As such you can install the VMware mouse driver for Windows 3.x, and you will be able to move the mouse in and out of DOSBox-X seamlessly.
 
 Simply run the DOS based SETUP.EXE program for Windows 3.x and select "Mouse" followed by "Other". Then type the location where you saved the unpacked VMware mouse driver for Windows 3.x.
 
@@ -614,7 +614,7 @@ There are two editions for which information is available:
 - Tandy Multimedia upgrade kit with "Tandy Sound Blaster Pro 16", which is actually a modified SB Pro 1.0
 - Creative Labs Multimedia upgrade kit with SB Pro 1.0
 
-For both of these edition, it is best to use `sbtype=sbpro1` in your DOSBox-X config file.
+For both of these editions, it is best to use `sbtype=sbpro1` in your DOSBox-X config file.
 
 During Windows installation, the Tandy edition will only offer the option to change the base IO port from the default 220.
 Options to change the IRQ and DMA are not given. For this edition, you should either set `irq=10` and `dma=3` in your DOSBox-X config file, or modify the defaults manually after installation in `C:\MWINDOWS\SYSTEM.INI`
@@ -755,13 +755,13 @@ WIN RUNEXIT \path\to\game.exe
 Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows. This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
 
 == Known limitations
-- When booting a guest OS, such a MS-DOS with Windows 3.x in DOSBox-X, so-called folder mounts are not supported.
+- When booting a guest OS, such an MS-DOS with Windows 3.x in DOSBox-X, so-called folder mounts are not supported.
 Any folders of the host you mount before starting MS-DOS will **NOT** be available in DOS and Windows 3.x.
 Only image mounts (HDD, Floppy or CD) using `imgmount` are possible in combination with booting a guest OS.
 
 - If you intend at any point to use a Floppy during your usage of Windows 3.x, you must mount a floppy **before** starting Windows 3.x.
 You can load a different Floppy, once you started Windows 3.x this way from the DOSBox-X menus.
-If you don't load a floppy before and attach it afterwards, it may appear to work in Windows 3.x but it will not work properly and you get strange errors.
+If you don't load a floppy before and attach it afterwards, it may appear to work in Windows 3.x, but it will not work properly, and you get strange errors.
 
 - If you intend at any point to use a CD during your usage of Windows 3.x, you must mount a CD **before** starting Windows 3.x.
 You can load a different CD from the DOSBox-X menus, once you started Windows 3.x.

@@ -207,7 +207,7 @@ This effectively prevents the guest from accessing the hosts 127.0.0.0/8 loopbac
 * Valid values: 576-?
 
 The link:https://en.wikipedia.org/wiki/Maximum_transmission_unit[maximum transmission unit] for Ethernet packets transmitted from the guest.
-Specifying 0 will use libslirp's default MTU size of 1500 bytes. A value larger then 9000 is not recommended.
+Specifying 0 will use libslirp's default MTU size of 1500 bytes. A value larger than 9000 is not recommended.
 MTU and MRU sizes should normally be identical.
 
 NOTE: If you want to use a larger MTU than default, your hosts network adapter and your network switch needs to support it, otherwise the packets will get truncated.

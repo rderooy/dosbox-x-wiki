@@ -27,7 +27,7 @@ Generates artificial keypresses.
 Usage: ADDKEY key(s)
 * **APPEND** (external command)
 +
-Enables programs to open data files in specified directories as if the files were in the current directory.
+Enables a program to open data files in specified directories as if the files were in the current directory.
 +
 Usage: APPEND [ [drive]:path[;...] ] [/X[:ON|:OFF]] [/PATH:ON|/PATH:OFF] [/E]
 +
@@ -127,7 +127,7 @@ Waits for a user keypress and sets ERRORLEVEL. Displays the given prompt followe
 Usage: CHOICE [/C:choices] [/N] [/S] [/T:c,nn] text
 * **CLS** (internal command)
 +
-Clears the screen of all input and returns just the current prompt in the upper left hand corner.
+Clears the screen of all input and returns just the current prompt in the upper left-hand corner.
 +
 Usage: Simply enter CLS without any parameters.
 * **COLOR** (external command)
@@ -136,7 +136,7 @@ Sets the default console foreground and background colors.
 +
 Usage: COLOR [attr]
 +
-Note: Use SETCOLOR command to views or changes the text-mode color scheme settings.
+Note: Use SETCOLOR command to view or change the text-mode color scheme settings.
 * **COMMAND** (external command)
 +
 Runs DOSBox-X's internal command shell.
@@ -522,7 +522,7 @@ Sends a signal to re-boot the kernel of the emulated DOS, without rebooting DOSB
 Usage: Simply enter RE-DOS without any parameters.
 * **REM** (internal command)
 +
-Adds comments in a batch file.
+Adds a comment in a batch file.
 +
 Usage: REM [comment]
 * **REN/RENAME** (internal command)
@@ -532,7 +532,7 @@ Renames a file/directory or files.
 Usage: REN [drive:][path]filename1 filename2 or RENAME [drive:][path]filename1 filename2
 * **REPLACE** (external command)
 +
-Replaces files in the destination directory with files from the source directory that have the same name.
+Replace files in the destination directory with files from the source directory that have the same name.
 +
 Usage: REPLACE [drive1:][path1]filename [drive2:][path2] [/switches]
 * **RESCAN** (external command)

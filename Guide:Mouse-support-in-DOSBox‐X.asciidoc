@@ -90,7 +90,7 @@ If you boot DOS as a guest OS, you will also need to load the CuteMouse driver v
 
 === Emulated mouse wheel support
 Since most DOS applications (and early Windows) don't support the scroll wheel, DOSBox-X by default maps the mouse wheel movements to keyboard keys.
-By default DOSBox-X maps the mouse wheel to the up/down arrow (aka cursor) keys.
+By default, DOSBox-X maps the mouse wheel to the up/down arrow (aka cursor) keys.
 
 The mouse wheel options can be found, when running DOSBox-X in a window, from the menu bar under "Main" -> "Mouse wheel movements".
 But changes here will not be saved on DOSBox-X shutdown.
@@ -136,11 +136,11 @@ valid options:
 - `auxdevice = none`: disables PS/2 mouse emulation
 - `auxdevice = 2button`: emulate a Microsoft 2 button mouse
 - `auxdevice = 3button`: emulate a Microsoft 3 button mouse
-- `auxdevice = intellimouse`: emulate a MS IntelliMouse with scroll wheel
-- `auxdevice = intellimouse45`: emulate a MS IntelliMouse Explorer with scroll wheel and 4th and 5th button
+- `auxdevice = intellimouse`: emulate an MS IntelliMouse with scroll wheel
+- `auxdevice = intellimouse45`: emulate an MS IntelliMouse Explorer with scroll wheel and 4th and 5th button
 
 NOTE: The `auxdevice=3button` option requires that you set `middle_unlock=none` in the `[sdl]` section of the DOSBox-X config file.
-Also this option does not currently work when you boot a guest OS.
+Also, this option does not currently work when you boot a guest OS.
 
 === mouse_emulation
 * Default value: locked
@@ -193,7 +193,7 @@ Enable INT 33H for mouse support.
 * Default value: true
 * Possible values: false, true
 
-If set, the cursor on the host will be hidden if the DOS application provides it's own interrupt subroutine for the mouse driver to call, which is usually an indication that the DOS game wishes to draw the cursor with it's own support routines (DeluxePaint II).
+If set, the cursor on the host will be hidden if the DOS application provides its own interrupt subroutine for the mouse driver to call, which is usually an indication that the DOS game wishes to draw the cursor with its own support routines (DeluxePaint II).
 
 === int33 hide host cursor when polling
 * Default value: false
@@ -232,7 +232,7 @@ Set to true if the guest OS or DOS program assigns an INT 15h mouse callback, bu
 Diagnostic function only (default off).
 
 == Serial mouse
-By default DOSBox-X emulates a PS/2 mouse.
+By default, DOSBox-X emulates a PS/2 mouse.
 But some early DOS applications or Windows versions come with their own mouse driver that only works with serial mice.
 For this purpose, DOSBox-X can be set to emulate a Microsoft serial mouse.
 If serial mouse emulation is enabled, the PS/2 mouse emulation is automatically disabled.
@@ -249,6 +249,6 @@ NOTE: most software will expect to find the serial mouse on COM1, as such it is 
 When booting a guest OS, such as MS-DOS or Windows 95, DOSBox-X no longer provides a mouse driver, as this is up to the guest OS.
 
 In the case of MS-DOS, IBM PC-DOS or FreeDOS, the recommended mouse driver is link:http://cutemouse.sourceforge.net/[CuteMouse (aka ctmouse)].
-It supports both PS/2 and Serial mice, and requires less memory then other mouse drivers.
+It supports both PS/2 and Serial mice, and requires less memory than other mouse drivers.
 
 However, any Microsoft mouse compatible mouse driver should work, at least for basic functionality.

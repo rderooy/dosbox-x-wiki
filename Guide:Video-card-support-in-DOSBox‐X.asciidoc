@@ -174,7 +174,7 @@ The only extras that it has are underlined text, bright text and reverse video.
 The vertical refresh of MDA is only 50Hz, but with the phosphor glow of green and amber monochrome monitors this was not noticeable.
 
 The main selling feature of this adapter, compared to CGA, was its clarity as it uses effectively a 720x350 resolution, which made it very popular for business software.
-For games you're going to be limited to text mode games, like text adventures.
+For games, you're going to be limited to text mode games, like text adventures.
 
 This mode can be set using ``machine=mda`` in your DOSBox-X config file.
 Video memory is fixed to 4KiB and cannot be changed.
@@ -433,7 +433,7 @@ It is possible to use an MDA, CGA or EGA monitor with an IBM EGA card.
 Some software such as the link:https://www.os2museum.com/wp/fantasyland-on-vga/[IBM Fantasy Land Demo] expects a CGA monitor with 200-line text mode and 8x8 characters, and will not work properly with a regular EGA monitor with 350-line text mode and 8x14 characters.
 
 Starting with DOSBox-X 0.84.1 an EGA adapter attached to a 200-line CGA monitor can be emulated by setting ``machine=ega200``.
-When using this reduced mode, the regular 350-line EGA modes will not be be available.
+When using this reduced mode, the regular 350-line EGA modes will not be available.
 
 NOTE: There is no support for emulating an EGA adapter with monochrome MDA monitor at this time.
 
@@ -457,7 +457,7 @@ image::images/Game:KQ1_SCI_EGA.png[,640,float="left"]
 --
 
 === Amstrad
-Amstrad in 1986 introduced the PC1512 which is a IBM PC clone with CGA (RGBI only) graphics, but also adds a 640x200 16-colour mode.
+Amstrad in 1986 introduced the PC1512 which is an IBM PC clone with CGA (RGBI only) graphics, but also adds a 640x200 16-colour mode.
 
 Very little software exists that can use this mode. Here are some known examples:
 
@@ -471,7 +471,7 @@ Very little software exists that can use this mode. Here are some known examples
 ** link:https://www.mobygames.com/game/dos/les-ripoux[Les Ripoux]
 ** link:https://www.mobygames.com/game/dos/maupiti-island[Maupiti Island]
 
-In addition there is a link:http://sierrahelp.com/Patches-Updates/MiscUpdates.html[PC1512.DRV] driver for Sierra SCI0 and SCI1 games.
+In addition, there is a link:http://sierrahelp.com/Patches-Updates/MiscUpdates.html[PC1512.DRV] driver for Sierra SCI0 and SCI1 games.
 
 NOTE: There were more (mainly European) games that claimed PC1512 support, but most will only use the CGA mode.
 For instance link:https://www.mobygames.com/attribute/sheet/attributeId,53/[Mobygames at the time of writing claims 27 Amstrad titles], but again most of them will only use the CGA mode.
@@ -717,7 +717,7 @@ Links:
 WARNING: Like the regular S3 ViRGE, the emulation of this card is considered experimental. It is not recommended for normal use at this time.
 
 Introduced in November 1995.
-Similar to the regular S3 ViRGE but available with 2, 4 or 8MB VRAM, allowing higher resolution and higher colour depths graphics modes.
+Similar to the regular S3 ViRGE but available with 2, 4 or 8MB VRAM, allowing higher resolution and higher colour depth's graphics modes.
 
 This mode can be set using ``machine=svga_s3virgevx`` in your DOSBox-X config file
 
@@ -887,7 +887,7 @@ NOTE: It is advised that you set your terminal window to 80x25 as to minimize ch
 
 NOTE: The 2nd display output to the terminal window will be in the DOS codepage that is set in DOSBox-X.
 However, most terminal programs expect Unicode these days, which will result in unicode question marks for a lot of characters.
-This can be minimized by using a terminal program that allows setting an encoding other then unicode, which a lot of Linux terminal programs allow.
+This can be minimized by using a terminal program that allows setting an encoding other than unicode, which a lot of Linux terminal programs allow.
 
 NOTE: Because both the second display code and the integrated debugger uses the terminal, they are mutually exclusive. e.g., the "Start DOSBox-X Debugger" option will be greyed out when you start with the ``-display2`` option.
 
@@ -917,7 +917,7 @@ Amount of video memory in megabytes for the emulated SVGA adapter.
 
 The maximum resolution and color depth the emulated SVGA adapter will be able to display is determined by this value.
 
-* `vmemsize=-1`: auto (`vmemsizekb` is ignored), and default value is dependant on the emulated SVGA adapter.
+* `vmemsize=-1`: auto (`vmemsizekb` is ignored), and default value is dependent on the emulated SVGA adapter.
 * `vmemsize=0`: 512kB for 800x600 at 256 colors (if vmemsizekb=0)
 * `vmemsize=1`: 1MB for 1024x768 at 256 colors or 800x600  at 64k colors
 * `vmemsize=2`: 2MB for 1600x1200 at 256 colors or 1024x768 at 64k colors or 640x480 at 16M colors
@@ -925,7 +925,7 @@ The maximum resolution and color depth the emulated SVGA adapter will be able to
 * `vmemsize=8`: 8MB for up to 1600x1200 at 16M colors
 * `vmemsize=16`: 16MB only supported for VESA modes (regular S3 will be limited to 8MB)
 
-For link:https://en.wikipedia.org/wiki/Build_(game_engine)[build engine games], use more memory than in the list above so it can use triple buffering and thus won't flicker.
+For link:https://en.wikipedia.org/wiki/Build_(game_engine)[build engine games], use more memory than in the list above, so it can use triple buffering and thus won't flicker.
 
 NOTE: The minimum and maximum amount of video memory depends on the emulated video adapter.
 
@@ -1068,13 +1068,13 @@ Force the VGA framerate (refresh rate) to a specific value (ntsc, pal, or specif
 
 VGA specific resolutions normally default to 70Hz, although many clone VGA and SVGA cards supported higher values.
 
-NOTE: Almost all modern LCD displays only support 60Hz, which is not ideal for games meant to run at 70Hz.
+NOTE: Almost all modern LCDs only support 60Hz, which is not ideal for games meant to run at 70Hz.
 
 === sierra ramdac
 * default value: true
 * valid values: true, false
 
-Whether or not to emulate a Sierra or compatible RAMDAC at IO port 3C6h-3C9h.
+Whether to emulate a Sierra or compatible RAMDAC at IO port 3C6h-3C9h.
 
 Some DOS games expect to access IO port 3C6h to enable highcolor/truecolor SVGA modes on older chipsets.
 Disable if you wish to emulate SVGA hardware that lacks a RAMDAC or (depending on the chipset) does not emulate a RAMDAC that is accessible through IO port 3C6h.
@@ -1106,7 +1106,7 @@ VGA debugging switch.
 
 If true, an inverse line will be drawn on the exact scanline that the CRTC display offset registers were written.
 
-This can be used to help diagnose whether or not the DOS game is page flipping properly according to vertical retrace if the display on-screen is flickering.
+This can be used to help diagnose whether the DOS game is page flipping properly according to vertical retrace if the display on-screen is flickering.
 
 === vertical retrace poll debug line
 * default value: false
@@ -1320,7 +1320,7 @@ Some DOS games and demos assume one bit depth or the other and do not enumerate 
 
 If true, allow low resolution VESA modes (320x200x16/24/32bpp and so on).
 
-You could set this to false to simulate SVGA hardware with a BIOS that does not support the low resolution modes for testing purposes, or to limit the amount of modes available.
+You could set this too false to simulate SVGA hardware with a BIOS that does not support the low resolution modes for testing purposes, or to limit the amount of modes available.
 
 === allow explicit 24bpp vesa modes
 * default value: false
@@ -1419,7 +1419,7 @@ If the DOS game or demo has problems with VESA text modes, set to 'false'
 
 This setting affects the VGA Line Compare register.
 
-* Set to false to emulate most VGA behavior
+* Set too false to emulate most VGA behavior
 * Set to true for the value to latch once at the start of the frame.
 
 === ignore vblank wraparound

@@ -649,7 +649,7 @@ hdiutil detach /dev/disk6
 == CD-ROM or DVD images
 DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in `.ISO`, `.CUE`+`.BIN` or `.MDF` image format.
 
-By default ISO-9660 Level 1 is used, which is limited to traditional DOS 8.3 character filenames.
+By default, ISO-9660 Level 1 is used, which is limited to traditional DOS 8.3 character filenames.
 When emulating DOS version 7.0 or later (or `lfn=true` is set in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
 
 Starting with DOSBox-X 2022.08.0 there is also support for:
@@ -703,7 +703,7 @@ imgmount D: cdrom.iso -o rr=0
 With the integrated DOS that DOSBox-X provides, you do not need to worry about loading a CD-ROM driver and MSCDEX.
 If however, you boot real DOS in DOSBox-X, any mounted CD-ROM images will not be accessible until you load both an IDE CD-ROM driver and MSCDEX.
 
-For a IDE CD-ROM driver we recommend either `OAKCDROM.SYS`, `UIDE.SYS` or `VIDE-CDD.SYS`.
+For an IDE CD-ROM driver we recommend either `OAKCDROM.SYS`, `UIDE.SYS` or `VIDE-CDD.SYS`.
 
 * OAK stands for OEM Adaptation Kit, and this is the IDE CD-ROM driver shipped on the Windows 95, 98 and ME boot disks.
 * link:https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/cdrom/uide/[UIDE.SYS] is available from link:https://www.freedos.org/[FreeDOS].
@@ -869,7 +869,7 @@ DOSBox-X provides limited support for these images.
 
 * There is no support for creating QCOW2 images in DOSBox-X
 * There is no support for the compression and encryption options
-* Copy-On-Write support needs to be handled manually, outside of DOSBox-X
+* Copy-On-Write support needs to be handled manually, outside DOSBox-X
 * Mounting QCOW2 images always requires the use of a drive number
 
 A QCOW2 image can be created with link:https://www.qemu.org/download/[qemu-img] as such:

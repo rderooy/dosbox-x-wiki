@@ -9,7 +9,7 @@ Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
 toc::[]
 
-This guide explains how to setup and play DOS games in DOSBox-X.
+This guide explains how to set up and play DOS games in DOSBox-X.
 
 == Running a game
 
@@ -17,9 +17,9 @@ There are several ways you can run a DOS game inside DOSBox-X.
 
 If you use Windows, you can launch a DOS game on your computer easily using the "quick launch" feature. When DOSBox-X is running, select the "DOS" menu and click "Quick launch program...", then you will be able to select a game to run using the Windows file browser. The game directory will be automatically mounted and the game will be started after you select a game executable on your computer.
 
-If you installed DOSBox-X 0.83.5 or later using the Windows installer, you can also launch a DOS game directly from the Windows Explorer, even if DOSBox-X is not currently running. Right click the executable of your DOS game and select "Open with DOSBox-X". Then DOSBox-X will be started and automatically run the game you just selected.
+If you installed DOSBox-X 0.83.5 or later using the Windows installer, you can also launch a DOS game directly from the Windows Explorer, even if DOSBox-X is not currently running. Right-click the executable of your DOS game and select "Open with DOSBox-X". Then DOSBox-X will be started and automatically run the game you just selected.
 
-Otherwise, you can manually run the DOS game from the DOSBox-X command line. Now start DOSBox-X. By default there is no drive mounted other than the internal virtual drive Z:. You need to mount the game directory so that it can be seen from within DOSBox-X. You can either mount a drive from the Drive menu, or by typing a command like the following:
+Otherwise, you can manually run the DOS game from the DOSBox-X command line. Now start DOSBox-X. By default, there is no drive mounted other than the internal virtual drive Z:. You need to mount the game directory so that it can be seen from within DOSBox-X. You can either mount a drive from the Drive menu, or by typing a command like the following:
 
 ....
 MOUNT C C:\GAME
@@ -57,7 +57,7 @@ After you have done this, you will be prompted with a Z:\>. Now, just write what
 C:
 ....
 
-The drive will be changed from Z:\ to C:\. And it is now time to run the game. Most games have an EXE file in their directory that you can run. However, some might require a BAT file, or COM file (common in demos and really old games). Most of the time, the file is in the root folder. Please consult the documentation of your game for which file is needed to start the game. Suppose the game executable is called PLAY.EXE, then you can just type this:
+The drive will be changed from Z:\ to C:\. And it is now time to run the game. Most games have an EXE file in their directory that you can run. However, some might require a BAT file, or COM file (common in demos and very old games). Most of the time, the file is in the root folder. Please consult the documentation of your game for which file is needed to start the game. Suppose the game executable is called PLAY.EXE, then you can just type this:
 
 ....
 PLAY.EXE
@@ -83,7 +83,7 @@ This enables very good low-level CD-ROM support on any operating system.
 
 **MOUSE: The mouse doesn't work.**
 
-By default mouse autolock is disabled in the DOSBox-X config file. You can either
+By default, mouse autolock is disabled in the DOSBox-X config file. You can either
 edit the config file and in the ``[SDL]`` section, set ``autolock=true``.
 Or you can go to the "Main" menu and select "Capture mouse". If DOSBox-X detects
 when a program uses PS/2 mouse control and autolock is enabled, when you click on
@@ -122,14 +122,14 @@ digital sound output through the internal speaker.
 
 - Creative CMS/Gameblaster
 
-The is the first card released by Creative Labs(R).  The default
+This is the first card released by Creative Labs(R).  The default
 configuration places it on address 220. It is disabled by default.
 
 - Tandy 3 voice
 
-The emulation of this sound hardware is complete with the exception of the
+The emulation of this sound hardware is complete except for the
 noise channel. The noise channel is not very well documented and as such
-is only a best guess as to the sound's accuracy. It is disabled as default.
+is only the best guess as to the sound's accuracy. It is disabled as default.
 
 - Tandy DAC
 
@@ -144,7 +144,7 @@ almost play digitized sound. Placed at address 220 (also on 388).
 
 - SoundBlaster 16 / SoundBlaster Pro I & II / SoundBlaster I & II
 
-By default DOSBox-X provides SoundBlaster 16 level 16-bit stereo sound.
+By default, DOSBox-X provides SoundBlaster 16 level 16-bit stereo sound.
 You can select a different SoundBlaster version in the configuration of
 DOSBox-X. AWE32 music is not emulated as you can use MPU-401 instead (see below).
 
@@ -171,7 +171,7 @@ A different device/emulator is needed for Roland LAPC/CM-32L/MT-32 compatibility
 **GENERAL: Running a certain game closes DOSBox-X, crashes with some message or hangs.**
 
 There can be many reasons that a game crashes or misbehaves.
-DOS compatible PC's existed for a long time, from many different manufacturers.
+DOS compatible PC's existed for a long time, from many manufacturers.
 And during that time many upgrades to components where made.
 As such, even with a legacy DOS PC you can expect to run into compatibility issues.
 

@@ -6,14 +6,14 @@ ifndef::env-github[:suffixappend: .html]
 Apparently the Sound Blaster hardware allows software to send a ``Play
 DMA block'' command (0x14) and then later send another ``Play DMA
 block'' command without letting the previous one finish. Without missing
-a sample the DSP resets it’s counter and continues playback. If the DSP
+a sample the DSP resets its counter and continues playback. If the DSP
 is always interrupted in this manner, audio can play forever without
 finishing the block. Nagging the DSP this way has no effect on the
 stream coming from the DMA controller, so to the end user, there are no
-glitches or droupouts during playback.
+glitches or dropouts during playback.
 
 A possible benefit of this technique is that the DSP never fires an IRQ
-because it never finishes the block. So the program using this technique
+because it never finishes the block. So a program using this technique
 never has to worry about handling and autodetecting the Sound Blaster
 IRQ.
 

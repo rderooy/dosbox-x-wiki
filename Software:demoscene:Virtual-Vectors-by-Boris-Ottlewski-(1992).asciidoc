@@ -57,7 +57,7 @@ Then type:
 vv odyssey2.mod 22050
 ....
 
-The demo should run through it’s routines with much better sounding
+The demo should run through its routines with much better sounding
 music.
 
 == More information

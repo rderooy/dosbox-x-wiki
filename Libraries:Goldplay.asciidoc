@@ -1,6 +1,6 @@
 == Goldplay music & sound library for MS-DOS
 
-Goldplay is a early MOD music player library for MS-DOS. It was often
+Goldplay is an early MOD music player library for MS-DOS. It was often
 used by early DOS demos in the 1991-1993 timeframe as a way to play
 music during the demo effects. It supports Sound Blaster, Sound Blaster
 Pro, LPT DAC, and PC speaker playback.
@@ -9,13 +9,13 @@ Pro, LPT DAC, and PC speaker playback.
 
 What makes Goldplay noteworthy in DOSBox-X development is how Goldplay
 configures Sound Blaster hardware for music playback. Most games
-allocate a buffer, setup DMA to point to the buffer and it’s length, and
+allocate a buffer, setup DMA to point to the buffer, and it’s length, and
 hook the IRQ to keep the DSP going when the block finishes (usually
 single-cycle mode for SB1.0 compatibility). Goldplay instead allocates a
 buffer that is 1 byte long (2 if stereo), configures the DMA controller
 into auto-init mode (to loop over the byte or bytes), then commands the
-DSP to play a DSP block that is far larger than that buffer (usually
-65536 samples). The Sound Blaster DSP doesn’t know how long the DMA
+DSP to play a DSP block that is far larger than its buffer (usually
+65536 samples). The Sound Blaster DSP doesn't know how long the DMA
 buffer is, so it reads and plays that many bytes before signalling the
 IRQ. The DMA controller quickly hits terminal count, but since it’s in
 auto-init mode, automatically loops back to the same byte. Without
@@ -46,7 +46,7 @@ the data by itself at the right timing.
 
 == Obvious problems
 
-For obvious reasons, this technique doesn’t work very well with
+For obvious reasons, this technique doesn't work very well with
 emulation and virtualization scenarios. Most Sound Blaster emulation is
 written for DOS games that setup DMA and play blocks. If given a
 goldplay-based DOS program, they will likely either not play anything,

@@ -36,7 +36,7 @@ part runs too fast, causing the rotating dot cube to finish too early.
 The plasma raster effect will occasionally glitch if Sound Blaster
 playback is active.
 
-If Youtube captures like
+If YouTube captures like
 http://www.youtube.com/watch?v=MQDRLOPem48[this] are any indication, the
 demo has similar problems on real hardware.
 

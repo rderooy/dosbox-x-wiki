@@ -69,7 +69,7 @@ NOTE: This method requires DOSBox-X 0.83.2 or newer.
  SETUP
 ....
 
-After it finished the installation, it will reboot DOSBox-X and you're again at the ``Z:\>`` prompt. Now type the following to boot PC DOS 2000 normally.
+After it finished the installation, it will reboot DOSBox-X, and you're again at the ``Z:\>`` prompt. Now type the following to boot PC DOS 2000 normally.
 ....
 IMGMOUNT C hdd.img
 BOOT C:

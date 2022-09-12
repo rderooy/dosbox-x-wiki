@@ -24,7 +24,7 @@ toc::[]
 ** First version to include SHARE.EXE, ATTRIB.EXE, KEYBxx.COM
 
 === Key new features of DOS 3.10
-** Adds features for networking (e.g. IFS, remote file and print API)
+** Add features for networking (e.g. IFS, remote file and print API)
 
 === Key new features of DOS 3.20
 ** First version to support 3.5" 720kB disks (2DD)
@@ -125,7 +125,7 @@ Run ``FDISK`` and select option 1 to create a new DOS partition, and confirm you
 image::images/MS-DOS:PC-DOS_3.2_FDISK.png[Running PC DOS 3.2 FDISK]
 image::images/MS-DOS:PC-DOS_3.2_FDISK_Restart.png[PC DOS 3.2 FDISK restart screen]
 
-After it is finished, press any key and DOS will reboot DOSBox-X and you're again at the DOSBox-X ``Z:\>`` prompt.
+After it is finished, press any key and DOS will reboot DOSBox-X, and you're again at the DOSBox-X ``Z:\>`` prompt.
 At this point the HDD image is partitioned, but not yet formatted or made bootable, so that is what you need to do next.
 
 Since there is now a partition, DOSBox-X can now autodetect the disk geometry. As such, it is no longer necessary to specify the geometry settings.

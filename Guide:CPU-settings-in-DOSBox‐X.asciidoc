@@ -340,7 +340,7 @@ This for instance allows a guest OS such as Windows 9x to turn off DOSBox-X on s
 
 If emulating ISA PnP BIOS, announce APM BIOS in PnP enumeration.
 
-WARNING: This can cause Windows 95 OSR2 and later to enumerate the APM BIOS twice and cause problems. Due to this, it is not recommended to enable this option, at this point in time.
+WARNING: This can cause Windows 95 OSR2 and later to enumerate the APM BIOS twice and cause problems. Due to this, it is not recommended enabling this option, at this point in time.
 
 === apmbios version
 * Default value: auto

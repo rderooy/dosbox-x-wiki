@@ -4,7 +4,7 @@ ifndef::env-github[:suffixappend: .html]
 == Explanation
 
 Creative Sound Blaster cards have an undocumented quirk where the DSP
-busy bit toggles by itself at an unknown clock rate whether or not any
+busy bit toggles by itself at an unknown clock rate whether any
 I/O is occurring with the card. On 486/Pentium hardware this quirk can be
 detected with 16 I/O reads from the DSP status port where 8 will have
 the busy bit set, and 8 will have the busy bit clear.

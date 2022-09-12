@@ -165,7 +165,7 @@ OpenGlide is an open-source Glide API wrapper to OpenGL implementation that is n
 You will need to compile it yourself using Visual Studio or MinGW, and should therefore only be considered by advanced users.
 
 The original OpenGlide repository on Sourceforge has been unmaintained for a long time and does not work for our purposes.
-Some forks exists, such as: https://github.com/voyageur/openglide which works for DOSBox-X SDL1, or the fork available here: https://github.com/kjliew/qemu-xtra which seems to work for DOSBox-X SDL2.
+Some forks exist, such as: https://github.com/voyageur/openglide which works for DOSBox-X SDL1, or the fork available here: https://github.com/kjliew/qemu-xtra which seems to work for DOSBox-X SDL2.
 
 === Linux host: Installing libglide2x.so
 NOTE: Although this library has the same filename as the old Linux Glide library for real 3dfx Voodoo adapters, it is in fact not the same.

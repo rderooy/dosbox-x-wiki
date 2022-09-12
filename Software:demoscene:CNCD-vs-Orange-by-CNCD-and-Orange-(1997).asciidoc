@@ -32,7 +32,7 @@ objects and effects used in the demo. If you only want to watch the demo
 instead, you should consider cycles=max instead.
 
 The demo will not start immediately. It needs to load some data first
-and process it, which can take 30-60 seconds in DOSBox-X on a quad core
+and process it, which can take 30-60 seconds in DOSBox-X on a quad-core
 Intel i5 laptop.
 
 == More information

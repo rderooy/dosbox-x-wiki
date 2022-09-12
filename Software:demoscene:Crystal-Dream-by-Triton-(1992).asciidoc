@@ -42,8 +42,8 @@ block constantly and audio playback runs properly anyway.
 
 However, this demo is not able to play music on Sound Blaster 16
 hardware. The reason is that the link:Hardware%3ASound-Blaster%3ADSP-busy-cycle[Sound Blaster 16 DSP busy cycle is
-always running], whether or not
-any audio playback is occuring, so the demo never senses the end of the
+always running], whether
+any audio playback is occurring, so the demo never senses the end of the
 DSP block and never issues any further commands to keep audio playback
 going.
 

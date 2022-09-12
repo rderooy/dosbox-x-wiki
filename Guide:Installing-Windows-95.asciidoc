@@ -607,13 +607,13 @@ NOTE: There is currently no support for creating emulated CD-ROM or Floppy drive
 
 One thing to note, is that there is no way to specify the FAT type to use for the conversion.
 The FAT type will be automatically selected based on the aggregate size of files in the folder, plus 250MiB (this can be adjusted with the `convert fat free space` option in the DOSBox-X config file).
-If the total space of files + 250MiB does not exceed 2GiB, it will convert it into a FAT16 disk. Otherwise it will become a FAT32, which in turn will require a guest OS with FAT32 support.
+If the total space of files + 250MiB does not exceed 2GiB, it will convert it into a FAT16 disk. Otherwise, it will become a FAT32, which in turn will require a guest OS with FAT32 support.
 
 Alternatively, you can also make the emulated FAT drive read-only by using the `-convertfatro` option with the `boot` command. Or by setting `convert fat free space=0` option in the DOSBox-X config file.
 
 == Known limitations
 - If you intend at any point to use a Floppy or CD during your usage of Windows 95, you must attach a floppy and/or CD image **before** starting Windows 95.
-You can load a different CD or Floppy image, once you booted Windows 95, but if a floppy or CD is not present when starting Windows 95 the drive is simply missing and you cannot add it without rebooting the guest OS.
+You can load a different CD or Floppy image, once you booted Windows 95, but if a floppy or CD is not present when starting Windows 95 the drive is simply missing, and you cannot add it without rebooting the guest OS.
 
 - When mounting a CD-ROM image using `imgmount`, before booting Windows 95, you may have to specify the IDE device to attach it to for it to work properly in Windows 95. e.g. `imgmount d game_cd.iso -ide 2m` to make the CD-ROM drive appear as the master device on the secondary IDE controller.
 

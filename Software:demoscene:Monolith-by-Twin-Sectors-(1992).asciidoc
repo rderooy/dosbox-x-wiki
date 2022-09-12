@@ -35,7 +35,7 @@ to display a graphic. The first option uses a nonstandard VGA mode
 360x570 (it’s actually 360x594) that is safe to use with DOSBox-X,
 though not recommended for non-multisync VGA monitors. The second option
 uses 360x480 (also safe). DOSBox-X has been updated to handle the
-360x570 mode despite that some of the CRTC registers contain invalid
+360x570 mode despite that some CRTC registers contain invalid
 values.
 
 == Bugs
