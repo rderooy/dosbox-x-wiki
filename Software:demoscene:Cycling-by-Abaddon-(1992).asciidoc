@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -31,8 +29,7 @@ dma=1
 initial frequency=0
 ....
 
-Incompatible VGA memory mapping trick
--------------------------------------
+== Incompatible VGA memory mapping trick
 
 This demo appears to use a trick where 2 bits in the Graphics Controller
 registers can be modified to change where the VGA hardware maps it’s
@@ -47,8 +44,7 @@ cards if configured that way map the first 64KB twice. On hardware other
 than ET4000, the demo will not display correctly. This has been
 confirmed on real hardware as well.
 
-PC speaker beeeeeeeeep
-----------------------
+== PC speaker beeeeeeeeep
 
 For some reason, even if the demo uses Sound Blaster, the PC speaker is
 turned on and left on during the demo. Some quick testing with a mid
@@ -63,7 +59,6 @@ picture, same as machine=svga_s3 in DOSBox, but worse. Sound Blaster
 output can cut out at any time.
 |=======================================================================
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=2072[More information (Pouet)]

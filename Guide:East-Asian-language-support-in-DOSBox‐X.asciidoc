@@ -5,7 +5,7 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-# East Asian language and system support
+= East Asian language and system support
 
 toc::[]
 
@@ -82,7 +82,7 @@ DOSBox-X provides emulation for the Japanese NEC PC-98 mode, a platform that est
 
 DOSBox-X also provides emulation for the Japanese AX (JEGA) mode, a Japanese computing initiative starting in around 1986 to allow PCs to handle double-byte (DBCS) Japanese text via special hardware chips. The AX (JEGA) mode may be started with the setting ``machine=jega``, and it can also work in combination with the TrueType font output. In this mode you can press the right Ctrl key to toggle between romaji and kana input modes. Several config options related to DOS/V (see [dosv] section) can also be used for the JEGA mode.
 
-## External links
+== External links
 Some external links with useful information:
 
 * link:https://en.wikipedia.org/wiki/DOS/V[Wikipedia: DOS/V]

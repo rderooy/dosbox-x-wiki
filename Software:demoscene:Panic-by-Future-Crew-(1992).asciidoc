@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [cpu]
@@ -30,8 +28,7 @@ dma=1
 
 The demo requires expanded memory (ems=true) for Sound Blaster playback.
 
-Bugs
-----
+== Bugs
 
 Some of the demo’s raster effects (especially the ``scrollers suck''
 part) become slightly glitchy if run with core=dynamic. The shadebob
@@ -43,7 +40,6 @@ If Youtube captures like
 http://www.youtube.com/watch?v=MQDRLOPem48[this] are any indication, the
 demo has similar problems on real hardware.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=479[More information (Pouet)]

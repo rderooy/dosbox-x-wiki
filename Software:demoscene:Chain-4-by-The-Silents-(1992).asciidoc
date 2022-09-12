@@ -3,14 +3,12 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 Basic 3D object demo with music. It uses a flawed VGA unchained ``mode
 X'' implementation.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -45,15 +43,13 @@ A cycles count between 5000 and 12000 is recommended to avoid flickering
 and visible redraw. If the cycles count is too high, the audio clip
 played during the opening logo may skip over the first 1-2 seconds.
 
-Further testing
----------------
+== Further testing
 
 I would like to run this demo on actual hardware to see if it has
 problems on non-ET4000 SVGA cards in the same way that it fails to work
 under DOSBox.
 
-Test results
-~~~~~~~~~~~~
+=== Test results
 
 I have tested the demo on the following hardware so far. ``OK'' means
 the demo renders correctly (as shown in machine=svga_et4000 screenshot).
@@ -70,7 +66,6 @@ anything else happens.
 |Cirrus Labs |CL-GD7543 |Failed
 |==============================
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=8735[More information (Pouet)]

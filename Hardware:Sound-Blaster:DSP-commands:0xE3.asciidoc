@@ -5,8 +5,7 @@
 |Description |Ask the DSP for an ASCII copyright string
 |======================================================
 
-How to use
-----------
+== How to use
 
 ....
 /* NOTE: DSP_Read() in this example returns DSP data byte read OR
@@ -36,8 +35,7 @@ instead return their own copyright string or model name.
 On clone cards the copyright string can be used to more accurately
 identify the chip/model of the card.
 
-External references
--------------------
+== External references
 
 * http://the.earth.li/~tfm/oldpage/sb_dsp.html[TFM’s DSP commands]
 * http://hackipedia.org/Platform/x86/Sound/Creative%20Labs/ISA,%20Sound%20Blaster/pdf/Sound%20Blaster%20Series%20Developer%20Kit%2c%20Second%20Edition.pdf[Developer

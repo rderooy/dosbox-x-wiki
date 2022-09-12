@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1996{suffixappend}[1996] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -38,7 +36,6 @@ that the README.TXT also strongly recommends ``a fast Pentium''.
 The demo may sit at a black screen for up to 30 seconds before running
 at startup. Be patient before killing the DOS session and restarting.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=74[More information (Pouet)]

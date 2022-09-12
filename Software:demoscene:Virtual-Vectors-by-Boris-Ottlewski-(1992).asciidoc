@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -40,8 +38,7 @@ You should enable INT 33h mouse emulation. Some parts of the demo rotate
 an object, then invite you to rotate it with the mouse and play with the
 object.
 
-Alternate configuration for better music quality
-------------------------------------------------
+== Alternate configuration for better music quality
 
 The demo’s default settings produce very low-fidelity MOD music playback
 (5KHz!). You can get better audio playback by running the demo directly
@@ -63,7 +60,6 @@ vv odyssey2.mod 22050
 The demo should run through it’s routines with much better sounding
 music.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4256[More information (Pouet)]

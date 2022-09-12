@@ -5,13 +5,13 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-# DOS games in DOSBox-X
+= DOS games in DOSBox-X
 
 toc::[]
 
 This guide explains how to setup and play DOS games in DOSBox-X.
 
-## Running a game
+== Running a game
 
 There are several ways you can run a DOS game inside DOSBox-X.
 
@@ -65,7 +65,7 @@ PLAY.EXE
 
 That's it! You can now enjoy the game.
 
-## Troubleshooting
+== Troubleshooting
 
 **CD-ROM: The game can't find its CD-ROM.**
 

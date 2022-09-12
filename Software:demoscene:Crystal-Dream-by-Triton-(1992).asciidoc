@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 A vector object show with raytracing art.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -27,8 +25,7 @@ goldplay=true
 goldplay stereo=true
 ....
 
-DSP busy cycle technique
-------------------------
+== DSP busy cycle technique
 
 Crystal Dream does not concern itself with the IRQ of the Sound Blaster,
 in fact, it ignores it. Instead, it uses the timer interrupt to watch
@@ -54,7 +51,6 @@ Sound Blaster playback is rendered
 link:Libraries%3AGoldplay[goldplay]-style, using a 1 or 2 byte DMA buffer
 and the timer interrupt.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=463[More information (Pouet)]

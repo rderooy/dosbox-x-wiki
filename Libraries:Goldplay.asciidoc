@@ -1,13 +1,11 @@
-Goldplay music & sound library for MS-DOS
------------------------------------------
+== Goldplay music & sound library for MS-DOS
 
 Goldplay is a early MOD music player library for MS-DOS. It was often
 used by early DOS demos in the 1991-1993 timeframe as a way to play
 music during the demo effects. It supports Sound Blaster, Sound Blaster
 Pro, LPT DAC, and PC speaker playback.
 
-Unusual Sound Blaster technique
--------------------------------
+== Unusual Sound Blaster technique
 
 What makes Goldplay noteworthy in DOSBox-X development is how Goldplay
 configures Sound Blaster hardware for music playback. Most games
@@ -46,8 +44,7 @@ speaker and LPT parallel ports do not maintain any kind of queue to
 stream data to them, so to play audio the CPU must periodically write
 the data by itself at the right timing.
 
-Obvious problems
-----------------
+== Obvious problems
 
 For obvious reasons, this technique doesn’t work very well with
 emulation and virtualization scenarios. Most Sound Blaster emulation is
@@ -65,8 +62,7 @@ extent that if the DMA buffer length is not a multiple of the DSP block
 size, the Sound Blaster emulation will play additional audio up to 64KB
 past the end of the buffer!
 
-External links
---------------
+== External links
 
 http://www.dcee.net/Files/Programm/Sound/goldplay.arj[Goldplay library,
 compiled OBJ and TPU files] +

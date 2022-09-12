@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -36,8 +34,7 @@ have a non-intuitive design: Make the selection and then hit ESCAPE to
 continue. You need to set pcspeaker=false because the demo turns it on
 for some reason. Each demo part will run until you hit ESCAPE.
 
-VGA oddities
-------------
+== VGA oddities
 
 The ``Flash'' part of the demo, with copper bars and vertical bars,
 relies on the VGA hardware not buffering the Line Compare register to
@@ -53,7 +50,6 @@ times down the screen.
 A capture of the effect on real hardware is available
 (https://youtu.be/RQPSE06Hd1M?t=12m55s[here]).
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4215[More information (Pouet)]

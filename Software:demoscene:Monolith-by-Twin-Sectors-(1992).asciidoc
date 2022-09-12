@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -30,8 +28,7 @@ dma=1
 
 To run the demo type BOOT.BAT.
 
-VGA oddities
-------------
+== VGA oddities
 
 Part 4 of this demo (the greetings), prompts you on what VGA mode to use
 to display a graphic. The first option uses a nonstandard VGA mode
@@ -41,15 +38,13 @@ uses 360x480 (also safe). DOSBox-X has been updated to handle the
 360x570 mode despite that some of the CRTC registers contain invalid
 values.
 
-Bugs
-----
+== Bugs
 
 Running the demo with BOOT.BAT will run all sections properly, except
 that part 3 will run without music. To run part 3 with music, run it
 manually by typing ``PART3.EXE''. Answer `Y' when the part asks if you
 want music.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=2073[More information (Pouet)]

@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [sblaster]
@@ -37,13 +35,11 @@ pcspeaker=true
 disney=true
 ....
 
-Music oddities
---------------
+== Music oddities
 
 The shadebob part of the demo plays one of two different songs,
 depending on whether you chose Gravis Ultrasound or other support.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4069[More information (Pouet)]

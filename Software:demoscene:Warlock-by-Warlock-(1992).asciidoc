@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -41,15 +39,13 @@ Start the demo by running START.COM. Use the arrow keys to select Sound
 Blaster configuration then start the demo. Unless machine=vgaonly,
 select ``YES'' for the Force SVGA option.
 
-VGA vblank oddity
------------------
+== VGA vblank oddity
 
 This demo appears to have a programming mistake for some custom tweaked
 VGA modes. It uses 320x200x256 VGA mode, but sometimes programs an out
 of range value for vertical blanking end. This can be seen both on real
 hardware and DOSBox where the first 17 scanlines are blank or missing.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4260[More information (Pouet)]

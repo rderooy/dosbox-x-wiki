@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -36,7 +34,6 @@ The demo will prompt you for sound device and configuration. The
 configuration listed should allow for both Sound Blaster/SoundBlaster
 Pro and LPT DAC playback.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4072[More information (Pouet)]

@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -33,13 +31,11 @@ gusirq=5
 gusdma=3
 ....
 
-GUS-only house music version
-----------------------------
+== GUS-only house music version
 
 Besides the main demo, there also exists a version containing only the
 dance portion for Gravis Ultrasound cards (WTNHOUSE.ZIP).
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4199[More information (Pouet)]

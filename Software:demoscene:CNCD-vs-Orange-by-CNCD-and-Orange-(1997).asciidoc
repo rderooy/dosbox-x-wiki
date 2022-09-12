@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1997{suffixappend}[1997] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -37,7 +35,6 @@ The demo will not start immediately. It needs to load some data first
 and process it, which can take 30-60 seconds in DOSBox-X on a quad core
 Intel i5 laptop.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=1326[More information (Pouet)]

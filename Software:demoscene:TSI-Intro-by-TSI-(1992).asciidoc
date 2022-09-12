@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 Simple demo with varied text scroller and music.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -27,7 +25,6 @@ irq=5
 dma=1
 ....
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=58778[More information (Pouet)]

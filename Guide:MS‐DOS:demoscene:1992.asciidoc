@@ -1,7 +1,7 @@
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend: .html]
 
-## 1992 link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[MS-DOS demos].
+== 1992 link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[MS-DOS demos].
 
 link:Software%3Ademoscene%3AButtman-by-Twilight-Zone-(1992)[Buttman by Twilight Zone (1992)] +
 link:Software%3Ademoscene%3AChain-4-by-The-Silents-(1992)[Chain 4 by The Silents (1992)] +

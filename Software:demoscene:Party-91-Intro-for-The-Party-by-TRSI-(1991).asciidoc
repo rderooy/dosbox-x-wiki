@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1991{suffixappend}[1991] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 TODO
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -21,7 +19,6 @@ cputype=286
 cycles=6000
 ....
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=8734[More information (Pouet)]

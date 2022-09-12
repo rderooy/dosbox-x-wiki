@@ -1,8 +1,7 @@
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend: .html]
 
-Sound Blaster DSP commands by value
------------------------------------
+== Sound Blaster DSP commands by value
 
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xE0[0xE0 (DSP identification)]
 SB2.0+
@@ -42,11 +41,9 @@ functions?)
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xFE[0xFE]
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xFF[0xFF]
 
-Sound Blaster DSP commands by group
------------------------------------
+== Sound Blaster DSP commands by group
 
-DSP identification
-~~~~~~~~~~~~~~~~~~
+=== DSP identification
 
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xE0[0xE0 (DSP identification)]
 SB2.0+
@@ -54,22 +51,19 @@ SB2.0+
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xE3[0xE3 (DSP copyright
 string)]
 
-Resource test
-~~~~~~~~~~~~~
+=== Resource test
 
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xE2[0xE2 (DMA identification)]
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xF2[0xF2 (Trigger 8-bit IRQ)]
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xF3[0xF3 (Trigger 16-bit IRQ)]
 SB16+
 
-Other/misc
-~~~~~~~~~~
+=== Other/misc
 
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xE4[0xE4 (Write test register)]
 * link:Hardware%3ASound-Blaster%3ADSP-commands%3A0xE8[0xE8 (Read test register)]
 
-External references
--------------------
+== External references
 
 * http://the.earth.li/~tfm/oldpage/sb_dsp.html[TFM’s DSP commands]
 * http://hackipedia.org/Platform/x86/Sound/Creative%20Labs/ISA,%20Sound%20Blaster/pdf/Sound%20Blaster%20Series%20Developer%20Kit%2c%20Second%20Edition.pdf[Developer

@@ -1,8 +1,7 @@
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend: .html]
 
-Explanation
------------
+== Explanation
 
 Creative Sound Blaster cards have an undocumented quirk where the DSP
 busy bit toggles by itself at an unknown clock rate whether or not any
@@ -10,8 +9,7 @@ I/O is occurring with the card. On 486/Pentium hardware this quirk can be
 detected with 16 I/O reads from the DSP status port where 8 will have
 the busy bit set, and 8 will have the busy bit clear.
 
-Scope
------
+== Scope
 
 On Sound Blaster 16 cards, this DSP busy cycle is always running.
 
@@ -21,8 +19,7 @@ active when DSP playback or recording is active.
 Sound Blaster clones may emulate the busy cycle by toggling the busy bit
 (port 22Ch) on I/O read (example: Gravis Ultrasound SBOS/MEGA-EM).
 
-Side effects of the busy cycle
-------------------------------
+== Side effects of the busy cycle
 
 link:Software%3Ademoscene%3ACrystal-Dream-by-Triton-(1992)[Crystal Dream by Triton] (1992)
 
@@ -41,8 +38,7 @@ worry about which IRQ the Sound Blaster is assigned to.
 If the busy cycle never stops (Sound Blaster 16 case), then the demo
 never issues command 0x14 and music eventually stops.
 
-Direct DAC based playback
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Direct DAC based playback
 
 This can affect some games or programs that use the direct DAC (DSP
 command 0x10) method of playback from IRQ 0 if the game reads the DSP

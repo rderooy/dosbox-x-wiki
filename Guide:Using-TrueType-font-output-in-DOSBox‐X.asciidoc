@@ -5,7 +5,7 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-# TrueType font output in DOSBox-X
+= TrueType font output in DOSBox-X
 
 toc::[]
 
@@ -13,7 +13,7 @@ This guide explains how to configure and use the TrueType font (TTF) output in D
 
 Since DOSBox-X is designed to be a complete DOS emulator, it officially supports DOS applications and more, not just DOS games. While the graphical mode is required by most DOS gaming software, the text mode is active when you are in the DOS shell or running most non-gaming DOS software, and the text screen will look much better when rendered with scalable TrueType fonts rather than the standard bitmaps (original DOSBox and most forks only support the bitmap rendering). DOSBox-X supports the TrueType font (TTF) output which makes it suitable for running text-mode DOS applications, in addition to graphical-mode DOS programs or games.
 
-## Activating the TrueType font output
+== Activating the TrueType font output
 You can start DOSBox-X with the TrueType font (TTF) output by setting it from the [sdl] section of the DOSBox-X configuration, like this:
 
 ....
@@ -32,7 +32,7 @@ A screenshot showing the TrueType output with the default TTF font:
 
 image::images/DOSBox-X:TrueType_Font_Default.png[TrueType font output with the default TTF font]
 
-## Use your own TrueType font for the output
+== Use your own TrueType font for the output
 
 By default, DOSBox-X uses the built-in TrueType font for the TTF output. However, the TTF output is very flexible so that users can always specify a different font file to be rendered for the output. For example, you may want to use a different TTF font such as Consola, Lucon, or Nouveau IBM depending on your preference (and your language). If you want to use a TTF font that is not included in the Windows/Linux/macOS system by default you will need to download it (or copy it from another system) first.
 
@@ -84,7 +84,7 @@ image::images/DOSBox-X:Softscape_Tools_Simkai.png[Chinese-language DOS program r
 
 As of DOSBox-X version 0.83.14, the printing feature will use the same TrueType font as the one used by the TTF output by default if the TTF output is currently active, and this includes support for both standard single-byte codepages used by most countries and double-byte codepages as used by CJK languages. Look at the link:Guide%3ASetting-up-printing-in-DOSBox‐X{suffixappend}[Guide: Setting up printing in DOSBox-X] page for more information.
 
-## Modifying the screen dimension for the output
+== Modifying the screen dimension for the output
 
 You may want to change the font size or the window size from the default for the TrueType font output. There are two config options in the [ttf] section to achieve this, namely ``winperc`` and ``ptsize``, which can be used to set the window percentage and TTF font size respectively. The default window percentage is 60%, but you can change it to a different percentage. For example, ``winperc=75`` will enlarge the window size to 75% of the screen. Alternatively, you can specify a TTF font size with ``ptsize``, and in such case ``winperc`` will be ignored. For example, ``ptsize=25`` will set the TTF font size to 25px.
 
@@ -117,7 +117,7 @@ CONFIG -set cols=100
 
 The above commands will change the screen dimension to 30 lines and 100 columns respectively.
 
-## On-screen text styles for DOS applications
+== On-screen text styles for DOS applications
 
 DOSBox-X supports on-screen text styles for DOS applications like WordPerfect, WordStar, XyWrite, and FastEdit. You will need to specify a word processor (WP=WordPerfect, WS=WordStar, XY=XyWrite, FE=FastEdit) for this, and then text styles such as bold, italics, and underlines will be displayed visually when running these applications using the TrueType font output in DOSBox-X. For example:
 
@@ -144,7 +144,7 @@ If you set ``wp=WS`` (or ``wp=FE``) which sets WordStar (or FastEdit) as the wor
 
 There is additionally a ``wpbg`` option which you can specify a color to match the background color of the specified word processor, in case you use a customized background color for the word processor. Use the DOS color number (0-15) for this option. Similarly, there is a ``wpfg`` option which you can specify a foreground color (0-7).
 
-## Color scheme for the TrueType font output
+== Color scheme for the TrueType font output
 
 There are also other settings related to the TrueType font output, such as changing the default color scheme for the output.
 

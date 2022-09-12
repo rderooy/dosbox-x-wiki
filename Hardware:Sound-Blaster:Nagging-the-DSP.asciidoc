@@ -1,8 +1,7 @@
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend: .html]
 
-Explanation
------------
+== Explanation
 
 Apparently the Sound Blaster hardware allows software to send a ``Play
 DMA block'' command (0x14) and then later send another ``Play DMA
@@ -18,24 +17,20 @@ because it never finishes the block. So the program using this technique
 never has to worry about handling and autodetecting the Sound Blaster
 IRQ.
 
-Compatibility
--------------
+== Compatibility
 
 All Creative hardware and most clones support this technique.
 
-Problems
---------
+== Problems
 
-Virtualization/emulation
-~~~~~~~~~~~~~~~~~~~~~~~~
+=== Virtualization/emulation
 
 This technique may cause problems with virtualization or emulation that
 assumes the program will let the previous one finish before sending
 another. It may cause audio to skip forward or play fast. This is an
 unusual use of the DSP that emulation is likely not designed to handle.
 
-Sound Blaster 16 and DSP 4.xx commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Sound Blaster 16 and DSP 4.xx commands
 
 The technique can be used without problems if programming the card like
 a Sound Blaster or Sound Blaster Pro. Sound Blaster 16 (DSP 4.xx)
@@ -58,13 +53,11 @@ stop playback entirely
 stop playback entirely
 |=======================================================================
 
-Pro Audio Spectrum Sound Blaster emulation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Pro Audio Spectrum Sound Blaster emulation
 
 On PAS+ and PAS16 hardware, nagging may cause subtle clicks and pops in
 the audio output.
 
-Real-world usage of this technique
-----------------------------------
+== Real-world usage of this technique
 
 link:Software%3Ademoscene%3ACrystal-Dream-by-Triton-(1992)[Crystal Dream by Triton (1992)]

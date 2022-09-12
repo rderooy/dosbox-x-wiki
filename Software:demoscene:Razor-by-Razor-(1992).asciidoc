@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [sblaster]
@@ -30,14 +28,12 @@ memsize=1
 To start the demo, type RUN.BAT. The demo assumes a Sound Blaster on IRQ
 7, DMA 1.
 
-Bugs
-----
+== Bugs
 
 Prior to a bugfix in DOSBox-X that split up REP string operations, the
 demo would hang during the credits. This is apparently not the case
 anymore.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4222[More information (Pouet)]

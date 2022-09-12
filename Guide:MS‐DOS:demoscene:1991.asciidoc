@@ -1,7 +1,7 @@
 ifdef::env-github[:suffixappend:]
 ifndef::env-github[:suffixappend: .html]
 
-## 1991 link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[MS-DOS demos].
+== 1991 link:Guide%3ADOS-demoscene-software-in-DOSBox‐X{suffixappend}[MS-DOS demos].
 
 link:Software%3Ademoscene%3AEcargxus-by-The-Phoney-Coders-(1991)[Ecargxus by The Phoney Coders] +
 link:Software%3Ademoscene%3AParty-91-Intro-for-The-Party-by-TRSI-(1991)[Party 91 Intro for The Party] +

@@ -3,8 +3,7 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1993{suffixappend}[1993] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 Cascada production with warping title text, Mode-X 320x400 dot objects,
 and a rotating texture cube. On startup, the demo prompts you to select
@@ -17,8 +16,7 @@ distorted audio, don’t use it. LPT DAC modes generally work but with
 some audible crackling and some parts, like the warping closing credits,
 will slow to a crawl if LPT DAC playback is used.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -44,15 +42,13 @@ gusdma=1
 disney=true
 ....
 
-Known problems
---------------
+== Known problems
 
 If you select Gravis Ultrasound playback, the demo does not exit by
 itself. After the rotating multiple-textured code, the starfield will
 run by itself forever until you hit ESC to exit the demo. In any other
 playback mode, the demo runs to the end by itself.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=1157[More information (Pouet)]

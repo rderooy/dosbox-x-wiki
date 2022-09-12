@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 (todo)
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -40,11 +38,9 @@ disney=true
 
 To run the demo, type JUMP.BAT
 
-Bugs
-----
+== Bugs
 
-Sound Blaster IRQ problems
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Sound Blaster IRQ problems
 
 Sound Blaster playback is unreliable due to problems with managing the
 PIC interrupt mask for the Sound Blaster IRQ. It is not known whether
@@ -60,14 +56,12 @@ compatible) |``Unlimited shadebob'' music plays fine. Music stops after
 1-2 seconds in other parts. Same as DOSBox
 |=======================================================================
 
-VGA blanking and the dot landscape
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== VGA blanking and the dot landscape
 
 The dot landscape does not show up on screen if the cycle count is
 greater than about 7000. It also fails to appear on-screen on real 486 &
 Pentium hardware.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4210[More information (Pouet)]

@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1991{suffixappend}[1991] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 MIDI music, a moving box that spits out text, and some basic 3D objects.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -28,15 +26,13 @@ mididevice=synth
 midiconfig=/usr/share/fluidsynth/soundfont/gengs.sf2
 ....
 
-MIDI playback speed issues with DOSBox-X
-----------------------------------------
+== MIDI playback speed issues with DOSBox-X
 
 At this time the demo seems to have problems maintaining a consistent
 speed when playing back the music. It seems to be related to whether or
 not the demo can maintain a full frame rate when drawing, and whether
 VGA scrolling/panning is involved.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4248[More information (Pouet)]

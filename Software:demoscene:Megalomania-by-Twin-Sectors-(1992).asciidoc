@@ -3,15 +3,13 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 A demo that plays music while using hardware color palette animation to
 scroll text. After that, there are some 3D dot landscapes and objects to
 show off.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -43,7 +41,6 @@ port DACs, a Covox on 0x2CF (?), and the PC speaker as audio output. PC
 speaker output is not recommended because the demo amplifies the music
 too much to the point of clipping audibly.
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=58777[More information (Pouet)]

@@ -3,15 +3,13 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1995{suffixappend}[1995] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 Intro to TP5 (The Party 1995) with some 3D graphics and a demonstration
 of shadow casting. Supports only Gravis Ultrasound. According to the
 README the intro was finished in a hurry to meet deadlines.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -29,7 +27,6 @@ gusirq=5
 gusdma=3
 ....
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=1156[More information (Pouet)]

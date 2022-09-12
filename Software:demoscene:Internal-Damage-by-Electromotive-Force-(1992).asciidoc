@@ -3,13 +3,11 @@ ifndef::env-github[:suffixappend: .html]
 
 link:Guide%3AMS‐DOS%3Ademoscene%3A1992{suffixappend}[1992] demoscene entry.
 
-Demo description
-----------------
+== Demo description
 
 Scroller, starfield, palette animation, objects, and credits.
 
-Recommended DOSBox-X configuration
-----------------------------------
+== Recommended DOSBox-X configuration
 
 ....
 [dosbox]
@@ -36,14 +34,12 @@ io port aliasing=true
 The demo requires that your Sound Blaster is configured for IRQ 7, DMA
 1. It will not work with Sound Blaster otherwise.
 
-Unusual Sound Blaster requirements
-----------------------------------
+== Unusual Sound Blaster requirements
 
 The demo does two strange things with hardware that later cards and
 later emulation may not properly support.
 
-Sound Blaster I/O port aliasing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Sound Blaster I/O port aliasing
 
 Sound Blaster support is relatively normal except that it relies on port
 0x22D to submit DSP commands. On actual Sound Blaster 2.0 hardware, this
@@ -62,8 +58,7 @@ sbtype=sb2
 io port aliasing=true
 ....
 
-DMA decrement mode
-~~~~~~~~~~~~~~~~~~
+=== DMA decrement mode
 
 For reasons unknown at this time, the demo programs the DMA controller
 to run the Sound Blaster DMA in decrement mode. Instead of starting a
@@ -83,7 +78,6 @@ Make sure your dosbox.conf is configured as follows:
 allow dma address decrement=true
 ....
 
-More information
-----------------
+== More information
 
 http://www.pouet.net/prod.php?which=4182[More information (Pouet)]
