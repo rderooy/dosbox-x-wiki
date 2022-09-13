@@ -254,7 +254,7 @@ NOTE: Enabling Tandy mode this way, also enables Tandy video emulation
 The later Tandy 1000 SL, TL, TLX, RL and RLX models added support for a DAC for digital sample sounds.
 
 NOTE: The Tandy DAC will be disabled if Sound Blaster emulation is enabled, due to resource conflicts.
-So to enable the Tandy DAC, you need to set ``sblaster=none``.
+So to enable the Tandy DAC, you need to set ``sbtype=none``.
 
 * link:https://en.wikipedia.org/wiki/Tandy_Graphics_Adapter[Wikipedia article on Tandy Graphics]
 * link:https://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days on the Tandy 1000 Series]
