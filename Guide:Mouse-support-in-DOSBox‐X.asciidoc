@@ -219,7 +219,7 @@ This option is OFF by default.
 
 Emulate BIOS INT 15h PS/2 mouse services.
 
-Note that some OS's like Microsoft Windows neither use INT 33h nor probe the AUX port directly and depend on this BIOS interface exclusively for PS/2 mouse support.
+NOTE: Some OS's like Microsoft Windows (prior to ME) neither use INT 33h nor probe the AUX port directly and depend on this BIOS interface exclusively for PS/2 mouse support.
 
 In other cases there is no harm in leaving this enabled
 
