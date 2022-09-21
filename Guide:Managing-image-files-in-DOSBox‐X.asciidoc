@@ -706,7 +706,7 @@ If however, you boot real DOS in DOSBox-X, any mounted CD-ROM images will not be
 For an IDE CD-ROM driver we recommend either `OAKCDROM.SYS`, `UIDE.SYS` or `VIDE-CDD.SYS`.
 
 * OAK stands for OEM Adaptation Kit, and this is the IDE CD-ROM driver shipped on the Windows 95, 98 and ME boot disks.
-* link:https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/cdrom/uide/[UIDE.SYS] is available from link:https://www.freedos.org/[FreeDOS].
+* link:https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/cdrom/uide/[UIDE.SYS] is available from link:https://www.freedos.org/[FreeDOS]. Note that this driver is know to have issues in some cases, such as with mixed media (data+audio)
 * You can also use the link:http://vogonsdrivers.com/getfile.php?fileid=1456&menustate=0[Acer VIDE-CDD.SYS] driver which loads faster than OAKCDROM.SYS.
 
 `MSCDEX.EXE` is included with MS-DOS 6.x and included on the Windows 95, 98 or ME boot disks, or you can use the link:http://adoxa.altervista.org/shsucdx/index.html[SHSUCDX.EXE] redirector available from FreeDOS.
