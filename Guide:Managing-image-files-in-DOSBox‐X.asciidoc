@@ -661,7 +661,7 @@ Starting with DOSBox-X 2022.08.0 there is also support for:
 `.ISO` is the easiest format to work with, as long as there is only a single data track on the CD or DVD.
 If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audio) the use of `.CUE`+`.BIN` or `.MDF` is required.
 
-== Copy protected media
+=== Copy protected media
 DOSBox-X has limited support for copy protected CD-ROMs.
 
 - In DOSBox-X 2022.08.00 the IDE emulation was enhanced such that SafeDisc 1 games should work
