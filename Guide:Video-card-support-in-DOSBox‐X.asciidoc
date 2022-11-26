@@ -1491,6 +1491,8 @@ Various vsync configuration settings can be set in the DOSBox-X configuration fi
 
 Synchronize vsync timing to the host display. Requires calibration within DOSBox-X.
 
+WARNING: Synchronizing to the host may cause issues with some games. For instance Sierra AGI games use VSYNC as part of their Hercules detection and will fail to find the adapter.
+
 === vsyncrate
 * default value: 75
 * valid values:
