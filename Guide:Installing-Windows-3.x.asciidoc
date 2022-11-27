@@ -262,7 +262,7 @@ C:\MWINDOWS\WIN.COM
 GOTO END
 
 :WINDOWS
-echo Starting Windows for 3.x
+echo Starting Windows 3.x
 SET PATH=%PATH%;C:\WINDOWS;
 SET TEMP=C:\WINDOWS\TEMP
 C:\WINDOWS\WIN.COM
