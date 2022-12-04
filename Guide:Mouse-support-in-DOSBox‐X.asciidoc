@@ -252,3 +252,6 @@ In the case of MS-DOS, IBM PC-DOS or FreeDOS, the recommended mouse driver is li
 It supports both PS/2 and Serial mice, and requires less memory than other mouse drivers.
 
 However, any Microsoft mouse compatible mouse driver should work, at least for basic functionality.
+
+Another option is link:https://git.javispedro.com/cgit/vbados.git/about/[VBMOUSE.EXE], which provides seamless support, and also supports the scroll wheel on modern mice.
+It is however limited to PS/2 mice, so will not work with the optional serial mouse emulation that DOSBox-X provides.

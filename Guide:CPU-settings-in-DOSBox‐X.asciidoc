@@ -56,9 +56,9 @@ NOTE: On real systems, starting with the Pentium CPU generation, an FPU is alway
 But DOSBox-X allows disabling of the FPU with any CPU type.
 Disabling the FPU could cause problems with software that expects an FPU to be present with these later CPU types.
 
-WARNING: The real FPUs have a 80bit precision.
+WARNING: The real x87 FPUs provide 80bit precision.
 This is however not supported with Windows DOSBox-X builds compiled using the Microsoft Visual Studio (MSVS) compiler, which is limited to just 64bits precision.
-Very few DOS games used the FPU, but for those that do, this lesser precision can cause a variety of problems, from graphical glitches to crashes, to incorrect outcomes in DOS applications.
+Very few DOS games used the FPU, but for those that do, this reduced precision can cause a variety of problems, from graphical glitches to crashes, to incorrect outcomes in DOS applications.
 If you're running Windows as the host OS, you can either disable the FPU emulation, or if proper FPU emulation is important, use the MinGW builds.
 
 === segment limits
@@ -216,44 +216,48 @@ Number of instructions DOSBox-X tries to emulate each millisecond.
 Examples:
 
 * ``cycles=fixed 5000`` or ``cycles=5000`` - All programs you start are run with a fixed speed of ~5 MIPS. Useful for speed sensitive games or games that need a continuous CPU speed.
-* ``cycles=max`` - All programs you start run at the maximum speed your CPU permits.
-* ``cycles=max limit 50000`` - All programs you start run at up to 50000 cycles, depending on the power of your CPU.
-* ``cycles=max 50%`` - About 50% of your CPU power will be used.
-* ``cycles=auto`` - Real mode programs will run at 3000 cycles. Protected mode programs run with cycles=max.
+* ``cycles=max`` - All programs you start run at the maximum speed your host CPU permits.
+* ``cycles=max limit 50000`` - All programs you start run at up to 50000 cycles, depending on the power of your host CPU.
+* ``cycles=max 50%`` - About 50% of your host CPU power will be used.
+* ``cycles=auto`` - Real mode programs will run at 3000 cycles. Protected mode programs will automatically switch to `cycles=max`.
 * ``cycles=auto 5000 50% limit 50000`` - Real mode programs run with 5000 fixed cycles, protected mode programs with cycles=max 50% limit 50000.
 
 Some *rough guidance* on how cycles relates to various legacy CPUs. Note that it depends on which emulated CPU instructions the program uses as DOSBox-X is not cycle accurate.
 
 |===
-| Emulated CPU | cycles
+| Emulated CPU     |MHz  |Approximate Cycles |Suggested Host CPU
 
-|8088 at 4.77MHz      |240
-|286 at 8MHz          |750
-|286 at 12MHz         |1510
-|286 at 25MHz         |3300
-|386DX at 25MHz       |4595
-|386DX at 33MHz       |6075
-|486DX at 33MHz       |12019
-|486DX2 at 66MHz      |23880
-|486DX4 at 100MHz     |33445
-|486DX5 at 133MHz     |47810
-|Pentium at 60MHz     |31545
-|Pentium at 66MHz     |35620
-|Pentium at 75MHz     |43500
-|Pentium at 90MHz     |52000
-|Pentium at 100MHz    |60000
-|Pentium at 120MHz    |74000
-|Pentium at 133MHz    |80000
-|Pentium at 166MHz    |97240
-|Pentium II at 300MHz |200000
-|AMD K6 at 166MHz     |110000
-|AMD K6 at 200MHz     |130000
-|AMD K6-2 at 300MHz   |193000
+|8088              |4.77 |240                |
+|286               |8    |750                |
+|286               |12   |1510               |
+|286               |25   |3300               |
+|386DX             |25   |4595               |
+|386DX             |33   |6075               |
+|486DX             |33   |12019              |
+|486DX2            |66   |23880              |
+|486DX4            |100  |33445              |
+|486DX5            |133  |47810              |
+|Intel Pentium     |60   |31545              |
+|Intel Pentium     |66   |35620              |
+|Intel Pentium     |75   |43500              |
+|Intel Pentium     |90   |52000              |
+|Intel Pentium     |100  |60000              |
+|Intel Pentium     |120  |74000              |
+|Intel Pentium     |133  |80000              | Intel Core 2 Duo 3.3GHz
+|Intel Pentium MMX |166  |97240              |
+|Intel Pentium II  |300  |200000             |
+|Intel Pentium III |866  |407000             |
+|AMD K6            |166  |110000             |
+|AMD K6            |200  |130000             |
+|AMD K6-2          |300  |193000             |
+|AMD Athlon        |600  |306000             |
 |===
 
-WARNING: Setting the cycles value too high for your host CPU, results in sound dropouts and lag.
+WARNING: Setting the cycles value higher then your host CPU can handle, results in sound dropouts and lag.
 
-NOTE: More host CPU cores do not help to increase emulation speed. A newer generation host CPU and higher host CPU clock frequency (GHz) do help.
+NOTE: More host CPU cores do not help to increase DOSBox-X emulation speed. A newer generation host CPU and higher host CPU clock frequency (GHz) do help.
+
+NOTE: This only deals with emulating a legacy CPU. Emulating different video adapters will add additional requirements to the host system.
 
 === cycleup
 * Default value: 10
