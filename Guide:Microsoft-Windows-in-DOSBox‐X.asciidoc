@@ -123,7 +123,8 @@ These versions must be installed in a virtual HDD image.
 
 * link:Guide%3AInstalling-Windows-1.0x[Guide: Installing Windows 1.0x in DOSBox-X]
 * link:Guide%3AInstalling-Windows-2.x[Guide: Installing Windows 2.x in DOSBox-X]
-* link:Guide%3AInstalling-Windows-3.x[Guide: Installing Windows 3.x in DOSBox-X]
+* link:Guide%3AInstalling-Windows-3.0[Guide: Installing Windows 3.0 in DOSBox-X]
+* link:Guide%3AInstalling-Windows-3.1x[Guide: Installing Windows 3.1x in DOSBox-X]
 * link:Guide%3AInstalling-Windows-95[Guide: Installing Windows 95 in DOSBox-X]
 * link:Guide%3AInstalling-Windows-98[Guide: Installing Windows 98 in DOSBox-X]
 * link:Guide%3AInstalling-Windows-ME[Guide: Installing Windows ME in DOSBox-X]
