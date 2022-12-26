@@ -309,8 +309,7 @@ You can optionally create a shortcut on your desktop to start Windows 3.0 direct
 Once Windows 3.0 is installed, here is some additional software you may want to install or update:
 
 * Updated Video drivers
-* Adobe Acrobat Reader
-* Adobe Type Manager 3.02
+* Adobe Type Manager 2.5
 
 == Video driver
 See link:Guide%3AVideo-card-support-in-DOSBox‐X[Video card support in DOSBox‐X] for more information about the various video cards, and available options.
