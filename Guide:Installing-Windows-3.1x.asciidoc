@@ -586,7 +586,7 @@ Next in Windows 3.1x, select any Epson dot-matrix printer during printer setup, 
 
 WARNING: Make sure that you do not configure the Epson printer driver for a graphics resolution other than 180x180, or the output will be corrupted.
 
-image::images/Windows:Windows_3.0_EPSON_SETUP.png[Windows 3.0 Epson setup]
+image::images/Windows:Windows_3.1_EPSON_SETUP.png[Windows 3.1 Epson setup]
 
 When you print, a PostScript file with the .ps extension will be created in your current working directory.
 The emulated Epson printer settings can be adjusted as documented on the above linked wiki printing guide.
