@@ -231,14 +231,14 @@ as these later cards do not support the composite mode, you will get RGBI output
 But you may have to find a way to force the game to use CGA, if it also supports EGA or VGA.
 
 ==== Keyboard shortcuts:
-By default, the following keyboard shortcuts, specific to CGA and PCjr are available:
+When using `machine = cga`, the following keyboard shortcuts, specific to CGA and PCjr are available:
 
 - CTRL-F7 switch between early and late model IBM CGA adapter emulation
 - CTRL-F8 switch between Auto, RGBI and Composite monitor output
 - CTRL-Shift-F7 Decrease Hue
 - CTRL-Shift-F8 Increase Hue
 
-If you're using ``machine=cga_mono``, you instead have these shortcuts:
+When using ``machine=cga_mono``, these keyboard shortcuts are instead available:
 
 - CTRL-F7 Cycles between CGA monochrome palettes (green, amber, white, grey)
 - CTRL-F8 Cycles between high and low brightness
@@ -333,7 +333,7 @@ image::images/Game:Monkey_Island_Hercules_White.png[float="left"]
 
 === IBM PCjr
 The PCjr was introduced by IBM in March 1984, and discontinued due to poor sales just over a year later.
-It's integrated video card is backwards compatible with CGA, but adds a few new modes:
+It's integrated video card is backwards compatible with CGA, with the addition of a few modes:
 
 - 160x200 at 16 colours
 - 320x200 at 16 colours
@@ -403,10 +403,9 @@ image::images/Game:Monkey_Island_Tandy.png[,640,float="left"]
 
 === EGA
 EGA stands for *Enhanced Graphics Adapter* and was introduced by IBM in 1984, as the official follow-on to CGA.
-It still only supports up to 16 colours on-screen, but out of a gamut of 64 colours and at a higher resolution.
+It still only supports up to 16 colours on-screen, but out of a pallet of 64 colours and at a higher resolution.
 
-The original IBM adapters came with just 64KiB video RAM, but could be upgraded to 128 or 192KiB.
-Some EGA clones even provided 256KiB, and additional high-res video modes.
+The original IBM adapters came with just 64KiB video RAM, but could be upgraded to 128 or 256KiB.
 
 One feature it dropped however, was the composite output support.
 As such, it does not support the CGA artefact colours.
@@ -425,12 +424,12 @@ vmemsizekb=128
 
 NOTE: Emulating 64KiB of video memory with EGA is not recommended, as the code for it is experimental and does not properly emulate a 64KiB EGA card.
 
-NOTE: Some clone EGA cards added extra video memory and video modes, typically known as SuperEGA cards. The emulation of such cards is not supported by DOSBox-X.
+NOTE: Some clone EGA cards added extra video modes, typically known as SuperEGA cards. The emulation of such cards is not supported by DOSBox-X.
 
 ==== EGA with an MDA or CGA monitor
-It is possible to use an MDA, CGA or EGA monitor with an IBM EGA card.
+DOSBox-X emulates the EGA card with an EGA monitor. But with a real IBM EGA card it is also possible to use an MDA or CGA monitor.
 
-Some software such as the link:https://www.os2museum.com/wp/fantasyland-on-vga/[IBM Fantasy Land Demo] expects a CGA monitor with 200-line text mode and 8x8 characters, and will not work properly with a regular EGA monitor with 350-line text mode and 8x14 characters.
+Although rare, some software such as the link:https://www.os2museum.com/wp/fantasyland-on-vga/[IBM Fantasy Land Demo], which expects a CGA monitor with 200-line text mode and 8x8 font, and will not work properly with a regular EGA monitor with 350-line text mode and 8x14 font.
 
 Starting with DOSBox-X 0.84.1 an EGA adapter attached to a 200-line CGA monitor can be emulated by setting ``machine=ega200``.
 When using this reduced mode, the regular 350-line EGA modes will not be available.
@@ -526,16 +525,17 @@ Typing the ``VGA`` command you can go to the Japanese DOS/V mode, and then typin
 * link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[Guide: East Asian language support in DOSBox‐X]
 
 === MCGA
-MCGA stands for *Multi-Color Graphics Array* and was introduced by IBM in 1987 as integrated in the IBM PS/2 Model 30 and a bit later the Model 25.
+MCGA stands for *Multi-Color Graphics Array* and was introduced by on April 2, 1987 as integrated in the IBM PS/2 Model 30 and a bit later that year on the Model 25.
+It features 64 KiB video RAM, and cannot be changed.
 No stand-alone MCGA cards were ever produced.
 
 MCGA supports all CGA display modes (RGBI only) plus 640×480 monochrome at a refresh rate of 60 Hz, and 320×200 with 256 colours (out of a palette of 262,144) at 70 Hz.
 It does not however provide backwards compatibility with EGA.
 In effect, MCGA can be thought of as either an enhanced CGA card, or a cost-reduced VGA card.
 
-As the high-colour mode is near identical to the one offered by VGA, many games have a combined "VGA/MCGA" video option, and selecting MCGA with a VGA adapter normally also works.
+As the high-colour mode is near identical to the one offered by VGA, many games have a combined "MCGA/VGA" video option, and selecting MCGA with a VGA adapter normally also works.
 
-One rare example of a game that offers an MCGA option, but does not support VGA is link:https://www.mobygames.com/game/dos/thexder[Thexder].
+One rare example of a game that offers an MCGA option, but does not work on VGA is link:https://www.mobygames.com/game/dos/thexder[Thexder].
 This is not because the game could not have worked on VGA, but rather because it looks for specific machine settings that are only true on the above PS/2 Models.
 As such as part of the MCGA emulation, DOSBox-X also emulates some PS/2 specific machine settings, just enough to make games like Thexder work in MCGA mode.
 
@@ -550,10 +550,9 @@ However, due to other MCGA limitations the VGA option may provide a better exper
 === VGA
 VGA stands for *Video Graphics Array* and was introduced by IBM in 1987.
 One of the stand-out features was that it could display up to 256 colours from a palette of 262,144.
+It features 256 KiB of video RAM (fixed), and is backward compatible with CGA (RGBI only), EGA and MCGA.
 
-It originally featured 256KiB of video RAM.
-
-VGA is backward compatible with both EGA and CGA (RGBI mode only), and adds the following new graphics modes:
+VGA adds the following new graphics modes:
 
 - 640×480 in 16 colours or monochrome
 - 320×200 in 256 colours (Mode 13h)
@@ -562,7 +561,26 @@ One new feature is the ability to run at 70Hz vertical refresh, where CGA and EG
 This is important for modern LCDs, as many will only run at 60Hz, which causes issues with many games that were designed to run at 70Hz, resulting in dropped frames.
 This can cause both video and audio distortion, as in many games the audio is linked to the frame rate.
 
-This mode can be set using ``machine=vgaonly`` in your DOSBox-X config file
+==== VGA Configuration
+DOSBox-X does not have a true VGA emulation mode.
+For normal use it is recommended to use the default `machine = svga_s3` which is backward compatible with VGA.
+
+NOTE: The provided `machine = vgaonly` option has some changes to improve VGA compatibility, but which makes it slower for the common use-case.
+
+This mode can be set using `machine=vgaonly` in your DOSBox-X config file
+
+* Disables non-VGA modes
+* Default 80x25 text mode of 720x400 with a 9x16 font, instead of the 640x400 with 8x16 font for the svga_* options.
+* Colour depth is reduced
+* Support for changing display parameters by scanline, needed by some games. e.g.,
+  * Lemmings
+  * Oh No More Lemmings
+  * Pinball Fantasies
+* Support for video blanking tricks, needed by some games. e.g.,
+  * Alien Carnage
+  * Halloween Harry
+
+**Resources**
 
 * link:https://en.wikipedia.org/wiki/Video_Graphics_Array[Wikipedia article on VGA Graphics]
 
@@ -782,13 +800,13 @@ Links:
 * link:http://www.vgamuseum.info/index.php/companies/item/461-tseng-et4000ax[Tseng Labs ET4000 at the VGA Museum]
 
 ==== Paradise Systems PVGA1A
-Introduced in 1988.
-Generic clone VGA card.
+The Paradise Systems PVGA1A is a SuperVGA (SVGA) card introduced in 1988.
+It is backward compatible with CGA (RGBI only), EGA, MCGA and VGA.
 
 This mode can be set using ``machine=svga_paradise`` in your DOSBox-X config file.
-Video memory defaults to 512KiB, but can be adjusted to 256 or 1024KiB.
+Video memory defaults to 512 KiB, but can be adjusted to 256 or 1024 KiB.
 
-For 256KiB, set your config as follows:
+For 256 KiB, set your config as follows:
 ....
 [dosbox]
 machine=svga_paradise
@@ -798,7 +816,7 @@ vmemsize=0
 vmemsizekb=256
 ....
 
-For 1024KiB, set your config as follows:
+For 1024 KiB, set your config as follows:
 
 ....
 [dosbox]
@@ -827,7 +845,7 @@ As such the Video Electronics Standards Association (VESA) was born, and one of 
 - VBE 1.2 was defined in 1991
 - VBE 2.0 was defined in 1994
 
-The only emulated cards supported by DOSBox-X to provide VBE support are the S3 models, which all defaults to VBE 2.0.
+The only emulated cards supported by DOSBox-X to provide VBE support are the S3 models, which all default to VBE 2.0.
 
 There are many VESA settings available in the ``[video]`` section of the DOSBox-x config file, which are documented below.
 
@@ -839,7 +857,7 @@ links:
 The original IBM PC could already support dual-monitor by using both MDA and CGA video cards at the same time.
 This also works with MDA+EGA, MDA+VGA and MDA+SVGA. Hercules can also be used as a more capable substitute for MDA.
 
-This is possible because MDA (and Hercules) don't conflict with the resources needed for CGA/EGA/VGA and SVGA.
+This is possible because MDA (and Hercules), when properly setup don't conflict with the resources needed for CGA/EGA/VGA and SVGA.
 As such it is not possible for instance to have two VGA cards, as they would conflict.
 
 Programs known to support a dual monitor setup:
