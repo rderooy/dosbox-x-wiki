@@ -296,6 +296,8 @@ However, the above is normally not needed as the later Sound Blaster cards, such
 
 NOTE: Some programs may require the AdLib ``SOUND.COM`` TSR to be loaded. See the link:https://www.vogons.org/viewtopic.php?f=33&t=76607p[Sound Driver Pack] for details.
 
+NOTE: Some games may fail to detect the AdLib, if the CPU cycles are set too high.
+
 * link:https://en.wikipedia.org/wiki/Ad_Lib,_Inc.[Wikipedia: AdLib]
 * link:https://www.dosdays.co.uk/topics/Manufacturers/adlib.php[DOS Days: AdLib]
 * link:https://www.mobygames.com/attribute/sheet/attributeId,21/[MobyGames: Games supporting AdLib sound]
