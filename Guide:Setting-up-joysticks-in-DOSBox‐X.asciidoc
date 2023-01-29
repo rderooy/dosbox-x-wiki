@@ -29,11 +29,13 @@ To connect two joysticks to one port, a separate Y-splitter cable was needed.
 DOSBox-X uses SDL for input, which includes gamepads.
 Any SDL supported gamepads will automatically become available within DOSBox-X as a joystick.
 
-For games that do not support Joysticks natively, DOSBox-X provides the possibility to map joystick inputs to keyboard presses.
+For games that do not support Joysticks themselves, DOSBox-X provides the possibility to map gamepad inputs to keyboard presses.
 
 == General notes
 
-You will want to try and experiment as on what settings work best for software A and software B, and will probably end up with software-specific configurations.
+You will want to try and experiment as on what settings work best for different games, and will probably end up with software-specific DOSBox-X configurations.
+
+If a game support joystick input, but you cannot get it working properly (e.g., joystick not detected by the game), you may have to play with the `cycles=` setting. Many games are sensitive to CPU speed issues when it comes to their joystick support.
 
 Please note that most DOS software supporting joystick input will not react properly when you adjust CPU cycles while they are being run, i.e. either find the appropriate number of CPU cycles it requires first or restart it for a consistent joystick experience.
 
@@ -43,6 +45,8 @@ DOSBox-X supports 6 buttons joysticks, to enable support, set joystick type to 4
 
 While most home computers and game consoles back in the day used digital joysticks or controllers, the IBM PC instead used analogue joysticks.
 
+NOTE: An exception to this are late PC gaming joysticks, like the MS SideWinder which encoded digital signals over the analogue connection. This however required special software support. These type of joysticks are not emulated by DOSBox-X.
+
 This has both advantages and disadvantages. An advantage is that it allows more accurate steering, a disadvantage is that it requires calibration.
 
 PC joysticks often had calibration sliders, or some games would give you the ability to perform calibration.
@@ -51,6 +55,8 @@ Others will silently perform a centre calibration on startup, or may omit it com
 Unfortunately DOSBox-X itself at this point does not have any way to calibrate analogue inputs.
 
 Vogons user jfnagel posted a few link:https://www.vogons.org/viewtopic.php?p=187168#p187168[joystick test programs for DOS] that you may want to try in DOSBox-X to see how your controller behaves with various settings and how accurate the calibration is.
+
+Emulated CPU speed can also cause havoc on a games joystick calibration routine. You may need to adjust the `cycles=` setting if you encounter issues.
 
 == DOSBox-X config settings
 
