@@ -42,4 +42,4 @@ depending on whether you chose Gravis Ultrasound or other support.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4069[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4069[More information (Pouet)]

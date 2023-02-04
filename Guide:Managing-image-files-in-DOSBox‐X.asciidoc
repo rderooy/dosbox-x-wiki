@@ -53,7 +53,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 * Teledisk (`.TD0`)
 * Transcopy (`.TC`)
 
-NOTE: While DOSBox-X does not support mounting or booting from diskette images in IBM DSKF format, it is possible to use the ``link:http://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` program in DOSBox-X to convert an IBM DSKF file to a regular RAW MFM Disk format.
+NOTE: While DOSBox-X does not support mounting or booting from diskette images in IBM DSKF format, it is possible to use the ``link:https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` program in DOSBox-X to convert an IBM DSKF file to a regular RAW MFM Disk format.
 
 === Creating diskette images
 NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create diskette images at any time from the DOSBox-X menu.
@@ -372,7 +372,7 @@ Unfortunately this support is incompatible with the typical RAW MFM image files 
 Several 3rd party tools are available which can open the diskette image files:
 
 * link:https://www.7-zip.org/[7-Zip]
-* link:http://www.winimage.com/winimage.htm[WinImage]
+* link:https://www.winimage.com/winimage.htm[WinImage]
 * link:https://www.win-rar.com/[WinRAR]
 * link:https://www.winzip.com/[WinZIP]
 
@@ -806,7 +806,7 @@ For an IDE CD-ROM driver we recommend either `OAKCDROM.SYS`, `UIDE.SYS` or `VIDE
 
 * OAK stands for OEM Adaptation Kit, and this is the IDE CD-ROM driver shipped on the Windows 95, 98 and ME boot disks.
 * link:https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/cdrom/uide/[UIDE.SYS] is available from link:https://www.freedos.org/[FreeDOS]. Note that this driver is know to have issues in some cases, such as with mixed media (data+audio)
-* You can also use the link:http://vogonsdrivers.com/getfile.php?fileid=1456&menustate=0[Acer VIDE-CDD.SYS] driver which loads faster than OAKCDROM.SYS.
+* You can also use the link:https://vogonsdrivers.com/getfile.php?fileid=1456&menustate=0[Acer VIDE-CDD.SYS] driver which loads faster than OAKCDROM.SYS.
 
 `MSCDEX.EXE` is included with MS-DOS 6.x and included on the Windows 95, 98 or ME boot disks, or you can use the link:http://adoxa.altervista.org/shsucdx/index.html[SHSUCDX.EXE] redirector available from FreeDOS.
 

@@ -250,7 +250,7 @@ NOTE: most software will expect to find the serial mouse on COM1, as such it is 
 == Mouse in a guest OS
 When booting a guest OS, such as MS-DOS or Windows 95, DOSBox-X no longer provides a mouse driver, as this is up to the guest OS.
 
-In the case of MS-DOS, IBM PC-DOS or FreeDOS, the recommended mouse driver is link:http://cutemouse.sourceforge.net/[CuteMouse (aka ctmouse)].
+In the case of MS-DOS, IBM PC-DOS or FreeDOS, the recommended mouse driver is link:https://cutemouse.sourceforge.net/[CuteMouse (aka ctmouse)].
 It supports both PS/2 and Serial mice, and requires less memory than other mouse drivers.
 
 However, any Microsoft mouse compatible mouse driver should work, at least for basic functionality.

@@ -51,4 +51,4 @@ playback mode, the demo runs to the end by itself.
 
 == More information
 
-http://www.pouet.net/prod.php?which=1157[More information (Pouet)]
+https://www.pouet.net/prod.php?which=1157[More information (Pouet)]

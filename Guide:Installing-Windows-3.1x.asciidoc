@@ -352,18 +352,18 @@ TIP: For Windows 3.1x the recommended display adapter is the default S3 Trio64.
 ** S3 Vision968 using `machine=svga_s3vision968`
 *** link:http://files.mpoli.fi/hardware/DISPLAY/S3/968141B5.ZIP[Windows 3.1x - S3 868 drivers version 1.41B5, March 2, 1995]
 ** S3 Trio32 using `machine=svga_s3trio32`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
 ** S3 Trio64 (**default**) using `machine=svga_s3` or `machine=svga_s3trio64`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
 ** S3 Trio64V+ using `machine=svga_s3trio64v+`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=275&menustate=0[Windows 3.1x - S3 Trio drivers version 1.70.04, Sep 22, 1997]
 ** S3 ViRGE using `machine=svga_s3virge` (experimental)
-*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2, 1997]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2, 1997]
 ** S3 ViRGE/VX using `machine=svga_s3virgevx` (experimental)
-*** link:http://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2, 1997]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=1702&menustate=0[Windows 3.1x - S3 ViRGE drivers version 1.05.09, June 2, 1997]
 * **Tseng Labs**
 ** ET3000 using `machine=svga_et3000`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=245&menustate=0[Windows 3.1x - ET3000 drivers, Dec 8 1994]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=245&menustate=0[Windows 3.1x - ET3000 drivers, Dec 8 1994]
 *** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET4-W31.ZIP[Windows 3.0/3.1x - Jan 15 1992]
 ** ET4000 using `machine=svga_et4000`
 *** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/W31ET4.ZIP[Windows 3.1x - ET4000 drivers, Dec 8 1994]
@@ -452,7 +452,7 @@ However, based on benchmarks, there is no advantage at this time to enabling the
 * In the same file, at the bottom of the ``[386enh]`` section add the line:
 ** ``32BitDiskAccess=ON``
 
-See link:http://os2museum.com/wp/how-to-please-wdctrl/[How to please WDCTRL] for more background information.
+See link:https://os2museum.com/wp/how-to-please-wdctrl/[How to please WDCTRL] for more background information.
 
 *32-Bit File Access* has no such requirements and can be enabled seemingly on any system.
 
@@ -587,7 +587,7 @@ image::images/Windows:Windows_3.11_PS_SETUP.png[Windows 3.11 PostScript Printer 
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
-On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
+On a Windows host, it is necessary to install a separate PostScript viewer such as link:https://pages.cs.wisc.edu/~ghost/[GSview].
 
 === Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
@@ -643,7 +643,7 @@ WIN \path\to\game.exe
 
 This will prevent the Windows splash screen being shown and will directly start the game without first going to the Program Manager (progman).
 
-The second step you may want to take, is that when you exit the game, you also exit Windows 3.1x. For this you need a 3rd party utility called "link:http://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH.
+The second step you may want to take, is that when you exit the game, you also exit Windows 3.1x. For this you need a 3rd party utility called "link:https://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH.
 Now simply start the game as follows:
 
 [source, console]
@@ -652,7 +652,7 @@ WIN RUNEXIT \path\to\game.exe
 ....
 
 Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows.
-This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
+This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:https://dbgl.org/[DBGL].
 
 == Known limitations
 - When booting a guest OS, such an MS-DOS with Windows 3.1x in DOSBox-X, so-called folder mounts are not supported.

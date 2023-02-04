@@ -45,4 +45,4 @@ commits.
 
 == More information
 
-http://www.pouet.net/prod.php?which=51603[More information (Pouet)]
+https://www.pouet.net/prod.php?which=51603[More information (Pouet)]

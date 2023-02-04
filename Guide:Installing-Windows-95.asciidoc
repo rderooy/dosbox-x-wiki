@@ -29,7 +29,7 @@ If you don't know which Windows 9x version to install, we recommend that you ins
 If you want to stick with Windows 95, we recommend to use **Windows 95 OSR2** or later.
 
 == External links
-* link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
+* link:https://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_95[Wikipedia: Windows 95]
 * link:https://microsoft.fandom.com/wiki/Windows_95[Fandom: Windows 95]
 * link:https://betawiki.net/wiki/Windows_95[Betawiki: Windows 95]
@@ -441,7 +441,7 @@ If networking does not work, see: link:Guide%3ASetting-up-networking-in-DOSBox%E
 == Emulated video adapter and video mode
 The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths.
 
-There is a newer S3 video driver for Win95, version link:http://vogonsdrivers.com/getfile.php?fileid=1325&menustate=0[2.41.07], dated Dec 17, 1997.
+There is a newer S3 video driver for Win95, version link:https://vogonsdrivers.com/getfile.php?fileid=1325&menustate=0[2.41.07], dated Dec 17, 1997.
 
 This update adds some additional video modes. But it does not add support for 8MB video RAM, or wide-screen video modes.
 
@@ -492,7 +492,7 @@ NOTE: One often heard complaint of the real SB16 Vibra is its CQM synthesis, whi
 However, DOSBox-X does not really emulate the CQM, instead it uses the same OPL3 emulation as for the regular SB16 model.
 Therefore, the CQM sound quality issues with the real SB16 Vibra do not apply to DOSBox-X.
 
-An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library (ignore that the download claims it is for Windows 98, the update is for both Windows 95 and 98).
+An optional driver link:https://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library (ignore that the download claims it is for Windows 98, the update is for both Windows 95 and 98).
 
 WARNING: There have been reports from some users that with sound enabled, that Windows 9x games crash.
 If you encounter similar issues, try to set ``sbtype=none`` and see if the game works.
@@ -540,7 +540,7 @@ And perhaps try changing the spool setting to "Start printing after last page is
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
-On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
+On a Windows host, it is necessary to install a separate PostScript viewer such as link:https://pages.cs.wisc.edu/~ghost/[GSview].
 
 === Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.

@@ -29,8 +29,8 @@ Demo uses the internal PC speaker for music. A bug in the demo leaves
 the PC speaker on before the music starts, you can eliminiate the
 initial long beep by setting ``initial frequency=0''. Music is amplified
 and slightly distorted. You can hear a higher quality rendition by using
-a dedicated MOD player like http://mikmod.sourceforge.net/[MikMod] or
-http://www.videolan.org/vlc/index.html[VLC player] to play the files.
+a dedicated MOD player like https://mikmod.sourceforge.net/[MikMod] or
+https://www.videolan.org/vlc/index.html[VLC player] to play the files.
 
 == How to run
 
@@ -67,4 +67,4 @@ the workaround is to set iodelay=0.
 
 == More information
 
-http://www.pouet.net/prod.php?which=5260[More information (Pouet)]
+https://www.pouet.net/prod.php?which=5260[More information (Pouet)]

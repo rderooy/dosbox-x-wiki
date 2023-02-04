@@ -80,4 +80,4 @@ allow dma address decrement=true
 
 == More information
 
-http://www.pouet.net/prod.php?which=4182[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4182[More information (Pouet)]

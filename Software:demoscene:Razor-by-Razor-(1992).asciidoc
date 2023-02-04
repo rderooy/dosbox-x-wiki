@@ -36,4 +36,4 @@ anymore.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4222[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4222[More information (Pouet)]

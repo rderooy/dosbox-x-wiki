@@ -31,4 +31,4 @@ where the demo might write too fast to the DSP.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4219[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4219[More information (Pouet)]

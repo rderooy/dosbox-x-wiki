@@ -44,4 +44,4 @@ anything other than 70Hz music will play too fast or too slow.
 
 == More information
 
-http://www.pouet.net/prod.php?which=2048[More information (Pouet)]
+https://www.pouet.net/prod.php?which=2048[More information (Pouet)]

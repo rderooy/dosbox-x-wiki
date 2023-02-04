@@ -40,4 +40,4 @@ LOADFIX twice to resolve the issue.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4247[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4247[More information (Pouet)]

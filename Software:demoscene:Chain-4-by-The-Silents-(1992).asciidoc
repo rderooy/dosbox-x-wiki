@@ -27,13 +27,13 @@ dma=1
 irq=7
 ....
 
-Demo uses VGA unchained ``http://en.wikipedia.org/wiki/Mode_X[Mode X]''
+Demo uses VGA unchained https://en.wikipedia.org/wiki/Mode_X[Mode X]
 but forgets to program the
 http://www.osdever.net/FreeVGA/vga/crtcreg.htm#14[byte/word/dword] mode
-of the CRTC for the http://en.wikipedia.org/wiki/Mode_X[Mode X]
+of the CRTC for the https://en.wikipedia.org/wiki/Mode_X[Mode X]
 rendering to display, which will cause it to misrender if VGA emulation
-other than http://en.wikipedia.org/wiki/Tseng_Labs_ET4000[Tseng ET4000]
-is used. http://en.wikipedia.org/wiki/Mode_X[Mode X appears to be used
+other than https://en.wikipedia.org/wiki/Tseng_Labs_ET4000[Tseng ET4000]
+is used. https://en.wikipedia.org/wiki/Mode_X[Mode X appears to be used
 for fast polygon filling and page flipping]. Sound Blaster support
 assumes IRQ 7, demo will not produce sound otherwise.
 
@@ -68,4 +68,4 @@ anything else happens.
 
 == More information
 
-http://www.pouet.net/prod.php?which=8735[More information (Pouet)]
+https://www.pouet.net/prod.php?which=8735[More information (Pouet)]

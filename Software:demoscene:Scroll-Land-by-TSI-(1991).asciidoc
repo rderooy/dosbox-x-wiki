@@ -48,4 +48,4 @@ only causes the demo to freeze (but the music keeps going).
 
 == More information
 
-http://www.pouet.net/prod.php?which=5261[More information (Pouet)]
+https://www.pouet.net/prod.php?which=5261[More information (Pouet)]

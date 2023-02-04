@@ -45,7 +45,7 @@ command 0x10) method of playback from IRQ 0 if the game reads the DSP
 status first to determine if it’s safe to do so. If the DSP periodically
 reports itself busy the timer interrupt will not be able to sustain the
 sample rate and will play audio slowly. At one point, the quirk
-http://youtu.be/9rCV4B4ylOs?t=4m50s[affected the DOSLIB sound blaster
+https://youtu.be/9rCV4B4ylOs?t=4m50s[affected the DOSLIB sound blaster
 test program] in a bad way.
 
 A workaround for direct DAC playback is to read the DSP status port up

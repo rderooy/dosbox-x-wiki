@@ -25,4 +25,4 @@ c:
 
 == More information
 
-http://www.pouet.net/prod.php?which=16817[More information (Pouet)]
+https://www.pouet.net/prod.php?which=16817[More information (Pouet)]

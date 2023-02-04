@@ -48,7 +48,8 @@ Some examples:
 
 * link:http://www.sierrahelp.com/Utilities/Emulators/DOSBox/3x_install.html[Windows 3x on DOSBox guide] on sierrahelp.com
 
-This guide does not look to replicate those guides. Instead, this guide will have some install guidance and hints and tips not covered on those pages, or that are specific to DOSBox-X. It is not intended to be a comprehensive guide.
+This guide does not look to replicate those guides.
+Instead, this guide will have some install guidance and hints and tips not covered on those pages, or that are specific to DOSBox-X. It is not intended to be a comprehensive guide.
 
 === Useful links
 
@@ -340,10 +341,10 @@ Here are the recommended drivers, depending on the video adapter you are emulati
 ** ET3000 using `machine=svga_et3000`
 *** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET3-W31.ZIP[Windows 3.0 and 3.1beta - ET3000 drivers, Jan 15 1992]
 ** ET4000 using `machine=svga_et4000`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=292&menustate=0[Windows 3.0 - ET4000 drivers, Jan 15 1992]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=292&menustate=0[Windows 3.0 - ET4000 drivers, Jan 15 1992]
 * **Paradise Systems**
 ** PVGA1A using `machine=svga_paradise`
-*** link:http://vogonsdrivers.com/getfile.php?fileid=243&menustate=0[Windows 3.0 - PVGA drivers, Dec 19 1990]
+*** link:https://vogonsdrivers.com/getfile.php?fileid=243&menustate=0[Windows 3.0 - PVGA drivers, Dec 19 1990]
 
 == Mouse support
 When running Windows in DOSBox-X the integration is not seamless.
@@ -477,7 +478,7 @@ Next in Windows 3.0, select any PostScript printer such as the "QMS ColorScript 
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
-On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
+On a Windows host, it is necessary to install a separate PostScript viewer such as link:https://pages.cs.wisc.edu/~ghost/[GSview].
 
 === Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
@@ -519,13 +520,14 @@ WIN \path\to\game.exe
 
 This will prevent the Windows splash screen being shown and will directly start the game without first going to the Program Manager (progman).
 
-The second step you may want to take, is that when you exit the game, you also exit Windows 3.0. For this you need a 3rd party utility called "link:http://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH. Now simply start the game as follows:
+The second step you may want to take, is that when you exit the game, you also exit Windows 3.0. For this you need a 3rd party utility called "link:https://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH. Now simply start the game as follows:
 
 [source, console]
 ....
 WIN RUNEXIT \path\to\game.exe
 ....
-Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows. This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
+Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows.
+This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:https://dbgl.org/[DBGL].
 
 == Known limitations
 - When booting a guest OS, such an MS-DOS with Windows 3.0 in DOSBox-X, so-called folder mounts are not supported.

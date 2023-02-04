@@ -36,4 +36,4 @@ Pro and LPT DAC playback.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4072[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4072[More information (Pouet)]

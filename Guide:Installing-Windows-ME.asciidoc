@@ -22,7 +22,7 @@ WARNING: In general Windows ME has received less testing with DOSBox-X, and also
 As such, unless you have a specific requirement for Windows ME, the DOSBox-X team recommends to use Windows 98SE instead.
 
 === External links
-* link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
+* link:https://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_ME[Wikipedia: Windows ME]
 * link:https://microsoft.fandom.com/wiki/Windows_ME[Fandom: Windows ME]
 * link:https://betawiki.net/wiki/Windows_ME[Betawiki: Windows ME]
@@ -545,7 +545,7 @@ Next in Windows ME, select any PostScript printer such as the "QMS ColorScript 1
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
-On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
+On a Windows host, it is necessary to install a separate PostScript viewer such as link:https://pages.cs.wisc.edu/~ghost/[GSview].
 
 === Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.

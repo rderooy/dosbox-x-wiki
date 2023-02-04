@@ -23,7 +23,7 @@ NOTE: Windows 98 or 98SE **Upgrade** editions have additional requirements and a
 If you don't know which Windows 98 edition to install, we recommend that you install **Windows 98SE**.
 
 === External links
-* link:http://vogonsdrivers.com/[VOGONS Vintage Driver Library]
+* link:https://vogonsdrivers.com/[VOGONS Vintage Driver Library]
 * link:https://en.wikipedia.org/wiki/Windows_98[Wikipedia: Windows 98]
 * link:https://microsoft.fandom.com/wiki/Windows_98[Fandom: Windows 98]
 * link:https://betawiki.net/wiki/Windows_98[Betawiki: Windows 98]
@@ -451,7 +451,7 @@ This is simply because the SB16 Vibra is an ISA PnP card, and therefore automati
 There is no other real advantage of using the emulated SB16 Vibra over the SB16.
 
 Both Windows 98 and 98SE include SB16 driver version 4.37.00.1998.
-An optional driver link:http://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library.
+An optional driver link:https://vogonsdrivers.com/getfile.php?fileid=50&menustate=0[update to 4.38.14] is available on the VOGONS Vintage Driver Library.
 
 NOTE: One often heard complaint of the real SB16 Vibra is its CQM synthesis, which was used as a low-cost replacement of the OPL3 chip found on earlier cards.
 However, DOSBox-X does not really emulate the CQM, instead it uses the same OPL3 emulation as for the regular SB16 model.
@@ -500,7 +500,7 @@ And perhaps try changing the spool setting to "Start printing after last page is
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 
 On Linux and macOS, PostScript files are natively supported and can be viewed and printed.
-On a Windows host, it is necessary to install a separate PostScript viewer such as link:http://pages.cs.wisc.edu/~ghost/[GSview].
+On a Windows host, it is necessary to install a separate PostScript viewer such as link:https://pages.cs.wisc.edu/~ghost/[GSview].
 
 === Epson emulation
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.

@@ -52,4 +52,4 @@ A capture of the effect on real hardware is available
 
 == More information
 
-http://www.pouet.net/prod.php?which=4215[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4215[More information (Pouet)]

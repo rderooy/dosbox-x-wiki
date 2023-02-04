@@ -37,9 +37,9 @@ The plasma raster effect will occasionally glitch if Sound Blaster
 playback is active.
 
 If YouTube captures like
-http://www.youtube.com/watch?v=MQDRLOPem48[this] are any indication, the
+https://www.youtube.com/watch?v=MQDRLOPem48[this] are any indication, the
 demo has similar problems on real hardware.
 
 == More information
 
-http://www.pouet.net/prod.php?which=479[More information (Pouet)]
+https://www.pouet.net/prod.php?which=479[More information (Pouet)]

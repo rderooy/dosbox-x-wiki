@@ -587,7 +587,7 @@ parallel1=reallpt directlpt:378
 
 === Windows host, in combination with 3rd-party printing solution
 
-In addition to relying entirely on the built-in printing methods, DOSBox-X can also work in combination with external third-party printing solutions like link:https://www.printfil.com/[Printfil], link:http://www.dosprn.com/[DOSPRN], or link:http://sourceforge.net/projects/winprint/[WinPrint] (open-source).
+In addition to relying entirely on the built-in printing methods, DOSBox-X can also work in combination with external third-party printing solutions like link:https://www.printfil.com/[Printfil], link:http://www.dosprn.com/[DOSPRN], or link:https://sourceforge.net/projects/winprint/[WinPrint] (open-source).
 Both Printfil and DOSPRN are shareware applications that specifically list DOSBox-X as supported for printing to any printer configured on the Windows host system.
 
 === Windows host, extended solution using Printfil

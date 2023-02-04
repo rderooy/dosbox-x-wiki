@@ -36,4 +36,4 @@ especially during the pre-rendered raytraced Sonic PC animations.
 
 == More information
 
-http://www.pouet.net/prod.php?which=5137[More information (Pouet)]
+https://www.pouet.net/prod.php?which=5137[More information (Pouet)]

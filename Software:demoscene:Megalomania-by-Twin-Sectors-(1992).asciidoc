@@ -43,4 +43,4 @@ too much to the point of clipping audibly.
 
 == More information
 
-http://www.pouet.net/prod.php?which=58777[More information (Pouet)]
+https://www.pouet.net/prod.php?which=58777[More information (Pouet)]

@@ -38,4 +38,4 @@ at startup. Be patient before killing the DOS session and restarting.
 
 == More information
 
-http://www.pouet.net/prod.php?which=74[More information (Pouet)]
+https://www.pouet.net/prod.php?which=74[More information (Pouet)]

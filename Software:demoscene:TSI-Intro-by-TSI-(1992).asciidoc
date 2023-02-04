@@ -27,4 +27,4 @@ dma=1
 
 == More information
 
-http://www.pouet.net/prod.php?which=58778[More information (Pouet)]
+https://www.pouet.net/prod.php?which=58778[More information (Pouet)]

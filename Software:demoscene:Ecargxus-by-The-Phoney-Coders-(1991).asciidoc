@@ -35,4 +35,4 @@ VGA scrolling/panning is involved.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4248[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4248[More information (Pouet)]

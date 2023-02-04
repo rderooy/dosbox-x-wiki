@@ -38,4 +38,4 @@ dance portion for Gravis Ultrasound cards (WTNHOUSE.ZIP).
 
 == More information
 
-http://www.pouet.net/prod.php?which=4199[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4199[More information (Pouet)]

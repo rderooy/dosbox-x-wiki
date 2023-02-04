@@ -64,4 +64,4 @@ Pentium hardware.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4210[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4210[More information (Pouet)]

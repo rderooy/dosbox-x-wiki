@@ -48,4 +48,4 @@ hardware and DOSBox where the first 17 scanlines are blank or missing.
 
 == More information
 
-http://www.pouet.net/prod.php?which=4260[More information (Pouet)]
+https://www.pouet.net/prod.php?which=4260[More information (Pouet)]

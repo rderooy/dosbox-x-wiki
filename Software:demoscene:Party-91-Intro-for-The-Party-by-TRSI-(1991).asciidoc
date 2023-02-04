@@ -21,4 +21,4 @@ cycles=6000
 
 == More information
 
-http://www.pouet.net/prod.php?which=8734[More information (Pouet)]
+https://www.pouet.net/prod.php?which=8734[More information (Pouet)]

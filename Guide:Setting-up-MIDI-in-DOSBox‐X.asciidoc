@@ -134,7 +134,7 @@ You should set this to the same sample rate as the `rate=` option in the `[mixer
 == Roland MT-32 Emulation
 The Roland MT-32 pre-dates General MIDI, and was used by a broad range of DOS games, starting in 1988 with King's Quest IV.
 
-The MT-32 emulation that is integrated into DOSBox-X is based on the link:http://munt.sourceforge.net/[Munt project].
+The MT-32 emulation that is integrated into DOSBox-X is based on the link:https://munt.sourceforge.net/[Munt project].
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
@@ -411,7 +411,7 @@ It is possible to replace an installed PulseAudio Sound Server with Jack, but au
 An alternative if you want to use Jack for FluidSynth is to set up PulseAudio as a client of Jack, but the setup of that is beyond the scope of this guide.
 It is expected that "PipeWire" will replace both PulseAudio and Jack in the near future.
 
-For Windows and macOS you can optionally download and install link:http://www.fluidsynth.org/[FluidSynth]. Note that not every update is released as binary, so unless you can compile it yourself you may be a few versions behind.
+For Windows and macOS you can optionally download and install link:https://www.fluidsynth.org/[FluidSynth]. Note that not every update is released as binary, so unless you can compile it yourself you may be a few versions behind.
 
 ==== fluid.soundfont
 * Default value:

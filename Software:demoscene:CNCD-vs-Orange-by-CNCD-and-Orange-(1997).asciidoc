@@ -37,4 +37,4 @@ Intel i5 laptop.
 
 == More information
 
-http://www.pouet.net/prod.php?which=1326[More information (Pouet)]
+https://www.pouet.net/prod.php?which=1326[More information (Pouet)]

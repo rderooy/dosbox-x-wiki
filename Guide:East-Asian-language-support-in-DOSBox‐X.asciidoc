@@ -37,9 +37,9 @@ A screenshot of the TrueType font output with the Simplified Chinese code page (
 
 image::https://user-images.githubusercontent.com/8216923/161180291-56216529-9ac2-4d2a-93ba-e81cef721dcc.png[Truetype font output with the Simplified Chinese code page]
 
-For the Simplified Chinese, the GB2312 charset is supported by default, but you can optionally enable the GBK extension with the `gbk` config option. Similar for the Traditional Chinese, where the ChinaSea (中國海字集) and Big5-2003 extension for the original Big5-1984 charset can be optionally enabled with the `chinasea` config option. You can also enable either the GBK or ChinaSea extension from the drop-down menu (inside "Video" => "TTF options" menu group). Below are screenshots showing the TrueType font output running link:http://cndos.rthost.win/dosware/qb45c.zip[QuickBASIC 4.5 (Traditional Chinese version)] and link:http://cndos.rthost.win/dosware/he5.zip[Hyper Editor 5.03] (漢書5) with the Traditional Chinese code page (950) and ChinaSea extension enabled:
+For the Simplified Chinese, the GB2312 charset is supported by default, but you can optionally enable the GBK extension with the `gbk` config option. Similar for the Traditional Chinese, where the ChinaSea (中國海字集) and Big5-2003 extension for the original Big5-1984 charset can be optionally enabled with the `chinasea` config option. You can also enable either the GBK or ChinaSea extension from the drop-down menu (inside "Video" => "TTF options" menu group). Below are screenshots showing the TrueType font output running link:https://cndos.rthost.win/dosware/qb45c.zip[QuickBASIC 4.5 (Traditional Chinese version)] and link:https://cndos.rthost.win/dosware/he5.zip[Hyper Editor 5.03] (漢書5) with the Traditional Chinese code page (950) and ChinaSea extension enabled:
 
-image::http://cndos.rthost.win/dosware/qbmod.png[Truetype font output running QuickBASIC 4.5 with the Traditional Chinese code page and ChinaSea extension] 
+image::http://cndos.rthost.win/dosware/qbmod.png[Truetype font output running QuickBASIC 4.5 with the Traditional Chinese code page and ChinaSea extension]
 
 image::https://dosbox-x.com/images/ttfhe5.png[Truetype font output running Hyper Editor 5.03 with the Traditional Chinese code page and ChinaSea extension]
 

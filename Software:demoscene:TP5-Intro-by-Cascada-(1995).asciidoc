@@ -29,4 +29,4 @@ gusdma=3
 
 == More information
 
-http://www.pouet.net/prod.php?which=1156[More information (Pouet)]
+https://www.pouet.net/prod.php?which=1156[More information (Pouet)]

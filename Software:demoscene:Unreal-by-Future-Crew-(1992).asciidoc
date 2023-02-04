@@ -51,4 +51,4 @@ II]. Version 1.1 replaces that selection with Gravis Ultrasound support.
 
 == More information
 
-http://www.pouet.net/prod.php?which=1274[More information (Pouet)]
+https://www.pouet.net/prod.php?which=1274[More information (Pouet)]

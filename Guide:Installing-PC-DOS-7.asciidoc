@@ -36,7 +36,7 @@ On Linux you can run the command ``file filename.dsk``, and if it returns ``flop
 Another way is to check the size of the .DSK file.
 If it is exactly 1474560, 1228800, 737280 or 368640 bytes, it is likely to be a regular MFM disk image (in respectively 1.44MB, 1.2MB, 720KB or 360KB sizes).
 The size of a DSKF disk image will instead vary.
-IBM DSKF image files can be converted in DOSBox-X to regular diskette images with link:http://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE].
+IBM DSKF image files can be converted in DOSBox-X to regular diskette images with link:https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE].
 * The PC DOS 2000 CD-ROM release is a bit of an odd release.
 One may expect that the CD-ROM is bootable, or that there is a DOS boot diskette provided with CD-ROM drivers.
 But neither is the case. Officially you could install it in one of two ways:
