@@ -41,6 +41,8 @@ There are other guides to installing Windows 95 in DOSBox that may be more or le
 
 == DOSBox-X config file
 You first need to create a DOSBox-X config file.
+
+[source, ini]
 ....
 [sdl]
 autolock=true
@@ -175,6 +177,7 @@ Getting this image file is outside the scope of this guide.
 This assumes you have already started DOSBox-X with the ``win95.conf`` config file and created your harddisk image.
 
 First mount the harddisk image you created earlier:
+[,dos]
 ....
 IMGMOUNT C hdd.img
 ....
@@ -184,6 +187,7 @@ FAT32 volumes are only supported if your installing **Windows 95 OSR2** or later
 You will also need to mount the Windows 95 CD-ROM. There are a few ways of doing so, but this guide assumes you have a ISO image.
 
 If you have a copy of the Windows 95 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
+[,dos]
 ....
 IMGMOUNT D Win95.iso
 ....
@@ -192,6 +196,7 @@ IMGMOUNT D Win95.iso
 While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (if you have the CD-ROM automatically mounted in your [autoexec] section of the config file).
 It is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
 
+[, dos]
 ....
 XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
@@ -207,6 +212,7 @@ image::images/Windows:Windows_95_SETUP_01.png[Windows 95 SETUP.EXE Select Direct
 === Running SETUP.EXE
 You can now run SETUP.EXE.
 
+[,dos]
 ....
 C:
 CD \WIN95
@@ -221,6 +227,7 @@ When the installer reboots DOSBox-X, and you're back at the DOSBox-X ``Z:\`` pro
 Now edit your ``win98.conf`` config file.
 At the end of the file, in the [autoexec] section, add the following two lines:
 
+[, dos]
 ....
 IMGMOUNT C hdd.img
 BOOT C:
@@ -267,6 +274,7 @@ The option to load image files from the menu bar becomes unavailable the moment 
 This is a known limitation that hopefully will be resolved in the near future.
 
 For now, you can work around it, by specifying multiple image files with the IMGMOUNT command as such:
+[source, dos]
 ....
 IMGMOUNT A disk1.img disk2.img disk3.img
 IMGMOUNT D cd1.iso cd2.iso cd3.iso
@@ -295,6 +303,7 @@ In some cases, this is not possible, such as:
 
 To enable NE2000 emulation with the pcap back-end, add the following to your ``win95.conf`` config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -320,6 +329,7 @@ But obviously, it has its own limitations.
 
 To enable NE2000 emulation with the SLIRP back-end, add the following to your ``win95.conf`` config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -448,7 +458,9 @@ The only known solution for now if you used an older driver is to re-install Win
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
 
 First add the following lines to your DOSBox-X config file in the [video] section:
+[source, ini]
 ....
+[video]
 allow high definition vesa modes=true
 allow unusual vesa modes=true
 allow low resolution vesa modes=false
@@ -491,7 +503,7 @@ Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting
 For the best print quality, you will want to print to a PostScript printer in Windows 95.
 
 First, set up your DOSBox-X config to print to a file as such:
-
+[source, ini]
 ....
 [dosbox]
 captures=capture
@@ -549,6 +561,7 @@ As such a "PCI Multimedia Video Device" will show in Device Manager with a yello
 A driver package is available link:https://www.philscomputerlab.com/drivers-for-voodoo.html[here (v3.01.00)] to enable support.
 
 If for some reason you do not want 3dfx Voodoo emulation, it can be disabled by adding the following lines to your DOSBox-X config:
+[source, ini]
 ....
 [voodoo]
 voodoo_card=false
@@ -565,7 +578,7 @@ So, if you're using a 64bit DOSBox-X, you need to use a 64-bit glide-wrapper.
 The work-around is to use the SDL1 DOSBox-X instead.
 
 You need to set the following DOSBox-X config option:
-
+[source, ini]
 ....
 [voodoo]
 glide=true
@@ -590,6 +603,7 @@ Starting with DOSBox-X 2022.08.0, there is optional support to dynamically conve
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
+[source, ini]
 ....
 [sdl]
 convertdrivefat = true
