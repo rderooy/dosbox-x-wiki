@@ -69,11 +69,14 @@ In these examples we use a 32MB HDD image.
 === Bare-bones install
 If you decide to do just an absolute minimal install, and effectively skip the MS-DOS 4.0x install program, you don't need to worry about the buggy MS-DOS 4.0x installer.
 
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 32
  IMGMOUNT C hdd.img
 ....
 Now you need to boot from the first MS-DOS 4.0x disk, which is called either Setup or Install depending on the media type.
+
+[source, console]
 ....
  BOOT SETUP.IMG
 ....
@@ -85,6 +88,8 @@ image::images/MS-DOS:MS-DOS_4.01_INSTALLER.png[MS-DOS 4.01 Installer welcome scr
 image::images/MS-DOS:MS-DOS_4.01_INSTALLER_EXIT.png[MS-DOS 4.01 Installer exit screen]
 
 and run the following command to format the C: drive and transfer system files:
+
+[source, console]
 ....
  FORMAT C: /S
 ....
