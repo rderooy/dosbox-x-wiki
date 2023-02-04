@@ -264,7 +264,7 @@ See the `cgasnow` setting in the `[video]` section below.
 ==== External links
 * link:https://en.wikipedia.org/wiki/Color_Graphics_Adapter[Wikipedia article on CGA]
 * link:https://www.reenigne.org/blog/comparison-of-cga-card-versions/[Blog post on CGA adapter revisions]
-* link:http://nerdlypleasures.blogspot.com/2013/11/ibm-pc-color-composite-graphics.html[Blog post on CGA composite video, adapter revisions and artefact colours]
+* link:https://nerdlypleasures.blogspot.com/2013/11/ibm-pc-color-composite-graphics.html[Blog post on CGA composite video, adapter revisions and artefact colours]
 * link:https://www.youtube.com/watch?v=niKblgZupOc[YouTube : CGA Graphics - Not as bas as you thought!]
 
 NOTE: The difference between ``machine=cga``, ``machine=cga_composite`` and ``machine=cga_composite2`` options, is that the former will only use composite mode if it detects that a game is trying to use artefact colours.
@@ -311,7 +311,7 @@ You can optionally change the display colour by setting in the ``[render]`` sect
 You can also cycle between low and high brightness of the monochrome display by pressing CTRL-F8.
 
 * link:https://en.wikipedia.org/wiki/Hercules_Graphics_Card[Wikipedia article on the Hercules Graphics Card]
-* link:http://www.dosdays.co.uk/topics/Manufacturers/hercules.php[DOS Days article on Hercules Computer Technology]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/hercules.php[DOS Days article on Hercules Computer Technology]
 * link:https://jeffpar.github.io/kbarchive/kb/044/Q44273/[MS KnowledgeBase article on MSHERC.COM]
 
 NOTE: Some software like CheckIt and QBasic may detect a Hercules adapter as MDA, unless a TSR like `MSHERC.COM` is loaded into memory.
@@ -392,7 +392,7 @@ NOTE: While early Tandy 1000 models had composite out similar to CGA and the PCj
 NOTE: Many games that support both Tandy and EGA, look near identical in both. It would appear that game developers took a lowest-common-denominator approach and simply used the same resolution and graphic assets for both.
 
 * link:https://en.wikipedia.org/wiki/Tandy_Graphics_Adapter[Wikipedia article on Tandy Graphics]
-* link:http://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days article on the Tandy 1000 Series]
+* link:https://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days article on the Tandy 1000 Series]
 * link:https://www.youtube.com/watch?v=mYHtojsaRkY[YouTube : The Tandy 1000 - The best MS-DOS computer in 1984]
 
 [.float-group]
@@ -483,7 +483,7 @@ This mode can be set using ``machine=amstrad`` in your DOSBox-X config file.
 Video memory is fixed to 64KiB and cannot be changed.
 
 * link:https://en.wikipedia.org/wiki/PC1512[Wikipedia article on the Amstrad PC1512]
-* link:http://www.dosdays.co.uk/computers/Amstrad%20PC1000/pics.php[Internal pictures of the PC1512]
+* link:https://www.dosdays.co.uk/computers/Amstrad%20PC1000/pics.php[Internal pictures of the PC1512]
 
 [.float-group]
 --
@@ -597,7 +597,7 @@ Many clones were produced of the VGA adapter, often with more memory allowing hi
 
 ==== S3 Graphics
 * link:https://en.wikipedia.org/wiki/S3_Graphics[Wikipedia article on S3 Graphics]
-* link:http://www.dosdays.co.uk/topics/Manufacturers/s3.php[DOS Days article on S3 Graphics]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/s3.php[DOS Days article on S3 Graphics]
 
 NOTE: The default ``machine=svga_s3`` option refers to the S3 Trio64.
 
@@ -612,7 +612,7 @@ This mode can be set using ``machine=svga_s3vision864`` in your DOSBox-X config 
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
 
 ==== S3 Vision964
 Introduced in early 1994.
@@ -624,7 +624,7 @@ This mode can be set using ``machine=svga_s3vision964`` in your DOSBox-X config 
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/cpu/item/354-s3-vision964[S3 Vision964 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/cpu/item/354-s3-vision964[S3 Vision964 at the VGA Museum]
 
 ===== S3 Vision868
 Introduced in 1995.
@@ -636,7 +636,7 @@ This mode can be set using ``machine=svga_s3vision868`` in your DOSBox-X config 
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
 
 ==== S3 Vision968
 Introduced in April 1995.
@@ -648,7 +648,7 @@ This mode can be set using ``machine=svga_s3vision968`` in your DOSBox-X config 
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/cpu/item/355-s3-vision968[S3 Vision968 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/cpu/item/355-s3-vision968[S3 Vision968 at the VGA Museum]
 
 ===== S3 Trio32
 Introduced in 1994.
@@ -658,7 +658,7 @@ This mode can be set using ``machine=svga_s3trio32`` in your DOSBox-X config fil
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[S3 Trio32 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[S3 Trio32 at the VGA Museum]
 
 ===== S3 Trio64
 Introduced in 1994. Successor to the S3 Vision864, and has support for VESA Video BIOS Extensions (VBE).
@@ -681,7 +681,7 @@ There are a few variations of the Trio64 that are available:
 Links:
 
 * link:https://en.wikipedia.org/wiki/S3_Triop[S3 Trio at Wikipedia]
-* link:http://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[S3 Trio64 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[S3 Trio64 at the VGA Museum]
 
 ===== S3 Trio64V+
 Introduced in June 1995.
@@ -693,7 +693,7 @@ This mode can be set using ``machine=svga_s3trio64v+`` in your DOSBox-X config f
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[S3 Trio64V+ at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[S3 Trio64V+ at the VGA Museum]
 
 ==== S3 Graphics - Experimental support
 The emulation of the following S3 SVGA models should be considered experimental for the time being.
@@ -711,7 +711,7 @@ This mode can be set using ``machine=svga_s386c928`` in your DOSBox-X config fil
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/component/k2/item/344-s3-p86c928[S3 86c928 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/344-s3-p86c928[S3 86c928 at the VGA Museum]
 
 ===== S3 ViRGE
 WARNING: The emulation of this card is considered experimental. It is not recommended for normal use at this time.
@@ -728,7 +728,7 @@ This mode can be set using ``machine=svga_s3virge`` in your DOSBox-X config file
 Links:
 
 * link:https://en.wikipedia.org/wiki/S3_ViRGE[S3 ViRGE at Wikipedia]
-* link:http://www.vgamuseum.info/index.php/component/k2/item/365-s3-virge[S3 ViRGE at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/365-s3-virge[S3 ViRGE at the VGA Museum]
 * link:https://www.vogons.org/viewtopic.php?t=33483[List of games supporting S3D mode]
 
 ===== S3 ViRGE/VX
@@ -741,14 +741,15 @@ This mode can be set using ``machine=svga_s3virgevx`` in your DOSBox-X config fi
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/component/k2/item/366-s3-virge-vx[S3 ViRGE/VX at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/366-s3-virge-vx[S3 ViRGE/VX at the VGA Museum]
 
 ==== Tseng Labs
 Links:
 
 * link:https://en.wikipedia.org/wiki/Tseng_Labs[Wikipedia article on Tseng Labs]
-* link:http://www.dosdays.co.uk/topics/Manufacturers/tseng_labs.php[DOS Days article on Tseng Labs]
-* link:http://vogonsdrivers.com/index.php?catid=63[VOGONS Vintage Driver Library for Tseng Labs]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/tseng_labs.php[DOS Days - Tseng Labs]
+* link:https://dosdays.co.uk/topics/Manufacturers/tsenglabs_downloads.php[DOS Days - Tseng Labs Downloads]
+* link:https://vogonsdrivers.com/index.php?catid=63[VOGONS Vintage Driver Library for Tseng Labs]
 
 ===== Tseng Labs ET3000
 Introduced in 1987.
@@ -765,7 +766,7 @@ Video memory defaults to 512KiB and cannot be adjusted.
 
 Links:
 
-* link:http://www.vgamuseum.info/index.php/companies/item/460-tseng-et3000ax[Tseng Labs ET3000 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/companies/item/460-tseng-et3000ax[Tseng Labs ET3000 at the VGA Museum]
 
 ===== Tseng Labs ET4000
 Introduced in 1989.
@@ -797,7 +798,7 @@ vmemsizekb=512
 Links:
 
 * link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET-4000.ZIP[Tseng Labs ET4000 driver package]
-* link:http://www.vgamuseum.info/index.php/companies/item/461-tseng-et4000ax[Tseng Labs ET4000 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/companies/item/461-tseng-et4000ax[Tseng Labs ET4000 at the VGA Museum]
 
 ==== Paradise Systems PVGA1A
 The Paradise Systems PVGA1A is a SuperVGA (SVGA) card introduced in 1988.
@@ -829,8 +830,8 @@ vmemsizekb=0
 
 Links:
 
-* link:http://www.dosdays.co.uk/topics/Manufacturers/paradise.php[DOS Days article on Paradise Systems]
-* link:http://www.vgamuseum.info/index.php/companies/item/478-paradise-systems-pvga1a[Paradise Systems PVGA1A]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/paradise.php[DOS Days article on Paradise Systems]
+* link:https://www.vgamuseum.info/index.php/companies/item/478-paradise-systems-pvga1a[Paradise Systems PVGA1A]
 
 === VESA BIOS Extensions (VBE)
 During the late 80's and early 90's many video card manufacturers existed, and as IBM was no longer leading the market, each manufacturer was doing its own thing in regard to setting their cards SVGA modes.
@@ -911,7 +912,7 @@ NOTE: Because both the second display code and the integrated debugger uses the 
 
 links:
 
-* link:http://www.seasip.info/VintagePC/dualhead.html[Dual-Head Operation on a Vintage PC]
+* link:https://www.seasip.info/VintagePC/dualhead.html[Dual-Head Operation on a Vintage PC]
 * link:https://www.vogons.org/viewtopic.php?f=32&t=26110[Vogons thread on this topic]
 
 == [video] config section

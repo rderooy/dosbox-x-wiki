@@ -346,7 +346,7 @@ TIP: For Windows 3.1x the recommended display adapter is the default S3 Trio64.
 * **Tseng Labs**
 ** ET3000 using `machine=svga_et3000`
 *** link:http://vogonsdrivers.com/getfile.php?fileid=245&menustate=0[Windows 3.1x - ET3000 drivers, Dec 8 1994]
-*** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET4-W31.ZIP[Windows 3.0/3.1x - Jan 15 1992 ]
+*** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET4-W31.ZIP[Windows 3.0/3.1x - Jan 15 1992]
 ** ET4000 using `machine=svga_et4000`
 *** link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/W31ET4.ZIP[Windows 3.1x - ET4000 drivers, Dec 8 1994]
 * **Paradise Systems**
