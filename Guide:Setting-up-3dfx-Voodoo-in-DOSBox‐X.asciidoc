@@ -179,6 +179,7 @@ The following steps assume that you have the necessary compiler, developer tools
 
 Run the following commands from a Linux terminal to compile the OpenGlide fork from Voyageur:
 
+[source, console]
 ....
 git clone https://github.com/voyageur/openglide.git
 cd openglide
@@ -192,6 +193,7 @@ sudo ldconfig
 ``libglide2x.so`` will by default be installed in ``/usr/local/lib`` which may or may-not be in your default library path.
 To check if ldconfig found the library, run the following command:
 
+[source, console]
 ....
 ldconfig -p|grep glide
 ....
@@ -202,6 +204,8 @@ You should get an output similar to this:
 ....
 In the above example it found the ``libglide2x.so`` library.
 If the ldconfig command returns nothing, you need to add the ``/usr/local/lib`` directory to your library path and re-run ldconfig as follows:
+
+[source, console]
 ....
 sudo sh -c 'echo /usr/local/lib > /etc/ld.so.conf.d/usr-local-lib.conf'
 sudo ldconfig
@@ -219,6 +223,8 @@ If you do try to use it with the DOSBox-X SDL2 version, OpenGlide will segfault 
 1. Install Xcode command-line tools:
 You need Xcode command-line tools from Apple in order to install Home Brew.
 You can install Xcode from the App Store or run the following Terminal command:
+
+[source, console]
 ....
 xcode-select --install
 ....
@@ -228,6 +234,8 @@ Alternatively, when you run the Home Brew install script (see below), it will in
 2. Install Home Brew:
 Home Brew is the package manager for macOS that makes it easy to install the required packages needed for OpenGlide to compile successfully.
 You can get it from https://brew.sh or run the following command from a Terminal shell:
+
+[source, console]
 ....
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ....
@@ -235,6 +243,8 @@ You can get it from https://brew.sh or run the following command from a Terminal
 [start=3]
 3. Install the required Homebrew packages needed by OpenGlide:
 Run the following Terminal command:
+
+[source, console]
 ....
 brew install SDL1
 ....
@@ -245,11 +255,15 @@ brew install SDL1
 https://github.com/almeath/openglide
 
 2. Unzip the downloaded folder to your desktop and then navigate to the folder using Terminal:
+
+[source, console]
 ....
 cd $HOME/Desktop/openglide-master
 ....
 [start=3]
 3. Run the following commands, in order:
+
+[source, console]
 ....
 ./bootstrap
 ./configure
@@ -290,6 +304,8 @@ These should be located in the same place as your DOSBox-X application or execut
 ==== Optimize the OpenGLid.ini settings
 
 The following settings are recommended (with ``InitFullScreen=1`` to start in fullscreen mode)
+
+[source, ini]
 ....
 [Options]
 WrapperPriority=2

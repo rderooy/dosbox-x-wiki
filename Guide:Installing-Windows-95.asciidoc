@@ -196,7 +196,7 @@ IMGMOUNT D Win95.iso
 While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (if you have the CD-ROM automatically mounted in your [autoexec] section of the config file).
 It is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
 
-[source, dos]
+[source, console]
 ....
 XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
@@ -225,7 +225,7 @@ The actual steps will not be covered in this guide but are pretty self-explanato
 When the installer reboots DOSBox-X, and you're back at the DOSBox-X ``Z:\`` prompt, type ``EXIT``.
 
 Now edit your ``win98.conf`` config file.
-At the end of the file, in the [autoexec] section, add the following two lines:
+At the end of the file, in the `[autoexec]` section, add the following two lines:
 
 [source, console]
 ....
@@ -236,6 +236,7 @@ BOOT C:
 Save the config file, and at the command-prompt of your host PC you can type the below command to continue with the next phase of the installation process.
 This is also the command you use, after the installation is finished, to start Windows 95 in DOSBox-X.
 
+[source, console]
 ....
 dosbox-x -conf win95.conf
 ....
@@ -243,6 +244,7 @@ dosbox-x -conf win95.conf
 === Booting Windows 95 after installation
 After the installation is finished, you can start Windows 95 from the command-prompt of your host PC, with the following command:
 
+[source, console]
 ....
 dosbox-x -conf win95.conf
 ....
@@ -274,7 +276,8 @@ The option to load image files from the menu bar becomes unavailable the moment 
 This is a known limitation that hopefully will be resolved in the near future.
 
 For now, you can work around it, by specifying multiple image files with the IMGMOUNT command as such:
-[source, dos]
+
+[source, console]
 ....
 IMGMOUNT A disk1.img disk2.img disk3.img
 IMGMOUNT D cd1.iso cd2.iso cd3.iso
@@ -458,6 +461,7 @@ The only known solution for now if you used an older driver is to re-install Win
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
 
 First add the following lines to your DOSBox-X config file in the [video] section:
+
 [source, ini]
 ....
 [video]
@@ -503,6 +507,7 @@ Also see the link:Guide%3ASetting-up-printing-in-DOSBox%E2%80%90X[Guide: Setting
 For the best print quality, you will want to print to a PostScript printer in Windows 95.
 
 First, set up your DOSBox-X config to print to a file as such:
+
 [source, ini]
 ....
 [dosbox]
@@ -533,6 +538,7 @@ On a Windows host, it is necessary to install a separate PostScript viewer such 
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
 First, set up your DOSBox-X config to emulate an Epson printer as such:
+
 [source, ini]
 ....
 [parallel]
@@ -561,6 +567,7 @@ As such a "PCI Multimedia Video Device" will show in Device Manager with a yello
 A driver package is available link:https://www.philscomputerlab.com/drivers-for-voodoo.html[here (v3.01.00)] to enable support.
 
 If for some reason you do not want 3dfx Voodoo emulation, it can be disabled by adding the following lines to your DOSBox-X config:
+
 [source, ini]
 ....
 [voodoo]
@@ -578,6 +585,7 @@ So, if you're using a 64bit DOSBox-X, you need to use a 64-bit glide-wrapper.
 The work-around is to use the SDL1 DOSBox-X instead.
 
 You need to set the following DOSBox-X config option:
+
 [source, ini]
 ....
 [voodoo]
@@ -603,6 +611,7 @@ Starting with DOSBox-X 2022.08.0, there is optional support to dynamically conve
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
+
 [source, ini]
 ....
 [sdl]

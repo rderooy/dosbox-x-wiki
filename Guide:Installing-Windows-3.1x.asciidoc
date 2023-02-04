@@ -73,6 +73,8 @@ Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the mome
 
 == DOSBox-X config file
 It is recommended that you create a custom DOSBox-X config file for running Windows 3.1x
+
+[source, ini]
 ....
 [sdl]
 autolock=true
@@ -114,6 +116,7 @@ This way there is no need to swap disks during the installation process.
 There are several ways to extract the contents of disk images, such as 7zip on Windows or "Disk Image Mounter" on Linux.
 In this example, DOSBox-X itself is used to mount a disk image, copy its contents into a folder, unmount the disk image and do the next.
 
+[source, console]
 ....
 MOUNT C /home/myuser/winroot
 C:
@@ -152,10 +155,14 @@ e.g., ``C:\users\myuser\win31\INSTALL`` or ``/home/myuser/winroot/INSTALL`` and 
 
 You are now ready to start DOSBox-X from the command-line, using the newly created ``win31.conf``.
 This assumes that the ``dosbox-x`` program is in your path and ``win31.conf`` is in your current directory.
+
+[source, console]
 ....
 dosbox-x -conf win31.conf
 ....
 You now need to mount your new folder as the C: drive in DOSBox-X and start the installation.
+
+[source, console]
 ....
 MOUNT C /home/myuser/winroot
 C:
@@ -173,6 +180,7 @@ Exit to DOS and type EXIT to close DOSBox-X.
 
 Now edit your ``win31.conf`` config file and add the following lines into the [autoexec] section at the end of the file.
 
+[source, shell]
 ....
 @ECHO OFF
 MOUNT C /home/myuser/winroot
@@ -214,6 +222,8 @@ Starting with DOSBox-X 2022.08.0, there is optional support to dynamically conve
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 convertdrivefat = true
@@ -246,6 +256,7 @@ Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your
 
 Something like:
 
+[source, console]
 ....
 IMGMOUNT C hdd.img
 MOUNT D .
@@ -257,6 +268,8 @@ EXIT
 Adjust paths in the above example as needed.
 
 Now edit your ``win31.conf`` config file and in the ``[autoexec]`` section at the end, add the following lines:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img -reservecyl 1
 BOOT C:
@@ -264,11 +277,14 @@ BOOT C:
 
 Now start DOSBox-X with your ``win31.conf`` config file from the command-line:
 
+[source, console]
 ....
 dosbox-x -conf win31.conf
 ....
 
 It should boot to the C: prompt, and you can start the installation process.
+
+[source, console]
 ....
 CD INSTALL
 SETUP
@@ -279,6 +295,7 @@ After the installation is finished, you can install your drivers and add-ons.
 == Starting Windows 3.1x after installation
 After the installation is finished, you can start Windows 3.1x from the command-prompt with the following command:
 
+[source, console]
 ....
 dosbox-x -conf win31.conf
 ....
@@ -307,6 +324,7 @@ NOTE: If you intend to use Video for Windows (VFW), first install VFW and then t
 For installing a 3rd party display driver, you should follow the instructions (e.g. README) included with the driver.
 If there are no instructions included, exit Windows 3.1x back to the DOSBox-X prompt, then go into the WINDOWS subdirectory, and run `SETUP`. e.g.,
 
+[source, console]
 ....
 cd \WINDOWS
 SETUP
@@ -378,6 +396,8 @@ Unpack the archive, and you will find a Windows 3.1x mouse driver in the `windrv
 - Continue the setup as normal
 
 In addition, set the following options in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 mouse emulation=integration
@@ -402,6 +422,8 @@ Another option is the Windows 3.1x mouse driver link:https://git.javispedro.com/
 If you are running Windows 3.1x directly in the DOSBox-X integrated DOS environment, do not load the VBMOUSE.EXE driver. Only install the VBMOUSE.DRV in Windows 3.1x.
 
 For scroll wheel support, you will also have to set the following setting in your DOSBox-X config file:
+
+[source, ini]
 ```
 [sdl]
 mouse_wheel_key=0
@@ -467,6 +489,7 @@ In some cases, this is not possible, such as:
 
 To enable NE2000 emulation with the pcap back-end, add the following to your ``win31.conf`` config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -492,6 +515,7 @@ But obviously, it has its own limitations.
 
 To enable NE2000 emulation with the slirp back-end, add the following to your ``win31.conf`` config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -547,6 +571,7 @@ For the best print quality, you will want to print to a PostScript printer in Wi
 
 First, set up your DOSBox-X config to print to a file as such:
 
+[source, ini]
 ....
 [dosbox]
 captures=capture
@@ -568,6 +593,8 @@ On a Windows host, it is necessary to install a separate PostScript viewer such 
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
 First, set up your DOSBox-X config to emulate an Epson printer as such:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -609,6 +636,7 @@ First install the game normally in Windows.
 
 You can then start the game from DOS simply by appending the Windows game executable behind the WIN.COM executable as such:
 
+[source, console]
 ....
 WIN \path\to\game.exe
 ....
@@ -617,9 +645,12 @@ This will prevent the Windows splash screen being shown and will directly start 
 
 The second step you may want to take, is that when you exit the game, you also exit Windows 3.1x. For this you need a 3rd party utility called "link:http://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH.
 Now simply start the game as follows:
+
+[source, console]
 ....
 WIN RUNEXIT \path\to\game.exe
 ....
+
 Like before it will start the game without the Windows splash screen, but now when you Exit the game it will also Exit Windows.
 This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:http://members.quicknet.nl/blankendaalr/dbgl/[DBGL].
 

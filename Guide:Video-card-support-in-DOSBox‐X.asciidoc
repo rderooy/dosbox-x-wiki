@@ -808,6 +808,8 @@ This mode can be set using ``machine=svga_paradise`` in your DOSBox-X config fil
 Video memory defaults to 512 KiB, but can be adjusted to 256 or 1024 KiB.
 
 For 256 KiB, set your config as follows:
+
+[source, ini]
 ....
 [dosbox]
 machine=svga_paradise
@@ -819,6 +821,7 @@ vmemsizekb=256
 
 For 1024 KiB, set your config as follows:
 
+[source, ini]
 ....
 [dosbox]
 machine=svga_paradise

@@ -30,6 +30,8 @@ If you don't know which Windows 98 edition to install, we recommend that you ins
 
 == DOSBox-X config file
 You first need to create a DOSBox-X config file.
+
+[source, ini]
 ....
 [sdl]
 autolock=true
@@ -149,10 +151,14 @@ Getting this image file is outside the scope of this guide.
 This assumes you have already started DOSBox-X with the ``win98.conf`` config file and created your harddisk image.
 
 First mount the harddisk image you created earlier:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 ....
 Now let’s boot from the CD-ROM and start the installation.
+
+[source, console]
 ....
 IMGMOUNT D Win98.iso
 IMGMOUNT A -bootcd D
@@ -168,6 +174,7 @@ At this point it should format the harddisk and the installation process should 
 When the Windows installer reboots, and your back at the DOSBox-X ``Z:\>`` prompt.
 Close DOSBox-X and edit your ``win98.conf`` config file, and add the following lines in the [autoexec] section at the end of the file:
 
+[source, console]
 ....
 IMGMOUNT C hdd.img
 IMGMOUNT D Win98.iso
@@ -176,6 +183,7 @@ BOOT C:
 
 Now start DOSBox-X as follows to continue the installation process:
 
+[source, console]
 ....
 dosbox-x -conf win98.conf
 ....
@@ -206,12 +214,17 @@ Getting this image file is outside the scope of this guide.
 This assumes you have already started DOSBox-X with the ``win98.conf`` config file and created your harddisk image.
 
 First mount the harddisk image you created earlier:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 ....
+
 You will also need to mount the Windows 98 CD-ROM. There are a few ways of doing so, but this guide assumes you have a ISO image.
 
 If you have a copy of the Windows 98 CD-ROM as an ISO (or a cue/bin pair), you can mount it as follows:
+
+[source, console]
 ....
 IMGMOUNT D Win98.iso
 ....
@@ -220,6 +233,7 @@ IMGMOUNT D Win98.iso
 While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (if you have the CD-ROM automatically mounted in your [autoexec] section of the config file).
 It is recommended to copy the installation files (contents of the WIN98 directory on the CD-ROM) to your HDD image, as it will prevent Windows 98 from asking for the CD-ROM when it needs additional files later.
 
+[source, console]
 ....
 XCOPY D:\WIN98 C:\WIN98 /I /E
 ....
@@ -235,6 +249,7 @@ If you get the above screen during SETUP, select "Other directory" to change it 
 === Running SETUP.EXE
 You can now run SETUP.EXE.
 
+[source, console]
 ....
 C:
 CD \WIN98
@@ -251,6 +266,7 @@ When the installer reboots DOSBox-X, and you're back at the DOSBox-X ``Z:\`` pro
 Now edit your ``win98.conf`` config file.
 At the end of the file, in the [autoexec] section, add the following two lines:
 
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:
@@ -259,6 +275,7 @@ BOOT C:
 Save the config file, and at the command-prompt of your host PC you can type the below command to continue with the next phase of the installation process.
 This is also the command you use, after the installation is finished, to start Windows 98 in DOSBox-X.
 
+[source, console]
 ....
 dosbox-x -conf win98.conf
 ....
@@ -266,6 +283,7 @@ dosbox-x -conf win98.conf
 == Booting Windows 98 after installation
 After the installation is finished, you can start Windows 98 from the command-prompt of your host PC, with the following command:
 
+[source, console]
 ....
 dosbox-x -conf win98.conf
 ....
@@ -297,6 +315,8 @@ The option to load image files from the menu bar becomes unavailable the moment 
 This is a known limitation that hopefully will be resolved in the near future.
 
 For now, you can work around it, by specifying multiple image files with the IMGMOUNT command as such:
+
+[source, console]
 ....
 IMGMOUNT A disk1.img disk2.img disk3.img
 IMGMOUNT D cd1.iso cd2.iso cd3.iso
@@ -325,6 +345,7 @@ In some cases, this is not possible, such as:
 
 To enable NE2000 emulation with the pcap back-end, add the following to your ``win98.conf`` config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -350,6 +371,7 @@ But obviously, it has its own limitations.
 
 To enable NE2000 emulation with the slirp back-end, add the following to your ``win98.conf`` config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -403,7 +425,10 @@ As such you will be limited to the above video modes with this driver.
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].
 
 First add the following lines to your DOSBox-X config file in the [video] section:
+
+[source, ini]
 ....
+[video]
 allow high definition vesa modes=true
 allow unusual vesa modes=true
 allow low resolution vesa modes=false
@@ -445,6 +470,7 @@ For the best print quality, you will want to print to a PostScript printer in Wi
 
 First, set up your DOSBox-X config to print to a file as such:
 
+[source, ini]
 ....
 [dosbox]
 captures=capture
@@ -474,6 +500,8 @@ On a Windows host, it is necessary to install a separate PostScript viewer such 
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
 First, set up your DOSBox-X config to emulate an Epson printer as such:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -501,6 +529,8 @@ Windows 98SE includes a driver dated 4-23-1999. There is a link:https://www.phil
 After the update it will show a date of 4-29-1999.
 
 If for some reason you do not want 3dfx Voodoo emulation, it can be disabled by adding the following lines to your DOSBox-X config:
+
+[source, ini]
 ....
 [voodoo]
 voodoo_card=false
@@ -518,6 +548,7 @@ The work-around is to use the SDL1 DOSBox-X instead.
 
 You need to set the following DOSBox-X config option:
 
+[source, ini]
 ....
 [voodoo]
 glide=true
@@ -542,6 +573,8 @@ Starting with DOSBox-X 2022.08.0, there is optional support to dynamically conve
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 convertdrivefat = true

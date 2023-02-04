@@ -37,6 +37,8 @@ This option allows for various common harddisk types to be created, for less com
 Note: The below example assumes 4 disks, if you have 5 disks you need to add it to the end of the BOOT command.
 
 Assuming your PC DOS 6.x disk images are in the current working directory, and named as shown below, type the following commands at the DOSBox-X ``Z:\>`` prompt.
+
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
@@ -46,6 +48,8 @@ Assuming your PC DOS 6.x disk images are in the current working directory, and n
 When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system", and you will be back at the DOSBox-X ``Z:\>`` prompt.
 
 You can now boot these DOS versions directly from the HDD image as follows:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:

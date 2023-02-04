@@ -67,6 +67,7 @@ image::images/DOSBox-X:TrueType_Font_Lucon.png[TrueType font output with the Luc
 
 Alternatively, you can dynamically switch the font file to use with the TrueType font output from the menu or the command line. There is a menu option "Select TrueType font (TTF)..." under the "Video" menu which allows users to select a TTF font file to use. Alternatively, you can do so with CONFIG command, such as the following:
 
+[source, console]
 ....
 CONFIG -set font=Consola
 CONFIG -set font=
@@ -92,7 +93,9 @@ The window size for the TrueType font output can also be increased or decreased 
 
 Also, the default DOSBox-X text screen is the standard 80 columns and 25 rows. This can be changed by specifying different numbers of columns and rows via the config options ``lins`` and ``cols``. For example, the following will set the text screen to be 100 columns and 50 rows:
 
+[source, ini]
 ....
+[ttf]
 cols=100
 lins=50
 ....
@@ -101,6 +104,7 @@ You can also dynamically change the number of columns and rows on the text scree
 
 Alternatively, you can do so using MODE or CONFIG command from the command line. With MODE command you can change the screen dimensions to those supported by the above menu options. For example:
 
+[source, console]
 ....
 MODE CON LINES=50
 MODE CON LINES=60 COLS=132
@@ -110,6 +114,7 @@ The above commands will change the screen dimension to 50 lines and 132x60 respe
 
 With CONFIG command, you can change the values of cols and lins dynamically, but one at a time. For example:
 
+[source, console]
 ....
 CONFIG -set lins=30
 CONFIG -set cols=100
@@ -121,7 +126,9 @@ The above commands will change the screen dimension to 30 lines and 100 columns 
 
 DOSBox-X supports on-screen text styles for DOS applications like WordPerfect, WordStar, XyWrite, and FastEdit. You will need to specify a word processor (WP=WordPerfect, WS=WordStar, XY=XyWrite, FE=FastEdit) for this, and then text styles such as bold, italics, and underlines will be displayed visually when running these applications using the TrueType font output in DOSBox-X. For example:
 
+[source, ini]
 ....
+[ttf]
 wp=XY
 ....
 
@@ -129,7 +136,9 @@ Then bold, italic, and underlined texts will be displayed visually by default. F
 
 For bold, italic, and bold italic texts you can either let DOSBox-X to automatically do so (such as slanting the characters automatically for italic texts) or specify actual bold, italic, and bold italic fonts (if they exist) to render these text styles. For example, for the Consola font, the actual bold, italic, and bold italic versions are named Consolab, Consolai, and Consolaz, so you can set the following to specify its variant fonts:
 
+[source, console]
 ....
+[ttf]
 font=Consola
 fontbold=Consolab
 fontital=Consolai

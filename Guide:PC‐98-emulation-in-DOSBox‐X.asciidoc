@@ -112,12 +112,14 @@ Once you are in DOSBox-X's PC-98 system, you can start preparing for playing PC-
 
 An example of using MOUNT command:
 
+[source, console]
 ....
 MOUNT C C:\PC98
 ....
 
 An example of using IMGMOUNT command:
 
+[source, console]
 ....
 IMGMOUNT C D:\PC98.HDI
 ....
@@ -134,6 +136,7 @@ The Touhou games are a series of bullet shooting games that are especially famou
 
 Assuming you have the HDI images for any of these Touhou games, you can mount them as the C drive and then either start the game directly or boot from the drive. For example:
 
+[source, console]
 ....
 IMGMOUNT C TOUHOU1.HDI
 C:
@@ -142,6 +145,7 @@ GAME
 
 Or boot from the drive:
 
+[source, console]
 ....
 IMGMOUNT C TOUHOU1.HDI
 BOOT C:

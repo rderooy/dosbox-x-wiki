@@ -286,6 +286,8 @@ It was the first popular sound card for IBM PC's and compatibles.
 It was an easy card to clone, resulting in many AdLib compatible sound cards.
 
 AdLib can be emulated with the following config settings:
+
+[source, ini]
 ....
 [sblaster]
 sbtype=none
@@ -822,6 +824,8 @@ This is a hack for the Electromotive Force 'Internal Damage' demo which apparent
 The AdLib Gold 1000 was released in 1992. It is backward compatible with the earlier *AdLib Music Synthesizer Card*, but not with the Sound Blaster cards.
 
 This card is only partly emulated, for instance no DAC emulation, by using the following config settings:
+
+[source, ini]
 ....
 [sblaster]
 sbtype=none

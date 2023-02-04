@@ -75,6 +75,8 @@ Without one of the above parameters, data is written to files in the capture dir
 ** ``openerror:<program>`` start a program to open the file if an error had occurred.
 
 Example:
+
+[source, ini]
 ....
 [parallel]
 parallel1=file dev:lpt1 timeout=1000 addFF cp:437
@@ -90,6 +92,7 @@ This has its own configuration section which is documented below.
 Defines that this port has the emulated Disney Sound Source attached (Covox Voice Master and Covox Speech Thing compatible).
 It requires the following lines in your config:
 
+[source, ini]
 ....
 [speaker]
 disney=true
@@ -381,6 +384,8 @@ From a consistency perspective it is best to specify a device name, as the devic
 To see the list of available devices, start DOSBox-X and open the DOS menu, followed by "List printer devices".
 
 Example:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -510,6 +515,8 @@ If the application expects a printer that can do more than just simple text, and
 This can actually be useful, if you select a PostScript or HP PCL printer in the DOS application, as the resulting file will be a PostScript or HP PCL file which can be opened on the host with an appropriate application.
 
 In this example, set up a DOSBox-X config file with the following lines:
+
+[source, ini]
 ....
 [dosbox]
 captures=capture
@@ -535,6 +542,8 @@ NOTE: If you booted real DOS, or Windows 9x in DOSBox-X the output filename will
 It will cause a Windows print dialogue to appear on the host, and you can print to any printer configured on the host, including print to PDF.
 
 Make sure your DOSBox-X config file contains the statements:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -559,6 +568,8 @@ Therefore, it is important that the printer can understand the printer control c
 In practice this means that this method is only really meant for situations where you have a legacy printer, or are perhaps only sending pure text.
 
 Make sure your DOSBox-X config file contains the statements:
+
+[source, ini]
 ....
 [parallel]
 parallel1=file dev:lpt1
@@ -568,6 +579,7 @@ Alternatively you can try to set it up as follows, but this only works if your h
 PortTalk is needed because direct port access is no longer permitted with more modern Windows versions.
 The last Windows version supported by PortTalk is Windows XP (32-bit).
 
+[source, ini]
 ....
 [parallel]
 parallel1=reallpt directlpt:378
@@ -607,6 +619,8 @@ sudo usermod -a -G lp username
 ....
 
 Make sure your DOSBox-X config file contains the statements:
+
+[source, ini]
 ....
 [parallel]
 parallel1=reallpt realport:/dev/parport0
@@ -615,6 +629,7 @@ parallel1=reallpt realport:/dev/parport0
 This has been confirmed to work.
 Alternatively you can try to set it up as follows:
 
+[source, ini]
 ....
 [parallel]
 parallel1=file dev:/dev/parport0
@@ -632,6 +647,8 @@ NOTE: On Linux there has been some success with using a StarTech PEX1P2 PCIe par
 This method prints to a PNG or BMP image file.
 
 Make sure your DOSBox-X config file contains the statements:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -653,6 +670,8 @@ Alternatively you can specify a different directory using the ``docpath=`` setti
 This method prints to a PostScript (PS) image file, which can be easily converted to PDF.
 
 Make sure your DOSBox-X config file contains the statements:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -684,6 +703,8 @@ The options available are:
 ** ``openerror:<program>`` start a program to open the file if an error had occurred.
 
 e.g. when running DOSBox-X on a Windows host:
+
+[source, ini]
 ....
 [parallel]
 parallel1=file file:output.prn timeout:2000 openpcl:pcl6 openps:gswin32c openwith:notepad
@@ -700,6 +721,7 @@ In this example, it is assumed that you're printing to a PostScript printer in y
 This should give you the highest quality output, and depending on the application, you may even get colour by selecting a colour PostScript printer.
 The output is saved to a file on the host, to the directory specified with the ``captures=`` option, and when the file is closed (when no output is received for 2 seconds), the file will be opened using xdg-open such that it can be viewed and printed.
 
+[source, ini]
 ....
 [dosbox]
 captures=capture
@@ -711,6 +733,7 @@ parallel1=file file:output.ps timeout:2000 openps:xdg-open
 === macOS PostScript printing example
 Similar to the Linux example above, but here the macOS Preview application is used to open the PostScript file, from where it can be viewed and printed.
 
+[source, ini]
 ....
 [dosbox]
 captures=capture

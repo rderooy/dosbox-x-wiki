@@ -301,6 +301,7 @@ Yes, you can let DOSBox-X synchronize them automatically with config options, or
 +
 DOSBox-X comes with a default setting for general usages, which may already be optimal for some settings but not for others in terms of performance, and you may want to change certain settings to further improve its running speed. If you want to have a better speed for running your specific games or programs (such as data processing programs), you can consider setting the following in the DOSBox-X config file (dosbox-x.conf), which will disable the BIOS logo and welcome banner at launch as well as using the dynamic core and disabling the drive rate limit:
 
+[source, ini]
 ....
 [dosbox]
 fastbioslogo = true
@@ -317,6 +318,7 @@ floppy drive data rate limit = 0
 
 Using the TrueType font (TTF) output and disabling double-scanning can improve the performance too (especially for text-mode applications):
 
+[source, ini]
 ....
 [sdl]
 output=ttf
@@ -325,6 +327,7 @@ doublescan=false
 
 If you do not need any sound output, you can also set the following to further improve the speed when DOSBox-X starts:
 
+[source, ini]
 ....
 [mixer]
 nosound=true

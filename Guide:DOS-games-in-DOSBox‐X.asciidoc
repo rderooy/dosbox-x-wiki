@@ -21,6 +21,7 @@ If you installed DOSBox-X 0.83.5 or later using the Windows installer, you can a
 
 Otherwise, you can manually run the DOS game from the DOSBox-X command line. Now start DOSBox-X. By default, there is no drive mounted other than the internal virtual drive Z:. You need to mount the game directory so that it can be seen from within DOSBox-X. You can either mount a drive from the Drive menu, or by typing a command like the following:
 
+[source, console]
 ....
 MOUNT C C:\GAME
 ....
@@ -38,6 +39,7 @@ C: Tells the program what you want your new drive to be called (leaving it as C:
 C:\GAME: This is the directory you want to set as the new drive for DOSBox-X. If your game is located in a different directory, then replace it with that directory.
 (Note: If you want to mount a CD-ROM instead of a folder, type this:
 
+[source, console]
 ....
 MOUNT D D:\ -T CDROM
 ....
@@ -53,12 +55,14 @@ In this example, ``D:\ -T CDROM`` tells DOSBox-X that my D:\ drive is a CD-ROM d
 
 After you have done this, you will be prompted with a Z:\>. Now, just write what you wanted to call your new DOSBox-X drive, such as C: mentioned above. To navigate to that newly mounted drive just type in:
 
+[source, console]
 ....
 C:
 ....
 
 The drive will be changed from Z:\ to C:\. And it is now time to run the game. Most games have an EXE file in their directory that you can run. However, some might require a BAT file, or COM file (common in demos and very old games). Most of the time, the file is in the root folder. Please consult the documentation of your game for which file is needed to start the game. Suppose the game executable is called PLAY.EXE, then you can just type this:
 
+[source, console]
 ....
 PLAY.EXE
 ....

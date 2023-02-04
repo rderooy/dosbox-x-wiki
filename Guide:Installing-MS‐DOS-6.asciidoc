@@ -46,6 +46,7 @@ Starting with DOS 5.00, installing DOS in DOSBox-X is much more straight forward
 
 Maximum HDD size has increased to 8GB (or more exactly 7.84GB), but the maximum partition size is basically still 2GB, which is a FAT16 limitation.
 
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
@@ -54,6 +55,7 @@ Maximum HDD size has increased to 8GB (or more exactly 7.84GB), but the maximum 
 
 If you want to create an HDD image with a size less than 65MB (such as the hd_st251 template which creates a 40MB HDD image) for use with MS-DOS 6 Setup, you may want to specify the option ``-FAT 12`` for IMGMAKE command so that the FAT12 file system will be used (instead of FAT16 or FAT32), e.g.
 
+[source, console]
 ....
  IMGMAKE hdd.img -t hd_st251 -fat 12
 ....
@@ -63,6 +65,8 @@ Followed by the IMGMOUNT and BOOT commands.
 In any case, when prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system", and you will be back at the DOSBox-X ``Z:\>`` prompt.
 
 You can now boot these DOS versions directly from the HDD image as follows:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:

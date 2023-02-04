@@ -116,6 +116,7 @@ In some cases this is not possible, such as:
 
 To enable NE2000 emulation with the pcap back-end, add the following to your DOSBox-X config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -174,6 +175,7 @@ This can be overcome using the ``tcp_port_forwards=`` and ``udp_port_forwards=``
 
 To enable NE2000 emulation with the slirp back-end, add the following to your DOSBox-X config file:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -284,23 +286,28 @@ Or the libslirp library for the slirp back-end.
 
 ==== Debian based (e.g. Ubuntu)
 If you're running a recent Debian or Debian based distribution such as Ubuntu, you can install the libraries from the command-line as follows:
+
+[source, console]
 ....
-apt-get install libpcap libslirp
+$ sudo apt-get install libpcap libslirp
 ....
 ==== Red Hat, SUSE or Fedora
 If you used the provided RPM, libpcap and libslirp are dependencies and will be automatically installed when using a package manager to install DOSBox-X.
 
 Otherwise, if you're running a recent Red Hat, CentOS, SUSE or Fedora Linux distribution, you can install the libraries from the command-line as follows:
+
+[source, console]
 ....
-dnf install libpcap libslirp
+$ sudo dnf install libpcap libslirp
 ....
 
 === Check if your DOSBox-X binary supports networking
 The provided RPMs have networking enabled, but if you compiled DOSBox-X yourself and the libpcap or libslirp headers where not installed, the resulting DOSBox-X binary will lack libpcap and/or libslirp support.
 To check if your binary has networking support, run the following command:
 
+[source, console]
 ....
-ldd /usr/bin/dosbox-x |grep "pcap\|slirp"
+$ ldd /usr/bin/dosbox-x |grep "pcap\|slirp"
 	libpcap.so.1 => /lib64/libpcap.so.1 (0x00007f7877a7a000)
 	libslirp.so.0 => /lib64/libslirp.so.0 (0x00007f7877a5c000)
 ....
@@ -314,6 +321,7 @@ The provided RPM packages automatically set up the necessary permission for libp
 Otherwise, you need to ensure that the DOSBox-X binary has permission to listen to and generate low level network traffic (promiscuous mode).
 You can do this as follows:
 
+[source, console]
 ....
 $ which dosbox-x
 /usr/bin/dosbox-x
@@ -324,6 +332,7 @@ The first command returns the location of the dosbox-x binary (assuming it is in
 In this case getcap does not return anything, meaning it has no special capabilities, which you need to rectify if you want to be able to have PCAP networking in DOSBox-X.
 Run the following command:
 
+[source, console]
 ....
 $ sudo setcap cap_net_raw+ep /usr/bin/dosbox-x
 ....
@@ -332,6 +341,7 @@ This command will allow the dosbox-x binary to access the network interface in r
 
 To validate that now the DOSBox-X binary indeed has the cap_net_raw capability, run:
 
+[source, console]
 ....
 $ getcap /usr/bin/dosbox-x
 /usr/bin/dosbox-x = cap_net_raw+ep
@@ -347,6 +357,7 @@ It is highly recommended to only bridge to wired Ethernet adapters, as wireless 
 
 Create a simple ``ne2000.conf`` config file as follows:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -359,6 +370,7 @@ realnic=list
 
 Now, from a terminal, start DOSBox-X, using the ne2000.conf config file you just created.
 
+[source, console]
 ....
 dosbox-x -conf ne2000.conf
 ....
@@ -377,6 +389,7 @@ In the above example, 1, or eno1 is the integrated Ethernet of my PC, which we w
 
 Edit the ne2000.conf config file and change realnic= to the number or name of your chosen network interface. e.g.:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -404,6 +417,7 @@ It is highly recommended to only bridge to wired Ethernet adapters, as wireless 
 
 Create a simple ``ne2000.conf`` config file as follows:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -415,6 +429,7 @@ realnic=list
 
 Now, from a command prompt, start DOSBox-X, using the ``ne2000.conf`` config file you just created.
 
+[source, console]
 ....
 dosbox-x -conf ne2000.conf
 ....
@@ -454,6 +469,7 @@ In the above example, 9 is the USB Ethernet adapter I want to use. It may take y
 
 Edit the ``ne2000.conf`` config file and change ``realnic=`` to the value or name of your chosen network interface. e.g.:
 
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -478,10 +494,13 @@ This requires that you first download the latest version of mTCP, and a NE2000 D
 
 unzip both mTCP and the NE2000 DOS Packet driver into a directory. In the below example the directory is named ``mtcp``, then start DOSBox-X with the ``ne2000.conf`` config file that you created:
 
+[source, console]
 ....
 dosbox-x -conf ne2000.conf
 ....
 Now in DOSBox-X run the following commands:
+
+[source, console]
 ....
 MOUNT C mtcp
 C:
@@ -490,6 +509,8 @@ NE2000 0x60 10 0x300
 DHCP
 ....
 If all worked fine, you should have gotten an IP address, and you can now do something like
+
+[source, console]
 ....
 PING google.com
 ....
@@ -497,6 +518,7 @@ PING google.com
 === Common problem: Invalid MAC Address
 When loading the NE2000 DOS Packet driver you get an all FF Ethernet MAC address:
 
+[source, console]
 ....
 C:\>NE2000 0x60 10 0x300
 Packet driver for NE2000, version 11.4.3
@@ -522,6 +544,7 @@ This can actually have several causes.
 === Common problem: Cannot get DHCP lease
 When starting DHCP you get only timeouts.
 
+[source, console]
 ....
 C:\>DHCP
 mTCP DHCP Client by M Brutman (mbbrutman@gmail.com) (C)opyright 2008-2020
@@ -553,9 +576,9 @@ The solution is to define a new MAC address for at least one of the DOSBox-X ins
 
 In your DOSBox-X config file, in the ``[ne2000]`` section, add a ``macaddr=`` line with a new MAC address.
 The AC:DE:48 range is a reserved range for private use, so just modify the last three number blocks.
+e.g.,
 
-e.g.
-
+[source, ini]
 ....
 [ne2000]
 ne2000=true
@@ -607,6 +630,8 @@ The easiest way is probably to extract them in DOSBox-X itself.
 Move the files to a temporary directory for extraction, and from that directory launch DOSBox-X.
 
 Then run the following commands:
+
+[source, console]
 ....
 MOUNT C .
 C:
@@ -615,6 +640,8 @@ VLM121_6.EXE -y
 ....
 
 The files needed are still packed in yet another "Personal NetWare Packed File" archive. Extract them as follows:
+
+[source, console]
 ....
 MKDIR IPX
 NWUNPACK LSL.CO_ \IPX
@@ -647,6 +674,8 @@ Link Driver NE2000
 ==== Start IPX
 Now modify your ``ne2000.conf`` config file that you created earlier, such that it contains the following lines in the ``[autoexec]`` section at the end:
 
+
+[source, console]
 ....
 MOUNT C .
 C:
@@ -656,6 +685,7 @@ IPX\IPXODI.COM
 ....
 Adjust paths in the above example as necessary, and you should be able to run it from a command prompt as follows:
 
+[source, console]
 ....
 dosbox-x -conf ne2000.conf
 ....

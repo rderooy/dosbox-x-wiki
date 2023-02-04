@@ -48,6 +48,7 @@ Maximum HDD size has increased to 7.84GB, but the maximum partition size is basi
 
 Note: these instructions assume the "Full" version and not the "Upgrade" release.
 
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
@@ -57,6 +58,8 @@ Note: these instructions assume the "Full" version and not the "Upgrade" release
 When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system", and you will be back at the DOSBox-Z ``Z:\>`` prompt.
 
 You can now boot these DOS versions directly from the HDD image as follows:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:

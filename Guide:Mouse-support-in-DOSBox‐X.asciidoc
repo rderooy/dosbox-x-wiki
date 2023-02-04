@@ -238,6 +238,8 @@ For this purpose, DOSBox-X can be set to emulate a Microsoft serial mouse.
 If serial mouse emulation is enabled, the PS/2 mouse emulation is automatically disabled.
 
 Set the following setting to enable serial mouse emulation:
+
+[source, ini]
 ....
 [serial]
 serial1=serialmouse

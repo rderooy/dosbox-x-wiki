@@ -60,7 +60,7 @@ IBM released a corrective service (CSD UR22624) to upgrade a 4.00 installation t
 * DOS 4.0x supports the "type 6" FAT16 partition which DOSBox-X's ``IMGMAKE`` creates, but is incompatible with the way the partition is formatted. The DOS 4.0x installer will not offer the option to install to the HDD. And if you manually SYS the drive, it will not boot from it. The solution is to exit to the command line and manually format the C: drive.
 
 == External links
-* http://www.os2museum.com/wp/dos/dos-4-0/
+* https://www.os2museum.com/wp/dos/dos-4-0/
 
 == Creating an MS-DOS 4.0x HDD image
 
@@ -106,6 +106,8 @@ For this process, it is assumed that you have followed the Bare-bones installati
 
 During install, the installer will insist on a blank disk to be labelled "SELECT COPY", to make a copy of the INSTALL (Setup) disk.
 Unfortunately while it seems the installer should allow to use the B: drive for this purpose this does not seem to work in practice (it seems this only works if there is no disk in drive B: when the installer starts, which you cannot do with DOSBox-X).
+
+[source, console]
 ....
  IMGMAKE SELECT_COPY.IMG -t fd_720
  IMGMOUNT C hdd.img
@@ -225,6 +227,8 @@ image::images/MS-DOS:MS-DOS_4.01_INSTALLER_FINISHED.png[MS-DOS 4.01 Installation
 '''
 
 You can now boot the MS-DOS 4.0x HDD image using
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT -L C
@@ -241,6 +245,8 @@ You will also need two blank disks.
 
 === Booting MS-DOS 4.0x from HDD
 Now that you have created a bootable HDD image you can boot it from the DOSBox-X ``Z:\>`` prompt with the following commands:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT -L C
@@ -253,6 +259,7 @@ The same limits on disk and partition sizes seem to apply as MS-DOS 4.0x.
 
 First start by creating an HDD image file, mount it and boot from disk (this assumes 3.5" media).
 
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 1024
  IMGMOUNT C hdd.img

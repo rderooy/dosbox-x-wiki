@@ -61,6 +61,7 @@ You have the following installation options:
 
 NOTE: This method requires DOSBox-X 0.83.2 or newer.
 
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
@@ -70,6 +71,8 @@ NOTE: This method requires DOSBox-X 0.83.2 or newer.
 ....
 
 After it finished the installation, it will reboot DOSBox-X, and you're again at the ``Z:\>`` prompt. Now type the following to boot PC DOS 2000 normally.
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:
@@ -77,6 +80,8 @@ BOOT C:
 
 == Creating a PC DOS 2000 HDD image from diskettes
 If you have the PC DOS 2000 disk images in DSKF format, you first need to convert them, one by one, with LOADDSKF.EXE in DOSBox-X as follows:
+
+[source, console]
 ....
 IMGMAKE DISK1.IMG -t fd_1440
 IMGMOUNT A DISK1.IMG -U
@@ -101,6 +106,8 @@ IMGMOUNT A -U
 This assumes that you have mounted the directory in DOSBox-X which contains the DSKF image files and LOADDSKF.EXE.
 
 Once you have the PC DOS 2000 disk images in non-DSKF format, you can install them as follows:
+
+[source, console]
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
@@ -110,6 +117,8 @@ Once you have the PC DOS 2000 disk images in non-DSKF format, you can install th
 When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system", and you will be back at the DOSBox-X ``Z:\>`` prompt.
 
 You can now boot these DOS versions directly from the HDD image as follows:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:

@@ -138,6 +138,8 @@ Starting with DOSBox-X 2022.08.0, there is optional support to dynamically conve
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 convertdrivefat = true
@@ -177,6 +179,8 @@ This can be useful for scripted operations, for instance if you're running a pro
 NOTE: If SMARTDRV is being used, you MUST do a ``SMARTDRV /C`` *before* invoking the ``SHUTDOWN`` command as otherwise you risk filesystem corruption of the disk image.
 
 Example AUTOEXEC.BAT usage of `SHUTDOWN.COM` in combination with Windows 3.x:
+
+[source, shell]
 ....
 PATH C:\DOS;C:\WINDOWS
 SET TEMP=C:\WINDOWS\TEMP

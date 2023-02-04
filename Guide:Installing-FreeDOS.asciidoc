@@ -18,6 +18,8 @@ Go to the "DOS" menu, and select "Create blank disk image…​".
 This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
 
 From the DOSBox-X command prompt:
+
+[source, console]
 ....
 IMGMAKE hdd.img -t hd -size 2048
 IMGMOUNT C hdd.img
@@ -27,6 +29,8 @@ The above example creates a 2GiB HDD image. You can obviously use a different si
 
 == Installing FreeDOS
 Next step is to mount and boot the (El-Torito) ISO CD image.
+
+[source, console]
 ....
 IMGMOUNT D FD13LGCY.iso
 IMGMOUNT A -bootcd D
@@ -36,6 +40,8 @@ BOOT A:
 It will now boot to the setup program. You should be able to follow the on-screen installation prompts.
 
 After it finished the installation, it will reboot DOSBox-X, and you're again at the ``Z:\>`` prompt. Now type the following to boot FreeDOS normally.
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:

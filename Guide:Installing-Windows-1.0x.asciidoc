@@ -48,6 +48,8 @@ And likewise, you will be limited to EGA graphics.
 
 == DOSBox-X config file
 It is recommended that you create a custom DOSBox-X config file for running Windows 1.0x
+
+[source, ini]
 ....
 [sdl]
 autolock=true
@@ -102,6 +104,7 @@ This way there is no need to swap disks during the installation process.
 There are several ways to extract the contents of disk images, such as 7zip on Windows or "Disk Image Mounter" on Linux.
 In this example, DOSBox-X itself is used to mount a disk image, copy its contents into a folder, unmount the disk image and do the next.
 
+[source, console]
 ....
 MOUNT C /home/myuser/winroot
 C:
@@ -125,10 +128,14 @@ Your new INSTALL directory now holds the contents of all 5 floppy disks.
 
 You're now ready to start DOSBox-X from the command-line, using the newly created win1x.conf config file.
 This assumes that the ``dosbox-x`` program is in your path and ``win1x.conf`` is in your current directory.
+
+[source, console]
 ....
 dosbox-x -conf win1x.conf
 ....
 You now need to mount your new folder as the C: drive in DOSBox-X, and the "INSTALL" directory on A: and start the installation.
+
+[source, console]
 ....
 MOUNT A /home/myuser/winroot/INSTALL
 MOUNT C /home/myuser/winroot
@@ -290,6 +297,7 @@ But first type ``EXIT`` to close DOSBox-X.
 
 And then edit your ``win1x.conf`` config file and add the following lines into the ``[autoexec]`` section at the end of the file:
 
+[source, shell]
 ....
 @ECHO OFF
 MOUNT C /home/myuser/winroot
@@ -305,6 +313,7 @@ If you don't want DOSBox-X to close when exiting Windows 1.0x, remove the ``EXIT
 == Starting Windows 1.0x after installation
 After the installation is finished, you can start Windows 1.0x from the command-prompt with the following command:
 
+[source, console]
 ....
 dosbox-x -conf win1x.conf
 ....
@@ -325,6 +334,8 @@ Go to link:https://github.com/joncampbell123/doslib/releases[doslib releases] an
 Unpack the archive, and you will find a Windows 1.0 mouse driver with installation instructions in the `windrv/dosboxpi/bin/win10` directory.
 
 Follow the installation instructions, and in addition, set the following options in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 mouse emulation=integration

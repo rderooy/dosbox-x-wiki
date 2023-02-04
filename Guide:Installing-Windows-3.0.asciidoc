@@ -80,6 +80,8 @@ Examples of such customization, are an OEM specific launcher, OEM specific appli
 
 == DOSBox-X config file
 It is recommended that you create a custom DOSBox-X config file for running Windows 3.0
+
+[source, ini]
 ....
 [sdl]
 autolock=true
@@ -125,6 +127,7 @@ This way there is no need to swap disks during the installation process.
 There are several ways to extract the contents of disk images, such as 7zip on Windows or "Disk Image Mounter" on Linux.
 In this example, DOSBox-X itself is used to mount a disk image, copy its contents into a folder, unmount the disk image and do the next.
 
+[source, console]
 ....
 MOUNT C /home/myuser/winroot
 C:
@@ -145,8 +148,9 @@ Your new INSTALL directory now holds the contents of all 5 disks in this example
 
 === Mounting an installation CD-ROM
 If you have a "Windows 3.0a Multimedia Edition" CD-ROM image, you can simply mount it in DOSBox-X, and run the SETUP program.
+e.g.,
 
-e.g.
+[source, console]
 ....
 IMGMOUNT D win30me.iso
 D:
@@ -174,10 +178,14 @@ e.g., ``C:\users\myuser\win30\INSTALL`` or ``/home/myuser/winroot/INSTALL`` and 
 
 You are now ready to start DOSBox-X from the command-line, using the newly created ``win30.conf``.
 This assumes that the ``dosbox-x`` program is in your path and ``win30.conf`` is in your current directory.
+
+[source, console]
 ....
 dosbox-x -conf win30.conf
 ....
 You now need to mount your new folder as the C: drive in DOSBox-X and start the installation.
+
+[source, console]
 ....
 MOUNT C /home/myuser/winroot
 C:
@@ -195,6 +203,7 @@ Exit to DOS and type EXIT to close DOSBox-X.
 
 Now edit your ``win30.conf`` config file and add the following lines into the [autoexec] section at the end of the file.
 
+[source, shell]
 ....
 @ECHO OFF
 MOUNT C /home/myuser/winroot
@@ -234,6 +243,8 @@ Starting with DOSBox-X 2022.08.0, there is optional support to dynamically conve
 This can be accomplished in one of two ways. Either when you issue the `boot` command, you add the option `-convertfat`. e.g. `boot c: -convertfat`.
 
 Or by setting the following option in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 convertdrivefat = true
@@ -266,6 +277,7 @@ Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your
 
 Something like:
 
+[source, console]
 ....
 IMGMOUNT C hdd.img
 MOUNT D .
@@ -277,6 +289,8 @@ EXIT
 Adjust paths in the above example as needed.
 
 Now edit your ``win30.conf`` config file and in the ``[autoexec]`` section at the end, add the following lines:
+
+[source, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:
@@ -284,11 +298,14 @@ BOOT C:
 
 Now start DOSBox-X with your ``win30.conf`` config file from the command-line:
 
+[source, console]
 ....
 dosbox-x -conf win30.conf
 ....
 
 It should boot to the C: prompt, and you can start the installation process.
+
+[source, console]
 ....
 CD INSTALL
 SETUP
@@ -299,6 +316,7 @@ After the installation is finished, you can install your drivers and add-ons.
 == Starting Windows 3.0 after installation
 After the installation is finished, you can start Windows 3.0 from the command-prompt with the following command:
 
+[source, console]
 ....
 dosbox-x -conf win30.conf
 ....
@@ -349,6 +367,8 @@ Unpack the archive, and you will find a Windows 3.0 mouse driver in the `windrv/
 - Continue the setup as normal
 
 In addition, set the following options in your DOSBox-X config file:
+
+[source, ini]
 ....
 [sdl]
 mouse emulation=integration
@@ -368,6 +388,8 @@ There is a 4rd party Windows 3.0 mouse driver link:https://git.javispedro.com/cg
 If you are running Windows 3.0 directly in the DOSBox-X integrated DOS environment, do not load the VBMOUSE.EXE driver. Only install the VBMOUSE.DRV in Windows 3.0.
 
 For scroll wheel support, you will also have to set the following setting in your DOSBox-X config file:
+
+[source, ini]
 ```
 [sdl]
 mouse_wheel_key=0
@@ -441,6 +463,7 @@ For the best print quality, you will want to print to a PostScript printer in Wi
 
 First, set up your DOSBox-X config to print to a file as such:
 
+[source, ini]
 ....
 [dosbox]
 captures=capture
@@ -460,6 +483,8 @@ On a Windows host, it is necessary to install a separate PostScript viewer such 
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
 First, set up your DOSBox-X config to emulate an Epson printer as such:
+
+[source, ini]
 ....
 [parallel]
 parallel1=printer
@@ -487,6 +512,7 @@ First install the game normally in Windows.
 
 You can then start the game from DOS simply by appending the Windows game executable behind the WIN.COM executable as such:
 
+[source, console]
 ....
 WIN \path\to\game.exe
 ....
@@ -494,6 +520,8 @@ WIN \path\to\game.exe
 This will prevent the Windows splash screen being shown and will directly start the game without first going to the Program Manager (progman).
 
 The second step you may want to take, is that when you exit the game, you also exit Windows 3.0. For this you need a 3rd party utility called "link:http://www.shdon.com/software/tools[RUNEXIT.EXE]", and place it in your PATH. Now simply start the game as follows:
+
+[source, console]
 ....
 WIN RUNEXIT \path\to\game.exe
 ....
