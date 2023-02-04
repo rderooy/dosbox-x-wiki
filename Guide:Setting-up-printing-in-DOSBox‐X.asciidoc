@@ -614,6 +614,7 @@ First you need to give your Linux user access to the parallel printer port on th
 Replace "username" in the example below with your own Linux username.
 This will make your user a member of the "lp" group, which is a group that on most (all?) Linux distributions should have the necessary access to the parallel port.
 
+[source, console]
 ....
 sudo usermod -a -G lp username
 ....
