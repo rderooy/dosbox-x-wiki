@@ -196,7 +196,7 @@ IMGMOUNT D Win95.iso
 While not strictly necessary, as it is possible to run SETUP.EXE directly from the CD-ROM (if you have the CD-ROM automatically mounted in your [autoexec] section of the config file).
 It is recommended to copy the installation files (contents of the WIN95 directory on the CD-ROM) to your HDD image, as it will prevent Windows 95 from asking for the CD-ROM when it needs additional files later.
 
-[, dos]
+[source, console]
 ....
 XCOPY D:\WIN95 C:\WIN95 /I /E
 ....
@@ -212,7 +212,7 @@ image::images/Windows:Windows_95_SETUP_01.png[Windows 95 SETUP.EXE Select Direct
 === Running SETUP.EXE
 You can now run SETUP.EXE.
 
-[,dos]
+[,console]
 ....
 C:
 CD \WIN95
@@ -227,7 +227,7 @@ When the installer reboots DOSBox-X, and you're back at the DOSBox-X ``Z:\`` pro
 Now edit your ``win98.conf`` config file.
 At the end of the file, in the [autoexec] section, add the following two lines:
 
-[, dos]
+[, console]
 ....
 IMGMOUNT C hdd.img
 BOOT C:
