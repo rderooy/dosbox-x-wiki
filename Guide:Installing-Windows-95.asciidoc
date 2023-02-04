@@ -135,13 +135,18 @@ NOTE: Only **Windows 95 OSR2** or later supports FAT32, for older Windows 95 rel
 
 First you need to start DOSBox-X from the command-line, using your newly created ``win95.conf``.
 This assumes that dosbox-x is in your path and ``win95.conf`` is in your current directory.
+
+[source, console]
 ....
 dosbox-x -conf win95.conf
 ....
+
 Then in DOSBox-X you need to create a new harddisk image file with ``IMGMAKE``.
 
 This example uses an 2GB hard disk image with a single FAT16 formatted partition.
 This is the maximum size for FAT16 and supported by all Windows 95 releases.
+
+[source, console]
 ....
 IMGMAKE hdd.img -t hd_2gig -fat 16
 ....
@@ -152,12 +157,15 @@ Larger partition sizes may be possible with 3rd party drivers but are not covere
 
 In later Windows versions, starting with Windows 2000, Microsoft won't let you format a volume bigger than 32GB with FAT32 using its built-in formatting tool, this was presumably to push migrations to NTFS and later exFAT.
 
+[source, console]
 ....
 IMGMAKE hdd.img -t hd_8gig
 ....
 
 Or if you want to create a larger disk, you can create a custom type.
 This is an example of a 16GB (16*1024=16384 MB) disk, which due to its size, will be formatted as FAT32.
+
+[source, console]
 ....
 IMGMAKE hdd.img -t hd -size 16384
 ....
