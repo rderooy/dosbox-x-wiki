@@ -23,7 +23,11 @@ For example, the date is displayed in MM-DD-YYYY format with the default US sett
 
 If you change the ``COUNTRY=`` setting, the date and time will be displayed in the format associated with the specified country code. For example, 44 is the country code (based on the international dialling prefix) for the UK, and setting the following:
 
-``COUNTRY=44``
+[source, ini]
+....
+[config]
+COUNTRY=44
+....
 
 Will cause DOSBox-X to use the UK date and time format:
 
@@ -33,7 +37,10 @@ If you set ``COUNTRY=0`` in the [config] section of the DOSBox-X config file, th
 
 Alternatively, the COUNTRY command can be used from the DOSBox-X command line to change the country code. For example, the following command will switch the country code to 61 for international English:
 
-``COUNTRY 61``
+[source, console]
+....
+COUNTRY 61
+....
 
 A list of supported country codes and their corresponding date and time formats:
 
@@ -87,7 +94,11 @@ DOSBox-X by defaults displays messages in English. It is possible to change the 
 
 If you already have a DOSBox-X language file available, you can specify its filename in DOSBox-X's config file (dosbox-x.conf by default) in the [dosbox] section in order to activate it. There is a ``language=`` setting which allows you to enter the name of the language file. For example, suppose the language file is located at C:\message.txt, then you can specify the following for use with DOSBox-X:
 
-``language=C:\message.txt``
+[source, ini]
+....
+[dosbox]
+language=C:\message.txt
+....
 
 For example, the Chinese (Simplified & Traditional), English (United States), French, German, Japanese, Portuguese (Brazilian), Spanish, and Turkic language files for DOSBox-X are available from:
 
