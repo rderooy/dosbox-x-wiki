@@ -16,7 +16,9 @@ Since DOSBox-X is designed to be a complete DOS emulator, it officially supports
 == Activating the TrueType font output
 You can start DOSBox-X with the TrueType font (TTF) output by setting it from the [sdl] section of the DOSBox-X configuration, like this:
 
+[source, ini]
 ....
+[sdl]
 output = ttf
 ....
 
@@ -34,19 +36,26 @@ image::images/DOSBox-X:TrueType_Font_Default.png[TrueType font output with the d
 
 == Use your own TrueType font for the output
 
-By default, DOSBox-X uses the built-in TrueType font for the TTF output. However, the TTF output is very flexible so that users can always specify a different font file to be rendered for the output. For example, you may want to use a different TTF font such as Consola, Lucon, or Nouveau IBM depending on your preference (and your language). If you want to use a TTF font that is not included in the Windows/Linux/macOS system by default you will need to download it (or copy it from another system) first.
+By default, DOSBox-X uses the built-in TrueType font for the TTF output.
+However, the TTF output is very flexible so that users can always specify a different font file to be rendered for the output.
+For example, you may want to use a different TTF font such as Consola, Lucon, or Nouveau IBM depending on your preference (and your language).
+If you want to use a TTF font that is not included in the Windows/Linux/macOS system by default you will need to download it (or copy it from another system) first.
 
-Even though it is typical to use .TTF fonts for the TrueType font output, DOSBox-X does support more font types in addition to .TTF fonts, such as the .OTF fonts (OpenType fonts, such as ``OratorStd.otf``), the .FON fonts (such as ``vgasys.fon``), and the .TTC fonts (TrueType Collection, such as ``msgothic.ttc``), although it is preferred to use monospaced fonts for the best results. Virtually all these fonts can also be used for rendering texts in the TrueType output.
+Even though it is typical to use .TTF fonts for the TrueType font output, DOSBox-X does support more font types in addition to .TTF fonts, such as the .OTF fonts (OpenType fonts, such as ``OratorStd.otf``), the .FON fonts (such as ``vgasys.fon``), and the .TTC fonts (TrueType Collection, such as ``msgothic.ttc``), although it is preferred to use monospaced fonts for the best results.
+Virtually all these fonts can also be used for rendering texts in the TrueType output.
 
 For example, assuming the file ``Nouveau_IBM.ttf`` is in the DOSBox-X working directory or in the same directory as the DOSBox-X executable, you can specify this font for use with the TTF output in DOSBox-X by setting the following in the [ttf] section of the DOSBox-X configuration:
 
-``
+[source, ini]
+....
+[ttf]
 font=Nouveau_IBM
-``
+....
 
 If the file extension is .ttf you can either omit the extension or put the full file name (e.g. ``font=Nouveau_IBM.ttf``).
 
-On the other hand, if you want to use a TTF font that is already included in the default system, then you can specify the font directly. DOSBox-X will look for the font in the default system font path:
+On the other hand, if you want to use a TTF font that is already included in the default system, then you can specify the font directly.
+DOSBox-X will look for the font in the default system font path:
 
 * Windows: ``C:\WINDOWS\Fonts``
 * Linux: ``/usr/share/fonts/truetype/``
@@ -65,7 +74,9 @@ A screenshot showing the TrueType output with the Lucon TTF font:
 
 image::images/DOSBox-X:TrueType_Font_Lucon.png[TrueType font output with the Lucon TTF font]
 
-Alternatively, you can dynamically switch the font file to use with the TrueType font output from the menu or the command line. There is a menu option "Select TrueType font (TTF)..." under the "Video" menu which allows users to select a TTF font file to use. Alternatively, you can do so with CONFIG command, such as the following:
+Alternatively, you can dynamically switch the font file to use with the TrueType font output from the menu or the command line.
+There is a menu option "Select TrueType font (TTF)..." under the "Video" menu which allows users to select a TTF font file to use.
+Alternatively, you can do so with CONFIG command, such as the following:
 
 [source, console]
 ....
@@ -136,7 +147,7 @@ Then bold, italic, and underlined texts will be displayed visually by default. F
 
 For bold, italic, and bold italic texts you can either let DOSBox-X to automatically do so (such as slanting the characters automatically for italic texts) or specify actual bold, italic, and bold italic fonts (if they exist) to render these text styles. For example, for the Consola font, the actual bold, italic, and bold italic versions are named Consolab, Consolai, and Consolaz, so you can set the following to specify its variant fonts:
 
-[source, console]
+[source, ini]
 ....
 [ttf]
 font=Consola
@@ -168,21 +179,24 @@ There is a ``colors`` config option which you can use to optionally specify the 
 
 The default color scheme is:
 
-``
+[source, ini]
+....
 colors=#000000 #0000aa #00aa00 #00aaaa #aa0000 #aa00aa #aa5500 #aaaaaa #555555 #5555ff #55ff55 #55ffff #ff5555 #ff55ff #ffff55 #ffffff
-``
+....
 
 You can supply a different color scheme so that it will be used instead of the default one. For example, the following will give a dark color scheme (as in TameDOS):
 
-``
+[source, ini]
+....
 colors=#000000 #000080 #008000 #008080 #800000 #800080 #808000 #c0c0c0 #808080 #3300ff #33ff00 #00ffff #ff0000 #ff00ff #ffff00 #ffffff
-``
+....
 
 And the following will give a gray-scaled color scheme:
 
-``
+[source, ini]
+....
 colors=(0,0,0) #0e0e0e (75,75,75) (89,89,89) (38,38,38) (52,52,52) #717171 #c0c0c0 #808080 (28,28,28) (150,150,150) (178,178,178) (76,76,76)  (104,104,104) (226,226,226) (255,255,255)
-``
+....
 
 Starting with DOSBox-X version 0.83.24, DOSBox-X will stay with the preset color scheme when switching from another output if there is a leading ``{plus}`` sign for the ``colors`` setting, e.g. ``colors=+(0,0,0) …``
 
@@ -190,21 +204,24 @@ The color schemes can also be changed when DOSBox-X is running. There is a ``SET
 
 To change the scheme of a specific color using SETCOLOR command, just provide the color number and its color value, e.g.
 
-``
+[source, console]
+....
 SETCOLOR 7 (50,50,50)
-``
+....
 
 The above command change Color #7 to the specified color value. You can also return it to the default color value using the command:
 
-``
+[source, console]
+....
 SETCOLOR 7 -
-``
+....
 
 Or return it to the color scheme as specified by the ``colors`` config option (if set):
 
-``
+[source, console]
+....
 SETCOLOR 7 {plus}
-``
+....
 
 (Starting with DOSBox-X version 0.83.19, there is also a menu option ``Reset TTF color scheme`` in the ``TTF options`` menu group to return the whole color scheme to the default one)
 
