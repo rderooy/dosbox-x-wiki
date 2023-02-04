@@ -143,6 +143,8 @@ You have now again booted from the disk image, and are ready to format the C: dr
 
 TIP: As an IBM PC DOS exclusive, starting with PC DOS 3.0, there is the ``link:https://web.csulb.edu/~murdock/select.html[SELECT.COM]`` program which formats and transfers the OS from one diskette to another.
 With PC DOS 3.2 this is enhanced to also support transfer to the HDD with the following syntax: ``SELECT A: C: 1 US``. The options represent the source, destination, country code and keyboard code.
+
+[source, console]
 ....
  FORMAT C: /S
 ....
