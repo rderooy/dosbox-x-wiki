@@ -521,6 +521,7 @@ On a Windows host, it is necessary to install a separate PostScript viewer such 
 As an alternative, you can use the integrated Epson printer emulation, but the output quality will be significantly less compared to PostScript.
 
 First, set up your DOSBox-X config to emulate an Epson printer as such:
+[source, ini]
 ....
 [parallel]
 parallel1=printer
