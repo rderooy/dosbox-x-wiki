@@ -441,7 +441,7 @@ If networking does not work, see: link:Guide%3ASetting-up-networking-in-DOSBox%E
 == Emulated video adapter and video mode
 The default video adapter that DOSBox-X emulates is the S3 Trio64, which is the best emulated video adapter that DOSBox-X offers, with the widest range of resolutions and colour depths.
 
-There is a newer S3 video driver for Win95, version link:https://vogonsdrivers.com/getfile.php?fileid=1325&menustate=0[2.41.07], dated Dec 17, 1997.
+There is a newer S3 video driver for Win95, version link:https://www.dosdays.co.uk/topics/Manufacturers/s3_downloads.php#Trio32[2.11.03], dated June 12, 1996.
 
 This update adds some additional video modes. But it does not add support for 8MB video RAM, or wide-screen video modes.
 
@@ -450,7 +450,7 @@ The available video modes with the updated S3 Trio64 driver are:
 * 4-bit colour (16): 640x480
 * 8-bit colour (256): 640x480, 800x600, 1024x768, 1152x864, 1280x1024 and 1600x1200
 * 16-bit colour (65536): 640x480, 800x600, 1024x768 and 1280x1024
-* 24-bit colour (16.7M): 640x480 (currently broken in DOSBox-X)
+* 24-bit colour (16.7M): 640x480
 * 32-bit colour (16.7M + alpha): 640x480, 800x600 and 1024x768
 
 A few enhancements have been made to the emulated S3 Trio64, compared to a real S3 Trio64:
@@ -463,7 +463,7 @@ As such you will be limited to the above video modes with this driver.
 
 NOTE: If you use an older S3 driver you may experience graphical problems (green tint) in 32-bit colour mode.
 These problems may not be completely solved by upgrading to the latest driver.
-The only known solution for now if you used an older driver is to re-install Win95 and use the 2.41.07 driver instead.
+The only known solution for now if you used an older driver is to re-install Win95 and use the 2.11.03 driver instead.
 
 === VESA driver
 These restrictions can be overcome by switching to the link:https://bearwindows.zcm.com.au/vbe9x.htm[Universal VESA/VBE Video Display Driver (VBEMP)].

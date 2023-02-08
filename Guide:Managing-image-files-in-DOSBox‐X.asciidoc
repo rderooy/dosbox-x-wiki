@@ -389,8 +389,8 @@ DOSBox-X supports mounting harddisk images in the following formats:
 * link:https://en.wikipedia.org/wiki/Qcow[QCOW2] - QEMU copy-on-write v2 (`.qcow2`)
 ** No support in DOSBox-X for QCOW2 compression or encryption options
 ** Must always be mounted as a drive number as such: ``imgmount 2 hdd.qcow2``
-* link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (`.vhd`)
-** No support in DOSBox-X for VHD dynamic or encryption options
+* link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (`.vhd`) (aka Virtual PC)
+** No support in DOSBox-X for VHDX or VHD dynamic options
 * Bochs bximage (typically `.img`)
 * NEC PC-98 harddisk images (`.nhd` or `.hdi`)
 
@@ -990,7 +990,7 @@ The QCOW2 harddisk image format has support for Copy-On-Write (COW), compression
 DOSBox-X provides limited support for these images.
 
 * There is no support for creating QCOW2 images in DOSBox-X
-* There is no support for the compression and encryption options
+* There is no support for the newer zstd compression or encryption options
 * Copy-On-Write support needs to be handled manually, outside DOSBox-X
 * Mounting QCOW2 images always requires the use of a drive number
 
@@ -998,9 +998,9 @@ A QCOW2 image can be created with link:https://www.qemu.org/download/[qemu-img] 
 
 [source, console]
 ....
-qemu-img create -f qcow2 hdd.qcow2 2G
+qemu-img create -f qcow2 -o compat=0.10 hdd.qcow2 2G
 ....
-The above command will create a 2GB QCOW2 file named `hdd.qcow2`.
+The above command will create a 2GiB QCOW2 file named `hdd.qcow2`. Due to zlib compression the disk image will be significantly smaller and grow with usage.
 
 Mounting a qcow2 file can be accomplished in DOSBox-X as follows:
 
@@ -1020,6 +1020,31 @@ boot C:
 
 The advantage of the QCOW2 format, is the Copy-On-Write (COW) functionality which allows you to create a base image of for instance Windows 98, and then have different snapshots on top of that with different drivers or applications.
 This saves disk space compared to maintaining multiple full installations, and can prevent windows bit-rot.
+
+== VHD support
+DOSBox-X has limited support for fixed-size VHD (aka Virtual PC) hard disk images. Dynamic sized VHD, or the newer VHDX format, are **not** supported.
+
+DOSBox-X does not provide a way to create VHD image files. One verified working method is to use link:https://www.qemu.org/download/[qemu-img].
+For example to create a 40MiB HDD image:
+
+[source, console]
+....
+qemu-img create -f vpc -o subformat=fixed hdd.vhd 40M
+....
+
+At this point, as the image file will not be partitioned or formatted, it can only be mounted as such:
+
+[source, console]
+....
+imgmount 2 hdd.vhd
+....
+
+Once a VHD file has been partitioned and formatted, it can be mounted just like a RAW MFM image file.
+
+[source, console]
+....
+imgmount C hdd.vhd
+....
 
 == Archiving diskettes
 If you have 3.5" or 5.25" diskettes that you want to convert to image files, there are a multitude of ways to accomplish this, and really out of the scope for this Guide.
