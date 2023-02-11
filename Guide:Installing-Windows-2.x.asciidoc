@@ -111,7 +111,7 @@ timeout=5000
 scaler=none
 
 [config]
-= this prevents Windows 2.1x from complaining that HMA is in use
+; this prevents Windows 2.1x from complaining that HMA is in use
 dos=low
 
 [autoexec]
