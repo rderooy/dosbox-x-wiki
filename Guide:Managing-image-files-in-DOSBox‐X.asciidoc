@@ -404,6 +404,8 @@ This option allows a few common HDD sizes to be created, for less common types y
 DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in RAW MFM sector image format from the DOSBox-X command prompt.
 ``IMGMAKE`` only creates a single primary DOS partition per harddisk image file.
 
+NOTE: ``IMGMAKE`` will create fixed-size VHD image files, if the filename extension is `.vhd`. ``IMGMAKE`` cannot create dynamic VHD image files.
+
 ==== FAT version
 The ``IMGMAKE`` command supports FAT12, FAT16 and FAT32 formatted partitions, and will try to automatically decide which type to use depending on the HDD capacity and the reported DOS version:
 
@@ -986,13 +988,11 @@ NOTE: Unlike traditional DOS RAM disk programs (e.g. `VDISK`, `RAMDRIVE`) this R
 In other words, it will have no effect on available memory for DOS programs.
 
 == QCOW2 support
-The QCOW2 harddisk image format has support for Copy-On-Write (COW), compression and encryption.
-DOSBox-X provides limited support for these images.
+DOSBox-X provides limited support for QCOW2 disk images.
 
 * There is no support for creating QCOW2 images in DOSBox-X
 * There is no support for the newer zstd compression or encryption options
 * Copy-On-Write support needs to be handled manually, outside DOSBox-X
-* Mounting QCOW2 images always requires the use of a drive number
 
 A QCOW2 image can be created with link:https://www.qemu.org/download/[qemu-img] as such:
 
@@ -1002,44 +1002,55 @@ qemu-img create -f qcow2 -o compat=0.10 hdd.qcow2 2G
 ....
 The above command will create a 2GiB QCOW2 file named `hdd.qcow2`. Due to zlib compression the disk image will be significantly smaller and grow with usage.
 
-Mounting a qcow2 file can be accomplished in DOSBox-X as follows:
+Mounting an empty qcow2 image file can be accomplished in DOSBox-X as follows:
 
 [source, console]
 ....
 imgmount 2 hdd.qcow2
 ....
-Due to the need to mount QCOW2 images with a drive number, the content of a qcow2 file cannot be accessed from the DOSBox-X integrated DOS, but only after booting a guest OS such as MS-DOS or Windows 9x.
 
-Once a qcow2 file has been partitioned and formatted and made bootable, you can boot from it as such:
+At this point, the image file will have to be partitioned or formatted, which can be done by booting from a DOS floppy disk:
+
+Once a qcow2 image file has been partitioned and formatted, it can be mounted on a drive-letter as such:
 
 [source, console]
 ....
-imgmount 2 hdd.qcow2
-boot C:
+imgmount C hdd.qcow2
 ....
 
 The advantage of the QCOW2 format, is the Copy-On-Write (COW) functionality which allows you to create a base image of for instance Windows 98, and then have different snapshots on top of that with different drivers or applications.
-This saves disk space compared to maintaining multiple full installations, and can prevent windows bit-rot.
+This saves disk space compared to maintaining multiple full installations, and can prevent Windows bit-rot.
 
 == VHD support
-DOSBox-X has limited support for fixed-size VHD (aka Virtual PC) hard disk images. Dynamic sized VHD, or the newer VHDX format, are **not** supported.
+DOSBox-X provides limited support for VHD (aka Virtual PC) disk images. There is no support for the newer VHDX format.
 
-DOSBox-X does not provide a way to create VHD image files. One verified working method is to use link:https://www.qemu.org/download/[qemu-img].
-For example to create a 40MiB HDD image:
+There are various ways to create VHD images. Either external tools can be used, or the integrated `IMGMAKE` utility can be used.
+
+For example to create a 40 MiB VHD image using link:https://www.qemu.org/download/[qemu-img]:
 
 [source, console]
 ....
-qemu-img create -f vpc -o subformat=fixed hdd.vhd 40M
+qemu-img create -f vpc hdd.vhd 40M
 ....
 
-At this point, as the image file will not be partitioned or formatted, it can only be mounted as such:
+Or to create it with `IMGMAKE`, simply ensure the filename extension is `.vhd`. e.g.,
+
+[source, console]
+....
+IMGMAKE -t hd -size 40 hdd.vhd
+....
+
+The advantage of using `IMGMAKE` is that the created image file will be partitioned and formatted and as such is ready to be mounted.
+The disadvantage is that only fixed size VHD images can be created this way. If you want dynamic images, another method will have to be used.
+
+If you have a VHD image file that is not partitioned or formatted, it will have to be mounted on a drive-number, after which you can boot from a DOS floppy disk to partition and format the image:
 
 [source, console]
 ....
 imgmount 2 hdd.vhd
 ....
 
-Once a VHD file has been partitioned and formatted, it can be mounted just like a RAW MFM image file.
+Once a VHD image file has been partitioned and formatted, it can be mounted on a drive-letter as such:
 
 [source, console]
 ....
@@ -1085,7 +1096,5 @@ Some limitations of this support:
 == Outstanding issues with this page
 
 * Mention Bochs bximage support in more detail. Does it support flat, sparse, growing formats?
-* It seems from the sourcecode that ``IMGMAKE`` can create VHD images if you use the .vhd extension, but this does not work in practice?
-* imgmount of QCOW2 images only works in combination with ``-nofs``, which is rather restrictive. Can this be easily solved?
 * How about IDE tertiary through octernary controllers in dosbox-x config. Do the device number and/or -ide options continue counting up to device number 18 and ``-ide 8s``?
 * PC-98 descriptions need checking as I have no experience with them.
