@@ -743,7 +743,7 @@ hdiutil detach /dev/disk6
 ....
 
 == CD-ROM or DVD images
-DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in `.ISO`, `.CUE`+`.BIN` or `.MDF` image format.
+DOSbox-X supports CD-ROM or DVD image files with the ISO-9660 (or High-Sierra) filesystem in `.ISO`, `.CUE`+`.BIN`, `.MDF` or `.CHD` image format.
 
 By default, ISO-9660 Level 1 is used, which is limited to traditional DOS 8.3 character filenames.
 When emulating DOS version 7.0 or later (or `lfn=true` is set in the DOSBox-X config file), ISO-9660 Level 2 is supported with up to 31 character filenames.
@@ -755,7 +755,7 @@ Starting with DOSBox-X 2022.08.0 there is also support for:
 - UDF filesystem, more commonly used for DVD media (introduced for Windows 98)
 
 `.ISO` is the easiest format to work with, as long as there is only a single data track on the CD or DVD.
-If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audio) the use of `.CUE`+`.BIN` or `.MDF` is required.
+If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audio) the use of `.CUE`+`.BIN`, `.MDF` or `.CHD` is required.
 
 === Copy protected media
 DOSBox-X has limited support for copy protected CD-ROMs.
@@ -780,7 +780,7 @@ imgmount D: cdrom.iso
 imgmount D: cdrom.iso -t iso
 imgmount D: cdrom.iso -t cdrom
 ....
-NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when the extension is not `.ISO`, `.CUE` or `.MDF`.
+NOTE: The ``-t iso`` or ``-t cdrom`` parameter is only needed with DOSBox-X when the extension is not `.ISO`, `.CUE`, `.MDF` or `.CHD`.
 
 NOTE: If the names of your CD/DVD images contain characters of foreign languages such as Japanese, please make sure that the current DOS code page matches the language you use before mounting the images. If you decide to put such commands in the [autoexec] section of the config file, please also make sure the encoding of your config file matches your language when you save the config file.
 
@@ -898,11 +898,11 @@ NOTE: The second command is equivalent to ``imgmount a -el-torito d`` or ``imgmo
 NOTE: DOSBox-X supports the ``-L`` parameter for the ``BOOT`` command for backward compatibility with vanilla DOSBox, or other forks, but the parameter is not required with DOSBox-X to boot from a drive letter.
 
 === Using CD or DVD images in Linux
-`.ISO` images are fully supported by standard Linux tools, but `.CUE`+`.BIN` and `.MDF` are not.
+`.ISO` images are fully supported by standard Linux tools, but `.CUE`+`.BIN`, `.MDF` and `.CHD` are not.
 
 ==== Gnome Disk Image Mounter
 If you're using the Gnome desktop environment, you can open `.ISO` disks with the "Disk Image Mounter". Simply right-click on the file, and select 'Open with Disk Image Mounter' and the file will be mounted in the Gnome file manager.
-This method will not work for `.CUE`+`.BIN` or `MDF` files.
+This method will not work for `.CUE`+`.BIN`, `.MDF` or `.CHD` files.
 
 Disks can be unmounted from the Gnome file manager by clicking the unmount button next to the volume name.
 
@@ -918,7 +918,7 @@ link:https://cdemu.sourceforge.io/[CDEmu] is a CD-ROM emulator for Linux. It sup
 
 ==== Mounting a ISO image from the Linux shell
 The more traditional Linux method of mounting diskette image files from a Linux terminal.
-This method will not work for `.CUE`+`.BIN` or `.MDF` files.
+This method will not work for `.CUE`+`.BIN`, `.MDF` or `.CHD` files.
 This method requires `sudo` access.
 
 [source, console]
