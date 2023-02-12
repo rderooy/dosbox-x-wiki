@@ -387,10 +387,9 @@ DOSBox-X supports mounting harddisk images in the following formats:
 
 * link:https://en.wikipedia.org/wiki/IMG_(file_format)[RAW MFM sector image format] (typically `.img`)
 * link:https://en.wikipedia.org/wiki/Qcow[QCOW2] - QEMU copy-on-write v2 (`.qcow2`)
-** No support in DOSBox-X for QCOW2 compression or encryption options
-** Must always be mounted as a drive number as such: ``imgmount 2 hdd.qcow2``
+** No support in DOSBox-X for QCOW2 zstd compression or encryption options
 * link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (`.vhd`) (aka Virtual PC)
-** No support in DOSBox-X for VHDX or VHD dynamic options
+** No support in DOSBox-X for the newer VHDX format
 * Bochs bximage (typically `.img`)
 * NEC PC-98 harddisk images (`.nhd` or `.hdi`)
 
