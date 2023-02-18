@@ -80,14 +80,6 @@ Copy the above config and save it as ``win98.conf``
 NOTE: You can increase the allocated RAM up to the Windows 98 maximum of 512MB by setting ``memsize=512``.
 Larger values may be possible with tweaks but are not covered here.
 
-== General installation Notes
-
-* Some parts of the installation can take a considerable amount of time.
-You may be able to speed this up considerably (depending on the host CPU) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
-This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
-Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
-* When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
-
 == Dynamic vs Normal core
 Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 98.
 
@@ -97,11 +89,33 @@ But after the installation is finished you should be able to change to ``core=dy
 
 Should you run into problems such as application crashes or a Windows 98 blue-screen that cannot be reproduced with ``core=normal``,  please report the problem on the DOSBox-X Git link:https://github.com/joncampbell123/dosbox-x/issues[issues] page.
 
+== Turbo mode
+Some parts of the installation, but also starting Windows 98 can take a considerable amount of time.
+
+You may be able to speed this up considerably (depending on the host CPU) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
+This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
+
+By default, the moment you press a key on the keyboard, turbo mode will disengage.
+
+WARNING: Using the mouse not disengage turbo mode, and double-clicks will be almost impossible to achieve as long as turbo mode is active.
+
+You may also want to enable turbo mode by default to allow Windows 98 to startup quicker by merging the following settings into your DOSBox-X config file.
+
+[source, ini]
+....
+[cpu]
+turbo = true
+....
+
+NOTE: This will cause some audio distortion on Windows 98 startup, if you have the Windows startup sound enabled.
+
 == Creating a Harddisk image
 
 NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu and select "Create blank disk image…​".
 This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
+
+NOTE: When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 
 Some quick rules about IMGMAKE (for more detail, see: link:Guide%3AManaging-image-files-in-DOSBox%E2%80%90X[Guide: Managing image files in DOSBox-X]):
 

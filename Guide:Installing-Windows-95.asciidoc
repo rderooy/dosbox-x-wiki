@@ -96,13 +96,8 @@ Larger values may be possible with tweaks but are not covered here.
 
 == General installation Notes
 
-* Some parts of the installation can take a considerable amount of time.
-You may be able to speed this up considerably (depending on the host CPU) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
-This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
-Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
-* When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 * If you get a prompt stating that C:\WINDOWS already exists, ignore it, and continue the installation.
-* During the installation it may ask you if you have a CD-ROM, Network card or sound card that you want it to scan for. If you have NE2000 enabled in your DOSBox-X config file, you may want to check the Network adapter check box. Your DOSBox-X CD-ROM and Sound Card will be detected regardless if you check its box or not.
+* During the installation you may be asked if you have a CD-ROM, Network card or sound card that you want it to scan for. If you have NE2000 enabled in your DOSBox-X config file, you may want to check the Network adapter check box. Your DOSBox-X CD-ROM and Sound Card will be detected regardless if you check its box or not.
 * In case you installed Windows 95 OSR2.5 you may have noticed that you did not get IE4 and the Active Desktop features. This is because this is an optional installation. On the CD, simply run \WIN95\IE4SETUP.EXE to install it. While there is no real advantage to either feature, installing it does bring some new and updated libraries such as MSVCRT.DLL and COMCTL32.DLL that some programs need.
 
 == Dynamic vs Normal core
@@ -116,11 +111,33 @@ Should you run into problems such as application crashes or a Windows 95 blue-sc
 
 One known issue is that opening a DOS window in Windows 95 will cause a crash when not using ``core=normal``.
 
+== Turbo mode
+Some parts of the installation, but also starting Windows 95 can take a considerable amount of time.
+
+You may be able to speed this up considerably (depending on the host CPU) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
+This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
+
+By default, the moment you press a key on the keyboard, turbo mode will disengage.
+
+WARNING: Using the mouse not disengage turbo mode, and double-clicks will be almost impossible to achieve as long as turbo mode is active.
+
+You may also want to enable turbo mode by default to allow Windows 95 to startup quicker by merging the following settings into your DOSBox-X config file.
+
+[source, ini]
+....
+[cpu]
+turbo = true
+....
+
+NOTE: This will cause some audio distortion on Windows 95 startup, if you have the Windows startup sound enabled.
+
 == Creating a Harddisk image
 
 NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu and select "Create blank disk image…​".
 This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
+
+NOTE: When creating your HDD image with ``IMGMAKE``, instead of specifying a custom size, you can choose a pre-defined template. The pre-defined HDD templates can be seen by running ``IMGMAKE`` without arguments.
 
 Some quick rules about IMGMAKE (for more detail, see: link:Guide%3AManaging-image-files-in-DOSBox%E2%80%90X[Guide: Managing image files in DOSBox-X]):
 
