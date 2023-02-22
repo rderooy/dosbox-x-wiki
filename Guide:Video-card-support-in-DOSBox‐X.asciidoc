@@ -614,7 +614,7 @@ Links:
 
 * link:https://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
 
-==== S3 Vision964
+===== S3 Vision964
 Introduced in early 1994.
 Apart from faster dual-ported video memory and larger memory sizes, identical to the Vision864.
 
@@ -638,7 +638,7 @@ Links:
 
 * link:https://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
 
-==== S3 Vision968
+===== S3 Vision968
 Introduced in April 1995.
 Apart from faster dual-ported video memory and larger memory sizes, identical to the Vision868.
 
