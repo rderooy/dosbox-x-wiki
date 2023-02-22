@@ -618,7 +618,7 @@ Links:
 Introduced in early 1994.
 Apart from faster dual-ported video memory and larger memory sizes, identical to the Vision864.
 
-Available in 2, 4 and 8MB video memory configurations.
+Available in 2 and 4 MB video memory configurations.
 
 This mode can be set using ``machine=svga_s3vision964`` in your DOSBox-X config file.
 
