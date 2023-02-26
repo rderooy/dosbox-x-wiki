@@ -323,15 +323,15 @@ You can optionally create a shortcut on your desktop to start Windows ME directl
 Once Windows ME is installed, here is some additional software you may want to install or update:
 
 * Install Microsoft .NET framework version 1.0, 1.1 and 2.0
-* Install Visual C++ 2005 runtime
-* Update to Internet Explorer 6.0 (rarely needed)
-* Update to DirectX 9.0c
-* Install Windows Installer 2.0
-* Install WinG 1.0 (needed by just a few games, and those games typically include it)
-* Install GDI+ redistributable
+* Install Microsoft Visual C++ 2005 runtime
+* Update to Microsoft Internet Explorer 6.0 (rarely needed)
+* Update to Microsoft DirectX 9.0c
+* Install Microsoft Windows Installer 2.0
+* Install Microsoft WinG 1.0 (needed by just a few games, and those games typically include it)
+* Install Microsoft GDI+ redistributable
 * Install Adobe Acrobat Reader 6.0
 * Install/Update to Adobe Flash Player 9.0.47.0
-* Install Apple Quicktime 6.5.2
+* Install Apple QuickTime 6.5.2
 
 == Mounting CD or Diskette images
 DOSBox-X supports mounting CD and diskette (floppy) images, and making those available to an OS booted in DOSBox-X.

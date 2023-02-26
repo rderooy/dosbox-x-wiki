@@ -306,10 +306,10 @@ You can optionally create a shortcut on your desktop to start Windows 3.1x direc
 Once Windows 3.1x is installed, here is some additional software you may want to install or update:
 
 * Updated Video and Audio drivers
-* Win32s 1.30c
-* Video for Windows 1.1e
-* WinG API 1.0
-* QuickTime 2.1.2
+* Microsoft Win32s 1.30c
+* Microsoft Video for Windows 1.1e
+* Microsoft WinG API 1.0
+* Apple QuickTime 2.1.2
 * Adobe Acrobat Reader 3.01
 * Adobe Type Manager 3.02
 
