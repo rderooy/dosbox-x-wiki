@@ -217,7 +217,7 @@ WARNING: The `allow more than 640kb base memory` configuration option allows mor
 
 ==== Composite graphics mode:
 One of the features, at least of the IBM CGA adapters, is that they support two types of monitors.
-Either a digital RGBI monitor, or an analogue composite monitor (or NTSC TV) connected via RCA.
+Either a digital RGBI (RGB with Intensity) monitor, or an analogue composite monitor (or NTSC TV) connected via RCA.
 
 The composite connection suffers from a lower quality picture with colour bleeding.
 But it also allows for something called artefact colours, which was a way to have more colours.
