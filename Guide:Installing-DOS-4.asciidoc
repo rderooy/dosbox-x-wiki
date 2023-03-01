@@ -7,7 +7,7 @@ Back to the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Instal
 toc::[]
 
 == Overview
-DOS version 4.00 was the first release where IBM had the development lead. It returned to Microsoft for version 5.00.
+DOS version 4.00 is sometimes incorrectly referred to as the first DOS release where IBM had the development lead. This was actually not accurate as that was DOS 3.3. IBM PC DOS 4.0 when released got a bad rap in the press over bugs, compatibility with non-IBM PCs and memory usage. While some of these were valid points, the original DOS 4.0 release by IBM was never claimed to be compatible with non-IBM machines.
 
 === Key new features of DOS 4.00
 
@@ -20,7 +20,7 @@ DOS version 4.00 was the first release where IBM had the development lead. It re
 * National Language Support (NLS) enhancements
 * GRAPHICS utility upgraded with EGA/VGA support
 
-=== This applies to
+=== These instructions apply to
 
 * Microsoft MS-DOS 4.00
 ** First version to include HIMEM.SYS XMS 2.x driver with support for up to 16MB RAM
