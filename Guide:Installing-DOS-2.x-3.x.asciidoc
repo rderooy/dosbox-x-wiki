@@ -31,6 +31,9 @@ toc::[]
 ** First version to support a phantom B: drive
 ** First version to include REPLACE.EXE, XCOPY.EXE
 
+=== Key new features of DOS 3.21
+** Bugfix release. Fixes the date not updating after midnight.
+
 === Key new features of DOS 3.30
 ** First version to support the MBR partitioning scheme with primary, extended and logical partitions
 ** First version to support HDDs up to 504MB (partitions still limited to 32MB)
