@@ -614,7 +614,7 @@ The rest of the NetWare client files are typically not needed for the purpose of
 
 *External links*
 
-* link:https://www.novell.com/coolsolutions/tools/13555.html[Novell NetWare DOS/Windows Client v1.21]
+* link:http://web.archive.org/web/19961221111819/http://support.novell.com/Ftp/Updates/nwos/vlm121/Date0.html[Novell NetWare DOS/Windows Client v1.21]
 
 Once you have downloaded the files, you need to extract them.
 The VLM121*.EXE files are individual self-extracting DOS ARJ archives.
