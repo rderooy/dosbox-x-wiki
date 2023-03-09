@@ -33,7 +33,7 @@ A special runtime edition was also included with some applications.
 Naming of Windows 2.x versions can be confusing.
 Versions ending in */386* are meant for 386 class computers, while the *Windows 2.03* release could also run on 8086/8088 and 286 class computers.
 
-But with version 2.10 they appended */286* to the version because ``HIMEM.SYS`` was included which requires at least a 286 class computer.
+But with version 2.10 they appended */286* to the version because ``HIMEM.SYS`` was included, which requires at least a 286 class computer.
 
 Despite the */286* or */386* suffixes, all versions could be run on older computers.
 For the */286* editions this meant not using ``HIMEM.SYS``, while for the */386* versions it meant starting windows with ``win86.com`` instead of ``win386.exe``.
@@ -59,10 +59,7 @@ Windows 2.x has problems starting if the reported DOS version is 5.0 or higher.
 Therefore, it is necessary to set the reported DOS version to something like 4.0.
 
 As Windows/386 2.01 was the first Windows 2.x release and meant only for Compaq 386 computers, it has a very small selection of drivers, and for instance no driver for a PS/2 mouse.
-Therefore, if you want to run this version in DOSBox-X, you should enable ``serial1=serialmouse`` support.
-
-If given the option during installation, do not select the "IBM Personal Systems/2 Mouse", as it seems to cause Windows to hang at the title screen.
-Instead, select the "Microsoft Mouse connected to PS/2 Mouse Port".
+Therefore, if you want to run this version in DOSBox-X with a mouse, you should either enable ``serial1=serialmouse`` support (preferred), or you need to use the PS/2 mouse driver from a slightly newer Windows 2.x release.
 
 Windows 2.1x editions will complain if the High Memory Area (HMA) is used.
 This can be resolved by setting ``DOS=LOW`` in the [config] section of the DOSBox-X config file.
@@ -71,7 +68,7 @@ All Windows/386 editions install by default into ``C:\WIN386`` instead of ``C:\W
 And the command to start Windows/386 is ``win386.exe``, instead of the typical ``win.com`` of most other Windows versions at the time.
 Windows/386 also has a ``win86.com`` executable, which is effectively a renamed ``win.com``, and this makes it possible to run Windows/386 on 8086 and 286 computers.
 
-IMPORTANT: Unfortunately, at this moment only *Windows 2.03* works in the integrated DOS that DOSBox-X provides.
+IMPORTANT: Currently only *Windows 2.03* works in the integrated DOS that DOSBox-X provides.
 All other Windows/286 and Windows/386 editions need to be run from a real DOS in DOSBox-X.
 
 === Useful links
@@ -198,16 +195,13 @@ See the link:#Windows-2.x-setup-program[Windows 2.x setup program] section below
 This method is needed for most Windows 2.x versions and requires that you create a DOS HDD image.
 
 But it brings with it a bit of added inconvenience.
-For instance, you will need to do your own DOS memory management and load DOS drivers for CD-ROM access.
-You can also not mount a host directory in DOSBox-X when you boot a disk image.
-Even host directories that you mounted prior to booting the disk image will become unavailable.
-Everything needs to be done using IMAGE files.
+For instance, you will need to do your own DOS memory management, and if needed, load DOS drivers for CD-ROM access.
 
 The first step is to create a DOS HDD image, for which you can follow the link:Guide%3ADOS-Installation-in-DOSBox‐X[PC DOS and MS-DOS Installation Guide].
 It is recommended to use at least DOS 3.1, as it is compatible with all Windows 2.x releases.
 When using DOS 5.0 or higher however, it will be necessary to use link:https://web.csulb.edu/~murdock/setver.html[SETVER] to make Windows 2.x think you're using and older DOS version like version 4.0.
 
-Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your INSTALL folder into your DOS HDD image, together with any drivers and add-ons you might need (preferably already unzipped, such that you don't need to do that in DOS or Windows 3.x, as they lack support for that by default).
+Once you have a DOS HDD image, temporarily mount it in DOSBox-X to transfer your INSTALL folder into your DOS HDD image, together with any drivers and add-ons you might need (preferably already unzipped, such that you don't need to do that in DOS or Windows 2.x, as they lack support for that by default).
 
 Something like:
 
@@ -310,8 +304,6 @@ image::images/Windows:Windows_2.03_SETUP_06.png[Windows 2.03 SETUP Keyboard]
 *Mouse selection*
 
 Select "**Microsoft Mouse connected to PS/2 Mouse Port**" and press Enter to continue.
-
-NOTE: Do not use the **IBM Personal Systems/2 Mouse** option, as it seems to cause Windows to hang at the title screen.
 
 NOTE: If installing Windows/386 2.01, you will need to select the **Microsoft serial mouse** instead and activate serial mouse support in your dosbox-x config file.
 
