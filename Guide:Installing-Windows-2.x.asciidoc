@@ -116,11 +116,10 @@ dos=low
 
 Copy the above config and save it as *win2x.conf*
 
-== Method 1 - Installing Windows 2.03 into a mounted folder
-This method will *only* work for Windows 2.03.
-It will not work for any other Windows 2.x version, including Windows/386 2.03.
+== Method 1 - Installing Windows 2.x into a mounted folder
+This method will work for all Windows 2.x versions, but Windows/386 versions can only be run in 8086 compatibility mode.
 
-For other Windows versions, please see Method 2 below.
+For running Windows/386 in 386 mode, it is necessary to use method 2 below.
 
 === Preparing for installation
 The installation will be into a mounted folder, and Windows 2.03 will run from the integrated DOS that DOSBox-X provides.
@@ -192,7 +191,7 @@ The Windows installation will now take place.
 See the link:#Windows-2.x-setup-program[Windows 2.x setup program] section below.
 
 == Method 2 - Installing in real DOS
-This method is needed for most Windows 2.x versions and requires that you create a DOS HDD image.
+This method is needed to be able to run Windows/386 editions in 386 mode, and requires that you create a DOS HDD image.
 
 But it brings with it a bit of added inconvenience.
 For instance, you will need to do your own DOS memory management, and if needed, load DOS drivers for CD-ROM access.
@@ -395,8 +394,11 @@ And then edit your ``win2x.conf`` config file and add the following lines into t
 @ECHO OFF
 MOUNT C /home/myuser/winroot
 C:
-IF EXIST C:\WINDOWS\WIN.COM GOTO WINDOWS
-IF EXIST C:\WIN386\WIN386.EXE GOTO WIN386
+IF EXIST C:\WINDOWS\WIN.COM     GOTO WINDOWS
+IF EXIST C:\WIN386\HIMEM.SYS    GOTO WIN386
+IF EXIST C:\WIN386\CVTPAINT.EXE GOTO WIN386
+IF EXIST C:\WIN386\WIN86.COM    GOTO WIN386.201
+ECHO No Windows installation found
 GOTO END
 
 :WINDOWS
@@ -405,10 +407,17 @@ SET PATH=%PATH%;C:\WINDOWS;
 C:\WINDOWS\WIN.COM
 GOTO END
 
-:WIN386
-ECHO Starting Windows/386 2.x
+:WIN386.201
+ECHO Starting Windows/386 2.01 in 8086 mode with serial mouse
+CONFIG -SET SERIAL SERIAL1=mouse
 SET PATH=%PATH%;C:\WIN386
-C:\WIN386\WIN386.EXE
+C:\WIN386\WIN86.COM
+GOTO END
+
+:WIN386
+ECHO Starting Windows/386 2.x in 8086 mode
+SET PATH=%PATH%;C:\WIN386
+C:\WIN386\WIN86.COM
 GOTO END
 
 :END
