@@ -47,7 +47,7 @@ And likewise, you will be limited to EGA graphics.
 * link:https://toastytech.com/guis/win1x2x.html[Overview of Windows 1.x/2.x Applications]
 
 == DOSBox-X config file
-It is recommended that you create a custom DOSBox-X config file for running Windows 1.0x
+It is recommended that you create a custom DOSBox-X config file for running Windows 1.0x. e.g.:
 
 [source, ini]
 ....
@@ -60,11 +60,6 @@ title=Windows 1.0x
 [dos]
 ver=3.4
 
-[serial]
-# Comment out the line below if you have the special OEM Windows 1.04
-# release from the IBM PS/2 Collegiate Kit, which supports PS/2 mouse.
-serial1=serialmouse
-
 [parallel]
 parallel1=printer
 
@@ -76,9 +71,35 @@ timeout=5000
 scaler=none
 
 [autoexec]
+@ECHO OFF
+MOUNT C /home/users/myuser/winroot
+C:
+SET PATH=%PATH%;C:\WINDOWS;
+IF EXIST C:\WINDOWS\IBMMOUSE.DRV GOTO WINDOWS.IBM
+IF EXIST C:\WINDOWS\WIN.COM      GOTO WINDOWS
+ECHO No Windows installation found
+GOTO END
+
+:WINDOWS
+ECHO Starting Windows 1.0x with serial mouse
+CONFIG -SET SERIAL SERIAL1=serialmouse
+C:\WINDOWS\WIN.COM
+GOTO END
+
+:WINDOWS.IBM
+ECHO Starting Windows 1.04 IBM OEM Release
+C:\WINDOWS\WIN.COM
+GOTO END
+
+:END
+EXIT
 ....
 
-Copy the above config and save it as *win1x.conf*
+Copy the above config and save it as *win1x.conf*.
+If you don't want DOSBox-X to close when exiting Windows 1.0x, remove the ``EXIT`` command.
+
+Obviously adjust the `MOUNT` command to mount an appropriate path for your host system.
+This path will become the C: drive for the Windows 1.0x installation.
 
 == Preparing for installation
 The installation will be into a mounted folder, and Windows 1.0x will run from the integrated DOS that DOSBox-X provides.
@@ -294,21 +315,6 @@ image::images/Windows:Windows_1.01_SETUP_14.png[Windows 1.01 SETUP finished]
 The setup program is now finished, and you're ready to start Windows 1.0x.
 
 But first type ``EXIT`` to close DOSBox-X.
-
-And then edit your ``win1x.conf`` config file and add the following lines into the ``[autoexec]`` section at the end of the file:
-
-[source, shell]
-....
-@ECHO OFF
-MOUNT C /home/myuser/winroot
-C:
-SET PATH=%PATH%;C:\WINDOWS;
-C:\WINDOWS\WIN.COM
-EXIT
-....
-
-Adjust the path for mounting the C: drive as needed.
-If you don't want DOSBox-X to close when exiting Windows 1.0x, remove the ``EXIT`` command.
 
 == Starting Windows 1.0x after installation
 After the installation is finished, you can start Windows 1.0x from the command-prompt with the following command:
