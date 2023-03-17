@@ -35,7 +35,7 @@ In actuality, it also needs at least DOS 2.0 (but lower than 4.0), and the two d
 It only supports up to 640KB base memory (no support for EMS/XMS/UMB memory).
 
 The retail release of Windows 1.04 adds support for the IBM PS/2 but did not add support for the IBM PS/2 Mouse, or the newer VGA, MCGA or 8514/A video adapters.
-IBM distributed a special OEM version of Windows 1.04 as part of the "**IBM PS/2 Collegiate Kit**", which does have support for those features.
+IBM distributed a special OEM version of Windows 1.04 as part of "Personal Publishing System" and "Collegiate Kit" bundles, which does have support for those features.
 
 Unless this special IBM OEM version of Windows 1.04 is used, you must enable the serial mouse emulation in DOSBox-X and tell Windows during installation to configure a serial mouse.
 And likewise, you will be limited to EGA graphics.
@@ -154,16 +154,16 @@ This assumes that the ``dosbox-x`` program is in your path and ``win1x.conf`` is
 ....
 dosbox-x -conf win1x.conf
 ....
-You now need to mount your new folder as the C: drive in DOSBox-X, and the "INSTALL" directory on A: and start the installation.
+You now need to mount your new folder as the C: drive in DOSBox-X, and use `SUBST` to make the contents of the "C:\INSTALL" directory available on A: and start the installation.
 
 [source, console]
 ....
-MOUNT A /home/myuser/winroot/INSTALL
 MOUNT C /home/myuser/winroot
+SUBST A C:\INSTALL
 A:
 SETUP
 ....
-Adjust the path for mounting the A: and C: drive as needed.
+Adjust the path for mounting the C: drive as needed.
 
 NOTE: If your path has spaces, you need to enclose it in quotes. e.g., ``MOUNT C "C:\Users\John Doe\winroot"``
 
@@ -328,10 +328,18 @@ You can optionally create a shortcut on your desktop to start Windows 1.0x direc
 
 image::images/Windows:Windows_1.01.png[Windows 1.01 MS-DOS Executive]
 
-== Mouse integration
-When running Windows in DOSBox-X the integration is not seamless.
-You need to capture the mouse and again release it when you want to leave the DOSBox-X window.
-This is because Windows uses its own driver instead of using the integrated mouse support that DOSBox-X provides.
+== Video
+By default, the best possible video option that DOSBox-X can offer is:
+- VGA 640x480 in 16 colours for the IBM OEM release of Windows 1.04
+- EGA 640x350 in 16 colours for all other Windows 1.0x releases
+
+While there are no Windows 1.0x drivers for any of the SVGA adapters that DOSBox-X emulates, there is a [patch available](http://www.seasip.info/DOS/Win1/vga.html) that can convert the Windows 1.0x EGA driver to VESA 800x600 in 16 colours.
+But note that this does not work with the IBM OEM release of Windows 1.04, as that release does not include the EGA drivers.
+
+== Mouse
+Windows 1.0x does not use the DOS mouse driver that DOSBox-X provides.
+Instead it uses its own mouse driver, which must be selected during Windows `SETUP`.
+This has the effect that by default you will need to click in the DOSBox window to lock the mouse to the window area.
 
 There is however experimental support in DOSBox-X for such seamless integration.
 To get this working take the following steps:

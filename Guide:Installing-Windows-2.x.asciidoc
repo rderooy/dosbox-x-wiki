@@ -12,7 +12,7 @@ toc::[]
 === Editions this applies to
 
 * *Windows/386 2.01* (OEM release)
-** Only meant for Compaq 386 computers.
+** Only meant for early Compaq 386 computers.
 ** Introduces 386 extensions (protected mode).
 ** LIM EMS 4.0 support.
 ** Supplies EMS emulation.
@@ -30,13 +30,17 @@ Windows 2.x was available in both Retail and OEM editions, for shipping with com
 A special runtime edition was also included with some applications.
 
 === Naming
-Naming of Windows 2.x versions can be confusing.
-Versions ending in */386* are meant for 386 class computers, while the *Windows 2.03* release could also run on 8086/8088 and 286 class computers.
+Naming of Windows 2.x editions can be confusing.
 
-But with version 2.10 they appended */286* to the version because ``HIMEM.SYS`` was included, which requires at least a 286 class computer.
+- Editions ending in */286* were marketed for 286 (AT) class computers
+- Editions ending in */386* were marketed for 386 class computers
+- Editions without either designation were primarily meant for 8086/8088 (XT) class computers
 
-Despite the */286* or */386* suffixes, all versions could be run on older computers.
-For the */286* editions this meant not using ``HIMEM.SYS``, while for the */386* versions it meant starting windows with ``win86.com`` instead of ``win386.exe``.
+However, in reality */286* branded versions can also be used on 8086/8088 systems, as the only 286 specific addition was the bundled `HIMEM.SYS` driver to allow access to the High Memory Area (HMA) of 286 (or later) systems.
+In addition, it can also be used on 386 class systems, although without benefiting from the 386 CPU enhancements.
+
+Likewise, the */386* branded versions can also be used on 8086/8088 or 286 systems, by starting Windows using `WIN86.COM` instead of `WIN386.EXE`.
+Although without benefiting from the 386 CPU specific enhancements.
 
 === Limitations
 
@@ -52,24 +56,24 @@ For the */286* editions this meant not using ``HIMEM.SYS``, while for the */386*
 |Windows/386 2.11|386      |8086/8088|3.10|Yes
 |===
 
-* At least 512KB RAM was required
+* At least 512KB RAM is required
 * Officially requires an HDD
 
 Windows 2.x has problems starting if the reported DOS version is 5.0 or higher.
 Therefore, it is necessary to set the reported DOS version to something like 4.0.
 
-As Windows/386 2.01 was the first Windows 2.x release and meant only for Compaq 386 computers, it has a very small selection of drivers, and for instance no driver for a PS/2 mouse.
+As Windows/386 2.01 was the first Windows 2.x release and meant only for early Compaq 386 computers, it has a very small selection of drivers, and for instance no driver for a PS/2 mouse.
 Therefore, if you want to run this version in DOSBox-X with a mouse, you should either enable ``serial1=serialmouse`` support (preferred), or you need to use the PS/2 mouse driver from a slightly newer Windows 2.x release.
 
 Windows 2.1x editions will complain if the High Memory Area (HMA) is used.
-This can be resolved by setting ``DOS=LOW`` in the [config] section of the DOSBox-X config file.
+This can be resolved by setting ``DOS=LOW`` in the [config] section of the DOSBox-X config file, or when booting real DOS by setting the same setting in `CONFIG.SYS`.
 
 All Windows/386 editions install by default into ``C:\WIN386`` instead of ``C:\WINDOWS`` as other Windows versions normally do.
 And the command to start Windows/386 is ``win386.exe``, instead of the typical ``win.com`` of most other Windows versions at the time.
 Windows/386 also has a ``win86.com`` executable, which is effectively a renamed ``win.com``, and this makes it possible to run Windows/386 on 8086 and 286 computers.
 
-IMPORTANT: Currently only *Windows 2.03* works in the integrated DOS that DOSBox-X provides.
-All other Windows/286 and Windows/386 editions need to be run from a real DOS in DOSBox-X.
+IMPORTANT: Currently DOSBox-X is only able to start Windows 2.x in 8086 compatibility mode from the integrated DOS.
+To make use of the 386 enhancements, it is necessary to boot real DOS in DOSBox-X.
 
 === Useful links
 
@@ -108,7 +112,6 @@ timeout=5000
 scaler=none
 
 [config]
-; this prevents Windows 2.1x from complaining that HMA is in use
 dos=low
 
 [autoexec]
@@ -122,10 +125,9 @@ This method will work for all Windows 2.x versions, but Windows/386 versions can
 For running Windows/386 in 386 mode, it is necessary to use method 2 below.
 
 === Preparing for installation
-The installation will be into a mounted folder, and Windows 2.03 will run from the integrated DOS that DOSBox-X provides.
-You can optionally install real DOS into DOSBox-X and install Windows 2.03 in that, but there is no known advantage to doing so.
+The installation will be into a mounted folder, and Windows 2.x will run from the integrated DOS that DOSBox-X provides.
 
-Start by creating a directory on your system that you're going to use (mount) as your Windows 2.03 C: drive.
+Start by creating a directory on your system that you're going to use (mount) as your Windows 2.x C: drive.
 Valid examples:
 
 * For Windows hosts
@@ -135,7 +137,7 @@ Valid examples:
 ** /home/myuser/winroot
 ** /home/myuser/windows/win2x
 
-Note: For Windows users, do *NOT* mount the root of your C: drive as the DOSBox-X C: drive! (e.g., ``MOUNT C: C:\`` should NOT be done)
+Note: For users using Windows as their host OS, do *NOT* mount the root of your C: drive as the DOSBox-X C: drive! (e.g., ``MOUNT C: C:\`` should NOT be done)
 
 Windows 2.x versions were shipped on floppies, requiring anywhere between 4 and 10 disks, depending on media-type and Windows version.
 And while it is possible to install Windows 2.x from floppy images in DOSBox-X, the disk-swap process for this is rather tedious for substantial number of disks.
@@ -180,6 +182,7 @@ You now need to mount your new folder as the C: drive in DOSBox-X and start the 
 ....
 MOUNT C /home/myuser/winroot
 C:
+SUBST A C:\INSTALL
 CD INSTALL
 SETUP
 ....
@@ -415,7 +418,7 @@ C:\WIN386\WIN86.COM
 GOTO END
 
 :WIN386
-ECHO Starting Windows/386 2.x in 8086 mode
+ECHO Starting Windows/386 2.x in 8086 mode with PS/2 mouse
 SET PATH=%PATH%;C:\WIN386
 C:\WIN386\WIN86.COM
 GOTO END
@@ -439,10 +442,15 @@ dosbox-x -conf win2x.conf
 
 image::images/Windows:Windows_2.03.png[Windows 2.03 MS-DOS Executive]
 
-== Mouse integration
-When running Windows in DOSBox-X the integration is not seamless.
-You need to capture the mouse and again release it when you want to leave the DOSBox-X window.
-This is because Windows uses its own driver instead of using the integrated mouse support that DOSBox-X provides.
+== Video
+By default, the best possible video option for Windows 2.x is VGA 640x480 in 16 colours.
+
+While there are no Windows 2.x drivers for any of SVGA adapters that DOSBox-X emulates, there is a [patch available](http://www.seasip.info/DOS/Win1/win2vesa.html) that can convert the Windows 2.x VGA or EGA driver to VESA 800x600 in 16 colours.
+
+== Mouse
+Windows 2.x does not use the DOS mouse driver that DOSBox-X provides.
+Instead it uses its own mouse driver, which must be selected during Windows `SETUP`.
+This has the effect that by default you will need to click in the DOSBox-X window to lock the mouse to the window area.
 
 There is however experimental support in DOSBox-X for such seamless integration.
 To get this working take the following steps:
@@ -450,9 +458,9 @@ To get this working take the following steps:
 Go to link:https://github.com/joncampbell123/doslib/releases[doslib releases] and download the latest binary release of doslib.
 Unpack the archive, and you will find a Windows 2.0 mouse driver in the `windrv/dosboxpi/bin/win20` directory.
 
-- Copy the DBOXMPI.DRV and OEMSETUP.INF files to a place where the Windows SETUP.EXE program will be able to find it
-- When you run SETUP.EXE and get to the mouse selection, select the "Other (requires disk provided by a hardware manufacturer)" option
-- Enter the path where you saved the DBOXMPI.DRV and OEMSETUP.INF files
+- Copy the `DBOXMPI.DRV` and `OEMSETUP.INF` files to a place where the Windows `SETUP.EXE` program will be able to find it
+- When you run `SETUP.EXE` and get to the mouse selection, select the "Other (requires disk provided by a hardware manufacturer)" option
+- Enter the path where you saved the `DBOXMPI.DRV` and `OEMSETUP.INF` files
 - Select the "DOSBox-X Mouse Pointer Integration driver for Windows 2.0"
 - Continue the setup as normal
 
@@ -471,3 +479,17 @@ Now when you run Windows 2.0, you should have seamless mouse support.
 
 NOTE: These old windows versions had no support for mice with scroll wheels. By default, DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.
 This can be controlled by the `mouse_wheel_key=` setting in the `[sdl]` section of your DOSBox-X config file.
+
+= Known issues
+== Running Windows 2.x SETUP
+Some versions of `SETUP` seems to have a bug, where even if all installation files are on the HDD in a folder (e.g., `C:\INSTALL`), the installation will fail to find the files from for instance, the "Microsoft Windows Write and VM-Control Disk", and will ask for the disk to be inserted. The work-around here is to use something like `SUBST A C:\INSTALL` to make the installation directory contents available on the A: drive.
+
+== Running Windows 2.x from DOSBox-X
+- Windows/386 2.x versions can only be run in 8086 mode. This means launching Windows using `win86.com`. Trying to use `win386.exe` will result in an "Error: Unsupported DOS version" message.
+- Windows 2.1x versions support HMA, but this does not work by default as the HMA area is already in use. Add the setting `DOS=LOW` to the `[config]` section of the DOSBox-X configuration file.
+
+These issues can be resolved by booting real DOS in DOSBox Staging.
+
+== Running Windows 2.x from real DOS
+- Windows 2.x will refuse to run from DOS 5.0 or later. When using such a DOS version, it is necessary to load `SETVER` to allow Windows 2.x to run.
+- Windows 2.1x versions support HMA, but when using DOS 5.0 or later with the HIMEM.SYS driver from DOS, the HMA area is already in use. To allow Windows 2.1x to use the HMA, add the setting `DOS=LOW` to config.sys.
