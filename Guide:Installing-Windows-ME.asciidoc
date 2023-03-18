@@ -83,7 +83,7 @@ NOTE: You can increase the allocated RAM up to the Windows ME maximum of 512MB b
 Larger values may be possible with tweaks but are not covered here.
 
 == Dynamic vs Normal core
-Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 98.
+Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows ME.
 
 However, for now we still recommend that you do the installation of Windows ME using ``core=normal`` until issue link:https://github.com/joncampbell123/dosbox-x/issues/2215[#2215] is resolved.
 
@@ -664,9 +664,9 @@ Alternatively, you can also make the emulated FAT drive read-only by using the `
 
 == Known limitations
 - If you intend at any point to use a Floppy or CD during your usage of Windows ME, you must attach a floppy and/or CD image **before** starting Windows ME.
-You can load a different CD or Floppy image, once you booted Windows 95, but if a floppy or CD is not present when starting Windows ME the drive is simply missing, and you cannot add it without rebooting the guest OS.
+You can load a different CD or Floppy image, once you booted Windows ME, but if a floppy or CD is not present when starting Windows ME the drive is simply missing, and you cannot add it without rebooting the guest OS.
 
-- When mounting a CD-ROM image using `imgmount`, before booting Windows 95, you may have to specify the IDE device to attach it to for it to work properly in Windows 95. e.g. `imgmount d game_cd.iso -ide 2m` to make the CD-ROM drive appear as the master device on the secondary IDE controller.
+- When mounting a CD-ROM image using `imgmount`, before booting Windows ME, you may have to specify the IDE device to attach it to for it to work properly in Windows ME. e.g. `imgmount d game_cd.iso -ide 2m` to make the CD-ROM drive appear as the master device on the secondary IDE controller.
 
 == Outstanding issues
 * "System Properties" -> "Performance" complains about
