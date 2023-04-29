@@ -145,7 +145,7 @@ Many, but not all, PC video adapters were backward compatible with previous gene
 |-
 |Yes (vendor specific)
 
-|VESA mode
+|VBE mode
 |-
 |-
 |-
@@ -248,23 +248,29 @@ The only indications are a possible change of picture output, and if you have th
 
 ==== CGA machine options
 
-This standard CGA mode can be set using ``machine=cga`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=cga
+....
 Video memory is fixed to 16KiB and cannot be changed.
 
 In addition, DOSBox-X also has a few CGA variants.
 
-* ``cga_mono`` by default gives a green screen CGA output.
-* ``cga_rgb`` emulates a CGA adapter connected to a RGBI monitor.
-* ``cga_composite`` emulates an early model IBM CGA adapter connected to a composite monitor.
-* ``cga_composite2`` emulates a late model IBM CGA adapter connected to a composite monitor.
+* ``machine=cga_mono`` by default gives a green screen CGA output.
+* ``machine=cga_rgb`` emulates a CGA adapter connected to a RGBI monitor.
+* ``machine=cga_composite`` emulates an early model IBM CGA adapter connected to a composite monitor.
+* ``machine=cga_composite2`` emulates a late model IBM CGA adapter connected to a composite monitor.
 
 There is also optional emulation of CGA "snow" distortion, which is disabled by default.
 See the `cgasnow` setting in the `[video]` section below.
 
 ==== External links
-* link:https://en.wikipedia.org/wiki/Color_Graphics_Adapter[Wikipedia article on CGA]
-* link:https://www.reenigne.org/blog/comparison-of-cga-card-versions/[Blog post on CGA adapter revisions]
-* link:https://nerdlypleasures.blogspot.com/2013/11/ibm-pc-color-composite-graphics.html[Blog post on CGA composite video, adapter revisions and artefact colours]
+* link:https://en.wikipedia.org/wiki/Color_Graphics_Adapter[Wikipedia: Color Graphics Adapter (CGA)]
+* link:https://www.reenigne.org/blog/comparison-of-cga-card-versions/[Reenige Blog: CGA adapter revisions]
+* link:https://nerdlypleasures.blogspot.com/2013/11/ibm-pc-color-composite-graphics.html[Nerdly Pleasures: CGA composite video, adapter revisions and artefact colours]
 * link:https://www.youtube.com/watch?v=niKblgZupOc[YouTube : CGA Graphics - Not as bas as you thought!]
 
 NOTE: The difference between ``machine=cga``, ``machine=cga_composite`` and ``machine=cga_composite2`` options, is that the former will only use composite mode if it detects that a game is trying to use artefact colours.
@@ -299,22 +305,30 @@ NOTE: To get the above 4-colour screenshot of KQ1 with an EGA or VGA adapter, th
 NOTE: To get the above CGA RGB screenshot of KQ1 with ``machine=cga_rgb``, it was necessary to start the game with ``sierra -r``, otherwise you only get black-and-white from the game.
 
 === Hercules
+==== Hercules Graphics Card (HGC)
 The Hercules Graphics Card was released in 1982 by Hercules Computer Technology.
 It is a monochrome card that is backward compatible with MDA, with the addition of a single 720x350 graphics mode.
 This made it a very popular card for businesses, and due to its graphics support it is supported by many games.
 The vertical refresh of Hercules like MDA is only 50Hz, but with the phosphor glow of green and amber monochrome monitors this was not noticeable.
 
-This mode can be set using ``machine=hercules`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=hercules
+....
+
 Video memory is fixed to 64KiB and cannot be changed.
 You can optionally change the display colour by setting in the ``[render]`` section ``monochrome_pal=`` to green, amber, grey or white, or cycle between the modes with CTRL-F7.
 
 You can also cycle between low and high brightness of the monochrome display by pressing CTRL-F8.
 
-* link:https://en.wikipedia.org/wiki/Hercules_Graphics_Card[Wikipedia article on the Hercules Graphics Card]
-* link:https://www.dosdays.co.uk/topics/Manufacturers/hercules.php[DOS Days article on Hercules Computer Technology]
-* link:https://jeffpar.github.io/kbarchive/kb/044/Q44273/[MS KnowledgeBase article on MSHERC.COM]
+* link:https://en.wikipedia.org/wiki/Hercules_Graphics_Card[Wikipedia: Hercules Graphics Card (HGC)]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/hercules.php#HGC[DOS Days: Hercules Graphics Card (HGC)]
+* link:https://jeffpar.github.io/kbarchive/kb/044/Q44273/[MS KnowledgeBase Q44273 article on MSHERC.COM]
 
-NOTE: Some software like CheckIt and QBasic may detect a Hercules adapter as MDA, unless a TSR like `MSHERC.COM` is loaded into memory.
+NOTE: Some software like CheckIt, QBasic or MS-DOS EDIT may detect a Hercules adapter as MDA, unless a TSR like `QBHERC.COM` or `MSHERC.COM` is loaded into memory.
 
 NOTE: Some 3rd party Hercules compatible cards, like early ATI cards, also had support for displaying CGA mode on an MDA/Hercules compatible monitor.
 And there are also TSRs (Terminate and Stay Resident) programs that can emulate CGA on Hercules with varying degrees of success.
@@ -331,6 +345,54 @@ image::images/Game:KQ1_Hercules_White.png[float="left"]
 image::images/Game:Monkey_Island_Hercules_White.png[float="left"]
 --
 
+==== Hercules Color Card
+Launched December 1985. IBM CGA compatible card.
+
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=hercules_color
+....
+
+* link:https://en.wikipedia.org/wiki/Hercules_Graphics_Card#Hercules_Graphics_Card_Plus[Wikipedia: Hercules Color Card]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/hercules.php#HCC[DOS Days: Hercules Color Card]
+
+==== Hercules Graphics Card Plus (HGC+)
+Launched June 1986. Extends the original HGC with redefinable fonts, called "RamFont".
+
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=hercules_plus
+....
+
+* link:https://en.wikipedia.org/wiki/Hercules_Graphics_Card#Hercules_Graphics_Card_Plus[Wikipedia: Hercules Graphics Card Plus]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/hercules.php#HGCPlus[DOS Days: Hercules Graphics Card Plus]
+* link:https://www.dosdays.co.uk/topics/graphics_drivers.php#Hercules[DOS Days: HGC+ and RamFont driver disks]
+
+==== Hercules InColor Card
+Launched 1987. Backward compatible with MDA, HGC, HGC+ and CGA. Video memory is fixed at 256KiB Video RAM.
+
+Adds support for 720x348 in 16 colours from a 64 colour palette, which is known to be supported by the following games:
+
+Only a link:https://www.mobygames.com/attributes/attribute/579/[handful of games] supports the special InColor video mode
+
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=hercules_incolor
+....
+
+* link:https://en.wikipedia.org/wiki/Hercules_InColor_Card[Wikipedia: Hercules InColor Card]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/hercules.php#INCOLOR[DOS Days: Hercules InColor Card]
+* link:https://forum.vcfed.org/index.php?threads/hercules-plus-and-or-incolor-detection-and-font-setting.1241153/post-1289694[VCFed: Forum post with InColor driver disks]
+
 === IBM PCjr
 The PCjr was introduced by IBM in March 1984, and discontinued due to poor sales just over a year later.
 It's integrated video card is backwards compatible with CGA, with the addition of a few modes:
@@ -341,15 +403,35 @@ It's integrated video card is backwards compatible with CGA, with the addition o
 
 The vertical refresh of the PCjr like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
 
-This mode can be set using ``machine=pcjr`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=pcjr
+....
+
 Video memory is fixed to 128KiB and cannot be changed.
 
 NOTE: Enabling PCjr mode, also enables PCjr sound emulation
 
 In addition, DOSBox-X also has a few PCjr variants.
 
-* ``pcjr_composite`` emulates an early model IBM CGA connected to a composite monitor.
-* ``pcjr_composite2`` emulates a late model IBM CGA connected to a composite monitor.
+Equivalent to an *early* model IBM CGA connected to a composite monitor:
+
+[source, ini]
+....
+[dosbox]
+machine=pcjr_composite
+....
+
+Equivalent to a *late* model IBM CGA connected to a composite monitor:
+
+[source, ini]
+....
+[dosbox]
+machine=pcjr_composite2
+....
 
 NOTE: The difference between ``machine=pcjr``, ``machine=pcjr_composite`` and ``machine=pcjr_composite2`` options, is that the former will only use composite mode if it detects that a game is trying to use artefact colours.
 While the later two will start in composite mode, so you will always get artefact colours even if the game was not designed for it.
@@ -382,7 +464,14 @@ Tandy computers were also made available with faster processors, up to a 286 run
 
 The vertical refresh of the Tandy 1000 like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
 
-This mode can be set using ``machine=tandy`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=tandy
+....
+
 Video memory is fixed to 128KiB and cannot be changed.
 
 NOTE: Enabling Tandy mode, also enables Tandy sound emulation (which is likewise derived from the IBM PCjr)
@@ -391,8 +480,8 @@ NOTE: While early Tandy 1000 models had composite out similar to CGA and the PCj
 
 NOTE: Many games that support both Tandy and EGA, look near identical in both. It would appear that game developers took a lowest-common-denominator approach and simply used the same resolution and graphic assets for both.
 
-* link:https://en.wikipedia.org/wiki/Tandy_Graphics_Adapter[Wikipedia article on Tandy Graphics]
-* link:https://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days article on the Tandy 1000 Series]
+* link:https://en.wikipedia.org/wiki/Tandy_Graphics_Adapter[Wikipedia: Tandy Graphics]
+* link:https://www.dosdays.co.uk/computers/Tandy%201000/tandy1000.php[DOS Days: Tandy 1000 Series]
 * link:https://www.youtube.com/watch?v=mYHtojsaRkY[YouTube : The Tandy 1000 - The best MS-DOS computer in 1984]
 
 [.float-group]
@@ -405,14 +494,19 @@ image::images/Game:Monkey_Island_Tandy.png[,640,float="left"]
 EGA stands for *Enhanced Graphics Adapter* and was introduced by IBM in 1984, as the official follow-on to CGA.
 It still only supports up to 16 colours on-screen, but out of a pallet of 64 colours and at a higher resolution.
 
-The original IBM adapters came with just 64KiB video RAM, but could be upgraded to 128 or 256KiB.
+This mode can be set as follows in your DOSBox-X config file:
 
-One feature it dropped however, was the composite output support.
-As such, it does not support the CGA artefact colours.
+[source, ini]
+....
+[dosbox]
+machine=ega
+....
 
-The vertical refresh of EGA like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
+The original IBM EGA came with just 64KiB video RAM, but could be upgraded to 128 or 256KiB.
 
 The EGA emulation provided by DOSBox-X by default provides 256KiB of video RAM, by setting ``vmemsizekb=`` in the ``[video]``section of the DOSBox-X config file, it is possible to reduce it instead to 64 or 128KB. e.g.,
+
+[source, ini]
 ....
 [dosbox]
 machine=ega
@@ -422,7 +516,12 @@ vmemsize=0
 vmemsizekb=128
 ....
 
-NOTE: Emulating 64KiB of video memory with EGA is not recommended, as the code for it is experimental and does not properly emulate a 64KiB EGA card.
+One feature it dropped however, was the composite output support.
+As such, it does not support the CGA artefact colours.
+
+The vertical refresh of EGA like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
+
+NOTE: Emulating 64KiB of video memory with EGA is not recommended, as the code for it is experimental and does not properly emulate the memory layout of a 64KiB EGA card.
 
 NOTE: Some clone EGA cards added extra video modes, typically known as SuperEGA cards. The emulation of such cards is not supported by DOSBox-X.
 
@@ -431,7 +530,14 @@ DOSBox-X emulates the EGA card with an EGA monitor. But with a real IBM EGA card
 
 Although rare, some software such as the link:https://www.os2museum.com/wp/fantasyland-on-vga/[IBM Fantasy Land Demo], which expects a CGA monitor with 200-line text mode and 8x8 font, and will not work properly with a regular EGA monitor with 350-line text mode and 8x14 font.
 
-Starting with DOSBox-X 0.84.1 an EGA adapter attached to a 200-line CGA monitor can be emulated by setting ``machine=ega200``.
+Starting with DOSBox-X 0.84.1 an EGA adapter attached to a 200-line CGA monitor can be emulated as such:
+
+[source, ini]
+....
+[dosbox]
+machine=ega200
+....
+
 When using this reduced mode, the regular 350-line EGA modes will not be available.
 
 NOTE: There is no support for emulating an EGA adapter with monochrome MDA monitor at this time.
@@ -440,7 +546,8 @@ NOTE: There is no support for emulating an EGA adapter with monochrome MDA monit
 Regular EGA mode can be set using ``machine=ega``, or the reduced 200-line mode with ``machine=ega200`` in your DOSBox-X config file.
 
 ==== External links
-* link:https://en.wikipedia.org/wiki/Enhanced_Graphics_Adapter[Wikipedia article on EGA Graphics]
+* link:https://en.wikipedia.org/wiki/Enhanced_Graphics_Adapter[Wikipedia: Enhanced Graphics Adapter (EGA)]
+* link:https://www.dosdays.co.uk/topics/graphics.php#EGA[DOS Days: EGA]
 
 ==== Image Gallery
 [.float-group]
@@ -462,13 +569,13 @@ Very little software exists that can use this mode. Here are some known examples
 
 * Applications:
 ** CompuSHOW (CSHOW) Graphics Viewer
-** link:https://en.wikipedia.org/wiki/Deluxe_Paint[Deluxe Paint II]
-** link:https://en.wikipedia.org/wiki/GEM_(desktop_environment)[GEM] desktop environment
+** link:https://en.wikipedia.org/wiki/Deluxe_Paint[Wikipedia: Deluxe Paint II]
+** link:https://en.wikipedia.org/wiki/GEM_(desktop_environment)[Wikipedia: GEM desktop environment]
 * Games:
-** link:https://www.mobygames.com/game/dos/feud[Feud]
-** link:https://www.mobygames.com/game/dos/frank-brunos-boxing[Frank Bruno's Boxing]
-** link:https://www.mobygames.com/game/dos/les-ripoux[Les Ripoux]
-** link:https://www.mobygames.com/game/dos/maupiti-island[Maupiti Island]
+** link:https://www.mobygames.com/game/dos/feud[MobyGames: Feud]
+** link:https://www.mobygames.com/game/dos/frank-brunos-boxing[MobyGames: Frank Bruno's Boxing]
+** link:https://www.mobygames.com/game/dos/les-ripoux[MobyGames: Les Ripoux]
+** link:https://www.mobygames.com/game/dos/maupiti-island[MobyGames: Maupiti Island]
 
 In addition, there is a link:http://sierrahelp.com/Patches-Updates/MiscUpdates.html[PC1512.DRV] driver for Sierra SCI0 and SCI1 games.
 
@@ -479,11 +586,18 @@ NOTE: The PC1512 also had a Hercules graphics mode, this is not emulated as part
 
 The vertical refresh of the Amstrad like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
 
-This mode can be set using ``machine=amstrad`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=amstrad
+....
+
 Video memory is fixed to 64KiB and cannot be changed.
 
-* link:https://en.wikipedia.org/wiki/PC1512[Wikipedia article on the Amstrad PC1512]
-* link:https://www.dosdays.co.uk/computers/Amstrad%20PC1000/pics.php[Internal pictures of the PC1512]
+* link:https://en.wikipedia.org/wiki/PC1512[Wikipedia: Amstrad PC1512]
+* link:https://www.dosdays.co.uk/computers/Amstrad%20PC1000/pics.php[DOS Days: Internal pictures of the PC1512]
 
 [.float-group]
 --
@@ -508,8 +622,15 @@ It was not very successful, as IBM introduced VGA shortly after which has a simi
 
 The vertical refresh of JEGA like EGA and CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
 
-This mode can be set using ``machine=jega`` in your DOSBox-X config file.
-Video memory defaults to 256KiB.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=jega
+....
+
+Video memory is fixed to 256KiB.
 
 * link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[Guide: East Asian language support in DOSBox‐X]
 
@@ -539,13 +660,20 @@ One rare example of a game that offers an MCGA option, but does not work on VGA 
 This is not because the game could not have worked on VGA, but rather because it looks for specific machine settings that are only true on the above PS/2 Models.
 As such as part of the MCGA emulation, DOSBox-X also emulates some PS/2 specific machine settings, just enough to make games like Thexder work in MCGA mode.
 
-This mode can be set using ``machine=mcga`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=mcga
+....
+
 Video memory is fixed to 64KiB and cannot be changed.
 
 NOTE: Many games that offer both an MCGA and VGA option, used the same resolution and assets for both, making them look identical.
 However, due to other MCGA limitations the VGA option may provide a better experience.
 
-* link:https://en.wikipedia.org/wiki/Multi-Color_Graphics_Array[Wikipedia article on MCGA Graphics]
+* link:https://en.wikipedia.org/wiki/Multi-Color_Graphics_Array[Wikipedia: MCGA Graphics]
 
 === VGA
 VGA stands for *Video Graphics Array* and was introduced by IBM in 1987.
@@ -567,7 +695,13 @@ For normal use it is recommended to use the default `machine = svga_s3` which is
 
 NOTE: The provided `machine = vgaonly` option has some changes to improve VGA compatibility, but which makes it slower for the common use-case.
 
-This mode can be set using `machine=vgaonly` in your DOSBox-X config file
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=vgaonly
+....
 
 * Disables non-VGA modes
 * Default 80x25 text mode of 720x400 with a 9x16 font, instead of the 640x400 with 8x16 font for the svga_* options.
@@ -582,7 +716,7 @@ This mode can be set using `machine=vgaonly` in your DOSBox-X config file
 
 **Resources**
 
-* link:https://en.wikipedia.org/wiki/Video_Graphics_Array[Wikipedia article on VGA Graphics]
+* link:https://en.wikipedia.org/wiki/Video_Graphics_Array[Wikipedia: VGA Graphics]
 
 [.float-group]
 --
@@ -593,11 +727,11 @@ image::images/Game:Monkey_Island_VGA.png[float="left"]
 === SVGA
 Many clones were produced of the VGA adapter, often with more memory allowing higher colour depths, resolutions and refresh rates, in addition to various types of acceleration which were typically referred to as SuperVGA, or SVGA.
 
-* link:https://en.wikipedia.org/wiki/Super_VGA[Wikipedia article on SVGA Graphics]
+* link:https://en.wikipedia.org/wiki/Super_VGA[Wikipedia: SVGA Graphics]
 
 ==== S3 Graphics
-* link:https://en.wikipedia.org/wiki/S3_Graphics[Wikipedia article on S3 Graphics]
-* link:https://www.dosdays.co.uk/topics/Manufacturers/s3.php[DOS Days article on S3 Graphics]
+* link:https://en.wikipedia.org/wiki/S3_Graphics[Wikipedia: S3 Graphics]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/s3.php[DOS Days: S3 Graphics]
 
 NOTE: The default ``machine=svga_s3`` option refers to the S3 Trio64.
 
@@ -608,11 +742,17 @@ Introduced in early 1994.
 
 Available in 1, 2 and 4MB video memory configurations.
 
-This mode can be set using ``machine=svga_s3vision864`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3vision864
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[S3 Vision864 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/351-s3-vision864[VGA Museum: S3 Vision864]
 
 ===== S3 Vision964
 Introduced in early 1994.
@@ -620,11 +760,17 @@ Apart from faster dual-ported video memory and larger memory sizes, identical to
 
 Available in 2 and 4 MB video memory configurations.
 
-This mode can be set using ``machine=svga_s3vision964`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3vision964
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/cpu/item/354-s3-vision964[S3 Vision964 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/cpu/item/354-s3-vision964[VGA Museum: S3 Vision964]
 
 ===== S3 Vision868
 Introduced in 1995.
@@ -632,11 +778,17 @@ Introduced in 1995.
 Available in 1, 2 and 4MB video memory configurations.
 Based on the Vision864, with added motion video acceleration.
 
-This mode can be set using ``machine=svga_s3vision868`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3vision868
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[S3 Vision868 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/353-s3-vision868[VGA Museum: S3 Vision868]
 
 ===== S3 Vision968
 Introduced in April 1995.
@@ -644,21 +796,33 @@ Apart from faster dual-ported video memory and larger memory sizes, identical to
 
 Available in 2, 4 and 8MB video memory configurations.
 
-This mode can be set using ``machine=svga_s3vision968`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3vision968
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/cpu/item/355-s3-vision968[S3 Vision968 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/cpu/item/355-s3-vision968[VGA Museum: S3 Vision968]
 
 ===== S3 Trio32
 Introduced in 1994.
 Low-cost 32bit version of the Trio64. Available in 1 or 2MB video memory configurations.
 
-This mode can be set using ``machine=svga_s3trio32`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3trio32
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[S3 Trio32 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/356-s3-trio32[VGA Museum: S3 Trio32]
 
 ===== S3 Trio64
 Introduced in 1994. Successor to the S3 Vision864, and has support for VESA Video BIOS Extensions (VBE).
@@ -680,8 +844,8 @@ There are a few variations of the Trio64 that are available:
 
 Links:
 
-* link:https://en.wikipedia.org/wiki/S3_Triop[S3 Trio at Wikipedia]
-* link:https://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[S3 Trio64 at the VGA Museum]
+* link:https://en.wikipedia.org/wiki/S3_Trio[Wikipedia: S3 Trio series]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/357-s3-trio64[VGA Museum: S3 Trio64]
 
 ===== S3 Trio64V+
 Introduced in June 1995.
@@ -689,11 +853,17 @@ Introduced in June 1995.
 Similar to the Trio64, but adds partial MPEG-1 decode acceleration.
 Available in 1, 2 or 4MB video memory configurations.
 
-This mode can be set using ``machine=svga_s3trio64v+`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3trio64v+
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[S3 Trio64V+ at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/359-s3-trio64v[VGA Museum: S3 Trio64V+]
 
 ==== S3 Graphics - Experimental support
 The emulation of the following S3 SVGA models should be considered experimental for the time being.
@@ -707,11 +877,17 @@ Early Windows and CAD accelerator card. Available in 1, 2, 3 or 4MB video RAM co
 
 The emulated PCI card has 2048KiB video RAM.
 
-This mode can be set using ``machine=svga_s386c928`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s386c928
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/component/k2/item/344-s3-p86c928[S3 86c928 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/344-s3-p86c928[VGA Museum: S3 86c928]
 
 ===== S3 ViRGE
 WARNING: The emulation of this card is considered experimental. It is not recommended for normal use at this time.
@@ -723,13 +899,19 @@ These cards introduced S3's own *S3D* 3D acceleration technology for games. This
 
 Very few games exist that made use of the proprietary S3D technology.
 
-This mode can be set using ``machine=svga_s3virge`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3virge
+....
 
 Links:
 
-* link:https://en.wikipedia.org/wiki/S3_ViRGE[S3 ViRGE at Wikipedia]
-* link:https://www.vgamuseum.info/index.php/component/k2/item/365-s3-virge[S3 ViRGE at the VGA Museum]
-* link:https://www.vogons.org/viewtopic.php?t=33483[List of games supporting S3D mode]
+* link:https://en.wikipedia.org/wiki/S3_ViRGE[Wikipedia: S3 ViRGE]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/365-s3-virge[VGA Museum: S3 ViRGE]
+* link:https://www.vogons.org/viewtopic.php?t=33483[Vogons: List of games supporting S3D mode]
 
 ===== S3 ViRGE/VX
 WARNING: Like the regular S3 ViRGE, the emulation of this card is considered experimental. It is not recommended for normal use at this time.
@@ -737,19 +919,25 @@ WARNING: Like the regular S3 ViRGE, the emulation of this card is considered exp
 Introduced in November 1995.
 Similar to the regular S3 ViRGE but available with 2, 4 or 8MB VRAM, allowing higher resolution and higher colour depth's graphics modes.
 
-This mode can be set using ``machine=svga_s3virgevx`` in your DOSBox-X config file
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_s3virgevx
+....
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/component/k2/item/366-s3-virge-vx[S3 ViRGE/VX at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/component/k2/item/366-s3-virge-vx[VGA Museum: S3 ViRGE/VX]
 
 ==== Tseng Labs
 Links:
 
-* link:https://en.wikipedia.org/wiki/Tseng_Labs[Wikipedia article on Tseng Labs]
-* link:https://www.dosdays.co.uk/topics/Manufacturers/tseng_labs.php[DOS Days - Tseng Labs]
-* link:https://dosdays.co.uk/topics/Manufacturers/tsenglabs_downloads.php[DOS Days - Tseng Labs Downloads]
-* link:https://vogonsdrivers.com/index.php?catid=63[VOGONS Vintage Driver Library for Tseng Labs]
+* link:https://en.wikipedia.org/wiki/Tseng_Labs[Wikipedia: Tseng Labs]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/tseng_labs.php[DOS Days: Tseng Labs]
+* link:https://dosdays.co.uk/topics/Manufacturers/tsenglabs_downloads.php[DOS Days: Tseng Labs Downloads]
+* link:https://vogonsdrivers.com/index.php?catid=63[VOGONS Vintage Driver Library: Tseng Labs]
 
 ===== Tseng Labs ET3000
 Introduced in 1987.
@@ -761,12 +949,19 @@ In addition to standard CGA (RGBI mode only), EGA and VGA this card supports the
 - 800x600 with 16 colours
 - 1024x768 with 16 colours
 
-This mode can be set using ``machine=svga_et3000`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_et3000
+....
+
 Video memory defaults to 512KiB and cannot be adjusted.
 
 Links:
 
-* link:https://www.vgamuseum.info/index.php/companies/item/460-tseng-et3000ax[Tseng Labs ET3000 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/companies/item/460-tseng-et3000ax[VGA Museum: Tseng Labs ET3000]
 
 ===== Tseng Labs ET4000
 Introduced in 1989.
@@ -783,7 +978,14 @@ Known issues with the above modes:
 
 - (*) Hangs on startup of Windows 3.0 in 16.7M colour mode
 
-This mode can be set using ``machine=svga_et4000`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_et4000
+....
+
 Video memory defaults to 1024KiB, but can be reduced to 256 or 512KiB as such:
 
 ....
@@ -798,13 +1000,20 @@ vmemsizekb=512
 Links:
 
 * link:http://files.mpoli.fi/hardware/DISPLAY/TSENG/ET-4000.ZIP[Tseng Labs ET4000 driver package]
-* link:https://www.vgamuseum.info/index.php/companies/item/461-tseng-et4000ax[Tseng Labs ET4000 at the VGA Museum]
+* link:https://www.vgamuseum.info/index.php/companies/item/461-tseng-et4000ax[VGA Museum: Tseng Labs ET4000]
 
 ==== Paradise Systems PVGA1A
 The Paradise Systems PVGA1A is a SuperVGA (SVGA) card introduced in 1988.
 It is backward compatible with CGA (RGBI only), EGA, MCGA and VGA.
 
-This mode can be set using ``machine=svga_paradise`` in your DOSBox-X config file.
+This mode can be set as follows in your DOSBox-X config file:
+
+[source, ini]
+....
+[dosbox]
+machine=svga_paradise
+....
+
 Video memory defaults to 512 KiB, but can be adjusted to 256 or 1024 KiB.
 
 For 256 KiB, set your config as follows:
@@ -833,8 +1042,8 @@ vmemsizekb=0
 
 Links:
 
-* link:https://www.dosdays.co.uk/topics/Manufacturers/paradise.php[DOS Days article on Paradise Systems]
-* link:https://www.vgamuseum.info/index.php/companies/item/478-paradise-systems-pvga1a[Paradise Systems PVGA1A]
+* link:https://www.dosdays.co.uk/topics/Manufacturers/paradise.php[DOS Days: Paradise Systems]
+* link:https://www.vgamuseum.info/index.php/companies/item/478-paradise-systems-pvga1a[VGA Museum: Paradise Systems PVGA1A]
 
 === VESA BIOS Extensions (VBE)
 During the late 80's and early 90's many video card manufacturers existed, and as IBM was no longer leading the market, each manufacturer was doing its own thing in regard to setting their cards SVGA modes.
@@ -855,7 +1064,7 @@ There are many VESA settings available in the ``[video]`` section of the DOSBox-
 
 links:
 
-* link:https://en.wikipedia.org/wiki/VESA_BIOS_Extensions[Wikipedia article on VESA BIOS Extensions]
+* link:https://en.wikipedia.org/wiki/VESA_BIOS_Extensions[Wikipedia: VESA BIOS Extensions (VBE)]
 
 == Dual monitor
 The original IBM PC could already support dual-monitor by using both MDA and CGA video cards at the same time.
@@ -872,8 +1081,8 @@ Programs known to support a dual monitor setup:
 - Desqview
 - GEM (debugging only)
 - Lotus 123
-- link:https://www.mobygames.com/game/dos/mah-jongg-v-g-a-[Mah Jongg -V-G-A]
-- link:https://www.mobygames.com/game/mechwarrior-2-mercenaries[Mechwarrior 2: Mercenaries] v1.06 (debugging only)
+- link:https://www.mobygames.com/game/dos/mah-jongg-v-g-a-[MobyGames: Mah Jongg -V-G-A]
+- link:https://www.mobygames.com/game/mechwarrior-2-mercenaries[Mobygames: Mechwarrior 2: Mercenaries] v1.06 (debugging only)
 - PowerBASIC DOS
 - Softice debugger
 - Windows 3.x (debugging only)
