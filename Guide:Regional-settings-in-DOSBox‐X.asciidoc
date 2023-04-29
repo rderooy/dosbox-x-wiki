@@ -172,66 +172,67 @@ Alternatively, the KEYB command can be used from the DOSBox-X command line to ch
 KEYB UK
 ....
 
-This command will switch the current keyboard layout to the UK keyboard layout and set code page 858.
-Below is a list of keyboard layouts that can be used in DOSBox, and by extension DOSBox-X.
+This command will switch the current keyboard layout to the UK keyboard layout and set code page 858. Note some languages have dual mode, in which a certain keyboard press can switch between the primary and secondary modes.
+Below is a list of keyboard layouts that can be used in DOSBox-X.
 
 |===
-|Keyboard layouts|Country usages
+|Keyboard layouts|Country usages|Based on DOSBox|Primary mode|Secondary mode
 
-|us103 (us), ux103 (ux)|US, US International
-|dv103 (dv), lh103 (lh), rh103 (rh)|US Dvorak, Left-Hand, Right-Hand
-|sq448, sq452 (sq)|Albania
-|hy|Armenia*
-|az|Azerbaijan*
-|by463 (bl463,by,bl)|Belarus*
-|be120 (be)|Belgium
-|ba234 (ba)|Bosnia & Herzegovina
-|br274, br275 (br)|Brazil
-|bg241, bg442 (bg)|Bulgaria
-|ca58 (cf58,ca,cf), ca445 (cf445), cf501|Canada
-|hr234 (hr)|Croatia
-|cz243, cz|Czech Republic
-|dk159 (dk)|Denmark
-|ee454 (et454,ee,et)|Estonia*
-|fo|Faroe Islands
-|fi153 (su153,fi,su)|Finland
-|fr120, fr189 (fr)|France
-|ka|Georgia*
-|de129 (gr129,de,gr), de453 (gr453)|Germany
-|gk220 (el220), gk319 (el319,gk,el), gk459 (el459)|Greece
-|hu208, hu|Hungary
-|is458 (is), is161 (is197)|Iceland
-|it141 (it), it142|Italy
-|kk|Kazakhstan*
-|ky|Kyrgyzstan*
-|la171 (la)|Latin-American-Spanish
-|lv, lv455|Latvia*
-|lt210, lt211, lt212 (lt), lt221, lt456|Lithuania*
-|mk449 (mk)|Macedonia
-|mt47 (ml47), mt (ml)|Malta
-|mn (mo)|Mongolia*
-|nl143 (nl)|Netherlands
-|no155 (no)|Norway
-|ph|Philippines
-|pl214, pl457 (pl)|Poland
-|po163 (po)|Portugal
-|ro333 (ro), ro446|Romania
-|ru441 (ru), ru443|Russia
-|sr118 (sr), sr450|Serbia & Montenegro
-|sk245 (sk)|Slovakia
-|si234 (si)|Slovenia
-|es172 (sp172,es173,sp173,es,sp)|Spain
-|sv153 (sv)|Sweden
-|sd150 (sg150,sd,sg), sf150 (sf)|Swiss
-|tm|Turkmenistan
-|tr179 (tr), tr440|Turkey
-|ua465 (ur465), ua (ur)|Ukraine*
-|uk166 (uk), uk168|United Kingdom
-|uz|Uzbekistan*
-|yu234 (yu)|Yugoslavia
+|us103 (us), ux103 (ux)|US, US International|Yes||
+|dv103 (dv), lh103 (lh), rh103 (rh)|US Dvorak, Left-Hand, Right-Hand|Yes||
+|sq448, sq452 (sq)|Albania|Yes||
+|hy|Armenia*|Yes||
+|az|Azerbaijan*|Yes||
+|by463 (bl463,by,bl)|Belarus*|Yes||
+|be120 (be)|Belgium|Yes||
+|ba234 (ba)|Bosnia & Herzegovina|Yes||
+|br274, br275 (br)|Brazil|Yes||
+|bg241, bg442 (bg)|Bulgaria|Yes||
+|ca58 (cf58,ca,cf), ca445 (cf445), cf501|Canada|Yes||
+|hr234 (hr)|Croatia|Yes||
+|cz243, cz|Czech Republic|Yes||
+|dk159 (dk)|Denmark|Yes||
+|ee454 (et454,ee,et)|Estonia*|Yes||
+|fo|Faroe Islands|Yes||
+|fi153 (su153,fi,su)|Finland|Yes||
+|fr120, fr189 (fr)|France|Yes||
+|ka|Georgia*|Yes||
+|de129 (gr129,de,gr), de453 (gr453)|Germany|Yes||
+|gk220 (el220), gk319 (el319,gk,el), gk459 (el459)|Greece|Yes||
+|hu208, hu|Hungary|Yes||
+|is458 (is), is161 (is197)|Iceland|Yes||
+|it141 (it), it142|Italy|Yes||
+|kk|Kazakhstan*|Yes||
+|ky|Kyrgyzstan*|Yes||
+|la171 (la)|Latin-American-Spanish|Yes||
+|lv, lv455|Latvia*|Yes||
+|lt210, lt211, lt212 (lt), lt221, lt456|Lithuania*|Yes||
+|mk449 (mk)|Macedonia|Yes||
+|mt47 (ml47), mt (ml)|Malta|Yes||
+|mn (mo)|Mongolia*|Yes||
+|nl143 (nl)|Netherlands|Yes||
+|no155 (no)|Norway|Yes||
+|ph|Philippines|Yes||
+|pl214, pl457 (pl)|Poland|Yes||
+|po163 (po)|Portugal|Yes||
+|ro333 (ro), ro446|Romania|Yes||
+|ru441 (ru), ru443|Russia|Yes||
+|sr118 (sr), sr450|Serbia & Montenegro|Yes||
+|sk245 (sk)|Slovakia|Yes||
+|si234 (si)|Slovenia|Yes||
+|es172 (sp172,es173,sp173,es,sp)|Spain|Yes||
+|sv153 (sv)|Sweden|Yes||
+|sd150 (sg150,sd,sg), sf150 (sf)|Swiss|Yes||
+|tm|Turkmenistan|Yes||
+|tr179 (tr), tr440|Turkey|Yes||
+|ua465 (ur465), ua (ur)|Ukraine*|Yes||
+|uk166 (uk), uk168|United Kingdom|Yes||
+|uz|Uzbekistan*|Yes||
+|yu234 (yu)|Yugoslavia|Yes||
+|he862/il862 (he/il)|Israel|No|English (alt+left shift)|Hebrew (alt+right shift)
 |===
 
-NOTE: Starting with DOSBox 0.83.24, for using layouts marked with * the ten ega.cpx files (from FreeDOS) in `Z:\CPI` will be used. See also the "Support for external keyboard files" section below for more information about this.
+NOTE: Starting with DOSBox 0.83.24, for using layouts marked with ***** the ten ega.cpx files (from FreeDOS) in `Z:\CPI` will be used. See also the "Support for external keyboard files" section below for more information about this.
 
 Alternatively you can also specify a different codepage by adding the codepage number to the end.
 
