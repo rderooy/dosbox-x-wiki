@@ -5,7 +5,7 @@ ifndef::env-github[:suffixappend:]
 
 Back to the link:Home{suffixappend}[DOSBox-X Wiki Welcome page].
 
-= Clipboard Support in DOSBox-X
+== Clipboard Support in DOSBox-X
 
 toc::[]
 

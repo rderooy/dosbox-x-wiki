@@ -206,14 +206,14 @@ WARNING: The `allow more than 640kb base memory` configuration option allows mor
 
 ==== Graphics modes:
 
-- 160x100 in 16 colours, chosen from a 16-colour palette, utilizing a specific configuration of the 80x25 text mode.
-- 320×200 in 4 colours, chosen from 3 fixed palettes, with high- and low-intensity variants, with colour 1 chosen from a 16-colour palette.
-- 640×200 in 2 colours, one black, one chosen from a 16-colour palette.
+* 160x100 in 16 colours, chosen from a 16-colour palette, utilizing a specific configuration of the 80x25 text mode.
+* 320×200 in 4 colours, chosen from 3 fixed palettes, with high- and low-intensity variants, with colour 1 chosen from a 16-colour palette.
+* 640×200 in 2 colours, one black, one chosen from a 16-colour palette.
 
 ==== Text modes:
 
-- 40×25 with 8×8 pixel font (effective resolution of 320×200)
-- 80×25 with 8×8 pixel font (effective resolution of 640×200)
+* 40×25 with 8×8 pixel font (effective resolution of 320×200)
+* 80×25 with 8×8 pixel font (effective resolution of 640×200)
 
 ==== Composite graphics mode:
 One of the features, at least of the IBM CGA adapters, is that they support two types of monitors.
@@ -233,15 +233,15 @@ But you may have to find a way to force the game to use CGA, if it also supports
 ==== Keyboard shortcuts:
 When using `machine = cga`, the following keyboard shortcuts, specific to CGA and PCjr are available:
 
-- CTRL-F7 switch between early and late model IBM CGA adapter emulation
-- CTRL-F8 switch between Auto, RGBI and Composite monitor output
-- CTRL-Shift-F7 Decrease Hue
-- CTRL-Shift-F8 Increase Hue
+* CTRL-F7 switch between early and late model IBM CGA adapter emulation
+* CTRL-F8 switch between Auto, RGBI and Composite monitor output
+* CTRL-Shift-F7 Decrease Hue
+* CTRL-Shift-F8 Increase Hue
 
 When using ``machine=cga_mono``, these keyboard shortcuts are instead available:
 
-- CTRL-F7 Cycles between CGA monochrome palettes (green, amber, white, grey)
-- CTRL-F8 Cycles between high and low brightness
+* CTRL-F7 Cycles between CGA monochrome palettes (green, amber, white, grey)
+* CTRL-F8 Cycles between high and low brightness
 
 NOTE: There is no real indicator in DOSBox-X that you changed settings with keyboard shortcuts, or to check the current status.
 The only indications are a possible change of picture output, and if you have the logging enabled, to check the log output.
@@ -414,9 +414,9 @@ machine=hercules_incolor
 The PCjr was introduced by IBM in March 1984, and discontinued due to poor sales just over a year later.
 It's integrated video card is backwards compatible with CGA, with the addition of a few modes:
 
-- 160x200 at 16 colours
-- 320x200 at 16 colours
-- 640x200 at 4 colours
+* 160x200 at 16 colours
+* 320x200 at 16 colours
+* 640x200 at 4 colours
 
 The vertical refresh of the PCjr like CGA is 60Hz, which matches up well with the majority of modern 60Hz LCDs.
 
@@ -459,10 +459,10 @@ You can however use the CTRL-F7 and CTRL-F8 key combinations with any of them to
 ==== Keyboard shortcuts:
 By default, the following keyboard shortcuts, specific to CGA and PCjr are available:
 
-- CTRL-F7 switch between early and late model IBM CGA adapter emulation
-- CTRL-F8 switch between Auto, RGBI and Composite monitor output
-- CTRL-Shift-F7 Decrease Hue
-- CTRL-Shift-F8 Increase Hue
+* CTRL-F7 switch between early and late model IBM CGA adapter emulation
+* CTRL-F8 switch between Auto, RGBI and Composite monitor output
+* CTRL-Shift-F7 Decrease Hue
+* CTRL-Shift-F8 Increase Hue
 
 [.float-group]
 --

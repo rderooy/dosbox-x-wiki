@@ -480,16 +480,16 @@ Now when you run Windows 2.0, you should have seamless mouse support.
 NOTE: These old windows versions had no support for mice with scroll wheels. By default, DOSBox-X will simulate cursor up/down keypresses when you use the scroll wheel.
 This can be controlled by the `mouse_wheel_key=` setting in the `[sdl]` section of your DOSBox-X config file.
 
-= Known issues
-== Running Windows 2.x SETUP
+== Known issues
+=== Running Windows 2.x SETUP
 Some versions of `SETUP` seems to have a bug, where even if all installation files are on the HDD in a folder (e.g., `C:\INSTALL`), the installation will fail to find the files from for instance, the "Microsoft Windows Write and VM-Control Disk", and will ask for the disk to be inserted. The work-around here is to use something like `SUBST A C:\INSTALL` to make the installation directory contents available on the A: drive.
 
-== Running Windows 2.x from DOSBox-X
+=== Running Windows 2.x from DOSBox-X
 - Windows/386 2.x versions can only be run in 8086 mode. This means launching Windows using `win86.com`. Trying to use `win386.exe` will result in an "Error: Unsupported DOS version" message.
 - Windows 2.1x versions support HMA, but this does not work by default as the HMA area is already in use. Add the setting `DOS=LOW` to the `[config]` section of the DOSBox-X configuration file.
 
 These issues can be resolved by booting real DOS in DOSBox Staging.
 
-== Running Windows 2.x from real DOS
+=== Running Windows 2.x from real DOS
 - Windows 2.x will refuse to run from DOS 5.0 or later. When using such a DOS version, it is necessary to load `SETVER` to allow Windows 2.x to run.
 - Windows 2.1x versions support HMA, but when using DOS 5.0 or later with the HIMEM.SYS driver from DOS, the HMA area is already in use. To allow Windows 2.1x to use the HMA, add the setting `DOS=LOW` to config.sys.
