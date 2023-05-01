@@ -582,7 +582,7 @@ Amstrad in 1986 introduced the PC1512 which is an IBM PC clone with CGA (RGBI on
 Very little software exists that can use this mode. Here are some known examples:
 
 * Applications:
-** CompuSHOW (CSHOW) Graphics Viewer
+** link:http://www.cshowplace.com/cshows.htm[CompuSHOW] (CShow) Graphics Viewer
 ** link:https://en.wikipedia.org/wiki/Deluxe_Paint[Wikipedia: Deluxe Paint II]
 ** link:https://en.wikipedia.org/wiki/GEM_(desktop_environment)[Wikipedia: GEM desktop environment]
 * Games:
@@ -742,6 +742,27 @@ image::images/Game:Monkey_Island_VGA.png[float="left"]
 Many clones were produced of the VGA adapter, often with more memory allowing higher colour depths, resolutions and refresh rates, in addition to various types of acceleration which were typically referred to as SuperVGA, or SVGA.
 
 * link:https://en.wikipedia.org/wiki/Super_VGA[Wikipedia: SVGA Graphics]
+
+==== ATI Technologies
+
+WARNING: ATI support is in an early stage of development. Unless you want to *assist in development* you should use one of the other machine types instead.
+
+[options="header"]
+|=============================================================================================================================
+| ATI Card           | Chip    | Released | KiB VRAM       | machine=              | Notes
+| EGA Wonder 800+    | 18800-1 | 1988     | 256            | svga_ati_egavgawonder | Limited VGA support (mode 11 and 12 only)
+| VGA Wonder         | 28800-1 | 1988     | 256, 512       | svga_ati_vgawonder    |
+| VGA Wonder Plus    | 28800-2 | 1990     | 256, 512, 1024 | svga_ati_wonderplus   |
+| VGA Wonder XL      | 28800-6 | 1991-05  | 256, 512, 1024 | svga_ati_wonderxl     |
+| VGA Wonder XL24    | 28800-6 | 1992     | 512, 1024      | svga_ati_wonderxl24   |
+| Graphics Ultra     | Mach8   | 1991     | 512, 1024      | svga_ati_mach8        | emulated model needs validation
+| Graphics Ultra Pro | Mach32  | 1992-01  | 1024, 2048     | svga_ati_mach32       | emulated model needs validation
+| Graphics Pro Turbo | Mach64  | 1994     | 2048, 4096     | svga_ati_mach64       | emulated model needs validation
+|==============================================================================================================================
+
+* link:https://en.wikipedia.org/wiki/ATI_Technologies[Wikipedia: ATI Technologies]
+* link:http://dosdays.co.uk/topics/Manufacturers/ati.php[DOS Days: ATI Technologies]
+* link:http://hackipedia.org/browse.cgi/Computer/Platform/PC%2c%20IBM%20compatible/Video/VGA/SVGA/ATI%2c%20Array%20Technology%20Inc[Hackipedia: ATI Technology Inc.]
 
 ==== S3 Graphics
 * link:https://en.wikipedia.org/wiki/S3_Graphics[Wikipedia: S3 Graphics]
