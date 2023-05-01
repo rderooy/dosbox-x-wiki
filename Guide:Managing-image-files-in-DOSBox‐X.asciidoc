@@ -560,6 +560,9 @@ NOTE: If a harddisk image has multiple partitions, by default only the first pri
 You can optionally mount a different partition, but only one partition at a time, can be mounted and be accessible from the integrated DOS.
 When booting real DOS in DOSBox-X, all partitions will be accessible.
 
+NOTE: Starting with DOSBox-X 2023-05-01, if a harddisk image is 2GiB or larger, LBA size detection will be attempted.
+Smaller images will default to CHS detection. You can optionally add `-lba` or `-chs` to the `imgmount` command to force LBA or CHS detection.
+
 A harddisk image that is partitioned, but not formatted, or has an unsupported filesystem can be mounted as follows:
 
 [source, console]
