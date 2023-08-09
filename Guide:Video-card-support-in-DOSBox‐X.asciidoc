@@ -748,7 +748,7 @@ Many clones were produced of the VGA adapter, often with more memory allowing hi
 WARNING: ATI support is in an early stage of development. Unless you want to *assist in development* you should use one of the other machine types instead.
 
 [options="header"]
-|=============================================================================================================================
+|===
 | ATI Card           | Chip    | Released | KiB VRAM       | machine=              | Notes
 | EGA Wonder 800+    | 18800-1 | 1988     | 256            | svga_ati_egavgawonder | Limited VGA support (mode 11 and 12 only)
 | VGA Wonder         | 28800-1 | 1988     | 256, 512       | svga_ati_vgawonder    |
@@ -758,7 +758,7 @@ WARNING: ATI support is in an early stage of development. Unless you want to *as
 | Graphics Ultra     | Mach8   | 1991     | 512, 1024      | svga_ati_mach8        | emulated model needs validation
 | Graphics Ultra Pro | Mach32  | 1992-01  | 1024, 2048     | svga_ati_mach32       | emulated model needs validation
 | Graphics Pro Turbo | Mach64  | 1994     | 2048, 4096     | svga_ati_mach64       | emulated model needs validation
-|==============================================================================================================================
+|===
 
 * link:https://en.wikipedia.org/wiki/ATI_Technologies[Wikipedia: ATI Technologies]
 * link:http://dosdays.co.uk/topics/Manufacturers/ati.php[DOS Days: ATI Technologies]
