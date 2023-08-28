@@ -51,7 +51,7 @@ Displays or changes the attributes of files and directories.
 +
 Usage: ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [drive:][path][filename] [/S]
 +
-Note: Changing file attributes only works on mounted local, overlay and FAT drives.
+Note: Changing file attributes only works on mounted local, SMB share, overlay and FAT drives.
 * **AUTOTYPE** (external command)
 +
 Performs scripted keyboard entry into a running DOS program.
