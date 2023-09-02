@@ -389,7 +389,6 @@ DOSBox-X supports mounting harddisk images in the following formats:
 * link:https://en.wikipedia.org/wiki/Qcow[QCOW2] - QEMU copy-on-write v2 (`.qcow2`)
 ** No support in DOSBox-X for QCOW2 zstd compression or encryption options
 * link:https://en.wikipedia.org/wiki/VHD_(file_format)[Virtual Hard Disk] Volume (`.vhd`) (aka Virtual PC)
-** No support in DOSBox-X for the newer VHDX format
 * Bochs bximage (typically `.img`)
 * NEC PC-98 harddisk images (`.nhd` or `.hdi`)
 
@@ -402,8 +401,6 @@ This option allows a few common HDD sizes to be created, for less common types y
 
 DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in RAW MFM sector image format from the DOSBox-X command prompt.
 ``IMGMAKE`` only creates a single primary DOS partition per harddisk image file.
-
-NOTE: ``IMGMAKE`` will create fixed-size VHD image files, if the filename extension is `.vhd`. ``IMGMAKE`` cannot create dynamic VHD image files.
 
 ==== FAT version
 The ``IMGMAKE`` command supports FAT12, FAT16 and FAT32 formatted partitions, and will try to automatically decide which type to use depending on the HDD capacity and the reported DOS version:
@@ -1024,26 +1021,27 @@ The advantage of the QCOW2 format, is the Copy-On-Write (COW) functionality whic
 This saves disk space compared to maintaining multiple full installations, and can prevent Windows bit-rot.
 
 == VHD support
-DOSBox-X provides limited support for VHD (aka Virtual PC) disk images. There is no support for the newer VHDX format.
+DOSBox-X provides support for VHD (aka Virtual PC) disk images. This supports was enhanced in DOSBox-X 2023.09.01.
 
 There are various ways to create VHD images. Either external tools can be used, or the integrated `IMGMAKE` utility can be used.
 
-For example to create a 40 MiB VHD image using link:https://www.qemu.org/download/[qemu-img]:
+For example to create a 2GiB dynamic VHD image using the integrated `IMGMAKE` utility:
 
 [source, console]
 ....
-qemu-img create -f vpc hdd.vhd 40M
+imgmake hdd.vhd -type vhd -size 2097152
 ....
 
-Or to create it with `IMGMAKE`, simply ensure the filename extension is `.vhd`. e.g.,
+Or to create a 2GiB fixed-size VHD image using the integrated 'IMGMAKE' utility:
 
 [source, console]
 ....
-IMGMAKE -t hd -size 40 hdd.vhd
+imgmake hdd.vhd -type hd -size 2097152
 ....
 
 The advantage of using `IMGMAKE` is that the created image file will be partitioned and formatted and as such is ready to be mounted.
-The disadvantage is that only fixed size VHD images can be created this way. If you want dynamic images, another method will have to be used.
+
+Alternatively, external tools such as link:https://www.qemu.org/download/[qemu-img] can be used to create VHD files, with the disadvantage that they may not be partitioned and formatted.
 
 If you have a VHD image file that is not partitioned or formatted, it will have to be mounted on a drive-number, after which you can boot from a DOS floppy disk to partition and format the image:
 
