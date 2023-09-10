@@ -323,6 +323,7 @@ Once Windows 98 is installed, here is some additional software you may want to i
 * Install Microsoft GDI+ redistributable
 * Install Adobe Acrobat Reader 6.0
 * Install/Update to Adobe Flash Player 9.0.47.0
+* Install link:https://archive.org/details/winsteng[Adobe PostScript driver 4.2.6]
 * Install Apple QuickTime 6.5.2
 
 This may also be of interest: link:https://msfn.org/board/topic/105936-last-versions-of-software-for-windows-98se/[Forum thread about: Last versions of software for Windows 98SE]
@@ -499,7 +500,9 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
-Next in Windows 98, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
+You can either use the PostScript driver bundled with Windows 98, or alternatively install the newer Adobe PostScript 4.2.6 driver.
+
+If using the bundled driver, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
 
 Once the printer is installed, open the printers properties, and on the "Details" tab click on the "Spool Settings..." button.
 In the "Spool Settings", you must select "Print directly to the printer" and click OK.

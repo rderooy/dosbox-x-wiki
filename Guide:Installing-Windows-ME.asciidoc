@@ -331,6 +331,7 @@ Once Windows ME is installed, here is some additional software you may want to i
 * Install Microsoft GDI+ redistributable
 * Install Adobe Acrobat Reader 6.0
 * Install/Update to Adobe Flash Player 9.0.47.0
+* Install link:https://archive.org/details/winsteng[Adobe PostScript driver 4.2.6]
 * Install Apple QuickTime 6.5.2
 
 == Mounting CD or Diskette images
@@ -554,7 +555,9 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
-Next in Windows ME, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
+You can either use the PostScript driver bundled with Windows ME, or alternatively install the newer Adobe PostScript 4.2.6 driver.
+
+If using the bundled driver, select any PostScript printer such as the "QMS ColorScript 100 Model 30", during printer setup connected to LPT1.
 
 When you print, a .prt file in your ``captures=`` directory will be created, which despite the extension, is actually a PostScript file.
 

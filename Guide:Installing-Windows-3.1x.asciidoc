@@ -312,6 +312,7 @@ Once Windows 3.1x is installed, here is some additional software you may want to
 * Apple QuickTime 2.1.2
 * Adobe Acrobat Reader 3.01
 * Adobe Type Manager 3.02
+* link:https://archive.org/details/adobeps312[Adobe PostScript driver 3.1.2]
 
 == Video driver
 See link:Guide%3AVideo-card-support-in-DOSBox‐X[Video card support in DOSBox‐X] for more information about the various video cards, and available options.
@@ -580,7 +581,9 @@ captures=capture
 parallel1=file timeout=2000
 ....
 
-Next in Windows 3.1x, select any PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
+You can either use the PostScript driver bundled with Windows 3.1x, or alternatively install the newer Adobe PostScript 3.1.2 driver.
+
+If using the bundled driver, select any PostScript printer such as the "QMS ColorScript 100", during printer setup connected to LPT1.
 
 image::images/Windows:Windows_3.11_PS_SETUP.png[Windows 3.11 PostScript Printer setup]
 
