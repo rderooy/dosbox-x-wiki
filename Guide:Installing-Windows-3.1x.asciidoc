@@ -317,7 +317,7 @@ Once Windows 3.1x is installed, here is some additional software you may want to
 == Video driver
 See link:Guide%3AVideo-card-support-in-DOSBox‐X[Video card support in DOSBox‐X] for more information about the various video cards, and available options.
 
-NOTE: The generic "Super VGA" driver included with Windows 3.1x only works with `machine=svga_et4000`.
+NOTE: The generic "Super VGA" driver included with Windows 3.1x only works under DOSBox-X with `machine=svga_et4000`.
 Regardless, It is recommended to use the default VGA video driver during Windows 3.1x installation, and install a 3rd party SVGA driver afterwards.
 
 NOTE: If you intend to use Video for Windows (VFW), first install VFW and then the updated S3 video driver. Alternatively, reinstall the S3 video driver after installing VFW. Failing to do so may result in VFW playback giving a green window.
