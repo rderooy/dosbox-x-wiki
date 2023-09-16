@@ -315,12 +315,12 @@ Once Windows 98 is installed, here is some additional software you may want to i
 
 * Install Microsoft .NET framework version 1.0, 1.1 and 2.0
 * Install Microsoft Visual C++ 2005 runtime
-* Update to Microsoft Internet Explorer 6.0 (rarely needed)
+* Update to link:https://winworldpc.com/product/internet-explorer/ie-6[Microsoft Internet Explorer 6.0] (rarely needed)
 * Update to Microsoft DCOM 4.71.1015.0
 * Update to Microsoft DirectX 9.0c
 * Install Microsoft Windows Installer 2.0
-* Install Microsoft WinG 1.0 (needed by just a few games, and those games typically include it)
-* Install Microsoft GDI+ redistributable
+* Install https://archive.org/details/WING10[Microsoft WinG API 1.0] (needed by just a few games, and those games typically include it)
+* Install Microsoft GDI+ re-distributable
 * Install Adobe Acrobat Reader 6.0
 * Install/Update to Adobe Flash Player 9.0.47.0
 * Install link:https://archive.org/details/winsteng[Adobe PostScript driver 4.2.6]
@@ -560,12 +560,15 @@ voodoo_card=false
 ....
 
 === Glide pass-through
+Glide pass-through is an optional DOSBox-X feature, and not required to use a 3dfx Voodoo game with Windows 98.
+It can provide better performance, but can also be rather tricky to get working properly. As such it is not recommended for most users.
 
-Starting with DOSBox-X 0.83.10 it is possible to use glide pass-through with Windows 98.
-There are however a few points you need to be aware of.
+If you decide to try this method, first ensure the game works without glide pass-through using the standard 3dfx Voodoo emulation.
+
+There are a few points you need to be aware of.
 
 * The DOSBox-X and glide-wrapper installed on the host need to be the same architecture.
-So, if you're using a 64bit DOSBox-X, you need to use a 64-bit glide-wrapper.
+So, if you're using a 64bit DOSBox-X, you need to use a matching 64-bit glide-wrapper.
 * The Linux SDL2 DOSBox-X does not work with OpenGlide, this is a limitation of OpenGlide (see OpenGlide issue link:https://github.com/voyageur/openglide/issues/20[#20]).
 The work-around is to use the SDL1 DOSBox-X instead.
 
@@ -577,7 +580,7 @@ You need to set the following DOSBox-X config option:
 glide=true
 ....
 
-You will also need a specially patched link:https://www.vogons.org/download/file.php?id=102360[GLIDE2X.DLL] which you can place in either the ``C:\Windows\System`` directory of Windows 98, or in the game directory.
+You will also need a specially patched link:https://www.vogons.org/download/file.php?id=102360[GLIDE2X.DLL] file which you can place in either the ``C:\Windows\System`` directory of Windows 98, or in the game directory.
 But be aware that some games come with their own GLIDE2X.DLL, which typically gets installed in the game directory.
 If so, you will have to remove this DLL file for glide pass-through to work.
 
