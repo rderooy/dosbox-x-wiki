@@ -52,6 +52,8 @@ If true (default), the memory size will be 12MB (4MB front buffer + 2x4MB textur
 Enables high-level Glide API pass-through to the host OS.
 This requires that the host OS has a Glide API library (or Glide wrapper) installed, and in addition it requires the special GLIDE2X.OVL file provided by DOSBox-X, or for Windows 9x games a specially patched link:https://www.vogons.org/download/file.php?id=102360[GLIDE2X.DLL].
 
+WARNING: glide pass-though should only be attempted by advanced users. Please ensure the game works without glide pass-though first, using standard 3dfx Voodoo emulation.
+
 NOTE: This only works for games that dynamically link to the external GLIDE2X library.
 It does not work for so-called statically linked games that have the GLIDE library code integrated with the game code.
 
