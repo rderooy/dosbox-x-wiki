@@ -49,7 +49,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 * link:https://github.com/joncampbell123/dosbox-x/issues/1465[IBM XDF] (`.XDF`)
 * link:https://github.com/joncampbell123/dosbox-x/issues/711[ImageDisk] (`.IMD`)
 * Interchangeable Preservation Format (`.IPF`)
-* KryoFlux Stream files (`.RAW`)
+* link:https://github.com/joncampbell123/dosbox-x/issues/4288[KryoFlux Stream files] (`.RAW`)
 * Teledisk (`.TD0`)
 * Transcopy (`.TC`)
 
