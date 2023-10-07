@@ -18,7 +18,7 @@ Printer options in the DOSBox-X config file are split over two sections, ``[para
 This section lists the available configuration options for the ``[parallel]`` section that DOSBox-X provides.
 They are used to configure the virtual parallel ports provided inside DOSBox-X.
 
-NOTE: Starting with DOSBox-X v0.83.20 it is possible to modify parallel port settings directly from the DOSBox-X DOS prompt with either the ``parallel`` or ``config -set parallel`` commands.
+NOTE: It is possible to modify parallel port settings directly from the DOSBox-X DOS prompt with either the ``parallel`` or ``config -set parallel`` commands.
 Any settings you modify this way are however lost when you restart DOSBox-X.
 
 ==== parallel1
@@ -166,7 +166,7 @@ Epson itself suggested in some of their literature to look for printers in the f
 * MX Series
 ** B/W - MX-85, MX-82, MX-80
 
-NOTE: Starting with DOSBox-X v0.83.21 it is possible to modify emulated printer settings directly from the DOSBox-X DOS prompt with the ``config -set printer`` commands.
+NOTE: It is possible to modify emulated printer settings directly from the DOSBox-X DOS prompt with the ``config -set printer`` commands.
 Any settings you modify this way are however lost when you restart DOSBox-X.
 
 NOTE: If you're wanting to print in landscape on US Letter or A4 paper, or in portrait on A3 paper, select a wide printer in your DOS application, as otherwise the software may not give you the possibility to configure the paper properly.
@@ -461,7 +461,7 @@ You can also manually send a form-feed, by pressing CTRL-F2 or using the form-fe
 
 == Setting up fonts for the emulated printer
 The emulated printer requires TrueType fonts in order to be able to print text.
-If you use the TrueType font output, then the TTF font that is currently active on the screen will automatically be used for printing as well if the ``ttf.printfont`` option (in [render] section) is enabled (default) as of DOSBox-X version 0.83.14.
+If you use the TrueType font output, then the TTF font that is currently active on the screen will automatically be used for printing as well if the ``ttf.printfont`` option (in [render] section) is enabled (default).
 
 If no TTF font can be found then DOSBox-X will print with the internal (default) TTF font as used by the TrueType font output.
 

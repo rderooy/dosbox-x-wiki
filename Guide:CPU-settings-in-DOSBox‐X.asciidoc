@@ -292,7 +292,7 @@ Default is 0 (no adjustment), but you can adjust it (between -25% and 25%) if ne
 Enables Turbo (Fast Forward) mode to speed up operations.
 
 By default, any key press will disengage turbo mode.
-Since DOSBox-X 0.83.25 this can be controlled with the `turbo stop on key` setting.
+This can be controlled with the `turbo stop on key` setting.
 
 NOTE: This has no relation to the turbo button found on many retro PCs. Instead, this is more a fast-forward mode.
 
@@ -300,7 +300,6 @@ NOTE: This has no relation to the turbo button found on many retro PCs. Instead,
 * Default value: 0
 * Valid values: 0-2147483647
 
-Introduced with DOSBox-X 0.83.25.
 If a positive integer is specified, the Turbo function will last for the specific amount of seconds.
 
 This is useful when starting a program that takes a long time to load.
@@ -309,7 +308,6 @@ This is useful when starting a program that takes a long time to load.
 * Default value: true
 * Valid values: true, false
 
-Introduced with DOSBox-X 0.83.25.
 If set, the Turbo mode will be automatically stopped if keyboard input is detected.
 
 === use dynamic core with paging on

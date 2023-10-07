@@ -69,7 +69,7 @@ This guide does not look to replicate those guides. Instead, this guide will hav
 * Some parts of the installation can take a considerable amount of time.
 You may be able to speed this up considerably (depending on the host CPU) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
 This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
-Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
+The turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
 
 == DOSBox-X config file
 It is recommended that you create a custom DOSBox-X config file for running Windows 3.1x
@@ -412,7 +412,7 @@ NOTE: These old windows versions had no support for mice with scroll wheels. By 
 This can be controlled by the `mouse_wheel_key=` setting in the `[sdl]` section of your DOSBox-X config file.
 
 === VMWare mouse driver - option #1
-DOSBox-X 0.83.24 or later also supports the VMware mouse protocol, and there is a 3rd party link:https://github.com/NattyNarwhal/vmwmouse[VMware mouse driver for Windows 3.x] written by NattyNarwhal.
+DOSBox-X also supports the VMware mouse protocol, and there is a 3rd party link:https://github.com/NattyNarwhal/vmwmouse[VMware mouse driver for Windows 3.x] written by NattyNarwhal.
 As such you can install the VMware mouse driver for Windows 3.1x, and you will be able to move the mouse in and out of DOSBox-X seamlessly.
 
 Simply run the DOS based SETUP.EXE program for Windows 3.1x and select "Mouse" followed by "Other". Then type the location where you saved the unpacked VMware mouse driver for Windows 3.1x.
@@ -473,7 +473,7 @@ To enable networking, you first need to enable NE2000 network adapter emulation 
 
 === Enabling NE2000 in your DOSBox-X config file
 
-Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
+There are two different back-ends to the NE2000 adapter emulation.
 The default back-end is ``backend=pcap``.
 
 ==== backend=pcap

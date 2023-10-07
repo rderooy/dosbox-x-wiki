@@ -17,7 +17,7 @@ DOSBox-X supports three categories of image files;
 * CD-ROM or DVD images
 
 TIP: Whenever this guide mentions mounting an image file, such as `disk.ima`, `hdd.img` or `cdrom.iso`, those are files on your host filesystem.
-And they may optionally be prefixed with the host path to the file. e.g. ``disk.ima`` may become ``"C:\John Doe\dosroot\disk.ima"``.
+And they may optionally be prefixed with the host path to the file. e.g. ``disk.ima`` may become ``"C:\Users\John Doe\dosroot\disk.ima"``.
 Also note that if there are any spaces in the host path or filename, you need to enclose it with quotes.
 
 == Listing current mounts
@@ -56,7 +56,7 @@ Some examples of diskette image files that DOSBox-X **does not** support:
 NOTE: While DOSBox-X does not support mounting or booting from diskette images in IBM DSKF format, it is possible to use the ``link:https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` program in DOSBox-X to convert an IBM DSKF file to a regular RAW MFM Disk format.
 
 === Creating diskette images
-NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create diskette images at any time from the DOSBox-X menu.
+NOTE: In addition to the below DOSBox-X command line utility, it is possible to create diskette images at any time from the DOSBox-X menu.
 Go to the "DOS" menu, and select "Create blank disk image...".
 This option allows most common floppy disk types to be created, for less common types you need to use the command line utility.
 
@@ -92,7 +92,7 @@ You can optionally create a diskette image that is not formatted with:
 ....
 IMGMAKE disk.ima -t fd -nofs
 ....
-NOTE: DOSBox-X has no integrated FORMAT command, so creating diskette images that are not formatted is typically not recommended.
+NOTE: DOSBox-X does not supply a FORMAT command, so creating diskette images that are not formatted is typically not recommended.
 
 TIP: DOSBox-X will automatically assume it is a diskette image if the filename extension is `.IMA`, or if you're mounting on the emulated `A:` or `B:` drive.
 If this is not the case, you can force DOSBox-X to treat an image as a diskette type with the ``-t floppy`` parameter.
@@ -139,7 +139,7 @@ imgmount a
 ....
 NOTE: The ``-t floppy`` parameter is only needed with DOSBox-X when the extension is not `.IMA`, and you're wanting to mount a diskette image on drives greater than `B:`.
 
-A diskette image that is not formatted, or has an unsupported filesystem can be mounted as follows:
+A diskette image that is not formatted, or has an unsupported filesystem can be attached as follows:
 
 [source, console]
 ....
@@ -395,11 +395,11 @@ DOSBox-X supports mounting harddisk images in the following formats:
 Creating and accessing harddisk images is very similar to diskette images, with the exception that they also contain partitions and they may contain other filesystems.
 
 === Creating harddisk images
-NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images at any time from the DOSBox-X menu.
+NOTE: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images at any time from the DOSBox-X menu.
 Go to the "DOS" menu, and select "Create blank disk image…".
 This option allows a few common HDD sizes to be created, for less common types you need to use the command line utility.
 
-DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in RAW MFM sector image format from the DOSBox-X command prompt.
+DOSBox-X has a built-in ``IMGMAKE`` command with which you can create partitioned and FAT formatted harddisk images in either RAW MFM sector image or VHD format from the DOSBox-X command prompt.
 ``IMGMAKE`` only creates a single primary DOS partition per harddisk image file.
 
 ==== FAT version
@@ -549,12 +549,14 @@ NOTE: The ``-t hdd`` option is only needed with DOSBox-X when mounting a harddis
 Or when mounting a harddisk image that is not partitioned or formatted, or formatted with an unsupported filesystem in combination with the ``-size`` parameter.
 The ``-fs fat`` option should not be needed as the FAT12, FAT16 or FAT32 filesystem types will be automatically detected.
 
+NOTE: As of DOSBox-X 2023-10-06, you can specify a wildcard instead of a drive letter (e.g., `imgmount *: hdd.img`). This will cause DOSBox-X to take the next available drive letter.
+
 NOTE: If a harddisk image has either a "FAT16 LBA" or "FAT32" partition, the mount will fail unless a higher than default reported DOS version is set.
 Those partition types are normally restricted to, respectively, MS-DOS 7.0 (Windows 95) or MS-DOS 7.1 (Windows 95 OSR2/Windows 98) or later, and therefore DOSBox-X does not allow them to be mounted with the default DOS 5.0 version that DOSBox-X reports.
 You can change the reported DOS version in your DOSBox-X config file by for instance setting `ver=7.1` in the `[dos]` section. Or alternatively from the DOSBox-X DOS prompt by typing for instance ``ver set 7.1``.
 
 NOTE: If a harddisk image has multiple partitions, by default only the first primary partition will be mounted and accessible from the DOSBox-X integrated DOS.
-You can optionally mount a different partition, but only one partition at a time, can be mounted and be accessible from the integrated DOS.
+You can optionally mount a different partition, but only one partition at a time can be mounted and be accessible from the integrated DOS.
 When booting real DOS in DOSBox-X, all partitions will be accessible.
 
 NOTE: Starting with DOSBox-X 2023-05-01, if a harddisk image is 2GiB or larger, LBA size detection will be attempted.
@@ -578,7 +580,7 @@ DOSBox-X automatically assumes the ``-fs none`` flag when a drive number is used
 |5|-ide 2s|Secondary|Slave
 |===
 
-A harddisk image that is not yet partitioned needs additional parameters, such as a template or the size in SHC.
+A harddisk image that is not yet partitioned needs additional parameters, such as a template or the size in SHC geometry.
 
 Using the original template it was based on:
 
@@ -587,7 +589,7 @@ Using the original template it was based on:
 imgmount 2 hdd.img -t hd_4gig
 ....
 
-Or using the original SHC it was based on:
+Or using the original SHC geometry it was based on:
 
 [source, console]
 ....
@@ -1078,13 +1080,64 @@ CAUTION: Do not buy "modern" USB 3.5" floppy drives available from retailers lik
 The drive mechanisms are junk and have a high likelihood of damaging your disk.
 Instead, look for an older second-hand USB floppy drive from a known brand like Dell, HP, IBM, Lenovo, Sony, Teac or Toshiba.
 
+== FDISK
+DOSBox-X does not supply the FDISK utility to partition harddisks. Instead it supplies an `IMGMAKE` utility which can be used to create HDD image files, including paritioning and formatting them.
+
+If however you really want to run the DOS FDISK utility from the DOSBox-X integrated emulated DOS, it is possible as of DOSBox-X 2023.10.06.
+
+First create a blank HDD image file:
+....
+Z:\>IMGMAKE hdd.img -t hd -nofs -size 100
+Creating image file "hdd.img" with 812 cylinders, 4 heads and 63 sectors
+....
+
+Then attach the blank image using the CHS geometry. '2' is a drive number that refers to the first HDD.
+....
+Z:\>IMGMOUNT 2 hdd.img -size 512,63,4,812
+Drive number 2 mounted as hdd.img
+....
+
+Now running `FDISK` from MS-DOS or PC DOS should work, and allow partitions to be created or deleted.
+
+NOTE: If FDISK return an error "Incorrect DOS version", you must set the DOSBox-X reported DOS version to match the DOS version that FDISK came from.
+e.g., if FDISK.EXE came from MS-DOS 6.22, first run `VER SET 6.22`.
+
+
+== FORMAT
+DOSBox-X does not supply the FORMAT utility to format floppies or harddisks. Instead it supplies an `IMGMAKE` utility which can be used to create Floppy or HDD image files, including formatting them.
+
+If however you really want to run the DOS FORMAT utility from the DOSBox-X integrated emulated DOS, it is partly possible as of DOSBox-X 2023.10.06.
+
+NOTE: A harddisk image MUST be partitioned before it can be formatted.
+
+NOTE: Formatting an unformatted floppy disk image is not possible at this time using this method. But it is possible to format a floppy disk that is already formatted.
+
+NOTE: It is important to mount the image file on a **drive letter**, as `FORMAT` cannot deal with drive numbers.
+
+In case of a harddisk, first follow the steps in the FDISK section above to create the image file and partition it.
+
+Then attach the image using `IMGMOUNT`.
+
+NOTE: For harddisk images, once the image is partitioned it is no longer necessary to specify the geometry.
+
+....
+Z:\>IMGMOUNT c hdd.img
+Image geometry auto detection: -size 512,63,4,812
+Drive C is mounted as hdd.img
+Drive not formatted. Format it before accessing the drive.
+....
+
+Once the image file is mounted on a drive letter, running `FORMAT` from MS-DOS or PC DOS should work.
+
+NOTE: the '/s' option to transfer system files does not work properly at this time.
+
 == Known limitations
 When booting a Guest OS (DOS or Win9x) in DOSBox-X all the Drive options will become unavailable (greyed out).
 This is because, once you boot a guest OS, the drive letter mapping loses its meaning as the guest OS is responsible for drive letter assignment.
 
 The only mapping that DOSBox-X still has at that point, is that of drive numbers to the image file.
 
-Starting with DOSBox-X 0.83.14, there is limited support for changing the loaded Floppy or CD image from the DOS menu where you will find the options "Change current floppy image..." and "Change current CD image...".
+There is limited support for changing the loaded Floppy or CD image from the DOS menu where you will find the options "Change current floppy image..." and "Change current CD image...".
 
 If multiple floppy or CD-ROM images are mounted, you will be asked for each mounted image if you want to change it.
 

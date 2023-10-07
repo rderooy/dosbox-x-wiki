@@ -13,7 +13,7 @@ toc::[]
 DOSBox-X has support for emulating either a General MIDI or a Roland MT-32 synthesizer.
 In addition, it is possible to use an external MIDI synthesizer, either real or software.
 
-NOTE: As of DOSBox-X version 0.83.6, the DOSMID program is included in DOSBox-X and will appear on the virtual Z: drive, which can be used to playback MIDI/RMI/MUS audio files.
+NOTE: The DOSMID program is included in DOSBox-X and will appear on the virtual Z: drive, which can be used to playback MIDI/RMI/MUS audio files.
 
 NOTE: You can check the currently active MIDI setup in DOSBox-X by going to the Sound option on the menu bar (when in windowed mode), and selecting "Show MIDI device configuration".
 
@@ -381,7 +381,7 @@ mididevice=fluidsynth
 In some cases, you may also need to specify a SoundFont file with ``fluid.soundfont=``, and the sound server with ``fluid.driver=``
 
 === Windows Setup
-FluidSynth support is included in both Visual Studio and MinGW builds by default in DOSBox-X version 0.83.7 and later. You can add the following lines to your DOSBox-X config file.
+FluidSynth support is included in both Visual Studio and MinGW builds by default. You can add the following lines to your DOSBox-X config file.
 
 ....
 [midi]
@@ -585,7 +585,7 @@ midiconfig=localhost:8000
 ....
 
 Alternatively it is also possible to connect to TiMidity{plus}{plus} over ALSA as follows.
-First locate the ALSA MIDI device that got assigned to TiMidity{plus}{plus} using ``aconnect -i`` (in the Linux terminal) or ``mixer /listmidi alsa`` (in the command line of DOSBox-X 0.83.12 or later). Then use the following config options:
+First locate the ALSA MIDI device that got assigned to TiMidity{plus}{plus} using ``aconnect -i`` (in the Linux terminal) or ``mixer /listmidi alsa`` (in the command line of DOSBox-X). Then use the following config options:
 
 [source, ini]
 ....
@@ -599,7 +599,7 @@ ALSA is the low-level Linux sound system.
 You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support.
 You can optionally also use ALSA with a separate software sequencer that creates a ALSA MIDI interface, such as TiMidity{plus}{plus} or Munt.
 
-In DOSBox-X 0.83.12 or later you can use DOSBox-X’s built-in MIXER command to find which "device" is your MIDI output, e.g.
+You can use DOSBox-X’s built-in MIXER command to find which "device" is your MIDI output, e.g.
 
 ``mixer /listmidi alsa``
 

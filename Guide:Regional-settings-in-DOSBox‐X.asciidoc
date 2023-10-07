@@ -90,7 +90,7 @@ Typing ``COUNTRY`` without parameters from the DOSBox-X command line will displa
 
 === Using language files for customized or translated display messages
 
-DOSBox-X by defaults displays messages in English. It is possible to change the messages displayed by DOSBox-X with the use of language files, which can either be encoded in the DOS code page or in UTF-8 as of DOSBox-X version 0.83.14.
+DOSBox-X by defaults displays messages in English. It is possible to change the messages displayed by DOSBox-X with the use of language files, which can either be encoded in the DOS code page or in UTF-8.
 
 If you already have a DOSBox-X language file available, you can specify its filename in DOSBox-X's config file (dosbox-x.conf by default) in the [dosbox] section in order to activate it. There is a ``language=`` setting which allows you to enter the name of the language file. For example, suppose the language file is located at C:\message.txt, then you can specify the following for use with DOSBox-X:
 
@@ -232,7 +232,7 @@ Below is a list of keyboard layouts that can be used in DOSBox-X.
 |he862/il862 (he/il)|Israel|No|English (alt+left shift)|Hebrew (alt+right shift)
 |===
 
-NOTE: Starting with DOSBox 0.83.24, for using layouts marked with ***** the ten ega.cpx files (from FreeDOS) in `Z:\CPI` will be used. See also the "Support for external keyboard files" section below for more information about this.
+NOTE: For using layouts marked with ***** the ten ega.cpx files (from FreeDOS) in `Z:\CPI` will be used. See also the "Support for external keyboard files" section below for more information about this.
 
 Alternatively you can also specify a different codepage by adding the codepage number to the end.
 
@@ -250,7 +250,7 @@ As such a choice may have to be made between support for those box drawing chara
 
 There is also a ``CHCP`` (CHange CodePage) command to view the current DOS code page, and for the TrueType font (TTF) output it also allows you to change the current DOS code page.
 For example, ``CHCP 857`` will change the current DOS code page to 857 (Turkish) when using the TrueType font output.
-As of DOSBox-X version 0.83.14, DOSBox-X also supports CJK (Chinese, Japanese, Korean) double-byte code pages (932, 936, 949, 950) for the TTF output, which allow Chinese/Japanese/Korean characters to be displayed correctly.
+DOSBox-X also supports CJK (Chinese, Japanese, Korean) double-byte code pages (932, 936, 949, 950) for the TTF output, which allow Chinese/Japanese/Korean characters to be displayed correctly.
 Moreover, it is recommended to specify a TrueType font that has all characters of the language to be used so that these characters will be rendered correctly with the specified font.
 More information about the TrueType font output is available from the link:Guide%3AUsing-TrueType-font-output-in-DOSBox‐X{suffixappend}[Using TrueType font output in DOSBox‐X] guide page.
 More information about CJK language support can be found in the link:Guide%3AEast-Asian-language-support-in-DOSBox‐X{suffixappend}[East Asian language support in DOSBox‐X] guide page.
@@ -261,8 +261,6 @@ DOSBox-X will use codepage 932 in this mode and support Japanese Shift-JIS chara
 There is an option which will force the use of U.S. keyboard layout in PC-98 mode. More information about PC-98 support is available from the link:Guide%3APC‐98-emulation-in-DOSBox‐X{suffixappend}[PC‐98 emulation in DOSBox‐X] guide page.
 
 === Support for the Euro symbol
-
-NOTE: The information in this section applies to DOSBox-X 0.83.4 and later only. It may not work in previous versions of DOSBox-X.
 
 The Euro symbol (€) is the currency symbol introduced by the European Monetary and Currency Union, and began its use on January 1, 1999.
 Because the Euro symbol was introduced after Windows 95 was released to the public, most DOS versions (including all versions of MS-DOS and PC DOS up to 7.0) do not support this symbol.
@@ -324,15 +322,12 @@ The integration of keyboard layout packages (like ``keybrd2.sys``) works similar
 
 === Use of scancodes for your keyboard layout
 
-NOTE: The information in this section applies to DOSBox-X 0.83.4 and later only. Previous versions of DOSBox-X did not support the ``usescancodes=auto`` config setting.
-
-DOSBox-X supports both SDL1 and SDL2 versions, using the cross-platform SDL 1.2 and SDL 2.0 libraries respectively.
+DOSBox-X provides both SDL1 and SDL2 versions, using the cross-platform SDL 1.2 and SDL 2.0 libraries respectively.
 Since SDL is responsible for input handling in DOSBox-X, there are some differences between the SDL1 binary and the SDL2 binary in regard to the keyboard layout support of DOSBox-X.
 
 The SDL1 version of DOSBox-X in particular only supports the US keyboard layout due to the limitations around the SDL1 library.
 As such when using the SDL1 version, DOSBox-X will automatically decide whether to use scancodes with the default ``usescancodes=auto`` config setting, which should work around most keyboard layout problems with non-US keyboards.
 
 On the other hand, you can override this by changing the setting ``usescancodes`` to either ``true`` or ``false``.
-The ``false`` setting was the default setting before DOSBox-X 0.83.4, which worked well for US keyboard layout, but the keys could be messed up for non-US keyboards when you are using the SDL1 version. So it is recommended to leave this setting to ``auto`` for the SDL1 binary.
 
 When using the SDL2 binary, scancodes are not needed when using non-US keyboard layouts in DOSBox-X (this setting has no effect in the SDL2 version).

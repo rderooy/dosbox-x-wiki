@@ -81,7 +81,7 @@ NOTE: You can increase the allocated RAM up to the Windows 98 maximum of 512MB b
 Larger values may be possible with tweaks but are not covered here.
 
 == Dynamic vs Normal core
-Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 98.
+The dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 98.
 
 However, for now we still recommend that you do the installation of Windows 98 using ``core=normal`` until issue link:https://github.com/joncampbell123/dosbox-x/issues/2215[#2215] is resolved.
 
@@ -111,7 +111,7 @@ NOTE: This will cause some audio distortion on Windows 98 startup, if you have t
 
 == Creating a Harddisk image
 
-NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images from the DOSBox-X menu.
+NOTE: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu and select "Create blank disk image…​".
 This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
 
@@ -162,8 +162,7 @@ This installation method allows both FAT16 (up to 2GB) and FAT32 volumes, which 
 
 === Requirements
 
-* DOSBox-X 0.83.10 or later, these instructions will NOT work with other DOSBox forks.
-* Windows 98 *OEM Full* edition CD-ROM image (named "Win98.iso" in the example below).
+This method only works with the Windows 98 **OEM Full** edition CD-ROM image (named "Win98.iso" in the example below).
 
 Getting this image file is outside the scope of this guide.
 
@@ -225,8 +224,7 @@ This method will start the installation from DOSBox-X and does not require a boo
 
 === Requirements
 
-* DOSBox-X 0.83.10 or later, these instructions will NOT work with other DOSBox forks.
-* Windows 98 CD-ROM image (named "Win98.iso" in the example below).
+A Windows 98 CD-ROM image (named "Win98.iso" in the example below).
 
 Getting this image file is outside the scope of this guide.
 
@@ -349,7 +347,7 @@ To enable networking, you first need to enable NE2000 adapter emulation in your 
 
 === Enabling NE2000 in your DOSBox-X config file
 
-Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
+There are two different back-ends to the NE2000 adapter emulation.
 The default is ``backend=auto``, which implies ``backend=slirp`` if SLIRP support is available, otherwise ``backend=pcap`` is implied if PCAP support is available.
 
 ==== backend=pcap

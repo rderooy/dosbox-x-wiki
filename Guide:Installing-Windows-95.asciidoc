@@ -21,7 +21,7 @@ This guide will give a general description of installing Windows 95 in DOSBox-X,
 * Windows 95 OSR2.5 (aka 95C) - OEM Full
 
 NOTE: This guide is meant for the Windows 95 CD-ROM editions.
-The Windows 95 diskette edition can also be used starting with DOSBox-X 0.83.19, but requires a lot of tedious disk swapping and is therefore not recommended.
+The Windows 95 diskette edition can also be used, but requires a lot of tedious disk swapping and is therefore not recommended.
 
 NOTE: Windows 95 **Upgrade** editions have additional requirements and are not covered by this guide.
 
@@ -101,7 +101,7 @@ Larger values may be possible with tweaks but are not covered here.
 * In case you installed Windows 95 OSR2.5 you may have noticed that you did not get IE4 and the Active Desktop features. This is because this is an optional installation. On the CD, simply run \WIN95\IE4SETUP.EXE to install it. While there is no real advantage to either feature, installing it does bring some new and updated libraries such as MSVCRT.DLL and COMCTL32.DLL that some programs need.
 
 == Dynamic vs Normal core
-Starting with DOSBox-X 0.83.10 the dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 95.
+The dynamic_x86 core, which should perform much better, has been sufficiently enhanced that it can now be used for most use-cases with Windows 95.
 
 However, for now we still recommend that you do the installation of Windows 95 using ``core=normal`` until issue link:https://github.com/joncampbell123/dosbox-x/issues/2215[#2215] is resolved.
 
@@ -133,7 +133,7 @@ NOTE: This will cause some audio distortion on Windows 95 startup, if you have t
 
 == Creating a Harddisk image
 
-NOTE: In addition to the below DOSBox-X command line utility, starting with DOSBox-X 0.83.9 it is possible to create harddisk images from the DOSBox-X menu.
+NOTE: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu and select "Create blank disk image…​".
 This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
 
@@ -315,7 +315,7 @@ To enable networking, you first need to enable NE2000 adapter emulation in your 
 
 === Enabling NE2000 in your DOSBox-X config file
 
-Starting with DOSBox-X 0.83.12 there are two different back-ends to the NE2000 adapter emulation.
+There are two different back-ends to the NE2000 adapter emulation.
 The default is ``backend=auto``, which implies ``backend=slirp`` if SLIRP support is available, otherwise ``backend=pcap`` is implied if PCAP support is available.
 
 ==== backend=pcap
@@ -603,7 +603,6 @@ voodoo_card=false
 ....
 
 === Glide pass-through
-
 Glide pass-through is an optional DOSBox-X feature, and not required to use a 3dfx Voodoo game with Windows 95.
 It can provide better performance, but can also be rather tricky to get working properly. As such it is not recommended for most users.
 

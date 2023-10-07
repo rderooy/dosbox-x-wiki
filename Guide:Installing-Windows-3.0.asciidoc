@@ -63,7 +63,7 @@ Instead, this guide will have some install guidance and hints and tips not cover
 * Some parts of the installation can take a considerable amount of time.
 You may be able to speed this up considerably (depending on the host CPU) by using the DOSBox-X Turbo mode, which can be enabled from the drop-down menu bar by selecting "CPU" followed by "Turbo (Fast Forward)".
 This turbo mode is not like the old Turbo button on retro PCs, but functions more like a fast-forward, and therefore should not be used when interacting with the guest OS.
-Starting with DOSBox-X 0.83.21 the turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
+The turbo mode is automatically disabled the moment a key is pressed, to prevent spurious keypresses to be registered causing undesirable effects.
 * Unless noted otherwise, Windows 3.1 drivers are not backward compatible with Windows 3.0.
 
 === Windows 3.0a with Multimedia Extensions specific notes
@@ -383,7 +383,7 @@ NOTE: These old windows versions had no support for mice with scroll wheels. By 
 This can be controlled by the `mouse_wheel_key=` setting in the `[sdl]` section of your DOSBox-X config file.
 
 === VMWare mouse driver
-DOSBox-X 0.83.24 or later also supports the VMware mouse protocol.
+DOSBox-X also supports the VMware mouse protocol.
 There is a 4rd party Windows 3.0 mouse driver link:https://git.javispedro.com/cgit/vbados.git/about/[VBMOUSE.DRV] by @javispedro, including support for the scroll wheel.
 
 If you are running Windows 3.0 directly in the DOSBox-X integrated DOS environment, do not load the VBMOUSE.EXE driver. Only install the VBMOUSE.DRV in Windows 3.0.
