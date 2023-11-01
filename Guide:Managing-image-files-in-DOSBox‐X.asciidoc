@@ -536,8 +536,8 @@ This is equivalent to
 [source, console]
 ....
 imgmount C: hdd.img
-imgmount C: disk.ima -t hdd
-imgmount C: disk.ima -t hdd -fs fat
+imgmount C: hdd.img -t hdd
+imgmount C: hdd.img -t hdd -fs fat
 ....
 If you do not specify an image filename, it will try to open a file named `IMGMAKE.IMG`, such as in this example:
 
