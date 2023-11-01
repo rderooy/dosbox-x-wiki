@@ -761,8 +761,8 @@ If the CD or DVD contains multiple tracks, like DATA and AUDIO (aka redbook audi
 === Copy protected media
 DOSBox-X has limited support for copy protected CD-ROMs.
 
-- In DOSBox-X 2022.08.00 the IDE emulation was enhanced such that SafeDisc 1 games should work
-- In DOSBox-X 2022.09.00 another minor change was introduced to solve one of the issues with SafeDisc 2
+- In DOSBox-X 2022.08.00 the IDE emulation was enhanced such that link:https://en.wikipedia.org/wiki/SafeDisc[SafeDisc] V1 games should work
+- In DOSBox-X 2022.09.00 another minor change was introduced to solve one of the issues with SafeDisc V2
 
 If you run into issues with copy protected media, look for "cracks" for the game to bypass the copy protection.
 
