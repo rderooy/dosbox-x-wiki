@@ -325,7 +325,7 @@ Only applicable if using 4axix_2 mode.
 == [mapper] options
 The following settings specify deadzone for a mapper binding to be triggered.
 This is useful when you wish to map some physical joystick axes to act as keys,
-i.e. use the left thumbstick to emit WSAD keys.
+i.e. use the left thumbstick to emit WASD keys.
 
 TIP: To ensure the triggering of bi-directional command like move forward but strafe at the same time, deadzone values shall be less than ~0.7071 (the maximum possible extent when diagonally moving with a joystick with a circular restriction).
 
