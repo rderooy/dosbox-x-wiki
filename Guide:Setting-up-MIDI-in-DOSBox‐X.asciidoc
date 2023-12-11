@@ -545,7 +545,7 @@ Specifies the chorus type. 0 is sine wave, 1 is triangle wave.
 
 == TiMidity{plus}{plus}
 TiMidity{plus}{plus} is a MIDI software synthesis, primarily for Linux.
-You should consider using FluidSynth instead.
+It is no longer actively maintained, and you should consider using FluidSynth instead.
 But if you want to try TiMidity{plus}{plus}, install the timidity{plus}{plus} package with your package manager, and also install a SoundFont like FluidR3_GM.
 
 You then need to point TiMidity{plus}{plus} to the SoundFont you want to use, for this edit ``/etc/timidity++/timidity.cfg`` and make sure the ``soundfont`` setting points to a valid SF2 or SF3 SoundFont file.
@@ -596,8 +596,8 @@ midiconfig=128:0
 
 == ALSA
 ALSA is the low-level Linux sound system.
-You can use ALSA if you have a real MIDI sequencer, or a sound card with MIDI support.
-You can optionally also use ALSA with a separate software sequencer that creates a ALSA MIDI interface, such as TiMidity{plus}{plus} or Munt.
+You can use ALSA if you have a real MIDI sequencer, or a sound card with General MIDI support.
+You can optionally also use ALSA with a separate software sequencer that creates a ALSA MIDI interface, such as link:https://timidity.sourceforge.net/[TiMidity{plus}{plus}], link:https://munt.sourceforge.net/[Munt] or link:https://github.com/skjelten/emusc[EmuSC].
 
 You can use DOSBox-X’s built-in MIXER command to find which "device" is your MIDI output, e.g.
 
@@ -605,7 +605,7 @@ You can use DOSBox-X’s built-in MIXER command to find which "device" is your M
 
 Alternatively, you can use the command ``aconnect -i`` in the Linux terminal to find which "device" is your MIDI output.
 
-Once you get the device ID (e.g. 128:0) you can then add it to the ``midiconfig=`` line.
+Once you get the device ID (typically 128:0 for the first MIDI device) you can then add it to the ``midiconfig=`` line.
 E.g.
 
 [source, ini]
@@ -618,7 +618,7 @@ midiconfig=128:0
 == OSS
 OSS is an older low-level sound system for Unix and Linux.
 It should not be used if you have ALSA.
-You can use OSS if you have a real MIDI sequencer, or a sound card with MIDI support.
+You can use OSS if you have a real MIDI sequencer, or a sound card with General MIDI support.
 
 TBD.
 

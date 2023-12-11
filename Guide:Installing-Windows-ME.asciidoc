@@ -670,6 +670,8 @@ You can load a different CD or Floppy image, once you booted Windows ME, but if 
 
 - When mounting a CD-ROM image using `imgmount`, before booting Windows ME, you may have to specify the IDE device to attach it to for it to work properly in Windows ME. e.g. `imgmount d game_cd.iso -ide 2m` to make the CD-ROM drive appear as the master device on the secondary IDE controller.
 
+- If animated mouse cursors don't work, the most likely cause is that for some reason it does not work if the HDD is in "compatibility mode". https://kb.iu.edu/d/adkl
+
 == Outstanding issues
 * "System Properties" -> "Performance" complains about
 ** Compatibility-mode paging reduces overall system performance.
