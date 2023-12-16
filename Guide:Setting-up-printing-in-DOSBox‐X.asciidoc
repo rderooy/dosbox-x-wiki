@@ -355,8 +355,8 @@ BMP will create larger files, due to lack of compression, while the image qualit
 
 Create a PostScript output file, and supports multi-page documents with the `multipage=` option.
 
-This is typically the best option for Linux and macOS hosts, as PostScript is supported by default.
-For Windows hosts it requires installing a link:https://www.ghostscript.com/[PostScript viewer].
+This is typically the best option for Linux and macOS hosts (prior to Ventura), as PostScript is supported by default.
+For Windows, and newer macOS hosts it requires installing a link:https://www.ghostscript.com/[PostScript viewer].
 
 This format can easily be converted to PDF.
 
@@ -733,6 +733,9 @@ parallel1=file file:output.ps timeout:2000 openps:xdg-open
 
 === macOS PostScript printing example
 Similar to the Linux example above, but here the macOS Preview application is used to open the PostScript file, from where it can be viewed and printed.
+
+NOTE: Support for PostScript was removed from the macOS Preview application in the macOS Ventura (13) release.
+It is still possible to drag a PostScript file to the printer icon in macOS Ventura, but this support was also removed in macOS Sonoma (14).
 
 [source, ini]
 ....
