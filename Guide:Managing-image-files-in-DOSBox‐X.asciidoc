@@ -34,6 +34,7 @@ Note that both of these options will only show image mounts, not folder mounts.
 DOSBox-X supports mounting diskette (aka Floppy) images in the following formats:
 
 * RAW MFM sector image format (typically ending in `.ima` or `.img`)
+* IBM XDF (ending in `.xdf`)
 * Microsoft DMF (typically ending in `.dmf`)
 * NEC PC-98 diskette images (typically ending in `.fdd`, `.fdi`, `.nfd` or `.d88`)
 
@@ -46,7 +47,6 @@ Any programs on copy-protected diskettes need to be "cracked" to remove the copy
 Some examples of diskette image files that DOSBox-X **does not** support:
 
 * link:https://github.com/joncampbell123/dosbox-x/issues/1466[IBM DSKF] (`.DSK`)
-* link:https://github.com/joncampbell123/dosbox-x/issues/1465[IBM XDF] (`.XDF`)
 * link:https://github.com/joncampbell123/dosbox-x/issues/711[ImageDisk] (`.IMD`)
 * Interchangeable Preservation Format (`.IPF`)
 * link:https://github.com/joncampbell123/dosbox-x/issues/4288[KryoFlux Stream files] (`.RAW`)

@@ -28,8 +28,8 @@ toc::[]
 
 * There is also PC DOS 7.1 which has LBA and FAT32 support, but it only contains kernel files, and it does not have an installation program.
 * Some disk versions of IBM PC DOS 7 and 2000 were distributed in IBM XDF format or IBM DSKF image format.
-** XDF image files are easy to recognise as they use the .XDF extension. They are incompatible with DOSBox-X's FDD emulation, and cannot be converted to a disk image format that DOSBox-X can handle.
-Original disks in XDF format also cannot be read on a modern PC with a USB diskette drive.
+** XDF image files are easy to recognise as they use the .XDF extension. DOSBox-X supports mounting these images directly.
+Original disks in XDF format cannot be read on a modern PC with a USB diskette drive.
 ** DSKF image files can be trickier to recognise as they use the same .DSK extension as is sometimes used for regular MFM disk images.
 While DOSBox-X will fail to ``IMGMOUNT`` a DSKF image, it will happily try to ``BOOT`` a DSKF disk image and fail.
 On Linux you can run the command ``file filename.dsk``, and if it returns ``floppy image data (IBM SaveDskF)``, it is a DSKF disk image.
@@ -45,8 +45,32 @@ But neither is the case. Officially you could install it in one of two ways:
 You can then boot from the diskettes to install PC DOS 2000.
 
 == Creating a PC DOS 7 HDD image
-Installing PC DOS 7.0, revision 0 is problematic as it was distributed on XDF diskettes which are not supported by DOSBox-X.
-You would need to install it on a legacy-PC, and then transfer the files manually which is outside the scope of this document.
+The first PC DOS 7.0, revision 0 diskette is a regular 1.44MB bootable disk image, the other disks are in XDF format.
+Both types can be mounted in DOSBox-X, and therefor the installation is similar to PC DOS 6.
+
+Note: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images from the DOSBox-X menu.
+Go to the "DOS" menu, and select "Create blank disk image…​".
+This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
+
+Assuming your PC DOS 7.0 disk images are in the current working directory, and named as shown below, type the following commands at the DOSBox-X ``Z:\>`` prompt.
+
+[source, console]
+....
+ IMGMAKE hdd.img -t hd -size 2048
+ IMGMOUNT C hdd.img
+ BOOT DISK1.IMG DISK2.IMG DISK3.IMG DISK4.IMG DISK5.IMG
+....
+
+When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system", and you will be back at the DOSBox-X ``Z:\>`` prompt.
+
+You can now boot these DOS versions directly from the HDD image as follows:
+
+[source, console]
+....
+IMGMOUNT C hdd.img
+BOOT C:
+....
+
 
 == Creating a PC DOS 2000 HDD image from CD-ROM
 
