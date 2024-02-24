@@ -48,7 +48,9 @@ You can then boot from the diskettes to install PC DOS 2000.
 The first PC DOS 7.0, revision 0 diskette is a regular 1.44MB bootable disk image, the other disks are in XDF format.
 Both types can be mounted in DOSBox-X, and therefor the installation is similar to PC DOS 6.
 
-Note: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images from the DOSBox-X menu.
+NOTE: If the first disk image is in IBM DSKF format, it first needs to be converted to a regular MFM disk image using ``link:https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` or you will not be able to boot from it.
+
+NOTE: In addition to the below DOSBox-X command line utility, it is possible to create harddisk images from the DOSBox-X menu.
 Go to the "DOS" menu, and select "Create blank disk image…​".
 This option allows for various common harddisk types to be created, for less common types you need to use the command line utility.
 
@@ -58,7 +60,7 @@ Assuming your PC DOS 7.0 disk images are in the current working directory, and n
 ....
  IMGMAKE hdd.img -t hd -size 2048
  IMGMOUNT C hdd.img
- BOOT DISK1.IMG DISK2.IMG DISK3.IMG DISK4.IMG DISK5.IMG
+ BOOT DISK1.IMG DISK2.XDF DISK3.XDF DISK4.XDF DISK5.XDF
 ....
 
 When prompted to change disk, on the DOSBox-X menu bar select "DOS" followed by "Swap disk". After the installation is finished, from the DOSBox-X menu bar select "Main" followed by "Reset guest system", and you will be back at the DOSBox-X ``Z:\>`` prompt.
