@@ -68,6 +68,8 @@ You can now boot these DOS versions directly from the HDD image as follows:
 
 [source, console]
 ....
-IMGMOUNT C hdd.img
+IMGMOUNT 0 empty -fs none -t floppy
+IMGMOUNT C hdd.img -ide 1m
+IMGMOUNT D empty -t iso -ide 2m
 BOOT C:
 ....

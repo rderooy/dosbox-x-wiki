@@ -236,7 +236,7 @@ You can now boot the MS-DOS 4.0x HDD image using
 [source, console]
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
 
 Depending on if the DOS Shell was installed or not, you will either get a DOS prompt or the DOS Shell menu.
@@ -254,7 +254,7 @@ Now that you have created a bootable HDD image you can boot it from the DOSBox-X
 [source, console]
 ....
 IMGMOUNT C hdd.img
-BOOT -L C
+BOOT C:
 ....
 
 == Creating an IBM DOS 4.0x HDD image

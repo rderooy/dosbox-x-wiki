@@ -530,14 +530,13 @@ Like before it will start the game without the Windows splash screen, but now wh
 This way you can launch Windows games from a DOS batch file, or from a DOSBox launcher such as link:https://dbgl.org/[DBGL].
 
 == Known limitations
-- When booting a guest OS, such an MS-DOS with Windows 3.0 in DOSBox-X, so-called folder mounts are not supported.
-Any folders of the host you mount before starting MS-DOS will **NOT** be available in DOS and Windows 3.0.
-Only image mounts (HDD, Floppy or CD) using `imgmount` are possible in combination with booting a guest OS.
+- When booting a guest OS, such an MS-DOS with Windows 3.0 in DOSBox-X, so-called folder mounts are only partly supported.
+Only harddisk folder mounts will be available to the guest OS, and this excludes the boot drive as DOSBox-X cannot boot from a folder mount.
 
-- If you intend at any point to use a Floppy during your usage of Windows 3.0, you must mount a floppy **before** starting Windows 3.0.
-You can load a different Floppy, once you started Windows 3.0 this way from the DOSBox-X menus.
-If you don't load a floppy before and attach it afterwards, it may appear to work in Windows 3.0, but it will not work properly, and you get strange errors.
+- If you intend at any point to use a diskette during your usage of Windows 3.0, you must mount a diskette image **before** starting Windows 3.0.
+You can change the diskette, once you started Windows 3.0 from the DOSBox-X menus.
+But if a diskette drive is not present when starting Windows 3.0, and you attach it afterwards, it will not work properly, and you get strange errors.
 
-- If you intend at any point to use a CD during your usage of Windows 3.0, you must mount a CD **before** starting Windows 3.0.
-You can load a different CD from the DOSBox-X menus, once you started Windows 3.0.
-But if a CD is not present when starting Windows 3.0 the drive is simply missing, and you cannot add it without quitting and restarting Windows 3.0.
+- If you intend at any point to use a CD during your usage of Windows 3.0, you must mount a CD image **before** starting Windows 3.0.
+You can change the CD, once you started Windows 3.0 from the DOSBox-X menus.
+But if a CD-ROM drive is not present when starting Windows 3.0 the drive is simply missing, and you cannot add it without quitting and restarting Windows 3.0.

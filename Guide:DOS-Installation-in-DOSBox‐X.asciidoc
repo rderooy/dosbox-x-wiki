@@ -27,7 +27,7 @@ NOTE: LFN (Long File Name) support will be enabled when the reported version is 
 == Disadvantages of booting DOS in DOSBox-X
 Some disadvantages of booting regular DOS in DOSBox-X includes:
 
-* Inability to use the ``MOUNT`` command to access directories on the host filesystem (see below for a possible workaround). All storage will have to be in the form of images, and they need to be mounted using ``IMGMOUNT`` *before* using the ``BOOT`` command to boot regular DOS.
+* Inability to use the ``MOUNT`` command to access directories on the host filesystem (see below for a possible workaround). All storage will have to be in the form of images, and they need to be mounted using ``IMGMOUNT`` *before* using the ``BOOT`` command to boot regular DOS. Or alternatively an empty diskette or CD drive needs to be emulated using `IMGMOUNT`.
 * If you need to access a CD or DVD drive you need to load an IDE/PATA CD/DVD driver and MSCDEX (or equivalent)
 * If you need a mouse, you need to load a mouse driver (e.g. MOUSE.COM or CTMOUSE.EXE)
 * Less free memory in the lower 640KB range, and having to tune available memory by selectively loading drivers high

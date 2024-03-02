@@ -43,7 +43,9 @@ After it finished the installation, it will reboot DOSBox-X, and you're again at
 
 [source, console]
 ....
-IMGMOUNT C hdd.img
+IMGMOUNT 0 empty -fs none -t floppy
+IMGMOUNT C hdd.img -ide 1m
+IMGMOUNT D empty -t iso -ide 2m
 BOOT C:
 ....
 These last lines can be added to the `[autoexec]` section of your DOSBox-X config file to automatically mount and boot FreeDOS.
