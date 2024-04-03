@@ -1076,14 +1076,14 @@ For example to create a 2GiB dynamic VHD image using the integrated `IMGMAKE` ut
 
 [source, console]
 ....
-imgmake hdd.vhd -t vhd -size 2097152
+imgmake hdd.vhd -t vhd -size 2048
 ....
 
 Or to create a 2GiB fixed-size VHD image using the integrated 'IMGMAKE' utility:
 
 [source, console]
 ....
-imgmake hdd.vhd -t hd -size 2097152
+imgmake hdd.vhd -t hd -size 2048
 ....
 
 The advantage of using `IMGMAKE` is that the created image file will be partitioned and formatted and as such is ready to be mounted.
