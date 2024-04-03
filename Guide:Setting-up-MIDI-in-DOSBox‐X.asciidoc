@@ -138,7 +138,7 @@ The MT-32 emulation that is integrated into DOSBox-X is based on the link:https:
 
 Emulation is provided for the original MT-32 (aka "MT-32 Old"), the revised MT-32 (aka "MT-32 New"), and the CM-32L and LAPC-I.
 
-NOTE: If a game offers a "Sound Canvas", Roland SC-55, Roland SCC-I or a Roland RAP-10 option you want to try, look at the link:#General-MIDI-Emulation[General MIDI Emulation] section below instead.
+NOTE: If a game offers a "Sound Canvas", Roland SC-55, Roland SCC-I or a Roland RAP-10 option you want to try, look at the link:#GeneralMIDIEmulation[General MIDI Emulation] section below instead.
 
 === MT-32
 There are slight differences between the MT-32 Old and New revisions which in some cases can cause games composed on one to not sound quite right if played back on a different revision.
@@ -356,6 +356,7 @@ Quick changes of volume or expression on a MIDI channel may result in amp jumps 
 When "Nice Amp Ramp" mode is enabled, amp changes gradually instead.
 Otherwise, the emulation accuracy is preserved.
 
+[#GeneralMIDIEmulation]
 == General MIDI Emulation
 Unlike with the MT-32 emulation, General MIDI emulation is not implemented in DOSBox-X itself, but rather provided by a separate software synthesizer.
 DOSBox-X has support for a variety of such software synthesizers.
