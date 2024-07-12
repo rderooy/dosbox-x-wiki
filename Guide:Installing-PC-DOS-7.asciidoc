@@ -45,8 +45,8 @@ But neither is the case. Officially you could install it in one of two ways:
 You can then boot from the diskettes to install PC DOS 2000.
 
 == Creating a PC DOS 7 HDD image
-The first PC DOS 7.0, revision 0 diskette is a regular 1.44MB bootable disk image, the other disks are in XDF format.
-Both types can be mounted in DOSBox-X, and therefor the installation is similar to PC DOS 6.
+Disk 1 of PC DOS 7.0 revision 0, is a regular 1.44MB bootable disk image, the other disks are in XDF format.
+Both image types can be mounted in DOSBox-X, and therefor the installation is similar to PC DOS 6.
 
 NOTE: If the first disk image is in IBM DSKF format, it first needs to be converted to a regular MFM disk image using ``link:https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/storage/adsm/tools/loaddskf/loaddskf.exe[LOADDSKF.EXE]`` or you will not be able to boot from it.
 

@@ -356,7 +356,6 @@ Quick changes of volume or expression on a MIDI channel may result in amp jumps 
 When "Nice Amp Ramp" mode is enabled, amp changes gradually instead.
 Otherwise, the emulation accuracy is preserved.
 
-[#GeneralMIDIEmulation]
 == General MIDI Emulation
 Unlike with the MT-32 emulation, General MIDI emulation is not implemented in DOSBox-X itself, but rather provided by a separate software synthesizer.
 DOSBox-X has support for a variety of such software synthesizers.
