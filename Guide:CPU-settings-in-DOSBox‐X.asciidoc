@@ -56,10 +56,12 @@ NOTE: On real systems, starting with the Pentium CPU generation, an FPU is alway
 But DOSBox-X allows disabling of the FPU with any CPU type.
 Disabling the FPU could cause problems with software that expects an FPU to be present with these later CPU types.
 
-WARNING: The real x87 FPUs provide 80bit precision.
-This is however not supported with Windows DOSBox-X builds compiled using the Microsoft Visual Studio (MSVS) compiler, which is limited to just 64bits precision.
+WARNING: Real x87 FPUs provide 80bit precision.
+The emulated x87 FPU is however be capped to 64bits in the following situation:
+- If you're running Windows as the host OS, and using the Microsoft Visual Studio (MSVC) compiled build of DOSBox-X. This is a limitation of the MSVC compiler. As a work-around you can use a MinGW compiled build of DOSBox-X instead, which does support the full 80-bit precision on capable CPU architectures.
+- If you have a non-x86 or x86-64 system (e.g., ARM, PPC), the host CPU simply does not support 80-bit precision, regardless of OS or compiler.
 Very few DOS games used the FPU, but for those that do, this reduced precision can cause a variety of problems, from graphical glitches to crashes, to incorrect outcomes in DOS applications.
-If you're running Windows as the host OS, you can either disable the FPU emulation, or if proper FPU emulation is important, use the MinGW builds.
+As a work-around, you can try to disable FPU emulation in DOSBox-X, however in a few cases this may cause the DOS application or game to refuse to run.
 
 === segment limits
 * Default value: true
