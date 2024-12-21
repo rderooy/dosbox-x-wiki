@@ -77,7 +77,7 @@ They are to be used when your software input method IS a joystick, contrarily to
 ** player 1: joy1deadzone1, joy1deadzone2, joy1response1, joy1response2
 ** player 2: N/A
 
-=== joystick_type
+=== joysticktype
 * Default value: auto
 * Possible values: auto, none, 2axis, 2axis_2, fcs, ch
 
@@ -600,7 +600,7 @@ Later hardware revisions (with a 3.5mm headphone jack to the bottom of the contr
 NOTE: The USB Wireless dongles for the Xbox 360 and Xbox One controllers are not interchangeable.
 
 === Triggers acting as 3rd axis
-When using the 4axis joystick_type, the triggers of a gamepad will be mapped to the 3rd axis.
+When using the 4axis joysticktype, the triggers of a gamepad will be mapped to the 3rd axis.
 To change this, add the following setting: ``joy1axis2=4``
 
 This will cause both directions of your right thumbstick to now work.
