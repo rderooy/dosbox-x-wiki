@@ -93,7 +93,7 @@ DOSBox-X features a GUI menu bar that does not exist in DOSBox, so you can achie
 
 * **Scaler**: Selects a scaler used to enlarge/enhance low resolution modes.
 
-* **Output**: Selects the video system to use for output, such as Surface (SDL_Surface software rendering), OpenGL, Direct3D and TrueType font, and to enable double-scan mode (double-scanned output emits two scanlines for each source line) and/or double-buffering feature (for fullscreen mode, which can reduce screen flickering, but it can also result in a slower speed).
+* **Output**: Selects the video system to use for output, such as Software (Surface) (SDL_Surface software rendering), OpenGL, Direct3D and TrueType font, and to enable double-scan mode (double-scanned output emits two scanlines for each source line) and/or double-buffering feature (for fullscreen mode, which can reduce screen flickering, but it can also result in a slower speed).
 
 * **V-Sync**: Synchronizes V-Sync timing to the host display. This requires calibration within DOSBox-X.
 
